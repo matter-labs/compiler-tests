@@ -1,2 +1,3 @@
-# compiler-tests
-The compiler tests collection
+# Compiler tests
+
+The compiler integration tests collection.
