@@ -1,0 +1,51 @@
+//! { "cases": [ {
+//!     "entry": "one",
+//!     "expected": 1
+//! }, {
+//!     "entry": "two",
+//!     "expected": 2
+//! }, {
+//!     "entry": "three",
+//!     "expected": 3
+//! }, {
+//!     "entry": "four",
+//!     "expected": 4
+//! } ] }
+
+fn one() -> u64 {
+    let input = [true, false, false];
+
+    main(input) as u64
+}
+
+fn two() -> u64 {
+    let input = [false, true, true];
+
+    main(input) as u64
+}
+
+fn three() -> u64 {
+    let input = [false, true, false];
+
+    main(input) as u64
+}
+
+fn four() -> u64 {
+    let input = [false, false, false];
+
+    main(input) as u64
+}
+
+fn main(gates: [bool; 3]) -> u8 {
+    if gates[0] {
+        1
+    } else if gates[1] {
+        if gates[2] {
+            2
+        } else {
+            3
+        }
+    } else {
+        4
+    }
+}

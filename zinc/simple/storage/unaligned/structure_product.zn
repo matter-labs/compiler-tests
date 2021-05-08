@@ -1,0 +1,35 @@
+//! { "cases": [ {
+//!     "entry": "entry",
+//!     "engines": ["zkevm"], "expected": 15000
+//! } ] }
+
+struct Data {
+    a: u16,
+    b: u16,
+    c: u16,
+    d: u16,
+}
+
+contract Test {
+    data: Data;
+
+    pub fn entry(self) -> u64 {
+        Self {
+            data: Data { a: 0 as u16, b: 0 as u16, c: 0 as u16, d: 0 as u16 },
+        }.default() as u64
+    }
+
+    fn default(mut self) -> u16 {
+        self.data.a = 20 as u16;
+        self.data.b = 15 as u16;
+        self.data.c = 10 as u16;
+        self.data.d = 5 as u16;
+
+        let mut product: u16 = 1;
+        product *= self.data.a;
+        product *= self.data.b;
+        product *= self.data.c;
+        product *= self.data.d;
+        product
+    }
+}

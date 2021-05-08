@@ -1,0 +1,34 @@
+//! { "cases": [ {
+//!     "entry": "entry",
+//!     "expected": 131
+//! } ] }
+
+struct Data {
+    a: u8,
+    b: u8,
+    c: u8,
+}
+
+fn entry() -> u64 {
+    let input = Data {
+        a: 1,
+        b: 2,
+        c: 3,
+    };
+
+    main(input) as u64
+}
+
+impl Data {
+    pub fn fill(mut self, values: [u8; 3]) -> Self {
+        self.a = values[0];
+        self.b = values[1];
+        self.c = values[2];
+        self
+    }
+}
+
+fn main(witness: Data) -> u8 {
+    let filled = Data::fill(witness, [25, 42, 64]);
+    filled.a + filled.b + filled.c
+}

@@ -1,0 +1,19 @@
+//! { "cases": [ {
+//!     "entry": "entry",
+//!     "expected": 64
+//! } ] }
+
+const SIZE: u8 = 4;
+
+fn entry() -> u64 {
+    let array = [1, 2, 3, 4];
+
+    main(array) as u64
+}
+
+fn main(mut array: [u8; SIZE]) -> u8 {
+    array[3] = 106;
+    array[1] = 42;
+
+    array[3] - array[1]
+}

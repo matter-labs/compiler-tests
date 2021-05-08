@@ -1,0 +1,43 @@
+//! { "cases": [ {
+//!     "entry": "element_1",
+//!     "expected": 1
+//! }, {
+//!     "entry": "element_2",
+//!     "expected": 2
+//! }, {
+//!     "entry": "element_3",
+//!     "expected": 3
+//! }, {
+//!     "entry": "element_4",
+//!     "expected": 4
+//! } ] }
+
+const SIZE: u8 = 4;
+
+fn element_1() -> u64 {
+    let array = [1, 2, 3, 4];
+
+    main(array, 0) as u64
+}
+
+fn element_2() -> u64 {
+    let array = [1, 2, 3, 4];
+
+    main(array, 1) as u64
+}
+
+fn element_3() -> u64 {
+    let array = [1, 2, 3, 4];
+
+    main(array, 2) as u64
+}
+
+fn element_4() -> u64 {
+    let array = [1, 2, 3, 4];
+
+    main(array, 3) as u64
+}
+
+fn main(array: [u8; SIZE], index: u8) -> u8 {
+    array[index]
+}

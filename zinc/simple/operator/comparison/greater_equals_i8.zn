@@ -1,0 +1,54 @@
+//! { "ignore": true, "cases": [ {
+//!     "entry": "zero_zero",
+//!     "expected": 1
+//! }, {
+//!     "entry": "ordinar_false_lesser",
+//!     "expected": 0
+//! }, {
+//!     "entry": "ordinar_true_bigger",
+//!     "expected": 1
+//! }, {
+//!     "entry": "ordinar_true_negative",
+//!     "expected": 1
+//! }, {
+//!     "entry": "ordinar_true_positive",
+//!     "expected": 1
+//! }, {
+//!     "entry": "min_min",
+//!     "expected": 1
+//! }, {
+//!     "entry": "max_max",
+//!     "expected": 1
+//! } ] }
+
+fn zero_zero() -> u64 {
+    if main(0, 0) { 1 } else { 0 } as u64
+}
+
+fn ordinar_false_lesser() -> u64 {
+    if main(-25, 42) { 1 } else { 0 } as u64
+}
+
+fn ordinar_true_bigger() -> u64 {
+    if main(42, -25) { 1 } else { 0 } as u64
+}
+
+fn ordinar_true_negative() -> u64 {
+    if main(-42, -42) { 1 } else { 0 } as u64
+}
+
+fn ordinar_true_positive() -> u64 {
+    if main(42, 42) { 1 } else { 0 } as u64
+}
+
+fn min_min() -> u64 {
+    if main(-128, -128) { 1 } else { 0 } as u64
+}
+
+fn max_max() -> u64 {
+    if main(127, 127) { 1 } else { 0 } as u64
+}
+
+fn main(a: i8, b: i8) -> bool {
+    a >= b
+}

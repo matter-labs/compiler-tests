@@ -1,0 +1,25 @@
+//! { "cases": [ {
+//!     "ignore": true, "entry": "condition_true",
+//!     "engines": ["zkevm"], "expected": "error"
+//! }, {
+//!     "entry": "condition_false",
+//!     "expected": 5
+//! } ] }
+
+fn condition_true() -> u64 {
+    main(true) as u64
+}
+
+fn condition_false() -> u64 {
+    main(false) as u64
+}
+
+fn main(condition: bool) -> u8 {
+    let mut result = 5;
+
+    if condition {
+        require(result != 5);
+    }
+
+    result
+}

@@ -1,0 +1,30 @@
+//! { "cases": [ {
+//!     "entry": "entry",
+//!     "expected": 6
+//! } ] }
+
+struct Data {
+    a: u8,
+    b: u8,
+    c: u8,
+}
+
+fn entry() -> u64 {
+    let input = Data {
+        a: 1,
+        b: 2,
+        c: 3,
+    };
+
+    main(input) as u64
+}
+
+impl Data {
+    pub fn sum(self) -> u8 {
+        self.a + self.b + self.c
+    }
+}
+
+fn main(witness: Data) -> u8 {
+    Data::sum(witness)
+}

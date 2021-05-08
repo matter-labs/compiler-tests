@@ -1,0 +1,53 @@
+//! { "cases": [ {
+//!     "entry": "one",
+//!     "expected": 25
+//! }, {
+//!     "entry": "two",
+//!     "expected": 50
+//! }, {
+//!     "entry": "three",
+//!     "expected": 75
+//! }, {
+//!     "entry": "four",
+//!     "expected": 100
+//! } ] }
+
+fn one() -> u64 {
+    let input = [true, false, false];
+
+    main(input, 5) as u64
+}
+
+fn two() -> u64 {
+    let input = [false, true, true];
+
+    main(input, 5) as u64
+}
+
+fn three() -> u64 {
+    let input = [false, true, false];
+
+    main(input, 5) as u64
+}
+
+fn four() -> u64 {
+    let input = [false, false, false];
+
+    main(input, 5) as u64
+}
+
+fn main(gates: [bool; 3], mut mutated: u8) -> u8 {
+    if gates[0] {
+        mutated *= 5;
+    } else if gates[1] {
+        if gates[2] {
+            mutated *= 10;
+        } else {
+            mutated *= 15;
+        }
+    } else {
+        mutated *= 20;
+    }
+
+    mutated
+}

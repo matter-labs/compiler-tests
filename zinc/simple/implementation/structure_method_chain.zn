@@ -1,0 +1,62 @@
+//! { "cases": [ {
+//!     "entry": "first",
+//!     "expected": 1008
+//! }, {
+//!     "entry": "second",
+//!     "expected": 1536
+//! }, {
+//!     "entry": "third",
+//!     "expected": 24000000
+//! } ] }
+
+struct Data {
+    a: u256,
+}
+
+fn first() -> u64 {
+    main(42 as u256) as u64
+}
+
+fn second() -> u64 {
+    main(64 as u256) as u64
+}
+
+fn third() -> u64 {
+    main(1000000 as u256) as u64
+}
+
+impl Data {
+    pub fn new(a: u256) -> Self {
+        Self { a: a }
+    }
+
+    pub fn double(self) -> Self {
+        Self {
+            a: self.a * 2 as u256,
+        }
+    }
+
+    pub fn triple(self) -> Self {
+        Self {
+            a: self.a * 3 as u256,
+        }
+    }
+
+    pub fn quadruple(self) -> Self {
+        Self {
+            a: self.a * 4 as u256,
+        }
+    }
+
+    pub fn into_inner(self) -> u256 {
+        self.a
+    }
+}
+
+fn main(witness: u256) -> u256 {
+    Data::new(witness)
+        .double()
+        .triple()
+        .quadruple()
+        .into_inner()
+}

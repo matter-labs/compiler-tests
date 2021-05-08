@@ -1,0 +1,12 @@
+//! { "ignore": true, "cases": [ {
+//!     "entry": "main",
+//!     "expected": 10
+//! } ] }
+
+fn main() -> u64 {
+    let mut sum: u64 = 0;
+    for i in -9223372036854775808..=-9223372036854775799 {
+        sum += 1 as u64;
+    }
+    sum
+}

@@ -1,0 +1,42 @@
+//! { "ignore": true, "cases": [ {
+//!     "entry": "zero_zero",
+//!     "expected": 0
+//! }, {
+//!     "entry": "ordinar",
+//!     "expected": -17
+//! }, {
+//!     "entry": "to_max",
+//!     "expected": 127
+//! }, {
+//!     "ignore": true, "entry": "overflow",
+//!     "engines": ["zkevm"], "expected": "error"
+//! }, {
+//!     "ignore": true, "entry": "overflow_minimal",
+//!     "engines": ["zkevm"], "expected": "error"
+//! } ] }
+
+fn zero_zero() -> u64 {
+    main(0 as i8, 0 as i8) as u64
+}
+
+fn ordinar() -> u64 {
+    main(-(42 as i8), 25 as i8) as u64
+}
+
+fn to_max() -> u64 {
+    main(42 as i8, 85 as i8) as u64
+}
+
+fn overflow() -> u64 {
+    main(100, 50) as u64
+}
+
+fn overflow_minimal() -> u64 {
+    main(100, 28) as u64
+}
+
+fn main(a: i8, b: i8) -> i8 {
+    let mut c = a;
+    c += b;
+    c
+}

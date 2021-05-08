@@ -1,0 +1,102 @@
+//! { "cases": [ {
+//!     "entry": "bitcoin",
+//!     "expected": 1
+//! }, {
+//!     "entry": "ethereum",
+//!     "expected": 10
+//! }, {
+//!     "entry": "litecoin",
+//!     "expected": 50
+//! }, {
+//!     "entry": "zcash",
+//!     "expected": 100
+//! } ] }
+
+enum Month {
+    January = 1,
+    February = 2,
+    March = 3,
+    April = 4,
+    May = 5,
+    June = 6,
+    July = 7,
+    August = 8,
+    September = 9,
+    October = 10,
+    November = 11,
+    December = 12,
+}
+
+struct Date {
+    year: u16,
+    month: Month,
+    day: u8,
+}
+
+enum TokenId {
+    Bitcoin = 0,
+    Ethereum = 1,
+    Litecoin = 2,
+    Zcash = 3,
+}
+
+const TOKENS_COUNT: u8 = 4;
+
+struct Person {
+    id: u256,
+    date_of_birth: Date,
+    balances: [(TokenId, u256); TOKENS_COUNT],
+}
+
+struct Result {
+    id: u256,
+    sum: u256,
+    date_of_birth: Date,
+}
+
+fn bitcoin() -> u64 {
+    main(TokenId::Bitcoin).sum as u64
+}
+
+fn ethereum() -> u64 {
+    main(TokenId::Ethereum).sum as u64
+}
+
+fn litecoin() -> u64 {
+    main(TokenId::Litecoin).sum as u64
+}
+
+fn zcash() -> u64 {
+    main(TokenId::Zcash).sum as u64
+}
+
+fn main(token_id: TokenId) -> Result {
+    let person = Person {
+        id: 42 as u256,
+        date_of_birth: Date {
+            year: 1994,
+            month: Month::March,
+            day: 16,
+        },
+        balances: [
+            (TokenId::Bitcoin, 1 as u256),
+            (TokenId::Ethereum, 10 as u256),
+            (TokenId::Litecoin, 50 as u256),
+            (TokenId::Zcash, 100 as u256),
+        ],
+    };
+
+    let mut result = Result {
+        id: person.id,
+        sum: 0 as u256,
+        date_of_birth: person.date_of_birth,
+    };
+
+    for id in 0..TOKENS_COUNT {
+        if person.balances[id].0 == token_id {
+            result.sum += person.balances[id].1;
+        }
+    }
+
+    result
+}

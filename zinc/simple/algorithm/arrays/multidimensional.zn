@@ -1,0 +1,84 @@
+//! { "cases": [ {
+//!     "entry": "array_2d",
+//!     "expected": 1
+//! }, {
+//!     "entry": "array_3d",
+//!     "expected": 1
+//! }, {
+//!     "entry": "array_4d",
+//!     "expected": 1
+//! } ] }
+
+const ARRAY_SIZE: u8 = 4;
+
+fn array_2d() -> u64 {
+    let mut array = [[0; ARRAY_SIZE]; ARRAY_SIZE];
+
+    for i in 0..ARRAY_SIZE {
+        for j in 0..ARRAY_SIZE {
+            array[i][j] = i*ARRAY_SIZE + j;
+        }
+    }
+    let mut result = true;
+    // other order
+    for j in 0..ARRAY_SIZE {
+        for i in 0..ARRAY_SIZE {
+            result = result && array[i][j] == i*ARRAY_SIZE + j;
+        }
+    }
+    if result { 1 } else { 0 } as u64
+}
+
+fn array_3d() -> u64 {
+    let mut array = [[[0 as u64; ARRAY_SIZE]; ARRAY_SIZE]; ARRAY_SIZE];
+
+    for i in 0..ARRAY_SIZE {
+        for j in 0..ARRAY_SIZE {
+            for p in 0..ARRAY_SIZE {
+                array[i][j][p] = (i as u64)*(ARRAY_SIZE as u64)*(ARRAY_SIZE as u64)
+                    + (j as u64)*(ARRAY_SIZE as u64) + p as u64;
+            }
+        }
+    }
+    let mut result = true;
+    // other order
+    for p in 0..ARRAY_SIZE {
+        for j in 0..ARRAY_SIZE {
+            for i in 0..ARRAY_SIZE {
+                result = result && array[i][j][p] == (i as u64)*(ARRAY_SIZE as u64)*(ARRAY_SIZE as u64)
+                    + (j as u64)*(ARRAY_SIZE as u64) + p as u64;
+            }
+        }
+    }
+    if result { 1 } else { 0 } as u64
+}
+
+fn array_4d() -> u64 {
+    let mut array = [[[[0 as u64; ARRAY_SIZE]; ARRAY_SIZE]; ARRAY_SIZE]; ARRAY_SIZE];
+
+    for i in 0..ARRAY_SIZE {
+        for j in 0..ARRAY_SIZE {
+            for p in 0..ARRAY_SIZE {
+                for h in 0..ARRAY_SIZE {
+                    array[i][j][p][h] = (i as u64)*(ARRAY_SIZE as u64)*(ARRAY_SIZE as u64)*(ARRAY_SIZE as u64)
+                        + (j as u64)*(ARRAY_SIZE as u64)*(ARRAY_SIZE as u64)
+                        + (p as u64)*(ARRAY_SIZE as u64) + h as u64;
+                }
+            }
+        }
+    }
+    let mut result = true;
+    // other order
+    for h in 0..ARRAY_SIZE {
+        for p in 0..ARRAY_SIZE {
+            for j in 0..ARRAY_SIZE {
+                for i in 0..ARRAY_SIZE {
+                    result = result && array[i][j][p][h] == (i as u64)*(ARRAY_SIZE as u64)*(ARRAY_SIZE as u64)*(ARRAY_SIZE as u64)
+                        + (j as u64)*(ARRAY_SIZE as u64)*(ARRAY_SIZE as u64)
+                        + (p as u64)*(ARRAY_SIZE as u64) + h as u64;
+                }
+            }
+        }
+    }
+    if result { 1 } else { 0 } as u64
+}

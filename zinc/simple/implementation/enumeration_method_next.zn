@@ -1,0 +1,30 @@
+//! { "cases": [ {
+//!     "entry": "entry",
+//!     "expected": 2
+//! } ] }
+
+enum List {
+    DEFAULT = 0,
+    FIRST = 1,
+    SECOND = 2,
+    THIRD = 3,
+}
+
+fn entry() -> u64 {
+    main(List::FIRST) as u64
+}
+
+impl List {
+    pub fn next(self) -> Self {
+        match self {
+            Self::DEFAULT => Self::FIRST,
+            Self::FIRST => Self::SECOND,
+            Self::SECOND => Self::THIRD,
+            Self::THIRD => Self::DEFAULT,
+        }
+    }
+}
+
+fn main(witness: List) -> List {
+    witness.next()
+}

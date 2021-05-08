@@ -1,0 +1,40 @@
+//! { "cases": [ {
+//!     "entry": "zero_zero",
+//!     "expected": 0
+//! }, {
+//!     "entry": "ordinar",
+//!     "expected": 67
+//! }, {
+//!     "entry": "to_max",
+//!     "expected": 255
+//! }, {
+//!     "ignore": true, "entry": "overflow",
+//!     "engines": ["zkevm"], "expected": "error"
+//! }, {
+//!     "ignore": true, "entry": "overflow_minimal",
+//!     "engines": ["zkevm"], "expected": "error"
+//! } ] }
+
+fn zero_zero() -> u64 {
+    main(0, 0) as u64
+}
+
+fn ordinar() -> u64 {
+    main(42, 25) as u64
+}
+
+fn to_max() -> u64 {
+    main(100, 155) as u64
+}
+
+fn overflow() -> u64 {
+    main(100, 200) as u64
+}
+
+fn overflow_minimal() -> u64 {
+    main(100, 156) as u64
+}
+
+fn main(a: u8, b: u8) -> u8 {
+    a + b
+}

@@ -1,0 +1,22 @@
+//! { "cases": [ {
+//!     "entry": "entry",
+//!     "expected": 218
+//! } ] }
+
+const SIZE: u8 = 5;
+
+fn entry() -> u64 {
+    let array = [10, 20, 30, 40, 50];
+
+    main(array, 6) as u64
+}
+
+fn main(mut array: [u8; SIZE], witness: u8) -> u8 {
+    array[0] += witness;
+    array[1] -= witness;
+    array[2] *= witness;
+    array[3] /= witness;
+    array[4] %= witness;
+
+    array[0] + array[1] + array[2] + array[3] + array[4]
+}

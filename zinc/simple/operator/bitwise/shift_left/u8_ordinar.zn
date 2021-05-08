@@ -1,0 +1,12 @@
+//! { "ignore": true, "cases": [ {
+//!     "entry": "entry",
+//!     "expected": 168
+//! } ] }
+
+fn entry() -> u64 {
+    main(42) as u64
+}
+
+fn main(a: u8) -> u8 {
+    a << 2
+}

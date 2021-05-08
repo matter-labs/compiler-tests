@@ -1,0 +1,12 @@
+//! { "ignore": true, "cases": [ {
+//!     "entry": "default",
+//!     "engines": ["zkevm"], "expected": "error"
+//! } ] }
+
+fn default() -> u64 {
+    main(0) as u64
+}
+
+fn main(witness: u8) -> u8 {
+    witness - 1
+}

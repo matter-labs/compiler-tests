@@ -1,0 +1,12 @@
+//! { "cases": [ {
+//!     "entry": "entry",
+//!     "expected": 23
+//! } ] }
+
+fn entry() -> u64 {
+    main(3) as u64
+}
+
+fn main(witness: u8) -> u8 {
+    ((((42, 2), (3, 111)).1).1 - (((42, 2), (3, 111)).0).0) / witness
+}

@@ -1,0 +1,19 @@
+//! { "cases": [ {
+//!     "entry": "entry",
+//!     "expected": 42
+//! } ] }
+
+fn entry() -> u64 {
+    main(2) as u64
+}
+
+fn main(witness: u8) -> u8 {
+    match witness + witness * witness {
+        1 => 10,
+        2 => 20,
+        inner => match inner {
+            6 => 42,
+            _ => 64,
+        },
+    }
+}

@@ -1,0 +1,20 @@
+//! { "cases": [ {
+//!     "entry": "entry",
+//!     "expected": 33
+//! } ] }
+
+struct Data {
+    value: u8,
+}
+
+fn entry() -> u64 {
+    main(25) as u64
+}
+
+fn main(witness: u8) -> u8 {
+    let array = [[1, 2], [3, 4]];
+    let tuple = ((1, 2), (3, 4));
+    let structure = Data { value: witness };
+
+    array[1][1] + (tuple.1).1 + structure.value
+}

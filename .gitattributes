@@ -1,0 +1,2 @@
+# The Rust syntax highlighting for Zinc
+*.zn linguist-language=Rust

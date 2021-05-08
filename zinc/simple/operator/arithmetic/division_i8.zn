@@ -1,0 +1,103 @@
+//! { "ignore": true, "cases": [ {
+//!     "ignore": true, "entry": "zero_by_zero",
+//!     "engines": ["zkevm"], "expected": "error"
+//! }, {
+//!     "ignore": true, "entry": "ordinar_by_zero",
+//!     "engines": ["zkevm"], "expected": "error"
+//! }, {
+//!     "ignore": true, "entry": "min_by_zero",
+//!     "engines": ["zkevm"], "expected": "error"
+//! }, {
+//!     "ignore": true, "entry": "max_by_zero",
+//!     "engines": ["zkevm"], "expected": "error"
+//! }, {
+//!     "entry": "ordinar_positive",
+//!     "expected": 6
+//! }, {
+//!     "entry": "ordinar_negative_divided",
+//!     "expected": -6
+//! }, {
+//!     "entry": "ordinar_negative_divider",
+//!     "expected": -6
+//! }, {
+//!     "entry": "ordinar_negative_both",
+//!     "expected": 6
+//! }, {
+//!     "entry": "ordinar_max_remainder",
+//!     "expected": 6
+//! }, {
+//!     "entry": "ordinar_next",
+//!     "expected": 7
+//! }, {
+//!     "entry": "to_min",
+//!     "expected": -128
+//! }, {
+//!     "entry": "to_max",
+//!     "expected": 127
+//! }, {
+//!     "entry": "to_one_positives",
+//!     "expected": 1
+//! }, {
+//!     "entry": "to_one_negatives",
+//!     "expected": 1
+//! } ] }
+
+fn zero_by_zero() -> u64 {
+    main(0, 0) as u64
+}
+
+fn ordinar_by_zero() -> u64 {
+    main(42, 0) as u64
+}
+
+fn min_by_zero() -> u64 {
+    main(-128, 0) as u64
+}
+
+fn max_by_zero() -> u64 {
+    main(127, 0) as u64
+}
+
+fn ordinar_positive() -> u64 {
+    main(42 as i8, 7 as i8) as u64
+}
+
+fn ordinar_negative_divided() -> u64 {
+    main(-(42 as i8), 7 as i8) as u64
+}
+
+fn ordinar_negative_divider() -> u64 {
+    main(42 as i8, -(7 as i8)) as u64
+}
+
+fn ordinar_negative_both() -> u64 {
+    main(-(42 as i8), -(7 as i8)) as u64
+}
+
+fn ordinar_max_remainder() -> u64 {
+    main(48 as i8, 7 as i8) as u64
+}
+
+fn ordinar_next() -> u64 {
+    main(49 as i8, 7 as i8) as u64
+}
+
+fn to_min() -> u64 {
+    main(-(128 as i8), 1 as i8) as u64
+}
+
+fn to_max() -> u64 {
+    main(127 as i8, 1 as i8) as u64
+}
+
+fn to_one_positives() -> u64 {
+    main(127 as i8, 127 as i8) as u64
+}
+
+fn to_one_negatives() -> u64 {
+    main(-(128 as i8), -(128 as i8)) as u64
+}
+
+fn main(a: i8, b: i8) -> i8 {
+    a / b
+}

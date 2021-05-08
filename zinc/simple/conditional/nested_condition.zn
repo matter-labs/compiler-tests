@@ -1,0 +1,23 @@
+//! { "cases": [ {
+//!     "entry": "first",
+//!     "expected": 25
+//! }, {
+//!     "entry": "second",
+//!     "expected": 42
+//! } ] }
+
+fn first() -> u64 {
+    main(1) as u64
+}
+
+fn second() -> u64 {
+    main(2) as u64
+}
+
+fn main(witness: u8) -> u8 {
+    if if witness == 1 { 2 } else { 3 } == 2 {
+        25
+    } else {
+        42
+    }
+}

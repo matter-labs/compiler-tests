@@ -1,0 +1,70 @@
+//! { "ignore": true, "cases": [ {
+//!     "entry": "zero_zero",
+//!     "expected": 0
+//! }, {
+//!     "entry": "ordinar_positive",
+//!     "expected": 126
+//! }, {
+//!     "entry": "ordinar_negative_first",
+//!     "expected": -126
+//! }, {
+//!     "entry": "ordinar_negative_second",
+//!     "expected": -126
+//! }, {
+//!     "entry": "ordinar_negative_both",
+//!     "expected": 126
+//! }, {
+//!     "entry": "to_max",
+//!     "expected": 127
+//! }, {
+//!     "ignore": true, "entry": "overflow_negative",
+//!     "engines": ["zkevm"], "expected": "error"
+//! }, {
+//!     "ignore": true, "entry": "overflow_positive",
+//!     "engines": ["zkevm"], "expected": "error"
+//! }, {
+//!     "ignore": true, "entry": "overflow_minimal",
+//!     "engines": ["zkevm"], "expected": "error"
+//! } ] }
+
+fn zero_zero() -> u64 {
+    main(0 as i8, 0 as i8) as u64
+}
+
+fn ordinar_positive() -> u64 {
+    main(42 as i8, 3 as i8) as u64
+}
+
+fn ordinar_negative_first() -> u64 {
+    main(-(42 as i8), 3 as i8) as u64
+}
+
+fn ordinar_negative_second() -> u64 {
+    main(42 as i8, -(3 as i8)) as u64
+}
+
+fn ordinar_negative_both() -> u64 {
+    main(-(42 as i8), -(3 as i8)) as u64
+}
+
+fn to_max() -> u64 {
+    main(127 as i8, 1 as i8) as u64
+}
+
+fn overflow_negative() -> u64 {
+    main(-100, 2) as u64
+}
+
+fn overflow_positive() -> u64 {
+    main(100, 2) as u64
+}
+
+fn overflow_minimal() -> u64 {
+    main(16, 8) as u64
+}
+
+fn main(a: i8, b: i8) -> i8 {
+    let mut c = a;
+    c *= b;
+    c
+}

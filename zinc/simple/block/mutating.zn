@@ -1,0 +1,16 @@
+//! { "cases": [ {
+//!     "entry": "entry",
+//!     "expected": 75
+//! } ] }
+
+fn entry() -> u64 {
+    main(50) as u64
+}
+
+fn main(witness: u8) -> u8 {
+    let mut inner = 25;
+    {
+        inner += witness;
+    };
+    inner
+}

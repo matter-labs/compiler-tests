@@ -1,0 +1,33 @@
+//! { "cases": [ {
+//!     "entry": "first",
+//!     "expected": 2
+//! }, {
+//!     "entry": "second",
+//!     "expected": 1
+//! } ] }
+
+enum List {
+    FIRST = 1,
+    SECOND = 2,
+}
+
+fn first() -> u64 {
+    main(List::FIRST) as u64
+}
+
+fn second() -> u64 {
+    main(List::SECOND) as u64
+}
+
+impl List {
+    pub fn opposite(self) -> Self {
+        match self {
+            Self::FIRST => Self::SECOND,
+            Self::SECOND => Self::FIRST,
+        }
+    }
+}
+
+fn main(witness: List) -> List {
+    witness.opposite()
+}

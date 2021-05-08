@@ -1,0 +1,30 @@
+//! { "cases": [ {
+//!     "entry": "first",
+//!     "expected": 1
+//! }, {
+//!     "entry": "eighth",
+//!     "expected": 21
+//! }, {
+//!     "entry": "sixteenth",
+//!     "expected": 987
+//! } ] }
+
+fn first() -> u64 {
+    fib(1)
+}
+
+fn eighth() -> u64 {
+    fib(8)
+}
+
+fn sixteenth() -> u64 {
+    fib(16)
+}
+
+fn fib(n: u8) -> u64 {
+    if n <= 1 {
+        return n as u64;
+    }
+
+    fib(n - 1) + fib(n - 2)
+}

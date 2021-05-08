@@ -1,0 +1,40 @@
+//! { "ignore": true, "cases": [ {
+//!     "entry": "zero",
+//!     "expected": 0
+//! }, {
+//!     "entry": "ordinar_negative",
+//!     "expected": 42
+//! }, {
+//!     "entry": "ordinar_positive",
+//!     "expected": -42
+//! }, {
+//!     "entry": "max_to_min",
+//!     "expected": -127
+//! }, {
+//!     "entry": "almost_min_to_max",
+//!     "expected": 127
+//! } ] }
+
+fn zero() -> u64 {
+    main(0 as i8) as u64
+}
+
+fn ordinar_negative() -> u64 {
+    main(-(42 as i8)) as u64
+}
+
+fn ordinar_positive() -> u64 {
+    main(42 as i8) as u64
+}
+
+fn max_to_min() -> u64 {
+    main(127 as i8) as u64
+}
+
+fn almost_min_to_max() -> u64 {
+    main(-(127 as i8)) as u64
+}
+
+fn main(a: i8) -> i8 {
+    -a
+}

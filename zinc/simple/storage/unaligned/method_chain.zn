@@ -1,0 +1,35 @@
+//! { "cases": [ {
+//!     "entry": "entry",
+//!     "engines": ["zkevm"], "expected": 1024
+//! } ] }
+
+contract Test {
+    a: u248;
+    b: u248;
+
+    pub fn entry() -> u64 {
+        Self {
+            a: 0 as u248,
+            b: 0 as u248,
+        }.default(42 as u248) as u64
+    }
+
+    pub fn default(mut self, value: u248) -> u248 {
+        self.a = 5 as u248;
+        self.b = 11 as u248;
+
+        self.a + self.quadruple(self.triple(self.double(value))) + self.b
+    }
+
+    fn double(self, value: u248) -> u248 {
+        value * 2
+    }
+
+    fn triple(self, value: u248) -> u248 {
+        3 * value
+    }
+
+    fn quadruple(self, value: u248) -> u248 {
+        value * 4
+    }
+}

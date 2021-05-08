@@ -1,0 +1,27 @@
+//! { "cases": [ {
+//!     "entry": "entry",
+//!     "engines": ["zkevm"], "expected": 15000
+//! } ] }
+
+contract Test {
+    data: [u16; 4];
+
+    pub fn entry(self) -> u64 {
+        Self {
+            data: [0 as u16; 4],
+        }.default() as u64
+    }
+
+    fn default(mut self) -> u16 {
+        self.data[0] = 20 as u16;
+        self.data[1] = 15 as u16;
+        self.data[2] = 10 as u16;
+        self.data[3] = 5 as u16;
+
+        let mut product: u16 = 1;
+        for i in 0..4 {
+            product *= self.data[i];
+        }
+        product
+    }
+}

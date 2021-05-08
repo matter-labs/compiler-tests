@@ -1,0 +1,22 @@
+//! { "cases": [ {
+//!     "entry": "entry",
+//!     "engines": ["zkevm"], "expected": 126
+//! } ] }
+
+contract Test {
+    data: [u8; 4];
+
+    const TEST: u8 = 42;
+
+    pub fn entry(self) -> u64 {
+        Self {
+            data: [0; 4],
+        }.default(42) as u64
+    }
+
+    fn default(mut self, argument: u8) -> u8 {
+        self.data[3] += argument;
+
+        argument + Self::TEST + self.data[3]
+    }
+}

@@ -1,0 +1,12 @@
+//! { "cases": [ {
+//!     "entry": "entry",
+//!     "expected": 210
+//! } ] }
+
+fn entry() -> u64 {
+    main(42) as u64
+}
+
+fn main(witness: u8) -> u8 {
+    witness + 0b101010 + 0o52 + 42 + 0x2A
+}

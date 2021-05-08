@@ -1,0 +1,35 @@
+//! { "cases": [ {
+//!     "entry": "entry",
+//!     "engines": ["zkevm"], "expected": 50
+//! } ] }
+
+struct Data {
+    a: u8,
+    b: u8,
+    c: u8,
+    d: u8,
+}
+
+contract Test {
+    data: Data;
+
+    pub fn entry(self) -> u64 {
+        Self {
+            data: Data { a: 0, b: 0, c: 0, d: 0 },
+        }.default() as u64
+    }
+
+    fn default(mut self) -> u8 {
+        self.data.a = 20;
+        self.data.b = 15;
+        self.data.c = 10;
+        self.data.d = 5;
+
+        let mut sum = 0;
+        sum += self.data.a;
+        sum += self.data.b;
+        sum += self.data.c;
+        sum += self.data.d;
+        sum
+    }
+}

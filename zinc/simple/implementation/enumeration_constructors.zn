@@ -1,0 +1,46 @@
+//! { "cases": [ {
+//!     "entry": "one",
+//!     "expected": 30
+//! }, {
+//!     "entry": "two",
+//!     "expected": 600
+//! }, {
+//!     "entry": "three",
+//!     "expected": 5999994
+//! } ] }
+
+enum List {
+    FIRST = 1,
+    SECOND = 2,
+    THIRD = 3,
+}
+
+fn one() -> u64 {
+    main(5 as u256) as u64
+}
+
+fn two() -> u64 {
+    main(100 as u256) as u64
+}
+
+fn three() -> u64 {
+    main(999999 as u256) as u64
+}
+
+impl List {
+    pub fn first() -> Self {
+        Self::FIRST
+    }
+
+    pub fn second() -> Self {
+        Self::SECOND
+    }
+
+    pub fn third() -> Self {
+        Self::THIRD
+    }
+}
+
+fn main(witness: u256) -> u256 {
+    (List::first() as u256 + List::second() as u256 + List::third() as u256) * witness
+}

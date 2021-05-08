@@ -1,0 +1,36 @@
+//! { "cases": [ {
+//!     "entry": "first",
+//!     "expected": 5
+//! }, {
+//!     "entry": "second",
+//!     "expected": 10
+//! }, {
+//!     "entry": "third",
+//!     "expected": 15
+//! } ] }
+
+enum Language {
+    JABBERWOCKY = 0,
+    ZINC = 42,
+    RUST = 255,
+}
+
+fn first() -> u64 {
+    main(Language::JABBERWOCKY) as u64
+}
+
+fn second() -> u64 {
+    main(Language::ZINC) as u64
+}
+
+fn third() -> u64 {
+    main(Language::RUST) as u64
+}
+
+fn main(language: Language) -> u8 {
+    match language {
+        Language::JABBERWOCKY => 5,
+        Language::ZINC => 10,
+        Language::RUST => 15,
+    }
+}

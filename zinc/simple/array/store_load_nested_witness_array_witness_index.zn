@@ -1,0 +1,124 @@
+//! { "cases": [ {
+//!     "entry": "element_1",
+//!     "expected": 1
+//! }, {
+//!     "entry": "element_2",
+//!     "expected": 2
+//! }, {
+//!     "entry": "element_3",
+//!     "expected": 3
+//! }, {
+//!     "entry": "element_4",
+//!     "expected": 4
+//! }, {
+//!     "entry": "element_5",
+//!     "expected": 5
+//! }, {
+//!     "entry": "element_6",
+//!     "expected": 6
+//! }, {
+//!     "entry": "element_7",
+//!     "expected": 7
+//! }, {
+//!     "entry": "element_8",
+//!     "expected": 8
+//! }, {
+//!     "entry": "element_9",
+//!     "expected": 9
+//! } ] }
+
+const SIDE_SIZE: u8 = 3;
+
+fn element_1() -> u64 {
+    let array = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],
+    ];
+
+    main(array, 0, 0) as u64
+}
+
+fn element_2() -> u64 {
+    let array = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],
+    ];
+
+    main(array, 0, 1) as u64
+}
+
+fn element_3() -> u64 {
+    let array = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],
+    ];
+
+    main(array, 0, 2) as u64
+}
+
+fn element_4() -> u64 {
+    let array = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],
+    ];
+
+    main(array, 1, 0) as u64
+}
+
+fn element_5() -> u64 {
+    let array = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],
+    ];
+
+    main(array, 1, 1) as u64
+}
+
+fn element_6() -> u64 {
+    let array = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],
+    ];
+
+    main(array, 1, 2) as u64
+}
+
+fn element_7() -> u64 {
+    let array = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],
+    ];
+
+    main(array, 2, 0) as u64
+}
+
+fn element_8() -> u64 {
+    let array = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],
+    ];
+
+    main(array, 2, 1) as u64
+}
+
+fn element_9() -> u64 {
+    let array = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],
+    ];
+
+    main(array, 2, 2) as u64
+}
+
+fn main(array: [[u8; SIDE_SIZE]; SIDE_SIZE], i: u8, j: u8) -> u8 {
+    array[i][j]
+}

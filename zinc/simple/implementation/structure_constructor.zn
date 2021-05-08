@@ -1,0 +1,36 @@
+//! { "cases": [ {
+//!     "entry": "first",
+//!     "expected": 42
+//! }, {
+//!     "entry": "second",
+//!     "expected": 64
+//! }, {
+//!     "entry": "third",
+//!     "expected": 65535
+//! } ] }
+
+struct Data {
+    a: u256,
+}
+
+fn first() -> u64 {
+    main(42 as u256) as u64
+}
+
+fn second() -> u64 {
+    main(64 as u256) as u64
+}
+
+fn third() -> u64 {
+    main(65535 as u256) as u64
+}
+
+impl Data {
+    pub fn new(a: u256) -> Self {
+        Self { a: a }
+    }
+}
+
+fn main(witness: u256) -> u256 {
+    Data::new(witness).a
+}

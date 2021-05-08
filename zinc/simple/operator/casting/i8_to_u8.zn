@@ -1,0 +1,40 @@
+//! { "ignore": true, "cases": [ {
+//!     "entry": "zero",
+//!     "expected": 0
+//! }, {
+//!     "entry": "ordinar",
+//!     "expected": 42
+//! }, {
+//!     "entry": "max",
+//!     "expected": 127
+//! }, {
+//!     "ignore": true, "entry": "overflow_negative_minimal",
+//!     "engines": ["zkevm"], "expected": "error"
+//! }, {
+//!     "ignore": true, "entry": "overflow_negative",
+//!     "engines": ["zkevm"], "expected": "error"
+//! } ] }
+
+fn zero() -> u64 {
+    main(0) as u64
+}
+
+fn ordinar() -> u64 {
+    main(42) as u64
+}
+
+fn max() -> u64 {
+    main(127) as u64
+}
+
+fn overflow_negative_minimal() -> u64 {
+    main(-1) as u64
+}
+
+fn overflow_negative() -> u64 {
+    main(-42) as u64
+}
+
+fn main(a: i8) -> u8 {
+    a as u8
+}

@@ -1,0 +1,26 @@
+//! { "ignore": true, "cases": [ {
+//!     "entry": "zero_zero",
+//!     "expected": 0
+//! }, {
+//!     "entry": "ordinar",
+//!     "expected": 63
+//! }, {
+//!     "entry": "max_max",
+//!     "expected": 255
+//! } ] }
+
+fn zero_zero() -> u64 {
+    main(0, 0) as u64
+}
+
+fn ordinar() -> u64 {
+    main(42, 21) as u64
+}
+
+fn max_max() -> u64 {
+    main(255, 255) as u64
+}
+
+fn main(a: u8, b: u8) -> u8 {
+    a | b
+}

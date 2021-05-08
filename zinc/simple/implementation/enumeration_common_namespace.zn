@@ -1,0 +1,24 @@
+//! { "cases": [ {
+//!     "entry": "entry",
+//!     "expected": 51
+//! } ] }
+
+enum Data {
+    VALUE = 42,
+}
+
+fn entry() -> u64 {
+    main(3) as u64
+}
+
+impl Data {
+    const ANOTHER: u8 = 25;
+
+    pub fn test(witness: u8) -> u8 {
+        (Self::VALUE as u8 - Self::ANOTHER) * witness
+    }
+}
+
+fn main(witness: u8) -> u8 {
+    Data::test(witness)
+}

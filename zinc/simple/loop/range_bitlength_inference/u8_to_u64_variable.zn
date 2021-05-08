@@ -1,0 +1,13 @@
+//! { "cases": [ {
+//!     "entry": "main",
+//!     "expected": 55
+//! } ] }
+
+fn main() -> u64 {
+    let limit: u64 = 10;
+    let mut sum: u64 = 0;
+    for i in 0..=limit {
+        sum += i;
+    }
+    sum
+}

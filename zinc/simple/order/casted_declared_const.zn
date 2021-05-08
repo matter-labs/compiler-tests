@@ -1,0 +1,27 @@
+//! { "cases": [ {
+//!     "entry": "remainder_zero",
+//!     "expected": 5
+//! }, {
+//!     "entry": "remainder_one",
+//!     "expected": 7
+//! }, {
+//!     "entry": "remainder_two",
+//!     "expected": 8
+//! } ] }
+
+fn remainder_zero() -> u64 {
+    main(15 as u32) as u64
+}
+
+fn remainder_one() -> u64 {
+    main(22 as u32) as u64
+}
+
+fn remainder_two() -> u64 {
+    main(26 as u32) as u64
+}
+
+fn main(witness: u32) -> u32 {
+    const CONST: u8 = 3;
+    witness / CONST as u32
+}

@@ -1,0 +1,30 @@
+//! { "cases": [ {
+//!     "entry": "one",
+//!     "expected": 120
+//! }, {
+//!     "entry": "two",
+//!     "expected": 720
+//! }, {
+//!     "entry": "three",
+//!     "expected": 5040
+//! } ] }
+
+fn one() -> u64 {
+    main(5) as u64
+}
+
+fn two() -> u64 {
+    main(6) as u64
+}
+
+fn three() -> u64 {
+    main(7) as u64
+}
+
+fn main(n: u8) -> u64 {
+    let mut fact: u64 = 1;
+    for i in 1..=n {
+        fact *= i as u64;
+    }
+    fact
+}
