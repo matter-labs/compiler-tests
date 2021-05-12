@@ -3,12 +3,14 @@
 //!     "engines": ["zkevm"], "expected": 15000
 //! } ] }
 
+const SIZE: u8 = 4;
+
 contract Test {
-    data: [u16; 4];
+    data: [u16; SIZE];
 
     pub fn entry(self) -> u64 {
         Self {
-            data: [0 as u16; 4],
+            data: [0 as u16; SIZE],
         }.default() as u64
     }
 
@@ -19,7 +21,7 @@ contract Test {
         self.data[3] = 5 as u16;
 
         let mut product: u16 = 1;
-        for i in 0..4 {
+        for i in 0..SIZE {
             product *= self.data[i];
         }
         product

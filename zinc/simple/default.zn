@@ -1,0 +1,19 @@
+//! { "cases": [ {
+//!     "entry": "first",
+//!     "expected": 42
+//! }, {
+//!     "entry": "second",
+//!     "expected": 42
+//! } ] }
+
+contract Test {
+    fn first() -> u64 {
+        let result: u64 = 42;
+        result
+    }
+
+    fn second() -> u64 {
+        let result: u64 = 42;
+        result
+    }
+}

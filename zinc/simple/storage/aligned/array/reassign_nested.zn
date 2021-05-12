@@ -3,19 +3,21 @@
 //!     "expected": 126
 //! } ] }
 
+const SIZE: u8 = 4;
+
 contract Test {
-    data: [[u256; 4]; 4];
+    data: [[u256; SIZE]; SIZE];
 
     const TEST: u8 = 42;
 
     pub fn entry(self) -> u64 {
         Self {
-            data: [[0 as u256; 4]; 4],
+            data: [[0 as u256; SIZE]; SIZE],
         }.default(42) as u64
     }
 
     fn default(mut self, argument: u8) -> u8 {
-        self.data[3][3] = argument as u256;
+        self.data[3][3] += argument as u256;
 
         argument + Self::TEST + (self.data[3][3] as u8)
     }

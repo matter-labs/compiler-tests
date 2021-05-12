@@ -3,12 +3,14 @@
 //!     "engines": ["zkevm"], "expected": 50
 //! } ] }
 
+const SIZE: u8 = 4;
+
 contract Test {
-    data: [u8; 4];
+    data: [u8; SIZE];
 
     pub fn entry(self) -> u64 {
         Self {
-            data: [0; 4],
+            data: [0; SIZE],
         }.default() as u64
     }
 
@@ -19,7 +21,7 @@ contract Test {
         self.data[3] = 5;
 
         let mut sum = 0;
-        for i in 0..4 {
+        for i in 0..SIZE {
             sum += self.data[i];
         }
         sum

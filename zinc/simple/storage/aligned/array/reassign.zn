@@ -3,14 +3,16 @@
 //!     "expected": 126
 //! } ] }
 
+const SIZE: u8 = 4;
+
 contract Test {
-    data: [u256; 4];
+    data: [u256; SIZE];
 
     const TEST: u8 = 42;
 
     pub fn entry(self) -> u64 {
         Self {
-            data: [0 as u256; 4],
+            data: [0 as u256; SIZE],
         }.default(42) as u64
     }
 

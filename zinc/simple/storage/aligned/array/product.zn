@@ -1,27 +1,29 @@
 //! { "cases": [ {
 //!     "entry": "entry",
-//!     "expected": 50
+//!     "expected": 15000
 //! } ] }
 
+const SIZE: u8 = 4;
+
 contract Test {
-    data: [u256; 4];
+    data: [u256; SIZE];
 
     pub fn entry(self) -> u64 {
         Self {
-            data: [0 as u256; 4],
+            data: [0 as u256; SIZE],
         }.default() as u64
     }
 
-    fn default(mut self) -> u8 {
+    fn default(mut self) -> u16 {
         self.data[0] = 20 as u256;
         self.data[1] = 15 as u256;
         self.data[2] = 10 as u256;
         self.data[3] = 5 as u256;
 
-        let mut sum = 0;
-        for i in 0..4 {
-            sum += self.data[i] as u8;
+        let mut product: u16 = 1;
+        for i in 0..SIZE {
+            product *= (self.data[i] as u16);
         }
-        sum
+        product
     }
 }
