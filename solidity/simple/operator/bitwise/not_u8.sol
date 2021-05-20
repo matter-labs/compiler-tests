@@ -1,4 +1,4 @@
-//! { "ignore": true, "cases": [ {
+//! { "cases": [ {
 //!     "entry": "ordinar",
 //!     "expected": 213
 //! }, {

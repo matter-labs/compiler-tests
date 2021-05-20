@@ -1,4 +1,4 @@
-//! { "ignore": true, "cases": [ {
+//! { "cases": [ {
 //!     "entry": "zero_zero",
 //!     "expected": 0
 //! }, {
