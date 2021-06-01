@@ -1,18 +1,23 @@
 //! { "cases": [ {
 //!     "name": "default",
-//!     "entry": "default",
-//!     "calldata": [
-//!         "5"
+//!     "input": [
+//!         {
+//!             "entry": "default",
+//!             "calldata": [
+//!                 "5"
+//!             ]
+//!         }
 //!     ],
-//!     "expected": 5
+//!     "expected": [
+//!         "5"
+//!     ]
 //! } ] }
 
 contract Test {
-    field_1: u8;
-    field_2: u8;
+    field: u8;
 
     pub fn default(mut self, witness: u8) -> u8 {
-        self.field_2 += witness;
-        self.field_2
+        self.field += witness;
+        self.field
     }
 }
