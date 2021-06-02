@@ -1,0 +1,28 @@
+//! { "cases": [ {
+//!     "name": "default",
+//!     "input": [
+//!         {
+//!             "entry": "default",
+//!             "calldata": [
+//!                 "16"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "81"
+//!     ]
+//! } ] }
+
+contract Test {
+    field_1: u256;
+    field_2: u256;
+    field_3: u256;
+
+    pub fn default(mut self, witness: u8) -> u8 {
+        self.field_1 = 3 as u256;
+        self.field_2 = 5 as u256;
+        self.field_3 = 2 as u256;
+
+        19 * 3 - 8 / (self.field_1 as u8) + (witness / ((self.field_2 as u8) - 3) + 5) * (8 / (self.field_3 as u8) / 2)
+    }
+}
