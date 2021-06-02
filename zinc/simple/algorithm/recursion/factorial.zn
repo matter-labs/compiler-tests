@@ -23,7 +23,7 @@ fn twelfth() -> u64 {
 
 fn fact(n: u8) -> u64 {
     if n == 0 {
-        return 1 as u64;
+        return 1;
     }
 
     fact(n - 1) * (n as u64)

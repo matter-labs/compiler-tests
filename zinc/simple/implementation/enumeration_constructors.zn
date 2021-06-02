@@ -16,15 +16,15 @@ enum List {
 }
 
 fn one() -> u64 {
-    main(5 as u256) as u64
+    main(5) as u64
 }
 
 fn two() -> u64 {
-    main(100 as u256) as u64
+    main(100) as u64
 }
 
 fn three() -> u64 {
-    main(999999 as u256) as u64
+    main(999999) as u64
 }
 
 impl List {

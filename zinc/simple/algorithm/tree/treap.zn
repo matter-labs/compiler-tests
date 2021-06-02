@@ -62,8 +62,7 @@ fn one() -> u64 {
                  res.0[3] == 4 &&
                  res.0[4] == 5 &&
                  res.0[5] == 7;
-    if result
-        {1} else {0} as u64
+    if result { 1 } else { 0 }
 }
 
 fn two() -> u64 {
@@ -119,8 +118,7 @@ fn two() -> u64 {
                  res.0[3] == 6 &&
                  res.0[4] == 7 &&
                  res.0[5] == 10;
-    if result
-        {1} else {0} as u64
+    if result { 1 } else { 0 }
 }
 
 impl Memory {

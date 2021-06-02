@@ -59,15 +59,15 @@ fn max_by_zero() -> u64 {
 }
 
 fn ordinar_positive() -> u64 {
-    main(42 as i8, 7 as i8) as u64
+    main(42, 7) as u64
 }
 
 fn ordinar_negative_divided() -> u64 {
-    main(-(42 as i8), 7 as i8) as u64
+    main(-(42 as i8), 7) as u64
 }
 
 fn ordinar_negative_divider() -> u64 {
-    main(42 as i8, -(7 as i8)) as u64
+    main(42, -(7 as i8)) as u64
 }
 
 fn ordinar_negative_both() -> u64 {
@@ -75,23 +75,23 @@ fn ordinar_negative_both() -> u64 {
 }
 
 fn ordinar_max_remainder() -> u64 {
-    main(48 as i8, 7 as i8) as u64
+    main(48, 7) as u64
 }
 
 fn ordinar_next() -> u64 {
-    main(49 as i8, 7 as i8) as u64
+    main(49, 7) as u64
 }
 
 fn to_min() -> u64 {
-    main(-(128 as i8), 1 as i8) as u64
+    main(-(128 as i8), 1) as u64
 }
 
 fn to_max() -> u64 {
-    main(127 as i8, 1 as i8) as u64
+    main(127, 1) as u64
 }
 
 fn to_one_positives() -> u64 {
-    main(127 as i8, 127 as i8) as u64
+    main(127, 127) as u64
 }
 
 fn to_one_negatives() -> u64 {

@@ -28,19 +28,19 @@
 //! } ] }
 
 fn zero_zero() -> u64 {
-    main(0 as i8, 0 as i8) as u64
+    main(0, 0) as u64
 }
 
 fn ordinar_positive() -> u64 {
-    main(42 as i8, 3 as i8) as u64
+    main(42, 3) as u64
 }
 
 fn ordinar_negative_first() -> u64 {
-    main(-(42 as i8), 3 as i8) as u64
+    main(-(42 as i8), 3) as u64
 }
 
 fn ordinar_negative_second() -> u64 {
-    main(42 as i8, -(3 as i8)) as u64
+    main(42, -(3 as i8)) as u64
 }
 
 fn ordinar_negative_both() -> u64 {
@@ -48,7 +48,7 @@ fn ordinar_negative_both() -> u64 {
 }
 
 fn to_max() -> u64 {
-    main(127 as i8, 1 as i8) as u64
+    main(127, 1) as u64
 }
 
 fn overflow_negative() -> u64 {

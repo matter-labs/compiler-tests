@@ -6,7 +6,7 @@
 const CONST: u248 = 42;
 
 fn entry() -> u64 {
-    main(25 as u248) as u64
+    main(25) as u64
 }
 
 fn main(witness: u248) -> u248 {

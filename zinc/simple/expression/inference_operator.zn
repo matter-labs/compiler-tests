@@ -1,4 +1,4 @@
-//! { "engines": ["zkevm"], "cases": [ {
+//! { "cases": [ {
 //!     "entry": "entry",
 //!     "expected": 64516
 //! } ] }
@@ -7,6 +7,6 @@ fn entry() -> u64 {
     main(4) as u64
 }
 
-fn main(witness: u8) -> u24 {
-    65536 - 255 * (witness as u24)
+fn main(witness: u8) -> u32 {
+    65536 - 255 * (witness as u32)
 }

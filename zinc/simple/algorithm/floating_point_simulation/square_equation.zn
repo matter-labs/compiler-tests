@@ -17,8 +17,7 @@ fn no_solution() -> u64 {
     let mb = 1 as u128; // b = -1
     let c = 1 as u128;
     let p = main(a, mb, c);
-    if !p.0
-        {1} else {0} as u64
+    if !p.0 { 1 } else { 0 }
 }
 
 fn first() -> u64 {
@@ -30,8 +29,7 @@ fn first() -> u64 {
     let result = p.0 &&
         p.1 * PRECISION / EPS == 278 &&
         p.2 * PRECISION / EPS == 71;
-    if result
-        {1} else {0} as u64
+    if result { 1 } else { 0 }
 }
 
 fn second() -> u64 {
@@ -43,8 +41,7 @@ fn second() -> u64 {
     let result = p.0 &&
         p.1 * PRECISION / EPS == 100 &&
         p.2 * PRECISION / EPS == 70;
-    if result
-        {1} else {0} as u64
+    if result { 1 } else { 0 }
 }
 
 fn sqrt(n: u128) -> u128 {

@@ -18,8 +18,7 @@ fn complex() -> u64 {
         result = result && hash(array, 0, i + 1) == hash(array, ARRAY_SIZE/2, ARRAY_SIZE/2 + i + 1)
             &&  hash(array, i, ARRAY_SIZE/2) == hash(array, i + ARRAY_SIZE/2, ARRAY_SIZE);
     }
-    if result
-        {1} else {0} as u64
+    if result { 1 } else { 0 }
 }
 
 fn hash(array: [u8; ARRAY_SIZE], begin: u8, end: u8) -> u128 {

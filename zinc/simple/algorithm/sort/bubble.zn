@@ -24,7 +24,7 @@ fn none() -> u64 {
     let is_seven_first = output[0] == 7;
     let is_six_last = output[ARRAY_SIZE - 1] == 6;
     let result = is_seven_first && is_six_last;
-    if result { 1 } else { 0 } as u64
+    if result { 1 } else { 0 }
 }
 
 fn ascending() -> u64 {
@@ -34,7 +34,7 @@ fn ascending() -> u64 {
     let is_one_first = output[0] == 1;
     let is_ten_last = output[ARRAY_SIZE - 1] == 10;
     let result = is_one_first && is_ten_last;
-    if result { 1 } else { 0 } as u64
+    if result { 1 } else { 0 }
 }
 
 fn descending() -> u64 {
@@ -44,7 +44,7 @@ fn descending() -> u64 {
     let is_ten_first = output[0] == 10;
     let is_one_last = output[ARRAY_SIZE - 1] == 1;
     let result = is_ten_first && is_one_last;
-    if result { 1 } else { 0 } as u64
+    if result { 1 } else { 0 }
 }
 
 fn main(mut array: [u8; ARRAY_SIZE], direction: Direction) -> [u8; ARRAY_SIZE] {

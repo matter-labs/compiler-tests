@@ -72,8 +72,7 @@ fn intersection_point1() -> u64 {
     let b2 = 1 as u128;
     let mc2 = 2 as u128;
     let point = lines_intersection(a1, mb1, c1, a2, b2, mc2);
-    if point.x * PRECISION / EPS == 100 && point.y * PRECISION / EPS == 100
-        {1} else {0} as u64
+    if point.x * PRECISION / EPS == 100 && point.y * PRECISION / EPS == 100 { 1 } else { 0 }
 }
 
 fn intersection_point2() -> u64 {
@@ -85,8 +84,7 @@ fn intersection_point2() -> u64 {
     let mc2 = 2133 as u128;
     // 0.695428.... 12.185112...
     let point = lines_intersection(a1, mb1, c1, a2, b2, mc2);
-    if point.x * PRECISION / EPS == 69 && point.y * PRECISION / EPS == 1218
-        {1} else {0} as u64
+    if point.x * PRECISION / EPS == 69 && point.y * PRECISION / EPS == 1218 { 1 } else { 0 }
 }
 
 fn sqrt(n: u128) -> u128 {

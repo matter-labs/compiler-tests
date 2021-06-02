@@ -10,15 +10,15 @@
 //! } ] }
 
 fn gcd_15_6() -> u64 {
-    gcd(15 as u64, 6 as u64)
+    gcd(15, 6)
 }
 
 fn gcd_23_19() -> u64 {
-    gcd(23 as u64, 19 as u64)
+    gcd(23, 19)
 }
 
 fn gcd_76800_15435() -> u64 {
-    gcd(76800 as u64, 15435 as u64)
+    gcd(76800, 15435)
 }
 
 // first(a) should be greater then second(b)

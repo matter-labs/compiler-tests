@@ -7,32 +7,32 @@ fn entry() -> u64 {
     let mut result = true;
     // test returns
     for i in 1..=8 {
-        result = result && test(i) == i as u64 * 10 as u64;
+        result = result && test(i) == i as u64 * 10;
     }
     // test break
     for i in 1..=8 {
-        result = result && test(20 + i) == 0 as u64;
+        result = result && test(20 + i) == 0;
     }
     // test continue
-    result = result && test(11) == 0 as u64;
-    result = result && test(12) == 0 as u64;
-    result = result && test(13) == 0 as u64;
+    result = result && test(11) == 0;
+    result = result && test(12) == 0;
+    result = result && test(13) == 0;
 
     // cnt
-    result = result && test(0) == 864 as u64;
+    result = result && test(0) == 864;
 
-    result = result && test(31) == 288 as u64;
-    result = result && test(32) == 576 as u64;
-    result = result && test(33) == 216 as u64;
+    result = result && test(31) == 288;
+    result = result && test(32) == 576;
+    result = result && test(33) == 216;
 
-    if result { 1 } else { 0 } as u64
+    if result { 1 } else { 0 }
 }
 
 fn test(param: u8) -> u64 {
     let mut cnt = 0 as u64;
     for i in 0..2 {
         if param == 1 {
-            return param as u64 * 10 as u64; // 10
+            return param as u64 * 10; // 10
         }
         if param == 21 {
             break;
@@ -51,7 +51,7 @@ fn test(param: u8) -> u64 {
             }
             loop {
                 if param == 3 {
-                    return param as u64 * 10 as u64; // 30
+                    return param as u64 * 10; // 30
                 }
                 p += 2;
                 if p%8 == 0 {
@@ -65,7 +65,7 @@ fn test(param: u8) -> u64 {
                 }
                 for h in 1..=255 {
                     if param == 4 {
-                        return 40 as u64;
+                        return 40;
                     }
                     if h > 2 {
                         break;
@@ -121,7 +121,7 @@ fn test(param: u8) -> u64 {
                                         continue;
                                     }
                                     if param == 8 {
-                                        return 80 as u64;
+                                        return 80;
                                     }
                                     if param == 13 {
                                         continue;
@@ -130,7 +130,7 @@ fn test(param: u8) -> u64 {
                                 }
                             }
                             if param == 6 {
-                                return 60 as u64;
+                                return 60;
                             }
                         }
                     }
@@ -138,7 +138,7 @@ fn test(param: u8) -> u64 {
             }
             j *= 2;
             if param == 2 {
-                return 20 as u64;
+                return 20;
             }
         }
     }

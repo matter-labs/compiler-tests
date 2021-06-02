@@ -11,7 +11,7 @@ contract Test {
         Self {
             a: 0 as u248,
             b: 0 as u248,
-        }.default(42 as u248) as u64
+        }.default(42) as u64
     }
 
     pub fn default(mut self, value: u248) -> u248 {

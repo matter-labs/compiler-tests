@@ -14,15 +14,15 @@ struct Data {
 }
 
 fn first() -> u64 {
-    main(42 as u256) as u64
+    main(42) as u64
 }
 
 fn second() -> u64 {
-    main(64 as u256) as u64
+    main(64) as u64
 }
 
 fn third() -> u64 {
-    main(65535 as u256) as u64
+    main(65535) as u64
 }
 
 impl Data {

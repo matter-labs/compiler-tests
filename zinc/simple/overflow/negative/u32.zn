@@ -4,7 +4,7 @@
 //! } ] }
 
 fn default() -> u64 {
-    main(0 as u32) as u64
+    main(0) as u64
 }
 
 fn main(witness: u32) -> u32 {

@@ -4,9 +4,9 @@
 //! } ] }
 
 fn entry() -> u64 {
-    main(0 as u256, 0)
+    main(0, 0)
 }
 
 fn main(a: u256, b: u8) -> u64 {
-    42 as u64
+    42
 }

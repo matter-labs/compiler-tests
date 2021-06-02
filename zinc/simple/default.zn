@@ -3,7 +3,7 @@
 //!     "expected": 42
 //! }, {
 //!     "entry": "second",
-//!     "expected": 42
+//!     "expected": 99
 //! } ] }
 
 contract Test {
@@ -13,7 +13,7 @@ contract Test {
     }
 
     fn second() -> u64 {
-        let result: u64 = 42;
+        let result: u64 = 99;
         result
     }
 }

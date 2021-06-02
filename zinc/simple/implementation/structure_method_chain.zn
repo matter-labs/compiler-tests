@@ -14,15 +14,15 @@ struct Data {
 }
 
 fn first() -> u64 {
-    main(42 as u256) as u64
+    main(42) as u64
 }
 
 fn second() -> u64 {
-    main(64 as u256) as u64
+    main(64) as u64
 }
 
 fn third() -> u64 {
-    main(1000000 as u256) as u64
+    main(1000000) as u64
 }
 
 impl Data {
@@ -32,19 +32,19 @@ impl Data {
 
     pub fn double(self) -> Self {
         Self {
-            a: self.a * 2 as u256,
+            a: self.a * 2,
         }
     }
 
     pub fn triple(self) -> Self {
         Self {
-            a: self.a * 3 as u256,
+            a: self.a * 3,
         }
     }
 
     pub fn quadruple(self) -> Self {
         Self {
-            a: self.a * 4 as u256,
+            a: self.a * 4,
         }
     }
 

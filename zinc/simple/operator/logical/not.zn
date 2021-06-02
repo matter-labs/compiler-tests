@@ -7,11 +7,11 @@
 //! } ] }
 
 fn _false() -> u64 {
-    if main(false) { 1 } else { 0 } as u64
+    if main(false) { 1 } else { 0 }
 }
 
 fn _true() -> u64 {
-    if main(true) { 1 } else { 0 } as u64
+    if main(true) { 1 } else { 0 }
 }
 
 fn main(a: bool) -> bool {
