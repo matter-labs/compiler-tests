@@ -1,0 +1,29 @@
+//! { "cases": [ {
+//!     "entry": "default",
+//!     "expected": 42
+//! } ] }
+
+fn default() -> u64 {
+    main(10, 15, 17) as u64
+}
+
+fn malloc(size: u16) -> *mut u8 {
+    let mut memory_pointer: *mut u16 = 0x0002 as u16;
+    let return_pointer = *memory_pointer;
+    *memory_pointer += size;
+    return_pointer as *mut u8
+}
+
+fn main(a: u8, b: u8, c: u8) -> u8 {
+    let mut memory_pointer: *mut u16 = 0x0002 as u16;
+    *memory_pointer = 0x0004 as u16;
+
+    let mut pointer_a = malloc(1);
+    *pointer_a = a;
+    let mut pointer_b = malloc(1);
+    *pointer_b = b;
+    let mut pointer_c = malloc(1);
+    *pointer_c = c;
+
+    *pointer_a + *pointer_b + *pointer_c
+}
