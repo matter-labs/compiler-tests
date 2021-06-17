@@ -1,0 +1,23 @@
+//! { "cases": [ {
+//!     "entry": "entry",
+//!     "expected": 1
+//! } ] }
+
+fn entry() -> u64 {
+    let output = f();
+    if output[0] == 1 &&
+        output[1] == 2 &&
+        output[2] == 3 &&
+        output[3] == 4 &&
+        output[4] == 5
+        {1} else {0}
+}
+
+fn f() -> [u8; 5] {
+    return [1 as u8, 2 as u8, 3 as u8, 4 as u8, 5 as u8];
+}
+
+fn test() -> (u8, u8, u8, u8, u8) {
+    let tester = f();
+    (tester[0], tester[1], tester[2], tester[3], tester[4])
+}

@@ -1,0 +1,23 @@
+//! { "cases": [ {
+//!     "entry": "entry_div",
+//!     "expected": 3
+//! }, {
+//!     "entry": "entry_mod",
+//!     "expected": 1
+//! } ] }
+
+fn entry_div() -> u64 {
+    div(7, 2) as u64
+}
+
+fn entry_mod() -> u64 {
+    _mod(7, 2) as u64
+}
+
+fn div(a: u256, b: u256) -> u256 {
+    a / b
+}
+
+fn _mod(a: u256, b: u256) -> u256 {
+    a % b
+}
