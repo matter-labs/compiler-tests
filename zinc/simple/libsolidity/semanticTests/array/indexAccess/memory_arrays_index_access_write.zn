@@ -1,0 +1,39 @@
+//! { "cases": [ {
+//!     "entry": "entry",
+//!     "expected": 1
+//! } ] }
+
+fn entry() -> u64 {
+    let mut result = true;
+    let output = f();
+    result = result && output[0][0] == 0;
+    result = result && output[0][1] == 0;
+    result = result && output[0][2] == 0;
+
+    result = result && output[1][0] == 0;
+    result = result && output[1][1] == 0;
+    result = result && output[1][2] == 0;
+
+    result = result && output[2][0] == 0;
+    result = result && output[2][1] == 0;
+    result = result && output[2][2] == 1;
+
+    result = result && output[3][0] == 0;
+    result = result && output[3][1] == 0;
+    result = result && output[3][2] == 7;
+
+    if result
+        {1} else {0}
+}
+
+fn set(mut x: [[u24; 3]; 4]) -> [[u24; 3]; 4] {
+    x[2][2] = 1 as u24;
+    x[3][2] = 7 as u24;
+    x
+}
+
+fn f() -> [[u24; 3]; 4] {
+    let mut data = [[0 as u24; 3]; 4];
+    data = set(data);
+    data
+}

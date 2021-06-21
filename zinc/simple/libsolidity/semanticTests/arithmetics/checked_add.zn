@@ -1,0 +1,19 @@
+//! { "cases": [ {
+//!     "entry": "entry1",
+//!     "expected": 65534
+//! }, {
+//!     "entry": "entry2",
+//!     "expected": 65535
+//! } ] }
+
+fn entry1() -> u64 {
+    f(65534, 0) as u64
+}
+
+fn entry2() -> u64 {
+    f(65535, 0) as u64
+}
+
+fn f(a: u16, b: u16) -> u16 {
+    a + b
+}

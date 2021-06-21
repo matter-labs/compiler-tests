@@ -1,0 +1,20 @@
+//! { "cases": [ {
+//!     "entry": "entry",
+//!     "expected": 1
+//! } ] }
+
+fn entry() -> u64 {
+    let output = f(
+        [1 as u16, 2 as u16, 3 as u16],
+        [[11 as u16, 12 as u16], [21 as u16, 22 as u16], [31 as u16, 32 as u16]],
+        1 as u256,
+        2 as u256,
+        1 as u256
+    );
+    if output.0 == 2 && output.1 == 32
+        {1} else {0}
+}
+
+fn f(a: [u16; 3], b: [[u16; 2]; 3], i: u256, j: u256, k: u256) -> (u256, u256) {
+    (a[i] as u256, b[j][k] as u256)
+}
