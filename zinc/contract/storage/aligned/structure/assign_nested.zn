@@ -1,0 +1,34 @@
+//! { "cases": [ {
+//!     "name": "default",
+//!     "input": [
+//!         {
+//!             "entry": "default",
+//!             "calldata": [
+//!                 "42"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "126"
+//!     ]
+//! } ] }
+
+struct Data {
+    inner: Inner,
+}
+
+struct Inner {
+    value: u256,
+}
+
+contract Test {
+    data: Data;
+
+    const TEST: u8 = 42;
+
+    fn default(mut self, argument: u8) -> u8 {
+        self.data.inner.value = argument as u256;
+
+        argument + Self::TEST + (self.data.inner.value as u8)
+    }
+}

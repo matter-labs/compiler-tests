@@ -1,0 +1,26 @@
+//! { "cases": [ {
+//!     "name": "default",
+//!     "input": [
+//!         {
+//!             "entry": "default",
+//!             "calldata": [
+//!                 "42"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "126"
+//!     ]
+//! } ] }
+
+contract Test {
+    data: ((u8, u8, u8), (u8, u8, u8), (u8, u8, u8));
+
+    const TEST: u8 = 42;
+
+    fn default(mut self, argument: u8) -> u8 {
+        (self.data.2).2 += argument;
+
+        argument + Self::TEST + (self.data.2).2
+    }
+}

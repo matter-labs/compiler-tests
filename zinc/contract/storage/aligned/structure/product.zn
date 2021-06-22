@@ -1,0 +1,38 @@
+//! { "cases": [ {
+//!     "name": "default",
+//!     "input": [
+//!         {
+//!             "entry": "default",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "15000"
+//!     ]
+//! } ] }
+
+struct Data {
+    a: u256,
+    b: u256,
+    c: u256,
+    d: u256,
+}
+
+contract Test {
+    data: Data;
+
+    fn default(mut self) -> u16 {
+        self.data.a = 20 as u256;
+        self.data.b = 15 as u256;
+        self.data.c = 10 as u256;
+        self.data.d = 5 as u256;
+
+        let mut product: u16 = 1;
+        product *= self.data.a as u16;
+        product *= self.data.b as u16;
+        product *= self.data.c as u16;
+        product *= self.data.d as u16;
+        product
+    }
+}
