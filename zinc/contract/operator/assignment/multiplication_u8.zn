@@ -1,0 +1,76 @@
+//! { "cases": [ {
+//!     "name": "zero_zero",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "0", "0"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "0"
+//!     ]
+//! }, {
+//!     "name": "ordinar",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "42", "5"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "210"
+//!     ]
+//! }, {
+//!     "name": "to_max",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "51", "5"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "255"
+//!     ]
+//! }, {
+//!     "name": "overflow",
+//!     "ignore": true,
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "100", "5"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "error"
+//!     ]
+//! }, {
+//!     "name": "overflow_minimal",
+//!     "ignore": true,
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "32", "8"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "error"
+//!     ]
+//! } ] }
+
+contract Test {
+    pub fn main(self, a: u8, b: u8) -> u8 {
+        let mut c = a;
+        c *= b;
+        c
+    }
+}

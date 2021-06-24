@@ -1,0 +1,157 @@
+//! { "cases": [ {
+//!     "name": "entry",
+//!     "input": [
+//!         {
+//!             "entry": "entry",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
+//! } ] }
+
+contract Test {
+    pub fn entry(self) -> u64 {
+        let mut result = true;
+        // test returns
+        for i in 1..=8 {
+            result = result && Self::test(i) == i as u64 * 10;
+        }
+        // test break
+        for i in 1..=8 {
+            result = result && Self::test(20 + i) == 0;
+        }
+        // test continue
+        result = result && Self::test(11) == 0;
+        result = result && Self::test(12) == 0;
+        result = result && Self::test(13) == 0;
+
+        // cnt
+        result = result && Self::test(0) == 864;
+
+        result = result && Self::test(31) == 288;
+        result = result && Self::test(32) == 576;
+        result = result && Self::test(33) == 216;
+
+        if result { 1 } else { 0 }
+    }
+
+    fn test(param: u8) -> u64 {
+        let mut cnt = 0 as u64;
+        for i in 0..2 {
+            if param == 1 {
+                return param as u64 * 10; // 10
+            }
+            if param == 21 {
+                break;
+            }
+            if param == 11 {
+                continue;
+            }
+            let mut j = 1;
+            while j < 4 {
+                let mut p = 0;
+                if param == 22 {
+                    break;
+                }
+                if param == 33 && j > 1 {
+                    return cnt;
+                }
+                loop {
+                    if param == 3 {
+                        return param as u64 * 10; // 30
+                    }
+                    p += 2;
+                    if p%8 == 0 {
+                        break;
+                    }
+                    if param == 12 {
+                        continue;
+                    }
+                    if param == 23 {
+                        break;
+                    }
+                    for h in 1..=255 {
+                        if param == 4 {
+                            return 40;
+                        }
+                        if h > 2 {
+                            break;
+                        }
+                        if param == 24 {
+                            break;
+                        }
+                        for k in 10..12 {
+                            let mut x = 7;
+                            if param == 5 {
+                                return 5 * k as u64; // 50
+                            }
+                            if param == 25 {
+                                break;
+                            }
+                            loop {
+                                x -= 1;
+                                if x == 0 {
+                                    break;
+                                }
+                                if x % 2 == 0 {
+                                    continue;
+                                }
+                                let mut y = 10;
+                                if param == 26 {
+                                    break;
+                                }
+                                while y < 17 {
+                                    if param == 7 {
+                                        return 7*y as u64; // 70
+                                    }
+                                    if param == 27 {
+                                        break;
+                                    }
+                                    y += 1;
+                                    if y % 3 == 0 {
+                                        continue;
+                                    }
+                                    if y == 16 {
+                                        break;
+                                    }
+                                    if param == 31 && y > 11 {
+                                        continue;
+                                    }
+                                    if param == 32 && y > 13 {
+                                        break;
+                                    }
+                                    for l in 0..4 {
+                                        if param == 28 {
+                                            break;
+                                        }
+                                        if l % 2 == 0 {
+                                            continue;
+                                        }
+                                        if param == 8 {
+                                            return 80;
+                                        }
+                                        if param == 13 {
+                                            continue;
+                                        }
+                                        cnt += 1 as u64;
+                                    }
+                                }
+                                if param == 6 {
+                                    return 60;
+                                }
+                            }
+                        }
+                    }
+                }
+                j *= 2;
+                if param == 2 {
+                    return 20;
+                }
+            }
+        }
+        cnt
+    }
+}

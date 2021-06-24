@@ -1,0 +1,24 @@
+//! { "cases": [ {
+//!     "name": "main",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "25"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "131"
+//!     ]
+//! } ] }
+
+contract Test {
+    const CONST: u248 = 42;
+
+    pub fn main(self, witness: u248) -> u248 {
+        let local: u248 = 64;
+
+        Self::CONST + local + witness
+    }
+}

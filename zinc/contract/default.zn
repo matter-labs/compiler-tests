@@ -1,0 +1,37 @@
+//! { "cases": [ {
+//!     "name": "first",
+//!     "input": [
+//!         {
+//!             "entry": "first",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "42"
+//!     ]
+//! }, {
+//!     "name": "second",
+//!     "input": [
+//!         {
+//!             "entry": "second",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "99"
+//!     ]
+//! } ] }
+
+contract Test {
+    pub fn first() -> u64 {
+        let result: u64 = 42;
+        result
+    }
+
+    pub fn second() -> u64 {
+        let result: u64 = 99;
+        result
+    }
+}

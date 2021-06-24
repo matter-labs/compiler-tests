@@ -1,0 +1,65 @@
+//! { "cases": [ {
+//!     "name": "element_1",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "1", "2", "3", "4",
+//!                 "0"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
+//! }, {
+//!     "name": "element_2",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "1", "2", "3", "4",
+//!                 "1"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "2"
+//!     ]
+//! }, {
+//!     "name": "element_3",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "1", "2", "3", "4",
+//!                 "2"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "3"
+//!     ]
+//! }, {
+//!     "name": "element_4",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "1", "2", "3", "4",
+//!                 "3"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "4"
+//!     ]
+//! } ] }
+
+contract Test {
+    const SIZE: u8 = 4;
+
+    pub fn main(self, array: [u8; Self::SIZE], index: u8) -> u8 {
+        array[index]
+    }
+}

@@ -1,0 +1,82 @@
+//! { "cases": [ {
+//!     "name": "first",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "42"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1008"
+//!     ]
+//! }, {
+//!     "name": "second",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "64"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1536"
+//!     ]
+//! }, {
+//!     "name": "third",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "1000000"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "24000000"
+//!     ]
+//! } ] }
+
+struct Data {
+    a: u256,
+}
+
+impl Data {
+    pub fn new(a: u256) -> Self {
+        Self { a: a }
+    }
+
+    pub fn double(self) -> Self {
+        Self {
+            a: self.a * 2,
+        }
+    }
+
+    pub fn triple(self) -> Self {
+        Self {
+            a: self.a * 3,
+        }
+    }
+
+    pub fn quadruple(self) -> Self {
+        Self {
+            a: self.a * 4,
+        }
+    }
+
+    pub fn into_inner(self) -> u256 {
+        self.a
+    }
+}
+
+contract Test {
+    pub fn main(self, witness: u256) -> u256 {
+        Data::new(witness)
+            .double()
+            .triple()
+            .quadruple()
+            .into_inner()
+    }
+}

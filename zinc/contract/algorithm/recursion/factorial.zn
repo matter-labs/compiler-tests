@@ -1,0 +1,50 @@
+//! { "cases": [ {
+//!     "name": "zero",
+//!     "input": [
+//!         {
+//!             "entry": "fact",
+//!             "calldata": [
+//!                 "0"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
+//! }, {
+//!     "name": "fifth",
+//!     "input": [
+//!         {
+//!             "entry": "fact",
+//!             "calldata": [
+//!                 "5"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "120"
+//!     ]
+//! }, {
+//!     "name": "twelfth",
+//!     "input": [
+//!         {
+//!             "entry": "fact",
+//!             "calldata": [
+//!                 "12"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "479001600"
+//!     ]
+//! } ] }
+
+contract Test {
+    pub fn fact(self, n: u8) -> u64 {
+        if n == 0 {
+            return 1;
+        }
+
+        self.fact(n - 1) * (n as u64)
+    }
+}

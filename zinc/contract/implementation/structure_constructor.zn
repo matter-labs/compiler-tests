@@ -1,0 +1,56 @@
+//! { "cases": [ {
+//!     "name": "first",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "42"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "42"
+//!     ]
+//! }, {
+//!     "name": "second",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "64"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "64"
+//!     ]
+//! }, {
+//!     "name": "third",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "65535"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "65535"
+//!     ]
+//! } ] }
+
+struct Data {
+    a: u256,
+}
+
+impl Data {
+    pub fn new(a: u256) -> Self {
+        Self { a: a }
+    }
+}
+
+contract Test {
+    pub fn main(self, witness: u256) -> u256 {
+        Data::new(witness).a
+    }
+}

@@ -1,0 +1,34 @@
+//! { "cases": [ {
+//!     "name": "main",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "3"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "15"
+//!     ]
+//! } ] }
+
+struct Inner {
+    value: u8,
+}
+
+struct Test {
+    inner: Inner,
+}
+
+contract Test {
+    pub fn main(self, witness: u8) -> u8 {
+        let data = Test {
+            inner: Inner {
+                value: witness * 5,
+            },
+        };
+
+        data.inner.value
+    }
+}

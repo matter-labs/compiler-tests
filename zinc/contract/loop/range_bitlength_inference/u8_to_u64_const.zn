@@ -1,0 +1,25 @@
+//! { "cases": [ {
+//!     "name": "main",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "55"
+//!     ]
+//! } ] }
+
+const LIMIT: u64 = 10;
+
+contract Test {
+    pub fn main(self) -> u64 {
+        let mut sum: u64 = 0;
+        for i in 0..=LIMIT {
+            sum += i;
+        }
+        sum
+    }
+}

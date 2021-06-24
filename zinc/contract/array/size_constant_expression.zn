@@ -1,0 +1,26 @@
+//! { "cases": [ {
+//!     "name": "main",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "42"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "50"
+//!     ]
+//! } ] }
+
+contract Test {
+    const SIZE_HALVED: u8 = 2;
+
+    pub fn main(self, mut value: u8) -> u8 {
+        let array = [2; Self::SIZE_HALVED * 2];
+        for i in 0..Self::SIZE_HALVED * 2 {
+            value += array[i];
+        }
+        value
+    }
+}

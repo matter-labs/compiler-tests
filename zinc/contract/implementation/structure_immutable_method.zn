@@ -1,0 +1,32 @@
+//! { "cases": [ {
+//!     "name": "main",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "1", "2", "3"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "6"
+//!     ]
+//! } ] }
+
+struct Data {
+    a: u8,
+    b: u8,
+    c: u8,
+}
+
+impl Data {
+    pub fn sum(self) -> u8 {
+        self.a + self.b + self.c
+    }
+}
+
+contract Test {
+    pub fn main(self, witness: Data) -> u8 {
+        Data::sum(witness)
+    }
+}

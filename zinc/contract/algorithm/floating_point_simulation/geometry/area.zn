@@ -1,0 +1,240 @@
+//! { "cases": [ {
+//!     "name": "triangle1",
+//!     "input": [
+//!         {
+//!             "entry": "triangle1",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "600"
+//!     ]
+//! }, {
+//!     "name": "triangle2",
+//!     "input": [
+//!         {
+//!             "entry": "triangle2",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "136937"
+//!     ]
+//! }, {
+//!     "name": "polygon1",
+//!     "input": [
+//!         {
+//!             "entry": "polygon1",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1200"
+//!     ]
+//! }, {
+//!     "name": "polygon2",
+//!     "input": [
+//!         {
+//!             "entry": "polygon2",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "385600"
+//!     ]
+//! }, {
+//!     "name": "sphere1",
+//!     "input": [
+//!         {
+//!             "entry": "sphere1",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "61575"
+//!     ]
+//! }, {
+//!     "name": "sphere2",
+//!     "input": [
+//!         {
+//!             "entry": "sphere2",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "64106342310051445"
+//!     ]
+//! } ] }
+
+const EPS: u128 = 1E6;
+// PI * EPS^3
+const PI: u128 = 3141592653589793238;
+const PRECISION: u128 = 100;
+const DIM: u8 = 10;
+
+struct Triangle {
+    a: u128,
+    b: u128,
+    c: u128,
+}
+
+struct Polygon {
+    n: u8,
+    x: [u128; DIM],
+    y: [u128; DIM],
+}
+
+struct Sphere {
+    r: u128,
+}
+
+fn sqrt(n: u128) -> u128 {
+    // binary search
+    let mut l = 0 as u128;
+    let mut r = n as u128;
+    while l < r {
+        let m = (l + r + 1) / 2;
+        if m*m <= n {
+            l = m;
+        } else {
+            r = m - 1;
+        }
+    }
+    if n - l*l < (l+1)*(l+1) - n
+        {l} else {l+1}
+}
+
+impl Triangle {
+    fn area(self) -> u128 {
+        let p = (self.a + self.b + self.c) / 2;
+        sqrt(p * (p - self.a) * (p - self.b) * (p - self.c))
+    }
+}
+
+impl Polygon {
+    // coordinates should be clockwise
+    fn area(self) -> u128 {
+        let mut s = 0 as u128;
+        for i in 1..self.n {
+            s += (self.x[i] - self.x[i - 1]) * (self.y[i] + self.y[i - 1]);
+        }
+        s += (self.x[0] - self.x[self.n - 1]) * (self.y[0] + self.y[self.n - 1]) ;
+        s / 2
+    }
+}
+
+impl Sphere {
+    fn surface(self, pi: u128) -> u128 {
+        4 * pi * self.r * self.r
+    }
+}
+
+contract Test {
+    pub fn triangle1(self) -> u64 {
+        let mut a = 3 as u128;
+        let mut b = 4 as u128;
+        let mut c = 5 as u128;
+        a *= EPS;
+        b *= EPS;
+        c *= EPS;
+        let triangle = Triangle {
+            a: a,
+            b: b,
+            c: c,
+        };
+        // area * PRECISION
+        (triangle.area() * PRECISION / EPS / EPS) as u64
+    }
+
+    pub fn triangle2(self) -> u64 {
+        let mut a = 37 as u128;
+        let mut b = 111 as u128;
+        let mut c = 87 as u128;
+        a *= EPS;
+        b *= EPS;
+        c *= EPS;
+        let triangle = Triangle {
+            a: a,
+            b: b,
+            c: c,
+        };
+        // area * PRECISION
+        (triangle.area() * PRECISION / EPS / EPS) as u64
+    }
+
+    pub fn polygon1(self) -> u64 {
+        let mut x = [0 as u128; DIM];
+        let mut y = [0 as u128; DIM];
+        x[0] = 2 as u128;
+        y[0] = 4 as u128;
+        x[1] = 4 as u128;
+        y[1] = 3 as u128;
+        x[2] = 5 as u128;
+        y[2] = 1 as u128;
+        x[3] = 3 as u128;
+        y[3] = 0 as u128;
+        x[4] = 0 as u128;
+        y[4] = 0 as u128;
+        for i in 0..5 {
+            x[i] *= EPS;
+            y[i] *= EPS;
+        }
+        let polygon = Polygon {
+            n: 5,
+            x: x,
+            y: y,
+        };
+        // area * PRECISION
+        (polygon.area() * PRECISION / EPS / EPS) as u64
+    }
+
+    pub fn polygon2(self) -> u64 {
+        let mut x = [0 as u128; DIM];
+        let mut y = [0 as u128; DIM];
+        x[0] = 13 as u128;
+        y[0] = 21 as u128;
+        x[1] = 17 as u128;
+        y[1] = 29 as u128;
+        x[2] = 111 as u128;
+        y[2] = 111 as u128;
+        x[3] = 113 as u128;
+        y[3] = 92 as u128;
+        x[4] = 55 as u128;
+        y[4] = 7 as u128;
+        x[5] = 31 as u128;
+        y[5] = 7 as u128;
+        x[6] = 1 as u128;
+        y[6] = 1 as u128;
+        for i in 0..7 {
+            x[i] *= EPS;
+            y[i] *= EPS;
+        }
+        let polygon = Polygon {
+            n: 7,
+            x: x,
+            y: y,
+        };
+        // area * PRECISION
+        (polygon.area() * PRECISION / EPS / EPS) as u64
+    }
+
+    pub fn sphere1(self) -> u64{
+        let r = 7 as u128;
+        let sphere = Sphere {r: r};
+        // surface * PRECISION
+        (sphere.surface(PI) * PRECISION / EPS / EPS / EPS) as u64
+    }
+
+    pub fn sphere2(self) -> u64{
+        let r = 7142423 as u128;
+        let sphere = Sphere {r: r};
+        // surface * PRECISION
+        (sphere.surface(PI) * PRECISION / EPS / EPS / EPS) as u64
+    }
+}

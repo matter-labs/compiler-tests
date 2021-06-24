@@ -1,0 +1,20 @@
+//! { "cases": [ {
+//!     "name": "main",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "42"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "168"
+//!     ]
+//! } ] }
+
+contract Test {
+    pub fn main(self, a: u8) -> u8 {
+        a << 2
+    }
+}

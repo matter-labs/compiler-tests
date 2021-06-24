@@ -1,0 +1,30 @@
+//! { "cases": [ {
+//!     "name": "main",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "42"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "210"
+//!     ]
+//! } ] }
+
+struct Data {}
+
+impl Data {
+    const FACTOR: u8 = 5;
+
+    pub fn test(witness: u8) -> u8 {
+        witness * Self::FACTOR
+    }
+}
+
+contract Test {
+    pub fn main(self, witness: u8) -> u8 {
+        Data::test(witness)
+    }
+}

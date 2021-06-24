@@ -1,0 +1,56 @@
+//! { "cases": [ {
+//!     "name": "one",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "12"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "89"
+//!     ]
+//! }, {
+//!     "name": "two",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "14"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "233"
+//!     ]
+//! }, {
+//!     "name": "three",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "16"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "610"
+//!     ]
+//! } ] }
+
+contract Test {
+    pub fn main(self, n: u8) -> u64 {
+        let mut value_1: u64 = 0;
+        let mut value_2: u64 = 1;
+        let mut fibo = value_1;
+
+        for i in 1..=n-2 {
+            fibo = value_1 + value_2;
+            value_1 = value_2;
+            value_2 = fibo;
+        }
+
+        fibo
+    }
+}

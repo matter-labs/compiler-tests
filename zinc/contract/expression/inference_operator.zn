@@ -1,0 +1,20 @@
+//! { "cases": [ {
+//!     "name": "main",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "4"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "64516"
+//!     ]
+//! } ] }
+
+contract Test {
+    pub fn main(self, witness: u8) -> u32 {
+        65536 - 255 * (witness as u32)
+    }
+}

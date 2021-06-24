@@ -1,0 +1,25 @@
+//! { "cases": [ {
+//!     "name": "main",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "1", "2", "3", "4"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "64"
+//!     ]
+//! } ] }
+
+contract Test {
+    const SIZE: u8 = 4;
+
+    pub fn main(self, mut array: [u8; Self::SIZE]) -> u8 {
+        array[3] = 106;
+        array[1] = 42;
+
+        array[3] - array[1]
+    }
+}
