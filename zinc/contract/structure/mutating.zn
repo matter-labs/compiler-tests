@@ -13,7 +13,7 @@
 //!     ]
 //! } ] }
 
-struct Test {
+struct Data {
     x: u8,
     y: u8,
     z: u8,
@@ -21,7 +21,7 @@ struct Test {
 
 contract Test {
     pub fn main(self, witness: u8) -> u8 {
-        let mut test = Test {
+        let mut test = Data {
             x: 1,
             y: 2,
             z: 3,

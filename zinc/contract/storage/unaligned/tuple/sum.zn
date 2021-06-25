@@ -15,7 +15,7 @@
 contract Test {
     data: (u8, u8, u8, u8);
 
-    fn default(mut self) -> u8 {
+    pub fn default(mut self) -> u8 {
         self.data.0 = 20;
         self.data.1 = 15;
         self.data.2 = 10;

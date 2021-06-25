@@ -25,12 +25,12 @@
 //! } ] }
 
 contract Test {
-    pub fn first() -> u64 {
+    pub fn first(self) -> u64 {
         let result: u64 = 42;
         result
     }
 
-    pub fn second() -> u64 {
+    pub fn second(self) -> u64 {
         let result: u64 = 99;
         result
     }

@@ -15,7 +15,7 @@
 contract Test {
     data: (u256, u256, u256, u256);
 
-    fn default(mut self) -> u8 {
+    pub fn default(mut self) -> u8 {
         self.data.0 = 20 as u256;
         self.data.1 = 15 as u256;
         self.data.2 = 10 as u256;

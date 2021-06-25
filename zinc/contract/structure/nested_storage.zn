@@ -17,13 +17,13 @@ struct Inner {
     value: u8,
 }
 
-struct Test {
+struct Data {
     inner: Inner,
 }
 
 contract Test {
     pub fn main(self, witness: u8) -> u8 {
-        let data = Test {
+        let data = Data {
             inner: Inner {
                 value: witness * 5,
             },

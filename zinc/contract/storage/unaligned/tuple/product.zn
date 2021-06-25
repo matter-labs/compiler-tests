@@ -17,7 +17,7 @@ type Data = (u16, u16, u16, u16);
 contract Test {
     data: Data;
 
-    fn default(mut self) -> u16 {
+    pub fn default(mut self) -> u16 {
         self.data.0 = 20 as u16;
         self.data.1 = 15 as u16;
         self.data.2 = 10 as u16;

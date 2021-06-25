@@ -17,7 +17,7 @@ const SIZE: u8 = 4;
 contract Test {
     data: [u8; SIZE];
 
-    fn default(mut self) -> u8 {
+    pub fn default(mut self) -> u8 {
         self.data[0] = 20;
         self.data[1] = 15;
         self.data[2] = 10;

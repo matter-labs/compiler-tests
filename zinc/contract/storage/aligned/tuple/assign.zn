@@ -18,7 +18,7 @@ contract Test {
 
     const TEST: u8 = 42;
 
-    fn default(mut self, argument: u8) -> u8 {
+    pub fn default(mut self, argument: u8) -> u8 {
         (self.data).2 = argument as u256;
 
         argument + Self::TEST + ((self.data).2 as u8)

@@ -22,7 +22,7 @@ struct Data {
 contract Test {
     data: Data;
 
-    fn default(mut self) -> u16 {
+    pub fn default(mut self) -> u16 {
         self.data.a = 20 as u16;
         self.data.b = 15 as u16;
         self.data.c = 10 as u16;
