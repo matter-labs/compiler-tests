@@ -1,0 +1,27 @@
+//! { "cases": [ {
+//!     "name": "main",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "164"
+//!     ]
+//! } ] }
+
+contract Test {
+    pub fn main(self, v: [u8; 11]) -> u8 {
+        let
+            (a, _, c, (d,), e, (g, _, (j, _, k))):
+            (u8, u8, u8, (u8,), (u8, u8), (u8, u8, (u8, u8, u8))) =
+            (v[0], v[1], (v[2]), (v[3],), (v[4], v[5]), (v[6], v[7], (v[8], v[9], v[10])));
+
+        let result = (a, 42, c, (d,), e, (g, 42, (j, 42, k)));
+
+        result.0 + result.1 + result.2 + (result.3).0 + (result.4).0 + (result.4).1 + (result.5).0 + (result.5).1 + (((result.5).2).0) + (((result.5).2).1) + (((result.5).2).2)
+    }
+}

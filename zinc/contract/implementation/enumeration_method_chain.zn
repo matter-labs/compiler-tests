@@ -1,0 +1,45 @@
+//! { "cases": [ {
+//!     "name": "main",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "8"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "24"
+//!     ]
+//! } ] }
+
+enum List {
+    DEFAULT = 0,
+    FIRST = 1,
+    SECOND = 2,
+    THIRD = 3,
+}
+
+impl List {
+    pub fn new() -> Self {
+        Self::DEFAULT
+    }
+
+    pub fn into_first(self) -> Self {
+        Self::FIRST
+    }
+
+    pub fn into_second(self) -> Self {
+        Self::SECOND
+    }
+
+    pub fn into_third(self) -> Self {
+        Self::THIRD
+    }
+}
+
+contract Test {
+    pub fn main(self, witness: u8) -> u64 {
+        List::new().into_first().into_second().into_third() as u64 * (witness as u64)
+    }
+}

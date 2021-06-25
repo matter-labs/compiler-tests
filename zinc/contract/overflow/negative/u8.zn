@@ -1,0 +1,21 @@
+//! { "ignore": true,
+//! "cases": [ {
+//!     "name": "default",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "0"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "error"
+//!     ]
+//! } ] }
+
+contract Test {
+    pub fn main(self, witness: u8) -> u8 {
+        witness - 1
+    }
+}

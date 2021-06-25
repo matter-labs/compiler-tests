@@ -1,0 +1,29 @@
+//! { "cases": [ {
+//!     "name": "main",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "168", "4"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "42"
+//!     ]
+//! } ] }
+
+struct Inner {
+    value: u8
+}
+
+struct Data {
+    inner: Inner,
+}
+
+contract Test {
+    pub fn main(self, mut data: Data, divider: u8) -> Data {
+        data.inner.value /= divider;
+        data
+    }
+}

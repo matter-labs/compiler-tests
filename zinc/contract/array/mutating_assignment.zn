@@ -1,0 +1,28 @@
+//! { "cases": [ {
+//!     "name": "main",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "10", "20", "30", "40", "50", "6"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "218"
+//!     ]
+//! } ] }
+
+contract Test {
+    const SIZE: u8 = 5;
+
+    pub fn main(self, mut array: [u8; Self::SIZE], witness: u8) -> u8 {
+        array[0] += witness;
+        array[1] -= witness;
+        array[2] *= witness;
+        array[3] /= witness;
+        array[4] %= witness;
+
+        array[0] + array[1] + array[2] + array[3] + array[4]
+    }
+}

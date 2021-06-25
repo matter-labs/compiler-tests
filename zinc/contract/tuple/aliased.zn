@@ -1,0 +1,23 @@
+//! { "cases": [ {
+//!     "name": "main",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "3"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "93"
+//!     ]
+//! } ] }
+
+type Tuple = (u8, u8);
+
+contract Test {
+    pub fn main(self, witness: u8) -> u8 {
+        let tuple: Tuple = (11, 42);
+        (tuple.1 - tuple.0) * witness
+    }
+}

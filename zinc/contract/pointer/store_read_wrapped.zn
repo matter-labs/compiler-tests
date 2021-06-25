@@ -1,0 +1,54 @@
+//! { "cases": [ {
+//!     "name": "one",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "84", "21"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "21"
+//!     ]
+//! }, {
+//!     "name": "two",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "42", "42"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "42"
+//!     ]
+//! }, {
+//!     "name": "three",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "21", "84"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "84"
+//!     ]
+//! } ] }
+
+struct Wrapper {
+    pointer: *mut u8,
+}
+
+contract Test {
+    pub fn main(self, address: u16, value: u8) -> u8 {
+        let mut wrapper = Wrapper {
+            pointer: address as *mut u8,
+        };
+        *wrapper.pointer = value;
+        *wrapper.pointer
+    }
+}

@@ -1,0 +1,32 @@
+//! { "cases": [ {
+//!     "name": "default",
+//!     "input": [
+//!         {
+//!             "entry": "default",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "15000"
+//!     ]
+//! } ] }
+
+const SIZE: u8 = 4;
+
+contract Test {
+    data: [u256; SIZE];
+
+    fn default(mut self) -> u16 {
+        self.data[0] = 20 as u256;
+        self.data[1] = 15 as u256;
+        self.data[2] = 10 as u256;
+        self.data[3] = 5 as u256;
+
+        let mut product: u16 = 1;
+        for i in 0..SIZE {
+            product *= (self.data[i] as u16);
+        }
+        product
+    }
+}

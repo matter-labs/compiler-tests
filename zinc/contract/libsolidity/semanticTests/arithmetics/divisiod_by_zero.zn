@@ -1,0 +1,37 @@
+//! { "cases": [ {
+//!     "name": "div",
+//!     "input": [
+//!         {
+//!             "entry": "div",
+//!             "calldata": [
+//!                 "7", "2"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "3"
+//!     ]
+//! }, {
+//!     "name": "mod",
+//!     "input": [
+//!         {
+//!             "entry": "_mod",
+//!             "calldata": [
+//!                 "7", "2"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
+//! } ] }
+
+contract Test {
+    pub fn div(self, a: u256, b: u256) -> u256 {
+        a / b
+    }
+
+    pub fn _mod(self, a: u256, b: u256) -> u256 {
+        a % b
+    }
+}

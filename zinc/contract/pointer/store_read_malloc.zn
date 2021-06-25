@@ -1,0 +1,37 @@
+//! { "cases": [ {
+//!     "name": "default",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "10", "15", "17"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "42"
+//!     ]
+//! } ] }
+
+contract Test {
+    fn malloc(size: u16) -> *mut u8 {
+        let mut memory_pointer: *mut u16 = 0x0002 as u16;
+        let return_pointer = *memory_pointer;
+        *memory_pointer += size;
+        return_pointer as *mut u8
+    }
+
+    pub fn main(self, a: u8, b: u8, c: u8) -> u8 {
+        let mut memory_pointer: *mut u16 = 0x0002 as u16;
+        *memory_pointer = 0x0004 as u16;
+
+        let mut pointer_a = Self::malloc(1);
+        *pointer_a = a;
+        let mut pointer_b = Self::malloc(1);
+        *pointer_b = b;
+        let mut pointer_c = Self::malloc(1);
+        *pointer_c = c;
+
+        *pointer_a + *pointer_b + *pointer_c
+    }
+}

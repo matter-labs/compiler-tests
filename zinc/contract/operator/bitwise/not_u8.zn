@@ -1,0 +1,46 @@
+//! { "cases": [ {
+//!     "name": "ordinar",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "42"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "213"
+//!     ]
+//! }, {
+//!     "name": "min_to_max",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "0"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "255"
+//!     ]
+//! }, {
+//!     "name": "max_to_min",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "255"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "0"
+//!     ]
+//! } ] }
+
+contract Test {
+    pub fn main(self, a: u8) -> u8 {
+        ~a
+    }
+}

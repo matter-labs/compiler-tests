@@ -1,0 +1,50 @@
+//! { "cases": [ {
+//!     "name": "first",
+//!     "input": [
+//!         {
+//!             "entry": "fib",
+//!             "calldata": [
+//!                 "1"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
+//! }, {
+//!     "name": "eighth",
+//!     "input": [
+//!         {
+//!             "entry": "fib",
+//!             "calldata": [
+//!                 "8"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "21"
+//!     ]
+//! }, {
+//!     "name": "sixteenth",
+//!     "input": [
+//!         {
+//!             "entry": "fib",
+//!             "calldata": [
+//!                 "16"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "987"
+//!     ]
+//! } ] }
+
+contract Test {
+    pub fn fib(self, n: u8) -> u64 {
+        if n <= 1 {
+            return n as u64;
+        }
+
+        self.fib(n - 1) + self.fib(n - 2)
+    }
+}

@@ -1,0 +1,160 @@
+//! { "cases": [ {
+//!     "name": "distance_point1",
+//!     "input": [
+//!         {
+//!             "entry": "distance_point1",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "607"
+//!     ]
+//! }, {
+//!     "name": "distance_point2",
+//!     "input": [
+//!         {
+//!             "entry": "distance_point2",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "504455"
+//!     ]
+//! }, {
+//!     "name": "intersection_point1",
+//!     "input": [
+//!         {
+//!             "entry": "intersection_point1",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
+//! }, {
+//!     "name": "intersection_point2",
+//!     "input": [
+//!         {
+//!             "entry": "intersection_point2",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
+//! } ] }
+
+const EPS: u128 = 1E6;
+const PRECISION: u128 = 100;
+
+struct Point {
+    x: u128,
+    y: u128,
+}
+
+struct Line {
+    a: u128,
+    b: u128,
+    c: u128,
+}
+
+fn sqrt(n: u128) -> u128 {
+    // binary search
+    let mut l = 0 as u128;
+    let mut r = n as u128;
+    while l < r {
+        let m = (l + r + 1) / 2;
+        if m*m <= n {
+            l = m;
+        } else {
+            r = m - 1;
+        }
+    }
+    if n - l*l < (l+1)*(l+1) - n
+        {l} else {l+1}
+}
+
+// mb1 == -b1, mc2 == -c2
+// returns x * EPS, y * EPS
+// Function not in Line structure for ease of understanding, because it use -b1 and -c2
+fn lines_intersection(a1: u128, mb1: u128, c1: u128, a2: u128, b2: u128, mc2: u128) -> Point {
+    let d = a1 * b2 + a2 * mb1;
+    Point {
+        x:(mb1 * mc2 - b2 * c1) * EPS / d,
+        y: (a2 * c1 + a1 * mc2) * EPS / d,
+    }
+}
+
+impl Line {
+    // return distance * EPS
+    fn distance_point(self, point: Point) -> u128 {
+        ((self.a*point.x + self.b*point.y + self.c)*EPS*EPS) / sqrt((self.a*self.a + self.b*self.b)*EPS*EPS)
+    }
+}
+
+contract Test {
+    pub fn distance_point1(self) -> u64 {
+        let a = 7 as u128;
+        let b = 4 as u128;
+        let c = 10 as u128;
+        let line = Line {
+            a: a,
+            b: b,
+            c: c,
+        };
+        let x = 5 as u128;
+        let y = 1 as u128;
+        let point = Point {
+            x: x,
+            y: y,
+        };
+        // 6.077701994871213... * PRECISION
+        (line.distance_point(point) * PRECISION / EPS) as u64
+    }
+
+    pub fn distance_point2(self) -> u64 {
+        let a = 2117 as u128;
+        let b = 443 as u128;
+        let c = 1021 as u128;
+        let line = Line {
+            a: a,
+            b: b,
+            c: c,
+        };
+        let x = 5123 as u128;
+        let y = 145 as u128;
+        let point = Point {
+            x: x,
+            y: y,
+        };
+        // 5044.559794518856... * PRECISION
+        (line.distance_point(point) * PRECISION / EPS) as u64
+    }
+
+    pub fn intersection_point1(self) -> u64 {
+        let a1 = 1 as u128;
+        let mb1 = 1 as u128;
+        let c1 = 0 as u128;
+        let a2 = 1 as u128;
+        let b2 = 1 as u128;
+        let mc2 = 2 as u128;
+        let point = lines_intersection(a1, mb1, c1, a2, b2, mc2);
+        if point.x * PRECISION / EPS == 100 && point.y * PRECISION / EPS == 100 { 1 } else { 0 }
+    }
+
+    pub fn intersection_point2(self) -> u64 {
+        let a1 = 121 as u128;
+        let mb1 = 17 as u128;
+        let c1 = 123 as u128;
+        let a2 = 912 as u128;
+        let b2 = 123 as u128;
+        let mc2 = 2133 as u128;
+        // 0.695428.... 12.185112...
+        let point = lines_intersection(a1, mb1, c1, a2, b2, mc2);
+        if point.x * PRECISION / EPS == 69 && point.y * PRECISION / EPS == 1218 { 1 } else { 0 }
+    }
+}

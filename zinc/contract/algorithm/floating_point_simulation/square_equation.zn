@@ -1,0 +1,104 @@
+//! { "cases": [ {
+//!     "name": "no_solution",
+//!     "input": [
+//!         {
+//!             "entry": "no_solution",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
+//! }, {
+//!     "name": "first",
+//!     "input": [
+//!         {
+//!             "entry": "first",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
+//! }, {
+//!     "name": "second",
+//!     "input": [
+//!         {
+//!             "entry": "second",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
+//! } ] }
+
+const EPS: u128 = 1E10;
+const PRECISION: u128 = 100;
+
+fn sqrt(n: u128) -> u128 {
+    // binary search
+    let mut l = 0 as u128;
+    let mut r = n as u128;
+    while l < r {
+        let m = (l + r + 1) / 2;
+        if m*m <= n {
+            l = m;
+        } else {
+            r = m - 1;
+        }
+    }
+    if n - l*l < (l+1)*(l+1) - n
+        {l} else {l+1}
+}
+
+// mb = -b
+// returns roots * EPS
+fn main(a: u128, mb: u128, c: u128) -> (bool, u128, u128) {
+    if mb*mb < 4*a*c {
+        return (false, 0 as u128, 0 as u128);
+    }
+    let d = (mb*mb - 4*a*c)*EPS*EPS;
+    let sd = sqrt(d);
+    // hack, as -b not working
+    let x1 = (mb*EPS + sd) / 2 / a;
+    let x2 = (mb*EPS - sd) / 2 / a;
+    (true, x1, x2)
+}
+
+contract Test {
+    pub fn no_solution(self) -> u64 {
+        let a = 1 as u128;
+        let mb = 1 as u128; // b = -1
+        let c = 1 as u128;
+        let p = main(a, mb, c);
+        if !p.0 { 1 } else { 0 }
+    }
+
+    pub fn first(self) -> u64 {
+        let mut a = 2 as u128;
+        let mut mb = 7 as u128; // b = -7
+        let mut c = 4 as u128;
+        let p = main(a, mb, c);
+        // check roots * PRECISION
+        let result = p.0 &&
+            p.1 * PRECISION / EPS == 278 &&
+            p.2 * PRECISION / EPS == 71;
+        if result { 1 } else { 0 }
+    }
+
+    pub fn second(self) -> u64 {
+        let mut a = 17 as u128;
+        let mut mb = 29 as u128; // b = -29
+        let mut c = 12 as u128;
+        let p = main(a, mb, c);
+        // check roots * PRECISION
+        let result = p.0 &&
+            p.1 * PRECISION / EPS == 100 &&
+            p.2 * PRECISION / EPS == 70;
+        if result { 1 } else { 0 }
+    }
+}

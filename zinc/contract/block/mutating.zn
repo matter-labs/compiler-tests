@@ -1,0 +1,24 @@
+//! { "cases": [ {
+//!     "name": "main",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "50"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "75"
+//!     ]
+//! } ] }
+
+contract Test {
+    pub fn main(self, witness: u8) -> u8 {
+        let mut inner = 25;
+        {
+            inner += witness;
+        };
+        inner
+    }
+}
