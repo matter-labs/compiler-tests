@@ -1,4 +1,4 @@
-;! { "cases": [ {
+;! { "engines": ["zkevm"], "cases": [ {
 ;!     "entry": "entry",
 ;!     "expected": 60
 ;! } ] }
