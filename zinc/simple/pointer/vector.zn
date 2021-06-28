@@ -121,10 +121,9 @@ fn test1() -> u64 {
 }
 
 fn test2() -> u64 {
-    let ptr: *mut u16 = 2 as u16;
+    let ptr: *u16 = 2 as u16;
     1 as u64
 }
-
 
 fn test3() -> u64 {
     let mut ptr: *mut u16 = 2 as u16;
