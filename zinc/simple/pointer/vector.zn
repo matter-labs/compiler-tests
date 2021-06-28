@@ -1,0 +1,140 @@
+//! { "cases": [ {
+//!     "entry": "test1",
+//!     "expected": 1
+//! } ] }
+
+fn init_memory() {
+    let mut memory_pointer: *mut u16 = 0x0002 as u16;
+    *memory_pointer = 0x0004 as u16;
+}
+
+fn malloc(size: u16) -> *mut u64 {
+    let mut memory_pointer: *mut u16 = 0x0002 as u16;
+    let return_pointer = *memory_pointer;
+    *memory_pointer += size;
+    return_pointer as *mut u64
+}
+
+const TYPE_SIZE: u16 = 8;
+
+struct Vec {
+    ptr: *mut u64,
+    cap: u16,
+    len: u16
+}
+
+impl Vec {
+    fn grow(self) -> Self {
+        let mut new_ptr: *mut u64 = 0 as u16;
+        let mut new_cap = 0 as u16;
+        if self.cap == 0 {
+            new_ptr = malloc(TYPE_SIZE);
+            new_cap = 1 as u16;
+        } else {
+            new_cap = self.cap * 2;
+            new_ptr = malloc(TYPE_SIZE * new_cap);
+        }
+        for i in 0..self.len {
+            let mut ptr = new_ptr + i*TYPE_SIZE;
+            *ptr = *(self.ptr + i*TYPE_SIZE); 
+        }
+        Self {
+            ptr: new_ptr,
+            cap: new_cap,
+            len: self.len
+        }
+    }
+}
+
+impl Vec {
+    pub fn new() -> Self {
+        Self {
+            ptr: 0 as u16 as *mut u64,
+            cap: 0 as u16,
+            len: 0 as u16
+        }
+    }
+
+    pub fn insert(mut self, index: u16, val: u64) -> Self {
+        if self.cap == self.len {
+            self = self.grow();
+        }
+
+        let mut curr = self.len;
+        while curr > index {
+            let mut ptr = self.ptr + curr * TYPE_SIZE;
+            *ptr = *(ptr - TYPE_SIZE);
+            curr -= 1 as u16;
+        }
+        let mut ptr = self.ptr + index * TYPE_SIZE;
+        *ptr = val;
+
+        self.len = self.len + 1;
+
+        self
+    }
+
+    pub fn remove(mut self, mut index: u16) -> Self {
+        self.len = self.len - 1;
+
+        while index < self.len {
+            let mut ptr = self.ptr + index * TYPE_SIZE;
+            *ptr = *(ptr + TYPE_SIZE);
+        }
+
+        self
+    }
+
+    pub fn push(mut self, val: u64) -> Self {
+        self.insert(self.len, val)
+    }
+
+    pub fn pop(mut self) -> Self {
+        self.remove(self.len - 1)
+    }
+
+    pub fn get(self, index: u16) -> u64 {
+        *(self.ptr + index * TYPE_SIZE)
+    }
+}
+
+fn test1() -> u64 {
+    init_memory();
+    let mut vec = Vec::new();
+    vec = vec.push(10);
+    // vector with cap 1, len 1
+
+    let new_cap = vec.cap * 2;
+    let new_ptr = malloc(TYPE_SIZE * new_cap);
+
+    for i in 0..vec.len {
+        let mut ptr = new_ptr + i*TYPE_SIZE;
+        // it works
+        *ptr;
+        // and it works
+        *(vec.ptr + i*TYPE_SIZE);
+        // but it crashing
+        *ptr = *(vec.ptr + i*TYPE_SIZE); 
+    }
+
+    1 as u64
+}
+
+fn test2() -> u64 {
+    let ptr: *mut u16 = 2 as u16;
+    1 as u64
+}
+
+
+fn test3() -> u64 {
+    let mut ptr: *mut u16 = 2 as u16;
+    *(ptr + 2 as u16) = 10 as u16;
+    1 as u64
+}
+
+fn test4() -> u64 {
+    let ptr1: *mut u16 = 2 as u16;
+    let ptr2: *mut u16 = 4 as u16;
+    let b = ptr1 <= ptr2;
+    1 as u64
+}
