@@ -182,19 +182,19 @@ fn simple() -> u64 {
     map.get(10)
 }
 
-pub fn complex() -> u64 {
+fn complex() -> u64 {
     init_memory();
     let mut map = HashMap::new();
     for i in 0..200 {
         map = map.insert(i as u64, 200 as u64 - i as u64);
     }
-    // 0 - 200
+    // 0 - 199
     if map.len != 200 {
         return 0 as u64;
     }
     let mut i = 0 as u64;
     while i < 200 {
-        map = map.remove(i as u64);
+        map = map.remove(i);
         i += 2 as u64;
     }
     // 1, 3, 5, 7,..., 199

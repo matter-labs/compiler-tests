@@ -1,6 +1,9 @@
 //! { "cases": [ {
 //!     "entry": "test1",
 //!     "expected": 1
+//! }, {
+//!     "entry": "complex",
+//!     "expected": 1
 //! } ] }
 
 fn init_memory() {
@@ -136,4 +139,51 @@ fn test4() -> u64 {
     let ptr2: *mut u16 = 4 as u16;
     let b = ptr1 <= ptr2;
     1 as u64
+}
+
+fn complex() -> u64 {
+    init_memory();
+    let mut vec = Vec::new();
+    for i in 0..200 {
+        vec = vec.push(i as u64);
+    }
+    // 0 - 199
+    if vec.len != 200 {
+        return 0 as u64;
+    }
+
+    let mut i = 0 as u16;
+    while i < 200 {
+        vec = vec.remove(i);
+        i += 2 as u16;
+    }
+    // 1, 3, 5, 7,..., 199
+    if vec.len != 100 {
+        return 0 as u64;
+    }
+    while vec.len > 50 {
+        vec = vec.pop();
+    }
+    // 1, 3, 5, 7,..., 99
+    if vec.len != 50 {
+        return 0 as u64;
+    }
+    i = 0 as u16;
+    while i < 100 {
+        vec = vec.insert(i, i as u64);
+        i += 2 as u16;
+    }
+    // 0 - 99
+    if vec.len != 100 {
+        return 0 as u64;
+    }
+    let mut result = true;
+    for ind in 0..100 {
+        if vec.get(i) != i as u64 {
+            result = false;
+            break;
+        }
+    }
+    if result 
+        {1} else {0} as u64
 }
