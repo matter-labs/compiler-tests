@@ -2,6 +2,15 @@
 //!     "entry": "test1",
 //!     "expected": 1
 //! }, {
+//!     "entry": "test2",
+//!     "expected": 1
+//! }, {
+//!     "entry": "test3",
+//!     "expected": 1
+//! }, {
+//!     "entry": "test4",
+//!     "expected": 1
+//! }, {
 //!     "entry": "complex",
 //!     "expected": 1
 //! } ] }
@@ -18,7 +27,7 @@ fn malloc(size: u16) -> *mut u64 {
     return_pointer as *mut u64
 }
 
-const TYPE_SIZE: u16 = 8;
+const TYPE_SIZE: u16 = 1;
 
 struct Vec {
     ptr: *mut u64,
@@ -39,7 +48,7 @@ impl Vec {
         }
         for i in 0..self.len {
             let mut ptr = new_ptr + i*TYPE_SIZE;
-            *ptr = *(self.ptr + i*TYPE_SIZE); 
+            *ptr = *(self.ptr + i*TYPE_SIZE);
         }
         Self {
             ptr: new_ptr,
@@ -83,6 +92,7 @@ impl Vec {
         while index < self.len {
             let mut ptr = self.ptr + index * TYPE_SIZE;
             *ptr = *(ptr + TYPE_SIZE);
+            index += 1 as u16;
         }
 
         self
@@ -117,14 +127,14 @@ fn test1() -> u64 {
         // and it works
         *(vec.ptr + i*TYPE_SIZE);
         // but it crashing
-        *ptr = *(vec.ptr + i*TYPE_SIZE); 
+        *ptr = *(vec.ptr + i*TYPE_SIZE);
     }
 
     1 as u64
 }
 
 fn test2() -> u64 {
-    let ptr: *u16 = 2 as u16;
+    let ptr: *const u16 = 2 as u16;
     1 as u64
 }
 
@@ -144,9 +154,11 @@ fn test4() -> u64 {
 fn complex() -> u64 {
     init_memory();
     let mut vec = Vec::new();
+
     for i in 0..200 {
         vec = vec.push(i as u64);
     }
+
     // 0 - 199
     if vec.len != 200 {
         return 0 as u64;
@@ -158,6 +170,7 @@ fn complex() -> u64 {
         i += 2 as u16;
     }
     // 1, 3, 5, 7,..., 199
+
     if vec.len != 100 {
         return 0 as u64;
     }
@@ -165,6 +178,7 @@ fn complex() -> u64 {
         vec = vec.pop();
     }
     // 1, 3, 5, 7,..., 99
+
     if vec.len != 50 {
         return 0 as u64;
     }
@@ -174,16 +188,16 @@ fn complex() -> u64 {
         i += 2 as u16;
     }
     // 0 - 99
+
     if vec.len != 100 {
         return 0 as u64;
     }
     let mut result = true;
     for ind in 0..100 {
         if vec.get(i) != i as u64 {
-            result = false;
-            break;
+            return i as u64;
         }
     }
-    if result 
-        {1} else {0} as u64
+
+    if result { 1 } else { 0 } as u64
 }
