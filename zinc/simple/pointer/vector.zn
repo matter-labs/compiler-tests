@@ -3,7 +3,7 @@
 //!     "expected": 1
 //! }, {
 //!     "entry": "test2",
-//!     "expected": 1
+//!     "expected": 0
 //! }, {
 //!     "entry": "complex",
 //!     "expected": 1
@@ -28,7 +28,7 @@ struct Vec {
 }
 
 impl Vec {
-    fn grow(self) -> Self {
+    pub fn grow(self) -> Self {
         let mut new_cap = 0 as u16;
         if self.cap == 0 {
             new_cap = 1 as u16;
@@ -98,23 +98,21 @@ impl Vec {
 }
 
 fn test1() -> u64 {
-    init_memory();
-    let mut vec = Vec::new();
-
-    for i in 0..10 {
-        vec = vec.push(i as u64 + 1 as u64);
-    }
-    *vec.ptr
+    *(3 as u16 as *mut u64) as u64;
+    return 1 as u64;
 }
 
 fn test2() -> u64 {
     init_memory();
     let mut vec = Vec::new();
 
-    for i in 0..100 {
-        vec = vec.push(i as u64);
-    }
-    *(vec.ptr + 1 as u16)
+    vec = vec.push(1 as u64);
+    vec = vec.grow();
+
+    //return *(vec.ptr + 2 as u16); // here 0
+    // let ptr = vec.ptr; // if uncomment this line and replace below vec.ptr with ptr, it will return 0 for some configurations
+    *(vec.ptr + 1 as u16) = 2 as u64;
+    return *(vec.ptr + 2 as u16); // here 2
 }
 
 fn complex() -> u64 {
