@@ -1,0 +1,142 @@
+//! { "cases": [ {
+//!     "entry": "test",
+//!     "expected": 1
+//! }, {
+//!     "entry": "fibo",
+//!     "expected": 679891637638612258
+//! } ] }
+
+const MAX_SIZE: u16 = 5 as u16;
+
+struct Matrix {
+    a: [[u64; MAX_SIZE]; MAX_SIZE],
+    n: u16,
+    m: u16,
+}
+
+impl Matrix {
+    pub fn mul(self, other: Self) -> Self {
+        let mut result = Self {
+            a: [[0 as u64; MAX_SIZE]; MAX_SIZE],
+            n: self.n,
+            m: other.m
+        };
+        for i in 0..self.n {
+            for j in 0..other.m {
+                for k in 0..self.m {
+                    result.a[i][j] += self.a[i][k] * other.a[k][j];
+                }
+            }
+        }
+        result
+    }
+
+    pub fn add(mut self, other: Self) -> Self {
+        for i in 0..self.n {
+            for j in 0..self.m {
+                self.a[i][j] += other.a[i][j];
+            }
+        }
+        self
+    }
+
+    pub fn scalar(mut self, n: u64) -> Self {
+        for i in 0..self.n {
+            for j in 0..self.m {
+                self.a[i][j] *= n
+            }
+        }
+        self
+    }
+
+    pub fn pow(mut self, mut n: u64) -> Self {
+        let mut result = Self {
+            a: [[0 as u64; MAX_SIZE]; MAX_SIZE],
+            n: self.n,
+            m: self.m
+        };
+        for i in 0..self.n {
+            result.a[i][i] = 1 as u64;
+        }
+        while n != 0 {
+            if n & 1 != 0 {
+                result = result.mul(self);
+            }
+            self = self.mul(self);
+            n >>= 1 as u64;
+        }
+        result
+    }
+}
+
+pub fn test() -> u64 {
+    let mut a = Matrix {
+        a: [[0 as u64; MAX_SIZE]; MAX_SIZE],
+        n: 2 as u16,
+        m: 3 as u16,
+    };
+    a.a[0][0] = 5 as u64;
+    a.a[0][1] = 2 as u64;
+    a.a[0][2] = 1 as u64;
+
+    a.a[1][0] = 4 as u64;
+    a.a[1][1] = 2 as u64;
+    a.a[1][2] = 9 as u64;
+
+    a = a.scalar(2 as u64);
+
+
+    let mut b = Matrix {
+        a: [[0 as u64; MAX_SIZE]; MAX_SIZE],
+        n: 3 as u16,
+        m: 2 as u16,
+    };
+    b.a[0][0] = 1 as u64;
+    b.a[0][1] = 52 as u64;
+
+    b.a[1][0] = 1 as u64;
+    b.a[1][1] = 2 as u64;
+
+    b.a[2][0] = 4 as u64;
+    b.a[2][1] = 234 as u64;
+
+    a = a.mul(b);
+
+    let mut c = Matrix {
+        a: [[0 as u64; MAX_SIZE]; MAX_SIZE],
+        n: 2 as u16,
+        m: 2 as u16,
+    };
+    c.a[0][0] = 213 as u64;
+    c.a[0][1] = 12 as u64;
+
+    c.a[1][0] = 2 as u64;
+    c.a[1][1] = 34 as u64;
+
+    a = a.add(c);
+    if a.n != 2 || a.m != 2 {
+        return 0;
+    }
+    let mut result = true;
+    result = result && a.a[0][0] == 235;
+    result = result && a.a[0][1] == 1008;
+    result = result && a.a[1][0] == 86;
+    result = result && a.a[1][1] == 4670;
+    if result
+        {1} else {0} as u64
+
+}
+
+pub fn fibo() -> u64 {
+    let mut matrix = Matrix {
+        a: [[0 as u64; MAX_SIZE]; MAX_SIZE],
+        n: 2 as u16,
+        m: 2 as u16,
+    };
+    matrix.a[0][1] = 1 as u64;
+    matrix.a[1][0] = 1 as u64;
+    matrix.a[1][1] = 1 as u64;
+    let n = 87 as u64;
+    matrix = matrix.pow(n - 2 as u64);
+    matrix.a[0][1] + matrix.a[1][1]
+}
