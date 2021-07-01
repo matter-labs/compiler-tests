@@ -27,7 +27,7 @@ struct Entry {
     value: u64,
 }
 
-const TYPE_SIZE: u16 = 16;
+const TYPE_SIZE: u16 = 2;
 
 // Vector implementation
 struct Vec {
@@ -38,18 +38,15 @@ struct Vec {
 
 impl Vec {
     fn grow(self) -> Self {
-        let mut new_ptr: *mut Entry = 0 as u16;
         let mut new_cap = 0 as u16;
         if self.cap == 0 {
-            new_ptr = malloc(TYPE_SIZE);
             new_cap = 1 as u16;
         } else {
             new_cap = self.cap * 2;
-            new_ptr = malloc(TYPE_SIZE * new_cap);
         }
+        let new_ptr = malloc(new_cap * TYPE_SIZE);
         for i in 0..self.len {
-            let mut ptr = new_ptr + i*TYPE_SIZE;
-            *ptr = *(self.ptr + i*TYPE_SIZE); 
+            *(new_ptr + i * TYPE_SIZE) = *(self.ptr + i * TYPE_SIZE);
         }
         Self {
             ptr: new_ptr,
@@ -75,14 +72,12 @@ impl Vec {
 
         let mut curr = self.len;
         while curr > index {
-            let mut ptr = self.ptr + curr * TYPE_SIZE;
-            *ptr = *(ptr - TYPE_SIZE);
+            *(self.ptr + curr * TYPE_SIZE) = *(self.ptr + curr * TYPE_SIZE - TYPE_SIZE as u16);
             curr -= 1 as u16;
         }
-        let mut ptr = self.ptr + index * TYPE_SIZE;
-        *ptr = val;
+        *(self.ptr + index * TYPE_SIZE) = val;
 
-        self.len = self.len + 1;
+        self.len += 1 as u16;
 
         self
     }
@@ -91,8 +86,8 @@ impl Vec {
         self.len = self.len - 1;
 
         while index < self.len {
-            let mut ptr = self.ptr + index * TYPE_SIZE;
-            *ptr = *(ptr + TYPE_SIZE);
+            *(self.ptr + index * TYPE_SIZE) = *(self.ptr + index * TYPE_SIZE + TYPE_SIZE as u16);
+            index += 1 as u16;
         }
 
         self
@@ -111,7 +106,7 @@ impl Vec {
     }
 }
 
-const CAP: u16 = 128;
+const CAP: u16 = 32;
 
 // Hash map implementation
 struct HashMap {
@@ -121,10 +116,14 @@ struct HashMap {
 
 impl HashMap {
     pub fn new() -> Self {
-        Self {
+        let mut result = Self {
             table: [Vec::new(); CAP],
             len: 0 as u16,
+        };
+        for i in 1..CAP {
+            result.table[i] = Vec::new();
         }
+        result
     }
 
     pub fn contains_key(self, key: u64) -> bool {
