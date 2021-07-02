@@ -1,0 +1,58 @@
+//! { "cases": [ {
+//!     "entry": "entry0",
+//!     "expected": 4
+//! }, {
+//!     "entry": "entry1",
+//!     "expected": 5
+//! }, {
+//!     "entry": "entry2",
+//!     "expected": 6
+//! }, {
+//!     "entry": "entry3",
+//!     "expected": 7
+//! },{
+//!     "entry": "entry4",
+//!     "expected": 99
+//! } ] }
+
+fn entry0() -> u64 {
+    main(0)
+}
+
+fn entry1() -> u64 {
+    main(1)
+}
+
+fn entry2() -> u64 {
+    main(2)
+}
+
+fn entry3() -> u64 {
+    main(3)
+}
+
+fn entry4() -> u64 {
+    main(7)
+}
+
+fn main(param: u8) -> u64 {
+    for i in 0..10 {
+        if param == 0 && i > 3 {
+            return i as u64; // 4
+        }
+        for j in 5..10 {
+            if param == 1 {
+                return param as u64 * j as u64; // 5
+            }
+            for k in 0..100 {
+                if param == 2 && k == 70 {
+                    return 6 as u64;
+                }
+            }
+        }
+        if param == 3 {
+            return param as u64 * 2 as u64 + 1 as u64; // 7
+        }
+    }
+    return 99 as u64;
+}

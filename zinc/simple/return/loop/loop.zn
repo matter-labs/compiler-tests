@@ -1,0 +1,69 @@
+//! { "cases": [ {
+//!     "entry": "entry0",
+//!     "expected": 4
+//! }, {
+//!     "entry": "entry1",
+//!     "expected": 5
+//! }, {
+//!     "entry": "entry2",
+//!     "expected": 6
+//! }, {
+//!     "entry": "entry3",
+//!     "expected": 7
+//! },{
+//!     "entry": "entry4",
+//!     "expected": 99
+//! } ] }
+
+fn entry0() -> u64 {
+    main(0)
+}
+
+fn entry1() -> u64 {
+    main(1)
+}
+
+fn entry2() -> u64 {
+    main(2)
+}
+
+fn entry3() -> u64 {
+    main(3)
+}
+
+fn entry4() -> u64 {
+    main(7)
+}
+
+fn main(param: u8) -> u64 {
+    let mut i = 0;
+    loop {
+        if param == 0 && i == 2{
+            return i as u64 * 2 as u64; // 4
+        }
+        if i == 10 {
+            break;
+        }
+        loop {
+            if param == 1 {
+                return 5 as u64;
+            }
+            let mut j = 10;
+            loop {
+                if param == 2 && j == 4 {
+                    return param as u64 + j as u64; // 6
+                }
+                j -= 2;
+                if j == 0 {
+                    break;
+                }
+            }
+            break;
+        }
+        if param == 3 && i == 7 {
+            return i as u64;
+        }
+        i += 1;
+    }
+    return 99 as u64;
+}
