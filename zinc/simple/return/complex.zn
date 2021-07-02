@@ -1,0 +1,67 @@
+//! { "cases": [ {
+//!     "entry": "entry",
+//!     "expected": 1
+//! } ] }
+
+fn entry() -> u64 {
+    let mut result = true;
+    for i in 0..7 {
+        result = result && main(i) == i as u64 + 4 as u64;
+    }
+    result = result && main(7) == 99 as u64;
+    result = result && main(11) == 99 as u64;
+    if result 
+        {1} else {0} as u64
+}
+
+fn main(param: u8) -> u64 {
+    for i in 0..10 {
+        if param == 0 && i == 4 {
+            return i as u64; // 4
+        }
+        match param / 3 {
+            0 => {
+                let mut j = 10;
+                while j > 0 {
+                    if param == 1 && j == 5 {
+                        return j as u64; // 5
+                    }
+                    loop {
+                        if param == 2 {
+                            return 6 as u64;
+                        } else {
+                            break;
+                        }
+                    }
+                    j -= 1;
+                }
+            },
+            _ => {
+                if param < 5 {
+                    for l in 0..10 {
+                        if param == 3 && l == 7 {
+                            return l as u64; // 7
+                        }
+                    }
+                    if param == 4 {
+                        return 8 as u64;
+                    }
+                } else {
+                    if param < 7 {
+                        loop {
+                            match param {
+                                5 => {
+                                    return 9 as u64;
+                                },
+                                _ => {
+                                    return 10 as u64;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    return 99 as u64;
+}
