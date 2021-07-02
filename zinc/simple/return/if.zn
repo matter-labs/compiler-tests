@@ -51,5 +51,4 @@ fn main(param: u8) -> u64 {
         }
         return 99 as u64;
     }
-    //return 1 as u64;
 }

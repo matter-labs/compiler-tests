@@ -41,6 +41,7 @@ fn main(param: u8) -> u64 {
             0 => match param {
                 0 => return 4 as u64,
                 1 => return 5 as u64 * param as u64, // 5
+                _ => return 42,
             },
             _ => return param as u64 * 3 as u64, // 6
         },
