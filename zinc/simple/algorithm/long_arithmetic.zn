@@ -1,0 +1,234 @@
+//! { "cases": [ {
+//!     "entry": "test1",
+//!     "expected": 1260830800381296
+//! }, {
+//!     "entry": "test2",
+//!     "expected": 781327317812
+//! }, {
+//!     "entry": "test3",
+//!     "expected": 0
+//! } ] }
+
+const BASE: u64 = 1_000_000_000;
+const LEN: u16 = 12;
+
+struct BigUint {
+    digits: [u64; LEN],
+    len: u16,
+}
+
+impl BigUint {
+    pub fn new() -> Self {
+        Self {
+            digits: [0 as u64; LEN],
+            len: 1 as u16
+        }
+    }
+
+    pub fn from_uint(mut n: u64) -> Self {
+        let mut number = Self {
+            digits: [0 as u64; LEN],
+            len: 0 as u16,
+        };
+        let curr = 0 as u16;
+        while n > 0 {
+            number.digits[number.len] = n % BASE;
+            n /= BASE;
+            number.len += 1 as u16;
+        }
+        if number.len == 0 {
+            number.len = 1 as u16;
+        }
+        number
+    }
+
+    pub fn as_uint(self) -> u64 {
+        let mut n = 0 as u64;
+        let mut i = self.len - 1;
+        loop {
+            n = n * BASE + self.digits[i];
+            if i == 0 {
+                break;
+            }
+            i -= 1 as u16;
+        }
+        n
+    }
+}
+
+impl BigUint {
+    pub fn less(self, other: Self) -> bool {
+        if self.len != other.len {
+            return self.len < other.len;
+        }
+        let mut i = self.len - 1 as u16;
+        loop {
+            if self.digits[i] != other.digits[i] {
+                return self.digits[i] < other.digits[i];
+            }
+            if i == 0 {
+                break;
+            }
+            i -= 1 as u16;
+        }
+        false
+    }
+
+    pub fn greater(self, other: Self) -> bool {
+        other.less(self)
+    }
+
+    pub fn equals(self, other: Self) -> bool {
+        !self.less(other) && !other.less(self)
+    }
+}
+
+impl BigUint {
+    pub fn add(self, other: Self) -> Self {
+        let mut len = self.len;
+        if other.len > len {
+            len = other.len;
+        }
+        let mut result = Self {
+            digits: [0 as u64; LEN],
+            len: len
+        };
+        let mut carry = 0 as u64;
+        for i in 0..len {
+            result.digits[i] += carry;
+            if i < self.len {
+                result.digits[i] += self.digits[i];
+            }
+            if i < other.len {
+                result.digits[i] += other.digits[i];
+            }
+            carry = result.digits[i] / BASE;
+            result.digits[i] %= BASE;
+        }
+        if carry > 0 {
+            result.digits[result.len] = carry;
+            result.len += 1 as u16;
+        }
+        result
+    }
+
+    // if second greater - 0
+    pub fn sub(self, other: Self) -> Self {
+        if self.less(other) {
+            return Self::new();
+        }
+        let mut result = Self {
+            digits: [0 as u64; LEN],
+            len: self.len
+        };
+        let mut carry = 0 as u64;
+        for i in 0..self.len {
+            let mut d = carry;
+            if i < other.len {
+                d += other.digits[i];
+            }
+            if self.digits[i] < d {
+                carry = 1 as u64;
+                result.digits[i] = self.digits[i] + BASE - d;
+            } else {
+                carry = 0 as u64;
+                result.digits[i] = self.digits[i] - d;
+            }
+        }
+        while result.len > 1 && result.digits[result.len - 1] == 0 {
+            result.len -= 1 as u16;
+        }
+        result
+
+    }
+
+    pub fn mul(self, other: Self) -> Self {
+        let mut result = Self {
+            digits: [0 as u64; LEN],
+            len: self.len + other.len
+        };
+        for i in 0..self.len {
+            let mut carry = 0 as u64;
+            let mut j = 0 as u16;
+            while j < other.len || carry != 0 {
+                let mut b = 0 as u64;
+                if j < other.len {
+                    b = other.digits[j];
+                }
+                let curr = result.digits[i + j] + self.digits[i] * b + carry;
+                result.digits[i + j] = curr % BASE;
+                carry = curr / BASE;
+                j += 1 as u16;
+            }
+        }
+        while result.len > 1 && result.digits[result.len - 1] == 0 {
+            result.len -= 1 as u16;
+        }
+        result
+    }
+
+    pub fn div(self, other: u64) -> Self {
+        let mut result = Self {
+            digits: [0 as u64; LEN],
+            len: self.len
+        };
+        let mut carry = 0 as u64;
+        let mut i = self.len - 1 as u16;
+        loop {
+            let curr = self.digits[i] + carry * BASE;
+            result.digits[i] = curr / other;
+            carry = curr % other;
+            if i == 0 {
+                break;
+            }
+            i -= 1 as u16;
+        }
+        while result.len > 1 && result.digits[result.len - 1] == 0 {
+            result.len -= 1 as u16;
+        }
+        result
+    }
+
+    pub fn pow(mut self, mut n: u64) -> Self {
+        let mut result = Self {
+            digits: [0 as u64; LEN],
+            len: 1 as u16
+        };
+        result.digits[0] = 1 as u64;
+        while n != 0 {
+            if n & 1 != 0 {
+                result = result.mul(self);
+            }
+            self = self.mul(self);
+            n >>= 1 as u64;
+        }
+        result
+    }
+}
+
+pub fn test1() -> u64 {
+    BigUint::from_uint(9124712378731 as u64)
+        .add(BigUint::from_uint(129213344 as u64)) // 9 124 841 592 075
+        .pow(5 as u64) // 63 259 633 147 891 755 508 903 200 605 498 033 555 974 923 078 789 924 986 748 046 875
+        .div(987659234 as u64) // 64 050 059 950 020 935 569 872 068 452 202 648 627 264 211 938 497 326 889
+        .add(BigUint::from_uint(12332455 as u64)) // 64 050 059 950 020 935 569 872 068 452 202 648 627 264 211 938 509 659 344
+        .div(100000000 as u64) // 640 500 599 500 209 355 698 720 684 522 026 486 272 642 119 385
+        .sub(BigUint::from_uint(794121 as u64).pow(7 as u64).mul(BigUint::from_uint(3215975 as u64))) // 163 633 183 869 615 894 606 020 115 919 720 373 594 410
+        .sub(BigUint::from_uint(46971696617 as u64).mul(BigUint::from_uint(123123 as u64).pow(6 as u64))) // 1 307 733 141 469 273 444 912 310 500 297
+        .div(92348823 as u64) // 14 160 799 228 261 668 748 201
+        .div(11231324 as u64) // 1 260 830 800 381 296
+        .as_uint()
+}
+
+pub fn test2() -> u64 {
+    BigUint::from_uint(781327317812 as u64)
+        .mul(BigUint::from_uint(8712712 as u64))
+        .div(8712712 as u64)
+        .as_uint()
+}
+
+pub fn test3() -> u64 {
+    BigUint::from_uint(13123121 as u64)
+        .sub(BigUint::from_uint(13123122 as u64))
+        .as_uint()
+}
