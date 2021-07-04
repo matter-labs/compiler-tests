@@ -9,12 +9,12 @@
 // Hash map implementation with vector
 
 // memory utils
-fn init_memory() {
+unsafe fn init_memory() {
     let mut memory_pointer: *mut u16 = 0x0002 as u16;
     *memory_pointer = 0x0004 as u16;
 }
 
-fn malloc(size: u16) -> *mut Entry {
+unsafe fn malloc(size: u16) -> *mut Entry {
     let mut memory_pointer: *mut u16 = 0x0002 as u16;
     let return_pointer = *memory_pointer;
     *memory_pointer += size;
@@ -37,7 +37,7 @@ struct Vec {
 }
 
 impl Vec {
-    fn grow(self) -> Self {
+    unsafe fn grow(self) -> Self {
         let mut new_cap = 0 as u16;
         if self.cap == 0 {
             new_cap = 1 as u16;
@@ -65,7 +65,7 @@ impl Vec {
         }
     }
 
-    pub fn insert(mut self, index: u16, val: Entry) -> Self {
+    pub unsafe fn insert(mut self, index: u16, val: Entry) -> Self {
         if self.cap == self.len {
             self = self.grow();
         }
@@ -82,7 +82,7 @@ impl Vec {
         self
     }
 
-    pub fn remove(mut self, mut index: u16) -> Self {
+    pub unsafe fn remove(mut self, mut index: u16) -> Self {
         self.len = self.len - 1;
 
         while index < self.len {
@@ -93,15 +93,15 @@ impl Vec {
         self
     }
 
-    pub fn push(mut self, val: Entry) -> Self {
+    pub unsafe fn push(mut self, val: Entry) -> Self {
         self.insert(self.len, val)
     }
 
-    pub fn pop(mut self) -> Self {
+    pub unsafe fn pop(mut self) -> Self {
         self.remove(self.len - 1)
     }
 
-    pub fn get(self, index: u16) -> Entry {
+    pub unsafe fn get(self, index: u16) -> Entry {
         *(self.ptr + index * TYPE_SIZE)
     }
 }
@@ -181,7 +181,7 @@ fn simple() -> u64 {
     map.get(10)
 }
 
-fn complex() -> u64 {
+unsafe fn complex() -> u64 {
     init_memory();
     let mut map = HashMap::new();
     for i in 0..200 {
