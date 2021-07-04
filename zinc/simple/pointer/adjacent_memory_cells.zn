@@ -1,0 +1,10 @@
+//! { "cases": [ {
+//!     "entry": "default",
+//!     "expected": 42
+//! } ] }
+
+unsafe fn default() -> u8 {
+    let mut ptr: *mut u8 = 42 as u16;
+    *(ptr + 2 as u16) = 42;
+    *(ptr + 1 as u16) + *(ptr + 2 as u16) + *(ptr + 3 as u16)
+}
