@@ -25,7 +25,7 @@ struct Wrapper {
     pointer: *mut u8,
 }
 
-fn main(address: u16, value: u8) -> u8 {
+unsafe fn main(address: u16, value: u8) -> u8 {
     let mut wrapper = Wrapper {
         pointer: address as *mut u8,
     };

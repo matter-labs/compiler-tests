@@ -33,7 +33,7 @@ fn three() -> u64 {
     ) as u64
 }
 
-fn main(
+unsafe fn main(
     address_1: u16,
     value_1: u8,
     address_2: u16,

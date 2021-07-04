@@ -46,7 +46,7 @@ struct Data {
 }
 
 contract Test {
-    pub fn main(self, a: u256, b: u256, c: u256) -> u256 {
+    pub unsafe fn main(self, a: u256, b: u256, c: u256) -> u256 {
         let mut data = Data {
             a: a,
             b: b,

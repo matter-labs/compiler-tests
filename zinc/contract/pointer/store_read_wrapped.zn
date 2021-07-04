@@ -44,7 +44,7 @@ struct Wrapper {
 }
 
 contract Test {
-    pub fn main(self, address: u16, value: u8) -> u8 {
+    pub unsafe fn main(self, address: u16, value: u8) -> u8 {
         let mut wrapper = Wrapper {
             pointer: address as *mut u8,
         };

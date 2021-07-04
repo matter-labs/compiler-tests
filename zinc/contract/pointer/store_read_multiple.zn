@@ -46,7 +46,7 @@
 //! } ] }
 
 contract Test {
-    pub fn main(
+    pub unsafe fn main(
         self,
         address_1: u16,
         value_1: u8,

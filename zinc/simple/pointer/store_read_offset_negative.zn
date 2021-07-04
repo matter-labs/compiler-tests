@@ -21,7 +21,7 @@ fn three() -> u64 {
     main(21, 84) as u64
 }
 
-fn main(address: u16, value: u8) -> u8 {
+unsafe fn main(address: u16, value: u8) -> u8 {
     let mut pointer: *mut u8 = address - 7;
     *(pointer - (3 + 4) as u16) = value;
     *(pointer - (10 - 3) as u16)
