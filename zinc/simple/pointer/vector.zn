@@ -1,9 +1,6 @@
 //! { "cases": [ {
-//!     "entry": "test1",
+//!     "entry": "simple",
 //!     "expected": 1
-//! }, {
-//!     "entry": "test2",
-//!     "expected": 0
 //! }, {
 //!     "entry": "complex",
 //!     "expected": 1
@@ -98,22 +95,12 @@ impl Vec {
     }
 }
 
-unsafe fn test1() -> u64 {
-    *(3 as u16 as *mut u64) as u64;
-    return 1 as u64;
-}
-
-unsafe fn test2() -> u64 {
+unsafe fn simple() -> u64 {
     init_memory();
     let mut vec = Vec::new();
-
-    vec = vec.push(1 as u64);
-    vec = vec.grow();
-
-    //return *(vec.ptr + 2 as u16); // here 0
-    // let ptr = vec.ptr; // if uncomment this line and replace below vec.ptr with ptr, it will return 0 for some configurations
-    *(vec.ptr + 1 as u16) = 2 as u64;
-    return *(vec.ptr + 2 as u16); // here 2
+    vec.push(10);
+    if vec.get(0) == 10 as u64 
+        {1} else {0} as u64
 }
 
 unsafe fn complex() -> u64 {
@@ -149,25 +136,21 @@ unsafe fn complex() -> u64 {
         result = false;
     }
     i = 0 as u16;
-   /* while i < 100 {
+    while i < 100 {
         vec = vec.insert(i, i as u64);
         i += 2 as u16;
-    }*/
-
-    let mut curr = vec.len;
-    // return curr as u64; //  -   50
-    // return *(vec.ptr + curr - 1 as u16); //  - 0
-    // return *(vec.ptr + 49 as u16); // - 99
-    // 0 - 99
+    }
 
     if vec.len != 100 {
         result = false;
     }
-    // for ind in 0..50 {
-    //     if vec.get(i) != i as u64 {
-    //         result = false;
-    //     }
-    // }
+    
+    for ind in 0..100 {
+        if vec.get(ind as u16) != ind as u64 {
+            result = false;
+            
+        }
+    }
 
     if result { 1 } else { 0 } as u64
 }
