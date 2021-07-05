@@ -148,7 +148,6 @@ unsafe fn complex() -> u64 {
     for ind in 0..100 {
         if vec.get(ind as u16) != ind as u64 {
             result = false;
-            
         }
     }
 
