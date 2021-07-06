@@ -59,12 +59,9 @@ fn complex() -> u64 {
     let mut result = true;
     for key in 0..=100 {
         let output = decrypt(encrypt(message, key), key);
-        if key == 1 {
-            return message[0] as u64;
-        }
-        /*for i in 0..SIZE {
+        for i in 0..SIZE {
             result = result && message[i] == output[i];
-        }*/
+        }
     }
     if result
         {1} else {0} as u64
