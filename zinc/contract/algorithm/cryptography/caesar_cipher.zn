@@ -49,14 +49,14 @@ contract Test {
     } 
 
     pub fn decrypt(self, data: [u8; SIZE], key: u8) -> [u8; SIZE] {
-        Self::encrypt(data, ((256 - key as u16) % 256) as u8)
+        self.encrypt(data, ((256 - key as u16) % 256) as u8)
     }
 
     pub fn complex(self) -> u64 {
         let message = [1, 12, 55, 53, 213, 123, 45, 21, 12, 92];
         let mut result = true;
         for key in 0..=100 {
-            let output = Self::decrypt(Self::encrypt(message, key), key);
+            let output = self.decrypt(self.encrypt(message, key), key);
             for i in 0..SIZE {
                 result = result && message[i] == output[i];
             }

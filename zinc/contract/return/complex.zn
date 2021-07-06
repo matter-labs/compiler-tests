@@ -16,10 +16,10 @@ contract Test {
     pub fn entry(self) -> u64 {
         let mut result = true;
         for i in 0..7 {
-            result = result && Self::main(i) == i as u64 + 4 as u64;
+            result = result && self.main(i) == i as u64 + 4 as u64;
         }
-        result = result && Self::main(7) == 99 as u64;
-        result = result && Self::main(11) == 99 as u64;
+        result = result && self.main(7) == 99 as u64;
+        result = result && self.main(11) == 99 as u64;
         if result
             {1} else {0} as u64
     }

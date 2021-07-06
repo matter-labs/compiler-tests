@@ -14,7 +14,7 @@
 //! } ] }
 
 contract Test {
-    fn main(a: u256, b: u8) -> u64 {
+    pub fn main(self, a: u256, b: u8) -> u64 {
         42
     }
 }

@@ -228,7 +228,7 @@ impl Vector {
 
 contract Test {
     pub fn reverse_test(self, input: [u8; ARRAY_SIZE]) -> Vector {
-        Vector::from_array(input, ARRAY_SIZE).reverse().array
+        Vector::from_array(input, ARRAY_SIZE).reverse()
     }
 
     pub fn unique_test(self, input: [u8; ARRAY_SIZE]) -> Vector {

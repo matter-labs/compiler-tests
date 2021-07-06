@@ -57,7 +57,7 @@ fn sqrt(n: u128) -> u128 {
 
 // mb = -b
 // returns roots * EPS
-fn main(a: u128, mb: u128, c: u128) -> (bool, u128, u128) {
+fn solve(a: u128, mb: u128, c: u128) -> (bool, u128, u128) {
     if mb*mb < 4*a*c {
         return (false, 0 as u128, 0 as u128);
     }
@@ -74,7 +74,7 @@ contract Test {
         let a = 1 as u128;
         let mb = 1 as u128; // b = -1
         let c = 1 as u128;
-        let p = main(a, mb, c);
+        let p = solve(a, mb, c);
         if !p.0 { 1 } else { 0 }
     }
 
@@ -82,7 +82,7 @@ contract Test {
         let mut a = 2 as u128;
         let mut mb = 7 as u128; // b = -7
         let mut c = 4 as u128;
-        let p = main(a, mb, c);
+        let p = solve(a, mb, c);
         // check roots * PRECISION
         let result = p.0 &&
             p.1 * PRECISION / EPS == 278 &&
@@ -94,7 +94,7 @@ contract Test {
         let mut a = 17 as u128;
         let mut mb = 29 as u128; // b = -29
         let mut c = 12 as u128;
-        let p = main(a, mb, c);
+        let p = solve(a, mb, c);
         // check roots * PRECISION
         let result = p.0 &&
             p.1 * PRECISION / EPS == 100 &&
