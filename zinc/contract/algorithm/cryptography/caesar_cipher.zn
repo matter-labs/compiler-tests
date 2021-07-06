@@ -43,7 +43,7 @@ const SIZE: u8 = 10;
 contract Test {
     pub fn encrypt(self, mut data: [u8; SIZE], key: u8) -> [u8; SIZE] {
         for i in 0..SIZE {
-            data[i] = ((data[i] as u16 + key as u16) % (256 as u16)) as u8
+            data[i] = ((data[i] as u16 + key as u16) % (256 as u16)) as u8;
         }
         data
     } 
