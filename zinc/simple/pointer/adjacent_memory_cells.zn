@@ -4,7 +4,11 @@
 //! } ] }
 
 unsafe fn default() -> u8 {
-    let mut ptr: *mut u8 = 42 as u16;
+    let mut ptr: *mut u8 = 0x0042 as u16;
+
+    *(ptr + 1 as u16) = 0;
     *(ptr + 2 as u16) = 42;
+    *(ptr + 3 as u16) = 0;
+
     *(ptr + 1 as u16) + *(ptr + 2 as u16) + *(ptr + 3 as u16)
 }
