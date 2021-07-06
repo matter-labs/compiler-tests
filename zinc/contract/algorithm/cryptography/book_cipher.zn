@@ -1,9 +1,27 @@
 //! { "cases": [ {
-//!     "entry": "complex1",
-//!     "expected": 1
+//!     "name": "complex1",
+//!     "input": [
+//!         {
+//!             "entry": "complex1",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
 //! }, {
-//!     "entry": "complex2",
-//!     "expected": 1
+//!     "name": "complex2",
+//!     "input": [
+//!         {
+//!             "entry": "complex2",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
 //! } ] }
 
 const KEY_SZ: u8 = 4;
@@ -70,30 +88,32 @@ fn decrypt(mut data: [u8; SIZE]) -> [u8; SIZE] {
     data
 }
 
-fn complex1() -> u64 {
-    let message = [1, 12, 55, 53, 22, 34, 45, 21, 12, 7];
+contract Test {
+    pub fn complex1(self) -> u64 {
+        let message = [1, 12, 55, 53, 22, 34, 45, 21, 12, 7];
 
-    let output = decrypt(encrypt(message));
+        let output = decrypt(encrypt(message));
 
-    let mut result = true;
-    for i in 0..SIZE {
-        result = result && message[i] == output[i];
+        let mut result = true;
+        for i in 0..SIZE {
+            result = result && message[i] == output[i];
+        }
+
+        if result
+            {1} else {0} as u64
     }
 
-    if result
-        {1} else {0} as u64
-}
+    pub fn complex2(self) -> u64 {
+        let message = [37, 11, 2, 59, 0, 63, 41, 27, 17, 9];
 
-fn complex2() -> u64 {
-    let message = [37, 11, 2, 59, 0, 63, 41, 27, 17, 9];
+        let output = decrypt(encrypt(message));
 
-    let output = decrypt(encrypt(message));
+        let mut result = true;
+        for i in 0..SIZE {
+            result = result && message[i] == output[i];
+        }
 
-    let mut result = true;
-    for i in 0..SIZE {
-        result = result && message[i] == output[i];
+        if result
+            {1} else {0} as u64
     }
-
-    if result
-        {1} else {0} as u64
 }
