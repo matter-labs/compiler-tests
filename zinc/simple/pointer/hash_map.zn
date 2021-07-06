@@ -177,7 +177,7 @@ impl HashMap {
 fn simple() -> u64 {
     init_memory();
     let mut map = HashMap::new();
-    map.insert(10, 1);
+    map = map.insert(10, 1);
     map.get(10)
 }
 
