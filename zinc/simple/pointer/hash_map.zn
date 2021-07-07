@@ -11,14 +11,14 @@
 // memory utils
 unsafe fn init_memory() {
     let mut memory_pointer: *mut u16 = 0x0002 as u16;
-    *memory_pointer = 128 as u16;
+    *memory_pointer = 0x0004 as u16;
 }
 
-unsafe fn malloc(size: u16) -> *mut Entry {
-    let mut memory_pointer: *mut u16 = 0x0002 as u16;
-    let return_pointer = (*memory_pointer) / 32;
-    *memory_pointer += size * 32;
-    return_pointer as *mut Entry
+unsafe fn malloc<T>(size: u16) -> *mut T {
+    let memory_pointer: *mut u16 = 0x0002 as u16;
+    let return_pointer = *memory_pointer as *mut T;
+    *memory_pointer = (return_pointer + size) as u16;
+    return_pointer
 }
 
 // Map entry
@@ -44,7 +44,7 @@ impl Vec {
         } else {
             new_cap = self.cap * 2;
         }
-        let new_ptr = malloc(new_cap * TYPE_SIZE);
+        let new_ptr = malloc::<Entry>(new_cap * TYPE_SIZE);
         for i in 0..self.len {
             *(new_ptr + i * TYPE_SIZE) = *(self.ptr + i * TYPE_SIZE);
         }

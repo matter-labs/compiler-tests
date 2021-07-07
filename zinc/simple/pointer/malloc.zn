@@ -7,16 +7,16 @@ fn default() -> u64 {
     main() as u64
 }
 
-unsafe fn malloc(size: u16) -> *mut u8 {
+unsafe fn malloc<T>(size: u16) -> *mut T {
     let memory_pointer: *mut u16 = 0x0002 as u16;
-    let return_pointer = (*memory_pointer) / 32;
-    *memory_pointer += size * 32;
-    return_pointer as *mut u8
+    let return_pointer = *memory_pointer as *mut T;
+    *memory_pointer = (return_pointer + size) as u16;
+    return_pointer
 }
 
 unsafe fn main() -> u8 {
     let mut memory_pointer: *mut u16 = 0x0002 as u16;
-    *memory_pointer = 128 as u16;
+    *memory_pointer = 0x0004 as u16;
 
-    malloc(1) as u16 as u8 + malloc(1) as u16 as u8
+    malloc::<u8>(1) as u16 as u8 + malloc::<u8>(1) as u16 as u8
 }
