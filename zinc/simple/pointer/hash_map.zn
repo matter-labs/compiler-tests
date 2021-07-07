@@ -11,13 +11,13 @@
 // memory utils
 unsafe fn init_memory() {
     let mut memory_pointer: *mut u16 = 0x0002 as u16;
-    *memory_pointer = 0x0004 as u16;
+    *memory_pointer = 128 as u16;
 }
 
 unsafe fn malloc(size: u16) -> *mut Entry {
     let mut memory_pointer: *mut u16 = 0x0002 as u16;
     let return_pointer = *memory_pointer;
-    *memory_pointer += size;
+    *memory_pointer += size * 32;
     return_pointer as *mut Entry
 }
 
