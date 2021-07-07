@@ -30,7 +30,7 @@ fn encrypt_sym(sym: u8, key_sym: u8) -> u8 {
 
 fn decrypt_sym(sym: u8, key_sym: u8) -> u8 {
     let mut symbol = sym as u16;
-    if symbol == 0 {
+    if symbol < key_sym as u16 {
         symbol += 256 as u16;
     };
     (symbol - key_sym as u16) as u8
