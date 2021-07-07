@@ -19,8 +19,9 @@ unsafe fn main(a: u8, b: u8) -> u8 {
     *memory_pointer = 128 as u16;
 
     let mut pointer_a = malloc(1);
-    *pointer_a = a;
     let mut pointer_b = malloc(1);
+
+    *pointer_a = a;
     *pointer_b = b;
 
     *pointer_a + *pointer_b
