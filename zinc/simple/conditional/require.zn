@@ -1,6 +1,6 @@
 //! { "cases": [ {
-//!     "ignore": true, "entry": "condition_true",
-//!     "engines": ["zkevm"], "expected": "error"
+//!     "entry": "condition_true",
+//!     "engines": ["zkevm"], "expected": "Runtime error"
 //! }, {
 //!     "entry": "condition_false",
 //!     "expected": 5
@@ -18,7 +18,7 @@ fn main(condition: bool) -> u8 {
     let mut result = 5;
 
     if condition {
-        require(result != 5);
+        require(result == 5);
     }
 
     result

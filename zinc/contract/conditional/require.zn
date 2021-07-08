@@ -1,4 +1,4 @@
-//! { "ignore": true, "cases": [ {
+//! { "cases": [ {
 //!     "name": "condition_true",
 //!     "input": [
 //!         {
@@ -8,9 +8,7 @@
 //!             ]
 //!         }
 //!     ],
-//!     "expected": [
-//!         "error"
-//!     ]
+//!     "expected": "Runtime error"
 //! }, {
 //!     "name": "condition_false",
 //!     "input": [
@@ -31,7 +29,7 @@ contract Test {
         let mut result = 5;
 
         if condition {
-            require(result != 5);
+            require(result == 5);
         }
 
         result
