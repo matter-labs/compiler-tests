@@ -68,7 +68,7 @@ contract Test {
     function complex() public pure returns(uint64) {
         uint8[SIZE] memory message = [1, 12, 55, 53, 213, 123, 45, 21, 12, 92];
         bool result = true;
-        for(uint8 key = 0; key <= 100; key++) {
+        for(uint8 key = 0; key < 20; key++) {
             uint8[SIZE] memory output = decrypt(encrypt(message, key), key);
             for(uint8 i = 0; i < SIZE; i++) {
                 result = result && message[i] == output[i];
