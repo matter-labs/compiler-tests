@@ -26,10 +26,10 @@
 
 contract Test {
     pub fn main(self, condition: bool) -> u8 {
-        let mut result = 5;
+        let result = 5;
 
         if condition {
-            require(result == 5);
+            require(result != 5);
         }
 
         result
