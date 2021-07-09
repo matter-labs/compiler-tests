@@ -1,0 +1,60 @@
+;! { "cases": [ {
+;!     "name": "first",
+;!     "input": [
+;!         {
+;!             "entry": "3df4ddf4",
+;!             "calldata": [
+;!             ]
+;!         }
+;!     ],
+;!     "expected": [
+;!         "42"
+;!     ]
+;! }, {
+;!     "name": "second",
+;!     "input": [
+;!         {
+;!             "entry": "5a8ac02d",
+;!             "calldata": [
+;!             ]
+;!         }
+;!     ],
+;!     "expected": [
+;!         "99"
+;!     ]
+;! } ] }
+
+        .text
+        .file   "main"
+        .globl  __selector
+        .type   __selector,@function
+__selector:
+        mov.p   7, r1
+        sfll    #1, r2, r2
+        sflh    #0, r2, r2
+        mov.p   r2, 1
+        jlt     .LBB0_1, .LBB0_2
+.LBB0_2:
+        sfll    #32, r2, r2
+        sflh    #0, r2, r2
+        div     r1, r2, r1, r0
+        mul     r1, r2, r2, r0
+        sfll    #0, r3, r3
+        sflh    #120350954375031449036696433500388065280, r3, r3
+        sfll    #99, r1, r1
+        sflh    #0, r1, r1
+        sub     r2, r3, r0
+        je      .LBB0_4, .LBB0_3
+.LBB0_3:
+        sfll    #42, r1, r1
+        sflh    #0, r1, r1
+.LBB0_4:
+        mov.p   r1, 8
+        ret
+.LBB0_1:
+        throw
+        ret
+.Lfunc_end0:
+        .size   __selector, .Lfunc_end0-__selector
+
+        .section        ".note.GNU-stack","",@progbits
