@@ -3,7 +3,7 @@
 //!     "expected": 42
 //! }, {
 //!     "entry": "second",
-//!     "expected": 42
+//!     "expected": 99
 //! } ] }
 
 // SPDX-License-Identifier: UNLICENSED
@@ -17,7 +17,7 @@ contract Test {
     }
 
     function second() public pure returns(uint256) {
-        uint256 result = 42;
+        uint256 result = 99;
         return result;
     }
 }
