@@ -118,8 +118,11 @@ unsafe fn complex() -> u64 {
     }
 
     let mut i = 198 as u16;
-    while i < 200 {
+    loop {
         vec = vec.remove(i);
+        if i == 0 {
+            break;
+        }
         i -= 2 as u16;
     }
     // 1, 3, 5, 7,..., 199
