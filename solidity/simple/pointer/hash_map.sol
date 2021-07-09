@@ -192,36 +192,36 @@ contract Test {
     function complex() public pure returns(uint64) {
         initMemory();
         HashMap memory map = newMap();
-        for(uint8 _i = 0; _i < 100; _i++) {
-            insert(map, _i, 100 - _i);
+        for(uint8 _i = 0; _i < 5; _i++) {
+            insert(map, _i, 5 - _i);
         }
-        // 0 - 99
-        if (map.len != 100) {
+        // 0 - 4
+        if (map.len != 5) {
             return 0;
         }
         uint64 i = 0;
-        while (i < 100) {
+        while (i < 5) {
             remove(map, i);
             i += 2;
         }
-        // 1, 3, 5, 7,..., 99
-        if (map.len != 50) {
+        // 1, 3
+        if (map.len != 2) {
             return 0;
         }
         i = 0;
-        while (i < 100) {
-            insert(map, i, 100 - i);
+        while (i < 5) {
+            insert(map, i, 5 - i);
             i += 3;
         }
-        // 0, 1, 3, 5, 6, 7,..., 99
-        if (map.len != 67) {
+        // 0, 1, 3
+        if (map.len != 3) {
             return 0;
         }
         bool result = true;
-        for (uint8 key = 0; key < 100; key++) {
+        for (uint8 key = 0; key < 5; key++) {
             if (key % 2 == 1 || key % 3 == 0) {
                 result = result && contains_key(map, key);
-                result = result && get(map, key) == 100 - key;
+                result = result && get(map, key) == 5 - key;
             } else {
                 result = result && !contains_key(map, key);
             }
