@@ -8,10 +8,10 @@
 //!     "entry": "to_max",
 //!     "expected": 255
 //! }, {
-//!     "ignore": true, "entry": "overflow",
+//!     "entry": "overflow",
 //!     "engines": ["zkevm"], "expected": "error"
 //! }, {
-//!     "ignore": true, "entry": "overflow_minimal",
+//!     "entry": "overflow_minimal",
 //!     "engines": ["zkevm"], "expected": "error"
 //! } ] }
 
