@@ -9,16 +9,16 @@
 //!     "expected": 127
 //! }, {
 //!     "ignore": true, "entry": "overflow_negative_minimal",
-//!     "engines": ["zkevm"], "expected": "error"
+//!     "engines": ["zkevm"], "expected": "Runtime error"
 //! }, {
 //!     "ignore": true, "entry": "overflow_negative",
-//!     "engines": ["zkevm"], "expected": "error"
+//!     "engines": ["zkevm"], "expected": "Runtime error"
 //! }, {
 //!     "ignore": true, "entry": "overflow_positive_minimal",
-//!     "engines": ["zkevm"], "expected": "error"
+//!     "engines": ["zkevm"], "expected": "Runtime error"
 //! }, {
 //!     "ignore": true, "entry": "overflow_positive",
-//!     "engines": ["zkevm"], "expected": "error"
+//!     "engines": ["zkevm"], "expected": "Runtime error"
 //! } ] }
 
 fn zero() -> u64 {

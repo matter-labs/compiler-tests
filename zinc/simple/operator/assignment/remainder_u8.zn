@@ -1,12 +1,12 @@
 //! { "cases": [ {
 //!     "entry": "zero_by_zero",
-//!     "engines": ["zkevm"], "expected": "error"
+//!     "engines": ["zkevm"], "expected": "Runtime error"
 //! }, {
 //!     "entry": "ordinar_by_zero",
-//!     "engines": ["zkevm"], "expected": "error"
+//!     "engines": ["zkevm"], "expected": "Runtime error"
 //! }, {
 //!     "entry": "max_by_zero",
-//!     "engines": ["zkevm"], "expected": "error"
+//!     "engines": ["zkevm"], "expected": "Runtime error"
 //! }, {
 //!     "entry": "ordinar",
 //!     "expected": 0

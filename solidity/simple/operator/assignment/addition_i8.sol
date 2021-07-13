@@ -9,10 +9,10 @@
 //!     "expected": 127
 //! }, {
 //!     "ignore": true, "entry": "overflow",
-//!     "engines": ["zkevm"], "expected": "error"
+//!     "engines": ["zkevm"], "expected": "Runtime error"
 //! }, {
 //!     "ignore": true, "entry": "overflow_minimal",
-//!     "engines": ["zkevm"], "expected": "error"
+//!     "engines": ["zkevm"], "expected": "Runtime error"
 //! } ] }
 
 // SPDX-License-Identifier: UNLICENSED

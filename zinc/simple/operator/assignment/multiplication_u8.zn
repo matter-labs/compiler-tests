@@ -9,10 +9,10 @@
 //!     "expected": 255
 //! }, {
 //!     "entry": "overflow",
-//!     "engines": ["zkevm"], "expected": "error"
+//!     "engines": ["zkevm"], "expected": "Runtime error"
 //! }, {
 //!     "entry": "overflow_minimal",
-//!     "engines": ["zkevm"], "expected": "error"
+//!     "engines": ["zkevm"], "expected": "Runtime error"
 //! } ] }
 
 fn zero_zero() -> u64 {
