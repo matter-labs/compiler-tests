@@ -162,12 +162,12 @@ contract Test {
         return unique(fromArray(input, ARRAY_SIZE));
     }
 
-    function filterTest(uint8[ARRAY_SIZE] memory input, Filter filter, uint8 param) public pure returns(Vector memory) {
-        return filter(fromArray(input, ARRAY_SIZE), filter, param);
+    function filterTest(uint8[ARRAY_SIZE] memory input, Filter _filter, uint8 param) public pure returns(Vector memory) {
+        return filter(fromArray(input, ARRAY_SIZE), _filter, param);
     }
 
-    function mapTest(uint8[ARRAY_SIZE] memory input, Mapping mapping, uint8 param) public pure returns(Vector memory) {
-        return map(fromArray(input, ARRAY_SIZE), mapping, param);
+    function mapTest(uint8[ARRAY_SIZE] memory input, Mapping _mapping, uint8 param) public pure returns(Vector memory) {
+        return map(fromArray(input, ARRAY_SIZE), _mapping, param);
     }
 
     function complex() public pure returns(Vector memory) {
