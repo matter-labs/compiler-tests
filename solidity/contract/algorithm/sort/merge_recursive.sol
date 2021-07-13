@@ -103,7 +103,7 @@ contract Test {
         returns(uint8[ARRAY_SIZE] memory)
     {
         if (begin + 1 == end) {
-            return;
+            return array;
         }
 
         uint8 mid = (begin + end) / 2;

@@ -49,7 +49,7 @@ contract Test {
         returns(uint8[ARRAY_SIZE] memory)
     {
         if (end - begin < 2) {
-            return;
+            return array;
         }
 
         uint8 pivot = array[end - 1];
