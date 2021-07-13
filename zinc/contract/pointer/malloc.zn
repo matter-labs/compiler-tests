@@ -1,0 +1,29 @@
+//! { "cases": [ {
+//!     "name": "main",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "9"
+//!     ]
+//! } ] }
+
+unsafe fn malloc<T>(size: u16) -> *mut T {
+    let memory_pointer: *mut u16 = 0x0002 as u16;
+    let return_pointer = *memory_pointer as *mut T;
+    *memory_pointer = (return_pointer + size) as u16;
+    return_pointer
+}
+
+contract Test {
+    pub unsafe fn main(self) -> u8 {
+        let mut memory_pointer: *mut u16 = 0x0002 as u16;
+        *memory_pointer = 0x0004 as u16;
+
+        malloc::<u8>(1) as u16 as u8 + malloc::<u8>(1) as u16 as u8
+    }
+}

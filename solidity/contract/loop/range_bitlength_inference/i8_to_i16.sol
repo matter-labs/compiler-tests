@@ -1,6 +1,16 @@
 //! { "ignore": true, "cases": [ {
-//!     "entry": "main",
-//!     "expected": 0
+//!     "name": "main",
+//!     "ignore": true,
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "0"
+//!     ]
 //! } ] }
 
 // SPDX-License-Identifier: UNLICENSED
