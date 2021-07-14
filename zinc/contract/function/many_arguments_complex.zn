@@ -1,0 +1,212 @@
+//! { "cases": [ {
+//!     "name": "entry",
+//!     "input": [
+//!         {
+//!             "entry": "entry",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
+//! } ] }
+
+
+struct Str1 {
+    a: u48,
+    b: [u256; 2]
+}
+
+enum Enum1 {
+    A = 64,
+    B = 169,
+    C = 784,
+    D = 900,
+    E = 1225,
+    F = 1296,
+    G = 1369
+}
+
+struct Str2 {
+    a: Str1,
+    b: u88,
+    c: Enum1
+}
+
+contract Test {
+    fn entry(self) -> u64 {
+        let p1 = Str1 {
+            a: 1 as u48,
+            b: [4 as u256, 9 as u256]
+        };
+
+        let p2 = [
+            Str2 {
+                a: Str1 {
+                    a: 16 as u48,
+                    b: [25 as u256, 36 as u256]
+                },
+                b: 49 as u88,
+                c: Enum1::A
+            },
+            Str2 {
+                a: Str1 {
+                    a: 81 as u48,
+                    b: [100 as u256, 121 as u256]
+                },
+                b: 144 as u88,
+                c: Enum1::B
+            }
+        ];
+
+        let p3 = 196 as u216;
+
+        let p4 = [
+            Str1 {
+                a: 225 as u48,
+                b: [256 as u256, 289 as u256]
+            },
+            Str1 {
+                a: 324 as u48,
+                b: [361 as u256, 400 as u256]
+            },
+            Str1 {
+                a: 441 as u48,
+                b: [484 as u256, 529 as u256]
+            }
+        ];
+
+        let p5 = Str2 {
+            a: Str1 {
+                a: 576 as u48,
+                b: [625 as u256, 676 as u256]
+            },
+            b: 729 as u88,
+            c: Enum1::C
+        };
+
+        let p6 = 841 as u176;
+
+        let p7 = Enum1::D;
+
+        let p8 = [
+            Str1 {
+                a: 961 as u48,
+                b: [1024 as u256, 1089 as u256]
+            }
+        ];
+
+        let p9 = 1156 as u120;
+
+        let p10 = [
+            Enum1::E,
+            Enum1::F,
+            Enum1::G
+        ];
+
+        let p11 = [
+            1444 as u72,
+            1521 as u72,
+        ];
+
+        let mut result = true;
+
+        for i in 1..=39 {
+            result = result && self.main(i, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11) == (i * i) as u256;
+        }
+
+        result = result && self.main(0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11) == 0 as u256;
+        result = result && self.main(40, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11) == 0 as u256;
+
+        if result 
+            {1} else {0} as u64
+    }
+
+    fn main(
+        self,
+        param: u8,
+        p1: Str1,
+        p2: [Str2; 2],
+        p3: u216,
+        p4: [Str1; 3],
+        p5: Str2,
+        p6: u176,
+        p7: Enum1,
+        p8: [Str1; 1],
+        p9: u120,
+        p10: [Enum1; 3],
+        p11: [u72; 2]
+    ) -> u256 {
+        match param {
+            1 => p1.a as u256,
+            2 => p1.b[0] as u256,
+            3 => p1.b[1] as u256,
+
+
+            4 => p2[0].a.a as u256,
+            5 => p2[0].a.b[0] as u256,
+            6 => p2[0].a.b[1] as u256,
+            7 => p2[0].b as u256,
+            8 => p2[0].c as u256,
+
+            9 => p2[1].a.a as u256,
+            10 => p2[1].a.b[0] as u256,
+            11 => p2[1].a.b[1] as u256,
+            12 => p2[1].b as u256,
+            13 => p2[1].c as u256,
+
+
+            14 => p3 as u256,
+
+
+            15 => p4[0].a as u256,
+            16 => p4[0].b[0] as u256,
+            17 => p4[0].b[1] as u256,
+
+            18 => p4[1].a as u256,
+            19 => p4[1].b[0] as u256,
+            20 => p4[1].b[1] as u256,
+
+            21 => p4[2].a as u256,
+            22 => p4[2].b[0] as u256,
+            23 => p4[2].b[1] as u256,
+
+
+            24 => p5.a.a as u256,
+            25 => p5.a.b[0] as u256,
+            26 => p5.a.b[1] as u256,
+            27 => p5.b as u256,
+            28 => p5.c as u256,
+
+
+            29 => p6 as u256,
+
+
+            30 => p7 as u256,
+
+
+            31 => p8[0].a as u256,
+            32 => p8[0].b[0] as u256,
+            33 => p8[0].b[1] as u256,
+
+
+            34 => p9 as u256,
+
+
+            35 => p10[0] as u256,
+
+            36 => p10[1] as u256,
+
+            37 => p10[2] as u256,
+
+
+            38 => p11[0] as u256,
+
+            39 => p11[1] as u256,
+
+
+            _ => 0 as u256
+        }
+    }
+}
