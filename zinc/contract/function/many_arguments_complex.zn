@@ -35,7 +35,7 @@ struct Str2 {
 }
 
 contract Test {
-    fn entry(self) -> u64 {
+    pub fn entry(self) -> u64 {
         let p1 = Str1 {
             a: 1 as u48,
             b: [4 as u256, 9 as u256]

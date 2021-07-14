@@ -1,0 +1,19 @@
+//! { "cases": [ {
+//!     "name": "entry",
+//!     "input": [
+//!         {
+//!             "entry": "entry",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
+//! } ] }
+
+contract Test {
+    fn entry(self) -> u64 {
+        1 as u64
+    }
+}
