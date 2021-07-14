@@ -113,7 +113,7 @@ contract Test {
         let mut result = true;
 
         for i in 1..=39 {
-            result = result && self.main(i, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11) == (i * i) as u256;
+            result = result && self.main(i, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11) == i as u256 * i as u256;
         }
 
         result = result && self.main(0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11) == 0 as u256;
