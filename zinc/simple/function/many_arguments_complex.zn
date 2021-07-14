@@ -1,6 +1,6 @@
 //! { "cases": [ {
 //!     "entry": "entry",
-//!     "expected": 1
+//!     "engines": ["zkevm"], "expected": 1
 //! } ] }
 
 
