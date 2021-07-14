@@ -1,72 +1,72 @@
 //! { "cases": [ {
 //!     "entry": "entry",
-//!     "engines": ["zkevm"], "expected": 1
+//!     "expected": 1
 //! } ] }
 
 
 fn entry() -> u64 {
     let p1 = Str1 {
-        a: 1 as u48,
+        a: 1 as u72,
         b: [4 as u256, 9 as u256]
     };
 
     let p2 = [
         Str2 {
             a: Str1 {
-                a: 16 as u48,
+                a: 16 as u72,
                 b: [25 as u256, 36 as u256]
             },
-            b: 49 as u88,
+            b: 49 as u80,
             c: Enum1::A
         },
         Str2 {
             a: Str1 {
-                a: 81 as u48,
+                a: 81 as u72,
                 b: [100 as u256, 121 as u256]
             },
-            b: 144 as u88,
+            b: 144 as u80,
             c: Enum1::B
         }
     ];
 
-    let p3 = 196 as u216;
+    let p3 = 196 as u208;
 
     let p4 = [
         Str1 {
-            a: 225 as u48,
+            a: 225 as u72,
             b: [256 as u256, 289 as u256]
         },
         Str1 {
-            a: 324 as u48,
+            a: 324 as u72,
             b: [361 as u256, 400 as u256]
         },
         Str1 {
-            a: 441 as u48,
+            a: 441 as u72,
             b: [484 as u256, 529 as u256]
         }
     ];
 
     let p5 = Str2 {
         a: Str1 {
-            a: 576 as u48,
+            a: 576 as u72,
             b: [625 as u256, 676 as u256]
         },
-        b: 729 as u88,
+        b: 729 as u80,
         c: Enum1::C
     };
 
-    let p6 = 841 as u176;
+    let p6 = 841 as u160;
 
     let p7 = Enum1::D;
 
     let p8 = [
         Str1 {
-            a: 961 as u48,
+            a: 961 as u72,
             b: [1024 as u256, 1089 as u256]
         }
     ];
 
-    let p9 = 1156 as u120;
+    let p9 = 1156 as u128;
 
     let p10 = [
         Enum1::E,
@@ -93,7 +93,7 @@ fn entry() -> u64 {
 }
 
 struct Str1 {
-    a: u48,
+    a: u72,
     b: [u256; 2]
 }
 
@@ -109,7 +109,7 @@ enum Enum1 {
 
 struct Str2 {
     a: Str1,
-    b: u88,
+    b: u80,
     c: Enum1
 }
 
@@ -117,13 +117,13 @@ fn main(
     param: u8,
     p1: Str1,
     p2: [Str2; 2],
-    p3: u216,
+    p3: u208,
     p4: [Str1; 3],
     p5: Str2,
-    p6: u176,
+    p6: u160,
     p7: Enum1,
     p8: [Str1; 1],
-    p9: u120,
+    p9: u128,
     p10: [Enum1; 3],
     p11: [u72; 2]
 ) -> u256 {
