@@ -9,9 +9,7 @@
 //!             ]
 //!         }
 //!     ],
-//!     "expected": [
-//!         "error"
-//!     ]
+//!     "expected": "Runtime error"
 //! } ] }
 
 contract Test {

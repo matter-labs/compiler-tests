@@ -19,13 +19,13 @@ contract Test {
 
         let pointer_1 = {
             let return_pointer = *memory_pointer as *mut u8;
-            *memory_pointer = (return_pointer + 1 as u16) as u16;
+            *memory_pointer = (return_pointer + size_of::<u8>()) as u16;
             return_pointer as *mut u8
         };
 
         let pointer_2 = {
             let return_pointer = *memory_pointer as *mut u8;
-            *memory_pointer = (return_pointer + 1 as u16) as u16;
+            *memory_pointer = (return_pointer + size_of::<u8>()) as u16;
             return_pointer as *mut u8
         };
 

@@ -1,4 +1,4 @@
-//! { "ignore": true, "cases": [ {
+//! { "cases": [ {
 //!     "entry": "default",
 //!     "engines": ["zkevm"], "expected": "Runtime error"
 //! } ] }

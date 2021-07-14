@@ -1,5 +1,4 @@
-//! { "ignore": true,
-//! "cases": [ {
+//! { "cases": [ {
 //!     "name": "default",
 //!     "input": [
 //!         {
@@ -9,9 +8,7 @@
 //!             ]
 //!         }
 //!     ],
-//!     "expected": [
-//!         "error"
-//!     ]
+//!     "expected": "Runtime error"
 //! } ] }
 
 contract Test {

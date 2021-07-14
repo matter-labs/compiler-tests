@@ -49,9 +49,7 @@
 //!             ]
 //!         }
 //!     ],
-//!     "expected": [
-//!         "error"
-//!     ]
+//!     "expected": "Runtime error"
 //! }, {
 //!     "name": "overflow_negative",
 //!     "ignore": true,
@@ -63,9 +61,7 @@
 //!             ]
 //!         }
 //!     ],
-//!     "expected": [
-//!         "error"
-//!     ]
+//!     "expected": "Runtime error"
 //! }, {
 //!     "name": "overflow_positive_minimal",
 //!     "ignore": true,
@@ -77,9 +73,7 @@
 //!             ]
 //!         }
 //!     ],
-//!     "expected": [
-//!         "error"
-//!     ]
+//!     "expected": "Runtime error"
 //! }, {
 //!     "name": "overflow_positive",
 //!     "ignore": true,
@@ -91,9 +85,7 @@
 //!             ]
 //!         }
 //!     ],
-//!     "expected": [
-//!         "error"
-//!     ]
+//!     "expected": "Runtime error"
 //! } ] }
 
 contract Test {

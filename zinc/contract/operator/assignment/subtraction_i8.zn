@@ -62,9 +62,7 @@
 //!             ]
 //!         }
 //!     ],
-//!     "expected": [
-//!         "error"
-//!     ]
+//!     "expected": "Runtime error"
 //! }, {
 //!     "name": "overflow_minimal",
 //!     "ignore": true,
@@ -76,9 +74,7 @@
 //!             ]
 //!         }
 //!     ],
-//!     "expected": [
-//!         "error"
-//!     ]
+//!     "expected": "Runtime error"
 //! } ] }
 
 contract Test {
