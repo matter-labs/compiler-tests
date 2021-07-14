@@ -1,0 +1,12 @@
+//! { "cases": [ {
+//!     "entry": "entry",
+//!     "expected": 1
+//! } ] }
+
+
+fn entry() -> u64 {
+    let p1 = 1 as u24;
+ 
+    if p1 == 1 as u24
+        {1} else {0} as u64
+}
