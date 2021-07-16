@@ -1,0 +1,56 @@
+//! { "cases": [ {
+//!     "name": "entry",
+//!     "input": [
+//!         {
+//!             "entry": "entry",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
+//! } ] }
+
+contract Test {
+    pub fn entry(self) -> u64 {
+        Self::test();
+        Self::test(); // if call function only 1 times it works
+        1
+    }
+
+    fn test() -> u64 {
+        for i in 0..2 {
+            let mut j = 1;
+            while j < 4 {
+                let mut p = 0;
+                loop {
+                    p += 2;
+                    if p == 8 {
+                        break;
+                    }
+                    for h in 1..=255 {
+                        if h > 2 {
+                            break;
+                        }
+                        for k in 10..12 {
+                            let mut x = 6;
+                            loop {
+                                x -= 1;
+                                if x == 0 {
+                                    break;
+                                }
+                                let mut y = 10;
+                                while y < 17 {
+                                    y += 1;
+                                }
+                            }
+                        }
+                    }
+                }
+                j *= 2;
+            }
+        }
+        0
+    }
+}

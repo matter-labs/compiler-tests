@@ -1,0 +1,65 @@
+//! { "cases": [ {
+//!     "name": "entry",
+//!     "input": [
+//!         {
+//!             "entry": "entry",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
+//! } ] }
+
+contract Test {
+    pub fn entry(self) -> u64 {
+        let mut result = true;
+        
+        result = result && Self::test(31) == 288;
+        result = result && Self::test(32) == 576;
+        result = result && Self::test(33) == 216;
+
+        if result { 1 } else { 0 }
+    }
+
+    fn test(param: u8) -> u64 {
+        let mut cnt = 0 as u64;
+        for i in 0..2 {
+            let mut j = 1;
+            while j < 4 {
+                let mut p = 0;
+                loop {
+                    p += 2;
+                    if p%8 == 0 {
+                        break;
+                    }
+                    for h in 1..=255 {
+                        if param == 4 {
+                            return 40;
+                        }
+                        if h > 2 {
+                            break;
+                        }
+                        for k in 10..12 {
+                            let mut x = 7;
+                            loop {
+                                x -= 1;
+                                if x == 0 {
+                                    break;
+                                }
+                                let mut y = 10;
+                                while y < 17 {
+                                    y += 1;
+                                    cnt += 1 as u64
+                                }
+                            }
+                        }
+                    }
+                }
+                j *= 2;
+            }
+        }
+        cnt
+    }
+}

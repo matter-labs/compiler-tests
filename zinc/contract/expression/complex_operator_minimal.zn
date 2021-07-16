@@ -1,0 +1,20 @@
+//! { "cases": [ {
+//!     "name": "main",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "4"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "0"
+//!     ]
+//! } ] }
+
+contract Test {
+    pub fn main(self, witness: u8) -> u8 {
+        14 - (witness / 2 + 5) * 2
+    }
+}
