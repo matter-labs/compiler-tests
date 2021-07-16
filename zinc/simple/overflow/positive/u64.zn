@@ -3,8 +3,8 @@
 //!     "engines": ["zkevm"], "expected": "Runtime error"
 //! } ] }
 
-fn default() -> u64 {
-    main(18446744073709551615) as u64
+fn default() -> u256 {
+    main(18446744073709551615) as u256
 }
 
 fn main(witness: u64) -> u64 {
