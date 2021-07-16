@@ -1,0 +1,23 @@
+//! { "cases": [ {
+//!     "name": "f",
+//!     "input": [
+//!         {
+//!             "entry": "f",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "42"
+//!     ]
+//! } ] }
+
+contract Test {
+    pub fn f(self) -> [u256; 1] {
+        self.test()
+    }
+
+    fn test(self) -> [u256; 1] {
+        return [42 as u256];
+    }
+}
