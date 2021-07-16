@@ -14,18 +14,11 @@
 
 contract Test {
     pub fn entry(self) -> u64 {
-        let mut result = true;
-        
-        result = result && Self::test(31) == 288;
-        result = result && Self::test(32) == 576;
-        result = result && Self::test(33) == 216;
-
-        if result { 1 } else { 0 }
+        Self::test(31)
     }
 
     fn test(param: u8) -> u64 {
         let mut cnt = 0 as u64;
-        for i in 0..2 {
             let mut j = 1;
             while j < 4 {
                 let mut p = 0;
@@ -59,7 +52,6 @@ contract Test {
                 }
                 j *= 2;
             }
-        }
         cnt
     }
 }
