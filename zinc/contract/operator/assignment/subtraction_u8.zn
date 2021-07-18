@@ -39,7 +39,6 @@
 //!     ]
 //! }, {
 //!     "name": "overflow",
-//!     "ignore": true,
 //!     "input": [
 //!         {
 //!             "entry": "main",
@@ -51,7 +50,6 @@
 //!     "expected": "Runtime error"
 //! }, {
 //!     "name": "overflow_minimal",
-//!     "ignore": true,
 //!     "input": [
 //!         {
 //!             "entry": "main",

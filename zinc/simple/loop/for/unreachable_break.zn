@@ -3,7 +3,7 @@
 //!     "expected": 3
 //! } ] }
 
-fn entry() -> u256 {
+fn entry() -> u64 {
     let mut end = true;
 
     let mut sum: u256 = 0;
@@ -15,5 +15,5 @@ fn entry() -> u256 {
         }
     }
 
-    sum
+    sum as u64
 }
