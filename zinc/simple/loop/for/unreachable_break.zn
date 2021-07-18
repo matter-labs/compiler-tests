@@ -1,0 +1,19 @@
+//! { "cases": [ {
+//!     "entry": "entry",
+//!     "expected": 3
+//! } ] }
+
+fn entry() -> u256 {
+    let mut end = true;
+
+    let mut sum: u256 = 0;
+    for i in 1..=2 {
+        sum += i as u256;
+
+        if !end {
+            break;
+        }
+    }
+
+    sum
+}
