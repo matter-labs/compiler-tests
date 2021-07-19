@@ -1,0 +1,24 @@
+//! { "cases": [ {
+//!     "entry": "default",
+//!     "expected": 10
+//! } ] }
+
+unsafe fn default() -> u64 {
+    let mut vec = new(); // if init without separate function it works
+
+    *(vec.0) = 10 as u64;
+
+    vec.1 += 1 as u16; // if comment this line it will work
+    get(vec, 0) // if get without function (just *vec.0) it works
+}
+
+fn new() -> (*mut u64, u16) {
+    (
+        2 as u16 as *mut u64,
+        0 as u16
+    )
+}
+
+unsafe fn get(vec: (*mut u64, u16), index: u16) -> u64 {
+    *(vec.0 + index)
+}
