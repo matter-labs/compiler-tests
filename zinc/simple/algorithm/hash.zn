@@ -5,6 +5,7 @@
 
 const ARRAY_SIZE: u8 = 40;
 const P: u128 = 257;
+const MODULO: u128 = 1000000007;
 
 fn complex() -> u64 {
     let mut array = [0; ARRAY_SIZE];
@@ -24,7 +25,7 @@ fn complex() -> u64 {
 fn hash(array: [u8; ARRAY_SIZE], begin: u8, end: u8) -> u128 {
     let mut h = 0 as u128;
     for i in begin..end {
-        h = h * P + array[i] as u128;
+        h = (h * P + array[i] as u128) % MODULO;
     }
     h
 }
