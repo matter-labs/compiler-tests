@@ -1,0 +1,55 @@
+//! { "cases": [ {
+//!     "entry": "false_false",
+//!     "expected": 4
+//! }, {
+//!     "entry": "false_true",
+//!     "expected": 8
+//! }, {
+//!     "entry": "true_false",
+//!     "expected": 8
+//! }, {
+//!     "entry": "true_true",
+//!     "expected": 4
+//! } ] }
+
+fn false_false() -> u8 {
+    main(false, false)
+}
+
+fn false_true() -> u8 {
+    main(false, true)
+}
+
+fn true_false() -> u8 {
+    main(true, false)
+}
+
+fn true_true() -> u8 {
+    main(true, true)
+}
+
+fn main(first: bool, second: bool) -> u8 {
+    let mut result = 1;
+
+    if first || second {
+        result <<= 1;
+    }
+
+    if first ^^ second {
+        result <<= 1;
+    }
+
+    if first && second {
+        result <<= 1;
+    }
+
+    if !first {
+        result <<= 1;
+    }
+
+    if !second {
+        result <<= 1;
+    }
+
+    result
+}
