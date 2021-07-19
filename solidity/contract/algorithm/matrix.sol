@@ -38,7 +38,7 @@ contract Test {
     uint16 constant MAX_SIZE = 5;
 
     struct Matrix {
-        uint64[MAX_SIZE][MAX_SIZE] a;
+        uint128[MAX_SIZE][MAX_SIZE] a;
         uint16 n;
         uint16 m;
     }
@@ -66,7 +66,7 @@ contract Test {
         return self;
     }
 
-    function scalar(Matrix memory self, uint64 n) private pure returns(Matrix memory) {
+    function scalar(Matrix memory self, uint128 n) private pure returns(Matrix memory) {
         for(uint16 i = 0; i < self.n; i++) {
             for(uint16 j = 0; j < self.m; j++) {
                 self.a[i][j] *= n;
@@ -141,6 +141,6 @@ contract Test {
         matrix.a[1][0] = 1;
         matrix.a[1][1] = 1;
         matrix = pow(matrix, n - 2);
-        return matrix.a[0][1] + matrix.a[1][1];
+        return uint64(matrix.a[0][1] + matrix.a[1][1]);
     }
 }
