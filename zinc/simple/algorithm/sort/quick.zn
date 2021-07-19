@@ -40,23 +40,23 @@ fn quick_sort(mut array: [u8; ARRAY_SIZE], begin: u8, end: u8, direction: Direct
         return array;
     }
     let pivot = array[end-1];
-    let mut i = begin - 1;
+    let mut i = begin;
 
     for j in begin..end - 1 {
         if match direction {
             Direction::Ascending => array[j] < pivot,
             Direction::Descending => array[j] > pivot,
         } {
-            i += 1;
             let temp = array[i];
             array[i] = array[j];
             array[j] = temp;
+            i += 1;
         }
     }
-    array[end-1] = array[i+1];
-    array[i+1] = pivot;
+    array[end-1] = array[i];
+    array[i] = pivot;
 
-    array = quick_sort(array, begin, i+1, direction);
-    array = quick_sort(array, i+2, end, direction);
+    array = quick_sort(array, begin, i, direction);
+    array = quick_sort(array, i+1, end, direction);
     array
 }

@@ -59,23 +59,23 @@ contract Test {
         }
 
         uint8 pivot = array[end - 1];
-        uint8 i = begin - 1;
+        uint8 i = begin;
 
         for(uint8 j = begin; j < end - 1; j++) {
             if (
                 (direction == Direction.Ascending && array[j] < pivot) ||
                 (direction == Direction.Descending && array[j] > pivot)
             ) {
-                i++;
                 uint8 temp = array[i];
                 array[i] = array[j];
                 array[j] = temp;
+                i++;
             }
         }
-        array[end - 1] = array[i + 1];
-        array[i + 1] = pivot;
+        array[end - 1] = array[i];
+        array[i] = pivot;
 
-        quickSort(array, begin, i + 1, direction);
-        quickSort(array, i + 2, end, direction);
+        quickSort(array, begin, i, direction);
+        quickSort(array, i + 1, end, direction);
     }
 }
