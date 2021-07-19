@@ -10,6 +10,7 @@ pragma solidity ^0.8.0;
 contract Test {
     uint8 constant ARRAY_SIZE = 40;
     uint128 constant P = 257;
+    uint128 constant MODULO = 1000000007;
 
     function complex() public pure returns(uint64) {
         uint8[ARRAY_SIZE] memory array;
@@ -33,7 +34,7 @@ contract Test {
     function hash(uint8[ARRAY_SIZE] memory array, uint8 begin, uint8 end) private pure returns(uint128) {
         uint128 h = 0;
         for(uint8 i = begin; i < end; i++) {
-            h = h * P + array[i];
+            h = (h * P + array[i]) % MODULO;
         }
         return h;
     }
