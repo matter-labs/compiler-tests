@@ -1,0 +1,20 @@
+//! { "ignore": true, "cases": [ {
+//!     "name": "default",
+//!     "input": [
+//!         {
+//!             "entry": "entry",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "Runtime error"
+//!     ]
+//! } ] }
+
+contract Test {
+    pub unsafe fn entry(self) -> u64 {
+        let ptr = 0 as u16 as *mut u64;
+        *ptr
+    }
+}
