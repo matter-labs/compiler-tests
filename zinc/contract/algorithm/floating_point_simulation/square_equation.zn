@@ -38,11 +38,12 @@
 
 const EPS: u128 = 1E10;
 const PRECISION: u128 = 100;
+const MAX_U128_SQRT: u128 = 18446744073709551615;
 
 fn sqrt(n: u128) -> u128 {
     // binary search
     let mut l = 0 as u128;
-    let mut r = n as u128;
+    let mut r = MAX_U128_SQRT;
     while l < r {
         let m = (l + r + 1) / 2;
         if m*m <= n {
