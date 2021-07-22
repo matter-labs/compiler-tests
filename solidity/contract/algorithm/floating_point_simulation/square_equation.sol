@@ -43,6 +43,7 @@ pragma solidity ^0.8.0;
 contract Test {
     uint128 constant EPS = 1E10;
     uint128 constant PRECISION = 100;
+    uint128 constant MAX_U128_SQRT = 18446744073709551615;
 
     function noSolution() public pure returns(uint64) {
         uint128 a = 1;
@@ -91,7 +92,7 @@ contract Test {
     function sqrt(uint128 n) private pure returns(uint128) {
         // binary search
         uint128 l = 0;
-        uint128 r = n;
+        uint128 r = MAX_U128_SQRT;
         while (l < r) {
             uint128 m = (l + r + 1) / 2;
             if (m*m <= n) {

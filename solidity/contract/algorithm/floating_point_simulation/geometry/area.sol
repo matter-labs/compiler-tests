@@ -82,6 +82,7 @@ contract Test {
     uint128 constant PI = 3141592653589793238;
     uint128 constant PRECISION = 100;
     uint8 constant DIM = 10;
+    uint128 constant MAX_U128_SQRT = 18446744073709551615;
 
     struct Triangle {
         uint128 a;
@@ -188,7 +189,7 @@ contract Test {
     function sqrt(uint128 n) private pure returns(uint128) {
         // binary search
         uint128 l = 0;
-        uint128 r = n;
+        uint128 r = MAX_U128_SQRT;
         while (l < r) {
             uint128 m = (l + r + 1) / 2;
             if (m*m <= n) {
@@ -210,12 +211,21 @@ contract Test {
     }
 
     function polygonArea(Polygon memory polygon) private pure returns(uint128) {
-        uint128 s = 0;
+        uint128 sp = 0;
+        uint128 sn = 0;
         for(uint8 i = 1; i < polygon.n; i++) {
-            s += (polygon.x[i] - polygon.x[i - 1]) * (polygon.y[i] + polygon.y[i - 1]);
+            if (polygon.x[i] > polygon.x[i - 1]) {
+                sp += (polygon.x[i] - polygon.x[i - 1]) * (polygon.y[i] + polygon.y[i - 1]);
+            } else {
+                sn += (polygon.x[i - 1] - polygon.x[i]) * (polygon.y[i] + polygon.y[i - 1]);
+            }
         }
-        s += (polygon.x[0] - polygon.x[polygon.n - 1]) * (polygon.y[0] + polygon.y[polygon.n - 1]);
-        return s/2;
+        if (polygon.x[0] > polygon.x[polygon.n - 1]) {
+            sp += (polygon.x[0] - polygon.x[polygon.n - 1]) * (polygon.y[0] + polygon.y[polygon.n - 1]);
+        } else {
+            sn += (polygon.x[polygon.n - 1] - polygon.x[0]) * (polygon.y[0] + polygon.y[polygon.n - 1]);
+        }
+        return (sp - sn) / 2;
     }
 
     function sphereSurface(Sphere memory sphere, uint128 pi) private pure returns(uint128) {
