@@ -8,15 +8,13 @@
 //!         }
 //!     ],
 //!     "expected": [
-//!         "1"
+//!         "3"
 //!     ]
 //! } ] }
 
 contract Test {
     pub fn entry(self) -> u64 {
-        Self::test();
-        Self::test(); // if call function only 1 times it works
-        1
+        Self::test() + Self::test() + Self::test()
     }
 
     fn test() -> u64 {
@@ -51,6 +49,6 @@ contract Test {
                 j *= 2;
             }
         }
-        0
+        1
     }
 }
