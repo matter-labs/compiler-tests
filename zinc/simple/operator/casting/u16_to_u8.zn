@@ -8,10 +8,10 @@
 //!     "entry": "max",
 //!     "expected": 127
 //! }, {
-//!     "ignore": true, "entry": "overflow_positive_minimal",
+//!     "entry": "overflow_positive_minimal",
 //!     "engines": ["zkevm"], "expected": "Runtime error"
 //! }, {
-//!     "ignore": true, "entry": "overflow_positive",
+//!     "entry": "overflow_positive",
 //!     "engines": ["zkevm"], "expected": "Runtime error"
 //! } ] }
 
