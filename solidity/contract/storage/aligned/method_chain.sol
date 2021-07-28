@@ -5,6 +5,9 @@
 //!             "entry": "main",
 //!             "calldata": [
 //!                 "42"
+//!             ],
+//!             "storage": [
+//!                 "5", "11"
 //!             ]
 //!         }
 //!     ],
@@ -22,9 +25,6 @@ contract Test {
     uint256 b;
 
     function main(uint248 value) public returns(uint248) {
-        a = 5;
-        b = 11;
-
         return uint248(a) + quadruple(triple(double(value))) + uint248(b);
     }
 

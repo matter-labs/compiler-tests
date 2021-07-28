@@ -5,6 +5,9 @@
 //!             "entry": "default",
 //!             "calldata": [
 //!                 "42"
+//!             ],
+//!             "storage": [
+//!                 "99", "100", "101"
 //!             ]
 //!         }
 //!     ],
@@ -19,6 +22,8 @@ struct Data {
 
 struct Inner {
     value: u8,
+    next: u8,
+    last: u8,
 }
 
 contract Test {
@@ -27,8 +32,8 @@ contract Test {
     const TEST: u8 = 42;
 
     pub fn default(mut self, argument: u8) -> u8 {
-        self.data.inner.value = argument;
+        self.data.inner.next = argument;
 
-        argument + Self::TEST + self.data.inner.value
+        argument + Self::TEST + self.data.inner.next
     }
 }

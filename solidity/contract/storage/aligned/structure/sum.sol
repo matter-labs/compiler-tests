@@ -4,7 +4,9 @@
 //!         {
 //!             "entry": "main",
 //!             "calldata": [
-//!                 "42"
+//!             ],
+//!             "storage": [
+//!                 "20", "15", "10", "5"
 //!             ]
 //!         }
 //!     ],
@@ -26,11 +28,6 @@ contract Test {
     Data data;
 
     function main(uint8 argument) public returns(uint8) {
-        data.a = 20;
-        data.b = 15;
-        data.c = 10;
-        data.d = 5;
-
         uint8 sum = 0;
         sum += uint8(data.a);
         sum += uint8(data.b);

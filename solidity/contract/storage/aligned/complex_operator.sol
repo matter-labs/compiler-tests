@@ -5,6 +5,9 @@
 //!             "entry": "main",
 //!             "calldata": [
 //!                 "16"
+//!             ],
+//!             "storage": [
+//!                 "3", "5", "2"
 //!             ]
 //!         }
 //!     ],
@@ -23,10 +26,6 @@ contract Test {
     uint256 field_3;
 
     function main(uint8 witness) public returns(uint8) {
-        field_1 = 3;
-        field_2 = 5;
-        field_3 = 2;
-
         return 19 * 3 - 8 / uint8(field_1) + (witness / (uint8(field_2) - 3) + 5) * (8 / uint8(field_3) / 2);
     }
 }

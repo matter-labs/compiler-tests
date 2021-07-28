@@ -5,6 +5,9 @@
 //!             "entry": "default",
 //!             "calldata": [
 //!                 "42"
+//!             ],
+//!             "storage": [
+//!                 "5", "7"
 //!             ]
 //!         }
 //!     ],
@@ -26,14 +29,11 @@ contract Test {
     a: u256;
     b: u256;
 
-    pub fn default(mut self, value: u248) -> u248 {
+    pub fn default(self, value: u248) -> u248 {
         let data = Data {
             c: 10 as u248,
             d: 20 as u248,
         };
-
-        self.a += 5 as u256;
-        self.b += 7 as u256;
 
         self.inner(data, value, 42)
     }

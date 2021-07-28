@@ -4,6 +4,9 @@
 //!         {
 //!             "entry": "default",
 //!             "calldata": [
+//!             ],
+//!             "storage": [
+//!                 "20", "15", "10", "5"
 //!             ]
 //!         }
 //!     ],
@@ -17,12 +20,7 @@ const SIZE: u8 = 4;
 contract Test {
     data: [u16; SIZE];
 
-    pub fn default(mut self) -> u16 {
-        self.data[0] = 20 as u16;
-        self.data[1] = 15 as u16;
-        self.data[2] = 10 as u16;
-        self.data[3] = 5 as u16;
-
+    pub fn default(self) -> u16 {
         let mut product: u16 = 1;
         for i in 0..SIZE {
             product *= self.data[i];

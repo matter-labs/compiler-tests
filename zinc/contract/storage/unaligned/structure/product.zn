@@ -4,6 +4,9 @@
 //!         {
 //!             "entry": "default",
 //!             "calldata": [
+//!             ],
+//!             "storage": [
+//!                 "20", "15", "10", "5"
 //!             ]
 //!         }
 //!     ],
@@ -22,12 +25,7 @@ struct Data {
 contract Test {
     data: Data;
 
-    pub fn default(mut self) -> u16 {
-        self.data.a = 20 as u16;
-        self.data.b = 15 as u16;
-        self.data.c = 10 as u16;
-        self.data.d = 5 as u16;
-
+    pub fn default(self) -> u16 {
         let mut product: u16 = 1;
         product *= self.data.a;
         product *= self.data.b;

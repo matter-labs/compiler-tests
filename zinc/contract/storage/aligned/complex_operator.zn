@@ -5,6 +5,9 @@
 //!             "entry": "default",
 //!             "calldata": [
 //!                 "16"
+//!             ],
+//!             "storage": [
+//!                 "3", "5", "2"
 //!             ]
 //!         }
 //!     ],
@@ -18,11 +21,7 @@ contract Test {
     field_2: u256;
     field_3: u256;
 
-    pub fn default(mut self, witness: u8) -> u8 {
-        self.field_1 = 3 as u256;
-        self.field_2 = 5 as u256;
-        self.field_3 = 2 as u256;
-
+    pub fn default(self, witness: u8) -> u8 {
         19 * 3 - 8 / (self.field_1 as u8) + (witness / ((self.field_2 as u8) - 3) + 5) * (8 / (self.field_3 as u8) / 2)
     }
 }

@@ -5,11 +5,14 @@
 //!             "entry": "main",
 //!             "calldata": [
 //!                 "42"
+//!             ],
+//!             "storage": [
+//!                 "99", "100", "101"
 //!             ]
 //!         }
 //!     ],
 //!     "expected": [
-//!         "126"
+//!         "226"
 //!     ]
 //! } ] }
 
@@ -22,13 +25,15 @@ contract Test {
 
     struct Inner {
         uint256 value;
+        uint256 next;
+        uint256 last;
     }
 
     Data data;
 
     function main(uint8 argument) public returns(uint8) {
-        data.inner.value += uint256(argument);
+        data.inner.next += uint256(argument);
 
-        return argument + TEST + uint8(data.inner.value);
+        return argument + TEST + uint8(data.inner.next);
     }
 }

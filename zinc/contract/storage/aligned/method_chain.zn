@@ -5,6 +5,9 @@
 //!             "entry": "default",
 //!             "calldata": [
 //!                 "42"
+//!             ],
+//!             "storage": [
+//!                 "5", "11"
 //!             ]
 //!         }
 //!     ],
@@ -17,10 +20,7 @@ contract Test {
     a: u256;
     b: u256;
 
-    pub fn default(mut self, value: u248) -> u248 {
-        self.a = 5 as u256;
-        self.b = 11 as u256;
-
+    pub fn default(self, value: u248) -> u248 {
         (self.a as u248) + self.quadruple(self.triple(self.double(value))) + (self.b as u248)
     }
 
