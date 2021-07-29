@@ -17,5 +17,5 @@ contract Test {
         let ptr = 9216 as u16 as *mut u64; // for 9215 and less it works
         *ptr = 10 as u64;
         return *ptr;
-}
+    }
 }
