@@ -4,6 +4,7 @@
 //!         {
 //!             "entry": "entry",
 //!             "calldata": [
+//!                 "0", "0", "0", "0", "0", "2"
 //!             ]
 //!         }
 //!     ],
@@ -17,19 +18,18 @@ struct Str1 {
 }
 
 contract Test {
-    pub fn entry(self) -> u64 {
-        let p1 = Str1 {
-            a: 0 as u256,
-        };
-        let p2 = 0 as u256;
-        let p3 = 0 as u256;
-        let p4 = 0 as u256;
-        let p5 = 0 as u256;
-        let p6 = 2 as u256; // if place here 0 or 1 - it works
-
+    pub fn entry(
+        self,
+        p1: Str1,
+        p2: u256,
+        p3: u256,
+        p4: u256,
+        p5: u256,
+        p6: u256
+    ) -> u256 {
         if self.main(0, p1, p2, p3, p4, p5, p6) == 0 as u256 &&
             self.main(7, p1, p2, p3, p4, p5, p6) == 0 as u256
-            {1} else {0} as u64
+            {1} else {0} as u256
     }
 
     fn main(
