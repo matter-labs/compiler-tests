@@ -1,0 +1,12 @@
+//! { "cases": [ {
+//!     "entry": "entry",
+//!     "expected": 0
+//! } ] }
+
+fn entry() -> u8 {
+    main(4)
+}
+
+fn main(witness: u8) -> u8 {
+    14 - (witness / 2 + 5) * 2
+}

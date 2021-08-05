@@ -1,8 +1,8 @@
 //! { "cases": [ {
-//!     "name": "default",
+//!     "name": "_default",
 //!     "input": [
 //!         {
-//!             "entry": "default",
+//!             "entry": "_default",
 //!             "calldata": [
 //!                 "512"
 //!             ]
@@ -14,7 +14,7 @@
 //! } ] }
 
 contract Test {
-    pub fn default(self, value: u256) -> u256 {
-        value * 2
+    function _default(uint248 value) public pure returns(uint248) {
+        return value * 2;
     }
 }

@@ -1,0 +1,12 @@
+//! { "cases": [ {
+//!     "entry": "entry",
+//!     "expected": 1024
+//! } ] }
+
+fn entry() -> u64 {
+    default(512) as u64
+}
+
+fn default(value: u256) -> u256 {
+    value * 2
+}

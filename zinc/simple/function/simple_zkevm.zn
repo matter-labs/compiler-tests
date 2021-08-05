@@ -1,0 +1,12 @@
+//! { "cases": [ {
+//!     "entry": "entry",
+//!     "engines": ["zkevm"], "expected": 1024
+//! } ] }
+
+fn entry() -> u248 {
+    default(512)
+}
+
+fn default(value: u248) -> u248 {
+    value * 2
+}
