@@ -6,12 +6,12 @@
 //!     "expected": 1275
 //! } ] }
 
-fn first() -> u256 {
-    main(100, false) + main(100, true)
+fn first() -> u64 {
+    (main(100, false) + main(100, true)) as u64
 }
 
-fn second() -> u256 {
-    main(50, true) + main(50, false)
+fn second() -> u64 {
+    (main(50, true) + main(50, false)) as u64
 }
 
 fn main(a: u256, is_odd: bool) -> u256 {
