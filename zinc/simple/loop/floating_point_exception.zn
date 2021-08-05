@@ -1,0 +1,33 @@
+//! { "cases": [ {
+//!     "entry": "first",
+//!     "expected": 1
+//! }, {
+//!     "entry": "second",
+//!     "expected": 1
+//! }, {
+//!     "entry": "third",
+//!     "expected": 1
+//! } ] }
+
+fn first() -> u64 {
+    for i in 0..2 {
+        i * 2;
+    }
+    1 as u64
+}
+
+fn second() -> u64 {
+    let mut a = 0 as u8;
+    for i in 0..2 {
+        a = i * 2;
+    }
+    1 as u64
+}
+
+fn third() -> u64 {
+    let a = 0 as u8;
+    for i in 0..2 {
+        a * 2;
+    }
+    1 as u64
+}

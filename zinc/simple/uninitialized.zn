@@ -1,0 +1,9 @@
+//! { "ignore": true, "cases": [ {
+//!     "entry": "entry",
+//!     "engines": ["zkevm"], "expected": "Runtime error"
+//! } ] }
+
+unsafe fn entry() -> u64 {
+    let ptr = 0 as u16 as *mut u64;
+    *ptr
+}

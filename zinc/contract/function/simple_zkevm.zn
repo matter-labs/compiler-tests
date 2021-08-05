@@ -14,7 +14,7 @@
 //! } ] }
 
 contract Test {
-    pub fn default(self, value: u256) -> u256 {
+    pub fn default(mut self, value: u248) -> u248 {
         value * 2
     }
 }
