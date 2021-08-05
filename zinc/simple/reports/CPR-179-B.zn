@@ -4,9 +4,7 @@
 //! } ] }
 
 fn entry() -> u64 {
-    let p1 = Str1 {
-        a: 0 as u256,
-    };
+    let p1 = 0 as u256;
     let p2 = 0 as u256;
     let p3 = 0 as u256;
     let p4 = 0 as u256;
@@ -18,13 +16,9 @@ fn entry() -> u64 {
         {1} else {0} as u64
 }
 
-struct Str1 {
-    a: u256,
-}
-
 fn main(
     param: u8,
-    p1: Str1,
+    p1: u256,
     p2: u256,
     p3: u256,
     p4: u256,
@@ -32,7 +26,7 @@ fn main(
     p6: u256
 ) -> u256 {
     match param {
-        1 => p1.a,
+        1 => p1,
         2 => p2,
         3 => p3,
         4 => p4,

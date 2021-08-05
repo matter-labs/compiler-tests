@@ -13,14 +13,10 @@
 //!     ]
 //! } ] }
 
-struct Str1 {
-    a: u256,
-}
-
 contract Test {
     pub fn entry(
         self,
-        p1: Str1,
+        p1: u256,
         p2: u256,
         p3: u256,
         p4: u256,
@@ -35,7 +31,7 @@ contract Test {
     fn main(
         self,
         param: u8,
-        p1: Str1,
+        p1: u256,
         p2: u256,
         p3: u256,
         p4: u256,
@@ -43,7 +39,7 @@ contract Test {
         p6: u256
     ) -> u256 {
         match param {
-            1 => p1.a,
+            1 => p1,
             2 => p2,
             3 => p3,
             4 => p4,

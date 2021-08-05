@@ -9,7 +9,7 @@ pragma solidity ^0.8.0;
 
 contract Test {
     function entry() public pure returns(uint64) {
-        Str1 memory p1 = Str1(0);
+        uint256 p1 = 0;
         uint256 p2 = 0;
         uint256 p3 = 0;
         uint256 p4 = 0;
@@ -23,13 +23,9 @@ contract Test {
             return 0;
     }
 
-    struct Str1 {
-        uint256 a;
-    }
-
     function main(
         uint8 param,
-        Str1 memory p1,
+        uint256 p1,
         uint256 p2,
         uint256 p3,
         uint256 p4,
@@ -41,7 +37,7 @@ contract Test {
         returns(uint256)
     {
         if (param == 1)
-            return p1.a;
+            return p1;
         else if (param == 2)
             return p2;
         else if (param == 3)
