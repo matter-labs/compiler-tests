@@ -13,7 +13,8 @@ contract Test {
     }
 
     function main(uint8 param) private pure returns(uint64) {
-        uint8 cnt = 0;
+        uint64 cnt = 0;
+
         uint8 j = 1;
         while (j < 4) {
             uint8 p = 0;
@@ -43,6 +44,7 @@ contract Test {
             } while (true);
             j *= 2;
         }
+        
         return cnt;
     }
 }

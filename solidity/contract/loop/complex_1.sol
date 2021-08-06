@@ -48,6 +48,7 @@ contract Test {
 
     function test(uint8 param) private pure returns(uint64) {
         uint64 cnt = 0;
+
         for(uint8 i = 0; i < 2; i++) {
             if (param == 1) {
                 return param * 10; // 10
@@ -160,6 +161,7 @@ contract Test {
                 }
             }
         }
+        
         return cnt;
     }
 }

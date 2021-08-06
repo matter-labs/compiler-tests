@@ -9,38 +9,40 @@ fn entry() -> u64 {
 
 fn main(param: u8) -> u64 {
     let mut cnt = 0 as u64;
-        let mut j = 1;
-        while j < 4 {
-            let mut p = 0;
-            loop {
-                p += 2;
-                if p%8 == 0 {
+    
+    let mut j = 1;
+    while j < 4 {
+        let mut p = 0;
+        loop {
+            p += 2;
+            if p%8 == 0 {
+                break;
+            }
+            for h in 1..=255 {
+                if param == 4 {
+                    return 40;
+                }
+                if h > 2 {
                     break;
                 }
-                for h in 1..=255 {
-                    if param == 4 {
-                        return 40;
-                    }
-                    if h > 2 {
-                        break;
-                    }
-                    for k in 10..12 {
-                        let mut x = 7;
-                        loop {
-                            x -= 1;
-                            if x == 0 {
-                                break;
-                            }
-                            let mut y = 10;
-                            while y < 17 {
-                                y += 1;
-                                cnt += 1 as u64
-                            }
+                for k in 10..12 {
+                    let mut x = 7;
+                    loop {
+                        x -= 1;
+                        if x == 0 {
+                            break;
+                        }
+                        let mut y = 10;
+                        while y < 17 {
+                            y += 1;
+                            cnt += 1 as u64
                         }
                     }
                 }
             }
-            j *= 2;
         }
+        j *= 2;
+    }
+    
     cnt
 }

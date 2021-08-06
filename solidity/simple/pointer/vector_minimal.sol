@@ -20,7 +20,11 @@ contract Test {
     }
 
     function _new() private pure returns(uint24, uint16) {
-        return (64, 0);
+        uint24 ptr = 128;
+        assembly {
+            mstore(64, ptr)
+        }
+        return (ptr, 0);
     }
 
     function get(uint24 ptr, uint16 len, uint16 index) private pure returns(uint64 result) {

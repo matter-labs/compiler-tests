@@ -24,8 +24,7 @@ contract Test {
     function test(uint8 param) private pure returns(uint64) {
         uint64 cnt = 0;
 
-        uint8 p =2
-    
+        uint8 p = 2;    
         do {
             p += 2;
             if (p % 8 == 0)

@@ -40,6 +40,7 @@ contract Test {
 
     fn test(param: u8) -> u64 {
         let mut cnt = 0 as u64;
+
         for i in 0..2 {
             if param == 1 {
                 return param as u64 * 10; // 10
@@ -152,6 +153,7 @@ contract Test {
                 }
             }
         }
+
         cnt
     }
 }

@@ -14,7 +14,7 @@
 
 pub fn new() -> (*mut u64, u16) {
     (
-        2 as u16 as *mut u64,
+        4 as u16 as *mut u64,
         0 as u16
     )
 }
