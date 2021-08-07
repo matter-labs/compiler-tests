@@ -1,5 +1,5 @@
 //! { "cases": [ {
-//!     "entry": "Test_deployed",
+//!     "entry": "__selector",
 //!     "expected": 67
 //! } ] }
 
