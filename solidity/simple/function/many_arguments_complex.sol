@@ -59,7 +59,7 @@ contract Test {
         bool result = true;
 
         for (uint8 i = 1; i <= 39; i++) {
-            result = result && main(i, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11) == i * i;
+            result = result && main(i, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11) == uint256(i) * uint256(i);
         }
 
         result = result && main(0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11) == 0;
