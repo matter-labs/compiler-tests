@@ -11,37 +11,28 @@
 pragma solidity ^0.8.0;
 
 contract Test {
-    function initMemory() private pure {
-        uint16 memoryPointer = 2 * 32;
+    function malloc(uint24 size) private pure returns(uint24 returnPointer) {
         assembly {
-            mstore(memoryPointer, 0x80)
-        }
-    }
-
-    function malloc(uint16 size) private pure returns(uint16 returnPointer) {
-        uint16 memoryPointer = 2 * 32;
-        size *= 32;
-        assembly {
-            returnPointer := mload(memoryPointer)
-            mstore(memoryPointer, add(returnPointer, size))
+            returnPointer := mload(64)
+            mstore(64, add(returnPointer, mul(size, 32)))
         }
     }
 
     struct Vec {
-        uint16 ptr;
-        uint16 cap;
-        uint16 len;
+        uint24 ptr;
+        uint24 cap;
+        uint24 len;
     }
 
     function grow(Vec memory self) private pure returns(Vec memory) {
-        uint16 newCap = 0;
+        uint24 newCap = 0;
         if (self.cap == 0) {
             newCap = 1;
         } else {
             newCap = self.cap * 2;
         }
-        uint16 newPtr = malloc(newCap);
-        for (uint16 i = 0; i < self.len; i++) {
+        uint24 newPtr = malloc(newCap);
+        for (uint24 i = 0; i < self.len; i++) {
             assembly {
                 mstore(add(newPtr, mul(i, 32)), mload(add(mload(self), mul(i, 32))))
             }
@@ -55,12 +46,12 @@ contract Test {
         return Vec(0, 0, 0);
     }
 
-    function insert(Vec memory self, uint16 index, uint64 val) private pure returns(Vec memory) {
+    function insert(Vec memory self, uint24 index, uint64 val) private pure returns(Vec memory) {
         if (self.cap == self.len) {
             grow(self);
         }
 
-        uint16 curr = self.len;
+        uint24 curr = self.len;
         while (curr > index) {
             assembly {
                 mstore(add(mload(self), mul(curr, 32)), mload(sub(add(mload(self), mul(curr, 32)), 32)))
@@ -76,7 +67,7 @@ contract Test {
         return self;
     }
 
-    function remove(Vec memory self, uint16 index) private pure returns(Vec memory) {
+    function remove(Vec memory self, uint24 index) private pure returns(Vec memory) {
         self.len--;
         while (index < self.len) {
             assembly {
@@ -99,14 +90,13 @@ contract Test {
         return remove(self, self.len - 1);
     }
 
-    function get(Vec memory self, uint16 index) private pure returns(uint64 result) {
+    function get(Vec memory self, uint24 index) private pure returns(uint64 result) {
         assembly {
             result := mload(add(mload(self), mul(index, 32)))
         }
     }
 
     function simple() public pure returns(uint64) {
-        initMemory();
         Vec memory vec = _new();
         push(vec, 10);
         if (get(vec, 0) == 10) {
@@ -117,7 +107,6 @@ contract Test {
     }
 
     function complex() public pure returns(uint64) {
-        initMemory();
         Vec memory vec = _new();
         bool result = true;
 
@@ -130,7 +119,7 @@ contract Test {
             result = false;
         }
 
-        uint16 i = 98;
+        uint24 i = 98;
         while (true) {
             remove(vec, i);
             if (i == 0) {
