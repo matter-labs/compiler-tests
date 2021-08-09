@@ -4,6 +4,7 @@
 //!         {
 //!             "entry": "simple",
 //!             "calldata": [
+//!                 "10"
 //!             ]
 //!         }
 //!     ],
@@ -17,11 +18,11 @@
 pragma solidity ^0.8.0;
 
 contract Test {
-    function simple() public pure returns(uint64) {
+    function simple(uint64 value) public pure returns(uint64) {
         (uint24 ptr, uint16 len) = _new(); // if init without separate function it works
 
         assembly {
-            mstore(ptr, 10)
+            mstore(ptr, value)
         }
 
         len += 1; // if comment this line it will work

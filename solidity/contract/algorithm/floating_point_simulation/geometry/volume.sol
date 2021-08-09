@@ -2,8 +2,9 @@
 //!     "name": "cube1",
 //!     "input": [
 //!         {
-//!             "entry": "cube1",
+//!             "entry": "cube",
 //!             "calldata": [
+//!                 "3"
 //!             ]
 //!         }
 //!     ],
@@ -14,8 +15,9 @@
 //!     "name": "cube2",
 //!     "input": [
 //!         {
-//!             "entry": "cube2",
+//!             "entry": "cube",
 //!             "calldata": [
+//!                 "312174"
 //!             ]
 //!         }
 //!     ],
@@ -26,8 +28,9 @@
 //!     "name": "sphere1",
 //!     "input": [
 //!         {
-//!             "entry": "sphere1",
+//!             "entry": "sphere",
 //!             "calldata": [
+//!                 "7"
 //!             ]
 //!         }
 //!     ],
@@ -38,8 +41,9 @@
 //!     "name": "sphere2",
 //!     "input": [
 //!         {
-//!             "entry": "sphere2",
+//!             "entry": "sphere",
 //!             "calldata": [
+//!                 "71249"
 //!             ]
 //!         }
 //!     ],
@@ -66,28 +70,11 @@ contract Test {
         uint128 r;
     }
 
-    function cube1() public pure returns(uint64) {
-        uint128 a = 3;
-        Cube memory cube = Cube(a);
+    function cube(Cube memory cube) public pure returns(uint64) {
         return uint64(cubeVolume(cube));
     }
 
-    function cube2() public pure returns(uint64) {
-        uint128 a = 312174;
-        Cube memory cube = Cube(a);
-        return uint64(cubeVolume(cube));
-    }
-
-    function sphere1() public pure returns(uint64) {
-        uint128 r = 7;
-        Sphere memory sphere = Sphere(r);
-        // volume * PRECISION
-        return uint64(sphereVolume(sphere, PI) * PRECISION / EPS / EPS / EPS);
-    }
-
-    function sphere2() public pure returns(uint64) {
-        uint128 r = 71249;
-        Sphere memory sphere = Sphere(r);
+    function sphere(Sphere memory sphere) public pure returns(uint64) {
         // volume * PRECISION
         return uint64(sphereVolume(sphere, PI) * PRECISION / EPS / EPS / EPS);
     }

@@ -2,25 +2,29 @@
 //!     "name": "complex1",
 //!     "input": [
 //!         {
-//!             "entry": "complex1",
+//!             "entry": "complex",
 //!             "calldata": [
+//!                 "1", "231", "55", "221", "22", "34", "118", "21", "89", "7",
+//!                 "12", "255", "0", "12"
 //!             ]
 //!         }
 //!     ],
 //!     "expected": [
-//!         "1"
+//!         "1", "231", "55", "221", "22", "34", "118", "21", "89", "7"
 //!     ]
 //! }, {
 //!     "name": "complex2",
 //!     "input": [
 //!         {
-//!             "entry": "complex2",
+//!             "entry": "complex",
 //!             "calldata": [
+//!                 "12", "128", "255", "0", "123", "12", "68", "192", "2", "19",
+//!                 "17", "181", "64", "243"
 //!             ]
 //!         }
 //!     ],
 //!     "expected": [
-//!         "1"
+//!         "12", "128", "255", "0", "123", "12", "68", "192", "2", "19"
 //!     ]
 //! } ] }
 
@@ -58,39 +62,7 @@ contract Test {
         return data;
     }
 
-    function complex1() public pure returns(uint64) {
-        uint8[SIZE] memory message = [1, 231, 55, 221, 22, 34, 118, 21, 89, 7];
-        uint8[KEY_SIZE] memory key = [12, 255, 0, 12];
-
-        uint8[SIZE] memory output = decrypt(encrypt(message, key), key);
-
-        bool result = true;
-        for(uint8 i = 0; i < SIZE; i++) {
-            result = result && message[i] == output[i];
-        }
-
-        if (result) {
-            return 1;
-        } else {
-            return 0;
-        }
-    }
-
-    function complex2() public pure returns(uint64) {
-        uint8[SIZE] memory message = [12, 128, 255, 0, 123, 12, 68, 192, 2, 19];
-        uint8[KEY_SIZE] memory key = [17, 181, 64, 243];
-
-        uint8[SIZE] memory output = decrypt(encrypt(message, key), key);
-
-        bool result = true;
-        for(uint8 i = 0; i < SIZE; i++) {
-            result = result && message[i] == output[i];
-        }
-
-        if (result) {
-            return 1;
-        } else {
-            return 0;
-        }
+    function complex(uint8[SIZE] memory message, uint8[KEY_SIZE] memory key) public pure returns(uint8[SIZE] memory) {
+        return decrypt(encrypt(message, key), key);
     }
 }

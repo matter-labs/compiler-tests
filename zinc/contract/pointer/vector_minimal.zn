@@ -4,6 +4,7 @@
 //!         {
 //!             "entry": "simple",
 //!             "calldata": [
+//!                 "10"
 //!             ]
 //!         }
 //!     ],
@@ -24,10 +25,10 @@ pub unsafe fn get(vec: (*mut u64, u16), index: u16) -> u64 {
 }
 
 contract Test {
-    pub unsafe fn simple(self) -> u64 {
+    pub unsafe fn simple(self, value: u64) -> u64 {
         let mut vec = new(); // if init without separate function it works
 
-        *(vec.0) = 10 as u64;
+        *(vec.0) = value;
 
         vec.1 += 1 as u16; // if comment this line it will work
         get(vec, 0) // if get without function (just *vec.0) it works

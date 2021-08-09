@@ -30,6 +30,7 @@
 //!         {
 //!             "entry": "complex",
 //!             "calldata": [
+//!                 "1", "12", "55", "53", "213", "123", "45", "21", "12", "92"
 //!             ]
 //!         }
 //!     ],
@@ -56,8 +57,7 @@ contract Test {
         return encrypt(data, uint8((256 - uint16(key)) % 256));
     }
 
-    function complex() public pure returns(uint64) {
-        uint8[SIZE] memory message = [1, 12, 55, 53, 213, 123, 45, 21, 12, 92];
+    function complex(uint8[SIZE] memory message) public pure returns(uint64) {
         bool result = true;
         for(uint8 key = 0; key < 20; key++) {
             uint8[SIZE] memory output = decrypt(encrypt(message, key), key);

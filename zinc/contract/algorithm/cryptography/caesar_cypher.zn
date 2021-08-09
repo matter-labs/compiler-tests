@@ -30,6 +30,7 @@
 //!         {
 //!             "entry": "complex",
 //!             "calldata": [
+//!                 "1", "12", "55", "53", "213", "123", "45", "21", "12", "92"
 //!             ]
 //!         }
 //!     ],
@@ -52,8 +53,7 @@ contract Test {
         self.encrypt(data, ((256 - key as u16) % 256) as u8)
     }
 
-    pub fn complex(self) -> u64 {
-        let message = [1, 12, 55, 53, 213, 123, 45, 21, 12, 92];
+    pub fn complex(self, message: [u8; SIZE]) -> u64 {
         let mut result = true;
         for key in 0..=100 {
             let output = self.decrypt(self.encrypt(message, key), key);

@@ -4,6 +4,7 @@
 //!         {
 //!             "entry": "simple",
 //!             "calldata": [
+//!                 "10"
 //!             ]
 //!         }
 //!     ],
@@ -114,9 +115,9 @@ contract Test {
         }
     }
 
-    function simple() public pure returns(uint64) {
+    function simple(uint64 value) public pure returns(uint64) {
         Vec memory vec = _new();
-        push(vec, 10);
+        push(vec, value);
         return get(vec, 0);
     }
 

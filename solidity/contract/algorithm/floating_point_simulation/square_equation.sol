@@ -2,37 +2,40 @@
 //!     "name": "noSolution",
 //!     "input": [
 //!         {
-//!             "entry": "noSolution",
+//!             "entry": "entry",
 //!             "calldata": [
+//!                 "1", "1", "1"
 //!             ]
 //!         }
 //!     ],
 //!     "expected": [
-//!         "1"
+//!         "0", "0", "0"
 //!     ]
 //! }, {
 //!     "name": "first",
 //!     "input": [
 //!         {
-//!             "entry": "first",
+//!             "entry": "entry",
 //!             "calldata": [
+//!                 "2", "7", "4"
 //!             ]
 //!         }
 //!     ],
 //!     "expected": [
-//!         "1"
+//!         "1", "278", "71"
 //!     ]
 //! }, {
 //!     "name": "second",
 //!     "input": [
 //!         {
-//!             "entry": "second",
+//!             "entry": "entry",
 //!             "calldata": [
+//!                 "17", "29", "12"
 //!             ]
 //!         }
 //!     ],
 //!     "expected": [
-//!         "1"
+//!         "1", "100", "70"
 //!     ]
 //! } ] }
 
@@ -45,48 +48,13 @@ contract Test {
     uint128 constant PRECISION = 100;
     uint128 constant MAX_U128_SQRT = 18446744073709551615;
 
-    function noSolution() public pure returns(uint64) {
-        uint128 a = 1;
-        uint128 mb = 1; // b = -1
-        uint128 c = 1;
+    function entry(uint128 a, uint128 mb, uint128 c) public pure returns(bool, uint128, uint128) {
         (bool p, uint128 x1, uint128 x2) = main(a, mb, c);
-        if (!p) {
-            return 1;
-        } else {
-            return 0;
-        }
-    }
-
-    function first() public pure returns(uint64) {
-        uint128 a = 2;
-        uint128 mb = 7; // b = -7
-        uint128 c = 4;
-        (bool p, uint128 x1, uint128 x2) = main(a, mb, c);
-        // check roots * PRECISION
-        bool result = p &&
-            x1 * PRECISION / EPS == 278 &&
-            x2 * PRECISION / EPS == 71;
-        if (result) {
-            return 1;
-        } else {
-            return 0;
-        }
-    }
-
-    function second() public pure returns(uint64) {
-        uint128 a = 17;
-        uint128 mb = 29; // b = -29
-        uint128 c = 12;
-        (bool p, uint128 x1, uint128 x2) = main(a, mb, c);
-        // check roots * PRECISION
-        bool result = p &&
-            x1 * PRECISION / EPS == 100 &&
-            x2 * PRECISION / EPS == 70;
-        if (result) {
-            return 1;
-        } else {
-            return 0;
-        }
+        x1 *= PRECISION;
+        x1 /= EPS;
+        x2 *= PRECISION;
+        x2 /= EPS;
+        return (p, x1, x2);
     }
 
     function sqrt(uint128 n) private pure returns(uint128) {
