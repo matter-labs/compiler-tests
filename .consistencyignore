@@ -1,0 +1,33 @@
+{
+    "zinc/simple": [
+        "libsolidity",
+        "loop/do_while",
+        "return/loop/do_while",
+        "algorithm/arrays/standart_functions_high_order"
+    ],
+    "zinc/contract": [
+        "loop/do_while",
+        "return/loop/do_while",
+        "algorithm/arrays/standart_functions_high_order"
+    ],
+    "solidity/simple": [
+        "libsolidity",
+        "array/slice",
+        "tuple",
+        "loop/loop",
+        "return/loop",
+        "structure/nested_constant",
+        "storage/unaligned/tuple",
+        "storage/aligned/tuple"
+    ],
+    "solidity/contract": [
+        "libsolidity",
+        "array/slice",
+        "tuple",
+        "loop/loop",
+        "return/loop",
+        "structure/nested_constant",
+        "storage/unaligned/tuple",
+        "storage/aligned/tuple"
+    ]
+}
