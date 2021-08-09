@@ -4,6 +4,7 @@
 //!         {
 //!             "entry": "simple",
 //!             "calldata": [
+//!                 "10", "1"
 //!             ]
 //!         }
 //!     ],
@@ -193,11 +194,11 @@ impl HashMap {
 }
 
 contract Test {
-    pub fn simple(self) -> u64 {
+    pub fn simple(self, key: u64, value: u64) -> u64 {
         init_memory();
         let mut map = HashMap::new();
-        map = map.insert(10, 1);
-        map.get(10)
+        map = map.insert(key, value);
+        map.get(key)
     }
 
     pub unsafe fn complex(self) -> u64 {

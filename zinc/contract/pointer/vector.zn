@@ -4,6 +4,7 @@
 //!         {
 //!             "entry": "simple",
 //!             "calldata": [
+//!                 "10"
 //!             ]
 //!         }
 //!     ],
@@ -114,10 +115,10 @@ impl Vec {
 }
 
 contract Test {
-    pub unsafe fn simple(self) -> u64 {
+    pub unsafe fn simple(self, value: u64) -> u64 {
         init_memory();
         let mut vec = Vec::new();
-        vec = vec.push(10);
+        vec = vec.push(value);
         vec.get(0)
     }
 

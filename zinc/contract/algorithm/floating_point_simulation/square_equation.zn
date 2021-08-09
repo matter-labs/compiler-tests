@@ -2,37 +2,40 @@
 //!     "name": "no_solution",
 //!     "input": [
 //!         {
-//!             "entry": "no_solution",
+//!             "entry": "entry",
 //!             "calldata": [
+//!                 "1", "1", "1"
 //!             ]
 //!         }
 //!     ],
 //!     "expected": [
-//!         "1"
+//!         "0", "0", "0"
 //!     ]
 //! }, {
 //!     "name": "first",
 //!     "input": [
 //!         {
-//!             "entry": "first",
+//!             "entry": "entry",
 //!             "calldata": [
+//!                 "2", "7", "4"
 //!             ]
 //!         }
 //!     ],
 //!     "expected": [
-//!         "1"
+//!         "1", "278", "71"
 //!     ]
 //! }, {
 //!     "name": "second",
 //!     "input": [
 //!         {
-//!             "entry": "second",
+//!             "entry": "entry",
 //!             "calldata": [
+//!                 "17", "29", "12"
 //!             ]
 //!         }
 //!     ],
 //!     "expected": [
-//!         "1"
+//!         "1", "100", "70"
 //!     ]
 //! } ] }
 
@@ -71,35 +74,13 @@ fn solve(a: u128, mb: u128, c: u128) -> (bool, u128, u128) {
 }
 
 contract Test {
-    pub fn no_solution(self) -> u64 {
-        let a = 1 as u128;
-        let mb = 1 as u128; // b = -1
-        let c = 1 as u128;
-        let p = solve(a, mb, c);
-        if !p.0 { 1 } else { 0 }
-    }
-
-    pub fn first(self) -> u64 {
-        let mut a = 2 as u128;
-        let mut mb = 7 as u128; // b = -7
-        let mut c = 4 as u128;
-        let p = solve(a, mb, c);
-        // check roots * PRECISION
-        let result = p.0 &&
-            p.1 * PRECISION / EPS == 278 &&
-            p.2 * PRECISION / EPS == 71;
-        if result { 1 } else { 0 }
-    }
-
-    pub fn second(self) -> u64 {
-        let mut a = 17 as u128;
-        let mut mb = 29 as u128; // b = -29
-        let mut c = 12 as u128;
-        let p = solve(a, mb, c);
-        // check roots * PRECISION
-        let result = p.0 &&
-            p.1 * PRECISION / EPS == 100 &&
-            p.2 * PRECISION / EPS == 70;
-        if result { 1 } else { 0 }
+    pub fn entry(self, a: u128, mb: u128, c: u128) -> (bool, u128, u128) {
+        let mut p = solve(a, mb, c);
+        p.1 *= PRECISION;
+        p.1 /= EPS;
+        p.2 *= PRECISION;
+        p.2 /= EPS;
+        // roots * PRECISION
+        p
     }
 }

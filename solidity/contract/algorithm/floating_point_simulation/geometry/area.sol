@@ -2,8 +2,9 @@
 //!     "name": "triangle1",
 //!     "input": [
 //!         {
-//!             "entry": "triangle1",
+//!             "entry": "triangle",
 //!             "calldata": [
+//!                 "3", "4", "5"
 //!             ]
 //!         }
 //!     ],
@@ -14,8 +15,9 @@
 //!     "name": "triangle2",
 //!     "input": [
 //!         {
-//!             "entry": "triangle2",
+//!             "entry": "triangle",
 //!             "calldata": [
+//!                 "37", "111", "87"
 //!             ]
 //!         }
 //!     ],
@@ -26,8 +28,11 @@
 //!     "name": "polygon1",
 //!     "input": [
 //!         {
-//!             "entry": "polygon1",
+//!             "entry": "polygon",
 //!             "calldata": [
+//!                 "5",
+//!                 "2", "4", "5", "3", "0", "0", "0", "0", "0", "0",
+//!                 "4", "3", "1", "0", "0", "0", "0", "0", "0", "0"
 //!             ]
 //!         }
 //!     ],
@@ -38,8 +43,11 @@
 //!     "name": "polygon2",
 //!     "input": [
 //!         {
-//!             "entry": "polygon2",
+//!             "entry": "polygon",
 //!             "calldata": [
+//!                 "7",
+//!                 "13", "17", "111", "113", "55", "31", "1", "0", "0", "0",
+//!                 "21", "29", "111", "92", "7", "7", "1", "0", "0", "0"
 //!             ]
 //!         }
 //!     ],
@@ -50,8 +58,9 @@
 //!     "name": "sphere1",
 //!     "input": [
 //!         {
-//!             "entry": "sphere1",
+//!             "entry": "sphere",
 //!             "calldata": [
+//!                 "7"
 //!             ]
 //!         }
 //!     ],
@@ -62,8 +71,9 @@
 //!     "name": "sphere2",
 //!     "input": [
 //!         {
-//!             "entry": "sphere2",
+//!             "entry": "sphere",
 //!             "calldata": [
+//!                 "7142423"
 //!             ]
 //!         }
 //!     ],
@@ -100,88 +110,24 @@ contract Test {
         uint128 r;
     }
 
-    function triangle1() public pure returns(uint64) {
-        uint128 a = 3;
-        uint128 b = 4;
-        uint128 c = 5;
-        a *= EPS;
-        b *= EPS;
-        c *= EPS;
-        Triangle memory triangle = Triangle(a, b, c);
+    function triangle(Triangle memory triangle) public pure returns(uint64) {
+        triangle.a *= EPS;
+        triangle.b *= EPS;
+        triangle.c *= EPS;
         // area * PRECISION
         return uint64(triangleArea(triangle) * PRECISION / EPS / EPS);
     }
 
-    function triangle2() public pure returns(uint64) {
-        uint128 a = 37;
-        uint128 b = 111;
-        uint128 c = 87;
-        a *= EPS;
-        b *= EPS;
-        c *= EPS;
-        Triangle memory triangle = Triangle(a, b, c);
-        // area * PRECISION
-        return uint64(triangleArea(triangle) * PRECISION / EPS / EPS);
-    }
-
-    function polygon1() public pure returns(uint64) {
-        uint128[DIM] memory x;
-        uint128[DIM] memory y;
-        x[0] = 2;
-        y[0] = 4;
-        x[1] = 4;
-        y[1] = 3;
-        x[2] = 5;
-        y[2] = 1;
-        x[3] = 3;
-        y[3] = 0;
-        x[4] = 0;
-        y[4] = 0;
-        for(uint8 i = 0; i < 5; i++) {
-            x[i] *= EPS;
-            y[i] *= EPS;
+    function polygon(Polygon memory polygon) public pure returns(uint64) {
+        for(uint8 i = 0; i < polygon.n; i++) {
+            polygon.x[i] *= EPS;
+            polygon.y[i] *= EPS;
         }
-        Polygon memory polygon = Polygon(5, x, y);
         // area * PRECISION
         return uint64(polygonArea(polygon) * PRECISION / EPS / EPS);
     }
 
-    function polygon2() public pure returns(uint64) {
-        uint128[DIM] memory x;
-        uint128[DIM] memory y;
-        x[0] = 13;
-        y[0] = 21;
-        x[1] = 17;
-        y[1] = 29;
-        x[2] = 111;
-        y[2] = 111;
-        x[3] = 113;
-        y[3] = 92;
-        x[4] = 55;
-        y[4] = 7;
-        x[5] = 31;
-        y[5] = 7;
-        x[6] = 1;
-        y[6] = 1;
-        for(uint8 i = 0; i < 7; i++) {
-            x[i] *= EPS;
-            y[i] *= EPS;
-        }
-        Polygon memory polygon = Polygon(7, x, y);
-        // area * PRECISION
-        return uint64(polygonArea(polygon) * PRECISION / EPS / EPS);
-    }
-
-    function sphere1() public pure returns(uint64) {
-        uint128 r = 7;
-        Sphere memory sphere = Sphere(r);
-        // surface * PRECISION
-        return uint64(sphereSurface(sphere, PI) * PRECISION / EPS / EPS / EPS);
-    }
-
-    function sphere2() public pure returns(uint64) {
-        uint128 r = 7142423;
-        Sphere memory sphere = Sphere(r);
+    function sphere(Sphere memory sphere) public pure returns(uint64) {
         // surface * PRECISION
         return uint64(sphereSurface(sphere, PI) * PRECISION / EPS / EPS / EPS);
     }
