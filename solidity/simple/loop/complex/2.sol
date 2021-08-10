@@ -22,7 +22,7 @@ contract Test {
                 p += 2;
                 if (p%8 == 0)
                     break;
-                for (uint8 h = 1; h <= 255; h++) {
+                for (uint8 h = 1; h <= 4; h++) {
                     if (param == 4)
                         return 40;
                     if (h > 2)

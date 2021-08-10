@@ -30,7 +30,7 @@ contract Test {
                     p += 2;
                     if (p == 8)
                         break;
-                    for (uint8 h = 1; h <= 255; h++) {
+                    for (uint8 h = 1; h <= 4; h++) {
                         if (h > 2)
                             break;
                         for (uint8 k = 10; k < 12; k++) {

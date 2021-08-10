@@ -74,7 +74,7 @@ contract Test {
                     if param == 23 {
                         break;
                     }
-                    for h in 1..=255 {
+                    for h in 1..=4 {
                         if param == 4 {
                             return 40;
                         }

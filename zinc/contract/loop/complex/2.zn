@@ -25,7 +25,7 @@ contract Test {
                 if p%8 == 0 {
                     break;
                 }
-                for h in 1..=255 {
+                for h in 1..=4 {
                     if param == 4 {
                         return 40;
                     }

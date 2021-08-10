@@ -17,7 +17,7 @@ fn test() -> u64 {
                 if p == 8 {
                     break;
                 }
-                for h in 1..=255 {
+                for h in 1..=4 {
                     if h > 2 {
                         break;
                     }
