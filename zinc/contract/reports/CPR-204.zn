@@ -1,0 +1,21 @@
+//! { "cases": [ {
+//!     "name": "test",
+//!     "input": [
+//!         {
+//!             "entry": "test",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
+//! } ] }
+
+contract Test {
+    pub fn test(self) -> u64 {
+        let a = [ [0] ];
+        a[0][0];
+        1
+    }
+}
