@@ -3,17 +3,17 @@
 //!     "expected": 0
 //! } ] }
 
-object "Test_33" {
+object "Test" {
     code {
         return(0, 0)
     }
-    object "Test_33_deployed" {
+    object "Test_deployed" {
         code {
             mstore(64, 128)
             let ret_0 := fun_main_32()
             let memPos := mload(64)
-            let memEnd := mstore(memPos, ret_0)
-            return(memPos, sub(memEnd, memPos))
+            mstore(memPos, ret_0)
+            return(memPos, 32)
             
             function cleanup_t_uint8(value) -> cleaned
             { 
