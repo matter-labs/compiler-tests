@@ -36,7 +36,7 @@ fn entry4() -> u64 {
 }
 
 fn main(param: u8) -> u64 {
-    for i in 0..10 {
+    for i in 0..5 {
         if param == 0 && i > 3 {
             return i as u64; // 4
         }
@@ -44,8 +44,8 @@ fn main(param: u8) -> u64 {
             if param == 1 {
                 return param as u64 * j as u64; // 5
             }
-            for k in 0..100 {
-                if param == 2 && k == 70 {
+            for k in 0..5 {
+                if param == 2 && k == 3 {
                     return 6 as u64;
                 }
             }

@@ -41,7 +41,7 @@ contract Test {
     }
 
     function main(uint8 param) private pure returns(uint64) {
-        for (uint8 i = 0; i < 10; i++) {
+        for (uint8 i = 0; i < 5; i++) {
             if (param == 0 && i > 3) {
                 return i; // 4
             }
@@ -49,8 +49,8 @@ contract Test {
                 if (param == 1) {
                     return param * j; // 5
                 }
-                for (uint8 k = 0; k < 100; k++) {
-                    if (param == 2 && k == 70) {
+                for (uint8 k = 0; k < 5; k++) {
+                    if (param == 2 && k == 3) {
                         return 6;
                     }
                 }
