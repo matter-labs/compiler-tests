@@ -1,0 +1,33 @@
+//! { "cases": [ {
+//!     "name": "entry",
+//!     "input": [
+//!         {
+//!             "entry": "entry",
+//!             "calldata": [
+//!                 "31"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "2"
+//!     ]
+//! } ] }
+
+contract Test {
+    pub fn entry(self, param: u8) -> u64 {
+        let mut cnt = 0 as u64;
+
+        let mut j = 1;
+        while j < 4 {
+            for h in 0..1 {
+                if param == 4 {
+                    return 40;
+                }
+                cnt += 1 as u64;
+            }
+            j *= 2;
+        }
+        
+        cnt
+    }
+}

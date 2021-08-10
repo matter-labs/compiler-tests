@@ -1,0 +1,27 @@
+//! { "cases": [ {
+//!     "entry": "entry",
+//!     "expected": 2
+//! } ] }
+
+contract Test {
+    pub fn entry() -> u64 {
+        Self::main(31)
+    }
+
+    fn main(param: u8) -> u64 {
+        let mut cnt = 0 as u64;
+
+        let mut j = 0;
+        while j < 2 {
+            for h in 0..1 {
+                if param == 4 {
+                    return 40;
+                }
+                cnt += 1 as u64;
+            }
+            j += 1;
+        }
+        
+        cnt
+    }
+}
