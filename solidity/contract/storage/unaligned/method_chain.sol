@@ -25,9 +25,6 @@ contract Test {
     uint248 b;
 
     function main(uint248 value) public returns(uint248) {
-        a = 5;
-        b = 11;
-
         return a + quadruple(triple(double(value))) + b;
     }
 

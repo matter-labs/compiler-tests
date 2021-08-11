@@ -35,9 +35,6 @@ contract Test {
     function main(uint248 value) public returns(uint248) {
         Data memory data = Data(10, 20);
 
-        a += 5;
-        b += 7;
-
         return inner(data, value, 42);
     }
 
