@@ -1,0 +1,12 @@
+//! { "cases": [ {
+//!     "entry": "entry",
+//!     "expected": 1
+//! } ] }
+
+fn entry() -> u8 {
+    return main([false]);
+}
+
+fn main(a: [bool; 1]) -> u8 {
+    return 1;
+}
