@@ -18,7 +18,7 @@
 pragma solidity ^0.8.0;
 
 contract Test {
-    function entry(uint8 param) private pure returns(uint64) {
+    function entry(uint8 param) public pure returns(uint64) {
         uint64 cnt = 0;
 
         uint8 j = 1;
