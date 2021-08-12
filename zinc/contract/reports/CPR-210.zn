@@ -1,0 +1,21 @@
+//! { "cases": [ {
+//!     "name": "complex",
+//!     "input": [
+//!         {
+//!             "entry": "complex",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
+//! } ] }
+
+contract Test {
+    const KEY: [u8; 1] = [1];
+
+    pub fn complex(self) -> u8 {
+        Self::KEY[0]
+    }
+}
