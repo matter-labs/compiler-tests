@@ -79,7 +79,11 @@ contract Test {
     function complex1() public view returns(uint64) {
         uint8[SIZE] memory message = [1, 12, 55, 53, 22, 34, 45, 21, 12, 7];
 
-        uint8[SIZE] memory output = decrypt(encrypt(message));
+        uint8[SIZE] memory messageCopy;
+        for (uint8 i = 0; i < SIZE; i++) {
+            messageCopy[i] = message[i];
+        }
+        uint8[SIZE] memory output = decrypt(encrypt(messageCopy));
         
         bool result = true;
         for(uint8 i = 0; i < SIZE; i++) {
@@ -96,7 +100,11 @@ contract Test {
     function complex2() public view returns(uint64) {
         uint8[SIZE] memory message = [37, 11, 2, 59, 0, 63, 41, 27, 17, 9];
 
-        uint8[SIZE] memory output = decrypt(encrypt(message));
+        uint8[SIZE] memory messageCopy;
+        for (uint8 i = 0; i < SIZE; i++) {
+            messageCopy[i] = message[i];
+        }
+        uint8[SIZE] memory output = decrypt(encrypt(messageCopy));
         
         bool result = true;
         for(uint8 i = 0; i < SIZE; i++) {
