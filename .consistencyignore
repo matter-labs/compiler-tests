@@ -3,12 +3,14 @@
         "libsolidity",
         "loop/do_while",
         "return/loop/do_while",
-        "algorithm/arrays/standart_functions_high_order"
+        "algorithm/arrays/standart_functions_high_order",
+        "reports/CPR-215"
     ],
     "zinc/contract": [
         "loop/do_while",
         "return/loop/do_while",
-        "algorithm/arrays/standart_functions_high_order"
+        "algorithm/arrays/standart_functions_high_order",
+        "reports/CPR-215"
     ],
     "solidity/simple": [
         "libsolidity",
@@ -18,7 +20,8 @@
         "return/loop",
         "structure/nested_constant",
         "storage/unaligned/tuple",
-        "storage/aligned/tuple"
+        "storage/aligned/tuple",
+        "reports/CPR-210"
     ],
     "solidity/contract": [
         "libsolidity",
