@@ -1,0 +1,29 @@
+//! { "cases": [ {
+//!     "name": "main",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "16"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "192"
+//!     ]
+//! } ] }
+
+// SPDX-License-Identifier: UNLICENSED
+
+pragma solidity ^0.8.0;
+
+contract Test {
+    mapping (uint8 => mapping (uint8 => uint8)) data;
+
+    function main(uint8 value) public returns(uint8) {
+        data[5][10] = value * 4;
+        data[15][20] = value * 4;
+        data[25][30] = value * 4;
+        return data[5][10] + data[15][20] + data[25][30];
+    }
+}
