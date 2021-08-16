@@ -2,4 +2,4 @@
 *.zn linguist-language=Rust
 
 # The JSON syntax highlighting for the consistency watcher ignored list
-.consistencyignore linguist-language=JavaScript
+.consistencyignore linguist-language=JSON
