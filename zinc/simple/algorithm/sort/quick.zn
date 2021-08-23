@@ -1,9 +1,29 @@
 //! { "cases": [ {
-//!     "entry": "ascending",
-//!     "expected": 1
+//!     "name": "ascending",
+//!     "input": [
+//!         {
+//!             "entry": "quick_sort",
+//!             "calldata": [
+//!                 "7", "2", "1", "8", "10", "3", "5", "4", "9", "6", "0", "10", "0"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"
+//!     ]
 //! }, {
-//!     "entry": "descending",
-//!     "expected": 1
+//!     "name": "descending",
+//!     "input": [
+//!         {
+//!             "entry": "quick_sort",
+//!             "calldata": [
+//!                 "7", "2", "1", "8", "10", "3", "5", "4", "9", "6", "0", "10", "1"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "10", "9", "8", "7", "6", "5", "4", "3", "2", "1"
+//!     ]
 //! } ] }
 
 const ARRAY_SIZE: u8 = 10;
@@ -13,50 +33,31 @@ enum Direction {
     Descending = 1,
 }
 
-fn ascending() -> u64 {
-    let input = [7, 2, 1, 8, 10, 3, 5, 4, 9, 6];
-    let output = quick_sort(input, 0, ARRAY_SIZE, Direction::Ascending);
-
-    let is_one_first = output[0] == 1;
-    let is_ten_last = output[ARRAY_SIZE - 1] == 10;
-    let result = is_one_first && is_ten_last;
-    if result { 1 } else { 0 }
-}
-
-
-fn descending() -> u64 {
-    let input = [7, 2, 1, 8, 10, 3, 5, 4, 9, 6];
-    let output = quick_sort(input, 0, ARRAY_SIZE, Direction::Descending);
-
-    let is_ten_first = output[0] == 10;
-    let is_one_last = output[ARRAY_SIZE - 1] == 1;
-    let result = is_ten_first && is_one_last;
-    if result { 1 } else { 0 }
-}
-
-// It copies all array for each call, so complexity O(n^2)
-fn quick_sort(mut array: [u8; ARRAY_SIZE], begin: u8, end: u8, direction: Direction) -> [u8; ARRAY_SIZE] {
-    if end - begin < 2 {
-        return array;
-    }
-    let pivot = array[end-1];
-    let mut i = begin;
-
-    for j in begin..end - 1 {
-        if match direction {
-            Direction::Ascending => array[j] < pivot,
-            Direction::Descending => array[j] > pivot,
-        } {
-            let temp = array[i];
-            array[i] = array[j];
-            array[j] = temp;
-            i += 1;
+contract Test {
+    // It copies all array for each call, so complexity O(n^2)
+    pub fn quick_sort(self, mut array: [u8; ARRAY_SIZE], begin: u8, end: u8, direction: Direction) -> [u8; ARRAY_SIZE] {
+        if end - begin < 2 {
+            return array;
         }
-    }
-    array[end-1] = array[i];
-    array[i] = pivot;
+        let pivot = array[end-1];
+        let mut i = begin;
 
-    array = quick_sort(array, begin, i, direction);
-    array = quick_sort(array, i+1, end, direction);
-    array
+        for j in begin..end - 1 {
+            if match direction {
+                Direction::Ascending => array[j] < pivot,
+                Direction::Descending => array[j] > pivot,
+            } {
+                let temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+                i += 1;
+            }
+        }
+        array[end-1] = array[i];
+        array[i] = pivot;
+
+        array = self.quick_sort(array, begin, i, direction);
+        array = self.quick_sort(array, i+1, end, direction);
+        array
+    }
 }

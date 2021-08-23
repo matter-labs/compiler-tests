@@ -1,15 +1,55 @@
 //! { "cases": [ {
-//!     "entry": "first",
-//!     "expected": 10
+//!     "name": "first",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "1"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "10"
+//!     ]
 //! }, {
-//!     "entry": "second",
-//!     "expected": 20
+//!     "name": "second",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "2"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "20"
+//!     ]
 //! }, {
-//!     "entry": "third",
-//!     "expected": 64
+//!     "name": "third",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "255"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "64"
+//!     ]
 //! }, {
-//!     "entry": "another",
-//!     "expected": 42
+//!     "name": "another",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "0"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "42"
+//!     ]
 //! } ] }
 
 // SPDX-License-Identifier: UNLICENSED
@@ -17,23 +57,7 @@
 pragma solidity ^0.8.0;
 
 contract Test {
-    function first() public pure returns(uint64) {
-        return main(1);
-    }
-
-    function second() public pure returns(uint64) {
-        return main(2);
-    }
-
-    function third() public pure returns(uint64) {
-        return main(255);
-    }
-
-    function another() public pure returns(uint64) {
-        return main(0);
-    }
-
-    function main(uint8 witness) private pure returns(uint8) {
+    function main(uint8 witness) public pure returns(uint8) {
         uint8 result;
         assembly {
             switch witness

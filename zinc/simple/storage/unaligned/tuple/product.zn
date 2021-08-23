@@ -1,6 +1,18 @@
 //! { "cases": [ {
-//!     "entry": "entry",
-//!     "engines": ["zkevm"], "expected": 15000
+//!     "name": "default",
+//!     "input": [
+//!         {
+//!             "entry": "default",
+//!             "calldata": [
+//!             ],
+//!             "storage": [
+//!                 "20", "15", "10", "5"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "15000"
+//!     ]
 //! } ] }
 
 type Data = (u16, u16, u16, u16);
@@ -8,18 +20,7 @@ type Data = (u16, u16, u16, u16);
 contract Test {
     data: Data;
 
-    pub fn entry(self) -> u64 {
-        Self {
-            data: (0 as u16, 0 as u16, 0 as u16, 0 as u16),
-        }.default() as u64
-    }
-
-    fn default(mut self) -> u16 {
-        self.data.0 = 20 as u16;
-        self.data.1 = 15 as u16;
-        self.data.2 = 10 as u16;
-        self.data.3 = 5 as u16;
-
+    pub fn default(self) -> u16 {
         let mut product: u16 = 1;
         product *= self.data.0;
         product *= self.data.1;

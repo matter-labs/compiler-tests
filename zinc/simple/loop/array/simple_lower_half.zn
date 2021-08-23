@@ -1,20 +1,26 @@
 //! { "cases": [ {
-//!     "entry": "entry",
-//!     "expected": 15
+//!     "name": "main",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "15"
+//!     ]
 //! } ] }
 
-const ARRAY_SIZE: u8 = 10;
+contract Test {
+    const ARRAY_SIZE: u8 = 10;
 
-fn entry() -> u64 {
-    let input = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-
-    main(input) as u64
-}
-
-fn main(array: [u8; ARRAY_SIZE]) -> u8 {
-    let mut sum = 0;
-    for i in 0..5 {
-        sum += array[i];
+    pub fn main(self, array: [u8; Self::ARRAY_SIZE]) -> u8 {
+        let mut sum = 0;
+        for i in 0..5 {
+            sum += array[i];
+        }
+        sum
     }
-    sum
 }

@@ -1,9 +1,28 @@
 //! { "cases": [ {
-//!     "entry": "simple",
-//!     "expected": 1
+//!     "name": "simple",
+//!     "input": [
+//!         {
+//!             "entry": "simple",
+//!             "calldata": [
+//!                 "10", "1"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
 //! }, {
-//!     "entry": "complex",
-//!     "expected": 1
+//!     "name": "complex",
+//!     "input": [
+//!         {
+//!             "entry": "complex",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
 //! } ] }
 
 // Hash map implementation with vector
@@ -174,50 +193,52 @@ impl HashMap {
     }
 }
 
-fn simple() -> u64 {
-    init_memory();
-    let mut map = HashMap::new();
-    map = map.insert(10, 1);
-    map.get(10)
-}
+contract Test {
+    pub fn simple(self, key: u64, value: u64) -> u64 {
+        init_memory();
+        let mut map = HashMap::new();
+        map = map.insert(key, value);
+        map.get(key)
+    }
 
-unsafe fn complex() -> u64 {
-    init_memory();
-    let mut map = HashMap::new();
-    for i in 0..200 {
-        map = map.insert(i as u64, 200 as u64 - i as u64);
-    }
-    // 0 - 199
-    if map.len != 200 {
-        return 0 as u64;
-    }
-    let mut i = 0 as u64;
-    while i < 200 {
-        map = map.remove(i);
-        i += 2 as u64;
-    }
-    // 1, 3, 5, 7,..., 199
-    if map.len != 100 {
-        return 0 as u64;
-    }
-    i = 0 as u64;
-    while i < 200 {
-        map = map.insert(i, 200 as u64 - i);
-        i += 3 as u64;
-    }
-    // 0, 1, 3, 5, 6, 7,..., 199
-    if map.len != 134 {
-        return 0 as u64;
-    }
-    let mut result = true;
-    for key in 0..200 {
-        if key % 2 == 1 || key % 3 == 0 {
-            result = result && map.contains_key(key as u64);
-            result = result && map.get(key as u64) == 200 as u64 - key as u64;
-        } else {
-            result = result && !map.contains_key(key as u64);
+    pub unsafe fn complex(self) -> u64 {
+        init_memory();
+        let mut map = HashMap::new();
+        for i in 0..200 {
+            map = map.insert(i as u64, 200 as u64 - i as u64);
         }
+        // 0 - 199
+        if map.len != 200 {
+            return 0 as u64;
+        }
+        let mut i = 0 as u64;
+        while i < 200 {
+            map = map.remove(i);
+            i += 2 as u64;
+        }
+        // 1, 3, 5, 7,..., 199
+        if map.len != 100 {
+            return 0 as u64;
+        }
+        i = 0 as u64;
+        while i < 200 {
+            map = map.insert(i, 200 as u64 - i);
+            i += 3 as u64;
+        }
+        // 0, 1, 3, 5, 6, 7,..., 199
+        if map.len != 134 {
+            return 0 as u64;
+        }
+        let mut result = true;
+        for key in 0..200 {
+            if key % 2 == 1 || key % 3 == 0 {
+                result = result && map.contains_key(key as u64);
+                result = result && map.get(key as u64) == 200 as u64 - key as u64;
+            } else {
+                result = result && !map.contains_key(key as u64);
+            }
+        }
+        if result 
+            {1} else {0} as u64
     }
-    if result 
-        {1} else {0} as u64
 }

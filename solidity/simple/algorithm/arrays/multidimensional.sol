@@ -1,12 +1,39 @@
 //! { "cases": [ {
-//!     "entry": "array_2d",
-//!     "expected": 1
+//!     "name": "array_2d",
+//!     "input": [
+//!         {
+//!             "entry": "array_2d",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
 //! }, {
-//!     "entry": "array_3d",
-//!     "expected": 1
+//!     "name": "array_3d",
+//!     "input": [
+//!         {
+//!             "entry": "array_3d",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
 //! }, {
-//!     "entry": "array_4d",
-//!     "expected": 1
+//!     "name": "array_4d",
+//!     "input": [
+//!         {
+//!             "entry": "array_4d",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
 //! } ] }
 
 // SPDX-License-Identifier: UNLICENSED

@@ -1,9 +1,31 @@
 //! { "cases": [ {
-//!     "entry": "complex1",
-//!     "expected": 1
+//!     "name": "complex1",
+//!     "input": [
+//!         {
+//!             "entry": "complex",
+//!             "calldata": [
+//!                 "1", "231", "55", "221", "22", "34", "118", "21", "89", "7",
+//!                 "12", "255", "0", "12"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1", "231", "55", "221", "22", "34", "118", "21", "89", "7"
+//!     ]
 //! }, {
-//!     "entry": "complex2",
-//!     "expected": 1
+//!     "name": "complex2",
+//!     "input": [
+//!         {
+//!             "entry": "complex",
+//!             "calldata": [
+//!                 "12", "128", "255", "0", "123", "12", "68", "192", "2", "19",
+//!                 "17", "181", "64", "243"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "12", "128", "255", "0", "123", "12", "68", "192", "2", "19"
+//!     ]
 //! } ] }
 
 fn encrypt_sym(sym: u8, key_sym: u8) -> u8 {
@@ -35,32 +57,8 @@ fn decrypt(mut data: [u8; SIZE], key: [u8; KEY_SIZE]) -> [u8; SIZE] {
     data
 }
 
-fn complex1() -> u64 {
-    let message = [1, 231, 55, 221, 22, 34, 118, 21, 89, 7];
-    let key = [12, 255, 0, 12];
-
-    let output = decrypt(encrypt(message, key), key);
-
-    let mut result = true;
-    for i in 0..SIZE {
-        result = result && message[i] == output[i];
+contract Test {
+    pub fn complex(self, message: [u8; SIZE], key: [u8; KEY_SIZE]) -> [u8; SIZE] {
+        decrypt(encrypt(message, key), key)
     }
-
-    if result
-        {1} else {0} as u64
-}
-
-fn complex2() -> u64 {
-    let message = [12, 128, 255, 0, 123, 12, 68, 192, 2, 19];
-    let key = [17, 181, 64, 243];
-
-    let output = decrypt(encrypt(message, key), key);
-
-    let mut result = true;
-    for i in 0..SIZE {
-        result = result && message[i] == output[i];
-    }
-
-    if result
-        {1} else {0} as u64
 }

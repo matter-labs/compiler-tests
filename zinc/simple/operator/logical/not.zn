@@ -1,19 +1,33 @@
 //! { "cases": [ {
-//!     "entry": "_false",
-//!     "expected": 1
+//!     "name": "false",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "0"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
 //! }, {
-//!     "entry": "_true",
-//!     "expected": 0
+//!     "name": "true",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "1"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "0"
+//!     ]
 //! } ] }
 
-fn _false() -> u64 {
-    if main(false) { 1 } else { 0 }
-}
-
-fn _true() -> u64 {
-    if main(true) { 1 } else { 0 }
-}
-
-fn main(a: bool) -> bool {
-    !a
+contract Test {
+    pub fn main(self, a: bool) -> bool {
+        !a
+    }
 }

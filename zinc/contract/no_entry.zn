@@ -1,7 +1,0 @@
-//! { "cases": [] }
-
-contract Test {
-    fn entry(self) -> u64 {
-        1 as u64
-    }
-}

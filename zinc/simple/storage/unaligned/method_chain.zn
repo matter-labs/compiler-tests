@@ -1,23 +1,26 @@
 //! { "cases": [ {
-//!     "entry": "entry",
-//!     "engines": ["zkevm"], "expected": 1024
+//!     "name": "default",
+//!     "input": [
+//!         {
+//!             "entry": "default",
+//!             "calldata": [
+//!                 "42"
+//!             ],
+//!             "storage": [
+//!                 "5", "11"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1024"
+//!     ]
 //! } ] }
 
 contract Test {
     a: u248;
     b: u248;
 
-    pub fn entry() -> u64 {
-        Self {
-            a: 0 as u248,
-            b: 0 as u248,
-        }.default(42) as u64
-    }
-
-    pub fn default(mut self, value: u248) -> u248 {
-        self.a = 5 as u248;
-        self.b = 11 as u248;
-
+    pub fn default(self, value: u248) -> u248 {
         self.a + self.quadruple(self.triple(self.double(value))) + self.b
     }
 
@@ -30,6 +33,6 @@ contract Test {
     }
 
     fn quadruple(self, value: u248) -> u248 {
-        value * 4
-    }
+    value * 4
+}
 }

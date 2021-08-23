@@ -1,12 +1,39 @@
 //! { "cases": [ {
-//!     "entry": "test1",
-//!     "expected": 1260830800381296
+//!     "name": "test1",
+//!     "input": [
+//!         {
+//!             "entry": "test1",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1260830800381296"
+//!     ]
 //! }, {
-//!     "entry": "test2",
-//!     "expected": 781327317812
+//!     "name": "test2",
+//!     "input": [
+//!         {
+//!             "entry": "test2",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "781327317812"
+//!     ]
 //! }, {
-//!     "entry": "test3",
-//!     "expected": 0
+//!     "name": "test3",
+//!     "input": [
+//!         {
+//!             "entry": "test3",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "0"
+//!     ]
 //! } ] }
 
 // SPDX-License-Identifier: UNLICENSED

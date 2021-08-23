@@ -1,12 +1,20 @@
 //! { "cases": [ {
-//!     "entry": "entry",
-//!     "expected": 42
+//!     "name": "main",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "168"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "42"
+//!     ]
 //! } ] }
 
-fn entry() -> u64 {
-    main(168) as u64
-}
-
-fn main(a: u8) -> u8 {
-    a >> 2
+contract Test {
+    pub fn main(self, a: u8) -> u8 {
+        a >> 2
+    }
 }

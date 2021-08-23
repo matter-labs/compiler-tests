@@ -1,15 +1,59 @@
 //! { "cases": [ {
-//!     "entry": "distancePoint1",
-//!     "expected": 607
+//!     "name": "distancePoint1",
+//!     "input": [
+//!         {
+//!             "entry": "distancePointEntry",
+//!             "calldata": [
+//!                 "7", "4", "10",
+//!                 "5", "1"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "607"
+//!     ]
 //! }, {
-//!     "entry": "distancePoint2",
-//!     "expected": 504455
+//!     "name": "distancePoint2",
+//!     "input": [
+//!         {
+//!             "entry": "distancePointEntry",
+//!             "calldata": [
+//!                 "2117", "443", "1021",
+//!                 "5123", "145"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "504455"
+//!     ]
 //! }, {
-//!     "entry": "intersectionPoint1",
-//!     "expected": 1
+//!     "name": "intersectionPoint1",
+//!     "input": [
+//!         {
+//!             "entry": "intersectionPoint",
+//!             "calldata": [
+//!                 "1", "1", "0",
+//!                 "1", "1", "2"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "100", "100"
+//!     ]
 //! }, {
-//!     "entry": "intersectionPoint2",
-//!     "expected": 1
+//!     "name": "intersectionPoint2",
+//!     "input": [
+//!         {
+//!             "entry": "intersectionPoint",
+//!             "calldata": [
+//!                 "121", "17", "123",
+//!                 "912", "123", "2133"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "69", "1218"
+//!     ]
 //! } ] }
 
 // SPDX-License-Identifier: UNLICENSED
@@ -31,59 +75,18 @@ contract Test {
         uint128 c;
     }
 
-    function distancePoint1() public pure returns(uint64) {
-        uint128 a = 7;
-        uint128 b = 4;
-        uint128 c = 10;
-        Line memory line = Line(a, b, c);
-        uint128 x = 5;
-        uint128 y = 1;
-        Point memory point = Point(x, y);
+    function distancePointEntry(Line memory line, Point memory point) public pure returns(uint64) {
         // 6.077701994871213... * PRECISION
         return uint64(distancePoint(line, point) * PRECISION / EPS);
     }
 
-    function distancePoint2() public pure returns(uint64) {
-        uint128 a = 2117;
-        uint128 b = 443;
-        uint128 c = 1021;
-        Line memory line = Line(a, b, c);
-        uint128 x = 5123;
-        uint128 y = 145;
-        Point memory point = Point(x, y);
-        // 5044.559794518856... * PRECISION
-        return uint64(distancePoint(line, point) * PRECISION / EPS);
-    }
-
-    function intersectionPoint1() public pure returns(uint64) {
-        uint128 a1 = 1;
-        uint128 mb1 = 1;
-        uint128 c1 = 0;
-        uint128 a2 = 1;
-        uint128 b2 = 1;
-        uint128 mc2 = 2;
+    function intersectionPoint(uint128 a1, uint128 mb1, uint128 c1, uint128 a2, uint128 b2, uint128 mc2) public pure returns(Point memory) {
         Point memory point = linesIntersection(a1, mb1, c1, a2, b2, mc2);
-        if (point.x * PRECISION / EPS == 100 && point.y * PRECISION / EPS == 100) {
-            return 1;
-        } else {
-            return 0;
-        }
-    }
-
-    function intersectionPoint2() public pure returns(uint64) {
-        uint128 a1 = 121;
-        uint128 mb1 = 17;
-        uint128 c1 = 123;
-        uint128 a2 = 912;
-        uint128 b2 = 123;
-        uint128 mc2 = 2133;
-        // 0.695428.... 12.185112...
-        Point memory point = linesIntersection(a1, mb1, c1, a2, b2, mc2);
-        if (point.x * PRECISION / EPS == 69 && point.y * PRECISION / EPS == 1218) {
-            return 1;
-        } else {
-            return 0;
-        }
+        point.x *= PRECISION;
+        point.x /= EPS;
+        point.y *= PRECISION;
+        point.y /= EPS;
+        return point;
     }
 
     function sqrt(uint128 n) private pure returns(uint128) {

@@ -1,6 +1,19 @@
 //! { "cases": [ {
-//!     "entry": "entry",
-//!     "expected": 148
+//!     "name": "main",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "42"
+//!             ],
+//!             "storage": [
+//!                 "5", "7"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "148"
+//!     ]
 //! } ] }
 
 // SPDX-License-Identifier: UNLICENSED
@@ -19,15 +32,8 @@ contract Test {
     uint248 a;
     uint248 b;
 
-    function entry() public returns(uint64) {
-        return uint64(main(42));
-    }
-
     function main(uint248 value) public returns(uint248) {
         Data memory data = Data(10, 20);
-
-        a += 5;
-        b += 7;
 
         return inner(data, value, 42);
     }

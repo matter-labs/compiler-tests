@@ -1,6 +1,19 @@
 //! { "cases": [ {
-//!     "entry": "entry",
-//!     "expected": 126
+//!     "name": "default",
+//!     "input": [
+//!         {
+//!             "entry": "default",
+//!             "calldata": [
+//!                 "42"
+//!             ],
+//!             "storage": [
+//!                 "99", "100", "101"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "126"
+//!     ]
 //! } ] }
 
 struct Data {
@@ -9,6 +22,8 @@ struct Data {
 
 struct Inner {
     value: u256,
+    next: u256,
+    last: u256,
 }
 
 contract Test {
@@ -16,15 +31,9 @@ contract Test {
 
     const TEST: u8 = 42;
 
-    pub fn entry(self) -> u64 {
-        Self {
-            data: Data { inner: Inner { value: 0 as u256 } },
-        }.default(42) as u64
-    }
+    pub fn default(mut self, argument: u8) -> u8 {
+        self.data.inner.next = argument as u256;
 
-    fn default(mut self, argument: u8) -> u8 {
-        self.data.inner.value = argument as u256;
-
-        argument + Self::TEST + (self.data.inner.value as u8)
+        argument + Self::TEST + (self.data.inner.next as u8)
     }
 }

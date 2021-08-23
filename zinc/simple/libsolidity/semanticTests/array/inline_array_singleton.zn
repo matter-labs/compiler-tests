@@ -1,8 +1,19 @@
 //! { "cases": [ {
-//!     "entry": "f",
-//!     "expected": 4
+//!     "name": "f",
+//!     "input": [
+//!         {
+//!             "entry": "f",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "4"
+//!     ]
 //! } ] }
 
-fn f() -> u64 {
-    [4][0] as u64
+contract Test {
+    pub fn f(self) -> u64 {
+        [4][0] as u64
+    }
 }

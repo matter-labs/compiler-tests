@@ -1,54 +1,95 @@
-//! { "ignore": true, "cases": [ {
-//!     "entry": "zero",
-//!     "expected": 0
+//! { "ignore": true,
+//! "cases": [ {
+//!     "name": "zero",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "0"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "0"
+//!     ]
 //! }, {
-//!     "entry": "ordinar",
-//!     "expected": 42
+//!     "name": "ordinar",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "42"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "42"
+//!     ]
 //! }, {
-//!     "entry": "max",
-//!     "expected": 127
+//!     "name": "max",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "127"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "127"
+//!     ]
 //! }, {
-//!     "ignore": true, "entry": "overflow_negative_minimal",
-//!     "engines": ["zkevm"], "expected": "Runtime error"
+//!     "name": "overflow_negative_minimal",
+//!     "ignore": true,
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "-1"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": "Runtime error"
 //! }, {
-//!     "ignore": true, "entry": "overflow_negative",
-//!     "engines": ["zkevm"], "expected": "Runtime error"
+//!     "name": "overflow_negative",
+//!     "ignore": true,
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "-42"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": "Runtime error"
 //! }, {
-//!     "ignore": true, "entry": "overflow_positive_minimal",
-//!     "engines": ["zkevm"], "expected": "Runtime error"
+//!     "name": "overflow_positive_minimal",
+//!     "ignore": true,
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "256"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": "Runtime error"
 //! }, {
-//!     "ignore": true, "entry": "overflow_positive",
-//!     "engines": ["zkevm"], "expected": "Runtime error"
+//!     "name": "overflow_positive",
+//!     "ignore": true,
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "1000"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": "Runtime error"
 //! } ] }
 
-fn zero() -> u64 {
-    main(0 as i16) as u64
-}
-
-fn ordinar() -> u64 {
-    main(42 as i16) as u64
-}
-
-fn max() -> u64 {
-    main(127 as i16) as u64
-}
-
-fn overflow_negative_minimal() -> u64 {
-    main(-1) as u64
-}
-
-fn overflow_negative() -> u64 {
-    main(-42) as u64
-}
-
-fn overflow_positive_minimal() -> u64 {
-    main(256) as u64
-}
-
-fn overflow_positive() -> u64 {
-    main(1000) as u64
-}
-
-fn main(a: i16) -> u8 {
-    a as u8
+contract Test {
+    pub fn main(self, a: i16) -> u8 {
+        a as u8
+    }
 }

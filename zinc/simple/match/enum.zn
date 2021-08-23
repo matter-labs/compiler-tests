@@ -1,12 +1,42 @@
 //! { "cases": [ {
-//!     "entry": "first",
-//!     "expected": 5
+//!     "name": "first",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "0"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "5"
+//!     ]
 //! }, {
-//!     "entry": "second",
-//!     "expected": 10
+//!     "name": "second",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "42"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "10"
+//!     ]
 //! }, {
-//!     "entry": "third",
-//!     "expected": 15
+//!     "name": "third",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "255"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "15"
+//!     ]
 //! } ] }
 
 enum Language {
@@ -15,22 +45,12 @@ enum Language {
     RUST = 255,
 }
 
-fn first() -> u64 {
-    main(Language::JABBERWOCKY) as u64
-}
-
-fn second() -> u64 {
-    main(Language::ZINC) as u64
-}
-
-fn third() -> u64 {
-    main(Language::RUST) as u64
-}
-
-fn main(language: Language) -> u8 {
-    match language {
-        Language::JABBERWOCKY => 5,
-        Language::ZINC => 10,
-        Language::RUST => 15,
+contract Test {
+    pub fn main(self, language: Language) -> u8 {
+        match language {
+            Language::JABBERWOCKY => 5,
+            Language::ZINC => 10,
+            Language::RUST => 15,
+        }
     }
 }

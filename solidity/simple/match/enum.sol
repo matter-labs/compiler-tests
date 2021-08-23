@@ -1,12 +1,42 @@
 //! { "cases": [ {
-//!     "entry": "first",
-//!     "expected": 5
+//!     "name": "first",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "0"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "5"
+//!     ]
 //! }, {
-//!     "entry": "second",
-//!     "expected": 10
+//!     "name": "second",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "1"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "10"
+//!     ]
 //! }, {
-//!     "entry": "third",
-//!     "expected": 15
+//!     "name": "third",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "2"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "15"
+//!     ]
 //! } ] }
 
 // SPDX-License-Identifier: UNLICENSED
@@ -20,19 +50,7 @@ contract Test {
         RUST
     }
 
-    function first() public pure returns(uint64) {
-        return main(Language.JABBERWOCKY);
-    }
-
-    function second() public pure returns(uint64) {
-        return main(Language.ZINC);
-    }
-
-    function third() public pure returns(uint64) {
-        return main(Language.RUST);
-    }
-
-    function main(Language language) private pure returns(uint8) {
+    function main(Language language) public pure returns(uint8) {
         uint8 result;
         assembly {
             switch language

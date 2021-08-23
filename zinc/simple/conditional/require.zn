@@ -1,25 +1,37 @@
 //! { "cases": [ {
-//!     "entry": "condition_true",
-//!     "engines": ["zkevm"], "expected": "Runtime error"
+//!     "name": "condition_true",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "1"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": "Runtime error"
 //! }, {
-//!     "entry": "condition_false",
-//!     "expected": 5
+//!     "name": "condition_false",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "0"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "5"
+//!     ]
 //! } ] }
 
-fn condition_true() -> u64 {
-    main(true) as u64
-}
+contract Test {
+    pub fn main(self, condition: bool) -> u8 {
+        let result = 5;
 
-fn condition_false() -> u64 {
-    main(false) as u64
-}
+        if condition {
+            require(result != 5);
+        }
 
-fn main(condition: bool) -> u8 {
-    let result = 5;
-
-    if condition {
-        require(result != 5);
+        result
     }
-
-    result
 }

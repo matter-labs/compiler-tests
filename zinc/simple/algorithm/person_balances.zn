@@ -1,15 +1,51 @@
 //! { "cases": [ {
-//!     "entry": "bitcoin",
-//!     "expected": 1
+//!     "name": "bitcoin",
+//!     "input": [
+//!         {
+//!             "entry": "bitcoin",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
 //! }, {
-//!     "entry": "ethereum",
-//!     "expected": 10
+//!     "name": "ethereum",
+//!     "input": [
+//!         {
+//!             "entry": "ethereum",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "10"
+//!     ]
 //! }, {
-//!     "entry": "litecoin",
-//!     "expected": 50
+//!     "name": "litecoin",
+//!     "input": [
+//!         {
+//!             "entry": "litecoin",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "50"
+//!     ]
 //! }, {
-//!     "entry": "zcash",
-//!     "expected": 100
+//!     "name": "zcash",
+//!     "input": [
+//!         {
+//!             "entry": "zcash",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "100"
+//!     ]
 //! } ] }
 
 enum Month {
@@ -54,49 +90,51 @@ struct Result {
     date_of_birth: Date,
 }
 
-fn bitcoin() -> u64 {
-    main(TokenId::Bitcoin).sum as u64
-}
-
-fn ethereum() -> u64 {
-    main(TokenId::Ethereum).sum as u64
-}
-
-fn litecoin() -> u64 {
-    main(TokenId::Litecoin).sum as u64
-}
-
-fn zcash() -> u64 {
-    main(TokenId::Zcash).sum as u64
-}
-
-fn main(token_id: TokenId) -> Result {
-    let person = Person {
-        id: 42 as u256,
-        date_of_birth: Date {
-            year: 1994,
-            month: Month::March,
-            day: 16,
-        },
-        balances: [
-            (TokenId::Bitcoin, 1 as u256),
-            (TokenId::Ethereum, 10 as u256),
-            (TokenId::Litecoin, 50 as u256),
-            (TokenId::Zcash, 100 as u256),
-        ],
-    };
-
-    let mut result = Result {
-        id: person.id,
-        sum: 0 as u256,
-        date_of_birth: person.date_of_birth,
-    };
-
-    for id in 0..TOKENS_COUNT {
-        if person.balances[id].0 == token_id {
-            result.sum += person.balances[id].1;
-        }
+contract Test {
+    pub fn bitcoin(self) -> u64 {
+        Self::main(TokenId::Bitcoin).sum as u64
     }
 
-    result
+    pub fn ethereum(self) -> u64 {
+        Self::main(TokenId::Ethereum).sum as u64
+    }
+
+    pub fn litecoin(self) -> u64 {
+        Self::main(TokenId::Litecoin).sum as u64
+    }
+
+    pub fn zcash(self) -> u64 {
+        Self::main(TokenId::Zcash).sum as u64
+    }
+
+    fn main(token_id: TokenId) -> Result {
+        let person = Person {
+            id: 42 as u256,
+            date_of_birth: Date {
+                year: 1994,
+                month: Month::March,
+                day: 16,
+            },
+            balances: [
+                (TokenId::Bitcoin, 1 as u256),
+                (TokenId::Ethereum, 10 as u256),
+                (TokenId::Litecoin, 50 as u256),
+                (TokenId::Zcash, 100 as u256),
+            ],
+        };
+
+        let mut result = Result {
+            id: person.id,
+            sum: 0 as u256,
+            date_of_birth: person.date_of_birth,
+        };
+
+        for id in 0..TOKENS_COUNT {
+            if person.balances[id].0 == token_id {
+                result.sum += person.balances[id].1;
+            }
+        }
+
+        result
+    }
 }

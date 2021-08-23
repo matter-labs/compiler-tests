@@ -1,13 +1,44 @@
 //! { "cases": [ {
-//!     "entry": "none",
-//!     "expected": 1
+//!     "name": "none",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "7", "2", "1", "8", "10", "3", "5", "4", "9", "6", "0"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "7", "2", "1", "8", "10", "3", "5", "4", "9", "6"
+//!     ]
 //! }, {
-//!     "entry": "ascending",
-//!     "expected": 1
+//!     "name": "ascending",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "7", "2", "1", "8", "10", "3", "5", "4", "9", "6", "1"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"
+//!     ]
 //! }, {
-//!     "entry": "descending",
-//!     "expected": 1
+//!     "name": "descending",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "7", "2", "1", "8", "10", "3", "5", "4", "9", "6", "2"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "10", "9", "8", "7", "6", "5", "4", "3", "2", "1"
+//!     ]
 //! } ] }
+
 
 const ARRAY_SIZE: u8 = 10;
 
@@ -17,55 +48,27 @@ enum Direction {
     Descending = 2,
 }
 
-fn none() -> u64 {
-    let input = [7, 2, 1, 8, 10, 3, 5, 4, 9, 6];
-    let output = main(input, Direction::None);
-
-    let is_seven_first = output[0] == 7;
-    let is_six_last = output[ARRAY_SIZE - 1] == 6;
-    let result = is_seven_first && is_six_last;
-    if result { 1 } else { 0 }
-}
-
-fn ascending() -> u64 {
-    let input = [7, 2, 1, 8, 10, 3, 5, 4, 9, 6];
-    let output = main(input, Direction::Ascending);
-
-    let is_one_first = output[0] == 1;
-    let is_ten_last = output[ARRAY_SIZE - 1] == 10;
-    let result = is_one_first && is_ten_last;
-    if result { 1 } else { 0 }
-}
-
-fn descending() -> u64 {
-    let input = [7, 2, 1, 8, 10, 3, 5, 4, 9, 6];
-    let output = main(input, Direction::Descending);
-
-    let is_ten_first = output[0] == 10;
-    let is_one_last = output[ARRAY_SIZE - 1] == 1;
-    let result = is_ten_first && is_one_last;
-    if result { 1 } else { 0 }
-}
-
-fn main(mut array: [u8; ARRAY_SIZE], direction: Direction) -> [u8; ARRAY_SIZE] {
-    let mut swapped = true;
-    for i in 0..ARRAY_SIZE - 1 {
-        swapped = false;
-        for j in 0..ARRAY_SIZE - i - 1 {
-            if match direction {
-                Direction::None => false,
-                Direction::Ascending => array[j] > array[j + 1],
-                Direction::Descending => array[j] < array[j + 1],
-            } {
-                let temp = array[j];
-                array[j] = array[j + 1];
-                array[j + 1] = temp;
-                swapped = true;
+contract Test {
+    pub fn main(self, mut array: [u8; ARRAY_SIZE], direction: Direction) -> [u8; ARRAY_SIZE] {
+        let mut swapped = true;
+        for i in 0..ARRAY_SIZE - 1 {
+            swapped = false;
+            for j in 0..ARRAY_SIZE - i - 1 {
+                if match direction {
+                    Direction::None => false,
+                    Direction::Ascending => array[j] > array[j + 1],
+                    Direction::Descending => array[j] < array[j + 1],
+                } {
+                    let temp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
+                    swapped = true;
+                }
+            }
+            if !swapped {
+                break;
             }
         }
-        if !swapped {
-            break;
-        }
+        array
     }
-    array
 }

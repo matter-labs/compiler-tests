@@ -1,12 +1,42 @@
 //! { "cases": [ {
-//!     "entry": "none",
-//!     "expected": 1
+//!     "name": "none",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "7", "2", "1", "8", "10", "3", "5", "4", "9", "6", "0"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "7", "2", "1", "8", "10", "3", "5", "4", "9", "6"
+//!     ]
 //! }, {
-//!     "entry": "ascending",
-//!     "expected": 1
+//!     "name": "ascending",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "7", "2", "1", "8", "10", "3", "5", "4", "9", "6", "1"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"
+//!     ]
 //! }, {
-//!     "entry": "descending",
-//!     "expected": 1
+//!     "name": "descending",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "7", "2", "1", "8", "10", "3", "5", "4", "9", "6", "2"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "10", "9", "8", "7", "6", "5", "4", "3", "2", "1"
+//!     ]
 //! } ] }
 
 // SPDX-License-Identifier: UNLICENSED
@@ -22,49 +52,7 @@ contract Test {
         Descending
     }
 
-    function none() public pure returns(uint64) {
-        uint8[ARRAY_SIZE] memory array = [7, 2, 1, 8, 10, 3, 5, 4, 9, 6];
-        main(array, Direction.None);
-
-        bool isSevenFirst = array[0] == 7;
-        bool isSixLast = array[ARRAY_SIZE - 1] == 6;
-        bool result = isSevenFirst && isSixLast;
-        if (result) {
-            return 1;
-        } else {
-            return 0;
-        }
-    }
-
-    function ascending() public pure returns(uint64) {
-        uint8[ARRAY_SIZE] memory array = [7, 2, 1, 8, 10, 3, 5, 4, 9, 6];
-        main(array, Direction.Ascending);
-
-        bool isOneFirst = array[0] == 1;
-        bool isTenLast = array[ARRAY_SIZE - 1] == 10;
-        bool result = isOneFirst && isTenLast;
-        if (result) {
-            return 1;
-        } else {
-            return array[0];
-        }
-    }
-
-    function descending() public pure returns(uint64) {
-        uint8[ARRAY_SIZE] memory array = [7, 2, 1, 8, 10, 3, 5, 4, 9, 6];
-        main(array, Direction.Descending);
-
-        bool isTenFirst = array[0] == 10;
-        bool isOneLast = array[ARRAY_SIZE - 1] == 1;
-        bool result = isTenFirst && isOneLast;
-        if (result) {
-            return 1;
-        } else {
-            return 0;
-        }
-    }
-
-    function main(uint8[ARRAY_SIZE] memory array, Direction direction) private pure {
+    function main(uint8[ARRAY_SIZE] memory array, Direction direction) public pure returns(uint8[ARRAY_SIZE] memory) {
         bool swapped = true;
         for(uint8 i = 0; i < ARRAY_SIZE - 1; i++) {
             swapped = false;
@@ -81,6 +69,7 @@ contract Test {
                 break;
             }
         }
+        return array;
     }
 
 }

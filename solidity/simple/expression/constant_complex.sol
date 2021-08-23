@@ -1,6 +1,16 @@
 //! { "cases": [ {
-//!     "entry": "entry",
-//!     "expected": 128
+//!     "name": "main",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "16"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "128"
+//!     ]
 //! } ] }
 
 // SPDX-License-Identifier: UNLICENSED
@@ -12,11 +22,7 @@ contract Test {
         uint8[3] a;
     }
 
-    function entry() public pure returns(uint64) {
-        return main(16);
-    }
-
-    function main(uint8 witness) private pure returns(uint8) {
+    function main(uint8 witness) public pure returns(uint8) {
         Data[3] memory data = [
             Data([1, 2, 3]),
             Data([3, 4, 5]),

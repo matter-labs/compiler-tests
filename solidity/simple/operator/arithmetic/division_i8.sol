@@ -1,45 +1,190 @@
-//! { "ignore": true, "cases": [ {
-//!     "ignore": true, "entry": "zero_by_zero",
-//!     "engines": ["zkevm"], "expected": "Runtime error"
+//! { "ignore": true,
+//! "cases": [ {
+//!     "name": "zero_by_zero",
+//!     "ignore": true,
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "0", "0"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "error"
+//!     ]
 //! }, {
-//!     "ignore": true, "entry": "ordinar_by_zero",
-//!     "engines": ["zkevm"], "expected": "Runtime error"
+//!     "name": "ordinar_by_zero",
+//!     "ignore": true,
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "42", "0"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "error"
+//!     ]
 //! }, {
-//!     "ignore": true, "entry": "min_by_zero",
-//!     "engines": ["zkevm"], "expected": "Runtime error"
+//!     "name": "min_by_zero",
+//!     "ignore": true,
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "-128", "0"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "error"
+//!     ]
 //! }, {
-//!     "ignore": true, "entry": "max_by_zero",
-//!     "engines": ["zkevm"], "expected": "Runtime error"
+//!     "name": "max_by_zero",
+//!     "ignore": true,
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "127", "0"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "error"
+//!     ]
 //! }, {
-//!     "entry": "ordinar_positive",
-//!     "expected": 6
+//!     "name": "ordinar_positive",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "42", "7"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "6"
+//!     ]
 //! }, {
-//!     "entry": "ordinar_negative_divided",
-//!     "expected": -6
+//!     "name": "ordinar_negative_divided",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "-42", "7"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "-6"
+//!     ]
 //! }, {
-//!     "entry": "ordinar_negative_divider",
-//!     "expected": -6
+//!     "name": "ordinar_negative_divider",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "42", "-7"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "-6"
+//!     ]
 //! }, {
-//!     "entry": "ordinar_negative_both",
-//!     "expected": 6
+//!     "name": "ordinar_negative_both",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "-42", "-7"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "6"
+//!     ]
 //! }, {
-//!     "entry": "ordinar_max_remainder",
-//!     "expected": 6
+//!     "name": "ordinar_max_remainder",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "48", "7"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "6"
+//!     ]
 //! }, {
-//!     "entry": "ordinar_next",
-//!     "expected": 7
+//!     "name": "ordinar_next",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "49", "7"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "7"
+//!     ]
 //! }, {
-//!     "entry": "to_min",
-//!     "expected": -128
+//!     "name": "to_min",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "-128", "1"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "-128"
+//!     ]
 //! }, {
-//!     "entry": "to_max",
-//!     "expected": 127
+//!     "name": "to_max",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "127", "1"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "127"
+//!     ]
 //! }, {
-//!     "entry": "to_one_positives",
-//!     "expected": 1
+//!     "name": "to_one_positives",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "127", "127"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
 //! }, {
-//!     "entry": "to_one_negatives",
-//!     "expected": 1
+//!     "name": "to_one_negatives",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "-128", "-128"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
 //! } ] }
 
 // SPDX-License-Identifier: UNLICENSED
@@ -47,63 +192,7 @@
 pragma solidity ^0.8.0;
 
 contract Test {
-    function zero_by_zero() public pure returns(uint64) {
-        return main(0, 0);
-    }
-
-    function ordinar_by_zero() public pure returns(uint64) {
-        return main(42, 0);
-    }
-
-    function min_by_zero() public pure returns(uint64) {
-        return main(-128, 0);
-    }
-
-    function max_by_zero() public pure returns(uint64) {
-        return main(127, 0);
-    }
-
-    function ordinar_positive() public pure returns(uint64) {
-        return main(42, 7);
-    }
-
-    function ordinar_negative_divided() public pure returns(uint64) {
-        return main(-42, 7);
-    }
-
-    function ordinar_negative_divider() public pure returns(uint64) {
-        return main(42, -7);
-    }
-
-    function ordinar_negative_both() public pure returns(uint64) {
-        return main(-42, -7);
-    }
-
-    function ordinar_max_remainder() public pure returns(uint64) {
-        return main(48, 7);
-    }
-
-    function ordinar_next() public pure returns(uint64) {
-        return main(49, 7);
-    }
-
-    function to_min() public pure returns(uint64) {
-        return main(-128, 1);
-    }
-
-    function to_max() public pure returns(uint64) {
-        return main(127, 1);
-    }
-
-    function to_one_positives() public pure returns(uint64) {
-        return main(127, 127);
-    }
-
-    function to_one_negatives() public pure returns(uint64) {
-        return main(-128, -128);
-    }
-
-    function main(int8 a, int8 b) private pure returns(int8) {
+    function main(int8 a, int8 b) public pure returns(int8) {
         return a / b;
     }
 }

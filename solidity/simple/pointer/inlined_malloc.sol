@@ -1,6 +1,15 @@
 //! { "cases": [ {
-//!     "entry": "_default",
-//!     "expected": 9
+//!     "name": "main",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "9"
+//!     ]
 //! } ] }
 
 // SPDX-License-Identifier: UNLICENSED
@@ -8,11 +17,7 @@
 pragma solidity ^0.8.0;
 
 contract Test {
-    function _default() public pure returns(uint64) {
-        return main();
-    }
-
-    function main() private pure returns(uint8) {
+    function main() public pure returns(uint8) {
         uint24 memory_pointer = 2 * 32;
         assembly {
             mstore(memory_pointer, 128)

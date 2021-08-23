@@ -1,12 +1,24 @@
 //! { "ignore": true, "cases": [ {
-//!     "entry": "main",
-//!     "expected": 10
+//!     "name": "main",
+//!     "ignore": true,
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "10"
+//!     ]
 //! } ] }
 
-fn main() -> u64 {
-    let mut sum: u64 = 0;
-    for i in -32768..=-32759 as i16 {
-        sum += 1 as u64;
+contract Test {
+    pub fn main(self) -> u64 {
+        let mut sum: u64 = 0;
+        for i in -32768..=-32759 as i16 {
+            sum += 1 as u64;
+        }
+        sum
     }
-    sum
 }

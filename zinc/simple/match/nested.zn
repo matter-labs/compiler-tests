@@ -1,40 +1,66 @@
 //! { "cases": [ {
-//!     "entry": "first",
-//!     "expected": 10
+//!     "name": "first",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "1"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "10"
+//!     ]
 //! }, {
-//!     "entry": "second",
-//!     "expected": 20
+//!     "name": "second",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "2"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "20"
+//!     ]
 //! }, {
-//!     "entry": "third",
-//!     "expected": 64
+//!     "name": "third",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "255"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "64"
+//!     ]
 //! }, {
-//!     "entry": "another",
-//!     "expected": 42
+//!     "name": "another",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "0"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "42"
+//!     ]
 //! } ] }
 
-fn first() -> u64 {
-    main(1) as u64
-}
-
-fn second() -> u64 {
-    main(2) as u64
-}
-
-fn third() -> u64 {
-    main(255) as u64
-}
-
-fn another() -> u64 {
-    main(0) as u64
-}
-
-fn main(witness: u8) -> u8 {
-    match witness {
-        1 => 10,
-        2 => 20,
-        inner => match inner {
-            255 => 64,
-            _ => 42,
-        },
+contract Test {
+    pub fn main(self, witness: u8) -> u8 {
+        match witness {
+            1 => 10,
+            2 => 20,
+            inner => match inner {
+                255 => 64,
+                _ => 42,
+            },
+        }
     }
 }

@@ -1,16 +1,24 @@
-//! { "engines": ["zkevm"], "cases": [ {
-//!     "entry": "entry",
-//!     "expected": 131
+//! { "cases": [ {
+//!     "name": "main",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "25"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "131"
+//!     ]
 //! } ] }
 
-const CONST: u248 = 42;
+contract Test {
+    const CONST: u248 = 42;
 
-fn entry() -> u64 {
-    main(25) as u64
-}
+    pub fn main(self, witness: u248) -> u248 {
+        let local: u248 = 64;
 
-fn main(witness: u248) -> u248 {
-    let local: u248 = 64;
-
-    CONST + local + witness
+        Self::CONST + local + witness
+    }
 }

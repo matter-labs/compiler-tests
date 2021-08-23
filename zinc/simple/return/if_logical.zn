@@ -1,55 +1,81 @@
 //! { "cases": [ {
-//!     "entry": "false_false",
-//!     "expected": 4
+//!     "name": "entry1",
+//!     "input": [
+//!         {
+//!             "entry": "entry",
+//!             "calldata": [
+//!                 "0", "0"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "4"
+//!     ]
 //! }, {
-//!     "entry": "false_true",
-//!     "expected": 8
+//!     "name": "false_true",
+//!     "input": [
+//!         {
+//!             "entry": "entry",
+//!             "calldata": [
+//!                 "0", "1"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "8"
+//!     ]
 //! }, {
-//!     "entry": "true_false",
-//!     "expected": 8
+//!     "name": "true_false",
+//!     "input": [
+//!         {
+//!             "entry": "entry",
+//!             "calldata": [
+//!                 "1", "0"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "8"
+//!     ]
 //! }, {
-//!     "entry": "true_true",
-//!     "expected": 4
+//!     "name": "true_true",
+//!     "input": [
+//!         {
+//!             "entry": "entry",
+//!             "calldata": [
+//!                 "1", "1"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "4"
+//!     ]
 //! } ] }
 
-fn false_false() -> u8 {
-    main(false, false)
-}
+contract Test {
+    pub fn entry(self, first: bool, second: bool) -> u8 {
+        let mut result = 1;
 
-fn false_true() -> u8 {
-    main(false, true)
-}
+        if first || second {
+            result <<= 1;
+        }
 
-fn true_false() -> u8 {
-    main(true, false)
-}
+        if first ^^ second {
+            result <<= 1;
+        }
 
-fn true_true() -> u8 {
-    main(true, true)
-}
+        if first && second {
+            result <<= 1;
+        }
 
-fn main(first: bool, second: bool) -> u8 {
-    let mut result = 1;
+        if !first {
+            result <<= 1;
+        }
 
-    if first || second {
-        result <<= 1;
+        if !second {
+            result <<= 1;
+        }
+
+        result
     }
-
-    if first ^^ second {
-        result <<= 1;
-    }
-
-    if first && second {
-        result <<= 1;
-    }
-
-    if !first {
-        result <<= 1;
-    }
-
-    if !second {
-        result <<= 1;
-    }
-
-    result
 }

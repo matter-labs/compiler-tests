@@ -1,20 +1,31 @@
 //! { "cases": [ {
-//!     "entry": "entry",
-//!     "expected": 5
+//!     "name": "entry",
+//!     "input": [
+//!         {
+//!             "entry": "entry",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "5"
+//!     ]
 //! } ] }
 
-fn entry() -> u64 {
-    let mut i = 0;
-    let mut cnt: u64 = 0;
-    loop {
-        i += 1;
-        if i > 10 {
-            break;
+contract Test {
+    pub fn entry(self) -> u64 {
+        let mut i = 0;
+        let mut cnt: u64 = 0;
+        loop {
+            i += 1;
+            if i > 10 {
+                break;
+            }
+            if i % 2 == 0 {
+                continue;
+            }
+            cnt += 1 as u64;
         }
-        if i % 2 == 0 {
-            continue;
-        }
-        cnt += 1 as u64;
+        cnt
     }
-    cnt
 }

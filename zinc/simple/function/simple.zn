@@ -1,12 +1,20 @@
 //! { "cases": [ {
-//!     "entry": "entry",
-//!     "expected": 1024
+//!     "name": "default",
+//!     "input": [
+//!         {
+//!             "entry": "default",
+//!             "calldata": [
+//!                 "512"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1024"
+//!     ]
 //! } ] }
 
-fn entry() -> u64 {
-    default(512) as u64
-}
-
-fn default(value: u256) -> u256 {
-    value * 2
+contract Test {
+    pub fn default(self, value: u256) -> u256 {
+        value * 2
+    }
 }

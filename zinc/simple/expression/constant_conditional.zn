@@ -1,20 +1,28 @@
 //! { "cases": [ {
-//!     "entry": "entry",
-//!     "expected": 158
+//!     "name": "main",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "42"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "158"
+//!     ]
 //! } ] }
 
-const SCRUTINEE: u8 = 42;
+contract Test {
+    const SCRUTINEE: u8 = 42;
 
-const CONIDITIONAL: u8 = if SCRUTINEE == 64 {
-    100
-} else {
-    200
-};
+    const CONIDITIONAL: u8 = if Self::SCRUTINEE == 64 {
+        100
+    } else {
+        200
+    };
 
-fn entry() -> u64 {
-    main(42) as u64
-}
-
-fn main(witness: u8) -> u8 {
-    CONIDITIONAL - witness
+    pub fn main(self, witness: u8) -> u8 {
+        Self::CONIDITIONAL - witness
+    }
 }

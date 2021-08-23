@@ -1,11 +1,17 @@
 //! { "cases": [ {
-//!     "entry": "default",
-//!     "expected": 42
+//!     "name": "main",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "20", "22"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "42"
+//!     ]
 //! } ] }
-
-fn default() -> u64 {
-    main(20, 22) as u64
-}
 
 unsafe fn malloc<T>(size: u16) -> *mut T {
     let memory_pointer: *mut u16 = 0x0002 as u16;
@@ -14,15 +20,17 @@ unsafe fn malloc<T>(size: u16) -> *mut T {
     return_pointer
 }
 
-unsafe fn main(a: u8, b: u8) -> u8 {
-    let mut memory_pointer: *mut u16 = 0x0002 as u16;
-    *memory_pointer = 0x0004 as u16;
+contract Test {
+    pub unsafe fn main(self, a: u8, b: u8) -> u8 {
+        let mut memory_pointer: *mut u16 = 0x0002 as u16;
+        *memory_pointer = 0x0004 as u16;
 
-    let mut pointer_a = malloc::<u8>(1);
-    let mut pointer_b = malloc::<u8>(1);
+        let mut pointer_a = malloc::<u8>(1);
+        let mut pointer_b = malloc::<u8>(1);
 
-    *pointer_a = a;
-    *pointer_b = b;
+        *pointer_a = a;
+        *pointer_b = b;
 
-    *pointer_a + *pointer_b
+        *pointer_a + *pointer_b
+    }
 }

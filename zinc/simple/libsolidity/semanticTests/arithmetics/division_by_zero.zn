@@ -1,23 +1,37 @@
 //! { "cases": [ {
-//!     "entry": "entry_div",
-//!     "expected": 3
+//!     "name": "div",
+//!     "input": [
+//!         {
+//!             "entry": "div",
+//!             "calldata": [
+//!                 "7", "2"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "3"
+//!     ]
 //! }, {
-//!     "entry": "entry_mod",
-//!     "expected": 1
+//!     "name": "mod",
+//!     "input": [
+//!         {
+//!             "entry": "_mod",
+//!             "calldata": [
+//!                 "7", "2"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
 //! } ] }
 
-fn entry_div() -> u64 {
-    div(7, 2) as u64
-}
+contract Test {
+    pub fn div(self, a: u256, b: u256) -> u256 {
+        a / b
+    }
 
-fn entry_mod() -> u64 {
-    _mod(7, 2) as u64
-}
-
-fn div(a: u256, b: u256) -> u256 {
-    a / b
-}
-
-fn _mod(a: u256, b: u256) -> u256 {
-    a % b
+    pub fn _mod(self, a: u256, b: u256) -> u256 {
+        a % b
+    }
 }

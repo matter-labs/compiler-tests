@@ -1,6 +1,15 @@
 //! { "cases": [ {
-//!     "entry": "entry",
-//!     "expected": 1
+//!     "name": "entry",
+//!     "input": [
+//!         {
+//!             "entry": "entry",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
 //! } ] }
 
 // SPDX-License-Identifier: UNLICENSED
@@ -58,7 +67,7 @@ contract Test {
 
         bool result = true;
 
-        for (uint8 i = 1; i <= 39; i++) {
+        for (uint64 i = 1; i <= 39; i++) {
             result = result && main(i, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11) == uint256(i) * uint256(i);
         }
 
@@ -111,7 +120,7 @@ contract Test {
     }
 
     function main(
-        uint8 param,
+        uint64 param,
         Str1 memory p1,
         Str2[2] memory p2,
         uint208 p3,

@@ -1,6 +1,15 @@
 //! { "ignore": true, "cases": [ {
-//!     "entry": "entry",
-//!     "engines": ["zkevm"], "expected": "Runtime error"
+//!     "name": "default",
+//!     "input": [
+//!         {
+//!             "entry": "entry",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "Runtime error"
+//!     ]
 //! } ] }
 
 // SPDX-License-Identifier: UNLICENSED

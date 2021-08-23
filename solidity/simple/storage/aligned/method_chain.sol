@@ -1,6 +1,19 @@
 //! { "cases": [ {
-//!     "entry": "entry",
-//!     "expected": 1024
+//!     "name": "main",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "42"
+//!             ],
+//!             "storage": [
+//!                 "5", "11"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1024"
+//!     ]
 //! } ] }
 
 // SPDX-License-Identifier: UNLICENSED
@@ -11,14 +24,7 @@ contract Test {
     uint256 a;
     uint256 b;
 
-    function entry() public returns(uint64) {
-        return uint64(main(42));
-    }
-
     function main(uint248 value) public returns(uint248) {
-        a = 5;
-        b = 11;
-
         return uint248(a) + quadruple(triple(double(value))) + uint248(b);
     }
 

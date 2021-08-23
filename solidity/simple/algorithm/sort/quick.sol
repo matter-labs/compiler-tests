@@ -1,9 +1,29 @@
 //! { "cases": [ {
-//!     "entry": "ascending",
-//!     "expected": 1
+//!     "name": "ascending",
+//!     "input": [
+//!         {
+//!             "entry": "quickSort",
+//!             "calldata": [
+//!                 "7", "2", "1", "8", "10", "3", "5", "4", "9", "6", "0", "10", "0"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"
+//!     ]
 //! }, {
-//!     "entry": "descending",
-//!     "expected": 1
+//!     "name": "descending",
+//!     "input": [
+//!         {
+//!             "entry": "quickSort",
+//!             "calldata": [
+//!                 "7", "2", "1", "8", "10", "3", "5", "4", "9", "6", "0", "10", "1"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "10", "9", "8", "7", "6", "5", "4", "3", "2", "1"
+//!     ]
 //! } ] }
 
 // SPDX-License-Identifier: UNLICENSED
@@ -18,44 +38,18 @@ contract Test {
         Descending
     }
 
-    function ascending() public pure returns(uint64) {
-        uint8[ARRAY_SIZE] memory array = [7, 2, 1, 8, 10, 3, 5, 4, 9, 6];
-        quickSort(array, 0, ARRAY_SIZE, Direction.Ascending);
-
-        bool isOneFirst = array[0] == 1;
-        bool isTenLast = array[ARRAY_SIZE - 1] == 10;
-        bool result = isOneFirst && isTenLast;
-        if (result) {
-            return 1;
-        } else {
-            return 0;
-        }
-    }
-
-    function descending() public pure returns(uint64) {
-        uint8[ARRAY_SIZE] memory array = [7, 2, 1, 8, 10, 3, 5, 4, 9, 6];
-        quickSort(array, 0, ARRAY_SIZE, Direction.Descending);
-
-        bool isTenFirst = array[0] == 10;
-        bool isOneLast = array[ARRAY_SIZE - 1] == 1;
-        bool result = isTenFirst && isOneLast;
-        if (result) {
-            return 1;
-        } else {
-            return 0;
-        }
-    }
-
     function quickSort(
         uint8[ARRAY_SIZE] memory array,
         uint8 begin,
         uint8 end,
         Direction direction
     )
-    private pure
+        public
+        pure
+        returns(uint8[ARRAY_SIZE] memory)
     {
         if (end - begin < 2) {
-            return;
+            return array;
         }
 
         uint8 pivot = array[end - 1];
@@ -77,5 +71,6 @@ contract Test {
 
         quickSort(array, begin, i, direction);
         quickSort(array, i + 1, end, direction);
+        return array;
     }
 }

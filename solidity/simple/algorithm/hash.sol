@@ -1,6 +1,15 @@
 //! { "cases": [ {
-//!     "entry": "complex",
-//!     "expected": 1
+//!     "name": "complex",
+//!     "input": [
+//!         {
+//!             "entry": "complex",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
 //! } ] }
 
 // SPDX-License-Identifier: UNLICENSED

@@ -1,6 +1,19 @@
 //! { "cases": [ {
-//!     "entry": "entry",
-//!     "expected": 50
+//!     "name": "main",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "42"
+//!             ],
+//!             "storage": [
+//!                 "0x050a0f14"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "50"
+//!     ]
 //! } ] }
 
 contract Test {
@@ -15,16 +28,7 @@ contract Test {
 
     Data data;
 
-    function entry() public returns(uint64) {
-        return uint64(main(42));
-    }
-
     function main(uint8 argument) public returns(uint8) {
-        data.a = 20;
-        data.b = 15;
-        data.c = 10;
-        data.d = 5;
-
         uint8 sum = 0;
         sum += data.a;
         sum += data.b;

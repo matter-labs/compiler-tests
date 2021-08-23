@@ -1,6 +1,16 @@
 //! { "cases": [ {
-//!     "entry": "_default",
-//!     "expected": 42
+//!     "name": "default",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "10", "15", "17"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "42"
+//!     ]
 //! } ] }
 
 // SPDX-License-Identifier: UNLICENSED
@@ -8,10 +18,6 @@
 pragma solidity ^0.8.0;
 
 contract Test {
-    function _default() public pure returns(uint64) {
-        return main(10, 15, 17);
-    }
-
     function malloc(uint16 size) private pure returns(uint16 returnPointer) {
         uint16 memoryPointer = 2 * 32;
         size *= 32;
@@ -21,7 +27,7 @@ contract Test {
         }
     }
 
-    function main(uint8 a, uint8 b, uint8 c) private pure returns(uint8 result) {
+    function main(uint8 a, uint8 b, uint8 c) public pure returns(uint8 result) {
         uint16 memoryPointer = 2 * 32;
         assembly {
             mstore(memoryPointer, 128)

@@ -1,54 +1,99 @@
-//! { "ignore": true, "cases": [ {
-//!     "entry": "zero_zero",
-//!     "expected": 1
+//! { "ignore": true,
+//! "cases": [ {
+//!     "name": "zero_zero",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "0", "0"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
 //! }, {
-//!     "entry": "ordinar_true_lesser",
-//!     "expected": 1
+//!     "name": "ordinar_true_lesser",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "-25", "42"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
 //! }, {
-//!     "entry": "ordinar_false_bigger",
-//!     "expected": 0
+//!     "name": "ordinar_false_bigger",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "42", "-25"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "0"
+//!     ]
 //! }, {
-//!     "entry": "ordinar_true_negative",
-//!     "expected": 1
+//!     "name": "ordinar_true_negative",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "-42", "-42"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
 //! }, {
-//!     "entry": "ordinar_true_positive",
-//!     "expected": 1
+//!     "name": "ordinar_true_positive",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "42", "42"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
 //! }, {
-//!     "entry": "min_min",
-//!     "expected": 1
+//!     "name": "min_min",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "-128", "-128"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
 //! }, {
-//!     "entry": "max_max",
-//!     "expected": 1
+//!     "name": "max_max",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "127", "127"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
 //! } ] }
 
-fn zero_zero() -> u64 {
-    if main(0, 0) { 1 } else { 0 }
-}
-
-fn ordinar_true_lesser() -> u64 {
-    if main(-25, 42) { 1 } else { 0 }
-}
-
-fn ordinar_false_bigger() -> u64 {
-    if main(42, -25) { 1 } else { 0 }
-}
-
-fn ordinar_true_negative() -> u64 {
-    if main(-42, -42) { 1 } else { 0 }
-}
-
-fn ordinar_true_positive() -> u64 {
-    if main(42, 42) { 1 } else { 0 }
-}
-
-fn min_min() -> u64 {
-    if main(-128, -128) { 1 } else { 0 }
-}
-
-fn max_max() -> u64 {
-    if main(127, 127) { 1 } else { 0 }
-}
-
-fn main(a: i8, b: i8) -> bool {
-    a <= b
+contract Test {
+    pub fn main(self, a: i8, b: i8) -> bool {
+        a <= b
+    }
 }

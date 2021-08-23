@@ -1,12 +1,42 @@
 //! { "cases": [ {
-//!     "entry": "first",
-//!     "expected": 1
+//!     "name": "first",
+//!     "input": [
+//!         {
+//!             "entry": "fib",
+//!             "calldata": [
+//!                 "1"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
 //! }, {
-//!     "entry": "eighth",
-//!     "expected": 21
+//!     "name": "eighth",
+//!     "input": [
+//!         {
+//!             "entry": "fib",
+//!             "calldata": [
+//!                 "8"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "21"
+//!     ]
 //! }, {
-//!     "entry": "sixteenth",
-//!     "expected": 987
+//!     "name": "sixteenth",
+//!     "input": [
+//!         {
+//!             "entry": "fib",
+//!             "calldata": [
+//!                 "16"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "987"
+//!     ]
 //! } ] }
 
 // SPDX-License-Identifier: UNLICENSED
@@ -14,19 +44,7 @@
 pragma solidity ^0.8.0;
 
 contract Test {
-    function first() public pure returns(uint64) {
-        return fib(1);
-    }
-
-    function eighth() public pure returns(uint64) {
-        return fib(8);
-    }
-
-    function sixteenth() public pure returns(uint64) {
-        return fib(16);
-    }
-
-    function fib(uint8 n) private pure returns(uint64) {
+    function fib(uint8 n) public pure returns(uint64) {
         if (n <= 1) {
             return n;
         }

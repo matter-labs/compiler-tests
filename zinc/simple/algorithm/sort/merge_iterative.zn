@@ -1,12 +1,42 @@
 //! { "cases": [ {
-//!     "entry": "none",
-//!     "expected": 1
+//!     "name": "none",
+//!     "input": [
+//!         {
+//!             "entry": "merge_sort",
+//!             "calldata": [
+//!                 "7", "2", "1", "8", "10", "3", "5", "4", "9", "6", "0"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "7", "2", "1", "8", "10", "3", "5", "4", "9", "6"
+//!     ]
 //! }, {
-//!     "entry": "ascending",
-//!     "expected": 1
+//!     "name": "ascending",
+//!     "input": [
+//!         {
+//!             "entry": "merge_sort",
+//!             "calldata": [
+//!                 "7", "2", "1", "8", "10", "3", "5", "4", "9", "6", "1"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"
+//!     ]
 //! }, {
-//!     "entry": "descending",
-//!     "expected": 1
+//!     "name": "descending",
+//!     "input": [
+//!         {
+//!             "entry": "merge_sort",
+//!             "calldata": [
+//!                 "7", "2", "1", "8", "10", "3", "5", "4", "9", "6", "2"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "10", "9", "8", "7", "6", "5", "4", "3", "2", "1"
+//!     ]
 //! } ] }
 
 const ARRAY_SIZE: u8 = 10;
@@ -17,87 +47,59 @@ enum Direction {
     Descending = 2,
 }
 
-fn none() -> u64 {
-    let input = [7, 2, 1, 8, 10, 3, 5, 4, 9, 6];
-    let output = merge_sort(input, Direction::None);
+contract Test {
+    // Iterative merge sort
+    // with normal memory usage (O(n)) and normal complexity (O(n*log(n)))
+    pub fn merge_sort(self, mut array: [u8; ARRAY_SIZE], direction: Direction) -> [u8; ARRAY_SIZE] {
+        let mut size = 1;
+        let mut tmp = [0; 10];
 
-    let is_seven_first = output[0] == 7;
-    let is_six_last = output[ARRAY_SIZE - 1] == 6;
-    let result = is_seven_first && is_six_last;
-    if result { 1 } else { 0 }
-}
+        while size < ARRAY_SIZE {
+            let mut ptr = 0;
+            while ptr < ARRAY_SIZE {
+                let mut mid = ptr + size;
+                if mid > ARRAY_SIZE {
+                    mid = ARRAY_SIZE;
+                }
 
-fn ascending() -> u64 {
-    let input = [7, 2, 1, 8, 10, 3, 5, 4, 9, 6];
-    let output = merge_sort(input, Direction::Ascending);
+                let mut last = ptr + 2 * size;
+                if last > ARRAY_SIZE {
+                    last = ARRAY_SIZE;
+                }
 
-    let is_one_first = output[0] == 1;
-    let is_ten_last = output[ARRAY_SIZE - 1] == 10;
-    let result = is_one_first && is_ten_last;
-    if result { 1 } else { 0 }
-}
+                let mut ptr1 = ptr;
+                let mut ptr2 = ptr + size;
 
-fn descending() -> u64 {
-    let input = [7, 2, 1, 8, 10, 3, 5, 4, 9, 6];
-    let output = merge_sort(input, Direction::Descending);
+                while ptr1 < mid && ptr2 < last {
+                   if match direction {
+                       Direction::None => true,
+                       Direction::Ascending => array[ptr1] < array[ptr2],
+                       Direction::Descending => array[ptr1] > array[ptr2],
+                   } {
+                       tmp[ptr] = array[ptr1];
+                       ptr1 += 1;
+                   } else {
+                       tmp[ptr] = array[ptr2];
+                       ptr2 += 1;
+                   }
+                   ptr += 1;
+               }
 
-    let is_ten_first = output[0] == 10;
-    let is_one_last = output[ARRAY_SIZE - 1] == 1;
-    let result = is_ten_first && is_one_last;
-    if result { 1 } else { 0 }
-}
-
-// Iterative merge sort
-// with normal memory usage (O(n)) and normal complexity (O(n*log(n)))
-fn merge_sort(mut array: [u8; ARRAY_SIZE], direction: Direction) -> [u8; ARRAY_SIZE] {
-    let mut size = 1;
-    let mut tmp = [0; 10];
-
-    while size < ARRAY_SIZE {
-        let mut ptr = 0;
-        while ptr < ARRAY_SIZE {
-            let mut mid = ptr + size;
-            if mid > ARRAY_SIZE {
-                mid = ARRAY_SIZE;
-            }
-
-            let mut last = ptr + 2 * size;
-            if last > ARRAY_SIZE {
-                last = ARRAY_SIZE;
-            }
-
-            let mut ptr1 = ptr;
-            let mut ptr2 = ptr + size;
-
-            while ptr1 < mid && ptr2 < last {
-               if match direction {
-                   Direction::None => true,
-                   Direction::Ascending => array[ptr1] < array[ptr2],
-                   Direction::Descending => array[ptr1] > array[ptr2],
-               } {
+               while ptr1 < mid {
                    tmp[ptr] = array[ptr1];
+                   ptr += 1;
                    ptr1 += 1;
-               } else {
+               }
+
+               while ptr2 < last {
                    tmp[ptr] = array[ptr2];
+                   ptr += 1;
                    ptr2 += 1;
                }
-               ptr += 1;
-           }
-
-           while ptr1 < mid {
-               tmp[ptr] = array[ptr1];
-               ptr += 1;
-               ptr1 += 1;
-           }
-
-           while ptr2 < last {
-               tmp[ptr] = array[ptr2];
-               ptr += 1;
-               ptr2 += 1;
-           }
+            }
+            array = tmp;
+            size *= 2;
         }
-        array = tmp;
-        size *= 2;
+        array
     }
-    array
 }

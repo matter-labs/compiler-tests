@@ -1,43 +1,54 @@
 //! { "cases": [ {
-//!     "entry": "entry",
-//!     "expected": 60
+//!     "name": "entry",
+//!     "input": [
+//!         {
+//!             "entry": "entry",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "60"
+//!     ]
 //! } ] }
 
-fn entry() -> u64 {
-    test(32) + test(33)
-}
+contract Test {
+    pub fn entry(self) -> u64 {
+        Self::test(32) + Self::test(33)
+    }
 
-fn test(param: u8) -> u64 {
-    let mut cnt = 0 as u64;
+    fn test(param: u8) -> u64 {
+        let mut cnt = 0 as u64;
 
-    let mut p = 0;
-    loop {
-        p += 2;
-        if p % 8 == 0 {
-            break;
-        }
-        if param == 12 {
-            continue;
-        }
-        for k in 0..=1 {
-            for x in 0..=1 {
-                let mut y = 10;
-                while y < 17 {
-                    y += 1;
-                    if y % 3 == 0 {
-                        continue;
+        let mut p = 0;
+        loop {
+            p += 2;
+            if p % 8 == 0 {
+                break;
+            }
+            if param == 12 {
+                continue;
+            }
+            for k in 0..=1 {
+                for x in 0..=1 {
+                    let mut y = 10;
+                    while y < 17 {
+                        y += 1;
+                        if y % 3 == 0 {
+                            continue;
+                        }
+                        if y == 16 {
+                            break;
+                        }
+                        if param == 32 && y > 13 {
+                            break;
+                        }
+                        cnt += 1 as u64;
                     }
-                    if y == 16 {
-                        break;
-                    }
-                    if param == 32 && y > 13 {
-                        break;
-                    }
-                    cnt += 1 as u64;
                 }
             }
         }
-    }
 
-    cnt
+        cnt
+    }
 }

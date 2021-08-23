@@ -1,28 +1,46 @@
 //! { "cases": [ {
-//!     "entry": "first",
-//!     "expected": 1008
+//!     "name": "first",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "42"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1008"
+//!     ]
 //! }, {
-//!     "entry": "second",
-//!     "expected": 1536
+//!     "name": "second",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "64"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1536"
+//!     ]
 //! }, {
-//!     "entry": "third",
-//!     "expected": 24000000
+//!     "name": "third",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "1000000"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "24000000"
+//!     ]
 //! } ] }
 
 struct Data {
     a: u256,
-}
-
-fn first() -> u64 {
-    main(42) as u64
-}
-
-fn second() -> u64 {
-    main(64) as u64
-}
-
-fn third() -> u64 {
-    main(1000000) as u64
 }
 
 impl Data {
@@ -53,10 +71,12 @@ impl Data {
     }
 }
 
-fn main(witness: u256) -> u256 {
-    Data::new(witness)
-        .double()
-        .triple()
-        .quadruple()
-        .into_inner()
+contract Test {
+    pub fn main(self, witness: u256) -> u256 {
+        Data::new(witness)
+            .double()
+            .triple()
+            .quadruple()
+            .into_inner()
+    }
 }

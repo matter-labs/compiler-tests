@@ -1,15 +1,55 @@
 //! { "cases": [ {
-//!     "entry": "false_false",
-//!     "expected": 4
+//!     "name": "entry1",
+//!     "input": [
+//!         {
+//!             "entry": "entry",
+//!             "calldata": [
+//!                 "0", "0"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "4"
+//!     ]
 //! }, {
-//!     "entry": "false_true",
-//!     "expected": 8
+//!     "name": "false_true",
+//!     "input": [
+//!         {
+//!             "entry": "entry",
+//!             "calldata": [
+//!                 "0", "1"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "8"
+//!     ]
 //! }, {
-//!     "entry": "true_false",
-//!     "expected": 8
+//!     "name": "true_false",
+//!     "input": [
+//!         {
+//!             "entry": "entry",
+//!             "calldata": [
+//!                 "1", "0"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "8"
+//!     ]
 //! }, {
-//!     "entry": "true_true",
-//!     "expected": 4
+//!     "name": "true_true",
+//!     "input": [
+//!         {
+//!             "entry": "entry",
+//!             "calldata": [
+//!                 "1", "1"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "4"
+//!     ]
 //! } ] }
 
 // SPDX-License-Identifier: UNLICENSED
@@ -17,23 +57,7 @@
 pragma solidity ^0.8.0;
 
 contract Test {
-    function false_false() public pure returns(uint8) {
-        return main(false, false);
-    }
-
-    function false_true() public pure returns(uint8) {
-        return main(false, true);
-    }
-
-    function true_false() public pure returns(uint8) {
-        return main(true, false);
-    }
-
-    function true_true() public pure returns(uint8) {
-        return main(true, true);
-    }
-
-    function main(bool first, bool second) private pure returns(uint8) {
+    function entry(bool first, bool second) public pure returns(uint8) {
         uint8 result = 1;
 
         if (first || second) {

@@ -1,14 +1,20 @@
 //! { "cases": [ {
-//!     "entry": "entry",
-//!     "expected": 51
+//!     "name": "main",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "3"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "51"
+//!     ]
 //! } ] }
 
 enum Data {
     VALUE = 42,
-}
-
-fn entry() -> u64 {
-    main(3) as u64
 }
 
 impl Data {
@@ -19,6 +25,8 @@ impl Data {
     }
 }
 
-fn main(witness: u8) -> u8 {
-    Data::test(witness)
+contract Test {
+    pub fn main(self, witness: u8) -> u8 {
+        Data::test(witness)
+    }
 }

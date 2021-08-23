@@ -1,31 +1,51 @@
 //! { "cases": [ {
-//!     "entry": "gcd_15_6",
-//!     "expected": 3
+//!     "name": "gcd_15_6",
+//!     "input": [
+//!         {
+//!             "entry": "gcd",
+//!             "calldata": [
+//!                 "15", "6"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "3"
+//!     ]
 //! }, {
-//!     "entry": "gcd_23_19",
-//!     "expected": 1
+//!     "name": "gcd_23_19",
+//!     "input": [
+//!         {
+//!             "entry": "gcd",
+//!             "calldata": [
+//!                 "23", "19"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
 //! }, {
-//!     "entry": "gcd_76800_15435",
-//!     "expected": 15
+//!     "name": "gcd_76800_15435",
+//!     "input": [
+//!         {
+//!             "entry": "gcd",
+//!             "calldata": [
+//!                 "76800", "15435"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "15"
+//!     ]
 //! } ] }
 
-fn gcd_15_6() -> u64 {
-    gcd(15, 6)
-}
+contract Test {
+    // first(a) should be greater then second(b)
+    pub fn gcd(self, a: u64, b: u64) -> u64 {
+        if b == 0 {
+            return a;
+        }
 
-fn gcd_23_19() -> u64 {
-    gcd(23, 19)
-}
-
-fn gcd_76800_15435() -> u64 {
-    gcd(76800, 15435)
-}
-
-// first(a) should be greater then second(b)
-fn gcd(a: u64, b: u64) -> u64 {
-    if b == 0 {
-        return a;
+        self.gcd(b, a % b)
     }
-
-    gcd(b, a % b)
 }

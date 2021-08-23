@@ -1,33 +1,132 @@
 //! { "cases": [ {
-//!     "entry": "reverse_test",
-//!     "expected": 1
+//!     "name": "reverse_test",
+//!     "input": [
+//!         {
+//!             "entry": "reverse_test",
+//!             "calldata": [
+//!                 "7", "2", "1", "8", "10", "3", "5", "4", "9", "6"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "6", "9", "4", "5", "3", "10", "8", "1", "2", "7", "10"
+//!     ]
 //! }, {
-//!     "entry": "unique_test",
-//!     "expected": 1
+//!     "name": "unique_test",
+//!     "input": [
+//!         {
+//!             "entry": "unique_test",
+//!             "calldata": [
+//!                 "7", "2", "7", "8", "10", "10", "5", "8", "9", "7"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "7", "2", "8", "10", "5", "9", "0", "0", "0", "0", "6"
+//!     ]
 //! }, {
-//!     "entry": "filter_greater",
-//!     "expected": 1
+//!     "name": "filter_greater",
+//!     "input": [
+//!         {
+//!             "entry": "filter_test",
+//!             "calldata": [
+//!                 "7", "2", "7", "8", "10", "10", "5", "8", "9", "7", "0", "5"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "7", "7", "8", "10", "10", "8", "9", "7", "0", "0", "8"
+//!     ]
 //! }, {
-//!     "entry": "filter_less",
-//!     "expected": 1
+//!     "name": "filter_less",
+//!     "input": [
+//!         {
+//!             "entry": "filter_test",
+//!             "calldata": [
+//!                 "7", "2", "7", "8", "10", "10", "5", "8", "9", "7", "1", "8"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "7", "2", "7", "5", "7", "0", "0", "0", "0", "0", "5"
+//!     ]
 //! }, {
-//!     "entry": "filter_divide",
-//!     "expected": 1
+//!     "name": "filter_divide",
+//!     "input": [
+//!         {
+//!             "entry": "filter_test",
+//!             "calldata": [
+//!                 "7", "2", "7", "8", "10", "10", "5", "8", "9", "7", "2", "2"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "2", "8", "10", "10", "8", "0", "0", "0", "0", "0", "5"
+//!     ]
 //! }, {
-//!     "entry": "map_add",
-//!     "expected": 1
+//!     "name": "map_add",
+//!     "input": [
+//!         {
+//!             "entry": "map_test",
+//!             "calldata": [
+//!                 "7", "2", "1", "8", "10", "3", "5", "4", "9", "6", "0", "28"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "35", "30", "29", "36", "38", "31", "33", "32", "37", "34", "10"
+//!     ]
 //! }, {
-//!     "entry": "map_sub",
-//!     "expected": 1
+//!     "name": "map_sub",
+//!     "input": [
+//!         {
+//!             "entry": "map_test",
+//!             "calldata": [
+//!                 "18", "12", "7", "9", "21", "6", "22", "14", "9", "34", "1", "5"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "13", "7", "2", "4", "16", "1", "17", "9", "4", "29", "10"
+//!     ]
 //! }, {
-//!     "entry": "map_mul",
-//!     "expected": 1
+//!     "name": "map_mul",
+//!     "input": [
+//!         {
+//!             "entry": "map_test",
+//!             "calldata": [
+//!                 "7", "2", "1", "8", "10", "3", "5", "4", "9", "6", "2", "7"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "49", "14", "7", "56", "70", "21", "35", "28", "63", "42", "10"
+//!     ]
 //! }, {
-//!     "entry": "map_div",
-//!     "expected": 1
+//!     "name": "map_div",
+//!     "input": [
+//!         {
+//!             "entry": "map_test",
+//!             "calldata": [
+//!                 "18", "12", "7", "9", "21", "6", "22", "14", "9", "34", "3", "4"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "4", "3", "1", "2", "5", "1", "5", "3", "2", "8", "10"
+//!     ]
 //! }, {
-//!     "entry": "complex",
-//!     "expected": 1
+//!     "name": "complex",
+//!     "input": [
+//!         {
+//!             "entry": "complex",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "4", "6", "2", "5", "0", "0", "0", "0", "0", "0", "4"
+//!     ]
 //! } ] }
 
 const ARRAY_SIZE: u8 = 10;
@@ -48,125 +147,6 @@ enum Mapping {
     Sub = 1,
     Mul = 2,
     Div = 3,
-}
-
-fn reverse_test() -> u64 {
-    let input = [7, 2, 1, 8, 10, 3, 5, 4, 9, 6];
-    let output = Vector::from_array(input, ARRAY_SIZE).reverse().array;
-
-    let is_six_first = output[0] == 6;
-    let is_seven_last = output[ARRAY_SIZE - 1] == 7;
-    let is_three_fifth = output[4] == 3;
-    let result = is_six_first && is_seven_last && is_three_fifth;
-    if result { 1 } else { 0 }
-}
-
-fn unique_test() -> u64 {
-    let input = [7, 2, 7, 8, 10, 10, 5, 8, 9, 7];
-    let output = Vector::from_array(input, ARRAY_SIZE).unique();
-
-    let is_size_six = output.size == 6;
-    let is_seven_first = output.array[0] == 7;
-    let is_nine_last = output.array[output.size - 1] == 9;
-    let result = is_size_six && is_seven_first && is_nine_last;
-    if result { 1 } else { 0 }
-}
-
-fn filter_greater() -> u64 {
-    let input = [7, 2, 7, 8, 10, 10, 5, 8, 9, 7];
-    let output = Vector::from_array(input, ARRAY_SIZE).filter(Filter::Greater, 5);
-
-    let is_size_eight = output.size == 8;
-    let is_seven_first = output.array[0] == 7;
-    let is_seven_last = output.array[output.size - 1] == 7;
-    let result = is_size_eight && is_seven_first && is_seven_last;
-    if result { 1 } else { 0 }
-}
-
-fn filter_less() -> u64 {
-    let input = [7, 2, 7, 8, 10, 10, 5, 8, 9, 7];
-    let output = Vector::from_array(input, ARRAY_SIZE).filter(Filter::Less, 8);
-
-    let is_size_five = output.size == 5;
-    let is_seven_first = output.array[0] == 7;
-    let is_seven_last = output.array[output.size - 1] == 7;
-    let result = is_size_five && is_seven_first && is_seven_last;
-    if result { 1 } else { 0 }
-}
-
-fn filter_divide() -> u64 {
-    let input = [7, 2, 7, 8, 10, 10, 5, 8, 9, 7];
-    let output = Vector::from_array(input, ARRAY_SIZE).filter(Filter::Divide, 2);
-
-    let is_size_five = output.size == 5;
-    let is_two_first = output.array[0] == 2;
-    let is_eight_last = output.array[output.size - 1] == 8;
-    let result = is_size_five && is_two_first && is_eight_last;
-    if result { 1 } else { 0 }
-}
-
-fn map_add() -> u64 {
-    let input = [7, 2, 1, 8, 10, 3, 5, 4, 9, 6];
-    let output = Vector::from_array(input, ARRAY_SIZE).map(Mapping::Add, 28).array;
-
-    let is_35_first = output[0] == 35;
-    let is_34_last = output[ARRAY_SIZE - 1] == 34;
-    let is_38_fifth = output[4] == 38;
-    let result = is_35_first && is_34_last && is_38_fifth;
-    if result { 1 } else { 0 }
-}
-
-fn map_sub() -> u64 {
-    let input = [18, 12, 7, 9, 21, 6, 22, 14, 9, 34];
-    let output = Vector::from_array(input, ARRAY_SIZE).map(Mapping::Sub, 5).array;
-
-    let is_13_first = output[0] == 13;
-    let is_29_last = output[ARRAY_SIZE - 1] == 29;
-    let is_16_fifth = output[4] == 16;
-    let result = is_13_first && is_29_last && is_16_fifth;
-    if result { 1 } else { 0 }
-}
-
-fn map_mul() -> u64 {
-    let input = [7, 2, 1, 8, 10, 3, 5, 4, 9, 6];
-    let output = Vector::from_array(input, ARRAY_SIZE).map(Mapping::Mul, 7).array;
-
-    let is_49_first = output[0] == 49;
-    let is_42_last = output[ARRAY_SIZE - 1] == 42;
-    let is_70_fifth = output[4] == 70;
-    let result = is_49_first && is_42_last && is_70_fifth;
-    if result { 1 } else { 0 }
-}
-
-fn map_div() -> u64 {
-    let input = [18, 12, 7, 9, 21, 6, 22, 14, 9, 34];
-    let output = Vector::from_array(input, ARRAY_SIZE).map(Mapping::Div, 4).array;
-
-    let is_4_first = output[0] == 4;
-    let is_8_last = output[ARRAY_SIZE - 1] == 8;
-    let is_5_fifth = output[4] == 5;
-    let result = is_4_first && is_8_last && is_5_fifth;
-    if result { 1 } else { 0 }
-}
-
-fn complex() -> u64 {
-    let input = [18, 12, 7, 9, 21, 6, 22, 14, 9, 34];
-    let output = Vector::from_array(input, ARRAY_SIZE)
-        .filter(Filter::Divide, 2) // 18 12 6 22 14 34
-        .reverse() // 34 14 22 6 12 18
-        .map(Mapping::Mul, 2) // 68 28 44 12 24 36
-        .filter(Filter::Less, 60) // 28 44 12 24 36
-        .map(Mapping::Add, 4) // 32 48 16 28 40
-        .filter(Filter::Divide, 8) // 32 48 16 40
-        .map(Mapping::Div, 7); // 4 6 2 5
-
-    let is_size_four = output.size == 4;
-    let is_4_first = output.array[0] == 4;
-    let is_6_second = output.array[1] == 6;
-    let is_2_third = output.array[2] == 2;
-    let is_5_last = output.array[output.size - 1] == 5;
-    let result = is_size_four && is_4_first && is_6_second && is_2_third && is_5_last;
-    if result { 1 } else { 0 }
 }
 
 impl Vector {
@@ -243,5 +223,35 @@ impl Vector {
             }
         }
         result
+    }
+}
+
+contract Test {
+    pub fn reverse_test(self, input: [u8; ARRAY_SIZE]) -> Vector {
+        Vector::from_array(input, ARRAY_SIZE).reverse()
+    }
+
+    pub fn unique_test(self, input: [u8; ARRAY_SIZE]) -> Vector {
+        Vector::from_array(input, ARRAY_SIZE).unique()
+    }
+
+    pub fn filter_test(self, input: [u8; ARRAY_SIZE], filter: Filter, param: u8) -> Vector {
+        Vector::from_array(input, ARRAY_SIZE).filter(filter, param)
+    }
+
+    pub fn map_test(self, input: [u8; ARRAY_SIZE], mapping: Mapping, param: u8) -> Vector {
+        Vector::from_array(input, ARRAY_SIZE).map(mapping, param)
+    }
+
+    pub fn complex(self) -> Vector {
+        let input = [18, 12, 7, 9, 21, 6, 22, 14, 9, 34];
+        Vector::from_array(input, ARRAY_SIZE)
+            .filter(Filter::Divide, 2) // 18 12 6 22 14 34
+            .reverse() // 34 14 22 6 12 18
+            .map(Mapping::Mul, 2) // 68 28 44 12 24 36
+            .filter(Filter::Less, 60) // 28 44 12 24 36
+            .map(Mapping::Add, 4) // 32 48 16 28 40
+            .filter(Filter::Divide, 8) // 32 48 16 40
+            .map(Mapping::Div, 7) // 4 6 2 5
     }
 }

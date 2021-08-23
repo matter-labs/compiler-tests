@@ -1,15 +1,55 @@
 //! { "cases": [ {
-//!     "entry": "cube1",
-//!     "expected": 27
+//!     "name": "cube1",
+//!     "input": [
+//!         {
+//!             "entry": "cube",
+//!             "calldata": [
+//!                 "3"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "27"
+//!     ]
 //! }, {
-//!     "entry": "cube2",
-//!     "expected": 30422169911604024
+//!     "name": "cube2",
+//!     "input": [
+//!         {
+//!             "entry": "cube",
+//!             "calldata": [
+//!                 "312174"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "30422169911604024"
+//!     ]
 //! }, {
-//!     "entry": "sphere1",
-//!     "expected": 143675
+//!     "name": "sphere1",
+//!     "input": [
+//!         {
+//!             "entry": "sphere",
+//!             "calldata": [
+//!                 "7"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "143675"
+//!     ]
 //! }, {
-//!     "entry": "sphere2",
-//!     "expected": 151504289520102405
+//!     "name": "sphere2",
+//!     "input": [
+//!         {
+//!             "entry": "sphere",
+//!             "calldata": [
+//!                 "71249"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "151504289520102405"
+//!     ]
 //! } ] }
 
 // SPDX-License-Identifier: UNLICENSED
@@ -30,28 +70,11 @@ contract Test {
         uint128 r;
     }
 
-    function cube1() public pure returns(uint64) {
-        uint128 a = 3;
-        Cube memory cube = Cube(a);
+    function cube(Cube memory cube) public pure returns(uint64) {
         return uint64(cubeVolume(cube));
     }
 
-    function cube2() public pure returns(uint64) {
-        uint128 a = 312174;
-        Cube memory cube = Cube(a);
-        return uint64(cubeVolume(cube));
-    }
-
-    function sphere1() public pure returns(uint64) {
-        uint128 r = 7;
-        Sphere memory sphere = Sphere(r);
-        // volume * PRECISION
-        return uint64(sphereVolume(sphere, PI) * PRECISION / EPS / EPS / EPS);
-    }
-
-    function sphere2() public pure returns(uint64) {
-        uint128 r = 71249;
-        Sphere memory sphere = Sphere(r);
+    function sphere(Sphere memory sphere) public pure returns(uint64) {
         // volume * PRECISION
         return uint64(sphereVolume(sphere, PI) * PRECISION / EPS / EPS / EPS);
     }

@@ -1,15 +1,55 @@
 //! { "cases": [ {
-//!     "entry": "false_false",
-//!     "expected": 0
+//!     "name": "false_false",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "0", "0"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "0"
+//!     ]
 //! }, {
-//!     "entry": "false_true",
-//!     "expected": 1
+//!     "name": "false_true",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "0", "1"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
 //! }, {
-//!     "entry": "true_false",
-//!     "expected": 1
+//!     "name": "true_false",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "1", "0"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
 //! }, {
-//!     "entry": "true_true",
-//!     "expected": 0
+//!     "name": "true_true",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "1", "1"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "0"
+//!     ]
 //! } ] }
 
 // SPDX-License-Identifier: UNLICENSED
@@ -17,39 +57,7 @@
 pragma solidity ^0.8.0;
 
 contract Test {
-    function false_false() public pure returns(uint64) {
-        if (main(false, false)) {
-            return 1;
-        } else {
-            return 0;
-        }
-    }
-
-    function false_true() public pure returns(uint64) {
-        if (main(false, true)) {
-            return 1;
-        } else {
-            return 0;
-        }
-    }
-
-    function true_false() public pure returns(uint64) {
-        if (main(true, false)) {
-            return 1;
-        } else {
-            return 0;
-        }
-    }
-
-    function true_true() public pure returns(uint64) {
-        if (main(true, true)) {
-            return 1;
-        } else {
-            return 0;
-        }
-    }
-
-    function main(bool a, bool b) private pure returns(bool) {
+    function main(bool a, bool b) public pure returns(bool) {
         return (a && !b) || (!a && b);
     }
 }

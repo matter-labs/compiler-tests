@@ -1,6 +1,16 @@
 //! { "cases": [ {
-//!     "entry": "entry",
-//!     "expected": 24
+//!     "name": "main",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "8"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "24"
+//!     ]
 //! } ] }
 
 // SPDX-License-Identifier: UNLICENSED
@@ -13,10 +23,6 @@ contract Test {
         FIRST,
         SECOND,
         THIRD
-    }
-
-    function entry() public pure returns(uint64) {
-        return main(8);
     }
 
     function _new() private pure returns(List) {
@@ -35,7 +41,7 @@ contract Test {
         return List.THIRD;
     }
 
-    function main(uint8 witness) private pure returns(uint64) {
+    function main(uint8 witness) public pure returns(uint64) {
         return uint64(intoThird(intoSecond(intoFirst(_new())))) * witness;
     }
 }

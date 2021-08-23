@@ -1,6 +1,19 @@
 //! { "cases": [ {
-//!     "entry": "entry",
-//!     "expected": 126
+//!     "name": "main",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "42"
+//!             ],
+//!             "storage": [
+//!                 "0x656463"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "226"
+//!     ]
 //! } ] }
 
 contract Test {
@@ -8,17 +21,15 @@ contract Test {
 
     struct Data {
         uint8 value;
+        uint8 next;
+        uint8 last;
     }
 
     Data data;
 
-    function entry() public returns(uint64) {
-        return uint64(main(42));
-    }
-
     function main(uint8 argument) public returns(uint8) {
-        data.value += argument;
+        data.next += argument;
 
-        return argument + TEST + data.value;
+        return argument + TEST + data.next;
     }
 }

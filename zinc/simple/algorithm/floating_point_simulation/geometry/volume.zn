@@ -1,15 +1,55 @@
 //! { "cases": [ {
-//!     "entry": "cube1",
-//!     "expected": 27
+//!     "name": "cube1",
+//!     "input": [
+//!         {
+//!             "entry": "cube",
+//!             "calldata": [
+//!                 "3"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "27"
+//!     ]
 //! }, {
-//!     "entry": "cube2",
-//!     "expected": 30422169911604024
+//!     "name": "cube2",
+//!     "input": [
+//!         {
+//!             "entry": "cube",
+//!             "calldata": [
+//!                 "312174"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "30422169911604024"
+//!     ]
 //! }, {
-//!     "entry": "sphere1",
-//!     "expected": 143675
+//!     "name": "sphere1",
+//!     "input": [
+//!         {
+//!             "entry": "sphere",
+//!             "calldata": [
+//!                 "7"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "143675"
+//!     ]
 //! }, {
-//!     "entry": "sphere2",
-//!     "expected": 151504289520102405
+//!     "name": "sphere2",
+//!     "input": [
+//!         {
+//!             "entry": "sphere",
+//!             "calldata": [
+//!                 "71249"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "151504289520102405"
+//!     ]
 //! } ] }
 
 const EPS: u128 = 1E6;
@@ -25,32 +65,6 @@ struct Sphere {
     r: u128,
 }
 
-fn cube1() -> u64 {
-    let a = 3 as u128;
-    let cube = Cube {a: a};
-    cube.volume() as u64
-}
-
-fn cube2() -> u64 {
-    let a = 312174 as u128;
-    let cube = Cube {a: a};
-    cube.volume() as u64
-}
-
-fn sphere1() -> u64{
-    let r = 7 as u128;
-    let sphere = Sphere {r: r};
-    // volume * PRECISION
-    (sphere.volume(PI) * PRECISION / EPS / EPS / EPS) as u64
-}
-
-fn sphere2() -> u64{
-    let r = 71249 as u128;
-    let sphere = Sphere {r: r};
-    // volume * PRECISION
-    (sphere.volume(PI) * PRECISION / EPS / EPS / EPS) as u64
-}
-
 impl Cube {
     fn volume(self) -> u128 {
         self.a * self.a * self.a
@@ -60,5 +74,16 @@ impl Cube {
 impl Sphere {
     fn volume(self, pi: u128) -> u128 {
         4 * pi * self.r * self.r * self.r / 3
+    }
+}
+
+contract Test {
+    pub fn cube(self, cube: Cube) -> u64 {
+        cube.volume() as u64
+    }
+
+    pub fn sphere(self, sphere: Sphere) -> u64{
+        // volume * PRECISION
+        (sphere.volume(PI) * PRECISION / EPS / EPS / EPS) as u64
     }
 }

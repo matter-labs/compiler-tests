@@ -1,17 +1,25 @@
 //! { "cases": [ {
-//!     "entry": "entry",
-//!     "expected": 23
+//!     "name": "main",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "3"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "23"
+//!     ]
 //! } ] }
 
-fn entry() -> u64 {
-    main(3) as u64
-}
+contract Test {
+    pub fn main(self, witness: u8) -> u8 {
+        let mut tuple_nested: ((u8, u8), (u8, u8)) = ((1, 2), (3, 4));
 
-fn main(witness: u8) -> u8 {
-    let mut tuple_nested: ((u8, u8), (u8, u8)) = ((1, 2), (3, 4));
+        (tuple_nested.1).1 = 111;
+        (tuple_nested.0).0 = 42;
 
-    (tuple_nested.1).1 = 111;
-    (tuple_nested.0).0 = 42;
-
-    ((tuple_nested.1).1 - (tuple_nested.0).0) / witness
+        ((tuple_nested.1).1 - (tuple_nested.0).0) / witness
+    }
 }

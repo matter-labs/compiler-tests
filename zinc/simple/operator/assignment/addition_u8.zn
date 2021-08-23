@@ -1,42 +1,72 @@
 //! { "cases": [ {
-//!     "entry": "zero_zero",
-//!     "expected": 0
+//!     "name": "zero_zero",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "0", "0"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "0"
+//!     ]
 //! }, {
-//!     "entry": "ordinar",
-//!     "expected": 67
+//!     "name": "ordinar",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "42", "25"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "67"
+//!     ]
 //! }, {
-//!     "entry": "to_max",
-//!     "expected": 255
+//!     "name": "to_max",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "100", "155"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "255"
+//!     ]
 //! }, {
-//!     "entry": "overflow",
-//!     "engines": ["zkevm"], "expected": "Runtime error"
+//!     "name": "overflow",
+//!     "ignore": true,
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "100", "200"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": "Runtime error"
 //! }, {
-//!     "entry": "overflow_minimal",
-//!     "engines": ["zkevm"], "expected": "Runtime error"
+//!     "name": "overflow_minimal",
+//!     "ignore": true,
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "100", "156"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": "Runtime error"
 //! } ] }
 
-fn zero_zero() -> u64 {
-    main(0, 0) as u64
-}
-
-fn ordinar() -> u64 {
-    main(42, 25) as u64
-}
-
-fn to_max() -> u64 {
-    main(100, 155) as u64
-}
-
-fn overflow() -> u64 {
-    main(100, 200) as u64
-}
-
-fn overflow_minimal() -> u64 {
-    main(100, 156) as u64
-}
-
-fn main(a: u8, b: u8) -> u8 {
-    let mut c = a;
-    c += b;
-    c
+contract Test {
+    pub fn main(self, a: u8, b: u8) -> u8 {
+        let mut c = a;
+        c += b;
+        c
+    }
 }

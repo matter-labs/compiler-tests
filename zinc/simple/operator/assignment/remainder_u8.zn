@@ -1,63 +1,107 @@
 //! { "cases": [ {
-//!     "entry": "zero_by_zero",
-//!     "engines": ["zkevm"], "expected": "Runtime error"
+//!     "name": "zero_by_zero",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "0", "0"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": "Runtime error"
 //! }, {
-//!     "entry": "ordinar_by_zero",
-//!     "engines": ["zkevm"], "expected": "Runtime error"
+//!     "name": "ordinar_by_zero",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "42", "0"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": "Runtime error"
 //! }, {
-//!     "entry": "max_by_zero",
-//!     "engines": ["zkevm"], "expected": "Runtime error"
+//!     "name": "max_by_zero",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "255", "0"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": "Runtime error"
 //! }, {
-//!     "entry": "ordinar",
-//!     "expected": 0
+//!     "name": "ordinar",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "42", "7"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "0"
+//!     ]
 //! }, {
-//!     "entry": "ordinar_max_remainder",
-//!     "expected": 6
+//!     "name": "ordinar_max_remainder",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "48", "7"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "6"
+//!     ]
 //! }, {
-//!     "entry": "ordinar_next",
-//!     "expected": 0
+//!     "name": "ordinar_next",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "49", "7"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "0"
+//!     ]
 //! }, {
-//!     "entry": "to_max",
-//!     "expected": 127
+//!     "name": "to_max",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "255", "128"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "127"
+//!     ]
 //! }, {
-//!     "entry": "to_min",
-//!     "expected": 0
+//!     "name": "to_min",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "255", "255"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "0"
+//!     ]
 //! } ] }
 
-fn zero_by_zero() -> u64 {
-    main(0, 0) as u64
-}
-
-fn ordinar_by_zero() -> u64 {
-    main(42, 0) as u64
-}
-
-fn max_by_zero() -> u64 {
-    main(255, 0) as u64
-}
-
-fn ordinar() -> u64 {
-    main(42, 7) as u64
-}
-
-fn ordinar_max_remainder() -> u64 {
-    main(48, 7) as u64
-}
-
-fn ordinar_next() -> u64 {
-    main(49, 7) as u64
-}
-
-fn to_max() -> u64 {
-    main(255, 128) as u64
-}
-
-fn to_min() -> u64 {
-    main(255, 255) as u64
-}
-
-fn main(a: u8, b: u8) -> u8 {
-    let mut c = a;
-    c %= b;
-    c
+contract Test {
+    pub fn main(self, a: u8, b: u8) -> u8 {
+        let mut c = a;
+        c %= b;
+        c
+    }
 }

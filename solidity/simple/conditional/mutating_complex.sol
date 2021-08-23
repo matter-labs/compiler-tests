@@ -1,9 +1,29 @@
 //! { "cases": [ {
-//!     "entry": "conditionTrue",
-//!     "expected": 1000256
+//!     "name": "conditionTrue",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "0", "0", "0", "1"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1000256"
+//!     ]
 //! }, {
-//!     "entry": "conditionFalse",
-//!     "expected": 0
+//!     "name": "conditionFalse",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "0", "0", "0", "0"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "0"
+//!     ]
 //! } ] }
 
 // SPDX-License-Identifier: UNLICENSED
@@ -17,27 +37,7 @@ contract Test {
         uint256 c;
     }
 
-    function conditionTrue() public pure returns(uint64) {
-       Data memory input = Data(
-            false,
-            0,
-            0
-        );
-
-        return main(input, true);
-    }
-
-    function conditionFalse() public pure returns(uint64) {
-        Data memory input = Data(
-            false,
-            0,
-            0
-        );
-
-        return main(input, false);
-    }
-
-    function main(Data memory witness, bool condition) private pure returns(uint64) {
+    function main(Data memory witness, bool condition) public pure returns(uint64) {
         if (condition) {
             witness = Data(
                 true,

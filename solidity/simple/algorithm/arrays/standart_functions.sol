@@ -1,33 +1,132 @@
 //! { "cases": [ {
-//!     "entry": "reverseTest",
-//!     "expected": 1
+//!     "name": "reverseTest",
+//!     "input": [
+//!         {
+//!             "entry": "reverseTest",
+//!             "calldata": [
+//!                 "7", "2", "1", "8", "10", "3", "5", "4", "9", "6"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "6", "9", "4", "5", "3", "10", "8", "1", "2", "7", "10"
+//!     ]
 //! }, {
-//!     "entry": "uniqueTest",
-//!     "expected": 1
+//!     "name": "uniqueTest",
+//!     "input": [
+//!         {
+//!             "entry": "uniqueTest",
+//!             "calldata": [
+//!                 "7", "2", "7", "8", "10", "10", "5", "8", "9", "7"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "7", "2", "8", "10", "5", "9", "0", "0", "0", "0", "6"
+//!     ]
 //! }, {
-//!     "entry": "filterGreater",
-//!     "expected": 1
+//!     "name": "filterGreater",
+//!     "input": [
+//!         {
+//!             "entry": "filterTest",
+//!             "calldata": [
+//!                 "7", "2", "7", "8", "10", "10", "5", "8", "9", "7", "0", "5"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "7", "7", "8", "10", "10", "8", "9", "7", "0", "0", "8"
+//!     ]
 //! }, {
-//!     "entry": "filterLess",
-//!     "expected": 1
+//!     "name": "filterLess",
+//!     "input": [
+//!         {
+//!             "entry": "filterTest",
+//!             "calldata": [
+//!                 "7", "2", "7", "8", "10", "10", "5", "8", "9", "7", "1", "8"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "7", "2", "7", "5", "7", "0", "0", "0", "0", "0", "5"
+//!     ]
 //! }, {
-//!     "entry": "filterDivide",
-//!     "expected": 1
+//!     "name": "filterDivide",
+//!     "input": [
+//!         {
+//!             "entry": "filterTest",
+//!             "calldata": [
+//!                 "7", "2", "7", "8", "10", "10", "5", "8", "9", "7", "2", "2"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "2", "8", "10", "10", "8", "0", "0", "0", "0", "0", "5"
+//!     ]
 //! }, {
-//!     "entry": "mapAdd",
-//!     "expected": 1
+//!     "name": "mapAdd",
+//!     "input": [
+//!         {
+//!             "entry": "mapTest",
+//!             "calldata": [
+//!                 "7", "2", "1", "8", "10", "3", "5", "4", "9", "6", "0", "28"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "35", "30", "29", "36", "38", "31", "33", "32", "37", "34", "10"
+//!     ]
 //! }, {
-//!     "entry": "mapSub",
-//!     "expected": 1
+//!     "name": "mapSub",
+//!     "input": [
+//!         {
+//!             "entry": "mapTest",
+//!             "calldata": [
+//!                 "18", "12", "7", "9", "21", "6", "22", "14", "9", "34", "1", "5"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "13", "7", "2", "4", "16", "1", "17", "9", "4", "29", "10"
+//!     ]
 //! }, {
-//!     "entry": "mapMul",
-//!     "expected": 1
+//!     "name": "mapMul",
+//!     "input": [
+//!         {
+//!             "entry": "mapTest",
+//!             "calldata": [
+//!                 "7", "2", "1", "8", "10", "3", "5", "4", "9", "6", "2", "7"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "49", "14", "7", "56", "70", "21", "35", "28", "63", "42", "10"
+//!     ]
 //! }, {
-//!     "entry": "mapDiv",
-//!     "expected": 1
+//!     "name": "mapDiv",
+//!     "input": [
+//!         {
+//!             "entry": "mapTest",
+//!             "calldata": [
+//!                 "18", "12", "7", "9", "21", "6", "22", "14", "9", "34", "3", "4"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "4", "3", "1", "2", "5", "1", "5", "3", "2", "8", "10"
+//!     ]
 //! }, {
-//!     "entry": "complex",
-//!     "expected": 1
+//!     "name": "complex",
+//!     "input": [
+//!         {
+//!             "entry": "complex",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "4", "6", "2", "5", "0", "0", "0", "0", "0", "0", "4"
+//!     ]
 //! } ] }
 
 // SPDX-License-Identifier: UNLICENSED
@@ -55,163 +154,33 @@ contract Test {
         Div
     }
 
-    function reverseTest() public pure returns(uint64) {
-        uint8[ARRAY_SIZE] memory input = [7, 2, 1, 8, 10, 3, 5, 4, 9, 6];
-        uint8[ARRAY_SIZE] memory output = reverse(fromArray(input, ARRAY_SIZE)).array;
-
-        bool isSixFirst = output[0] == 6;
-        bool isSevenLast = output[ARRAY_SIZE - 1] == 7;
-        bool isThreeFifth = output[4] == 3;
-        bool result = isSixFirst && isSevenLast && isThreeFifth;
-        if (result) {
-            return 1;
-        } else {
-            return 0;
-        }
+    function reverseTest(uint8[ARRAY_SIZE] memory input) public pure returns(Vector memory) {
+        return reverse(fromArray(input, ARRAY_SIZE));
     }
 
-    function uniqueTest() public pure returns(uint64) {
-        uint8[ARRAY_SIZE] memory input = [7, 2, 7, 8, 10, 10, 5, 8, 9, 7];
-        Vector memory output = unique(fromArray(input, ARRAY_SIZE));
-
-        bool isSizeSix = output.size == 6;
-        bool isSevenFirst = output.array[0] == 7;
-        bool isNineLast = output.array[output.size - 1] == 9;
-        bool result = isSizeSix && isSevenFirst && isNineLast;
-        if (result) {
-            return 1;
-        } else {
-            return 0;
-        }
+    function uniqueTest(uint8[ARRAY_SIZE] memory input) public pure returns(Vector memory) {
+        return unique(fromArray(input, ARRAY_SIZE));
     }
 
-    function filterGreater() public pure returns(uint64) {
-        uint8[ARRAY_SIZE] memory input = [7, 2, 7, 8, 10, 10, 5, 8, 9, 7];
-        Vector memory output = filter(fromArray(input, ARRAY_SIZE), Filter.Greater, 5);
-
-        bool isSizeEight = output.size == 8;
-        bool isSevenFirst = output.array[0] == 7;
-        bool isSevenLast = output.array[output.size - 1] == 7;
-        bool result = isSizeEight && isSevenFirst && isSevenLast;
-        if (result) {
-            return 1;
-        } else {
-            return 0;
-        }
+    function filterTest(uint8[ARRAY_SIZE] memory input, Filter _filter, uint8 param) public pure returns(Vector memory) {
+        return filter(fromArray(input, ARRAY_SIZE), _filter, param);
     }
 
-    function filterLess() public pure returns(uint64) {
-        uint8[ARRAY_SIZE] memory input = [7, 2, 7, 8, 10, 10, 5, 8, 9, 7];
-        Vector memory output = filter(fromArray(input, ARRAY_SIZE), Filter.Less, 8);
-
-        bool isSizeFive = output.size == 5;
-        bool isSevenFirst = output.array[0] == 7;
-        bool isSevenLast = output.array[output.size - 1] == 7;
-        bool result = isSizeFive && isSevenFirst && isSevenLast;
-        if (result) {
-            return 1;
-        } else {
-            return 0;
-        }
+    function mapTest(uint8[ARRAY_SIZE] memory input, Mapping _mapping, uint8 param) public pure returns(Vector memory) {
+        return map(fromArray(input, ARRAY_SIZE), _mapping, param);
     }
 
-    function filterDivide() public pure returns(uint64) {
-        uint8[ARRAY_SIZE] memory input = [7, 2, 7, 8, 10, 10, 5, 8, 9, 7];
-        Vector memory output = filter(fromArray(input, ARRAY_SIZE), Filter.Divide, 2);
-
-        bool isSizeFive = output.size == 5;
-        bool isTwoFirst = output.array[0] == 2;
-        bool isEightLast = output.array[output.size - 1] == 8;
-        bool result = isSizeFive && isTwoFirst && isEightLast;
-        if (result) {
-            return 1;
-        } else {
-            return 0;
-        }
-    }
-
-    function mapAdd() public pure returns(uint64) {
-        uint8[ARRAY_SIZE] memory input = [7, 2, 1, 8, 10, 3, 5, 4, 9, 6];
-        uint8[ARRAY_SIZE] memory output = map(fromArray(input, ARRAY_SIZE), Mapping.Add, 28).array;
-
-        bool is35First = output[0] == 35;
-        bool is34Last = output[ARRAY_SIZE - 1] == 34;
-        bool is38Fifth = output[4] == 38;
-        bool result = is35First && is34Last && is38Fifth;
-        if (result) {
-            return 1;
-        } else {
-            return 0;
-        }
-    }
-
-    function mapSub() public pure returns(uint64) {
-        uint8[ARRAY_SIZE] memory input = [18, 12, 7, 9, 21, 6, 22, 14, 9, 34];
-        uint8[ARRAY_SIZE] memory output = map(fromArray(input, ARRAY_SIZE), Mapping.Sub, 5).array;
-
-        bool is13First = output[0] == 13;
-        bool is29Last = output[ARRAY_SIZE - 1] == 29;
-        bool is16Fifth = output[4] == 16;
-        bool result = is13First && is29Last && is16Fifth;
-        if (result) {
-            return 1;
-        } else {
-            return 0;
-        }
-    }
-
-    function mapMul() public pure returns(uint64) {
-        uint8[ARRAY_SIZE] memory input = [7, 2, 1, 8, 10, 3, 5, 4, 9, 6];
-        uint8[ARRAY_SIZE] memory output = map(fromArray(input, ARRAY_SIZE), Mapping.Mul, 7).array;
-
-        bool is49First = output[0] == 49;
-        bool is42Last = output[ARRAY_SIZE - 1] == 42;
-        bool is70Fifth = output[4] == 70;
-        bool result = is49First && is42Last && is70Fifth;
-        if (result) {
-            return 1;
-        } else {
-            return 0;
-        }
-    }
-
-    function mapDiv() public pure returns(uint64) {
-        uint8[ARRAY_SIZE] memory input = [18, 12, 7, 9, 21, 6, 22, 14, 9, 34];
-        uint8[ARRAY_SIZE] memory output = map(fromArray(input, ARRAY_SIZE), Mapping.Div, 4).array;
-
-        bool is4First = output[0] == 4;
-        bool is8Last = output[ARRAY_SIZE - 1] == 8;
-        bool is5Fifth = output[4] == 5;
-        bool result = is4First && is8Last && is5Fifth;
-        if (result) {
-            return 1;
-        } else {
-            return 0;
-        }
-    }
-
-    function complex() public pure returns(uint64) {
+    function complex() public pure returns(Vector memory) {
         uint8[ARRAY_SIZE] memory input = [18, 12, 7, 9, 21, 6, 22, 14, 9, 34];
         Vector memory output = fromArray(input, ARRAY_SIZE);
-        output = filter(output, Filter.Divide, 2);
-        output = reverse(output);
-        output = map(output, Mapping.Mul, 2);
-        output = filter(output, Filter.Less, 60);
-        output = map(output, Mapping.Add, 4);
-        output = filter(output, Filter.Divide, 8);
-        output = map(output, Mapping.Div, 7);
-
-        bool isSizeFour = output.size == 4;
-        bool is4First = output.array[0] == 4;
-        bool is6Second = output.array[1] == 6;
-        bool is2Third = output.array[2] == 2;
-        bool is5Last = output.array[output.size - 1] == 5;
-        bool result = isSizeFour && is4First && is6Second && is2Third && is5Last;
-        if (result) {
-            return 1;
-        } else {
-            return 0;
-        }
+        output = filter(output, Filter.Divide, 2); // 18 12 6 22 14 34
+        output = reverse(output); // 34 14 22 6 12 18
+        output = map(output, Mapping.Mul, 2); // 68 28 44 12 24 36
+        output = filter(output, Filter.Less, 60); // 28 44 12 24 36
+        output = map(output, Mapping.Add, 4); // 32 48 16 28 40
+        output = filter(output, Filter.Divide, 8); // 32 48 16 40
+        output = map(output, Mapping.Div, 7); // 4 6 2 5
+        return output;
     }
 
     function fromArray(uint8[ARRAY_SIZE] memory array, uint8 size) private pure returns(Vector memory) {

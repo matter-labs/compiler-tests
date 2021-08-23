@@ -1,6 +1,19 @@
 //! { "cases": [ {
-//!     "entry": "entry",
-//!     "engines": ["zkevm"], "expected": 126
+//!     "name": "default",
+//!     "input": [
+//!         {
+//!             "entry": "default",
+//!             "calldata": [
+//!                 "42"
+//!             ],
+//!             "storage": [
+//!                 "1", "2", "3"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "129"
+//!     ]
 //! } ] }
 
 contract Test {
@@ -8,13 +21,7 @@ contract Test {
 
     const TEST: u8 = 42;
 
-    pub fn entry(self) -> u64 {
-        Self {
-            data: (0, 0, 0),
-        }.default(42) as u64
-    }
-
-    fn default(mut self, argument: u8) -> u8 {
+    pub fn default(mut self, argument: u8) -> u8 {
         self.data.2 += argument;
 
         argument + Self::TEST + self.data.2

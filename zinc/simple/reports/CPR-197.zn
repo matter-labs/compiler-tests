@@ -1,12 +1,23 @@
 //! { "cases": [ {
-//!     "entry": "f1",
-//!     "expected": 1
+//!     "name": "f1",
+//!     "input": [
+//!         {
+//!             "entry": "f1",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
 //! } ] }
 
-fn f1() -> u64 {
-    1 as u64
-}
+contract Test {
+    pub fn f1(self) -> u64 {
+        1 as u64
+    }
 
-fn f2(a1: u64, a2: u64, a3: u64, a4: u64, a5: u64, a6: u64) -> (u64, u64) {
-    (1 as u64, 1 as u64)
+    pub fn f2(self, a1: u64, a2: u64, a3: u64, a4: u64, a5: u64, a6: u64) -> (u64, u64) {
+        (1 as u64, 1 as u64)
+    }
 }

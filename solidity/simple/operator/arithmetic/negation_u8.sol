@@ -1,18 +1,71 @@
-//! { "ignore": true, "cases": [ {
-//!     "entry": "zero",
-//!     "expected": 0
+//! { "ignore": true,
+//! "cases": [ {
+//!     "name": "zero",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "0"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "0"
+//!     ]
 //! }, {
-//!     "entry": "ordinar",
-//!     "expected": -42
+//!     "name": "ordinar",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "42"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "-42"
+//!     ]
 //! }, {
-//!     "entry": "max_to_min",
-//!     "expected": -128
+//!     "name": "max_to_min",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "128"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "-128"
+//!     ]
 //! }, {
-//!     "ignore": true, "entry": "overflow",
-//!     "engines": ["zkevm"], "expected": "Runtime error"
+//!     "name": "overflow",
+//!     "ignore": true,
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "200"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "error"
+//!     ]
 //! }, {
-//!     "ignore": true, "entry": "overflow_minimal",
-//!     "engines": ["zkevm"], "expected": "Runtime error"
+//!     "name": "overflow_minimal",
+//!     "ignore": true,
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "129"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "error"
+//!     ]
 //! } ] }
 
 // SPDX-License-Identifier: UNLICENSED
@@ -20,19 +73,7 @@
 pragma solidity ^0.8.0;
 
 contract Test {
-    function zero() public pure returns(uint64) {
-        return main(0);
-    }
-
-    function ordinar() public pure returns(uint64) {
-        return main(42);
-    }
-
-    function max_to_min() public pure returns(uint64) {
-        return main(128);
-    }
-
-    function main(uint8 a) private pure returns(int8) {
+    function main(uint8 a) public pure returns(int8) {
         return -a;
     }
 }

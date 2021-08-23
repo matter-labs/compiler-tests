@@ -1,6 +1,16 @@
 //! { "cases": [ {
-//!     "entry": "entry",
-//!     "expected": 16
+//!     "name": "f4",
+//!     "input": [
+//!         {
+//!             "entry": "f4",
+//!             "calldata": [
+//!                 "4"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "16"
+//!     ]
 //! } ] }
 
 // SPDX-License-Identifier: UNLICENSED
@@ -8,10 +18,6 @@
 pragma solidity ^0.8.0;
 
 contract Test {
-    function entry() public pure returns(uint8) {
-        return f4(4);
-    }
-
     function f1(uint8 a) private pure returns(uint8) {
         return a * 1;
     }
@@ -24,7 +30,7 @@ contract Test {
         return a * 3;
     }
 
-    function f4(uint8 a) private pure returns(uint8) {
+    function f4(uint8 a) public pure returns(uint8) {
         return a * 4;
     }
 

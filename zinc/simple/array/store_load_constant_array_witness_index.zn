@@ -1,37 +1,63 @@
 //! { "cases": [ {
-//!     "entry": "element_1",
-//!     "expected": 1
+//!     "name": "element_1",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "0"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
 //! }, {
-//!     "entry": "element_2",
-//!     "expected": 2
+//!     "name": "element_2",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "1"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "2"
+//!     ]
 //! }, {
-//!     "entry": "element_3",
-//!     "expected": 3
+//!     "name": "element_3",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "2"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "3"
+//!     ]
 //! }, {
-//!     "entry": "element_4",
-//!     "expected": 4
+//!     "name": "element_4",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "3"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "4"
+//!     ]
 //! } ] }
 
-const SIZE: u8 = 4;
+contract Test {
+    const SIZE: u8 = 4;
 
-const ARRAY: [u8; SIZE] = [1, 2, 3, 4];
+    const ARRAY: [u8; Self::SIZE] = [1, 2, 3, 4];
 
-fn element_1() -> u64 {
-    main(0) as u64
-}
-
-fn element_2() -> u64 {
-    main(1) as u64
-}
-
-fn element_3() -> u64 {
-    main(2) as u64
-}
-
-fn element_4() -> u64 {
-    main(3) as u64
-}
-
-fn main(index: u8) -> u8 {
-    ARRAY[index]
+    pub fn main(self, index: u8) -> u8 {
+        Self::ARRAY[index]
+    }
 }

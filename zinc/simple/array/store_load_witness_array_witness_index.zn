@@ -1,43 +1,65 @@
 //! { "cases": [ {
-//!     "entry": "element_1",
-//!     "expected": 1
+//!     "name": "element_1",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "1", "2", "3", "4",
+//!                 "0"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
 //! }, {
-//!     "entry": "element_2",
-//!     "expected": 2
+//!     "name": "element_2",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "1", "2", "3", "4",
+//!                 "1"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "2"
+//!     ]
 //! }, {
-//!     "entry": "element_3",
-//!     "expected": 3
+//!     "name": "element_3",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "1", "2", "3", "4",
+//!                 "2"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "3"
+//!     ]
 //! }, {
-//!     "entry": "element_4",
-//!     "expected": 4
+//!     "name": "element_4",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "1", "2", "3", "4",
+//!                 "3"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "4"
+//!     ]
 //! } ] }
 
-const SIZE: u8 = 4;
+contract Test {
+    const SIZE: u8 = 4;
 
-fn element_1() -> u64 {
-    let array = [1, 2, 3, 4];
-
-    main(array, 0) as u64
-}
-
-fn element_2() -> u64 {
-    let array = [1, 2, 3, 4];
-
-    main(array, 1) as u64
-}
-
-fn element_3() -> u64 {
-    let array = [1, 2, 3, 4];
-
-    main(array, 2) as u64
-}
-
-fn element_4() -> u64 {
-    let array = [1, 2, 3, 4];
-
-    main(array, 3) as u64
-}
-
-fn main(array: [u8; SIZE], index: u8) -> u8 {
-    array[index]
+    pub fn main(self, array: [u8; Self::SIZE], index: u8) -> u8 {
+        array[index]
+    }
 }

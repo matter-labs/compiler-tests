@@ -1,40 +1,48 @@
 //! { "cases": [ {
-//!     "entry": "entry",
-//!     "expected": 16
+//!     "name": "f4",
+//!     "input": [
+//!         {
+//!             "entry": "f4",
+//!             "calldata": [
+//!                 "4"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "16"
+//!     ]
 //! } ] }
 
-fn entry() -> u8 {
-    f4(4)
-}
+contract Test {
+    pub fn f1(self, a: u8) -> u8 {
+        a * 1
+    }
 
-fn f1(a: u8) -> u8 {
-    a * 1
-}
+    pub fn f2(self, a: u8) -> u8 {
+        a * 2
+    }
 
-fn f2(a: u8) -> u8 {
-    a * 2
-}
+    pub fn f3(self, a: u8) -> u8 {
+        a * 3
+    }
 
-fn f3(a: u8) -> u8 {
-    a * 3
-}
+    pub fn f4(self, a: u8) -> u8 {
+        a * 4
+    }
 
-fn f4(a: u8) -> u8 {
-    a * 4
-}
+    pub fn f5(self, a: u8) -> u8 {
+        a * 5
+    }
 
-fn f5(a: u8) -> u8 {
-    a * 5
-}
+    pub fn f6(self, a: u8) -> u8 {
+        a * 6
+    }
 
-fn f6(a: u8) -> u8 {
-    a * 6
-}
+    pub fn f7(self, a: u8) -> u8 {
+        a * 7
+    }
 
-fn f7(a: u8) -> u8 {
-    a * 7
-}
-
-fn f8(a: u8) -> u8 {
-    a * 8
+    pub fn f8(self, a: u8) -> u8 {
+        a * 8
+    }
 }

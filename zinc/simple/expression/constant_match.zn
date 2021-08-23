@@ -1,28 +1,42 @@
 //! { "cases": [ {
-//!     "entry": "one",
-//!     "expected": 58
+//!     "name": "one",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "42"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "58"
+//!     ]
 //! }, {
-//!     "entry": "two",
-//!     "expected": 0
+//!     "name": "two",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "100"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "0"
+//!     ]
 //! } ] }
 
-const SCRUTINEE: u8 = 42;
+contract Test {
+    const SCRUTINEE: u8 = 42;
 
-const MATCH: u8 = match SCRUTINEE {
-    0 => 10,
-    1 => 20,
-    42 => 100,
-    VALUE => 255 - VALUE,
-};
+    const MATCH: u8 = match Self::SCRUTINEE {
+        0 => 10,
+        1 => 20,
+        42 => 100,
+        VALUE => 255 - VALUE,
+    };
 
-fn one() -> u64 {
-    main(42) as u64
-}
-
-fn two() -> u64 {
-    main(100) as u64
-}
-
-fn main(witness: u8) -> u8 {
-    MATCH - witness
+    pub fn main(self, witness: u8) -> u8 {
+        Self::MATCH - witness
+    }
 }

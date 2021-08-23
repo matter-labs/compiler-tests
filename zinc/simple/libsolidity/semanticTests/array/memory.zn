@@ -1,23 +1,37 @@
 //! { "cases": [ {
-//!     "entry": "entry_h",
-//!     "expected": 10
+//!     "name": "h",
+//!     "input": [
+//!         {
+//!             "entry": "h",
+//!             "calldata": [
+//!                 "1", "2", "3", "4"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "10"
+//!     ]
 //! }, {
-//!     "entry": "entry_i",
-//!     "expected": 20
+//!     "name": "i",
+//!     "input": [
+//!         {
+//!             "entry": "i",
+//!             "calldata": [
+//!                 "1", "2", "3", "4"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "20"
+//!     ]
 //! } ] }
 
-fn entry_h() -> u64 {
-    h([1 as u256, 2 as u256, 3 as u256, 4 as u256]) as u64
-}
+contract Test {
+    pub fn h(self, n: [u256; 4]) -> u256 {
+        return n[0] + n[1] + n[2] + n[3];
+    }
 
-fn entry_i() -> u64 {
-    i([1 as u256, 2 as u256, 3 as u256, 4 as u256]) as u64
-}
-
-fn h(n: [u256; 4]) -> u256 {
-    return n[0] + n[1] + n[2] + n[3];
-}
-
-fn i(n: [u256; 4]) -> u256 {
-    return h(n) * 2;
+    pub fn i(self, n: [u256; 4]) -> u256 {
+        return self.h(n) * 2;
+    }
 }

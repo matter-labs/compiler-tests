@@ -1,13 +1,19 @@
 //! { "cases": [ {
-//!     "entry": "entry",
-//!     "expected": 210
+//!     "name": "main",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "42"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "210"
+//!     ]
 //! } ] }
 
 struct Data {}
-
-fn entry() -> u64 {
-    main(42) as u64
-}
 
 impl Data {
     const FACTOR: u8 = 5;
@@ -17,6 +23,8 @@ impl Data {
     }
 }
 
-fn main(witness: u8) -> u8 {
-    Data::test(witness)
+contract Test {
+    pub fn main(self, witness: u8) -> u8 {
+        Data::test(witness)
+    }
 }

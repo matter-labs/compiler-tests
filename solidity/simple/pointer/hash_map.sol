@@ -1,9 +1,28 @@
 //! { "cases": [ {
-//!     "entry": "simple",
-//!     "expected": 1
+//!     "name": "simple",
+//!     "input": [
+//!         {
+//!             "entry": "simple",
+//!             "calldata": [
+//!                 "10", "1"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
 //! }, {
-//!     "entry": "complex",
-//!     "expected": 1
+//!     "name": "complex",
+//!     "input": [
+//!         {
+//!             "entry": "complex",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
 //! } ] }
 
 // SPDX-License-Identifier: UNLICENSED
@@ -172,10 +191,10 @@ contract Test {
         return 0;
     }
 
-    function simple() public pure returns(uint64) {
+    function simple(uint64 key, uint64 value) public pure returns(uint64) {
         HashMap memory map = newMap();
-        insert(map, 10, 1);
-        return get(map, 10);
+        insert(map, key, value);
+        return get(map, key);
     }
 
     function complex() public pure returns(uint64) {

@@ -1,10 +1,21 @@
 //! { "cases": [ {
-//!     "entry": "complex",
-//!     "expected": 10
+//!     "name": "complex",
+//!     "input": [
+//!         {
+//!             "entry": "complex",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "10"
+//!     ]
 //! } ] }
 
-unsafe fn complex() -> u64 {
-    let ptr = 9216 as u16 as *mut u64; // for 9215 and less it works
-    *ptr = 10 as u64;
-    return *ptr;
+contract Test {
+    pub unsafe fn complex(self) -> u64 {
+        let ptr = 9216 as u16 as *mut u64; // for 9215 and less it works
+        *ptr = 10 as u64;
+        return *ptr;
+    }
 }

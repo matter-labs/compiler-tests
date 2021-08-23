@@ -1,22 +1,22 @@
 //! { "cases": [ {
-//!     "entry": "entry",
-//!     "expected": 131
+//!     "name": "main",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "1", "2", "3"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "131"
+//!     ]
 //! } ] }
 
 struct Data {
     a: u8,
     b: u8,
     c: u8,
-}
-
-fn entry() -> u64 {
-    let input = Data {
-        a: 1,
-        b: 2,
-        c: 3,
-    };
-
-    main(input) as u64
 }
 
 impl Data {
@@ -28,7 +28,9 @@ impl Data {
     }
 }
 
-fn main(witness: Data) -> u8 {
-    let filled = Data::fill(witness, [25, 42, 64]);
-    filled.a + filled.b + filled.c
+contract Test {
+    pub fn main(self, witness: Data) -> u8 {
+        let filled = Data::fill(witness, [25, 42, 64]);
+        filled.a + filled.b + filled.c
+    }
 }

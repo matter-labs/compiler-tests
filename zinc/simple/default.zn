@@ -1,18 +1,36 @@
 //! { "cases": [ {
-//!     "entry": "first",
-//!     "expected": 42
+//!     "name": "first",
+//!     "input": [
+//!         {
+//!             "entry": "first",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "42"
+//!     ]
 //! }, {
-//!     "entry": "second",
-//!     "expected": 99
+//!     "name": "second",
+//!     "input": [
+//!         {
+//!             "entry": "second",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "99"
+//!     ]
 //! } ] }
 
 contract Test {
-    fn first() -> u64 {
+    pub fn first(self) -> u64 {
         let result: u64 = 42;
         result
     }
 
-    fn second() -> u64 {
+    pub fn second(self) -> u64 {
         let result: u64 = 99;
         result
     }

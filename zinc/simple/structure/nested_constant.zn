@@ -1,26 +1,34 @@
 //! { "cases": [ {
-//!     "entry": "entry",
-//!     "expected": 15
+//!     "name": "main",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "3"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "15"
+//!     ]
 //! } ] }
 
 struct Inner {
     value: u8,
 }
 
-struct Test {
+struct Data {
     inner: Inner,
 }
 
-const DATA: Test = Test {
-    inner: Inner {
-        value: 5,
-    },
-};
+contract Test {
+    const DATA: Data = Data {
+        inner: Inner {
+            value: 5,
+        },
+    };
 
-fn entry() -> u64 {
-    main(3) as u64
-}
-
-fn main(witness: u8) -> u8 {
-    DATA.inner.value * witness
+    pub fn main(self, witness: u8) -> u8 {
+        Self::DATA.inner.value * witness
+    }
 }

@@ -1,12 +1,42 @@
 //! { "cases": [ {
-//!     "entry": "first",
-//!     "expected": 42
+//!     "name": "first",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "42"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "42"
+//!     ]
 //! }, {
-//!     "entry": "second",
-//!     "expected": 64
+//!     "name": "second",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "64"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "64"
+//!     ]
 //! }, {
-//!     "entry": "third",
-//!     "expected": 65535
+//!     "name": "third",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "65535"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "65535"
+//!     ]
 //! } ] }
 
 // SPDX-License-Identifier: UNLICENSED
@@ -18,23 +48,11 @@ contract Test {
         uint256 a;
     }
 
-    function first() public pure returns(uint64) {
-        return uint64(main(42));
-    }
-
-    function second() public pure returns(uint64) {
-        return uint64(main(64));
-    }
-
-    function third() public pure returns(uint64) {
-        return uint64(main(65535));
-    }
-
     function _new(uint256 a) private pure returns(Data memory) {
         return Data(a);
     }
 
-    function main(uint256 witness) private pure returns(uint256) {
+    function main(uint256 witness) public pure returns(uint256) {
         return _new(witness).a;
     }
 }

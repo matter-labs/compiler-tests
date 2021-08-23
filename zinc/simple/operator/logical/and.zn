@@ -1,33 +1,59 @@
 //! { "cases": [ {
-//!     "entry": "false_false",
-//!     "expected": 0
+//!     "name": "false_false",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "0", "0"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "0"
+//!     ]
 //! }, {
-//!     "entry": "false_true",
-//!     "expected": 0
+//!     "name": "false_true",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "0", "1"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "0"
+//!     ]
 //! }, {
-//!     "entry": "true_false",
-//!     "expected": 0
+//!     "name": "true_false",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "1", "0"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "0"
+//!     ]
 //! }, {
-//!     "entry": "true_true",
-//!     "expected": 1
+//!     "name": "true_true",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "1", "1"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
 //! } ] }
 
-fn false_false() -> u64 {
-    if main(false, false) { 1 } else { 0 }
-}
-
-fn false_true() -> u64 {
-    if main(false, true) { 1 } else { 0 }
-}
-
-fn true_false() -> u64 {
-    if main(true, false) { 1 } else { 0 }
-}
-
-fn true_true() -> u64 {
-    if main(true, true) { 1 } else { 0 }
-}
-
-fn main(a: bool, b: bool) -> bool {
-    a && b
+contract Test {
+    pub fn main(self, a: bool, b: bool) -> bool {
+        a && b
+    }
 }

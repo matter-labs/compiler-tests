@@ -1,31 +1,42 @@
 //! { "cases": [ {
-//!     "entry": "complex",
-//!     "expected": 1
+//!     "name": "complex",
+//!     "input": [
+//!         {
+//!             "entry": "complex",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
 //! } ] }
 
 const ARRAY_SIZE: u8 = 40;
 const P: u128 = 257;
 const MODULO: u128 = 1000000007;
 
-fn complex() -> u64 {
-    let mut array = [0; ARRAY_SIZE];
-    // generate array where first half equals second
-    for i in 0..ARRAY_SIZE {
-        array[i] = (i % (ARRAY_SIZE / 2)) * (255 / (ARRAY_SIZE / 2 - 1) );
+contract Test {
+    pub fn complex(self) -> u64 {
+        let mut array = [0; ARRAY_SIZE];
+        // generate array where first half equals second
+        for i in 0..ARRAY_SIZE {
+            array[i] = (i % (ARRAY_SIZE / 2)) * (255 / (ARRAY_SIZE / 2 - 1) );
+        }
+
+        let mut result = true;
+        for i in 0..ARRAY_SIZE/2 {
+            result = result && Self::hash(array, 0, i + 1) == Self::hash(array, ARRAY_SIZE/2, ARRAY_SIZE/2 + i + 1)
+                &&  Self::hash(array, i, ARRAY_SIZE/2) == Self::hash(array, i + ARRAY_SIZE/2, ARRAY_SIZE);
+        }
+        if result { 1 } else { 0 }
     }
 
-    let mut result = true;
-    for i in 0..ARRAY_SIZE/2 {
-        result = result && hash(array, 0, i + 1) == hash(array, ARRAY_SIZE/2, ARRAY_SIZE/2 + i + 1)
-            &&  hash(array, i, ARRAY_SIZE/2) == hash(array, i + ARRAY_SIZE/2, ARRAY_SIZE);
+    fn hash(array: [u8; ARRAY_SIZE], begin: u8, end: u8) -> u128 {
+        let mut h = 0 as u128;
+        for i in begin..end {
+            h = (h * P + array[i] as u128) % MODULO;
+        }
+        h
     }
-    if result { 1 } else { 0 }
-}
-
-fn hash(array: [u8; ARRAY_SIZE], begin: u8, end: u8) -> u128 {
-    let mut h = 0 as u128;
-    for i in begin..end {
-        h = (h * P + array[i] as u128) % MODULO;
-    }
-    h
 }

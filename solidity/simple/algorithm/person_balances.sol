@@ -1,15 +1,51 @@
 //! { "cases": [ {
-//!     "entry": "bitcoin",
-//!     "expected": 1
+//!     "name": "bitcoin",
+//!     "input": [
+//!         {
+//!             "entry": "bitcoin",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
 //! }, {
-//!     "entry": "ethereum",
-//!     "expected": 10
+//!     "name": "ethereum",
+//!     "input": [
+//!         {
+//!             "entry": "ethereum",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "10"
+//!     ]
 //! }, {
-//!     "entry": "litecoin",
-//!     "expected": 50
+//!     "name": "litecoin",
+//!     "input": [
+//!         {
+//!             "entry": "litecoin",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "50"
+//!     ]
 //! }, {
-//!     "entry": "zcash",
-//!     "expected": 100
+//!     "name": "zcash",
+//!     "input": [
+//!         {
+//!             "entry": "zcash",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "100"
+//!     ]
 //! } ] }
 
 // SPDX-License-Identifier: UNLICENSED

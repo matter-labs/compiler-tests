@@ -1,19 +1,26 @@
 //! { "cases": [ {
-//!     "entry": "entry",
-//!     "expected": 15
+//!     "name": "main",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "15"
+//!     ]
 //! } ] }
 
-const LENGTH_INPUT: u8 = 10;
-const LENGTH_OUTPUT: u8 = 5;
+contract Test {
+    const LENGTH_INPUT: u8 = 10;
+    const LENGTH_OUTPUT: u8 = 5;
 
-const ARRAY: [u8; LENGTH_INPUT] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    const ARRAY: [u8; Self::LENGTH_INPUT] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-fn entry() -> u64 {
-    main() as u64
-}
+    pub fn main(self) -> u8 {
+        let slice = Self::ARRAY[0..Self::LENGTH_OUTPUT];
 
-fn main() -> u8 {
-    let slice = ARRAY[0..LENGTH_OUTPUT];
-
-    slice[0] + slice[1] + slice[2] + slice[3] + slice[4]
+        slice[0] + slice[1] + slice[2] + slice[3] + slice[4]
+    }
 }

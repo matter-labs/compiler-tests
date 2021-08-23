@@ -1,6 +1,15 @@
-//! { "ignore": true, "cases": [ {
-//!     "entry": "_default",
-//!     "engines": ["zkevm"], "expected": "Runtime error"
+//! { "ignore": true,
+//! "cases": [ {
+//!     "name": "main",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "65500", "18"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": "Runtime error"
 //! } ] }
 
 // SPDX-License-Identifier: UNLICENSED
@@ -13,11 +22,7 @@ contract Test {
         uint64 value;
     }
 
-    function _default() public pure returns(uint64) {
-        return main(65500, 18);
-    }
-
-    function main(uint16 a, uint16 b) private pure returns(uint64) {
+    function main(uint16 a, uint16 b) public pure returns(uint64) {
         uint24 memory_pointer = 2 * 32;
         assembly {
             mstore(memory_pointer, a)

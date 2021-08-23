@@ -1,49 +1,47 @@
 //! { "cases": [ {
-//!     "entry": "no_solution",
-//!     "expected": 1
+//!     "name": "no_solution",
+//!     "input": [
+//!         {
+//!             "entry": "entry",
+//!             "calldata": [
+//!                 "1", "1", "1"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "0", "0", "0"
+//!     ]
 //! }, {
-//!     "entry": "first",
-//!     "expected": 1
+//!     "name": "first",
+//!     "input": [
+//!         {
+//!             "entry": "entry",
+//!             "calldata": [
+//!                 "2", "7", "4"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1", "278", "71"
+//!     ]
 //! }, {
-//!     "entry": "second",
-//!     "expected": 1
+//!     "name": "second",
+//!     "input": [
+//!         {
+//!             "entry": "entry",
+//!             "calldata": [
+//!                 "17", "29", "12"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1", "100", "70"
+//!     ]
 //! } ] }
 
 const EPS: u128 = 1E10;
 const PRECISION: u128 = 100;
 const MAX_U128_SQRT: u128 = 18446744073709551615;
-
-fn no_solution() -> u64 {
-    let a = 1 as u128;
-    let mb = 1 as u128; // b = -1
-    let c = 1 as u128;
-    let p = main(a, mb, c);
-    if !p.0 { 1 } else { 0 }
-}
-
-fn first() -> u64 {
-    let mut a = 2 as u128;
-    let mut mb = 7 as u128; // b = -7
-    let mut c = 4 as u128;
-    let p = main(a, mb, c);
-    // check roots * PRECISION
-    let result = p.0 &&
-        p.1 * PRECISION / EPS == 278 &&
-        p.2 * PRECISION / EPS == 71;
-    if result { 1 } else { 0 }
-}
-
-fn second() -> u64 {
-    let mut a = 17 as u128;
-    let mut mb = 29 as u128; // b = -29
-    let mut c = 12 as u128;
-    let p = main(a, mb, c);
-    // check roots * PRECISION
-    let result = p.0 &&
-        p.1 * PRECISION / EPS == 100 &&
-        p.2 * PRECISION / EPS == 70;
-    if result { 1 } else { 0 }
-}
 
 fn sqrt(n: u128) -> u128 {
     // binary search
@@ -63,7 +61,7 @@ fn sqrt(n: u128) -> u128 {
 
 // mb = -b
 // returns roots * EPS
-fn main(a: u128, mb: u128, c: u128) -> (bool, u128, u128) {
+fn solve(a: u128, mb: u128, c: u128) -> (bool, u128, u128) {
     if mb*mb < 4*a*c {
         return (false, 0 as u128, 0 as u128);
     }
@@ -73,4 +71,16 @@ fn main(a: u128, mb: u128, c: u128) -> (bool, u128, u128) {
     let x1 = (mb*EPS + sd) / 2 / a;
     let x2 = (mb*EPS - sd) / 2 / a;
     (true, x1, x2)
+}
+
+contract Test {
+    pub fn entry(self, a: u128, mb: u128, c: u128) -> (bool, u128, u128) {
+        let mut p = solve(a, mb, c);
+        p.1 *= PRECISION;
+        p.1 /= EPS;
+        p.2 *= PRECISION;
+        p.2 /= EPS;
+        // roots * PRECISION
+        p
+    }
 }

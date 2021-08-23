@@ -1,6 +1,16 @@
 //! { "cases": [ {
-//!     "entry": "entry",
-//!     "expected": 1
+//!     "name": "entry",
+//!     "input": [
+//!         {
+//!             "entry": "entry",
+//!             "calldata": [
+//!                 "31", "0", "0", "0", "0", "0", "1"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
 //! } ] }
 
 
@@ -8,22 +18,21 @@ struct Str1 {
     a: u256,
 }
 
-fn entry() -> u64 {
-    main(31, 0 as u256, 0 as u256, 0 as u256, 0 as u256, 0 as u256, Str1 {a: 1 as u256}) as u64
-}
-
-fn main(
-    param: u8,
-    p3: u256,
-    p4: u256,
-    p5: u256,
-    p6: u256,
-    p7: u256,
-    p8: Str1
-) -> u256 {
-    if param == 31 {
-        p8.a
-    } else {
-        1 as u256
+contract Test {
+    pub fn entry(
+        self,
+        param: u8,
+        p3: u256,
+        p4: u256,
+        p5: u256,
+        p6: u256,
+        p7: u256,
+        p8: Str1
+    ) -> u256 {
+        if param == 31 {
+            p8.a
+        } else {
+            1 as u256
+        }
     }
 }

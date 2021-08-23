@@ -1,30 +1,50 @@
 //! { "cases": [ {
-//!     "entry": "zero",
-//!     "expected": 1
+//!     "name": "zero",
+//!     "input": [
+//!         {
+//!             "entry": "fact",
+//!             "calldata": [
+//!                 "0"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
 //! }, {
-//!     "entry": "fifth",
-//!     "expected": 120
+//!     "name": "fifth",
+//!     "input": [
+//!         {
+//!             "entry": "fact",
+//!             "calldata": [
+//!                 "5"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "120"
+//!     ]
 //! }, {
-//!     "entry": "twelfth",
-//!     "expected": 479001600
+//!     "name": "twelfth",
+//!     "input": [
+//!         {
+//!             "entry": "fact",
+//!             "calldata": [
+//!                 "12"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "479001600"
+//!     ]
 //! } ] }
 
-fn zero() -> u64 {
-    fact(0) as u64
-}
+contract Test {
+    pub fn fact(self, n: u8) -> u64 {
+        if n == 0 {
+            return 1;
+        }
 
-fn fifth() -> u64 {
-    fact(5) as u64
-}
-
-fn twelfth() -> u64 {
-    fact(12) as u64
-}
-
-fn fact(n: u8) -> u64 {
-    if n == 0 {
-        return 1;
+        self.fact(n - 1) * (n as u64)
     }
-
-    fact(n - 1) * (n as u64)
 }

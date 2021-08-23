@@ -1,31 +1,51 @@
 //! { "cases": [ {
-//!     "entry": "first",
-//!     "expected": 5050
+//!     "name": "first",
+//!     "input": [
+//!         {
+//!             "entry": "first",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "5050"
+//!     ]
 //! }, {
-//!     "entry": "second",
-//!     "expected": 1275
+//!     "name": "second",
+//!     "input": [
+//!         {
+//!             "entry": "second",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1275"
+//!     ]
 //! } ] }
 
-fn first() -> u64 {
-    (main(100, false) + main(100, true)) as u64
-}
+contract Test {
+    pub fn first(self) -> u256 {
+        Self::main(100, false) + Self::main(100, true)
+    }
 
-fn second() -> u64 {
-    (main(50, true) + main(50, false)) as u64
-}
-
-fn main(a: u256, is_odd: bool) -> u256 {
-    let mut result: u256 = 0;
-    for i in 1..=a {
-        if is_odd {
-            if i % 2 != 0 {
-                result += i;
-            }
-        } else {
-            if i % 2 == 0 {
-                result += i;
+    pub fn second(self) -> u256 {
+        Self::main(50, true) + Self::main(50, false)
+    }
+    
+    fn main(a: u256, is_odd: bool) -> u256 {
+        let mut result: u256 = 0;
+        for i in 1..=a {
+            if is_odd {
+                if i % 2 != 0 {
+                    result += i;
+                }
+            } else {
+                if i % 2 == 0 {
+                    result += i;
+                }
             }
         }
+        result
     }
-    result
 }

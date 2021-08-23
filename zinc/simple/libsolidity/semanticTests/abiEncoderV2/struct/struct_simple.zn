@@ -1,6 +1,16 @@
 //! { "cases": [ {
-//!     "entry": "entry",
-//!     "expected": 1
+//!     "name": "f",
+//!     "input": [
+//!         {
+//!             "entry": "f",
+//!             "calldata": [
+//!                 "1", "2", "3", "15678"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1", "2", "3", "15678"
+//!     ]
 //! } ] }
 
 struct S {
@@ -10,21 +20,8 @@ struct S {
     d: u16
 }
 
-fn entry() -> u64 {
-    let output = f(S {
-        a: 1 as u256,
-        b: 2 as u8,
-        c: 3 as u8,
-        d: 15678 as u16,
-    });
-    if output.0 == 1 &&
-        output.1 == 2 &&
-        output.2 == 3 &&
-        output.3 == 15678
-        {1} else {0}
+contract Test {
+    pub fn f(self, s: S) -> (u256, u256, u256, u256) {
+        (s.a, s.b as u256, s.c as u256, s.d as u256)
+    }
 }
-
-fn f(s: S) -> (u256, u256, u256, u256) {
-    (s.a, s.b as u256, s.c as u256, s.d as u256)
-}
-

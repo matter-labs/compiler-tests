@@ -1,28 +1,48 @@
 //! { "cases": [ {
-//!     "entry": "one",
-//!     "expected": 21
+//!     "name": "one",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "84", "21"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "21"
+//!     ]
 //! }, {
-//!     "entry": "two",
-//!     "expected": 42
+//!     "name": "two",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "42", "42"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "42"
+//!     ]
 //! }, {
-//!     "entry": "three",
-//!     "expected": 84
+//!     "name": "three",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "21", "84"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "84"
+//!     ]
 //! } ] }
 
-fn one() -> u64 {
-    main(84, 21) as u64
-}
-
-fn two() -> u64 {
-    main(42, 42) as u64
-}
-
-fn three() -> u64 {
-    main(21, 84) as u64
-}
-
-unsafe fn main(address: u16, value: u8) -> u8 {
-    let mut pointer: *mut u8 = address;
-    *pointer = value;
-    *pointer
+contract Test {
+    pub unsafe fn main(self, address: u16, value: u8) -> u8 {
+        let mut pointer: *mut u8 = address;
+        *pointer = value;
+        *pointer
+    }
 }

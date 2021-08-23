@@ -1,6 +1,15 @@
 //! { "cases": [ {
-//!     "entry": "main",
-//!     "expected": 2545
+//!     "name": "main",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "2545"
+//!     ]
 //! } ] }
 
 // SPDX-License-Identifier: UNLICENSED

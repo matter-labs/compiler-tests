@@ -1,12 +1,20 @@
 //! { "cases": [ {
-//!     "entry": "entry",
-//!     "expected": 64516
+//!     "name": "main",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "4"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "64516"
+//!     ]
 //! } ] }
 
-fn entry() -> u64 {
-    main(4) as u64
-}
-
-fn main(witness: u8) -> u32 {
-    65536 - 255 * (witness as u32)
+contract Test {
+    pub fn main(self, witness: u8) -> u32 {
+        65536 - 255 * (witness as u32)
+    }
 }

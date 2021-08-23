@@ -1,12 +1,18 @@
 //! { "cases": [ {
-//!     "entry": "default",
-//!     "engines": ["zkevm"], "expected": "Runtime error"
+//!     "name": "default",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "0"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": "Runtime error"
 //! } ] }
 
-fn default() -> u256 {
-    main(0)
-}
-
-fn main(witness: u256) -> u256 {
-    witness - 1 as u256
+contract Test {
+    pub fn main(self, witness: u256) -> u256 {
+        witness - 1 as u256
+    }
 }

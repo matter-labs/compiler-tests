@@ -1,9 +1,29 @@
 //! { "ignore": true, "cases": [ {
-//!     "entry": "complex1",
-//!     "expected": 1
+//!     "name": "complex1",
+//!     "input": [
+//!         {
+//!             "entry": "complex",
+//!             "calldata": [
+//!                 "1", "12", "55", "53", "22", "34", "45", "21", "12", "7"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1", "12", "55", "53", "22", "34", "45", "21", "12", "7"
+//!     ]
 //! }, {
-//!     "entry": "complex2",
-//!     "expected": 1
+//!     "name": "complex2",
+//!     "input": [
+//!         {
+//!             "entry": "complex",
+//!             "calldata": [
+//!                 "37", "11", "2", "59", "0", "63", "41", "27", "17", "9"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "37", "11", "2", "59", "0", "63", "41", "27", "17", "9"
+//!     ]
 //! } ] }
 
 // SPDX-License-Identifier: UNLICENSED
@@ -76,45 +96,7 @@ contract Test {
         return data;
     }
 
-    function complex1() public view returns(uint64) {
-        uint8[SIZE] memory message = [1, 12, 55, 53, 22, 34, 45, 21, 12, 7];
-
-        uint8[SIZE] memory messageCopy;
-        for (uint8 i = 0; i < SIZE; i++) {
-            messageCopy[i] = message[i];
-        }
-        uint8[SIZE] memory output = decrypt(encrypt(messageCopy));
-        
-        bool result = true;
-        for(uint8 i = 0; i < SIZE; i++) {
-            result = result && message[i] == output[i];
-        }
-
-        if (result) {
-            return 1;
-        } else {
-            return 0;
-        }
-    }
-
-    function complex2() public view returns(uint64) {
-        uint8[SIZE] memory message = [37, 11, 2, 59, 0, 63, 41, 27, 17, 9];
-
-        uint8[SIZE] memory messageCopy;
-        for (uint8 i = 0; i < SIZE; i++) {
-            messageCopy[i] = message[i];
-        }
-        uint8[SIZE] memory output = decrypt(encrypt(messageCopy));
-        
-        bool result = true;
-        for(uint8 i = 0; i < SIZE; i++) {
-            result = result && message[i] == output[i];
-        }
-
-        if (result) {
-            return 1;
-        } else {
-            return 0;
-        }
+    function complex(uint8[SIZE] memory message) public view returns(uint8[SIZE] memory) {
+        return decrypt(encrypt(message));
     }
 }

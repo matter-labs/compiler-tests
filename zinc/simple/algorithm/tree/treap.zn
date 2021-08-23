@@ -1,10 +1,29 @@
 //! { "cases": [ {
-//!     "entry": "one",
-//!     "expected": 1
+//!     "name": "one",
+//!     "input": [
+//!         {
+//!             "entry": "one",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
 //! }, {
-//!     "entry": "two",
-//!     "expected": 1
+//!     "name": "two",
+//!     "input": [
+//!         {
+//!             "entry": "two",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
 //! } ] }
+
 
 // complexity of methods above can be too big, as for calls it copies arrays, structs
 // but it just for test
@@ -24,101 +43,6 @@ struct Node {
 struct Memory {
     nodes: [Node; DIM],
     cnt: u8,
-}
-
-fn one() -> u64 {
-    let mut array = [0; DIM];
-    let sz = 5;
-    for i in 0..sz {
-        array[i] = sz - i;
-    }
-    // 5 4 3 2 1
-    let mut memory = Memory::new();
-
-    let p = from_array(array, sz, memory);
-    memory = p.1;
-    let mut root = p.0;
-    // 1 2 3 4 5
-
-    let p1 = add(root, 7, memory);
-    memory = p1.1;
-    root = p1.0;
-    // 1 2 3 4 5 7
-
-    let p2 = erase(root, 3, memory);
-    memory = p2.1;
-    root = p2.0;
-    // 1 2 4 5 7
-
-    let p3 = add(root, 0, memory);
-    memory = p3.1;
-    root = p3.0;
-    // 0 1 2 4 5 7
-    let res = to_array(root, memory);
-    let result = res.1 == 6 &&
-                 res.0[0] == 0 &&
-                 res.0[1] == 1 &&
-                 res.0[2] == 2 &&
-                 res.0[3] == 4 &&
-                 res.0[4] == 5 &&
-                 res.0[5] == 7;
-    if result { 1 } else { 0 }
-}
-
-fn two() -> u64 {
-    let mut memory = Memory::new();
-    let mut root = 0;
-
-    let mut i = 10;
-    while i > 0 {
-        let p = add(root, i, memory);
-        memory = p.1;
-        root = p.0;
-        i -= 2;
-    }
-    // 2 4 6 8 10
-
-    i = 1;
-    while i <= 9 {
-        let p = add(root, i, memory);
-        memory = p.1;
-        root = p.0;
-        i += 2;
-    }
-    // 1 - 10
-
-    i = 3;
-    while i <= 9 {
-        let p = erase(root, i, memory);
-        memory = p.1;
-        root = p.0;
-        i += 3;
-    }
-    // 1 2 4 5 7 8 10
-
-    i = 4;
-    while i <= 8 {
-        let p = erase(root, i, memory);
-        memory = p.1;
-        root = p.0;
-        i += 4;
-    }
-    // 1 2 5 7 10
-
-    let p = add(root, 6, memory);
-    memory = p.1;
-    root = p.0;
-    // 1 2 5 6 7 10
-
-    let res = to_array(root, memory);
-    let result = res.1 == 6 &&
-                 res.0[0] == 1 &&
-                 res.0[1] == 2 &&
-                 res.0[2] == 5 &&
-                 res.0[3] == 6 &&
-                 res.0[4] == 7 &&
-                 res.0[5] == 10;
-    if result { 1 } else { 0 }
 }
 
 impl Memory {
@@ -244,4 +168,101 @@ fn to_array(root: u8, memory: Memory) -> ([u8; DIM], u8) {
         sz += 1;
     }
     (res, sz)
+}
+
+contract Test {
+    pub fn one(self) -> u64 {
+        let mut array = [0; DIM];
+        let sz = 5;
+        for i in 0..sz {
+            array[i] = sz - i;
+        }
+        // 5 4 3 2 1
+        let mut memory = Memory::new();
+
+        let p = from_array(array, sz, memory);
+        memory = p.1;
+        let mut root = p.0;
+        // 1 2 3 4 5
+
+        let p1 = add(root, 7, memory);
+        memory = p1.1;
+        root = p1.0;
+        // 1 2 3 4 5 7
+
+        let p2 = erase(root, 3, memory);
+        memory = p2.1;
+        root = p2.0;
+        // 1 2 4 5 7
+
+        let p3 = add(root, 0, memory);
+        memory = p3.1;
+        root = p3.0;
+        // 0 1 2 4 5 7
+        let res = to_array(root, memory);
+        let result = res.1 == 6 &&
+                     res.0[0] == 0 &&
+                     res.0[1] == 1 &&
+                     res.0[2] == 2 &&
+                     res.0[3] == 4 &&
+                     res.0[4] == 5 &&
+                     res.0[5] == 7;
+        if result { 1 } else { 0 }
+    }
+
+    pub fn two(self) -> u64 {
+        let mut memory = Memory::new();
+        let mut root = 0;
+
+        let mut i = 10;
+        while i > 0 {
+            let p = add(root, i, memory);
+            memory = p.1;
+            root = p.0;
+            i -= 2;
+        }
+        // 2 4 6 8 10
+
+        i = 1;
+        while i <= 9 {
+            let p = add(root, i, memory);
+            memory = p.1;
+            root = p.0;
+            i += 2;
+        }
+        // 1 - 10
+
+        i = 3;
+        while i <= 9 {
+            let p = erase(root, i, memory);
+            memory = p.1;
+            root = p.0;
+            i += 3;
+        }
+        // 1 2 4 5 7 8 10
+
+        i = 4;
+        while i <= 8 {
+            let p = erase(root, i, memory);
+            memory = p.1;
+            root = p.0;
+            i += 4;
+        }
+        // 1 2 5 7 10
+
+        let p = add(root, 6, memory);
+        memory = p.1;
+        root = p.0;
+        // 1 2 5 6 7 10
+
+        let res = to_array(root, memory);
+        let result = res.1 == 6 &&
+                     res.0[0] == 1 &&
+                     res.0[1] == 2 &&
+                     res.0[2] == 5 &&
+                     res.0[3] == 6 &&
+                     res.0[4] == 7 &&
+                     res.0[5] == 10;
+        if result { 1 } else { 0 }
+    }
 }

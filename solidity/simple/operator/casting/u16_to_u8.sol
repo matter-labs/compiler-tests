@@ -1,18 +1,70 @@
 //! { "cases": [ {
-//!     "entry": "zero",
-//!     "expected": 0
+//!     "name": "zero",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "0"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "0"
+//!     ]
 //! }, {
-//!     "entry": "ordinar",
-//!     "expected": 42
+//!     "name": "ordinar",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "42"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "42"
+//!     ]
 //! }, {
-//!     "entry": "max",
-//!     "expected": 127
+//!     "name": "max",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "127"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "127"
+//!     ]
 //! }, {
-//!     "ignore": true, "entry": "overflow_positive_minimal",
-//!     "engines": ["zkevm"], "expected": "Runtime error"
+//!     "name": "overflow_positive_minimal",
+//!     "ignore": true,
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "256"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "error"
+//!     ]
 //! }, {
-//!     "ignore": true, "entry": "overflow_positive",
-//!     "engines": ["zkevm"], "expected": "Runtime error"
+//!     "name": "overflow_positive",
+//!     "ignore": true,
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "1000"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "error"
+//!     ]
 //! } ] }
 
 // SPDX-License-Identifier: UNLICENSED
@@ -20,27 +72,7 @@
 pragma solidity ^0.8.0;
 
 contract Test {
-    function zero() public pure returns(uint64) {
-        return main(0);
-    }
-
-    function ordinar() public pure returns(uint64) {
-        return main(42);
-    }
-
-    function max() public pure returns(uint64) {
-        return main(127);
-    }
-
-    function overflow_positive_minimal() public pure returns(uint64) {
-        return main(256);
-    }
-
-    function overflow_positive() public pure returns(uint64) {
-        return main(1000);
-    }
-
-    function main(uint16 a) private pure returns(uint8) {
+    function main(uint16 a) public pure returns(uint8) {
         return uint8(a);
     }
 }

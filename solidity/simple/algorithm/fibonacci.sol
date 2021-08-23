@@ -1,12 +1,42 @@
 //! { "cases": [ {
-//!     "entry": "one",
-//!     "expected": 89
+//!     "name": "one",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "12"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "89"
+//!     ]
 //! }, {
-//!     "entry": "two",
-//!     "expected": 233
+//!     "name": "two",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "14"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "233"
+//!     ]
 //! }, {
-//!     "entry": "three",
-//!     "expected": 610
+//!     "name": "three",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "16"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "610"
+//!     ]
 //! } ] }
 
 // SPDX-License-Identifier: UNLICENSED
@@ -14,19 +44,7 @@
 pragma solidity ^0.8.0;
 
 contract Test {
-    function one() public pure returns(uint64) {
-        return main(12);
-    }
-
-    function two() public pure returns(uint64) {
-        return main(14);
-    }
-
-    function three() public pure returns(uint64) {
-        return main(16);
-    }
-
-    function main(uint8 n) private pure returns(uint64) {
+    function main(uint8 n) public pure returns(uint64) {
         uint64 value1 = 0;
         uint64 value2 = 1;
         uint64 fibo = value1;

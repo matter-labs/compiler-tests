@@ -1,9 +1,28 @@
 //! { "cases": [ {
-//!     "entry": "simple",
-//!     "expected": 1
+//!     "name": "simple",
+//!     "input": [
+//!         {
+//!             "entry": "simple",
+//!             "calldata": [
+//!                 "10"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "10"
+//!     ]
 //! }, {
-//!     "entry": "complex",
-//!     "expected": 1
+//!     "name": "complex",
+//!     "input": [
+//!         {
+//!             "entry": "complex",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
 //! } ] }
 
 // SPDX-License-Identifier: UNLICENSED
@@ -96,14 +115,10 @@ contract Test {
         }
     }
 
-    function simple() public pure returns(uint64) {
+    function simple(uint64 value) public pure returns(uint64) {
         Vec memory vec = _new();
-        push(vec, 10);
-        if (get(vec, 0) == 10) {
-            return 1;
-        } else {
-            return 0;
-        }
+        push(vec, value);
+        return get(vec, 0);
     }
 
     function complex() public pure returns(uint64) {

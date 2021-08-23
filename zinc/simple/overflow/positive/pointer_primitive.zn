@@ -1,18 +1,24 @@
 //! { "cases": [ {
-//!     "entry": "default",
-//!     "engines": ["zkevm"], "expected": "Runtime error"
+//!     "name": "main",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "65500", "36"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": "Runtime error"
 //! } ] }
 
-fn default() -> u64 {
-    main(65500 as u16, 36 as u16)
-}
+contract Test {
+    pub unsafe fn main(self, a: u16, b: u16) -> u64 {
+        let mut memory_pointer: *mut u16 = 0x0002 as u16;
+        *memory_pointer = a;
 
-unsafe fn main(a: u16, b: u16) -> u64 {
-    let mut memory_pointer: *mut u16 = 0x0002 as u16;
-    *memory_pointer = a;
+        let return_pointer = *memory_pointer as *mut u64;
+        *memory_pointer = (return_pointer + b) as u16;
 
-    let return_pointer = *memory_pointer as *mut u64;
-    *memory_pointer = (return_pointer + b) as u16;
-
-    1 as u64
+        1 as u64
+    }
 }

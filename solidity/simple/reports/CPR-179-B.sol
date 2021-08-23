@@ -1,6 +1,16 @@
 //! { "cases": [ {
-//!     "entry": "entry",
-//!     "expected": 1
+//!     "name": "entry",
+//!     "input": [
+//!         {
+//!             "entry": "entry",
+//!             "calldata": [
+//!                 "0", "0", "0", "0", "0", "2"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
 //! } ] }
 
 // SPDX-License-Identifier: UNLICENSED
@@ -8,14 +18,14 @@
 pragma solidity ^0.8.0;
 
 contract Test {
-    function entry() public pure returns(uint64) {
-        uint256 p1 = 0;
-        uint256 p2 = 0;
-        uint256 p3 = 0;
-        uint256 p4 = 0;
-        uint256 p5 = 0;
-        uint256 p6 = 2;
-
+    function entry(
+        uint256 p1,
+        uint256 p2,
+        uint256 p3,
+        uint256 p4,
+        uint256 p5,
+        uint256 p6
+    ) public pure returns(uint256) {
         if (main(0, p1, p2, p3, p4, p5, p6) == 0 &&
             main(7, p1, p2, p3, p4, p5, p6) == 0)
             return 1;

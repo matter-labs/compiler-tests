@@ -1,12 +1,42 @@
 //! { "cases": [ {
-//!     "entry": "first",
-//!     "expected": 100
+//!     "name": "first",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "1"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "100"
+//!     ]
 //! }, {
-//!     "entry": "second",
-//!     "expected": 200
+//!     "name": "second",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "2"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "200"
+//!     ]
 //! }, {
-//!     "entry": "third",
-//!     "expected": 255
+//!     "name": "third",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "4"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "255"
+//!     ]
 //! } ] }
 
 // SPDX-License-Identifier: UNLICENSED
@@ -14,19 +44,7 @@
 pragma solidity ^0.8.0;
 
 contract Test {
-    function first() public pure returns(uint64) {
-        return main(1);
-    }
-
-    function second() public pure returns(uint64) {
-        return main(2);
-    }
-
-    function third() public pure returns(uint64) {
-        return main(4);
-    }
-
-    function main(uint8 witness) private pure returns(uint8) {
+    function main(uint8 witness) public pure returns(uint8) {
         uint8 result;
         assembly {
             let tmp := 0

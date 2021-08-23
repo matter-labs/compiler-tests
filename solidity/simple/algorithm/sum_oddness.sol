@@ -1,9 +1,27 @@
 //! { "cases": [ {
-//!     "entry": "first",
-//!     "expected": 5050
+//!     "name": "first",
+//!     "input": [
+//!         {
+//!             "entry": "first",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "5050"
+//!     ]
 //! }, {
-//!     "entry": "second",
-//!     "expected": 1275
+//!     "name": "second",
+//!     "input": [
+//!         {
+//!             "entry": "second",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1275"
+//!     ]
 //! } ] }
 
 // SPDX-License-Identifier: UNLICENSED

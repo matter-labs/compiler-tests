@@ -1,75 +1,86 @@
 //! { "cases": [ {
-//!     "entry": "entry",
-//!     "engines": ["zkevm"], "expected": 1
+//!     "name": "entry",
+//!     "input": [
+//!         {
+//!             "entry": "entry",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
 //! } ] }
 
+contract Test {
+    pub fn entry(self) -> u64 {
+        let p1 = 1 as u8;
+        let p2 = 4 as u16;
+        let p3 = 9 as u24;
+        let p4 = 16 as u32;
+        let p5 = 25 as u40;
+        let p6 = 36 as u48;
+        let p7 = 49 as u56;
+        let p8 = 64 as u64;
+        let p9 = 81 as u72;
+        let p10 = 100 as u80;
+        let p11 = 121 as u88;
+        let p12 = 144 as u168;
+        let p13 = 169 as u208;
+        let p14 = 196 as u232;
+        let p15 = 225 as u256;
 
-fn entry() -> u64 {
-    let p1 = 1 as u8;
-    let p2 = 4 as u16;
-    let p3 = 9 as u24;
-    let p4 = 16 as u32;
-    let p5 = 25 as u40;
-    let p6 = 36 as u48;
-    let p7 = 49 as u56;
-    let p8 = 64 as u64;
-    let p9 = 81 as u72;
-    let p10 = 100 as u80;
-    let p11 = 121 as u88;
-    let p12 = 144 as u168;
-    let p13 = 169 as u208;
-    let p14 = 196 as u232;
-    let p15 = 225 as u256;
+        let mut result = true;
 
-    let mut result = true;
+        for i in 1..=15 {
+            result = result && self.main(i, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15) == (i * i) as u256;
+        }
 
-    for i in 1..=15 {
-        result = result && main(i, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15) == (i * i) as u256;
+        result = result && self.main(0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15) == 1240 as u256;
+        result = result && self.main(16, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15) == 1240 as u256;
+
+        if result 
+            {1} else {0} as u64
     }
 
-    result = result && main(0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15) == 1240 as u256;
-    result = result && main(16, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15) == 1240 as u256;
-
-    if result 
-        {1} else {0} as u64
-}
-
-fn main(
-    param: u8,
-    p1: u8,
-    p2: u16,
-    p3: u24,
-    p4: u32,
-    p5: u40,
-    p6: u48,
-    p7: u56,
-    p8: u64,
-    p9: u72,
-    p10: u80,
-    p11: u88,
-    p12: u168,
-    p13: u208,
-    p14: u232,
-    p15: u256
-) -> u256 {
-    match param {
-        1 => p1 as u256,
-        2 => p2 as u256,
-        3 => p3 as u256,
-        4 => p4 as u256,
-        5 => p5 as u256,
-        6 => p6 as u256,
-        7 => p7 as u256,
-        8 => p8 as u256,
-        9 => p9 as u256,
-        10 => p10 as u256,
-        11 => p11 as u256,
-        12 => p12 as u256,
-        13 => p13 as u256,
-        14 => p14 as u256,
-        15 => p15 as u256,
-        _ => p1 as u256 + p2 as u256 + p3 as u256 + p4 as u256 + p5 as u256
-             + p6 as u256 + p7 as u256 + p8 as u256 + p9 as u256 + p10 as u256
-             + p11 as u256 + p12 as u256 + p13 as u256 + p14 as u256 + p15 as u256
+    fn main(
+        self,
+        param: u8,
+        p1: u8,
+        p2: u16,
+        p3: u24,
+        p4: u32,
+        p5: u40,
+        p6: u48,
+        p7: u56,
+        p8: u64,
+        p9: u72,
+        p10: u80,
+        p11: u88,
+        p12: u168,
+        p13: u208,
+        p14: u232,
+        p15: u256
+    ) -> u256 {
+        match param {
+            1 => p1 as u256,
+            2 => p2 as u256,
+            3 => p3 as u256,
+            4 => p4 as u256,
+            5 => p5 as u256,
+            6 => p6 as u256,
+            7 => p7 as u256,
+            8 => p8 as u256,
+            9 => p9 as u256,
+            10 => p10 as u256,
+            11 => p11 as u256,
+            12 => p12 as u256,
+            13 => p13 as u256,
+            14 => p14 as u256,
+            15 => p15 as u256,
+            _ => p1 as u256 + p2 as u256 + p3 as u256 + p4 as u256 + p5 as u256
+                + p6 as u256 + p7 as u256 + p8 as u256 + p9 as u256 + p10 as u256
+                + p11 as u256 + p12 as u256 + p13 as u256 + p14 as u256 + p15 as u256
+        }
     }
 }

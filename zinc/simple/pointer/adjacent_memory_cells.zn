@@ -1,14 +1,25 @@
 //! { "cases": [ {
-//!     "entry": "default",
-//!     "expected": 42
+//!     "name": "default",
+//!     "input": [
+//!         {
+//!             "entry": "default",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "42"
+//!     ]
 //! } ] }
 
-unsafe fn default() -> u8 {
-    let mut ptr: *mut u8 = 0x0042 as u16;
+contract Test {
+    pub unsafe fn default(self) -> u8 {
+        let mut ptr: *mut u8 = 0x0042 as u16;
 
-    *(ptr + 1 as u16) = 0;
-    *(ptr + 2 as u16) = 42;
-    *(ptr + 3 as u16) = 0;
+        *(ptr + 1 as u16) = 0;
+        *(ptr + 2 as u16) = 42;
+        *(ptr + 3 as u16) = 0;
 
-    *(ptr + 1 as u16) + *(ptr + 2 as u16) + *(ptr + 3 as u16)
+        *(ptr + 1 as u16) + *(ptr + 2 as u16) + *(ptr + 3 as u16)
+    }
 }

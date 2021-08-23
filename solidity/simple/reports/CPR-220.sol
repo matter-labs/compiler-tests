@@ -1,8 +1,16 @@
 //! { "cases": [ {
-//!     "entry": "f",
-//!     "expected": 42
+//!     "name": "f",
+//!     "input": [
+//!         {
+//!             "entry": "f",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "42"
+//!     ]
 //! } ] }
-
 
 // SPDX-License-Identifier: UNLICENSED
 

@@ -1,27 +1,47 @@
 //! { "cases": [ {
-//!     "entry": "remainder_zero",
-//!     "expected": 5
+//!     "name": "remainder_zero",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "15"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "5"
+//!     ]
 //! }, {
-//!     "entry": "remainder_one",
-//!     "expected": 7
+//!     "name": "remainder_one",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "22"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "7"
+//!     ]
 //! }, {
-//!     "entry": "remainder_two",
-//!     "expected": 8
+//!     "name": "remainder_two",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "26"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "8"
+//!     ]
 //! } ] }
 
-fn remainder_zero() -> u64 {
-    main(15) as u64
-}
-
-fn remainder_one() -> u64 {
-    main(22) as u64
-}
-
-fn remainder_two() -> u64 {
-    main(26) as u64
-}
-
-fn main(witness: u32) -> u32 {
-    let variable: u32 = 3;
-    witness / variable
+contract Test {
+    pub fn main(self, witness: u32) -> u32 {
+        let variable: u32 = 3;
+        witness / variable
+    }
 }

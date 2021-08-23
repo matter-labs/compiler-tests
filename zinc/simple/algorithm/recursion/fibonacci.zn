@@ -1,30 +1,50 @@
 //! { "cases": [ {
-//!     "entry": "first",
-//!     "expected": 1
+//!     "name": "first",
+//!     "input": [
+//!         {
+//!             "entry": "fib",
+//!             "calldata": [
+//!                 "1"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
 //! }, {
-//!     "entry": "eighth",
-//!     "expected": 21
+//!     "name": "eighth",
+//!     "input": [
+//!         {
+//!             "entry": "fib",
+//!             "calldata": [
+//!                 "8"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "21"
+//!     ]
 //! }, {
-//!     "entry": "sixteenth",
-//!     "expected": 987
+//!     "name": "sixteenth",
+//!     "input": [
+//!         {
+//!             "entry": "fib",
+//!             "calldata": [
+//!                 "16"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "987"
+//!     ]
 //! } ] }
 
-fn first() -> u64 {
-    fib(1)
-}
+contract Test {
+    pub fn fib(self, n: u8) -> u64 {
+        if n <= 1 {
+            return n as u64;
+        }
 
-fn eighth() -> u64 {
-    fib(8)
-}
-
-fn sixteenth() -> u64 {
-    fib(16)
-}
-
-fn fib(n: u8) -> u64 {
-    if n <= 1 {
-        return n as u64;
+        self.fib(n - 1) + self.fib(n - 2)
     }
-
-    fib(n - 1) + fib(n - 2)
 }

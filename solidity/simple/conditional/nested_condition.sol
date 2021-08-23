@@ -1,9 +1,29 @@
 //! { "cases": [ {
-//!     "entry": "first",
-//!     "expected": 25
+//!     "name": "first",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "1"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "25"
+//!     ]
 //! }, {
-//!     "entry": "second",
-//!     "expected": 42
+//!     "name": "second",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "2"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "42"
+//!     ]
 //! } ] }
 
 // SPDX-License-Identifier: UNLICENSED
@@ -11,15 +31,7 @@
 pragma solidity ^0.8.0;
 
 contract Test {
-    function first() public pure returns(uint64) {
-        return main(1);
-    }
-
-    function second() public pure returns(uint64) {
-        return main(2);
-    }
-
-    function main(uint8 witness) private pure returns(uint8) {
+    function main(uint8 witness) public pure returns(uint8) {
         uint8 tmp;
         if (witness == 1) {
             tmp = 2;

@@ -1,25 +1,43 @@
 //! { "cases": [ {
-//!     "entry": "one",
-//!     "expected": 6
+//!     "name": "one",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "1", "2", "3"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "6"
+//!     ]
 //! }, {
-//!     "entry": "two",
-//!     "expected": 147
+//!     "name": "two",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "42", "21", "84"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "147"
+//!     ]
 //! }, {
-//!     "entry": "three",
-//!     "expected": 198
+//!     "name": "three",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "99", "66", "33"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "198"
+//!     ]
 //! } ] }
-
-fn one() -> u64 {
-    main(1, 2, 3) as u64
-}
-
-fn two() -> u64 {
-    main(42, 21, 84) as u64
-}
-
-fn three() -> u64 {
-    main(99, 66, 33) as u64
-}
 
 struct Data {
     a: u256,
@@ -27,13 +45,15 @@ struct Data {
     c: u256,
 }
 
-unsafe fn main(a: u256, b: u256, c: u256) -> u256 {
-    let mut data = Data {
-        a: a,
-        b: b,
-        c: c,
-    };
-    let mut pointer: *mut Data = 0x100;
-    *pointer = data;
-    (*pointer).a + (*pointer).b + (*pointer).c
+contract Test {
+    pub unsafe fn main(self, a: u256, b: u256, c: u256) -> u256 {
+        let mut data = Data {
+            a: a,
+            b: b,
+            c: c,
+        };
+        let mut pointer: *mut Data = 0x100;
+        *pointer = data;
+        (*pointer).a + (*pointer).b + (*pointer).c
+    }
 }

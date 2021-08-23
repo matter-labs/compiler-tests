@@ -1,15 +1,55 @@
 //! { "cases": [ {
-//!     "entry": "one",
-//!     "expected": 25
+//!     "name": "one",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "1", "0", "0", "5"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "25"
+//!     ]
 //! }, {
-//!     "entry": "two",
-//!     "expected": 50
+//!     "name": "two",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "0", "1", "1", "5"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "50"
+//!     ]
 //! }, {
-//!     "entry": "three",
-//!     "expected": 75
+//!     "name": "three",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "0", "1", "0", "5"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "75"
+//!     ]
 //! }, {
-//!     "entry": "four",
-//!     "expected": 100
+//!     "name": "four",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "0", "0", "0", "5"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "100"
+//!     ]
 //! } ] }
 
 // SPDX-License-Identifier: UNLICENSED
@@ -17,27 +57,7 @@
 pragma solidity ^0.8.0;
 
 contract Test {
-    function one() public pure returns(uint64) {
-        bool[3] memory input = [true, false, false];
-        return main(input, 5);
-    }
-
-    function two() public pure returns(uint64) {
-        bool[3] memory input = [false, true, true];
-        return main(input, 5);
-    }
-
-    function three() public pure returns(uint64) {
-        bool[3] memory input = [false, true, false];
-        return main(input, 5);
-    }
-
-    function four() public pure returns(uint64) {
-        bool[3] memory input = [false, false, false];
-        return main(input, 5);
-    }
-
-    function main(bool[3] memory gates, uint8 mutated) private pure returns(uint8) {
+    function main(bool[3] memory gates, uint8 mutated) public pure returns(uint8) {
         if (gates[0]) {
             mutated *= 5;
         } else if (gates[1]) {

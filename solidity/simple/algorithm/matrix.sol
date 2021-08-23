@@ -1,9 +1,33 @@
 //! { "cases": [ {
-//!     "entry": "test",
-//!     "expected": 1
+//!     "name": "test",
+//!     "input": [
+//!         {
+//!             "entry": "test",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "235", "1008", "0", "0", "0",
+//!         "86", "4670", "0", "0", "0",
+//!         "0", "0", "0", "0", "0",
+//!         "0", "0", "0", "0", "0",
+//!         "0", "0", "0", "0", "0",
+//!         "2", "2"
+//!     ]
 //! }, {
-//!     "entry": "fibo",
-//!     "expected": 679891637638612258
+//!     "name": "fibo",
+//!     "input": [
+//!         {
+//!             "entry": "fibo",
+//!             "calldata": [
+//!                 "87"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "679891637638612258"
+//!     ]
 //! } ] }
 
 // SPDX-License-Identifier: UNLICENSED
@@ -68,7 +92,7 @@ contract Test {
         return result;
     }
 
-    function test() public pure returns(uint64) {
+    function test() public pure returns(Matrix memory) {
         Matrix memory a;
         a.n = 2;
         a.m = 3;
@@ -106,29 +130,16 @@ contract Test {
         c.a[1][1] = 34;
 
         a = add(a, c);
-        if (a.n != 2 || a.m != 2) {
-            return 0;
-        }
-        bool result = true;
-        result = result && a.a[0][0] == 235;
-        result = result && a.a[0][1] == 1008;
-        result = result && a.a[1][0] == 86;
-        result = result && a.a[1][1] == 4670;
-        if (result) {
-            return 1;
-        } else {
-            return 0;
-        }
+        return a;
     }
 
-    function fibo() public pure returns(uint64) {
+    function fibo(uint64 n) public pure returns(uint64) {
         Matrix memory matrix;
         matrix.n = 2;
         matrix.m = 2;
         matrix.a[0][1] = 1;
         matrix.a[1][0] = 1;
         matrix.a[1][1] = 1;
-        uint64 n = 87;
         matrix = pow(matrix, n - 2);
         return uint64(matrix.a[0][1] + matrix.a[1][1]);
     }
