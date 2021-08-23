@@ -1,6 +1,5 @@
-//! { "ignore": true, "cases": [ {
+//! { "cases": [ {
 //!     "name": "main",
-//!     "ignore": true,
 //!     "input": [
 //!         {
 //!             "entry": "main",

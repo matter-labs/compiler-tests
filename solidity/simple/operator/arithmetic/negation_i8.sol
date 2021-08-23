@@ -1,5 +1,4 @@
-//! { "ignore": true,
-//! "cases": [ {
+//! { "cases": [ {
 //!     "name": "zero",
 //!     "input": [
 //!         {

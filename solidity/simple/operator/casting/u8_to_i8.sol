@@ -1,5 +1,4 @@
-//! { "ignore": true,
-//! "cases": [ {
+//! { "cases": [ {
 //!     "name": "zero",
 //!     "input": [
 //!         {
@@ -40,7 +39,6 @@
 //!     ]
 //! }, {
 //!     "name": "overflow_minimal",
-//!     "ignore": true,
 //!     "input": [
 //!         {
 //!             "entry": "main",
@@ -54,7 +52,6 @@
 //!     ]
 //! }, {
 //!     "name": "overflow",
-//!     "ignore": true,
 //!     "input": [
 //!         {
 //!             "entry": "main",

@@ -39,7 +39,6 @@
 //!     ]
 //! }, {
 //!     "name": "overflow",
-//!     "ignore": true,
 //!     "input": [
 //!         {
 //!             "entry": "main",
@@ -53,7 +52,6 @@
 //!     ]
 //! }, {
 //!     "name": "overflow_minimal",
-//!     "ignore": true,
 //!     "input": [
 //!         {
 //!             "entry": "main",

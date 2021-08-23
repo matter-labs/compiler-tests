@@ -1,6 +1,5 @@
 //! { "cases": [ {
 //!     "name": "zero_by_zero",
-//!     "ignore": true,
 //!     "input": [
 //!         {
 //!             "entry": "main",
@@ -14,7 +13,6 @@
 //!     ]
 //! }, {
 //!     "name": "ordinar_by_zero",
-//!     "ignore": true,
 //!     "input": [
 //!         {
 //!             "entry": "main",
@@ -28,7 +26,6 @@
 //!     ]
 //! }, {
 //!     "name": "max_by_zero",
-//!     "ignore": true,
 //!     "input": [
 //!         {
 //!             "entry": "main",

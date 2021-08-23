@@ -3,8 +3,10 @@
         "loop/do_while",
         "return/loop/do_while",
         "algorithm/arrays/standart_functions_high_order",
+        "storage/mapping",
         "reports/CPR-215",
-        "reports/CPR-220"
+        "reports/CPR-220",
+        "reports/CPR-222"
     ],
     "solidity/simple": [
         "libsolidity",
