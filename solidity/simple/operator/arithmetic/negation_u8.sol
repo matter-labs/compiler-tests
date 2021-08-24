@@ -47,9 +47,7 @@
 //!             ]
 //!         }
 //!     ],
-//!     "expected": [
-//!         "error"
-//!     ]
+//!     "expected": "Runtime error"
 //! }, {
 //!     "name": "overflow_minimal",
 //!     "input": [
@@ -60,9 +58,7 @@
 //!             ]
 //!         }
 //!     ],
-//!     "expected": [
-//!         "error"
-//!     ]
+//!     "expected": "Runtime error"
 //! } ] }
 
 // SPDX-License-Identifier: UNLICENSED
@@ -71,6 +67,6 @@ pragma solidity ^0.8.0;
 
 contract Test {
     function main(uint8 a) public pure returns(int8) {
-        return -a;
+        return -int8(a);
     }
 }

@@ -47,9 +47,7 @@
 //!             ]
 //!         }
 //!     ],
-//!     "expected": [
-//!         "error"
-//!     ]
+//!     "expected": "Runtime error"
 //! }, {
 //!     "name": "overflow_negative",
 //!     "input": [
@@ -60,9 +58,7 @@
 //!             ]
 //!         }
 //!     ],
-//!     "expected": [
-//!         "error"
-//!     ]
+//!     "expected": "Runtime error"
 //! }, {
 //!     "name": "overflow_positive_minimal",
 //!     "input": [
@@ -73,9 +69,7 @@
 //!             ]
 //!         }
 //!     ],
-//!     "expected": [
-//!         "error"
-//!     ]
+//!     "expected": "Runtime error"
 //! }, {
 //!     "name": "overflow_positive",
 //!     "input": [
@@ -86,9 +80,7 @@
 //!             ]
 //!         }
 //!     ],
-//!     "expected": [
-//!         "error"
-//!     ]
+//!     "expected": "Runtime error"
 //! } ] }
 
 // SPDX-License-Identifier: UNLICENSED
@@ -97,6 +89,6 @@ pragma solidity ^0.8.0;
 
 contract Test {
     function main(int16 a) public pure returns(uint8) {
-        return uint8(a);
+        return uint8(uint16(a));
     }
 }
