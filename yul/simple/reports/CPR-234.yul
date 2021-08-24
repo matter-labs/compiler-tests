@@ -19,6 +19,7 @@ object "Test_222" {
     object "Test_222_deployed" {
         code {
             mstore(0, slt(calldataload(4), calldataload(36))
+            return(0, 32)
         }
     }
 }
