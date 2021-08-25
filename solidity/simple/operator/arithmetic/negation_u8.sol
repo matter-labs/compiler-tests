@@ -30,12 +30,12 @@
 //!         {
 //!             "entry": "main",
 //!             "calldata": [
-//!                 "128"
+//!                 "127"
 //!             ]
 //!         }
 //!     ],
 //!     "expected": [
-//!         "-128"
+//!         "-127"
 //!     ]
 //! }, {
 //!     "name": "overflow",
@@ -47,7 +47,9 @@
 //!             ]
 //!         }
 //!     ],
-//!     "expected": "Runtime error"
+//!     "expected": [
+//!         "56"
+//!     ]
 //! }, {
 //!     "name": "overflow_minimal",
 //!     "input": [
@@ -58,7 +60,9 @@
 //!             ]
 //!         }
 //!     ],
-//!     "expected": "Runtime error"
+//!     "expected": [
+//!         "127"
+//!     ]
 //! } ] }
 
 // SPDX-License-Identifier: UNLICENSED

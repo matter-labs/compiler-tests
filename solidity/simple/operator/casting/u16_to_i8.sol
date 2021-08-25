@@ -47,7 +47,9 @@
 //!             ]
 //!         }
 //!     ],
-//!     "expected": "Runtime error"
+//!     "expected": [
+//!         "-128"
+//!     ]
 //! }, {
 //!     "name": "overflow_positive",
 //!     "input": [
@@ -58,7 +60,9 @@
 //!             ]
 //!         }
 //!     ],
-//!     "expected": "Runtime error"
+//!     "expected": [
+//!         "-24"
+//!     ]
 //! } ] }
 
 // SPDX-License-Identifier: UNLICENSED

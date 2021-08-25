@@ -47,7 +47,9 @@
 //!             ]
 //!         }
 //!     ],
-//!     "expected": "Runtime error"
+//!     "expected": [
+//!         "127"
+//!     ]
 //! }, {
 //!     "name": "overflow_negative",
 //!     "input": [
@@ -58,7 +60,9 @@
 //!             ]
 //!         }
 //!     ],
-//!     "expected": "Runtime error"
+//!     "expected": [
+//!         "24"
+//!     ]
 //! }, {
 //!     "name": "overflow_positive_minimal",
 //!     "input": [
@@ -69,7 +73,9 @@
 //!             ]
 //!         }
 //!     ],
-//!     "expected": "Runtime error"
+//!     "expected": [
+//!         "-128"
+//!     ]
 //! }, {
 //!     "name": "overflow_positive",
 //!     "input": [
@@ -80,7 +86,9 @@
 //!             ]
 //!         }
 //!     ],
-//!     "expected": "Runtime error"
+//!     "expected": [
+//!         "-24"
+//!     ]
 //! } ] }
 
 // SPDX-License-Identifier: UNLICENSED

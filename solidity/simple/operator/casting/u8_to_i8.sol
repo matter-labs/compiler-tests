@@ -43,11 +43,13 @@
 //!         {
 //!             "entry": "main",
 //!             "calldata": [
-//!                 "128"
+//!                 "129"
 //!             ]
 //!         }
 //!     ],
-//!     "expected": "Runtime error"
+//!     "expected": [
+//!         "-127"
+//!     ]
 //! }, {
 //!     "name": "overflow",
 //!     "input": [
@@ -58,7 +60,9 @@
 //!             ]
 //!         }
 //!     ],
-//!     "expected": "Runtime error"
+//!     "expected": [
+//!         "-56"
+//!     ]
 //! } ] }
 
 // SPDX-License-Identifier: UNLICENSED
