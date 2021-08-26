@@ -1,8 +1,8 @@
 //! { "cases": [ {
-//!     "name": "f",
+//!     "name": "default",
 //!     "input": [
 //!         {
-//!             "entry": "f",
+//!             "entry": "deadbeef",
 //!             "calldata": [
 //!             ]
 //!         }

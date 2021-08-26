@@ -2,7 +2,7 @@
 //!     "name": "5_10",
 //!     "input": [
 //!         {
-//!             "entry": "adff3864",
+//!             "entry": "deadbeef",
 //!             "calldata": [
 //!                 "5", "10"
 //!             ]
@@ -14,7 +14,7 @@
 //!     "name": "10_10",
 //!     "input": [
 //!         {
-//!             "entry": "adff3864",
+//!             "entry": "deadbeef",
 //!             "calldata": [
 //!                 "10", "10"
 //!             ]
@@ -26,7 +26,7 @@
 //!     "name": "15_10",
 //!     "input": [
 //!         {
-//!             "entry": "adff3864",
+//!             "entry": "deadbeef",
 //!             "calldata": [
 //!                 "15", "10"
 //!             ]
@@ -38,7 +38,7 @@
 //!     "name": "-5_-10",
 //!     "input": [
 //!         {
-//!             "entry": "adff3864",
+//!             "entry": "deadbeef",
 //!             "calldata": [
 //!                 "-5", "-10"
 //!             ]
@@ -50,7 +50,7 @@
 //!     "name": "-10_-10",
 //!     "input": [
 //!         {
-//!             "entry": "adff3864",
+//!             "entry": "deadbeef",
 //!             "calldata": [
 //!                 "-10", "-10"
 //!             ]
@@ -62,7 +62,7 @@
 //!     "name": "-15_-10",
 //!     "input": [
 //!         {
-//!             "entry": "adff3864",
+//!             "entry": "deadbeef",
 //!             "calldata": [
 //!                 "-15", "-10"
 //!             ]
@@ -74,7 +74,7 @@
 //!     "name": "-5_10",
 //!     "input": [
 //!         {
-//!             "entry": "adff3864",
+//!             "entry": "deadbeef",
 //!             "calldata": [
 //!                 "-5", "10"
 //!             ]
@@ -86,7 +86,7 @@
 //!     "name": "5_-10",
 //!     "input": [
 //!         {
-//!             "entry": "adff3864",
+//!             "entry": "deadbeef",
 //!             "calldata": [
 //!                 "5", "-10"
 //!             ]

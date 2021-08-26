@@ -121,7 +121,20 @@
 //!         "7"
 //!     ]
 //! }, {
-//!     "name": "to_min",
+//!     "name": "to_min_from_positive",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "127", "-1"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "-127"
+//!     ]
+//! }, {
+//!     "name": "to_min_from_negative",
 //!     "input": [
 //!         {
 //!             "entry": "main",
@@ -171,6 +184,32 @@
 //!     ],
 //!     "expected": [
 //!         "1"
+//!     ]
+//! }, {
+//!     "name": "min_to_negative_ordinar",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "-127", "3"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "-42"
+//!     ]
+//! }, {
+//!     "name": "max_to_negative_ordinar",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "127", "-3"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "-42"
 //!     ]
 //! } ] }
 

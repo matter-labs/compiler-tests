@@ -2,7 +2,7 @@
 //!     "name": "positive",
 //!     "input": [
 //!         {
-//!             "entry": "adff3864",
+//!             "entry": "deadbeef",
 //!             "calldata": [
 //!                 "127"
 //!             ]
@@ -15,7 +15,7 @@
 //!     "name": "negative",
 //!     "input": [
 //!         {
-//!             "entry": "adff3864",
+//!             "entry": "deadbeef",
 //!             "calldata": [
 //!                 "255"
 //!             ]

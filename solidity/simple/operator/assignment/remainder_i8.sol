@@ -118,7 +118,7 @@
 //!         }
 //!     ],
 //!     "expected": [
-//!         "4"
+//!         "-3"
 //!     ]
 //! }, {
 //!     "name": "ordinar_remainder_negative_divider",
@@ -144,7 +144,7 @@
 //!         }
 //!     ],
 //!     "expected": [
-//!         "4"
+//!         "-3"
 //!     ]
 //! }, {
 //!     "name": "ordinar_max_remainder",
@@ -182,9 +182,7 @@
 //!             ]
 //!         }
 //!     ],
-//!     "expected": [
-//!         "0"
-//!     ]
+//!     "expected": "Runtime error"
 //! }, {
 //!     "name": "max_to_min",
 //!     "input": [
@@ -217,12 +215,38 @@
 //!         {
 //!             "entry": "main",
 //!             "calldata": [
-//!                 "-128", "63"
+//!                 "-128", "127"
 //!             ]
 //!         }
 //!     ],
 //!     "expected": [
-//!         "61"
+//!         "-1"
+//!     ]
+//! }, {
+//!     "name": "min_to_negative_ordinar",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "-127", "3"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "-1"
+//!     ]
+//! }, {
+//!     "name": "max_to_negative_ordinar",
+//!     "input": [
+//!         {
+//!             "entry": "main",
+//!             "calldata": [
+//!                 "127", "-3"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
 //!     ]
 //! } ] }
 

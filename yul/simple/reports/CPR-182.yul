@@ -1,8 +1,8 @@
 //! { "cases": [ {
-//!     "name": "zero_zero",
+//!     "name": "default",
 //!     "input": [
 //!         {
-//!             "entry": "ae877795",
+//!             "entry": "deadbeef",
 //!             "calldata": [
 //!                 "0", "0"
 //!             ]
