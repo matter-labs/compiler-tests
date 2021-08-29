@@ -2,7 +2,7 @@
 
 pragma solidity ^0.8.0;
 
-import "./storage.sol";
+import "./callable.sol";
 
 contract Main {
     function main(uint key, uint value) public returns(uint) {
