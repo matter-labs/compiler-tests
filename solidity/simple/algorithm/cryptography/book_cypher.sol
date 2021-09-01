@@ -1,4 +1,4 @@
-//! { "ignore": true, "cases": [ {
+//! { "cases": [ {
 //!     "name": "complex1",
 //!     "input": [
 //!         {
@@ -87,7 +87,7 @@ contract Test {
 
     function decrypt(uint8[SIZE] memory data) private view returns(uint8[SIZE] memory) {
         for(uint8 i = 0; i < SIZE; i++) {
-            uint8 page = data[i] / SIZE / SIZE;
+            uint8 page = data[i] / KEY_SZ / KEY_SZ;
             uint8 ost = data[i] % (KEY_SZ * KEY_SZ);
             uint8 row = ost / KEY_SZ;
             uint8 col = ost % KEY_SZ;
