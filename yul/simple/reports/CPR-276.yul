@@ -16,20 +16,6 @@ object "ERC20_14" {
         {
             return(0, 0)
         }
-        function allocateMemory(size) -> memPtr
-        {
-            memPtr := mload(64)
-            let newFreePtr := add(memPtr, size)
-            //let newFreePtr := add(memPtr, and(add(size, 31), 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0)) // - with this line instead previous (as in solc-0.8.1+) it works
-            if or(gt(newFreePtr, 0xffffffffffffffff), lt(newFreePtr, memPtr)) { panic_error_0x41() }
-            mstore(64, newFreePtr)
-        }
-        function panic_error_0x41()
-        {
-            mstore(0, 35408467139433450592217433187231851964531694900788300625387963629091585785856)
-            mstore(4, 0x41)
-            revert(0, 0x24)
-        }
     }
     object "ERC20_14_deployed" {
         code {
@@ -59,6 +45,21 @@ object "ERC20_14" {
                 let newLen := mload(array)
                 if gt(newLen, 0xffffffffffffffff) { panic_error_0x41() }
                 return(0, 0)
+            }
+            function allocateMemory(size) -> memPtr
+            {
+                memPtr := mload(64)
+                let newFreePtr := add(memPtr, size)
+                // in solc-0.8.1+ worked only with the next line instead of the previous
+                // let newFreePtr := add(memPtr, and(add(size, 31), 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0))
+                if or(gt(newFreePtr, 0xffffffffffffffff), lt(newFreePtr, memPtr)) { panic_error_0x41() }
+                mstore(64, newFreePtr)
+            }
+            function panic_error_0x41()
+            {
+                mstore(0, 35408467139433450592217433187231851964531694900788300625387963629091585785856)
+                mstore(4, 0x41)
+                revert(0, 0x24)
             }
         }
     }
