@@ -8,7 +8,10 @@
 //!             ]
 //!         }
 //!     ],
-//!     "expected": "Runtime error"
+//!     "expected": [
+//!         "0x4E487B7100000000000000000000000000000000000000000000000000000000",
+//!         "0x11"
+//!     ]
 //! } ] }
 
 // SPDX-License-Identifier: UNLICENSED
