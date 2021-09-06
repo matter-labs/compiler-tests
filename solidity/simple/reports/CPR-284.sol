@@ -4,12 +4,12 @@
 //!         {
 //!             "entry": "f",
 //!             "calldata": [
-//!                 "3", "1", "2", "3"
+//!                 "32", "3", "1", "2", "3"
 //!             ]
 //!         }
 //!     ],
 //!     "expected": [
-//!         "1", "1", "1", "1"
+//!         "3", "2", "1"
 //!     ]
 //! } ] }
 
@@ -18,7 +18,7 @@
 pragma solidity ^0.8.0;
 
 contract Test {
-    function f(bytes32[] memory proposalNames) public pure returns(uint, uint, uint, uint) {
-        return (1, 1, 1, 1);
+    function f(bytes32[] memory data) public pure returns(bytes32, bytes32, bytes32) {
+        return (data[2], data[1], data[0]);
     }
 }
