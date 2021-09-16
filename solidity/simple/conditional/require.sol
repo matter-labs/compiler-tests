@@ -8,7 +8,9 @@
 //!             ]
 //!         }
 //!     ],
-//!     "expected": "Runtime error"
+//!     "expected": [
+//!         "0x1"
+//!     ]
 //! }, {
 //!     "name": "condition_false",
 //!     "input": [
