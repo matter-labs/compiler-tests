@@ -1,0 +1,26 @@
+//! { "cases": [ {
+//!     "name": "default",
+//!     "input": [
+//!         {
+//!             "entry": "deadbeef",
+//!             "calldata": [
+//!                 "69"
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [ "42" ]
+//! } ] }
+
+{
+  ".code": [],
+  ".data": { "0": { ".code": [
+
+    {"name": "PUSH",      "value": "2A" },
+    {"name": "PUSH",      "value": "160" },
+    {"name": "MSTORE" },
+    {"name": "PUSH",      "value": "32" },
+    {"name": "PUSH",      "value": "160" },
+    {"name": "RETURN" }
+
+  ]}}
+}
