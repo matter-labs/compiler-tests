@@ -1,0 +1,20 @@
+{ "cases": [ {
+    "name": "entry",
+    "input": [
+        {
+            "address": "0x0000000000000000000000000000000000000002",
+            "entry": "main",
+            "calldata": [
+            ]
+        }
+    ],
+    "expected": {
+        "return_data": [],
+        "exception": true
+    }
+} ],
+    "contracts": {
+        "0x0000000000000000000000000000000000000002": "main.sol",
+        "0x0000000000001231235665444443320000000002": "callable.sol"
+    }
+}
