@@ -1,0 +1,34 @@
+//! { "cases": [ {
+//!     "name": "default",
+//!     "input": [
+//!         {
+//!             "entry": "deadbeef",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [ "4" ]
+//! } ] }
+
+{
+  ".code": [],
+  ".data": { "0": { ".code": [
+
+    {"name": "PUSH",        "value": "1" },
+    {"name": "PUSH",        "value": "2" },
+    {"name": "PUSH",        "value": "3" },
+    {"name": "PUSH",        "value": "4" },
+    {"name": "PUSH",        "value": "5" },
+    {"name": "PUSH",        "value": "6" },
+    {"name": "PUSH",        "value": "7" },
+    {"name": "PUSH",        "value": "8" },
+    {"name": "SWAP4" },
+    {"name": "PUSH",        "value": "160" },
+    {"name": "MSTORE" },
+    
+    {"name": "PUSH",        "value": "32" },
+    {"name": "PUSH",        "value": "160" },
+    {"name": "RETURN" }
+
+  ]}}
+}

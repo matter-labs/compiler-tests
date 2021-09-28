@@ -7,18 +7,21 @@
 //!             ]
 //!         }
 //!     ],
-//!     "expected": [ "42" ]
+//!     "expected": [ "1" ]
 //! } ] }
 
 {
   ".code": [],
   ".data": { "0": { ".code": [
 
-    {"name": "PUSH",      "value": "2A" },
-    {"name": "PUSH",      "value": "160" },
+    {"name": "PUSH",        "value": "5" },
+    {"name": "PUSH",        "value": "6" },
+    {"name": "SUB" },
+    {"name": "PUSH",        "value": "160" },
     {"name": "MSTORE" },
-    {"name": "PUSH",      "value": "32" },
-    {"name": "PUSH",      "value": "160" },
+
+    {"name": "PUSH",        "value": "32" },
+    {"name": "PUSH",        "value": "160" },
     {"name": "RETURN" }
 
   ]}}
