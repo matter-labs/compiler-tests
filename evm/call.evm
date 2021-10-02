@@ -7,7 +7,7 @@
 //!             ]
 //!         }
 //!     ],
-//!     "expected": [ "5" ]
+//!     "expected": [ "42" ]
 //! } ] }
 
 {
@@ -15,8 +15,8 @@
   ".data": { "0": { ".code": [
 
     {"name": "PUSH [tag]",  "value": "2" },
-    {"name": "PUSH",        "value": "2" },
-    {"name": "PUSH",        "value": "3" },
+    {"name": "PUSH",        "value": "10" },
+    {"name": "PUSH",        "value": "1A" },
     {"name": "PUSH [tag]",  "value": "1" },
     {"name": "JUMP" },
 
@@ -29,7 +29,8 @@
 
     {"name": "tag",         "value": "1" },
     {"name": "ADD" },
-    {"name": "JUMP" }
+    {"name": "SWAP1" },
+    {"name": "JUMP",        "value": "[out]" }
 
   ]}}
 }
