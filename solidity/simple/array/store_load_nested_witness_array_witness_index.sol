@@ -146,7 +146,7 @@
 
 // SPDX-License-Identifier: UNLICENSED
 
-pragma solidity ^0.8.0;
+pragma solidity >=0.5.0;
 
 contract Test {
     uint8 constant SIDE_SIZE = 3;
