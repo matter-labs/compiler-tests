@@ -82,9 +82,9 @@
 //!     ]
 //! } ] }
 
-// SPDX-License-Identifier: UNLICENSED
+// SPDX-License-Identifier: MIT
 
-pragma solidity ^0.8.0;
+pragma solidity >=0.8.0;
 
 contract Test {
     uint128 constant EPS = 1E6;

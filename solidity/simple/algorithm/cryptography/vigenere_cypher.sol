@@ -28,9 +28,9 @@
 //!     ]
 //! } ] }
 
-// SPDX-License-Identifier: UNLICENSED
+// SPDX-License-Identifier: MIT
 
-pragma solidity ^0.8.0;
+pragma solidity >=0.8.0;
 
 contract Test {
     function encryptSym(uint8 sym, uint8 keySym) private pure returns(uint8) {

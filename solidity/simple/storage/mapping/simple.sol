@@ -13,9 +13,9 @@
 //!     ]
 //! } ] }
 
-// SPDX-License-Identifier: UNLICENSED
+// SPDX-License-Identifier: MIT
 
-pragma solidity ^0.8.0;
+pragma solidity >=0.8.0;
 
 contract Test {
     mapping (uint256 => uint256) data;

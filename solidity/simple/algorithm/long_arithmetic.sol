@@ -36,9 +36,9 @@
 //!     ]
 //! } ] }
 
-// SPDX-License-Identifier: UNLICENSED
+// SPDX-License-Identifier: MIT
 
-pragma solidity ^0.8.0;
+pragma solidity >=0.8.0;
 
 contract Test {
     uint64 constant BASE = 1000000000;

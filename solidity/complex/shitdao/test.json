@@ -1,9 +1,6 @@
 {
-    "modes": [
-        "solc-0.8.7"
-    ],
     "cases": [ {
-    "name": "first",
+    "name": "default",
     "input": [
         {
             "address": "0x0000000000000000000000000000000000000001",

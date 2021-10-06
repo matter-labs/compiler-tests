@@ -1,10 +1,4 @@
 //! {
-//!   "modes": [
-//!     "solc-0.8.4",
-//!     "solc-0.8.5",
-//!     "solc-0.8.6",
-//!     "solc-0.8.7"
-//!   ],
 //!   "cases": [ {
 //!     "name": "require_short",
 //!     "input": [
@@ -61,9 +55,9 @@
 //!     ]
 //! } ] }
 
-// SPDX-License-Identifier: UNLICENSED
+// SPDX-License-Identifier: MIT
 
-pragma solidity ^0.8.0;
+pragma solidity >=0.8.4;
 
 contract Test {
     error TestError(uint256 one, uint256 two, uint256 three, string data);
