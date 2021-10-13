@@ -22,7 +22,7 @@
 
 // SPDX-License-Identifier: MIT
 
-pragma solidity >=0.8.0;
+pragma solidity >=0.5.0;
 
 // solc-0.8.5+ calculate keccak256 at compile time, whereas we use another hashing algorithm at runtime
 contract Test {

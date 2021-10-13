@@ -39,6 +39,7 @@
 //!     ]
 //! }, {
 //!     "name": "overflow",
+//!     "modes": [ "0.8" ],
 //!     "input": [
 //!         {
 //!             "entry": "main",
@@ -52,6 +53,7 @@
 //!     ]
 //! }, {
 //!     "name": "overflow_minimal",
+//!     "modes": [ "0.8" ],
 //!     "input": [
 //!         {
 //!             "entry": "main",

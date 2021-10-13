@@ -1,5 +1,6 @@
 //! { "cases": [ {
 //!     "name": "zero_by_zero",
+//!     "modes": [ "0.8" ],
 //!     "input": [
 //!         {
 //!             "entry": "main",
@@ -14,6 +15,7 @@
 //!     ]
 //! }, {
 //!     "name": "ordinar_by_zero",
+//!     "modes": [ "0.8" ],
 //!     "input": [
 //!         {
 //!             "entry": "main",
@@ -28,6 +30,7 @@
 //!     ]
 //! }, {
 //!     "name": "min_by_zero",
+//!     "modes": [ "0.8" ],
 //!     "input": [
 //!         {
 //!             "entry": "main",
@@ -42,6 +45,7 @@
 //!     ]
 //! }, {
 //!     "name": "max_by_zero",
+//!     "modes": [ "0.8" ],
 //!     "input": [
 //!         {
 //!             "entry": "main",
