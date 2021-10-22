@@ -10,8 +10,12 @@
 //!     "expected": [ "42" ]
 //! } ] }
 
-{
-  ".code": [],
+{"contracts": { "Test": { "asm": {
+  ".code": [
+    {"name": "PUSH",        "value": "0" },
+    {"name": "PUSH",        "value": "0" },
+    {"name": "RETURN" }
+  ],
   ".data": { "0": { ".code": [
 
     {"name": "PUSH [tag]",  "value": "2" },
@@ -23,7 +27,7 @@
     {"name": "tag",         "value": "2" },
     {"name": "PUSH",        "value": "160" },
     {"name": "MSTORE" },
-    {"name": "PUSH",        "value": "32" },
+    {"name": "PUSH",        "value": "20" },
     {"name": "PUSH",        "value": "160" },
     {"name": "RETURN" },
 
@@ -33,4 +37,4 @@
     {"name": "JUMP",        "value": "[out]" }
 
   ]}}
-}
+}}}, "version": "default" }

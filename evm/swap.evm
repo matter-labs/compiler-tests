@@ -10,8 +10,12 @@
 //!     "expected": [ "4" ]
 //! } ] }
 
-{
-  ".code": [],
+{"contracts": { "Test": { "asm": {
+  ".code": [
+    {"name": "PUSH",        "value": "0" },
+    {"name": "PUSH",        "value": "0" },
+    {"name": "RETURN" }
+  ],
   ".data": { "0": { ".code": [
 
     {"name": "PUSH",        "value": "1" },
@@ -31,4 +35,4 @@
     {"name": "RETURN" }
 
   ]}}
-}
+}}}, "version": "default" }
