@@ -17,6 +17,6 @@
     ]
 } ],
     "contracts": {
-        "0x0000000000000000000000000000000000000001": "UniswapV2Router01.sol"
+        "0x0000000000000000000000000000000000000001": "UniswapV2Router01.sol:UniswapV2Router01"
     }
 }
