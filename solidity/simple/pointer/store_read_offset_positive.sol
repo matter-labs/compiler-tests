@@ -45,7 +45,7 @@ pragma solidity >=0.5.0;
 
 contract Test {
     function main(uint16 _address, uint8 value) public pure returns(uint8 result) {
-        uint16 pointer = (_address - 7) * 32;
+        uint16 pointer = (_address + 7) * 32;
         assembly {
             mstore(add(pointer, add(0x60, 0x80)), value)
             result := mload(add(pointer, sub(0x140, 0x60)))
