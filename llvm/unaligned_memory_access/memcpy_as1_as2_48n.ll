@@ -684,6 +684,7 @@ entry:
   %cell_2 = load i256, i256 addrspace(2)* inttoptr(i256 288 to i256 addrspace(2)*), align 32
   %cell_3 = load i256, i256 addrspace(2)* inttoptr(i256 320 to i256 addrspace(2)*), align 32
   %offset = load i256, i256 addrspace(2)* inttoptr(i256 416 to i256 addrspace(2)*), align 32
+  %size = load i256, i256 addrspace(2)* inttoptr(i256 448 to i256 addrspace(2)*), align 32
 
   store i256 %cell_1, i256 addrspace(1)* inttoptr (i256 32 to i256 addrspace(1)*), align 32
   store i256 %cell_2, i256 addrspace(1)* inttoptr (i256 64 to i256 addrspace(1)*), align 32
@@ -691,7 +692,7 @@ entry:
 
   %addr = add i256 %offset, 32
   %addr.1 = inttoptr i256 %addr to i256 addrspace(1)*
-  call void @llvm.memcpy.p1i256.p2i256.i256(i256 addrspace(1)* align 1 %addr.1, i256 addrspace(2)* align 1 inttoptr (i256 352 to i256 addrspace(2)*), i256 48, i1 false)
+  call void @llvm.memcpy.p1i256.p2i256.i256(i256 addrspace(1)* align 1 %addr.1, i256 addrspace(2)* align 1 inttoptr (i256 352 to i256 addrspace(2)*), i256 %size, i1 false)
   %cell_1r = load i256, i256 addrspace(1)* inttoptr(i256 32 to i256 addrspace(1)*), align 32
   %cell_2r = load i256, i256 addrspace(1)* inttoptr(i256 64 to i256 addrspace(1)*), align 32
   %cell_3r = load i256, i256 addrspace(1)* inttoptr(i256 96 to i256 addrspace(1)*), align 32
