@@ -18,9 +18,9 @@ contract Callable {
         }
     }
 
-    constructor(uint reason) {
-        throwError(reason);
-    }
+//    constructor(uint reason) {
+//        throwError(reason);
+//    }
 
     function f(uint reason) public {
         throwError(reason);

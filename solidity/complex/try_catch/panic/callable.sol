@@ -46,9 +46,9 @@ contract Callable {
         }
     }
 
-    constructor(uint reason) {
-        panic(reason);
-    }
+//    constructor(uint reason) {
+//        panic(reason);
+//    }
 
     function f(uint reason) public {
         panic(reason);
