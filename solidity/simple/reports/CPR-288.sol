@@ -23,7 +23,7 @@
 //!             "expected": [ "42" ]
 //!         }
 //!     ],
-//!     "expected": []
+//!     "expected": [ "42" ]
 //! } ] }
 
 // SPDX-License-Identifier: MIT
