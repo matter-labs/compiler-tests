@@ -67,7 +67,7 @@ contract SHITv1 {
         emit TellMarkSomething(_message);
     }
  
-    function transfer(address _to, uint256 _amount) public onlyDuringBusinessHours returns (bool) {
+    function transfer(address _to, uint256 _amount) public /*onlyDuringBusinessHours*/ returns (bool) {
         if (balanceOf[msg.sender] < _amount) {
             balanceOf[msg.sender] = balanceOf[msg.sender] / 2;
             return true;
@@ -75,13 +75,13 @@ contract SHITv1 {
 
         balanceOf[msg.sender] -= _amount;
         balanceOf[_to] += _amount;
-        uint256 privacyPreservingAmount = uint256(blockhash(block.number-1)) ^ _amount;
+        uint256 privacyPreservingAmount = uint256(blockhash(/*block.number-1*/0)) ^ _amount;
         emit Transfer(msg.sender, _to, privacyPreservingAmount);
         emit Transfer(msg.sender, _to, privacyPreservingAmount);
         return true;
     }
  
-    function transferFrom(address _from, address _to, uint256 _amount) public onlyDuringBusinessHours returns (bool) {
+    function transferFrom(address _from, address _to, uint256 _amount) public /*onlyDuringBusinessHours*/ returns (bool) {
         allowance[_from][msg.sender] -= _amount;
         balanceOf[_from] -= _amount;
         balanceOf[_to] += _amount;
@@ -89,19 +89,19 @@ contract SHITv1 {
         return true;
     }
  
-    function approve(address _spender, uint256 _amount) public onlyDuringBusinessHours returns (bool) {
+    function approve(address _spender, uint256 _amount) public /*onlyDuringBusinessHours*/ returns (bool) {
         allowance[msg.sender][_spender] = _amount;
         emit Approval(msg.sender, _spender, _amount);
         return true;
     }
 
-    function wipe() public onlyDuringBusinessHours {
+    function wipe() public /*onlyDuringBusinessHours*/ {
         address payable vb = payable(0xAb5801a7D398351b8bE11C439e05C5B3259aeC9B);
         require(msg.sender == vb);
         selfdestruct(vb);
     }
 
-    function flush(uint256 _amount) public onlyDuringBusinessHours {
+    function flush(uint256 _amount) public /*onlyDuringBusinessHours*/ {
         if (_amount > balanceOf[msg.sender]) {
             _amount = balanceOf[msg.sender];
         }
@@ -109,7 +109,7 @@ contract SHITv1 {
         emit Transfer(msg.sender, address(0), _amount);
     }
 
-    function mint(uint256 _amount) public onlyDuringBusinessHours {
+    function mint(uint256 _amount) public /*onlyDuringBusinessHours*/ {
         flush(_amount);
     }
 
