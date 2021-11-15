@@ -27,6 +27,12 @@
             "entry": "_mint",
             "calldata": [
                 "0x42", "1000000"
+            ],
+            "events": [
+                {
+                    "topics": ["0x742ddab21c2fcfa13cae111a0cd043fb6c4375a90b69212466f265cea02c6dbc"],
+                    "values": []
+                }
             ]
         },
         {
