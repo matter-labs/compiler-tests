@@ -14,15 +14,13 @@ contract Callable {
             require(false, "error2");
         } else if (reason == 5) {
             Callable callable = Callable(0x0000000000000000000000000000000000000003);
-            callable.f(reason);
+            callable.f();
         }
     }
 
-//    constructor(uint reason) {
-//        throwError(reason);
-//    }
+    function f() public pure {}
 
-    function f(uint reason) public {
+    constructor(uint reason) {
         throwError(reason);
     }
 }
