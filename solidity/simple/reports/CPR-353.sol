@@ -22,9 +22,6 @@ error Error1();
 
 contract Test {
     function main() public returns(bytes memory) {
-//        (bool success, bytes memory result) = address(this).call(abi.encodeWithSignature("f()"));
-//        return result;
-// Also, the same result can be reproduced using the code above.
         try this.f() {
             return "";
         } catch(bytes memory reason) {
@@ -33,9 +30,6 @@ contract Test {
     }
 
     function f() external {
-        if (true) {
-            revert Error1();
-        }
-        // if remove if condition(just `revert Error1();` as function body) -  it will crash only on M1 and M2 (not on M3)
+        revert Error1();
     }
 }
