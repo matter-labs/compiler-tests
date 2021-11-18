@@ -7,11 +7,8 @@ pragma abicoder v2;
 import "./Foo.sol";
 
 contract Import {
-    // Initialize Foo.sol
-    Foo public foo = new Foo();
-
     // Test Foo.sol by getting it's name.
-    function getFooName() public view returns (string memory) {
-        return foo.name();
+    function getFooName() public pure returns (string memory) {
+        return Foo.name;
     }
 }
