@@ -1,4 +1,4 @@
-//! { "ignore": true, "cases": [ {
+//! { "cases": [ {
 //!     "name": "main",
 //!     "input": [
 //!         {
@@ -8,14 +8,17 @@
 //!             ]
 //!         }
 //!     ],
-//!     "expected": [
-//!         "1"
-//!     ]
+//!     "expected": {
+//!         "return_data": [
+//!             "0x32C1D44B00000000000000000000000000000000000000000000000000000000"
+//!         ],
+//!         "exception": true
+//!     }
 //! } ] }
 
 // SPDX-License-Identifier: MIT
 
-pragma solidity >=0.4.0;
+pragma solidity >=0.5.0;
 
 contract Test {
     function main(address payable destination) public returns(uint64) {
