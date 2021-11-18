@@ -1,0 +1,19 @@
+{ "ignore": true, "cases": [ {
+    "name": "entry",
+    "input": [
+        {
+            "address": "0xDEADBEEF00000000000000000000000000000001",
+            "entry": "getFooName",
+            "calldata": [
+            ]
+        }
+    ],
+    "expected": [
+        "0xFFFFFF0000000000000000000000000000000000000000000000000000000000"
+    ]
+} ],
+    "contracts": {
+        "0xDEADBEEF00000000000000000000000000000001": "Import.sol:Import",
+        "0xDEADBEEF00000000000000000000000000000002": "Foo.sol:Foo"
+    }
+}
