@@ -2,7 +2,7 @@
     "name": "entry",
     "input": [
         {
-            "address": "0xDEADBEEF00000000000000000000000000000001",
+            "address": "0xdeADbeEf00000000000000000000000000000001",
             "entry": "getFooName",
             "calldata": [
             ]
@@ -13,7 +13,7 @@
     ]
 } ],
     "contracts": {
-        "0xDEADBEEF00000000000000000000000000000001": "Import.sol:Import",
-        "0xDEADBEEF00000000000000000000000000000002": "Foo.sol:Foo"
+        "0xdeADbeEf00000000000000000000000000000001": "Import.sol:Import",
+        "0xdeADbeEf00000000000000000000000000000002": "Foo.sol:Foo"
     }
 }

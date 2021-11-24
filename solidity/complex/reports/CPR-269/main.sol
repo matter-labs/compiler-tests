@@ -6,7 +6,7 @@ import "./callable.sol";
 
 contract Main {
     function main(uint[1] calldata p1) public returns(uint) {
-        Callable callable = Callable(address(0x0000000000000000000000000000000000000002));
+        Callable callable = Callable(address(0xdeADbeEf00000000000000000000000000000002));
         return callable.f(p1);
     }
 }

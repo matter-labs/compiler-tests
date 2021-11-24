@@ -20,6 +20,6 @@
         "0x0000000000000000000000000000000000000001": "UniswapV2Router01.sol:UniswapV2Router01"
     },
     "libraries": {
-        "libraries/TransferHelper.sol": { "TransferHelper": "0x0000000000000000000000000000000000000003" }
+        "libraries/TransferHelper.sol": { "TransferHelper": "0xdeADbeEf00000000000000000000000000000003" }
     }
 }
