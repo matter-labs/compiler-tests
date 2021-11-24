@@ -56,16 +56,13 @@
 //!         }
 //!     ],
 //!     "expected": {
-//!         "return_data": [
-//!             "0x4E487B7100000000000000000000000000000000000000000000000000000000",
-//!             "0x0000002100000000000000000000000000000000000000000000000000000000"
-//!         ],
+//!         "return_data": [],
 //!         "exception": true
 //!     }
 //! } ] }
 
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.3;
+pragma solidity >=0.8.0;
 
 contract Test {
     // Enum representing shipping status
