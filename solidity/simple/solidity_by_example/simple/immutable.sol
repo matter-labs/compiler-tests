@@ -2,6 +2,7 @@
 //!     "name": "address",
 //!     "input": [
 //!         {
+//!             "constructor": true,
 //!             "calldata": [
 //!                 "9823"
 //!             ]
@@ -18,6 +19,7 @@
 //!     "name": "uint",
 //!     "input": [
 //!         {
+//!             "constructor": true,
 //!             "calldata": [
 //!                 "555555"
 //!             ]
