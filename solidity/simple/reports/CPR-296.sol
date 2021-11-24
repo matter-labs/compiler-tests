@@ -2,6 +2,7 @@
 //!     "name": "main",
 //!     "input": [
 //!         {
+//!             "constructor": true,
 //!             "calldata": [
 //!                 "32"
 //!             ]

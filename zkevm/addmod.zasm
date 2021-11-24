@@ -2,7 +2,7 @@
 ;!     "name": "zero",
 ;!     "input": [
 ;!         {
-;!             "entry": "deadbeef",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                 "42",
 ;!                 "25",
@@ -17,7 +17,7 @@
 ;!     "name": "default",
 ;!     "input": [
 ;!         {
-;!             "entry": "deadbeef",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                 "42",
 ;!                 "25",
@@ -32,7 +32,7 @@
 ;!     "name": "overflow",
 ;!     "input": [
 ;!         {
-;!             "entry": "deadbeef",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                 "0xfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe",
 ;!                 "0xfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe",
@@ -50,9 +50,9 @@
     .globl  __selector
     .type   __selector,@function
 __selector:
-        mov.p 8, r1
-        mov.p 9, r2
-        mov.p 10, r3
+        mov.p 1, r1
+        mov.p 2, r2
+        mov.p 3, r3
 
         sub r3, r0, r0
         je .zero, .non_zero
@@ -76,7 +76,10 @@ __selector:
         add r4, r6, r1
         j .return, .return
 .return:
-        mov.p r1, 8
+        sfll #32, r2, r2
+        sflh #0, r2, r2
+        mov.p r2, 0
+        mov.p r1, 1
         ret
 .Lfunc_end0:
         .size   __selector, .Lfunc_end0-__selector

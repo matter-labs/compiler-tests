@@ -2,7 +2,7 @@
 ;!     "name": "0",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0x1F1E1D1C1B1A191817161514131211100F0E0D0C0B0A09080706050403020100",
 ;!                "0x3F3E3D3C3B3A393837363534333231302F2E2D2C2B2A29282726252423222120",
@@ -22,7 +22,7 @@
 ;!     "name": "1",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0x1F1E1D1C1B1A191817161514131211100F0E0D0C0B0A09080706050403020100",
 ;!                "0x3F3E3D3C3B3A393837363534333231302F2E2D2C2B2A29282726252423222120",
@@ -42,7 +42,7 @@
 ;!     "name": "2",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0x1F1E1D1C1B1A191817161514131211100F0E0D0C0B0A09080706050403020100",
 ;!                "0x3F3E3D3C3B3A393837363534333231302F2E2D2C2B2A29282726252423222120",
@@ -62,7 +62,7 @@
 ;!     "name": "3",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0x1F1E1D1C1B1A191817161514131211100F0E0D0C0B0A09080706050403020100",
 ;!                "0x3F3E3D3C3B3A393837363534333231302F2E2D2C2B2A29282726252423222120",
@@ -82,7 +82,7 @@
 ;!     "name": "4",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0x1F1E1D1C1B1A191817161514131211100F0E0D0C0B0A09080706050403020100",
 ;!                "0x3F3E3D3C3B3A393837363534333231302F2E2D2C2B2A29282726252423222120",
@@ -102,7 +102,7 @@
 ;!     "name": "5",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0x1F1E1D1C1B1A191817161514131211100F0E0D0C0B0A09080706050403020100",
 ;!                "0x3F3E3D3C3B3A393837363534333231302F2E2D2C2B2A29282726252423222120",
@@ -122,7 +122,7 @@
 ;!     "name": "6",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0x1F1E1D1C1B1A191817161514131211100F0E0D0C0B0A09080706050403020100",
 ;!                "0x3F3E3D3C3B3A393837363534333231302F2E2D2C2B2A29282726252423222120",
@@ -142,7 +142,7 @@
 ;!     "name": "7",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0x1F1E1D1C1B1A191817161514131211100F0E0D0C0B0A09080706050403020100",
 ;!                "0x3F3E3D3C3B3A393837363534333231302F2E2D2C2B2A29282726252423222120",
@@ -162,7 +162,7 @@
 ;!     "name": "8",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0x1F1E1D1C1B1A191817161514131211100F0E0D0C0B0A09080706050403020100",
 ;!                "0x3F3E3D3C3B3A393837363534333231302F2E2D2C2B2A29282726252423222120",
@@ -182,7 +182,7 @@
 ;!     "name": "9",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0x1F1E1D1C1B1A191817161514131211100F0E0D0C0B0A09080706050403020100",
 ;!                "0x3F3E3D3C3B3A393837363534333231302F2E2D2C2B2A29282726252423222120",
@@ -202,7 +202,7 @@
 ;!     "name": "10",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0x1F1E1D1C1B1A191817161514131211100F0E0D0C0B0A09080706050403020100",
 ;!                "0x3F3E3D3C3B3A393837363534333231302F2E2D2C2B2A29282726252423222120",
@@ -222,7 +222,7 @@
 ;!     "name": "11",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0x1F1E1D1C1B1A191817161514131211100F0E0D0C0B0A09080706050403020100",
 ;!                "0x3F3E3D3C3B3A393837363534333231302F2E2D2C2B2A29282726252423222120",
@@ -242,7 +242,7 @@
 ;!     "name": "12",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0x1F1E1D1C1B1A191817161514131211100F0E0D0C0B0A09080706050403020100",
 ;!                "0x3F3E3D3C3B3A393837363534333231302F2E2D2C2B2A29282726252423222120",
@@ -262,7 +262,7 @@
 ;!     "name": "13",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0x1F1E1D1C1B1A191817161514131211100F0E0D0C0B0A09080706050403020100",
 ;!                "0x3F3E3D3C3B3A393837363534333231302F2E2D2C2B2A29282726252423222120",
@@ -282,7 +282,7 @@
 ;!     "name": "14",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0x1F1E1D1C1B1A191817161514131211100F0E0D0C0B0A09080706050403020100",
 ;!                "0x3F3E3D3C3B3A393837363534333231302F2E2D2C2B2A29282726252423222120",
@@ -302,7 +302,7 @@
 ;!     "name": "15",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0x1F1E1D1C1B1A191817161514131211100F0E0D0C0B0A09080706050403020100",
 ;!                "0x3F3E3D3C3B3A393837363534333231302F2E2D2C2B2A29282726252423222120",
@@ -322,7 +322,7 @@
 ;!     "name": "16",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0x1F1E1D1C1B1A191817161514131211100F0E0D0C0B0A09080706050403020100",
 ;!                "0x3F3E3D3C3B3A393837363534333231302F2E2D2C2B2A29282726252423222120",
@@ -342,7 +342,7 @@
 ;!     "name": "17",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0x1F1E1D1C1B1A191817161514131211100F0E0D0C0B0A09080706050403020100",
 ;!                "0x3F3E3D3C3B3A393837363534333231302F2E2D2C2B2A29282726252423222120",
@@ -362,7 +362,7 @@
 ;!     "name": "18",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0x1F1E1D1C1B1A191817161514131211100F0E0D0C0B0A09080706050403020100",
 ;!                "0x3F3E3D3C3B3A393837363534333231302F2E2D2C2B2A29282726252423222120",
@@ -382,7 +382,7 @@
 ;!     "name": "19",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0x1F1E1D1C1B1A191817161514131211100F0E0D0C0B0A09080706050403020100",
 ;!                "0x3F3E3D3C3B3A393837363534333231302F2E2D2C2B2A29282726252423222120",
@@ -402,7 +402,7 @@
 ;!     "name": "20",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0x1F1E1D1C1B1A191817161514131211100F0E0D0C0B0A09080706050403020100",
 ;!                "0x3F3E3D3C3B3A393837363534333231302F2E2D2C2B2A29282726252423222120",
@@ -422,7 +422,7 @@
 ;!     "name": "21",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0x1F1E1D1C1B1A191817161514131211100F0E0D0C0B0A09080706050403020100",
 ;!                "0x3F3E3D3C3B3A393837363534333231302F2E2D2C2B2A29282726252423222120",
@@ -442,7 +442,7 @@
 ;!     "name": "22",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0x1F1E1D1C1B1A191817161514131211100F0E0D0C0B0A09080706050403020100",
 ;!                "0x3F3E3D3C3B3A393837363534333231302F2E2D2C2B2A29282726252423222120",
@@ -462,7 +462,7 @@
 ;!     "name": "23",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0x1F1E1D1C1B1A191817161514131211100F0E0D0C0B0A09080706050403020100",
 ;!                "0x3F3E3D3C3B3A393837363534333231302F2E2D2C2B2A29282726252423222120",
@@ -482,7 +482,7 @@
 ;!     "name": "24",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0x1F1E1D1C1B1A191817161514131211100F0E0D0C0B0A09080706050403020100",
 ;!                "0x3F3E3D3C3B3A393837363534333231302F2E2D2C2B2A29282726252423222120",
@@ -502,7 +502,7 @@
 ;!     "name": "25",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0x1F1E1D1C1B1A191817161514131211100F0E0D0C0B0A09080706050403020100",
 ;!                "0x3F3E3D3C3B3A393837363534333231302F2E2D2C2B2A29282726252423222120",
@@ -522,7 +522,7 @@
 ;!     "name": "26",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0x1F1E1D1C1B1A191817161514131211100F0E0D0C0B0A09080706050403020100",
 ;!                "0x3F3E3D3C3B3A393837363534333231302F2E2D2C2B2A29282726252423222120",
@@ -542,7 +542,7 @@
 ;!     "name": "27",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0x1F1E1D1C1B1A191817161514131211100F0E0D0C0B0A09080706050403020100",
 ;!                "0x3F3E3D3C3B3A393837363534333231302F2E2D2C2B2A29282726252423222120",
@@ -562,7 +562,7 @@
 ;!     "name": "28",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0x1F1E1D1C1B1A191817161514131211100F0E0D0C0B0A09080706050403020100",
 ;!                "0x3F3E3D3C3B3A393837363534333231302F2E2D2C2B2A29282726252423222120",
@@ -582,7 +582,7 @@
 ;!     "name": "29",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0x1F1E1D1C1B1A191817161514131211100F0E0D0C0B0A09080706050403020100",
 ;!                "0x3F3E3D3C3B3A393837363534333231302F2E2D2C2B2A29282726252423222120",
@@ -602,7 +602,7 @@
 ;!     "name": "30",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0x1F1E1D1C1B1A191817161514131211100F0E0D0C0B0A09080706050403020100",
 ;!                "0x3F3E3D3C3B3A393837363534333231302F2E2D2C2B2A29282726252423222120",
@@ -622,7 +622,7 @@
 ;!     "name": "31",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0x1F1E1D1C1B1A191817161514131211100F0E0D0C0B0A09080706050403020100",
 ;!                "0x3F3E3D3C3B3A393837363534333231302F2E2D2C2B2A29282726252423222120",
@@ -648,10 +648,10 @@ target triple = "syncvm"
 ; Function Attrs: nounwind
 define void @__selector() local_unnamed_addr #0 {
 entry:
-  %cell_1 = load i256, i256 addrspace(2)* inttoptr(i256 256 to i256 addrspace(2)*), align 32
-  %cell_2 = load i256, i256 addrspace(2)* inttoptr(i256 288 to i256 addrspace(2)*), align 32
-  %cell_3 = load i256, i256 addrspace(2)* inttoptr(i256 320 to i256 addrspace(2)*), align 32
-  %offset = load i256, i256 addrspace(2)* inttoptr(i256 416 to i256 addrspace(2)*), align 32
+  %cell_1 = load i256, i256 addrspace(2)* inttoptr(i256 32 to i256 addrspace(2)*), align 32
+  %cell_2 = load i256, i256 addrspace(2)* inttoptr(i256 64 to i256 addrspace(2)*), align 32
+  %cell_3 = load i256, i256 addrspace(2)* inttoptr(i256 96 to i256 addrspace(2)*), align 32
+  %offset = load i256, i256 addrspace(2)* inttoptr(i256 192 to i256 addrspace(2)*), align 32
 
   store i256 %cell_1, i256 addrspace(1)* inttoptr (i256 32 to i256 addrspace(1)*), align 32
   store i256 %cell_2, i256 addrspace(1)* inttoptr (i256 64 to i256 addrspace(1)*), align 32
@@ -659,15 +659,15 @@ entry:
 
   %addr = add i256 %offset, 32
   %addr.1 = inttoptr i256 %addr to i256 addrspace(1)*
-  call void @llvm.memcpy.p1i256.p2i256.i256(i256 addrspace(1)* align 1 %addr.1, i256 addrspace(2)* align 32 inttoptr (i256 352 to i256 addrspace(2)*), i256 64, i1 false)
+  call void @llvm.memcpy.p1i256.p2i256.i256(i256 addrspace(1)* align 1 %addr.1, i256 addrspace(2)* align 32 inttoptr (i256 128 to i256 addrspace(2)*), i256 64, i1 false)
   %cell_1r = load i256, i256 addrspace(1)* inttoptr(i256 32 to i256 addrspace(1)*), align 32
   %cell_2r = load i256, i256 addrspace(1)* inttoptr(i256 64 to i256 addrspace(1)*), align 32
   %cell_3r = load i256, i256 addrspace(1)* inttoptr(i256 96 to i256 addrspace(1)*), align 32
 
-  store i256 3, i256 addrspace(2)* inttoptr (i256 32 to i256 addrspace(2)*), align 32
-  store i256 %cell_1r, i256 addrspace(2)* inttoptr (i256 256 to i256 addrspace(2)*), align 32
-  store i256 %cell_2r, i256 addrspace(2)* inttoptr (i256 288 to i256 addrspace(2)*), align 32
-  store i256 %cell_3r, i256 addrspace(2)* inttoptr (i256 320 to i256 addrspace(2)*), align 32
+  store i256 96, i256 addrspace(2)* inttoptr (i256 0 to i256 addrspace(2)*), align 32
+  store i256 %cell_1r, i256 addrspace(2)* inttoptr (i256 32 to i256 addrspace(2)*), align 32
+  store i256 %cell_2r, i256 addrspace(2)* inttoptr (i256 64 to i256 addrspace(2)*), align 32
+  store i256 %cell_3r, i256 addrspace(2)* inttoptr (i256 96 to i256 addrspace(2)*), align 32
 
   ret void
 }

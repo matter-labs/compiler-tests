@@ -2,7 +2,7 @@
 ;!     "name": "0",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
@@ -19,7 +19,7 @@
 ;!     "name": "1",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
@@ -36,7 +36,7 @@
 ;!     "name": "2",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
@@ -53,7 +53,7 @@
 ;!     "name": "3",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
@@ -70,7 +70,7 @@
 ;!     "name": "4",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
@@ -87,7 +87,7 @@
 ;!     "name": "5",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
@@ -104,7 +104,7 @@
 ;!     "name": "6",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
@@ -121,7 +121,7 @@
 ;!     "name": "7",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
@@ -138,7 +138,7 @@
 ;!     "name": "8",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
@@ -155,7 +155,7 @@
 ;!     "name": "9",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
@@ -172,7 +172,7 @@
 ;!     "name": "10",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
@@ -189,7 +189,7 @@
 ;!     "name": "11",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
@@ -206,7 +206,7 @@
 ;!     "name": "12",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
@@ -223,7 +223,7 @@
 ;!     "name": "13",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
@@ -240,7 +240,7 @@
 ;!     "name": "14",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
@@ -257,7 +257,7 @@
 ;!     "name": "15",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
@@ -274,7 +274,7 @@
 ;!     "name": "16",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
@@ -291,7 +291,7 @@
 ;!     "name": "17",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
@@ -308,7 +308,7 @@
 ;!     "name": "18",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
@@ -325,7 +325,7 @@
 ;!     "name": "19",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
@@ -342,7 +342,7 @@
 ;!     "name": "20",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
@@ -359,7 +359,7 @@
 ;!     "name": "21",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
@@ -376,7 +376,7 @@
 ;!     "name": "22",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
@@ -393,7 +393,7 @@
 ;!     "name": "23",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
@@ -410,7 +410,7 @@
 ;!     "name": "24",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
@@ -427,7 +427,7 @@
 ;!     "name": "25",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
@@ -444,7 +444,7 @@
 ;!     "name": "26",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
@@ -461,7 +461,7 @@
 ;!     "name": "27",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
@@ -478,7 +478,7 @@
 ;!     "name": "28",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
@@ -495,7 +495,7 @@
 ;!     "name": "29",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
@@ -512,7 +512,7 @@
 ;!     "name": "30",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
@@ -529,7 +529,7 @@
 ;!     "name": "31",
 ;!     "input": [
 ;!         {
-;!             "entry": "5a8ac02d",
+;!             "fallback": true,
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
@@ -552,10 +552,10 @@ target triple = "syncvm"
 ; Function Attrs: nounwind
 define void @__selector() local_unnamed_addr #0 {
 entry:
-  %cell_1 = load i256, i256 addrspace(2)* inttoptr(i256 256 to i256 addrspace(2)*), align 32
-  %cell_2 = load i256, i256 addrspace(2)* inttoptr(i256 288 to i256 addrspace(2)*), align 32
-  %offset = load i256, i256 addrspace(2)* inttoptr(i256 320 to i256 addrspace(2)*), align 32
-  %loaded = load i256, i256 addrspace(2)* inttoptr(i256 352 to i256 addrspace(2)*), align 32
+  %cell_1 = load i256, i256 addrspace(2)* inttoptr(i256 32 to i256 addrspace(2)*), align 32
+  %cell_2 = load i256, i256 addrspace(2)* inttoptr(i256 64 to i256 addrspace(2)*), align 32
+  %offset = load i256, i256 addrspace(2)* inttoptr(i256 96 to i256 addrspace(2)*), align 32
+  %loaded = load i256, i256 addrspace(2)* inttoptr(i256 128 to i256 addrspace(2)*), align 32
 
   store i256 %cell_1, i256 addrspace(1)* inttoptr (i256 32 to i256 addrspace(1)*), align 32
   store i256 %cell_2, i256 addrspace(1)* inttoptr (i256 64 to i256 addrspace(1)*), align 32
@@ -566,8 +566,9 @@ entry:
   %result_1 = load i256, i256 addrspace(1)* inttoptr (i256 32 to i256 addrspace(1)*), align 32
   %result_2 = load i256, i256 addrspace(1)* inttoptr (i256 64 to i256 addrspace(1)*), align 32
 
-  store i256 %result_1, i256 addrspace(2)* inttoptr (i256 256 to i256 addrspace(2)*), align 32
-  store i256 %result_2, i256 addrspace(2)* inttoptr (i256 288 to i256 addrspace(2)*), align 32
+  store i256 64, i256 addrspace(2)* inttoptr (i256 0 to i256 addrspace(2)*), align 32
+  store i256 %result_1, i256 addrspace(2)* inttoptr (i256 32 to i256 addrspace(2)*), align 32
+  store i256 %result_2, i256 addrspace(2)* inttoptr (i256 64 to i256 addrspace(2)*), align 32
 
   ret void
 }

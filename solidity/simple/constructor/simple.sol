@@ -2,6 +2,7 @@
 //!     "name": "success",
 //!     "input": [
 //!         {
+//!             "constructor": true,
 //!             "calldata": [
 //!                 "7", "6", "0"
 //!             ]
@@ -19,6 +20,7 @@
 //!     "name": "failure",
 //!     "input": [
 //!         {
+//!             "constructor": true,
 //!             "calldata": [
 //!                 "7", "6", "1"
 //!             ],

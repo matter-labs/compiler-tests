@@ -29,8 +29,8 @@
         .globl  __selector
         .type   __selector,@function
 __selector:
-        mov.p   7, r1
-        sfll    #1, r2, r2
+        mov.p   1, r1
+        sfll    #32, r2, r2
         sflh    #0, r2, r2
         mov.p   r2, 1
         jlt     .LBB0_1, .LBB0_2
@@ -49,7 +49,7 @@ __selector:
         sfll    #42, r1, r1
         sflh    #0, r1, r1
 .LBB0_4:
-        mov.p   r1, 8
+        mov.p   r1, 1
         ret
 .LBB0_1:
         throw

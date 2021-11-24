@@ -6,6 +6,7 @@
 //!     "name": "complex",
 //!     "input": [
 //!         {
+//!             "constructor": true,
 //!             "calldata": [
 //!             ]
 //!         },
