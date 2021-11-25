@@ -64,6 +64,16 @@
 //!     }
 //! } ] }
 
+// TODO: invalidEnumValue exposes a bug in the Yul generator and must return:
+//     "expected": {
+//         "return_data": [
+//             "0x4E487B7100000000000000000000000000000000000000000000000000000000",
+//             "0x0000002100000000000000000000000000000000000000000000000000000000"
+//         ],
+//         "exception": true
+//     }
+// https://linear.app/matterlabs/issue/CPR-370/empty-error-for-invalid-enum-value
+
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.8.0;
 
