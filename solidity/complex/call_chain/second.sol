@@ -6,7 +6,7 @@ import "./third.sol";
 
 contract Second {
     function f(uint p) public pure returns(uint) {
-        Third third = Third(address(0xdeADbeEf00000000000000000000000000000003));
+        Third third = Third(address(0xdEaDBeef00000000000000000000000000000003));
         return third.f(p) * 2;
     }
 }

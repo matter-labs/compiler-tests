@@ -9,7 +9,7 @@ contract Second {
         if (n == 0) {
             return 1;
         }
-        First first = First(address(0xdeADbeEf00000000000000000000000000000001));
+        First first = First(address(0xdEADbeEF00000000000000000000000000000001));
         return first.fact(n - 1) * n;
     }
 }
