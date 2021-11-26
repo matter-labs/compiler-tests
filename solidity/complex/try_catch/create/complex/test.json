@@ -4,7 +4,7 @@
     "ignore": true,
     "input": [
         {
-            "address": "0x0000000000000000000000000000000000000001",
+            "address": "0xdeADbeEf00000000000000000000000000000001",
             "entry": "main",
             "calldata": [
                 "1"
@@ -22,7 +22,7 @@
     "ignore": true,
     "input": [
         {
-            "address": "0x0000000000000000000000000000000000000001",
+            "address": "0xdeADbeEf00000000000000000000000000000001",
             "entry": "main",
             "calldata": [
                 "2"
@@ -39,7 +39,7 @@
     "ignore": true,
     "input": [
         {
-            "address": "0x0000000000000000000000000000000000000001",
+            "address": "0xdeADbeEf00000000000000000000000000000001",
             "entry": "main",
             "calldata": [
                 "3"
@@ -56,7 +56,7 @@
     "ignore": true,
     "input": [
         {
-            "address": "0x0000000000000000000000000000000000000001",
+            "address": "0xdeADbeEf00000000000000000000000000000001",
             "entry": "main",
             "calldata": [
                 "0"
@@ -69,6 +69,6 @@
     ]
 } ],
     "contracts": {
-        "0x0000000000000000000000000000000000000001": "main.sol:Main"
+        "0xdeADbeEf00000000000000000000000000000001": "main.sol:Main"
     }
 }

@@ -3,7 +3,7 @@
     "name": "withoutMessage1",
     "input": [
         {
-            "address": "0x0000000000000000000000000000000000000001",
+            "address": "0xdeADbeEf00000000000000000000000000000001",
             "entry": "withoutMessage",
             "calldata": [
                 "1"
@@ -17,7 +17,7 @@
     "name": "withoutMessage2",
     "input": [
         {
-            "address": "0x0000000000000000000000000000000000000001",
+            "address": "0xdeADbeEf00000000000000000000000000000001",
             "entry": "withoutMessage",
             "calldata": [
                 "2"
@@ -31,7 +31,7 @@
     "name": "withoutMessage",
     "input": [
         {
-            "address": "0x0000000000000000000000000000000000000001",
+            "address": "0xdeADbeEf00000000000000000000000000000001",
             "entry": "withoutMessage",
             "calldata": [
                 "0"
@@ -45,7 +45,7 @@
     "name": "withMessage1",
     "input": [
         {
-            "address": "0x0000000000000000000000000000000000000001",
+            "address": "0xdeADbeEf00000000000000000000000000000001",
             "entry": "withMessage",
             "calldata": [
                 "1"
@@ -61,7 +61,7 @@
     "name": "withMessage2",
     "input": [
         {
-            "address": "0x0000000000000000000000000000000000000001",
+            "address": "0xdeADbeEf00000000000000000000000000000001",
             "entry": "withMessage",
             "calldata": [
                 "2"
@@ -81,7 +81,7 @@
     "name": "withMessage",
     "input": [
         {
-            "address": "0x0000000000000000000000000000000000000001",
+            "address": "0xdeADbeEf00000000000000000000000000000001",
             "entry": "withMessage",
             "calldata": [
                 "0"
@@ -94,7 +94,7 @@
     ]
 } ],
     "contracts": {
-        "0x0000000000000000000000000000000000000001": "main.sol:Main",
-        "0x0000000000000000000000000000000000000002": "callable.sol:Callable"
+        "0xdeADbeEf00000000000000000000000000000001": "main.sol:Main",
+        "0xdeADbeEf00000000000000000000000000000002": "callable.sol:Callable"
     }
 }
