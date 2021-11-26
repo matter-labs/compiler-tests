@@ -3,7 +3,7 @@
     "ignore": true,
     "input": [
         {
-            "address": "0x0000000000000000000000000000000000000001",
+            "address": "0xdeADbeEf00000000000000000000000000000001",
             "entry": "withoutMessage",
             "calldata": [
                 "1"
@@ -18,7 +18,7 @@
     "ignore": true,
     "input": [
         {
-            "address": "0x0000000000000000000000000000000000000001",
+            "address": "0xdeADbeEf00000000000000000000000000000001",
             "entry": "withoutMessage",
             "calldata": [
                 "2"
@@ -33,7 +33,7 @@
     "ignore": true,
     "input": [
         {
-            "address": "0x0000000000000000000000000000000000000001",
+            "address": "0xdeADbeEf00000000000000000000000000000001",
             "entry": "withoutMessage",
             "calldata": [
                 "3"
@@ -48,7 +48,7 @@
     "ignore": true,
     "input": [
         {
-            "address": "0x0000000000000000000000000000000000000001",
+            "address": "0xdeADbeEf00000000000000000000000000000001",
             "entry": "withoutMessage",
             "calldata": [
                 "4"
@@ -63,7 +63,7 @@
     "ignore": true,
     "input": [
         {
-            "address": "0x0000000000000000000000000000000000000001",
+            "address": "0xdeADbeEf00000000000000000000000000000001",
             "entry": "withoutMessage",
             "calldata": [
                 "5"
@@ -78,7 +78,7 @@
     "ignore": true,
     "input": [
         {
-            "address": "0x0000000000000000000000000000000000000001",
+            "address": "0xdeADbeEf00000000000000000000000000000001",
             "entry": "withoutMessage",
             "calldata": [
                 "0"
@@ -93,7 +93,7 @@
     "ignore": true,
     "input": [
         {
-            "address": "0x0000000000000000000000000000000000000001",
+            "address": "0xdeADbeEf00000000000000000000000000000001",
             "entry": "withMessage",
             "calldata": [
                 "1"
@@ -109,7 +109,7 @@
     "ignore": true,
     "input": [
         {
-            "address": "0x0000000000000000000000000000000000000001",
+            "address": "0xdeADbeEf00000000000000000000000000000001",
             "entry": "withMessage",
             "calldata": [
                 "2"
@@ -129,7 +129,7 @@
     "ignore": true,
     "input": [
         {
-            "address": "0x0000000000000000000000000000000000000001",
+            "address": "0xdeADbeEf00000000000000000000000000000001",
             "entry": "withMessage",
             "calldata": [
                 "3"
@@ -145,7 +145,7 @@
     "ignore": true,
     "input": [
         {
-            "address": "0x0000000000000000000000000000000000000001",
+            "address": "0xdeADbeEf00000000000000000000000000000001",
             "entry": "withMessage",
             "calldata": [
                 "4"
@@ -165,7 +165,7 @@
     "ignore": true,
     "input": [
         {
-            "address": "0x0000000000000000000000000000000000000001",
+            "address": "0xdeADbeEf00000000000000000000000000000001",
             "entry": "withMessage",
             "calldata": [
                 "5"
@@ -181,7 +181,7 @@
     "ignore": true,
     "input": [
         {
-            "address": "0x0000000000000000000000000000000000000001",
+            "address": "0xdeADbeEf00000000000000000000000000000001",
             "entry": "withMessage",
             "calldata": [
                 "0"
@@ -197,7 +197,7 @@
     "ignore": true,
     "input": [
         {
-            "address": "0x0000000000000000000000000000000000000001",
+            "address": "0xdeADbeEf00000000000000000000000000000001",
             "entry": "withStringMessage",
             "calldata": [
                 "1"
@@ -213,7 +213,7 @@
     "ignore": true,
     "input": [
         {
-            "address": "0x0000000000000000000000000000000000000001",
+            "address": "0xdeADbeEf00000000000000000000000000000001",
             "entry": "withStringMessage",
             "calldata": [
                 "2"
@@ -230,7 +230,7 @@
     "ignore": true,
     "input": [
         {
-            "address": "0x0000000000000000000000000000000000000001",
+            "address": "0xdeADbeEf00000000000000000000000000000001",
             "entry": "withStringMessage",
             "calldata": [
                 "3"
@@ -246,7 +246,7 @@
     "ignore": true,
     "input": [
         {
-            "address": "0x0000000000000000000000000000000000000001",
+            "address": "0xdeADbeEf00000000000000000000000000000001",
             "entry": "withStringMessage",
             "calldata": [
                 "4"
@@ -263,7 +263,7 @@
     "ignore": true,
     "input": [
         {
-            "address": "0x0000000000000000000000000000000000000001",
+            "address": "0xdeADbeEf00000000000000000000000000000001",
             "entry": "withStringMessage",
             "calldata": [
                 "5"
@@ -279,7 +279,7 @@
     "ignore": true,
     "input": [
         {
-            "address": "0x0000000000000000000000000000000000000001",
+            "address": "0xdeADbeEf00000000000000000000000000000001",
             "entry": "withStringMessage",
             "calldata": [
                 "0"
@@ -292,6 +292,6 @@
     ]
 } ],
     "contracts": {
-        "0x0000000000000000000000000000000000000001": "main.sol:Main"
+        "0xdeADbeEf00000000000000000000000000000001": "main.sol:Main"
     }
 }
