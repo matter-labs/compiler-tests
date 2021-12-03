@@ -1,0 +1,76 @@
+{ "cases": [ {
+    "name": "first",
+    "input": [
+        {
+            "address": "0xdeADbeEf00000000000000000000000000000002",
+            "caller": "0xdeADbeEf00000000000000000000000000000007",
+            "calldata": [
+                "0xdeADbeEf00000000000000000000000000000001"
+            ]
+        },
+        {
+            "address": "0xdeADbeEf00000000000000000000000000000003",
+            "calldata": [
+                "0xdeADbeEf00000000000000000000000000000002"
+            ]
+        },
+        {
+            "address": "0xdeADbeEf00000000000000000000000000000003",
+            "caller": "0xdeADbeEf00000000000000000000000000000008",
+            "entry": "attack",
+            "calldata": [
+            ]
+        },
+        {
+            "address": "0xdeADbeEf00000000000000000000000000000002",
+            "entry": "owner",
+            "calldata": [
+            ]
+        }
+    ],
+    "expected": [
+        "0xdeADbeEf00000000000000000000000000000008"
+    ]
+}, {
+    "name": "second",
+    "input": [
+        {
+            "address": "0xdeADbeEf00000000000000000000000000000005",
+            "caller": "0xdeADbeEf00000000000000000000000000000007",
+            "calldata": [
+                "0xdeADbeEf00000000000000000000000000000004"
+            ]
+        },
+        {
+            "address": "0xdeADbeEf00000000000000000000000000000006",
+            "calldata": [
+                "0xdeADbeEf00000000000000000000000000000005"
+            ]
+        },
+        {
+            "address": "0xdeADbeEf00000000000000000000000000000006",
+            "caller": "0xdeADbeEf00000000000000000000000000000008",
+            "entry": "attack",
+            "calldata": [
+            ]
+        },
+        {
+            "address": "0xdeADbeEf00000000000000000000000000000005",
+            "entry": "owner",
+            "calldata": [
+            ]
+        }
+    ],
+    "expected": [
+        "0xdeADbeEf00000000000000000000000000000008"
+    ]
+} ],
+    "contracts": {
+        "0xdeADbeEf00000000000000000000000000000001": "first.sol:Lib",
+        "0xdeADbeEf00000000000000000000000000000002": "first.sol:HackMe",
+        "0xdeADbeEf00000000000000000000000000000003": "first.sol:Attack",
+        "0xdeADbeEf00000000000000000000000000000004": "second.sol:Lib",
+        "0xdeADbeEf00000000000000000000000000000005": "second.sol:HackMe",
+        "0xdeADbeEf00000000000000000000000000000006": "second.sol:Attack"
+    }
+}

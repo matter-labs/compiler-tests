@@ -1,0 +1,20 @@
+{ "cases": [ {
+    "name": "getFooName",
+    "input": [
+        {
+            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "entry": "getFooName",
+            "calldata": [
+            ]
+        }
+    ],
+    "expected": [
+        "0x20",
+        "3",
+        "0x466f6f0000000000000000000000000000000000000000000000000000000000"
+    ]
+} ],
+    "contracts": {
+        "0xdeADbeEf00000000000000000000000000000001": "Import.sol:Import"
+    }
+}

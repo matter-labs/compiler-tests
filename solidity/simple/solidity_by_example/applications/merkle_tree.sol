@@ -6,7 +6,7 @@
 //!             "calldata": [
 //!             ],
 //!             "expected": [
-//!                 "0x074b43252ffb4a469154df5fb7fe4ecce30953ba8b7095fe1e006185f017ad10"
+//!                 "0xcc086fcc038189b4641db2cc4f1de3bb132aefbd65d510d817591550937818c7"
 //!             ]
 //!         }, {
 //!             "entry": "verify",
