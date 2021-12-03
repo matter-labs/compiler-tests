@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: MIT
-pragma solidity >=0.8.1;
+
+pragma solidity >=0.7.0;
+pragma abicoder v2;
 
 // import Foo.sol from current directory
 import "./Foo.sol";

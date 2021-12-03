@@ -2,7 +2,7 @@
 //!     "name": "test",
 //!     "input": [
 //!         {
-//!             "sender": "0xDEADBEEF00000000000000000000000000000001",
+//!             "caller": "0xDEADBEEF00000000000000000000000000000001",
 //!             "entry": "test",
 //!             "calldata": [
 //!             ]
