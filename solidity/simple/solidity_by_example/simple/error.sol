@@ -139,7 +139,7 @@ contract Test {
     error InsufficientBalance(uint balance, uint withdrawAmount);
 
     function testCustomError(uint _withdrawAmount) public view {
-        uint bal = 0;// address(this).balance; - balance replaced with 0 for test
+        uint bal = address(this).balance;
         if (bal < _withdrawAmount) {
             revert InsufficientBalance({balance: bal, withdrawAmount: _withdrawAmount});
         }
