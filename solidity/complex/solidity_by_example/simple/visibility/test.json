@@ -1,20 +1,4 @@
 { "cases": [ {
-    "ignore": true,
-    "name": "privateFunc",
-    "input": [
-        {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
-            "entry": "privateFunc",
-            "calldata": [
-            ]
-        }
-    ],
-    "expected": {
-        "return_data": [
-        ],
-        "exception": true
-    }
-}, {
     "name": "testPrivateFunc",
     "input": [
         {
@@ -29,22 +13,6 @@
         "23",
         "0x707269766174652066756e6374696f6e2063616c6c6564000000000000000000"
     ]
-}, {
-    "ignore": true,
-    "name": "internalFunc",
-    "input": [
-        {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
-            "entry": "internalFunc",
-            "calldata": [
-            ]
-        }
-    ],
-    "expected": {
-        "return_data": [
-        ],
-        "exception": true
-    }
 }, {
     "name": "testInternalFunc",
     "input": [
@@ -90,38 +58,6 @@
         "24",
         "0x65787465726e616c2066756e6374696f6e2063616c6c65640000000000000000"
     ]
-}, {
-    "ignore": true,
-    "name": "privateVar",
-    "input": [
-        {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
-            "entry": "privateVar",
-            "calldata": [
-            ]
-        }
-    ],
-    "expected": {
-        "return_data": [
-        ],
-        "exception": true
-    }
-}, {
-    "ignore": true,
-    "name": "internalVar",
-    "input": [
-        {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
-            "entry": "internalVar",
-            "calldata": [
-            ]
-        }
-    ],
-    "expected": {
-        "return_data": [
-        ],
-        "exception": true
-    }
 }, {
     "name": "publicVar",
     "input": [
