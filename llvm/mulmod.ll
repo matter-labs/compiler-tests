@@ -56,10 +56,25 @@
 ;!         }
 ;!     ],
 ;!     "expected": [
-;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE"
+;!                "0"
 ;!     ]
 ;! }, {
 ;!     "name": "4",
+;!     "input": [
+;!         {
+;!             "fallback": true,
+;!             "calldata": [
+;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE",
+;!                "2",
+;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+;!             ]
+;!         }
+;!     ],
+;!     "expected": [
+;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD"
+;!     ]
+;! }, {
+;!     "name": "5",
 ;!     "input": [
 ;!         {
 ;!             "fallback": true,
