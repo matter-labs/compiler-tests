@@ -1,6 +1,5 @@
 { "cases": [ {
     "name": "withoutMessage1",
-    "ignore": true,
     "input": [
         {
             "address": "0xdeADbeEf00000000000000000000000000000001",
@@ -15,7 +14,6 @@
     ]
 }, {
     "name": "withoutMessage2",
-    "ignore": true,
     "input": [
         {
             "address": "0xdeADbeEf00000000000000000000000000000001",
@@ -30,7 +28,6 @@
     ]
 }, {
     "name": "withoutMessage3",
-    "ignore": true,
     "input": [
         {
             "address": "0xdeADbeEf00000000000000000000000000000001",
@@ -45,7 +42,6 @@
     ]
 }, {
     "name": "withoutMessage4",
-    "ignore": true,
     "input": [
         {
             "address": "0xdeADbeEf00000000000000000000000000000001",
@@ -60,7 +56,6 @@
     ]
 }, {
     "name": "withoutMessage5",
-    "ignore": true,
     "input": [
         {
             "address": "0xdeADbeEf00000000000000000000000000000001",
@@ -75,7 +70,6 @@
     ]
 }, {
     "name": "withoutMessage",
-    "ignore": true,
     "input": [
         {
             "address": "0xdeADbeEf00000000000000000000000000000001",
@@ -90,7 +84,6 @@
     ]
 }, {
     "name": "withMessage1",
-    "ignore": true,
     "input": [
         {
             "address": "0xdeADbeEf00000000000000000000000000000001",
@@ -106,7 +99,6 @@
     ]
 }, {
     "name": "withMessage2",
-    "ignore": true,
     "input": [
         {
             "address": "0xdeADbeEf00000000000000000000000000000001",
@@ -126,7 +118,6 @@
     ]
 }, {
     "name": "withMessage3",
-    "ignore": true,
     "input": [
         {
             "address": "0xdeADbeEf00000000000000000000000000000001",
@@ -142,7 +133,6 @@
     ]
 }, {
     "name": "withMessage4",
-    "ignore": true,
     "input": [
         {
             "address": "0xdeADbeEf00000000000000000000000000000001",
@@ -162,7 +152,6 @@
     ]
 }, {
     "name": "withMessage5",
-    "ignore": true,
     "input": [
         {
             "address": "0xdeADbeEf00000000000000000000000000000001",
@@ -178,7 +167,6 @@
     ]
 }, {
     "name": "withMessage",
-    "ignore": true,
     "input": [
         {
             "address": "0xdeADbeEf00000000000000000000000000000001",
@@ -194,7 +182,6 @@
     ]
 }, {
     "name": "withStringMessage1",
-    "ignore": true,
     "input": [
         {
             "address": "0xdeADbeEf00000000000000000000000000000001",
@@ -210,7 +197,6 @@
     ]
 }, {
     "name": "withStringMessage2",
-    "ignore": true,
     "input": [
         {
             "address": "0xdeADbeEf00000000000000000000000000000001",
@@ -227,7 +213,6 @@
     ]
 }, {
     "name": "withStringMessage3",
-    "ignore": true,
     "input": [
         {
             "address": "0xdeADbeEf00000000000000000000000000000001",
@@ -243,7 +228,6 @@
     ]
 }, {
     "name": "withStringMessage4",
-    "ignore": true,
     "input": [
         {
             "address": "0xdeADbeEf00000000000000000000000000000001",
@@ -260,7 +244,6 @@
     ]
 }, {
     "name": "withStringMessage5",
-    "ignore": true,
     "input": [
         {
             "address": "0xdeADbeEf00000000000000000000000000000001",
@@ -276,7 +259,6 @@
     ]
 }, {
     "name": "withStringMessage",
-    "ignore": true,
     "input": [
         {
             "address": "0xdeADbeEf00000000000000000000000000000001",
