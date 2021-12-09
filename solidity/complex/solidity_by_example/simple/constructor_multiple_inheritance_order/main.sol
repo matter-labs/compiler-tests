@@ -19,19 +19,6 @@ contract Y {
     }
 }
 
-// There are 2 ways to initialize parent contract with parameters.
-
-// Pass the parameters here in the inheritance list.
-contract B is X("Input to X"), Y("Input to Y") {
-
-}
-
-contract C is X, Y {
-    // Pass the parameters here in the constructor,
-    // similar to function modifiers.
-    constructor(string memory _name, string memory _text) X(_name) Y(_text) {}
-}
-
 // Parent constructors are always called in the order of inheritance
 // regardless of the order of parent contracts listed in the
 // constructor of the child contract.
