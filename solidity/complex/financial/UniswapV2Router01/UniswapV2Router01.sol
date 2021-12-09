@@ -8,7 +8,7 @@ import './interfaces/IUniswapV2Pair.sol';
 import './interfaces/IERC20.sol';
 
 contract UniswapV2Router01 {
-    address public immutable owner;
+    address public owner;
     mapping(address => mapping(address => address)) public pairs;
 
     modifier ensure(uint deadline) {
@@ -96,7 +96,7 @@ contract UniswapV2Router01 {
             uint amountOut = amounts[i + 1];
             (uint amount0Out, uint amount1Out) = input == token0 ? (uint(0), amountOut) : (amountOut, uint(0));
             address to = i < path.length - 2 ? pairs[output][path[i + 2]] : _to;
-            IUniswapV2Pair(pairs[input][output]).swap(amount0Out, amount1Out, to, new bytes(0));
+            IUniswapV2Pair(pairs[input][output]).swap(amount0Out, amount1Out, to);
         }
     }
     function swapExactTokensForTokens(
