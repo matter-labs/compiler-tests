@@ -621,6 +621,17 @@
 
         {
             "address": "0xdeADbeEf00000000000000000000000000000001",
+            "entry": "balanceOf",
+            "caller": "0x0000000000000000000000000000000000000042",
+            "calldata": [
+                "0x0000000000000000000000000000000000000042"
+            ],
+            "expected": [
+                "999999999999000"
+            ]
+        },
+        {
+            "address": "0xdeADbeEf00000000000000000000000000000001",
             "caller": "0x0000000000000000000000000000000000000042",
             "entry": "transfer",
             "calldata": [
@@ -732,8 +743,8 @@
         "0xdeADbeEf00000000000000000000000000000001": "UniswapV2Pair.sol:UniswapV2Pair",
         "0xdeADbeEf00000000000000000000000000000002": "libraries/UQ112x112.sol:UQ112x112",
         "0xdeADbeEf00000000000000000000000000000003": "libraries/Math.sol:Math",
-        "0xdeADbeEf0000000000000000000000000000aaaa": "ERC20.sol:ERC20",
-        "0xdeADbeEf0000000000000000000000000000bbbb": "ERC20.sol:ERC20"
+        "0xdeADbeEf0000000000000000000000000000aaaa": "ERC20/ERC20.sol:ERC20",
+        "0xdeADbeEf0000000000000000000000000000bbbb": "ERC20/ERC20.sol:ERC20"
     },
     "libraries": {
         "libraries/UQ112x112.sol": { "UQ112x112": "0xdeADbeEf00000000000000000000000000000001" },
