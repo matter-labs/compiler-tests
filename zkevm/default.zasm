@@ -32,7 +32,7 @@ __selector:
         mov.p   1, r1
         sfll    #32, r2, r2
         sflh    #0, r2, r2
-        mov.p   r2, 1
+        mov.p   r2, 0
         jlt     .LBB0_1, .LBB0_2
 .LBB0_2:
         sfll    #32, r2, r2
