@@ -3,7 +3,7 @@
 pragma solidity >=0.8.0;
 
 import './interfaces/IUniswapV2Pair.sol';
-import './ERC20/interfaces/IERC20.sol';
+import './ERC20/IERC20.sol';
 import './libraries/Math.sol';
 import './libraries/UQ112x112.sol';
 import './UniswapV2ERC20.sol';

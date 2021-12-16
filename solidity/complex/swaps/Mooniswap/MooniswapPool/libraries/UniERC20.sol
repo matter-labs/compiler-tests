@@ -2,9 +2,9 @@
 
 pragma solidity >=0.8.0;
 
-import "../remote/math/SafeMath.sol";
-import "../remote/token/ERC20/IERC20.sol";
-import "../remote/token/ERC20/SafeERC20.sol";
+import "../math/SafeMath.sol";
+import "../ERC20/IERC20.sol";
+import "../ERC20/SafeERC20.sol";
 
 
 library UniERC20 {

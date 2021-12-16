@@ -2,11 +2,11 @@
 
 pragma solidity >=0.8.0;
 
-import "./remote/access/Ownable.sol";
-import "./remote/utils/ReentrancyGuard.sol";
-import "./remote/math/Math.sol";
-import "./remote/math/SafeMath.sol";
-import "./remote/token/ERC20/ERC20.sol";
+import "./access/Ownable.sol";
+import "./utils/ReentrancyGuard.sol";
+import "./math/Math.sol";
+import "./math/SafeMath.sol";
+import "./ERC20/ERC20.sol";
 import "./libraries/UniERC20.sol";
 import "./libraries/Sqrt.sol";
 
@@ -225,6 +225,7 @@ contract Mooniswap is ERC20, ReentrancyGuard, Ownable {
 
         src.uniTransferFromSenderToThis(amount);
         uint256 confirmed = src.uniBalanceOf(address(this)).sub(balances.src);
+        return confirmed;
         result = _getReturn(src, dst, confirmed, srcAdditionBalance, dstRemovalBalance);
         require(result > 0 && result >= minReturn, "Mooniswap: return is not enough");
         dst.uniTransfer(payable(msg.sender), result);

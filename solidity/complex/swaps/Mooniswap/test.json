@@ -5,14 +5,24 @@
             "address": "0xdeADbeEf0000000000000000000000000000aaaa",
             "constructor": "true",
             "calldata": [
-                "0", "0"
+                "0x40",
+                "0x80",
+                "4",
+                "0x6e616d6500000000000000000000000000000000000000000000000000000000",
+                "4",
+                "0x7465787400000000000000000000000000000000000000000000000000000000"
             ]
         },
         {
             "address": "0xdeADbeEf0000000000000000000000000000bbbb",
             "constructor": "true",
             "calldata": [
-                "0", "0"
+                "0x40",
+                "0x80",
+                "4",
+                "0x6e616d6500000000000000000000000000000000000000000000000000000000",
+                "4",
+                "0x7465787400000000000000000000000000000000000000000000000000000000"
             ]
         },
         {
@@ -80,11 +90,6 @@
             "caller": "0x0000000000000000000000000000000000000042",
             "entry": "getAllPools",
             "calldata": [
-            ],
-            "expected": [
-                "0x0000000000000000000000000000000000000000000000000000000000000020",
-                "0x0000000000000000000000000000000000000000000000000000000000000001",
-                "*"
             ]
         }
     ],
@@ -96,11 +101,11 @@
 } ],
     "contracts": {
         "0xdeADbeEf00000000000000000000000000000001": "MooniFactory.sol:MooniFactory",
-        "0xdeADbeEf0000000000000000000000000000aaaa": "remote/token/ERC20/ERC20.sol:ERC20",
-        "0xdeADbeEf0000000000000000000000000000bbbb": "remote/token/ERC20/ERC20.sol:ERC20"
+        "0xdeADbeEf0000000000000000000000000000aaaa": "MooniswapPool/ERC20/ERC20.sol:ERC20",
+        "0xdeADbeEf0000000000000000000000000000bbbb": "MooniswapPool/ERC20/ERC20.sol:ERC20"
     },
     "libraries": {
-        "Mooniswap.sol": { "VirtualBalance": "0xdeADbeEf00000000000000000000000000000101" },
-        "remote/math/Math.sol": { "Math": "0xdeADbeEf00000000000000000000000000000102" }
+        "MooniswapPool/Mooniswap.sol": { "VirtualBalance": "0xdeADbeEf00000000000000000000000000000101" },
+        "MooniswapPool/math/Math.sol": { "Math": "0xdeADbeEf00000000000000000000000000000102" }
     }
 }

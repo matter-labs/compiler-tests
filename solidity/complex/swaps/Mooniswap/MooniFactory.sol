@@ -2,9 +2,9 @@
 
 pragma solidity >=0.8.0;
 
-import "./remote/access/Ownable.sol";
-import "./libraries/UniERC20.sol";
-import "./Mooniswap.sol";
+import "./MooniswapPool/libraries/UniERC20.sol";
+import "./MooniswapPool/access/Ownable.sol";
+import "./MooniswapPool/Mooniswap.sol";
 
 
 contract MooniFactory is Ownable {
