@@ -1,4 +1,4 @@
-{ "modes": ["Y+"], "cases": [ {
+{ "cases": [ {
     "name": "testSafeMath",
     "input": [
         {
@@ -87,7 +87,8 @@
     },
     "libraries": {
         "main.sol": {
-            "Array": "0xdeADbeEf00000000000000000000000000000003"
+            "Array": "0xdeADbeEf00000000000000000000000000000003",
+            "Math": "0xdeADbeEf00000000000000000000000000000004"
         }
     }
 }

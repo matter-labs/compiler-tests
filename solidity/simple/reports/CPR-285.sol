@@ -1,8 +1,4 @@
-//! { "modes": [
-//!     "solc-0.8.5 Y-",
-//!     "solc-0.8.6 Y-",
-//!     "solc-0.8.7 Y-"
-//! ], "cases": [ {
+//! { "cases": [ {
 //!     "name": "complex",
 //!     "input": [
 //!         {
@@ -25,7 +21,6 @@
 
 pragma solidity >=0.5.0;
 
-// solc-0.8.5+ calculate keccak256 at compile time, whereas we use another hashing algorithm at runtime
 contract Test {
     uint[] public a; // with static array works
 
