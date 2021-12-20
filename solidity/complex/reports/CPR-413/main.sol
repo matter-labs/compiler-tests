@@ -3,7 +3,10 @@
 pragma solidity >=0.8.1;
 
 contract C {
+    uint256 x;
+
     function f() public returns (uint256) {
+        x = 3;
         return 1;
     }
 }
