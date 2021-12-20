@@ -1,0 +1,19 @@
+{ "cases": [ {
+    "name": "main",
+    "input": [
+        {
+            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "entry": "fview",
+            "calldata": [
+            ]
+        }
+    ],
+    "expected": {
+        "return_data": [],
+        "exception": true
+    }
+} ],
+    "contracts": {
+        "0xdeADbeEf00000000000000000000000000000001": "main.sol:D"
+    }
+}
