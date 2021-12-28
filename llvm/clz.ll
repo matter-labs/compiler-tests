@@ -74,7 +74,7 @@ target triple = "syncvm"
 define void @__selector() local_unnamed_addr #0 {
 entry:
   %arg = load i256, i256 addrspace(2)* inttoptr(i256 32 to i256 addrspace(2)*), align 32
-  %res = call i256 @__clzll(i256 %arg)
+  %res = call i256 @__clz(i256 %arg)
 
   store i256 32, i256 addrspace(2)* inttoptr (i256 0 to i256 addrspace(2)*), align 32
   store i256 %res, i256 addrspace(2)* inttoptr (i256 32 to i256 addrspace(2)*), align 32
@@ -83,4 +83,4 @@ entry:
 }
 
 attributes #0 = { nounwind }
-declare i256 @__clzll(i256)
+declare i256 @__clz(i256)
