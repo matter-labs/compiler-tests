@@ -30,12 +30,12 @@
 #!         {
 #!             "entry": "main",
 #!             "calldata": [
-#!                 "127"
+#!                 "255"
 #!             ]
 #!         }
 #!     ],
 #!     "expected": [
-#!         "127"
+#!         "255"
 #!     ]
 #! }, {
 #!     "name": "overflow_negative_minimal",

@@ -33,6 +33,6 @@ c: immutable(uint8)
 
 @external
 def __init__(x: uint256, y: uint8):
-    self.a = x
-    self.b = msg.sender
-    self.c = y
+    a = x
+    b = msg.sender
+    c = y

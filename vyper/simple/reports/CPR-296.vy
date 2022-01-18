@@ -18,7 +18,7 @@
 #!     ]
 #! } ] }
 
-a: uint256
+a: public(uint256)
 
 # if remove constructor or param - it works
 @external

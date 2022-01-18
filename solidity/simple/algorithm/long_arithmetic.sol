@@ -57,7 +57,6 @@ contract Test {
 
     function fromUint(uint64 n) private pure returns(BigUint memory) {
         BigUint memory number;
-        uint16 curr = 0;
         while (n > 0) {
             number.digits[number.len] = n % BASE;
             n /= BASE;
@@ -191,7 +190,6 @@ contract Test {
         while (true) {
             uint64 curr = self.digits[i] + carry * BASE;
             result.digits[i] = curr / other;
-            carry = curr / other;
             carry = curr % other;
             if (i == 0) {
                 break;
