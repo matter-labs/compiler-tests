@@ -24,4 +24,4 @@ def main(_value: uint8) -> uint8:
         array[i] = 2
     for i in range(SIZE_HALVED * 2):
         value += array[i]
-    return _value
+    return value
