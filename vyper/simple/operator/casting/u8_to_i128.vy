@@ -30,38 +30,12 @@
 #!         {
 #!             "entry": "main",
 #!             "calldata": [
-#!                 "127"
+#!                 "255"
 #!             ]
 #!         }
 #!     ],
 #!     "expected": [
-#!         "127"
-#!     ]
-#! }, {
-#!     "name": "overflow_minimal",
-#!     "input": [
-#!         {
-#!             "entry": "main",
-#!             "calldata": [
-#!                 "129"
-#!             ]
-#!         }
-#!     ],
-#!     "expected": [
-#!         "-127"
-#!     ]
-#! }, {
-#!     "name": "overflow",
-#!     "input": [
-#!         {
-#!             "entry": "main",
-#!             "calldata": [
-#!                 "200"
-#!             ]
-#!         }
-#!     ],
-#!     "expected": [
-#!         "-56"
+#!         "255"
 #!     ]
 #! } ] }
 
