@@ -25,4 +25,4 @@ def sum(data: Data) -> uint8:
 
 @external
 def main(witness: Data) -> uint8:
-    return sum(witness)
+    return self.sum(witness)

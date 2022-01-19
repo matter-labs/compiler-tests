@@ -22,7 +22,7 @@ def tuple() -> (uint8, uint8, uint8, uint8):
     return (1, 2, 3, 4)
 
 @external
-def test(witness: uint8) -> uint8:
+def main(witness: uint8) -> uint8:
     array: uint8[2][2] = [[1, 2], [3, 4]]
 
     a: uint8 = 0

@@ -16,6 +16,6 @@
 @pure
 def main() -> uint256:
     sum: uint256 = 0
-    for i in range(245, 254):
+    for i in range(245, 255):
         sum += 1
     return sum
