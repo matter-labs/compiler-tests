@@ -22,4 +22,4 @@ field_3: uint256
 
 @external
 def main(witness: uint8) -> uint8:
-    return witness + convert(self.field_1, uint8) + convert(self.field_2, uint8) + convert(self.field_3, uint8)
+    return witness + convert(self.field_1, uint8) * convert(self.field_2, uint8) * convert(self.field_3, uint8)

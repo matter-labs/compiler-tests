@@ -88,6 +88,10 @@ balance_: public(uint256)
 MAX_UINT: constant(uint256) = (2**255 - 1) * 2 + 1
 
 @external
+def MAX_UINT() -> MAX_UINT:
+    return MAX_UINT
+
+@external
 def deposit(_amount: uint256):
     oldBalance: uint256 = self.balance_
     newBalance: uint256 = self.balance_ + _amount
