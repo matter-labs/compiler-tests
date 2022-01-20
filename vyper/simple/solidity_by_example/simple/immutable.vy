@@ -42,3 +42,11 @@ MY_UINT: immutable(uint256)
 def __init__(_myUint: uint256):
     MY_ADDRESS = msg.sender
     MY_UINT = _myUint
+
+@external
+def MY_ADDRESS() -> address:
+    return MY_ADDRESS
+
+@external
+def MY_UINT() -> uint256:
+    return MY_UINT
