@@ -47,9 +47,10 @@
 #!             ]
 #!         }
 #!     ],
-#!     "expected": [
-#!         "255"
-#!     ]
+#!     "expected": {
+#!         "return_data": [],
+#!         "exception": true
+#!     }
 #! }, {
 #!     "name": "overflow_negative",
 #!     "input": [
@@ -60,9 +61,10 @@
 #!             ]
 #!         }
 #!     ],
-#!     "expected": [
-#!         "214"
-#!     ]
+#!     "expected": {
+#!         "return_data": [],
+#!         "exception": true
+#!     }
 #! } ] }
 
 @external

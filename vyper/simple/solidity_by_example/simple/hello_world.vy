@@ -14,7 +14,7 @@
 #!     ]
 #! } ] }
 
-greet: String[12]
+greet: public(String[12])
 
 @external
 def __init__():

@@ -150,7 +150,8 @@ def sphereSurface(sphere: Sphere, pi: uint256) -> uint256:
     return 4 * pi * sphere.r * sphere.r
 
 @external
-def triangle(triangle: Triangle) -> uint256:
+def triangle(_triangle: Triangle) -> uint256:
+    triangle: Triangle = _triangle
     triangle.a *= EPS
     triangle.b *= EPS
     triangle.c *= EPS
@@ -158,7 +159,8 @@ def triangle(triangle: Triangle) -> uint256:
     return self.triangleArea(triangle) * PRECISION / EPS / EPS
 
 @external
-def polygon(polygon: Polygon) -> uint256:
+def polygon(_polygon: Polygon) -> uint256:
+    polygon: Polygon = _polygon
     for i in range(DIM):
         if not i < polygon.n:
             break

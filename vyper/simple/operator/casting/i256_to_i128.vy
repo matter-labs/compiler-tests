@@ -47,9 +47,10 @@
 #!             ]
 #!         }
 #!     ],
-#!     "expected": [
-#!         "170141183460469231731687303715884105727"
-#!     ]
+#!     "expected": {
+#!         "return_data": [],
+#!         "exception": true
+#!     }
 #! }, {
 #!     "name": "overflow_negative",
 #!     "input": [
@@ -60,9 +61,10 @@
 #!             ]
 #!         }
 #!     ],
-#!     "expected": [
-#!         "160141183460469231731687303715881105728"
-#!     ]
+#!     "expected": {
+#!         "return_data": [],
+#!         "exception": true
+#!     }
 #! }, {
 #!     "name": "overflow_positive_minimal",
 #!     "input": [
@@ -73,9 +75,10 @@
 #!             ]
 #!         }
 #!     ],
-#!     "expected": [
-#!         "-170141183460469231731687303715884105728"
-#!     ]
+#!     "expected": {
+#!         "return_data": [],
+#!         "exception": true
+#!     }
 #! }, {
 #!     "name": "overflow_positive",
 #!     "input": [
@@ -86,9 +89,10 @@
 #!             ]
 #!         }
 #!     ],
-#!     "expected": [
-#!         "-150141183460469231731687303715884105730"
-#!     ]
+#!     "expected": {
+#!         "return_data": [],
+#!         "exception": true
+#!     }
 #! } ] }
 
 @external

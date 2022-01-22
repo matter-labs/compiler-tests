@@ -47,9 +47,10 @@
 #!             ]
 #!         }
 #!     ],
-#!     "expected": [
-#!         "-170141183460469231731687303715884105728"
-#!     ]
+#!     "expected": {
+#!         "return_data": [],
+#!         "exception": true
+#!     }
 #! }, {
 #!     "name": "overflow_positive",
 #!     "input": [
@@ -60,9 +61,10 @@
 #!             ]
 #!         }
 #!     ],
-#!     "expected": [
-#!         "-167647932558653966460912964485513216002"
-#!     ]
+#!     "expected": {
+#!         "return_data": [],
+#!         "exception": true
+#!     }
 #! } ] }
 
 @external

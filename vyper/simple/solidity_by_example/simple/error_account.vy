@@ -51,10 +51,7 @@
 #!         }
 #!     ],
 #!     "expected": {
-#!         "return_data": [
-#!             "0x4E487B7100000000000000000000000000000000000000000000000000000000",
-#!             "0x0000001100000000000000000000000000000000000000000000000000000000"
-#!         ],
+#!         "return_data": [],
 #!         "exception": true
 #!     }
 #! }, {
@@ -88,7 +85,7 @@ balance_: public(uint256)
 MAX_UINT: constant(uint256) = (2**255 - 1) * 2 + 1
 
 @external
-def MAX_UINT() -> MAX_UINT:
+def MAX_UINT() -> uint256:
     return MAX_UINT
 
 @external
