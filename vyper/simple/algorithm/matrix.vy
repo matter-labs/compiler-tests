@@ -42,7 +42,7 @@ struct Matrix:
 def mul(_self: Matrix, other: Matrix) -> Matrix:
     result: Matrix = empty(Matrix)
     result.n = _self.n
-    result.m = _self.m
+    result.m = other.m
     for i in range(MAX_SIZE):
         if not i < _self.n:
             break
