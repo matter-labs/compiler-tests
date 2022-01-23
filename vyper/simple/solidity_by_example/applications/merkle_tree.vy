@@ -52,7 +52,7 @@ count: public(uint256)
 struct Transaction:
     text: String[100]
 @external
-def __init():
+def __init__():
     transactions: Transaction[4] = [
         Transaction({ text: "alice -> bob"}),
         Transaction({ text: "bob -> dave"}),
