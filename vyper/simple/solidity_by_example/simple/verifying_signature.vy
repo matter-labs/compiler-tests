@@ -52,7 +52,7 @@
 @internal
 @pure
 def getMessageHash(_to: address, _amount: uint256, _message: String[100], _nonce: uint256) -> bytes32:
-    return keccak256(_abi_encode(_to, _amount, _message, _nonce))
+    return keccak256(concat(slice(convert(_to, bytes32), 12, 20), convert(_amount, bytes32), convert(_message, Bytes[100]), convert(_nonce, bytes32)))
 
 # 3. Sign message hash
 # # using browser
@@ -69,7 +69,7 @@ def getMessageHash(_to: address, _amount: uint256, _message: String[100], _nonce
 def getEthSignedMessageHash(_messageHash: bytes32) -> bytes32:
     # Signature is produced by signing a keccak256 hash with the following format:
     # "\x19Ethereum Signed Message\n" + len(msg) + msg
-    return keccak256(_abi_encode("\x19Ethereum Signed Message:\n32", _messageHash))
+    return keccak256(concat(convert("\x19Ethereum Signed Message:\n32", Bytes[28]), _messageHash))
 
 @internal
 @pure
