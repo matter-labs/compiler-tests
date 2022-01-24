@@ -46,7 +46,7 @@
 #!         }, {
 #!             "entry": "update",
 #!             "calldata": [
-#!                 "2",
+#!                 "3",
 #!                 "0x40",
 #!                 "5",
 #!                 "0x7465737433000000000000000000000000000000000000000000000000000000"
@@ -65,7 +65,7 @@
 #!         }, {
 #!             "entry": "get",
 #!             "calldata": [
-#!                 "2"
+#!                 "3"
 #!             ]
 #!         }
 #!     ],
@@ -111,11 +111,9 @@ def get(_index: uint256) -> (String[100], bool):
 # update text
 @external
 def update(_index: uint256, _text: String[100]):
-    todo: Todo = self.todos[_index]
-    todo.text = _text
+    self.todos[_index].text = _text
 
 # update completed
 @external
 def toggleCompleted(_index: uint256):
-    todo: Todo = self.todos[_index]
-    todo.completed = not todo.completed
+    self.todos[_index].completed = not self.todos[_index].completed
