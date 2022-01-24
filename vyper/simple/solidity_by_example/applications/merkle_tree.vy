@@ -62,7 +62,7 @@ def __init__():
     ]
 
     for i in range(0, 4):
-        self.hashes[self.count] = keccak256(_abi_encode(transactions[i].text))
+        self.hashes[self.count] = keccak256(transactions[i].text)
         self.count += 1
 
     n: uint256 = 4
