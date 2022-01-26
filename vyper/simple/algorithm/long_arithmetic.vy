@@ -188,6 +188,7 @@ def div(_self: BigUint, other: uint256) -> BigUint:
         carry = curr % other
         if i == 0:
             break
+        i -= 1
     for _ in range(LEN):
         if not (result._len > 1 and result.digits[result._len - 1] == 0):
             break

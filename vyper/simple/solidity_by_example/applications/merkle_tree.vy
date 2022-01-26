@@ -51,8 +51,9 @@ count: public(uint256)
 
 struct Transaction:
     text: String[100]
+
 @external
-def __init():
+def __init__():
     transactions: Transaction[4] = [
         Transaction({ text: "alice -> bob"}),
         Transaction({ text: "bob -> dave"}),
@@ -61,7 +62,7 @@ def __init():
     ]
 
     for i in range(0, 4):
-        self.hashes[self.count] = keccak256(_abi_encode(transactions[i].text))
+        self.hashes[self.count] = keccak256(transactions[i].text)
         self.count += 1
 
     n: uint256 = 4
