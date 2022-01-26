@@ -1,4 +1,4 @@
-#! { "ignore": true, "cases": [ {
+#! { "cases": [ {
 #!     "name": "default",
 #!     "input": [
 #!         {
@@ -36,3 +36,15 @@ def __init__(x: uint256, y: uint8):
     a = x
     b = msg.sender
     c = y
+
+@external
+def a() -> uint256:
+    return a
+
+@external
+def b() -> address:
+    return b
+
+@external
+def c() -> uint8:
+    return c
