@@ -5,7 +5,7 @@ def blockhash(blockNumber: uint256) -> bytes32:
     
 @external
 def f() -> bytes32:
-    return blockhash(3)
+    return self.blockhash(3)
 # ====
 # compileToEwasm: also
 # compileViaYul: also

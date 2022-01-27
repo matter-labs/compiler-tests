@@ -1,0 +1,128 @@
+---
+enabled: true
+entries:
+  abiencodedecode:
+    enabled: true
+    entries:
+      abi_encode_empty_string_v1.vy:
+        enabled: false
+  abiEncoderV1:
+    enabled: true
+    entries:
+      abi_decode_fixed_arrays.vy:
+        enabled: true
+      abi_encode.vy:
+        enabled: false
+      abi_encode_rational.vy:
+        enabled: true
+      byte_arrays.vy:
+        enabled: false
+      return_dynamic_types_cross_call_simple.vy:
+        enabled: true
+  abiEncoderV2:
+    enabled: true
+    entries:
+      abi_encode_empty_string_v2.vy:
+        enabled: false
+      abi_encode_rational_v2.vy:
+        enabled: true
+      bool_out_of_bounds.vy:
+        enabled: true
+      calldata_array_static.vy:
+        enabled: true
+      calldata_array_static_index_access.vy:
+        enabled: true
+      calldata_array_two_static.vy:
+        enabled: true
+      calldata_struct_simple.vy:
+        enabled: true
+      struct:
+        enabled: true
+        entries:
+          mediocre_struct.vy:
+            enabled: true
+          struct_short.vy:
+            enabled: true
+          struct_simple.vy:
+            enabled: true
+  accessor:
+    enabled: true
+    entries:
+      accessor_for_state_variable.vy:
+        enabled: true
+  arithmetics:
+    enabled: true
+    entries:
+      addmod_mulmod.vy:
+        enabled: true
+      addmod_mulmod_zero.vy:
+        enabled: true
+      checked_add_v2.vy:
+        enabled: true
+      divisiod_by_zero.vy:
+        enabled: true
+  array:
+    enabled: true
+    entries:
+      calldata_array.vy:
+        enabled: true
+      constant_var_as_array_length.vy:
+        enabled: true
+      copying:
+        enabled: true
+        entries:
+          array_storage_multi_items_per_slot.vy:
+            enabled: true
+          calldata_array_static_to_memory.vy:
+            enabled: true
+          storage_memory_packed.vy:
+            enabled: true
+      delete:
+        enabled: true
+        entries:
+          memory_arrays_delete.vy:
+            enabled: true
+      evm_exceptions_out_of_band_access.vy:
+        enabled: true
+      fixed_array_cleanup.vy:
+        enabled: true
+      fixed_arrays_in_constructors.vy:
+        enabled: true
+      fixed_arrays_in_storage.vy:
+        enabled: true
+      fixed_out_of_bounds_array_access.vy:
+        enabled: true
+      indexAccess:
+        enabled: true
+        entries:
+          inline_array_index_access_ints.vy:
+            enabled: true
+          memory_arrays_index_access_write.vy:
+            enabled: false
+      inline_array_singleton.vy:
+        enabled: true
+      inline_array_storage_to_memory_conversion_ints.vy:
+        enabled: true
+      memory.vy:
+        enabled: true
+      short_fixed_array_cleanup.vy:
+        enabled: true
+  builtinFunctions:
+    enabled: true
+    entries:
+      assignment_to_const_var_involving_keccak.vy:
+        enabled: true
+      blockhash.vy:
+        enabled: false
+      blockhash_shadow_resolution.vy:
+        enabled: true
+      keccak256_empty.vy:
+        enabled: true
+      keccak256_multiple_arguments.vy:
+        enabled: true
+      keccak256_with_bytes.vy:
+        enabled: true
+      sha256_empty.vy:
+        enabled: true
+  constructor_with_params.vy:
+    enabled: true
