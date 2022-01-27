@@ -11,4 +11,4 @@ def f(s: S) -> (uint256, uint256, uint256, uint256):
 # compileToEwasm: also
 # compileViaYul: also
 # ----
-# f((uint256,uint8,uint8,bytes2)): 1, 2, 3, "ab" -> 1, 2, 3, 0x6162
+# f((uint256,uint8,uint8,bytes32)): 1, 2, 3, "ab" -> 1, 2, 3, left(0x6162)
