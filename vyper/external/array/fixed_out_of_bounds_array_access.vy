@@ -8,7 +8,7 @@ def set(index: uint256, _value: uint256) -> bool:
 @external
 def get(index: uint256) -> uint256:
     return self.data[index]
-    
+
 @external
 def length() -> uint256:
     return 4
