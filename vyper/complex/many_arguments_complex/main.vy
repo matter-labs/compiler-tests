@@ -1,0 +1,14 @@
+import callable as Callable
+
+struct Str1:
+    a: uint256[2]
+    b: uint8
+
+struct Str2:
+    a: Str1
+    b: uint8
+
+@external
+def main(p1: Str1[2], p2: Str2, p3: uint8, p4: uint8[3], p5: uint256[3]) -> uint256:
+    callable: address = 0xdeADbeEf00000000000000000000000000000002
+    return Callable(callable).f(p1, p2, p3, p4, p5) * 2

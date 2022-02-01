@@ -1,0 +1,62 @@
+{ "cases": [ {
+    "name": "five",
+    "input": [
+        {
+            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "entry": "fact",
+            "calldata": [
+                "5"
+            ]
+        }
+    ],
+    "expected": [
+        "120"
+    ]
+}, {
+    "name": "twelve",
+    "input": [
+        {
+            "address": "0xdeADbeEf00000000000000000000000000000002",
+            "entry": "fact",
+            "calldata": [
+                "12"
+            ]
+        }
+    ],
+    "expected": [
+        "479001600"
+    ]
+},{
+    "name": "fifteen",
+    "input": [
+        {
+            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "entry": "fact",
+            "calldata": [
+                "15"
+            ]
+        }
+    ],
+    "expected": [
+        "1307674368000"
+    ]
+}, {
+    "name": "twenty",
+    "input": [
+        {
+            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "entry": "fact",
+            "calldata": [
+                "20"
+            ]
+        }
+    ],
+    "expected": [
+        "2432902008176640000"
+    ]
+} ],
+    "contracts": {
+        "0xdeADbeEf00000000000000000000000000000001": "first.vy",
+        "0xdeADbeEf00000000000000000000000000000002": "second.vy"
+    }
+}

@@ -1,0 +1,46 @@
+{ "cases": [ {
+    "name": "entry",
+    "input": [
+        {
+            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "entry": "setContract",
+            "calldata": [
+                "0xdeADbeEf00000000000000000000000000000002"
+            ]
+        },
+        {
+            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "entry": "require_short",
+            "calldata": [
+            ],
+            "expected": {
+                "return_data": [
+                    "0x08C379A000000000000000000000000000000000000000000000000000000000",
+                    "0x0000002000000000000000000000000000000000000000000000000000000000",
+                    "0x0000000573686F72740000000000000000000000000000000000000000000000",
+                    "0x0000000000000000000000000000000000000000000000000000000000000000"
+                ],
+                "exception": true
+            }
+        },
+        {
+            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "entry": "wrong_number_of_params",
+            "calldata": [
+            ],
+            "expected": {
+                "return_data": [],
+                "exception": true
+            }
+        }
+    ],
+    "expected": {
+        "return_data": [],
+        "exception": true
+    }
+} ],
+    "contracts": {
+        "0xdeADbeEf00000000000000000000000000000001": "wrapper.vy",
+        "0xdeADbeEf00000000000000000000000000000002": "simpleRequire.vy"
+    }
+}
