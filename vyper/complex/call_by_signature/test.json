@@ -1,0 +1,34 @@
+{ "cases": [ {
+    "name": "first",
+    "input": [
+        {
+            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "entry": "main",
+            "calldata": [
+                "5"
+            ]
+        }
+    ],
+    "expected": [
+        "10"
+    ]
+},{
+    "name": "second",
+    "input": [
+        {
+            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "entry": "main",
+            "calldata": [
+                "3224423423"
+            ]
+        }
+    ],
+    "expected": [
+        "6448846846"
+    ]
+} ],
+    "contracts": {
+        "0xdeADbeEf00000000000000000000000000000001": "main.vy",
+        "0xdeADbeEf00000000000000000000000000000002": "storage.vy"
+    }
+}

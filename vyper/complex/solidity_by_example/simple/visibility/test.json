@@ -1,0 +1,50 @@
+{ "cases": [ {
+    "name": "testInternalFunc",
+    "input": [
+        {
+            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "entry": "testInternalFunc",
+            "calldata": [
+            ]
+        }
+    ],
+    "expected": [
+        "0x20",
+        "24",
+        "0x696e7465726e616c2066756e6374696f6e2063616c6c65640000000000000000"
+    ]
+}, {
+    "name": "externalFunc",
+    "input": [
+        {
+            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "entry": "externalFunc",
+            "calldata": [
+            ]
+        }
+    ],
+    "expected": [
+        "0x20",
+        "24",
+        "0x65787465726e616c2066756e6374696f6e2063616c6c65640000000000000000"
+    ]
+}, {
+    "name": "publicVar",
+    "input": [
+        {
+            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "entry": "publicVar",
+            "calldata": [
+            ]
+        }
+    ],
+    "expected": [
+        "0x20",
+        "18",
+        "0x6d79207075626c6963207661726961626c650000000000000000000000000000"
+    ]
+} ],
+    "contracts": {
+        "0xdeADbeEf00000000000000000000000000000001": "main.vy"
+    }
+}
