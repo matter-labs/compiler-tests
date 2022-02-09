@@ -1,4 +1,5 @@
-import icallable as ICallable
+interface ICallable:
+    def f(a: uint256, x: bool) -> uint256: pure
 
 @external
 def main() -> uint256:

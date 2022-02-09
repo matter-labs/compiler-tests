@@ -8,7 +8,7 @@ struct Str2:
 
 @external
 @pure
-def f(p1: Str1[2], p2: Str2, p3: uint8, p4: uint8[3], p5: uint256[3]) -> uint256:
+def f(p1: Str1[2], p2: Str2, p3: uint256, p4: uint8[3], p5: uint256[3]) -> uint256:
     result: uint256 = 0
     for i in range(2):
         for j in range(2):
@@ -20,7 +20,7 @@ def f(p1: Str1[2], p2: Str2, p3: uint8, p4: uint8[3], p5: uint256[3]) -> uint256
     result += convert(p2.a.b, uint256)
     result += convert(p2.b, uint256)
 
-    result += convert(p3, uint256)
+    result += p3
 
     for i in range(3):
         result += convert(p4[i], uint256)
