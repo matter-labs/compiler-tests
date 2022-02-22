@@ -64,22 +64,63 @@ entries:
   array:
     enabled: true
     entries:
+      bytes_length_member.vy:
+        enabled: true
       calldata_array.vy:
         enabled: true
+      concat:
+        enabled: true
+        entries:
+          bytes_concat_2_args.vy:
+            enabled: true
+          bytes_concat_3_args.vy:
+            enabled: true
+          bytes_concat_empty_strings.vy:
+            enabled: true
+          bytes_concat_nested.vy:
+            enabled: true
       constant_var_as_array_length.vy:
         enabled: true
       copying:
         enabled: true
         entries:
+          array_copy_storage_storage_static_simple.vy:
+            enabled: true
           array_storage_multi_items_per_slot.vy:
+            enabled: true
+          bytes_calldata_to_string_calldata.vy:
+            enabled: true
+          bytes_inside_mappings.vy:
+            enabled: true
+          bytes_memory_to_storage.vy:
+            enabled: true
+          bytes_storage_to_memory.vy:
+            enabled: true
+          bytes_storage_to_storage.vy:
+            enabled: true
+          calldata_2d_bytes_to_memory.vy:
+            enabled: true
+          calldata_2d_bytes_to_memory_2.vy:
             enabled: true
           calldata_array_static_to_memory.vy:
             enabled: true
+          calldata_bytes_to_storage.vy:
+            enabled: true
+          copy_byte_array_in_struct_to_storage.vy:
+            enabled: true
+          copy_removes_bytes_data.vy:
+            enabled: true
           storage_memory_packed.vy:
             enabled: true
+          string_calldata_to_bytes_calldata.vy:
+            enabled: true
+      create_memory_byte_array.vy:
+        enabled: true
       delete:
         enabled: true
         entries:
+          delete_removes_bytes_data.vy:
+            enabled: true
           memory_arrays_delete.vy:
             enabled: true
       evm_exceptions_out_of_band_access.vy:
@@ -103,9 +144,19 @@ entries:
         enabled: true
       inline_array_storage_to_memory_conversion_ints.vy:
         enabled: true
+      inline_array_storage_to_memory_conversion_strings.vy:
+        enabled: true
       memory.vy:
         enabled: true
       short_fixed_array_cleanup.vy:
+        enabled: true
+      string_allocation_bug.vy:
+        enabled: true
+      string_bytes_conversion.vy:
+        enabled: true
+      string_literal_assign_to_storage_bytes.vy:
+        enabled: true
+      strings_in_struct.vy:
         enabled: true
   builtinFunctions:
     enabled: true
@@ -116,13 +167,115 @@ entries:
         enabled: false
       blockhash_shadow_resolution.vy:
         enabled: true
+      iterated_keccak256_with_bytes.vy:
+        enabled: true
       keccak256_empty.vy:
         enabled: true
       keccak256_multiple_arguments.vy:
         enabled: true
+      keccak256_multiple_arguments_with_numeric_literals.vy:
+        enabled: true
+      keccak256_multiple_arguments_with_string_literals.vy:
+        enabled: true
       keccak256_with_bytes.vy:
         enabled: true
       sha256_empty.vy:
+        enabled: true
+  calldata:
+    enabled: true
+    entries:
+      calldata_bound_bytes.vy:
+        enabled: true
+      calldata_bound_static_array.vy:
+        enabled: true
+      calldata_bound_struct.vy:
+        enabled: true
+      calldata_bytes_external.vy:
+        enabled: true
+      calldata_bytes_internal.vy:
+        enabled: true
+      calldata_bytes_to_memory.vy:
+        enabled: true
+      calldata_bytes_to_memory_encode.vy:
+        enabled: true
+      calldata_internal_multi_fixed_array.vy:
+        enabled: true
+      calldata_memory_mixed.vy:
+        enabled: true
+      calldata_struct.vy:
+        enabled: true
+      calldata_struct_internal.vy:
+        enabled: true
+  cleanup:
+    enabled: true
+    entries:
+      bool_conversion_v2.vy:
+        enabled: true
+      cleanup_address_types_v2.vy:
+        enabled: true
+  constantEvaluator:
+      enabled: true
+      entries:
+        negative_fractional_mod.vy:
+          enabled: true
+        rounding.vy:
+          enabled: true
+  constants:
+    enabled: true
+    entries:
+      constant_string.vy:
+        enabled: true
+      consteval_array_length.vy:
+        enabled: true
+      simple_constant_variables_test.vy:
+        enabled: true
+  constructor:
+    enabled: true
+    entries:
+      bytes_in_constructors_unpacker.vy:
+        enabled: true
+      constructor_arguments_external.vy:
+        enabled: true
+      constructor_static_array_argument.vy:
+        enabled: true
+      functions_called_by_constructor.vy:
+        enabled: true
+  conversions:
+    enabled: true
+    entries:
+      string_to_bytes.vy:
+        enabled: true
+  ecrecover:
+    enabled: true
+    entries:
+      ecrecover.vy:
+        enabled: true
+      failing_ecrecover_invalid_input.vy:
+        enabled: true
+      failing_ecrecover_invalid_input_asm.vy:
+        enabled: true
+      failing_ecrecover_invalid_input_proper.vy:
+        enabled: true
+  events:
+    enabled: true
+    entries:
+      event_constructor.vy:
+        enabled: true
+      event_indexed_mixed.vy:
+        enabled: true
+      event_no_arguments.vy:
+        enabled: true
+      event_really_lots_of_data.vy:
+        enabled: true
+      event_really_lots_of_data_from_storage.vy:
+        enabled: true
+      event_really_really_lots_of_data_from_storage.vy:
+        enabled: true
+      event_string.vy:
+        enabled: true
+      event_struct_memory_v2.vy:
+        enabled: true
+      event_struct_storage_v2.vy:
         enabled: true
   constructor_with_params.vy:
     enabled: true
