@@ -1,4 +1,6 @@
-import requireInterface as RequireInterface
+interface RequireInterface:
+    def require_short(): view
+    def wrong_number_of_params(one: uint256, two: uint256, three: Bytes[100]) -> uint256: view
 
 contract_req: address
 
