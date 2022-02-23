@@ -3,12 +3,14 @@
     "input": [
         {
             "address": "0xdeADbeEf00000000000000000000000000000001",
+            "constructor": true,
             "calldata": [
                 "37"
             ]
         },
         {
             "address": "0xdeADbeEf00000000000000000000000000000002",
+            "constructor": true,
             "calldata": [
             ]
         },
@@ -28,12 +30,14 @@
     "input": [
         {
             "address": "0xdeADbeEf00000000000000000000000000000001",
+            "constructor": true,
             "calldata": [
                 "4"
             ]
         },
         {
             "address": "0xdeADbeEf00000000000000000000000000000002",
+            "constructor": true,
             "calldata": [
             ]
         },
