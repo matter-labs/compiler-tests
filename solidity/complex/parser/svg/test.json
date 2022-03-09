@@ -5,5 +5,9 @@
 } ],
     "contracts": {
         "0xdeADbeEf00000000000000000000000000000001": "main.sol:LandSvgLib"
+    },
+    "libraries": {
+        "base64.sol": { "Base64": "0xdeADbeEf00000000000000000000000000000101" },
+        "PRBMath.sol": { "PRBMath": "0xdeADbeEf00000000000000000000000000000102" }
     }
 }
