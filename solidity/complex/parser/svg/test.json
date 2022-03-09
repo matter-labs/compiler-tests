@@ -1,0 +1,9 @@
+{ "cases": [ {
+    "name": "default",
+    "input": [],
+    "expected": []
+} ],
+    "contracts": {
+        "0xdeADbeEf00000000000000000000000000000001": "main.sol:LandSvgLib"
+    }
+}
