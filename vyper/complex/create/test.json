@@ -1,0 +1,27 @@
+{ "cases": [ {
+    "name": "entry",
+    "input": [
+        {
+            "address": "0xdeADbeEf00000000000000000000000000000002",
+            "constructor": true,
+            "calldata": [
+                "0x0"
+            ]
+        },
+        {
+            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "entry": "main",
+            "calldata": [
+            ]
+        }
+    ],
+    "expected": [
+        "10"
+    ]
+} ],
+    "contracts": {
+        "0xdeADbeEf00000000000000000000000000000001": "main.vy",
+        "0xdeADbeEf00000000000000000000000000000002": "callable.vy"
+    },
+    "has_forwarder": true
+}
