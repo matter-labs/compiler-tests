@@ -1,0 +1,49 @@
+{ "cases": [ {
+    "name": "first",
+    "input": [
+        {
+            "address": "0xdeADbeEf00000000000000000000000000000002",
+            "constructor": true,
+            "calldata": [
+                "0x0"
+            ]
+        },
+        {
+            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "entry": "main",
+            "calldata": [
+                "3"
+            ]
+        }
+    ],
+    "expected": [
+        "90"
+    ]
+}, {
+    "name": "second",
+    "input": [
+        {
+            "address": "0xdeADbeEf00000000000000000000000000000002",
+            "constructor": true,
+            "calldata": [
+                "0x0"
+            ]
+        },
+        {
+            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "entry": "main",
+            "calldata": [
+                "200"
+            ]
+        }
+    ],
+    "expected": [
+        "412110300"
+    ]
+} ],
+    "contracts": {
+        "0xdeADbeEf00000000000000000000000000000001": "main.vy",
+        "0xdeADbeEf00000000000000000000000000000002": "callable.vy"
+    },
+    "has_forwarder": true
+}
