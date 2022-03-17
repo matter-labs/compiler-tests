@@ -17,4 +17,4 @@
 def main(
     a: address = msg.sender,
 ) -> address:
-    return arer
+    return a
