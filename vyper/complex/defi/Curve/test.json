@@ -573,7 +573,7 @@
         },
         {
             "address": "0xdeADbeEf00000000000000000000000000000013",
-            "entry": "exchange_with_best_rate",
+            "entry": "exchange_with_best_rate(address,address,uint256,uint256)",
             "caller": "0x0000000000000000000000000000000000000042",
             "calldata": [
                 "0xdeADbeEf0000000000000000000000000000aaaa",
