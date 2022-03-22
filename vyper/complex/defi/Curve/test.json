@@ -1,7 +1,9 @@
 { "cases": [ {
     "name": "default",
+    "comment": "The complex Curve Registry test with adding liquidity, token exchange, and checking pool information",
     "input": [
         {
+            "comment": "The DAI token constructor",
             "address": "0xdeADbeEf0000000000000000000000000000aaaa",
             "calldata": [
                 "0x80",
@@ -30,6 +32,7 @@
             }
         },
         {
+            "comment": "The USDC token constructor",
             "address": "0xdeADbeEf0000000000000000000000000000bbbb",
             "calldata": [
                 "0x80",
@@ -58,6 +61,7 @@
             }
         },
         {
+            "comment": "The USDT token constructor",
             "address": "0xdeADbeEf0000000000000000000000000000cccc",
             "calldata": [
                 "0x80",
@@ -87,6 +91,7 @@
         },
 
         {
+            "comment": "Minting the DAI token for test on address 0x0..042",
             "address": "0xdeADbeEf0000000000000000000000000000aaaa",
             "entry": "mint",
             "calldata": [
@@ -110,6 +115,7 @@
             }
         },
         {
+            "comment": "Minting the USDC token for test on address 0x0..042",
             "address": "0xdeADbeEf0000000000000000000000000000bbbb",
             "entry": "mint",
             "calldata": [
@@ -133,6 +139,7 @@
             }
         },
         {
+            "comment": "Minting the USDT token for test on address 0x0..042",
             "address": "0xdeADbeEf0000000000000000000000000000cccc",
             "entry": "mint",
             "calldata": [
@@ -156,6 +163,7 @@
             }
         },
         {
+            "comment": "Minting the USDT token for test on address 0x0..069",
             "address": "0xdeADbeEf0000000000000000000000000000cccc",
             "entry": "mint",
             "calldata": [
@@ -180,6 +188,7 @@
         },
 
         {
+            "comment": "The Curve LP Token constructor",
             "address": "0xdeADbeEf00000000000000000000000000000002",
             "calldata": [
                 "0", "0"
@@ -202,6 +211,7 @@
             }
         },
         {
+            "comment": "The StableSwap3Pool constructor",
             "address": "0xdeADbeEf00000000000000000000000000000001",
             "caller": "0x0000000000000000000000000000000000000069",
             "calldata": [
@@ -217,6 +227,7 @@
         },
 
         {
+            "comment": "The Curve Registry Address Provider constructor",
             "address": "0xdeADbeEf00000000000000000000000000000010",
             "calldata": [
                 "0x0000000000000000000000000000000000000069"
@@ -224,6 +235,7 @@
             "expected": []
         },
         {
+            "comment": "The Curve Registry constructor",
             "address": "0xdeADbeEf00000000000000000000000000000011",
             "calldata": [
                 "0xdeADbeEf00000000000000000000000000000010",
@@ -232,6 +244,7 @@
             "expected": []
         },
         {
+            "comment": "Adding address of Curve Registry to address provider",
             "address": "0xdeADbeEf00000000000000000000000000000010",
             "caller": "0x0000000000000000000000000000000000000069",
             "entry": "set_address",
@@ -259,6 +272,7 @@
             }
         },
         {
+            "comment": "The Curve Registry PoolInfo constructor",
             "address": "0xdeADbeEf00000000000000000000000000000012",
             "calldata": [
                 "0xdeADbeEf00000000000000000000000000000010"
@@ -266,6 +280,7 @@
             "expected": []
         },
         {
+            "comment": "Adding address of Curve Registry PoolInfo to address provider",
             "address": "0xdeADbeEf00000000000000000000000000000010",
             "caller": "0x0000000000000000000000000000000000000069",
             "entry": "add_new_id",
@@ -297,12 +312,14 @@
             }
         },
         {
+            "comment": "The Curve Registry Calculator constructor",
             "address": "0xdeADbeEf00000000000000000000000000000020",
             "calldata": [
             ],
             "expected": []
         },
         {
+            "comment": "The Curve Registry Exchange constructor",
             "address": "0xdeADbeEf00000000000000000000000000000013",
             "calldata": [
                 "0xdeADbeEf00000000000000000000000000000010",
@@ -311,6 +328,7 @@
             "expected": []
         },
         {
+            "comment": "Adding address of Curve Registry Exchange to address provider",
             "address": "0xdeADbeEf00000000000000000000000000000010",
             "caller": "0x0000000000000000000000000000000000000069",
             "entry": "add_new_id",
@@ -342,6 +360,7 @@
             }
         },
         {
+            "comment": "Adding StableSwap3Pool to Curve Registry",
             "address": "0xdeADbeEf00000000000000000000000000000011",
             "caller": "0x0000000000000000000000000000000000000069",
             "entry": "add_pool_without_underlying",
@@ -379,6 +398,7 @@
         },
 
         {
+            "comment": "Approving transfer DAI token for add liquidity to pool",
             "address": "0xdeADbeEf0000000000000000000000000000aaaa",
             "caller": "0x0000000000000000000000000000000000000042",
             "entry": "approve",
@@ -405,6 +425,7 @@
             }
         },
         {
+            "comment": "Approving transfer USDC token for add liquidity to pool",
             "address": "0xdeADbeEf0000000000000000000000000000bbbb",
             "caller": "0x0000000000000000000000000000000000000042",
             "entry": "approve",
@@ -431,6 +452,7 @@
             }
         },
         {
+            "comment": "Approving transfer USDT token for add liquidity to pool",
             "address": "0xdeADbeEf0000000000000000000000000000cccc",
             "caller": "0x0000000000000000000000000000000000000042",
             "entry": "approve",
@@ -457,6 +479,7 @@
             }
         },
         {
+            "comment": "Adding liquidity with proportion 100:1:10",
             "address": "0xdeADbeEf00000000000000000000000000000001",
             "caller": "0x0000000000000000000000000000000000000042",
             "entry": "add_liquidity",
@@ -524,6 +547,7 @@
             }
         },
         {
+            "comment": "Checking the balance of LP token after adding liquidity",
             "address": "0xdeADbeEf00000000000000000000000000000002",
             "entry": "balanceOf",
             "caller": "0x0000000000000000000000000000000000000042",
@@ -536,6 +560,7 @@
         },
 
         {
+            "comment": "Approving transfer DAI token for exchange",
             "address": "0xdeADbeEf0000000000000000000000000000aaaa",
             "caller": "0x0000000000000000000000000000000000000042",
             "entry": "approve",
@@ -562,6 +587,7 @@
             }
         },
         {
+            "comment": "Checking the balance of USDC token before exchange",
             "address": "0xdeADbeEf0000000000000000000000000000bbbb",
             "entry": "balanceOf",
             "calldata": [
@@ -572,6 +598,7 @@
             ]
         },
         {
+            "comment": "Exchanging DAI token for USDC token with the best rate",
             "address": "0xdeADbeEf00000000000000000000000000000013",
             "entry": "exchange_with_best_rate(address,address,uint256,uint256)",
             "caller": "0x0000000000000000000000000000000000000042",
@@ -667,6 +694,7 @@
             }
         },
         {
+            "comment": "Checking the balance of USDC token after adding liquidity and exchange",
             "address": "0xdeADbeEf0000000000000000000000000000bbbb",
             "entry": "balanceOf",
             "calldata": [
@@ -678,6 +706,7 @@
         },
 
         {
+            "comment": "Checking the StableSwap3Pool coins",
             "address": "0xdeADbeEf00000000000000000000000000000012",
             "entry": "get_pool_coins",
             "calldata": [
@@ -697,6 +726,7 @@
             ]
         },
         {
+            "comment": "Checking the StableSwap3Pool information",
             "address": "0xdeADbeEf00000000000000000000000000000012",
             "entry": "get_pool_info",
             "calldata": [
@@ -735,6 +765,7 @@
             ]
         },
         {
+            "comment": "Checking the address provider address from PoolInfo contract",
             "address": "0xdeADbeEf00000000000000000000000000000012",
             "entry": "address_provider",
             "calldata": [

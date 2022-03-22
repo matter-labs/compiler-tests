@@ -1,7 +1,9 @@
 { "cases": [ {
     "name": "first",
+    "comment": "The complex Curve StableSwap3Pool test with adding liquidity and token exchange",
     "input": [
         {
+            "comment": "The DAI token constructor",
             "address": "0xdeADbeEf0000000000000000000000000000aaaa",
             "calldata": [
                 "0", "0", "18", "0"
@@ -23,6 +25,7 @@
             }
         },
         {
+            "comment": "The USDC token constructor",
             "address": "0xdeADbeEf0000000000000000000000000000bbbb",
             "calldata": [
                 "0", "0", "6", "0"
@@ -44,6 +47,7 @@
             }
         },
         {
+            "comment": "The USDT token constructor",
             "address": "0xdeADbeEf0000000000000000000000000000cccc",
             "calldata": [
                 "0", "0", "6", "0"
@@ -65,6 +69,7 @@
             }
         },
         {
+            "comment": "The Curve LP Token constructor",
             "address": "0xdeADbeEf00000000000000000000000000000002",
             "calldata": [
                 "0", "0"
@@ -87,6 +92,7 @@
             }
         },
         {
+            "comment": "The StableSwap3Pool constructor",
             "address": "0xdeADbeEf00000000000000000000000000000001",
             "calldata": [
                 "0x0000000000000000000000000000000000000100",
@@ -101,6 +107,7 @@
         },
 
         {
+            "comment": "Minting the DAI token for test on address 0x0..042",
             "address": "0xdeADbeEf0000000000000000000000000000aaaa",
             "entry": "mint",
             "calldata": [
@@ -124,6 +131,7 @@
             }
         },
         {
+            "comment": "Minting the USDC token for test on address 0x0..042",
             "address": "0xdeADbeEf0000000000000000000000000000bbbb",
             "entry": "mint",
             "calldata": [
@@ -147,6 +155,7 @@
             }
         },
         {
+            "comment": "Minting the USDT token for test on address 0x0..042",
             "address": "0xdeADbeEf0000000000000000000000000000cccc",
             "entry": "mint",
             "calldata": [
@@ -170,6 +179,7 @@
             }
         },
         {
+            "comment": "Minting the DAI token for test on address 0x0..069",
             "address": "0xdeADbeEf0000000000000000000000000000aaaa",
             "entry": "mint",
             "calldata": [
@@ -195,6 +205,7 @@
 
 
         {
+            "comment": "Approving transfer DAI token for add liquidity to pool",
             "address": "0xdeADbeEf0000000000000000000000000000aaaa",
             "entry": "approve",
             "caller": "0x0000000000000000000000000000000000000042",
@@ -221,6 +232,7 @@
             }
         },
         {
+            "comment": "Approving transfer USDC token for add liquidity to pool",
             "address": "0xdeADbeEf0000000000000000000000000000bbbb",
             "entry": "approve",
             "caller": "0x0000000000000000000000000000000000000042",
@@ -247,6 +259,7 @@
             }
         },
         {
+            "comment": "Approving transfer USDT token for add liquidity to pool",
             "address": "0xdeADbeEf0000000000000000000000000000cccc",
             "entry": "approve",
             "caller": "0x0000000000000000000000000000000000000042",
@@ -272,8 +285,8 @@
                 "exception": false
             }
         },
-
         {
+            "comment": "Adding liquidity with proportion 1:1:1",
             "address": "0xdeADbeEf00000000000000000000000000000001",
             "caller": "0x0000000000000000000000000000000000000042",
             "entry": "add_liquidity",
@@ -341,6 +354,7 @@
             }
         },
         {
+            "comment": "Checking the balance of LP token after adding liquidity",
             "address": "0xdeADbeEf00000000000000000000000000000002",
             "entry": "balanceOf",
             "calldata": [
@@ -352,6 +366,7 @@
         },
 
         {
+            "comment": "Approving transfer DAI token for exchange",
             "address": "0xdeADbeEf0000000000000000000000000000aaaa",
             "caller": "0x0000000000000000000000000000000000000042",
             "entry": "approve",
@@ -378,6 +393,7 @@
             }
         },
         {
+            "comment": "Exchanging DAI token for USDT token",
             "address": "0xdeADbeEf00000000000000000000000000000001",
             "entry": "exchange",
             "caller": "0x0000000000000000000000000000000000000042",
@@ -428,6 +444,7 @@
             }
         },
         {
+            "comment": "Checking the balance of USDT token after adding liquidity and exchange",
             "address": "0xdeADbeEf0000000000000000000000000000cccc",
             "entry": "balanceOf",
             "calldata": [
@@ -442,9 +459,11 @@
         "999009999"
     ]
 }, {
+    "comment": "The complex Curve StableSwap3Pool test with adding liquidity, token exchange, and removing liquidity",
     "name": "second",
     "input": [
         {
+            "comment": "The DAI token constructor",
             "address": "0xdeADbeEf0000000000000000000000000000aaaa",
             "calldata": [
                 "0x80",
@@ -473,6 +492,7 @@
             }
         },
         {
+            "comment": "The USDC token constructor",
             "address": "0xdeADbeEf0000000000000000000000000000bbbb",
             "calldata": [
                 "0x80",
@@ -501,6 +521,7 @@
             }
         },
         {
+            "comment": "The USDT token constructor",
             "address": "0xdeADbeEf0000000000000000000000000000cccc",
             "calldata": [
                 "0x80",
@@ -530,6 +551,7 @@
         },
 
         {
+            "comment": "Minting the DAI token for test on address 0x0..042",
             "address": "0xdeADbeEf0000000000000000000000000000aaaa",
             "entry": "mint",
             "calldata": [
@@ -553,6 +575,7 @@
             }
         },
         {
+            "comment": "Minting the USDC token for test on address 0x0..042",
             "address": "0xdeADbeEf0000000000000000000000000000bbbb",
             "entry": "mint",
             "calldata": [
@@ -576,6 +599,7 @@
             }
         },
         {
+            "comment": "Minting the USDT token for test on address 0x0..042",
             "address": "0xdeADbeEf0000000000000000000000000000cccc",
             "entry": "mint",
             "calldata": [
@@ -599,6 +623,7 @@
             }
         },
         {
+            "comment": "Minting the USDT token for test on address 0x0..069",
             "address": "0xdeADbeEf0000000000000000000000000000cccc",
             "entry": "mint",
             "calldata": [
@@ -623,6 +648,7 @@
         },
 
         {
+            "comment": "The Curve LP Token constructor",
             "address": "0xdeADbeEf00000000000000000000000000000002",
             "calldata": [
                 "0", "0"
@@ -645,6 +671,7 @@
             }
         },
         {
+            "comment": "The StableSwap3Pool constructor",
             "address": "0xdeADbeEf00000000000000000000000000000001",
             "caller": "0x0000000000000000000000000000000000000069",
             "calldata": [
@@ -660,6 +687,7 @@
         },
 
         {
+            "comment": "Approving transfer DAI token for add liquidity to pool",
             "address": "0xdeADbeEf0000000000000000000000000000aaaa",
             "caller": "0x0000000000000000000000000000000000000042",
             "entry": "approve",
@@ -686,6 +714,7 @@
             }
         },
         {
+            "comment": "Approving transfer USDC token for add liquidity to pool",
             "address": "0xdeADbeEf0000000000000000000000000000bbbb",
             "caller": "0x0000000000000000000000000000000000000042",
             "entry": "approve",
@@ -712,6 +741,7 @@
             }
         },
         {
+            "comment": "Approving transfer USDT token for add liquidity to pool",
             "address": "0xdeADbeEf0000000000000000000000000000cccc",
             "caller": "0x0000000000000000000000000000000000000042",
             "entry": "approve",
@@ -738,6 +768,7 @@
             }
         },
         {
+            "comment": "Adding liquidity with proportion 100:1:10",
             "address": "0xdeADbeEf00000000000000000000000000000001",
             "caller": "0x0000000000000000000000000000000000000042",
             "entry": "add_liquidity",
@@ -805,6 +836,7 @@
             }
         },
         {
+            "comment": "Checking the balance of LP token after adding liquidity",
             "address": "0xdeADbeEf00000000000000000000000000000002",
             "entry": "balanceOf",
             "caller": "0x0000000000000000000000000000000000000042",
@@ -817,6 +849,7 @@
         },
 
         {
+            "comment": "Approving transfer DAI token for exchange",
             "address": "0xdeADbeEf0000000000000000000000000000aaaa",
             "caller": "0x0000000000000000000000000000000000000042",
             "entry": "approve",
@@ -843,6 +876,7 @@
             }
         },
         {
+            "comment": "Checking the balance of USDC token before exchange",
             "address": "0xdeADbeEf0000000000000000000000000000bbbb",
             "entry": "balanceOf",
             "calldata": [
@@ -853,6 +887,7 @@
             ]
         },
         {
+            "comment": "Exchanging DAI token for USDC token",
             "address": "0xdeADbeEf00000000000000000000000000000001",
             "entry": "exchange",
             "caller": "0x0000000000000000000000000000000000000042",
@@ -903,6 +938,7 @@
             }
         },
         {
+            "comment": "Checking the balance of USDC token after adding liquidity and exchange",
             "address": "0xdeADbeEf0000000000000000000000000000bbbb",
             "entry": "balanceOf",
             "calldata": [
@@ -914,6 +950,7 @@
         },
 
         {
+            "comment": "Checking the balance of LP token before removing liquidity",
             "address": "0xdeADbeEf00000000000000000000000000000002",
             "entry": "balanceOf",
             "caller": "0x0000000000000000000000000000000000000042",
@@ -925,6 +962,7 @@
             ]
         },
         {
+            "comment": "Removing all the liquidity from the pool",
             "address": "0xdeADbeEf00000000000000000000000000000001",
             "entry": "remove_liquidity",
             "caller": "0x0000000000000000000000000000000000000042",
@@ -992,6 +1030,7 @@
             }
         },
         {
+            "comment": "Check the balance of LP token after removing liquidity",
             "address": "0xdeADbeEf00000000000000000000000000000002",
             "entry": "balanceOf",
             "caller": "0x0000000000000000000000000000000000000042",
