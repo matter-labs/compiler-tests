@@ -1,6 +1,6 @@
 @external
 def __default__():
-    self.data = slice(msg.data, 0, len(msg.data))
+    self.data = slice(msg.data, 0, 32)
 @external
 def _del() -> bool:
     self.data = empty(Bytes[100])

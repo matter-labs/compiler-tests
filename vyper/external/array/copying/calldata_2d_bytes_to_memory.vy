@@ -12,4 +12,4 @@ def f(c: _Bytes[2]) -> Bytes[100]:
 # ====
 # compileViaYul: also
 # ----
-# f((bytes)[2]): 0x20, 0x40, 0x40, 2, "ab" -> 0x20, 2, "ab"
+# f((bytes)[2]): 0x20, 0x40, 0x60, 0x40, 0x20, 2, "ab" -> 0x20, 2, "ab"

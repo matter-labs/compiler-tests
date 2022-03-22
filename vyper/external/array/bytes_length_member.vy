@@ -1,6 +1,6 @@
 @external
 def set() -> bool:
-    self.data = slice(msg.data, 0, len(msg.data))
+    self.data = slice(msg.data, 0, 68)
     return True
 
 @external

@@ -1,13 +1,13 @@
 @external
 def set() -> bool:
-    self.data1 = slice(msg.data, 0, len(msg.data))
+    self.data1 = slice(msg.data, 0, 164)
     return True
 @external
 def reset() -> bool:
     self.data1 = self.data2
     return True
-data1: Bytes[100]
-data2: Bytes[100]
+data1: Bytes[200]
+data2: Bytes[200]
 # ====
 # compileViaYul: also
 # ----

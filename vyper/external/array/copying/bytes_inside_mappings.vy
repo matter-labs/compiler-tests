@@ -2,7 +2,7 @@ data: HashMap[uint256, Bytes[100]]
 
 @external
 def set(key: uint256) -> bool:
-    self.data[key] = slice(msg.data, 0, len(msg.data))
+    self.data[key] = slice(msg.data, 0, 68)
     return True
 
 @external
