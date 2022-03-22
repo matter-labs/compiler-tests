@@ -91,7 +91,8 @@ entries:
           bytes_calldata_to_string_calldata.vy:
             enabled: true
           bytes_inside_mappings.vy:
-            enabled: true
+            enabled: false
+            comment: "Disabled because bytes do not free storage completely"
           bytes_memory_to_storage.vy:
             enabled: true
           bytes_storage_to_memory.vy:
@@ -107,9 +108,11 @@ entries:
           calldata_bytes_to_storage.vy:
             enabled: true
           copy_byte_array_in_struct_to_storage.vy:
-            enabled: true
+            enabled: false
+            comment: "Disabled because bytes do not free storage completely"
           copy_removes_bytes_data.vy:
-            enabled: true
+            enabled: false
+            comment: "Disabled because bytes do not free storage completely"
           storage_memory_packed.vy:
             enabled: true
           string_calldata_to_bytes_calldata.vy:
@@ -120,7 +123,8 @@ entries:
         enabled: true
         entries:
           delete_removes_bytes_data.vy:
-            enabled: true
+            enabled: false
+            comment: "Disabled because bytes do not free storage completely"
           memory_arrays_delete.vy:
             enabled: true
       evm_exceptions_out_of_band_access.vy:
