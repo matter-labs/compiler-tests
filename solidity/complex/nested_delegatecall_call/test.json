@@ -1,0 +1,21 @@
+{ "cases": [ {
+    "name": "default",
+    "input": [
+        {
+            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "caller": "0xdeADbeEf00000000000000000000000000000042",
+            "entry": "main",
+            "calldata": [
+            ]
+        }
+    ],
+    "expected": [
+        "0xdeADbeEf00000000000000000000000000000001"
+    ]
+} ],
+    "contracts": {
+        "0xdeADbeEf00000000000000000000000000000001": "A.sol:A",
+        "0xdeADbeEf00000000000000000000000000000002": "B.sol:B",
+        "0xdeADbeEf00000000000000000000000000000003": "C.sol:C"
+    }
+}

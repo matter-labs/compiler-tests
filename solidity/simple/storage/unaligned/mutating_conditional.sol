@@ -80,8 +80,6 @@ contract Test {
     uint8 data;
 
     function main(bool gate_1, bool gate_2, uint8 value) public returns(uint8) {
-        data = 42;
-
         if (gate_1) {
             if (gate_2) {
                 data = value;

@@ -14,7 +14,7 @@
 #!             ]
 #!         },
 #!         {
-#!             "entry": "balance",
+#!             "entry": "balance_",
 #!             "calldata": [
 #!             ]
 #!         }
