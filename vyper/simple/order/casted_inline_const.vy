@@ -42,4 +42,4 @@
 @external
 @pure
 def main(witness: uint256) -> uint256:
-    return witness / convert(3, uint256)
+    return witness / 3
