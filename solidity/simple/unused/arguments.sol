@@ -4,12 +4,12 @@
 //!         {
 //!             "entry": "main",
 //!             "calldata": [
-//!                 "0", "0"
+//!                 "1", "2", "3", "4", "5", "6"
 //!             ]
 //!         }
 //!     ],
 //!     "expected": [
-//!         "42"
+//!         "4"
 //!     ]
 //! } ] }
 
@@ -18,7 +18,7 @@
 pragma solidity >=0.5.0;
 
 contract Test {
-    function main(uint256 a, uint8 b) public pure returns(uint64) {
-        return 42;
+    function main(uint256 a, uint256 b, uint256 c, uint256 d, uint256 e, uint256 f) public pure returns(uint256) {
+        return d;
     }
 }
