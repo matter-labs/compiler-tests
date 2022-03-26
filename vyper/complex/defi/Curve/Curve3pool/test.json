@@ -5,6 +5,7 @@
         {
             "comment": "The DAI token constructor",
             "address": "0xdeADbeEf0000000000000000000000000000aaaa",
+            "constructor": true,
             "calldata": [
                 "0", "0", "18", "0"
             ],
@@ -27,6 +28,7 @@
         {
             "comment": "The USDC token constructor",
             "address": "0xdeADbeEf0000000000000000000000000000bbbb",
+            "constructor": true,
             "calldata": [
                 "0", "0", "6", "0"
             ],
@@ -49,6 +51,7 @@
         {
             "comment": "The USDT token constructor",
             "address": "0xdeADbeEf0000000000000000000000000000cccc",
+            "constructor": true,
             "calldata": [
                 "0", "0", "6", "0"
             ],
@@ -71,6 +74,7 @@
         {
             "comment": "The Curve LP Token constructor",
             "address": "0xdeADbeEf00000000000000000000000000000002",
+            "constructor": true,
             "calldata": [
                 "0", "0"
             ],
@@ -94,6 +98,7 @@
         {
             "comment": "The StableSwap3Pool constructor",
             "address": "0xdeADbeEf00000000000000000000000000000001",
+            "constructor": true,
             "calldata": [
                 "0x0000000000000000000000000000000000000100",
                 "0xdeADbeEf0000000000000000000000000000aaaa",
@@ -465,6 +470,7 @@
         {
             "comment": "The DAI token constructor",
             "address": "0xdeADbeEf0000000000000000000000000000aaaa",
+            "constructor": true,
             "calldata": [
                 "0x80",
                 "0xC0",
@@ -494,6 +500,7 @@
         {
             "comment": "The USDC token constructor",
             "address": "0xdeADbeEf0000000000000000000000000000bbbb",
+            "constructor": true,
             "calldata": [
                 "0x80",
                 "0xC0",
@@ -523,6 +530,7 @@
         {
             "comment": "The USDT token constructor",
             "address": "0xdeADbeEf0000000000000000000000000000cccc",
+            "constructor": true,
             "calldata": [
                 "0x80",
                 "0xC0",
@@ -650,6 +658,7 @@
         {
             "comment": "The Curve LP Token constructor",
             "address": "0xdeADbeEf00000000000000000000000000000002",
+            "constructor": true,
             "calldata": [
                 "0", "0"
             ],
@@ -673,6 +682,7 @@
         {
             "comment": "The StableSwap3Pool constructor",
             "address": "0xdeADbeEf00000000000000000000000000000001",
+            "constructor": true,
             "caller": "0x0000000000000000000000000000000000000069",
             "calldata": [
                 "0x0000000000000000000000000000000000000100",

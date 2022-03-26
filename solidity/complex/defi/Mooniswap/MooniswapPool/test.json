@@ -3,7 +3,7 @@
     "input": [
         {
             "address": "0xdeADbeEf0000000000000000000000000000aaaa",
-            "constructor": "true",
+            "constructor": true,
             "calldata": [
                 "0x40",
                 "0x80",
@@ -15,7 +15,7 @@
         },
         {
             "address": "0xdeADbeEf0000000000000000000000000000bbbb",
-            "constructor": "true",
+            "constructor": true,
             "calldata": [
                 "0x40",
                 "0x80",
@@ -27,7 +27,7 @@
         },
         {
             "address": "0xdeADbeEf00000000000000000000000000000001",
-            "constructor": "true",
+            "constructor": true,
             "calldata": [
                 "0x0000000000000000000000000000000000000000000000000000000000000060",
                 "0x00000000000000000000000000000000000000000000000000000000000000c0",
