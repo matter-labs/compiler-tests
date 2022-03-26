@@ -4,7 +4,7 @@
     "input": [
         {
             "address": "0xdeADbeEf00000000000000000000000000000001",
-            "constructor": "true",
+            "constructor": true,
             "calldata": [
                 "32",
                 "3",

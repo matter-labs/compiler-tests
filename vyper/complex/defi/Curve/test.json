@@ -5,6 +5,7 @@
         {
             "comment": "The DAI token constructor",
             "address": "0xdeADbeEf0000000000000000000000000000aaaa",
+            "constructor": true,
             "calldata": [
                 "0x80",
                 "0xC0",
@@ -34,6 +35,7 @@
         {
             "comment": "The USDC token constructor",
             "address": "0xdeADbeEf0000000000000000000000000000bbbb",
+            "constructor": true,
             "calldata": [
                 "0x80",
                 "0xC0",
@@ -63,6 +65,7 @@
         {
             "comment": "The USDT token constructor",
             "address": "0xdeADbeEf0000000000000000000000000000cccc",
+            "constructor": true,
             "calldata": [
                 "0x80",
                 "0xC0",
@@ -190,6 +193,7 @@
         {
             "comment": "The Curve LP Token constructor",
             "address": "0xdeADbeEf00000000000000000000000000000002",
+            "constructor": true,
             "calldata": [
                 "0", "0"
             ],
@@ -213,6 +217,7 @@
         {
             "comment": "The StableSwap3Pool constructor",
             "address": "0xdeADbeEf00000000000000000000000000000001",
+            "constructor": true,
             "caller": "0x0000000000000000000000000000000000000069",
             "calldata": [
                 "0x0000000000000000000000000000000000000100",
@@ -229,6 +234,7 @@
         {
             "comment": "The Curve Registry Address Provider constructor",
             "address": "0xdeADbeEf00000000000000000000000000000010",
+            "constructor": true,
             "calldata": [
                 "0x0000000000000000000000000000000000000069"
             ],
@@ -237,6 +243,7 @@
         {
             "comment": "The Curve Registry constructor",
             "address": "0xdeADbeEf00000000000000000000000000000011",
+            "constructor": true,
             "calldata": [
                 "0xdeADbeEf00000000000000000000000000000010",
                 "0x0000000000000000000000000000000000000000"
@@ -274,6 +281,7 @@
         {
             "comment": "The Curve Registry PoolInfo constructor",
             "address": "0xdeADbeEf00000000000000000000000000000012",
+            "constructor": true,
             "calldata": [
                 "0xdeADbeEf00000000000000000000000000000010"
             ],
@@ -314,6 +322,7 @@
         {
             "comment": "The Curve Registry Calculator constructor",
             "address": "0xdeADbeEf00000000000000000000000000000020",
+            "constructor": true,
             "calldata": [
             ],
             "expected": []
@@ -321,6 +330,7 @@
         {
             "comment": "The Curve Registry Exchange constructor",
             "address": "0xdeADbeEf00000000000000000000000000000013",
+            "constructor": true,
             "calldata": [
                 "0xdeADbeEf00000000000000000000000000000010",
                 "0xdeADbeEf00000000000000000000000000000020"
