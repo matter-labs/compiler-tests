@@ -10,13 +10,24 @@
 //!             ]
 //!         }
 //!     ],
-//!     "expected": {
+//!     "expected": [ {
+//!         "compiler_version": "<=0.4.20",
+//!         "return_data": [
+//!             "0"
+//!         ],
+//!         "exception": false
+//!     }, {
+//!         "compiler_version": ">=0.4.21,<0.8",
+//!         "return_data": [],
+//!         "exception": true
+//!     }, {
+//!         "compiler_version": ">=0.8",
 //!         "return_data": [
 //!             "0x4E487B7100000000000000000000000000000000000000000000000000000000",
 //!             "0x0000001200000000000000000000000000000000000000000000000000000000"
 //!         ],
 //!         "exception": true
-//!     }
+//!     } ]
 //! }, {
 //!     "name": "ordinar_zero",
 //!     "input": [
@@ -30,7 +41,7 @@
 //!         }
 //!     ],
 //!     "expected": [
-//!                "0"
+//!         "0"
 //!     ]
 //! }, {
 //!     "name": "ordinar_non_zero",
@@ -45,7 +56,7 @@
 //!         }
 //!     ],
 //!     "expected": [
-//!                "2"
+//!         "2"
 //!     ]
 //! }, {
 //!     "name": "overflow_minimal_zero",
@@ -60,7 +71,7 @@
 //!         }
 //!     ],
 //!     "expected": [
-//!                "0"
+//!         "0"
 //!     ]
 //! }, {
 //!     "name": "overflow_minimal_non_zero",
@@ -75,7 +86,7 @@
 //!         }
 //!     ],
 //!     "expected": [
-//!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD"
+//!         "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD"
 //!     ]
 //! }, {
 //!     "name": "overflow",
@@ -90,13 +101,13 @@
 //!         }
 //!     ],
 //!     "expected": [
-//!                "0x000000000000000000584D2AF1A1416B1F5F2B856DE5EE852CE4AB806250494C"
+//!         "0x000000000000000000584D2AF1A1416B1F5F2B856DE5EE852CE4AB806250494C"
 //!     ]
 //! } ] }
 
 // SPDX-License-Identifier: MIT
 
-pragma solidity >=0.5.0;
+pragma solidity >=0.4.16;
 
 contract Test {
     function main(uint x, uint y, uint m) public pure returns(uint) {

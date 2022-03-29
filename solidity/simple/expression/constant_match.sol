@@ -28,7 +28,7 @@
 
 // SPDX-License-Identifier: MIT
 
-pragma solidity >=0.5.0;
+pragma solidity >=0.4.16;
 
 contract Test {
     uint8 constant SCRUTINEE = 42;

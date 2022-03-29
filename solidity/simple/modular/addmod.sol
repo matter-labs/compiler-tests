@@ -10,13 +10,24 @@
 //!             ]
 //!         }
 //!     ],
-//!     "expected": {
+//!     "expected": [ {
+//!         "compiler_version": "<=0.4.20",
+//!         "return_data": [
+//!             "0"
+//!         ],
+//!         "exception": false
+//!     }, {
+//!         "compiler_version": ">=0.4.21,<0.8",
+//!         "return_data": [],
+//!         "exception": true
+//!     }, {
+//!         "compiler_version": ">=0.8",
 //!         "return_data": [
 //!             "0x4E487B7100000000000000000000000000000000000000000000000000000000",
 //!             "0x0000001200000000000000000000000000000000000000000000000000000000"
 //!         ],
 //!         "exception": true
-//!     }
+//!     } ]
 //! }, {
 //!     "name": "ordinar",
 //!     "input": [
@@ -51,7 +62,7 @@
 
 // SPDX-License-Identifier: MIT
 
-pragma solidity >=0.5.0;
+pragma solidity >=0.4.16;
 
 contract Test {
     function main(uint x, uint y, uint m) public pure returns(uint) {

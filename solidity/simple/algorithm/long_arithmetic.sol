@@ -38,7 +38,7 @@
 
 // SPDX-License-Identifier: MIT
 
-pragma solidity >=0.5.0;
+pragma solidity >=0.4.19;
 
 contract Test {
     uint64 constant BASE = 1000000000;
