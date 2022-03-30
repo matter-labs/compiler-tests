@@ -67,7 +67,7 @@
 
 // SPDX-License-Identifier: MIT
 
-pragma solidity >=0.5.0;
+pragma solidity >=0.4.16;
 
 contract Test {
     function main(address tokenA, address tokenB) public pure returns (address token0, address token1) {

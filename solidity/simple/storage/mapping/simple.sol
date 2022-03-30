@@ -15,7 +15,7 @@
 
 // SPDX-License-Identifier: MIT
 
-pragma solidity >=0.5.0;
+pragma solidity >=0.4.16;
 
 contract Test {
     mapping (uint256 => uint256) data;

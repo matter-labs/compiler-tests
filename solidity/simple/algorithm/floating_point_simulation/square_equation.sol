@@ -41,7 +41,7 @@
 
 // SPDX-License-Identifier: MIT
 
-pragma solidity >=0.5.0;
+pragma solidity >=0.4.24;
 
 contract Test {
     uint128 constant EPS = 1E10;

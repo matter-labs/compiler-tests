@@ -30,7 +30,7 @@
 
 // SPDX-License-Identifier: MIT
 
-pragma solidity >=0.5.0;
+pragma solidity >=0.4.19;
 
 contract Test {
     function encryptSym(uint8 sym, uint8 keySym) private pure returns(uint8) {

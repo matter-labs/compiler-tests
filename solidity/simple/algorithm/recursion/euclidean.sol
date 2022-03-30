@@ -1,4 +1,4 @@
-//! { "cases": [ {
+//! { "modes": [ "Y" ], "cases": [ {
 //!     "name": "gcd_15_6",
 //!     "input": [
 //!         {
@@ -41,7 +41,7 @@
 
 // SPDX-License-Identifier: MIT
 
-pragma solidity >=0.5.0;
+pragma solidity >=0.4.16;
 
 contract Test {
     function gcd(uint64 a, uint64 b) public pure returns(uint64) {

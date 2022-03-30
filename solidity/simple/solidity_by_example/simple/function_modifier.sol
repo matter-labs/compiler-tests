@@ -1,4 +1,4 @@
-//! { "cases": [ {
+//! { "modes": [ "Y" ], "cases": [ {
 //!     "name": "changeOwnerOk",
 //!     "input": [
 //!         {
@@ -122,7 +122,7 @@
 //! } ] }
 
 // SPDX-License-Identifier: MIT
-pragma solidity >=0.8.1;
+pragma solidity >=0.7.0;
 
 contract Test {
     // We will use these variables to demonstrate how to use

@@ -39,7 +39,6 @@
 //!     ]
 //! }, {
 //!     "name": "overflow",
-//!     "modes": [ "0.8" ],
 //!     "input": [
 //!         {
 //!             "entry": "main",
@@ -53,7 +52,6 @@
 //!     ]
 //! }, {
 //!     "name": "overflow_minimal",
-//!     "modes": [ "0.8" ],
 //!     "input": [
 //!         {
 //!             "entry": "main",
@@ -69,7 +67,7 @@
 
 // SPDX-License-Identifier: MIT
 
-pragma solidity >=0.5.0;
+pragma solidity >=0.4.16;
 
 contract Test {
     function main(uint8 a) public pure returns(int8) {

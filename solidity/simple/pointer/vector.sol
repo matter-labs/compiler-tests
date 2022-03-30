@@ -27,7 +27,7 @@
 
 // SPDX-License-Identifier: MIT
 
-pragma solidity >=0.5.0;
+pragma solidity >=0.4.16;
 
 contract Test {
     function malloc(uint24 size) private pure returns(uint24 returnPointer) {

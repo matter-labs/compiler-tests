@@ -91,13 +91,18 @@
 //!             ]
 //!         }
 //!     ],
-//!     "expected": {
+//!     "expected": [ {
+//!         "compiler_version": "<0.8",
+//!         "return_data": [],
+//!         "exception": true
+//!     }, {
+//!         "compiler_version": ">=0.8",
 //!         "return_data": [
 //!             "0x4E487B7100000000000000000000000000000000000000000000000000000000",
 //!             "0x0000003100000000000000000000000000000000000000000000000000000000"
 //!         ],
 //!         "exception": true
-//!     }
+//!     } ]
 //! }, {
 //!     "name": "defaultGetter",
 //!     "input": [
@@ -154,7 +159,7 @@
 //! } ] }
 
 // SPDX-License-Identifier: MIT
-pragma solidity >=0.8.0;
+pragma solidity >=0.5.0;
 
 contract Test {
     // Several ways to initialize an array

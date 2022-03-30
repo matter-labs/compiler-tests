@@ -54,7 +54,7 @@
 
 // SPDX-License-Identifier: MIT
 
-pragma solidity >=0.5.0;
+pragma solidity >=0.4.16;
 
 contract Test {
     function main(bool a, bool b) public pure returns(bool) {

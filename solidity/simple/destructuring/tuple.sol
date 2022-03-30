@@ -15,7 +15,7 @@
 
 // SPDX-License-Identifier: MIT
 
-pragma solidity >=0.5.0;
+pragma solidity >=0.4.24;
 
 contract Test {
     function main(uint8[11] memory v) public pure returns(uint8) {

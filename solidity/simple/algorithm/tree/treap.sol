@@ -1,4 +1,4 @@
-//! { "cases": [ {
+//! { "modes": [ "Y" ], "cases": [ {
 //!     "name": "one",
 //!     "input": [
 //!         {
@@ -26,7 +26,7 @@
 
 // SPDX-License-Identifier: MIT
 
-pragma solidity >=0.5.0;
+pragma solidity >=0.4.16;
 
 contract Test {
     // Limit for nodes in memory and array size

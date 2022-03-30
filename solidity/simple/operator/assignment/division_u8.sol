@@ -1,6 +1,5 @@
 //! { "cases": [ {
 //!     "name": "zero_by_zero",
-//!     "modes": [ "0.8" ],
 //!     "input": [
 //!         {
 //!             "entry": "main",
@@ -9,16 +8,20 @@
 //!             ]
 //!         }
 //!     ],
-//!     "expected": {
+//!     "expected": [ {
+//!         "compiler_version": "<0.8",
+//!         "return_data": [],
+//!         "exception": true
+//!     }, {
+//!         "compiler_version": ">=0.8",
 //!         "return_data": [
 //!             "0x4E487B7100000000000000000000000000000000000000000000000000000000",
 //!             "0x0000001200000000000000000000000000000000000000000000000000000000"
 //!         ],
 //!         "exception": true
-//!     }
+//!     } ]
 //! }, {
 //!     "name": "ordinar_by_zero",
-//!     "modes": [ "0.8" ],
 //!     "input": [
 //!         {
 //!             "entry": "main",
@@ -27,16 +30,20 @@
 //!             ]
 //!         }
 //!     ],
-//!     "expected": {
+//!     "expected": [ {
+//!         "compiler_version": "<0.8",
+//!         "return_data": [],
+//!         "exception": true
+//!     }, {
+//!         "compiler_version": ">=0.8",
 //!         "return_data": [
 //!             "0x4E487B7100000000000000000000000000000000000000000000000000000000",
 //!             "0x0000001200000000000000000000000000000000000000000000000000000000"
 //!         ],
 //!         "exception": true
-//!     }
+//!     } ]
 //! }, {
 //!     "name": "max_by_zero",
-//!     "modes": [ "0.8" ],
 //!     "input": [
 //!         {
 //!             "entry": "main",
@@ -45,13 +52,18 @@
 //!             ]
 //!         }
 //!     ],
-//!     "expected": {
+//!     "expected": [ {
+//!         "compiler_version": "<0.8",
+//!         "return_data": [],
+//!         "exception": true
+//!     }, {
+//!         "compiler_version": ">=0.8",
 //!         "return_data": [
 //!             "0x4E487B7100000000000000000000000000000000000000000000000000000000",
 //!             "0x0000001200000000000000000000000000000000000000000000000000000000"
 //!         ],
 //!         "exception": true
-//!     }
+//!     } ]
 //! }, {
 //!     "name": "ordinar",
 //!     "input": [
@@ -121,7 +133,7 @@
 
 // SPDX-License-Identifier: MIT
 
-pragma solidity >=0.5.0;
+pragma solidity >=0.4.16;
 
 contract Test {
     function main(uint8 a, uint8 b) public pure returns(uint8) {
