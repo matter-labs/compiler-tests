@@ -550,12 +550,12 @@ target datalayout = "e-p:256:256-i8:256:256:256-i256:256:256-S32-a:256:256"
 target triple = "syncvm"
 
 ; Function Attrs: nounwind
-define void @__selector() local_unnamed_addr #0 {
+define i256 @__selector() local_unnamed_addr #0 {
 entry:
-  %cell_1 = load i256, i256 addrspace(2)* inttoptr(i256 32 to i256 addrspace(2)*), align 32
-  %cell_2 = load i256, i256 addrspace(2)* inttoptr(i256 64 to i256 addrspace(2)*), align 32
-  %offset = load i256, i256 addrspace(2)* inttoptr(i256 96 to i256 addrspace(2)*), align 32
-  %loaded = load i256, i256 addrspace(2)* inttoptr(i256 128 to i256 addrspace(2)*), align 32
+  %cell_1 = load i256, i256 addrspace(2)* inttoptr(i256 0 to i256 addrspace(2)*), align 32
+  %cell_2 = load i256, i256 addrspace(2)* inttoptr(i256 32 to i256 addrspace(2)*), align 32
+  %offset = load i256, i256 addrspace(2)* inttoptr(i256 64 to i256 addrspace(2)*), align 32
+  %loaded = load i256, i256 addrspace(2)* inttoptr(i256 96 to i256 addrspace(2)*), align 32
 
   store i256 %cell_1, i256 addrspace(1)* inttoptr (i256 32 to i256 addrspace(1)*), align 32
   store i256 %cell_2, i256 addrspace(1)* inttoptr (i256 64 to i256 addrspace(1)*), align 32
@@ -566,11 +566,20 @@ entry:
   %result_1 = load i256, i256 addrspace(1)* inttoptr (i256 32 to i256 addrspace(1)*), align 32
   %result_2 = load i256, i256 addrspace(1)* inttoptr (i256 64 to i256 addrspace(1)*), align 32
 
-  store i256 64, i256 addrspace(2)* inttoptr (i256 0 to i256 addrspace(2)*), align 32
-  store i256 %result_1, i256 addrspace(2)* inttoptr (i256 32 to i256 addrspace(2)*), align 32
-  store i256 %result_2, i256 addrspace(2)* inttoptr (i256 64 to i256 addrspace(2)*), align 32
+  ; offset 
+  store i256 256, i256 addrspace(1)* inttoptr (i256 128 to i256 addrspace(1)*), align 32
+  %data_offset = load i256, i256 addrspace(1)* inttoptr (i256 128 to i256 addrspace(1)*), align 1
 
-  ret void
+  ; length
+  store i256 64, i256 addrspace(1)* inttoptr (i256 160 to i256 addrspace(1)*), align 32
+  %data_length = load i256, i256 addrspace(1)* inttoptr (i256 160 to i256 addrspace(1)*), align 1
+  %data_length_shifted = shl i256 %data_length, 32
+  %data_merged = add i256 %data_offset, %data_length_shifted
+
+  store i256 %result_1, i256 addrspace(1)* inttoptr (i256 256 to i256 addrspace(1)*), align 32
+  store i256 %result_2, i256 addrspace(1)* inttoptr (i256 288 to i256 addrspace(1)*), align 32
+
+  ret i256 %data_merged
 }
 
 attributes #0 = { nounwind }
