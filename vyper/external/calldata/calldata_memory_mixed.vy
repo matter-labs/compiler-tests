@@ -7,9 +7,9 @@ interface Self:
     def f(_a: Bytes[100], _b: Bytes[100], _c: Bytes[100]) -> (uint256, bytes32, bytes32, bytes32): nonpayable
 @external
 def g() -> (uint256, bytes32, bytes32, bytes32):
-    x: Bytes[100] = 0x000800
-    y: Bytes[100] = 0x00090000
-    z: Bytes[100] = 0x000a0000000000
+    x: Bytes[100] = b"\x00\x08\x00"
+    y: Bytes[100] = b"\x00\x09\x00\x00"
+    z: Bytes[100] = b"\x00\x0a\x00\x00\x00\x00\x00"
     return Self(self).f(x, y, z)
 # ====
 # compileViaYul: also
