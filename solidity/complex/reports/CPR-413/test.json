@@ -1,4 +1,4 @@
-{ "cases": [ {
+{ "modes": [ "Y" ], "cases": [ {
     "name": "main",
     "input": [
         {
@@ -9,8 +9,7 @@
         }
     ],
     "expected": {
-	"return_data": [
-        ],
+	    "return_data": [],
         "exception": true
     }
 } ],
