@@ -1,24 +1,32 @@
 ---
 enabled: true
 entries:
-  abiencodedecode:
-    enabled: true
-    entries:
-      abi_encode_empty_string_v1.vy:
-        enabled: false
   abiEncoderV1:
     enabled: true
     entries:
       abi_decode_fixed_arrays.vy:
         enabled: true
       abi_encode.vy:
-        enabled: false
+        enabled: true
+      abi_encode_call.vy:
+        enabled: true
+      abi_encode_calldata_slice.vy:
+        enabled: true
+      abi_encode_empty_string.vy:
+        enabled: true
       abi_encode_rational.vy:
         enabled: true
       byte_arrays.vy:
         enabled: false
+      memory_params_in_external_function.vy:
+        enabled: true
       return_dynamic_types_cross_call_simple.vy:
         enabled: true
+      struct:
+        enabled: true
+        entries:
+          struct_storage_ptr.vy:
+            enabled: true
   abiEncoderV2:
     enabled: true
     entries:
@@ -45,6 +53,23 @@ entries:
             enabled: true
           struct_simple.vy:
             enabled: true
+  abiencodedecode:
+    enabled: true
+    entries:
+      abi_encode_call_is_consistent.vy:
+        enabled: true
+      abi_encode_call_special_args.vy:
+        enabled: true
+      abi_encode_empty_string_v1.vy:
+        enabled: false
+      abi_encode_with_selector.vy:
+        enabled: true
+      abi_encode_with_selectorv2.vy:
+        enabled: true
+      abi_encode_with_signature.vy:
+        enabled: true
+      abi_encode_with_signaturev2.vy:
+        enabled: true
   accessor:
     enabled: true
     entries:
@@ -92,7 +117,6 @@ entries:
             enabled: true
           bytes_inside_mappings.vy:
             enabled: false
-            comment: "Disabled because bytes do not free storage completely"
           bytes_memory_to_storage.vy:
             enabled: true
           bytes_storage_to_memory.vy:
@@ -109,10 +133,8 @@ entries:
             enabled: true
           copy_byte_array_in_struct_to_storage.vy:
             enabled: false
-            comment: "Disabled because bytes do not free storage completely"
           copy_removes_bytes_data.vy:
             enabled: false
-            comment: "Disabled because bytes do not free storage completely"
           storage_memory_packed.vy:
             enabled: true
           string_calldata_to_bytes_calldata.vy:
@@ -124,7 +146,6 @@ entries:
         entries:
           delete_removes_bytes_data.vy:
             enabled: false
-            comment: "Disabled because bytes do not free storage completely"
           memory_arrays_delete.vy:
             enabled: true
       evm_exceptions_out_of_band_access.vy:
@@ -218,12 +239,12 @@ entries:
       cleanup_address_types_v2.vy:
         enabled: true
   constantEvaluator:
-      enabled: true
-      entries:
-        negative_fractional_mod.vy:
-          enabled: true
-        rounding.vy:
-          enabled: true
+    enabled: true
+    entries:
+      negative_fractional_mod.vy:
+        enabled: true
+      rounding.vy:
+        enabled: true
   constants:
     enabled: true
     entries:
@@ -244,6 +265,8 @@ entries:
         enabled: true
       functions_called_by_constructor.vy:
         enabled: true
+  constructor_with_params.vy:
+    enabled: true
   conversions:
     enabled: true
     entries:
@@ -281,5 +304,3 @@ entries:
         enabled: true
       event_struct_storage_v2.vy:
         enabled: true
-  constructor_with_params.vy:
-    enabled: true
