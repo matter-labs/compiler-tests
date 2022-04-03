@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity >=0.8.1;
-pragma abicoder v2;
+pragma solidity >=0.6.9;
+pragma experimental ABIEncoderV2;
 
 contract Foo {
     string public name = "Foo";
