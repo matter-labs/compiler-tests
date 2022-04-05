@@ -1,10 +1,10 @@
 @internal
 def enc_bytes(data: Bytes[128], start: uint256, end: uint256) -> Bytes[192]:
-    return _abi_encode(slice(data, start, end))
+    return _abi_encode(slice(data, start, end - start))
 
 @internal
 def enc_bytes_reference(data: Bytes[128], start: uint256, end: uint256) -> Bytes[192]:
-    tmp: Bytes[128] = slice(data, start, end)
+    tmp: Bytes[128] = slice(data, start, end - start)
     return _abi_encode(tmp)
 
 @internal
