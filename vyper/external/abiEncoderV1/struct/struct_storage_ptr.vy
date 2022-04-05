@@ -33,7 +33,6 @@ def f() -> (uint256, uint256, uint256, uint256, uint256, uint256):
 # ====
 # compileViaYul: also
 # ----
-# library: L
 # f() -> 8, 7, 1, 2, 7, 12
 # gas irOptimized: 167446
 # gas legacy: 169347

@@ -4,29 +4,60 @@ entries:
   abiencodedecode:
     enabled: true
     entries:
+      abi_encode_call_is_consistent.vy:
+        enabled: true
+      abi_encode_call_special_args.vy:
+        enabled: true
       abi_encode_empty_string_v1.vy:
-        enabled: false
+        enabled: true
+      abi_encode_with_selector.vy:
+        enabled: true
+      abi_encode_with_selectorv2.vy:
+        enabled: true
+      abi_encode_with_signature.vy:
+        enabled: true
+      abi_encode_with_signaturev2.vy:
+        enabled: true
   abiEncoderV1:
     enabled: true
     entries:
       abi_decode_fixed_arrays.vy:
         enabled: true
       abi_encode.vy:
-        enabled: false
+        enabled: true
+      abi_encode_call.vy:
+        enabled: true
+      abi_encode_calldata_slice.vy:
+        enabled: true
+      abi_encode_empty_string.vy:
+        enabled: true
       abi_encode_rational.vy:
         enabled: true
       byte_arrays.vy:
-        enabled: false
+        enabled: true
+      memory_params_in_external_function.vy:
+        enabled: true
       return_dynamic_types_cross_call_simple.vy:
         enabled: true
+      struct:
+        enabled: true
+        entries:
+          struct_storage_ptr.vy:
+            enabled: true
   abiEncoderV2:
     enabled: true
     entries:
+      abi_encode_calldata_slice.vy:
+        enabled: true
       abi_encode_empty_string_v2.vy:
         enabled: false
       abi_encode_rational_v2.vy:
         enabled: true
+      abi_encode_v2.vy:
+        enabled: true
       bool_out_of_bounds.vy:
+        enabled: true
+      byte_arrays.vy:
         enabled: true
       calldata_array_static.vy:
         enabled: true
@@ -34,16 +65,45 @@ entries:
         enabled: true
       calldata_array_two_static.vy:
         enabled: true
+      calldata_struct_member_offset.vy:
+        enabled: true
       calldata_struct_simple.vy:
+        enabled: true
+      cleanup:
+        enabled: true
+        entries:
+          address.vy:
+            enabled: true
+          bool.vy:
+            enabled: true
+          bytesx.vy:
+            enabled: true
+          cleanup.vy:
+            enabled: true
+          intx.vy:
+            enabled: true
+          simple_struct.vy:
+            enabled: true
+          static_array.vy:
+            enabled: true
+          uintx.vy:
+            enabled: true
+      memory_params_in_external_function.vy:
+        enabled: true
+      storage_array_encoding.vy:
         enabled: true
       struct:
         enabled: true
         entries:
+          mediocre2_struct.vy:
+            enabled: true
           mediocre_struct.vy:
             enabled: true
           struct_short.vy:
             enabled: true
           struct_simple.vy:
+            enabled: true
+          struct_validation.vy:
             enabled: true
   accessor:
     enabled: true
@@ -75,6 +135,10 @@ entries:
             enabled: true
           bytes_concat_3_args.vy:
             enabled: true
+          bytes_concat_as_argument.vy:
+            enabled: true
+          bytes_concat_different_types.vy:
+            enabled: true
           bytes_concat_empty_strings.vy:
             enabled: true
           bytes_concat_nested.vy:
@@ -84,6 +148,12 @@ entries:
       copying:
         enabled: true
         entries:
+          array_copy_calldata_storage.vy:
+            enabled: true
+          array_copy_cleanup_uint40.vy:
+            enabled: true
+          array_copy_cleanup_uint128.vy:
+            enabled: true
           array_copy_storage_storage_static_simple.vy:
             enabled: true
           array_storage_multi_items_per_slot.vy:
@@ -188,6 +258,8 @@ entries:
   calldata:
     enabled: true
     entries:
+      calldata_array_dynamic_bytes.vy:
+        enabled: true
       calldata_bound_bytes.vy:
         enabled: true
       calldata_bound_static_array.vy:
@@ -206,9 +278,15 @@ entries:
         enabled: true
       calldata_memory_mixed.vy:
         enabled: true
+      calldata_string_array.vy:
+        enabled: true
       calldata_struct.vy:
         enabled: true
+      calldata_struct_cleaning.vy:
+        enabled: true
       calldata_struct_internal.vy:
+        enabled: true
+      copy_from_calldata_removes_bytes_data.vy:
         enabled: true
   cleanup:
     enabled: true

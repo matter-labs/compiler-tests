@@ -8,6 +8,7 @@ def f(a: uint256, _b: Bytes[100], c: uint256) -> (uint256, uint256, bytes1, uint
 @pure
 def f_external(a: uint256, b: Bytes[100], c: uint256) -> (uint256, uint256, bytes1, uint256):
     return (a, len(b), convert(slice(b, 3, 1), bytes1), c)
+
 # ====
 # compileViaYul: also
 # ----
