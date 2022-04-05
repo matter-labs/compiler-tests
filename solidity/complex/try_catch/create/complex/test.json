@@ -1,5 +1,5 @@
 {
-    "modes": [ "Y" ], "cases": [ {
+    "cases": [ {
         "name": "error1",
         "input": [
             {

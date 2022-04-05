@@ -1,4 +1,4 @@
-{ "modes": [ "Y" ], "cases": [ {
+{ "cases": [ {
     "name": "tryCatchExternalCallFailed",
     "input": [
         {

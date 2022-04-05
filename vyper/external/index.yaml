@@ -34,7 +34,7 @@ entries:
       abi_encode_rational.vy:
         enabled: true
       byte_arrays.vy:
-        enabled: true
+        enabled: false
       memory_params_in_external_function.vy:
         enabled: true
       return_dynamic_types_cross_call_simple.vy:
@@ -162,7 +162,6 @@ entries:
             enabled: true
           bytes_inside_mappings.vy:
             enabled: false
-            comment: "Disabled because bytes do not free storage completely"
           bytes_memory_to_storage.vy:
             enabled: true
           bytes_storage_to_memory.vy:
@@ -179,10 +178,8 @@ entries:
             enabled: true
           copy_byte_array_in_struct_to_storage.vy:
             enabled: false
-            comment: "Disabled because bytes do not free storage completely"
           copy_removes_bytes_data.vy:
             enabled: false
-            comment: "Disabled because bytes do not free storage completely"
           storage_memory_packed.vy:
             enabled: true
           string_calldata_to_bytes_calldata.vy:
@@ -194,7 +191,6 @@ entries:
         entries:
           delete_removes_bytes_data.vy:
             enabled: false
-            comment: "Disabled because bytes do not free storage completely"
           memory_arrays_delete.vy:
             enabled: true
       evm_exceptions_out_of_band_access.vy:
@@ -296,12 +292,12 @@ entries:
       cleanup_address_types_v2.vy:
         enabled: true
   constantEvaluator:
-      enabled: true
-      entries:
-        negative_fractional_mod.vy:
-          enabled: true
-        rounding.vy:
-          enabled: true
+    enabled: true
+    entries:
+      negative_fractional_mod.vy:
+        enabled: true
+      rounding.vy:
+        enabled: true
   constants:
     enabled: true
     entries:
@@ -322,6 +318,8 @@ entries:
         enabled: true
       functions_called_by_constructor.vy:
         enabled: true
+  constructor_with_params.vy:
+    enabled: true
   conversions:
     enabled: true
     entries:
@@ -359,5 +357,3 @@ entries:
         enabled: true
       event_struct_storage_v2.vy:
         enabled: true
-  constructor_with_params.vy:
-    enabled: true
