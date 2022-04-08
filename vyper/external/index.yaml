@@ -279,7 +279,8 @@ entries:
       calldata_memory_mixed.vy:
         enabled: true
       calldata_string_array.vy:
-        enabled: true
+        enabled: false
+        comment: "Unsupported, but can be supported in the future"
       calldata_struct.vy:
         enabled: true
       calldata_struct_cleaning.vy:

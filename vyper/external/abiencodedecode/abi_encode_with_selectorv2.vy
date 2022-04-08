@@ -1,3 +1,10 @@
+METHOD_ID: constant(Bytes[4]) = b"\x12\x34\x56\x78"
+
+@external
+@pure
+def f0() -> Bytes[100]:
+    return _abi_encode(METHOD_ID, ensure_tuple=False)
+
 @external
 @pure
 def f1() -> Bytes[100]:
@@ -7,13 +14,13 @@ def f1() -> Bytes[100]:
 @pure
 def f2() -> Bytes[100]:
     x: Bytes[4] = b"\x12\x34\x56\x78"
-    return _abi_encode("abc", method_id=x)
+    return _abi_encode("abc", method_id=METHOD_ID)
 
 @external
 @pure
 def f3() -> Bytes[100]:
     x: Bytes[4] = b"\x12\x34\x56\x78"
-    return _abi_encode(115792089237316195423570985008687907853269984665640564039457584007913129639935, method_id=x)
+    return _abi_encode(115792089237316195423570985008687907853269984665640564039457584007913129639935, method_id=METHOD_ID)
 
 struct S:
     a: uint256
@@ -28,7 +35,7 @@ def f4() -> Bytes[400]:
     s.a = convert(0x01234567, uint256)
     s.b = "Lorem ipsum dolor sit ethereum........"
     s.c = convert(0x1234, uint16)
-    return _abi_encode(115792089237316195423570985008687907853269984665640564039457584007913129639935, s, convert(3, uint256), method_id=x)
+    return _abi_encode(115792089237316195423570985008687907853269984665640564039457584007913129639935, s, convert(3, uint256), method_id=METHOD_ID)
 
 # ====
 # compileViaYul: also
