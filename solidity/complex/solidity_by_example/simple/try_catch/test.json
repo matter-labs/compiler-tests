@@ -118,9 +118,24 @@
             ]
         }
     ],
-    "expected": {
-        "return_data": [
+    "expected": [ {
+        "compiler_version": "<0.8",
+        "return_data": [],
+        "events": [
+            {
+                "topics": [
+                    "0x532fd6ea96cfb78bb46e09279a26828b8b493de1a2b8b1ee1face527978a15a5"
+                ],
+                "values": [
+                    "0x20",
+                    "0x00"
+                ]
+            }
         ],
+        "exception": false
+    }, {
+        "compiler_version": ">=0.8",
+        "return_data": [],
         "events": [
             {
                 "topics": [
@@ -133,8 +148,9 @@
                     "0x0000000100000000000000000000000000000000000000000000000000000000"
                 ]
             }
-        ]
-    }
+        ],
+        "exception": false
+    } ]
 }, {
     "name": "tryCatchNewContractOk",
     "input": [
