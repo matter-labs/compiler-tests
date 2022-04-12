@@ -124,9 +124,25 @@ entries:
   array:
     enabled: true
     entries:
+      arrays_complex_from_and_to_storage.vy:
+        enabled: true
+      byte_array_transitional_2.vy:
+        enabled: true
       bytes_length_member.vy:
         enabled: true
+      bytes_to_fixed_bytes_cleanup.vy:
+        enabled: true
+      bytes_to_fixed_bytes_simple.vy:
+        enabled: true
       calldata_array.vy:
+        enabled: true
+      calldata_array_as_argument_internal_function.vy:
+        enabled: true
+      calldata_array_of_struct.vy:
+        enabled: true
+      calldata_array_two_dimensional.vy:
+        enabled: true
+      calldata_bytes_array_bounds.vy:
         enabled: true
       concat:
         enabled: true
@@ -154,9 +170,49 @@ entries:
             enabled: true
           array_copy_cleanup_uint128.vy:
             enabled: true
+          array_copy_clear_storage.vy:
+            enabled: true
+          array_copy_clear_storage_packed.vy:
+            enabled: true
+          array_copy_including_array.vy:
+            enabled: true
+          array_copy_memory_to_storage.vy:
+            enabled: true
+          array_copy_nested_array.vy:
+            enabled: true
+          array_copy_storage_abi_signed.vy:
+            enabled: true
           array_copy_storage_storage_static_simple.vy:
             enabled: true
+          array_copy_storage_storage_static_static.vy:
+            enabled: true
+          array_copy_storage_storage_struct.vy:
+            enabled: true
+          array_copy_storage_to_memory.vy:
+            enabled: true
+          array_copy_storage_to_memory_nested.vy:
+            enabled: true
+          array_nested_calldata_to_memory.vy:
+            enabled: true
+          array_nested_calldata_to_storage.vy:
+            enabled: true
+          array_nested_memory_to_storage.vy:
+            enabled: true
+          array_of_struct_calldata_to_memory.vy:
+            enabled: true
+          array_of_struct_calldata_to_storage.vy:
+            enabled: true
+          array_of_struct_memory_to_storage.vy:
+            enabled: true
+          array_of_structs_containing_arrays_calldata_to_memory.vy:
+            enabled: true
+          array_of_structs_containing_arrays_calldata_to_storage.vy:
+            enabled: true
+          array_of_structs_containing_arrays_memory_to_storage.vy:
+            enabled: true
           array_storage_multi_items_per_slot.vy:
+            enabled: true
+          arrays_from_and_to_storage.vy:
             enabled: true
           bytes_calldata_to_string_calldata.vy:
             enabled: true
@@ -173,7 +229,11 @@ entries:
             enabled: true
           calldata_2d_bytes_to_memory_2.vy:
             enabled: true
+          calldata_array_of_struct_to_memory.vy:
+            enabled: true
           calldata_array_static_to_memory.vy:
+            enabled: true
+          calldata_bytes_array_to_memory.vy:
             enabled: true
           calldata_bytes_to_storage.vy:
             enabled: true
@@ -183,21 +243,45 @@ entries:
           copy_removes_bytes_data.vy:
             enabled: false
             comment: "Disabled because bytes do not free storage completely"
+          empty_bytes_copy.vy:
+            enabled: true
+          storage_memory_nested.vy:
+            enabled: true
+          storage_memory_nested_bytes.vy:
+            enabled: true
+          storage_memory_nested_from_pointer.vy:
+            enabled: true
+          storage_memory_nested_struct.vy:
+            enabled: true
           storage_memory_packed.vy:
             enabled: true
           string_calldata_to_bytes_calldata.vy:
             enabled: true
+      create_memory_array.vy:
+        enabled: true
       create_memory_byte_array.vy:
         enabled: true
       delete:
         enabled: true
         entries:
+          delete_bytes_array.vy:
+            enabled: true
+          delete_memory_array.vy:
+            enabled: true
+          delete_on_array_of_structs.vy:
+            enabled: true
           delete_removes_bytes_data.vy:
             enabled: false
             comment: "Disabled because bytes do not free storage completely"
+          delete_storage_array.vy:
+            enabled: true
+          delete_storage_array_packed.vy:
+            enabled: true
           memory_arrays_delete.vy:
             enabled: true
       evm_exceptions_out_of_band_access.vy:
+        enabled: true
+      external_array_args.vy:
         enabled: true
       fixed_array_cleanup.vy:
         enabled: true
@@ -210,19 +294,34 @@ entries:
       indexAccess:
         enabled: true
         entries:
+          arrays_complex_memory_index_access.vy:
+            enabled: true
           inline_array_index_access_ints.vy:
+            enabled: true
+          inline_array_index_access_strings.vy:
             enabled: true
           memory_arrays_index_access_write.vy:
             enabled: false
+      inline_array_return.vy:
+        enabled: true
       inline_array_singleton.vy:
         enabled: true
       inline_array_storage_to_memory_conversion_ints.vy:
         enabled: true
       inline_array_storage_to_memory_conversion_strings.vy:
         enabled: true
+      inline_array_strings_from_document.vy:
+        enabled: true
       memory.vy:
         enabled: true
       short_fixed_array_cleanup.vy:
+        enabled: true
+      slices:
+        enabled: true
+        entries:
+          array_slice_calldata_as_argument_of_external_calls.vy:
+            enabled: true
+      storage_array_ref.vy:
         enabled: true
       string_allocation_bug.vy:
         enabled: true
@@ -295,6 +394,8 @@ entries:
         enabled: true
       cleanup_address_types_v2.vy:
         enabled: true
+      cleanup_bytes_types_v2.vy:
+        enabled: true
   constantEvaluator:
     enabled: true
     entries:
@@ -306,6 +407,10 @@ entries:
     enabled: true
     entries:
       constant_string.vy:
+        enabled: true
+      constant_string_at_file_level.vy:
+        enabled: true
+      constant_variables.vy:
         enabled: true
       consteval_array_length.vy:
         enabled: true
@@ -347,6 +452,9 @@ entries:
         enabled: true
       event_indexed_mixed.vy:
         enabled: true
+      event_indexed_string.vy:
+        enabled: false
+        comment: "Disabled because vent indexes may only be value types"
       event_no_arguments.vy:
         enabled: true
       event_really_lots_of_data.vy:
@@ -361,3 +469,240 @@ entries:
         enabled: true
       event_struct_storage_v2.vy:
         enabled: true
+  expressions:
+    enabled: true
+    entries:
+      bit_operators.vy:
+        enabled: true
+      exp_operator_const.vy:
+        enabled: true
+      exp_operator_const_signed.vy:
+        enabled: true
+      exp_zero_literal.vy:
+        enabled: true
+      unary_too_long_literal.vy:
+        enabled: true
+  fallback:
+    enabled: true
+    entries:
+      falback_return.vy:
+        enabled: true
+      fallback_return_data.vy:
+        enabled: true
+      short_data_calls_fallback.vy:
+        enabled: true
+  functionCall:
+    enabled: true
+    entries:
+      array_multiple_local_vars.vy:
+        enabled: true
+      bare_call_no_returndatacopy.vy:
+        enabled: true
+      call_internal_function_via_expression.vy:
+        enabled: true
+      calling_nonexisting_contract_throws.vy:
+        enabled: true
+      calling_other_functions.vy:
+        enabled: true
+      delegatecall_return_value.vy:
+        enabled: true
+      delegatecall_return_value_pre_byzantium.vy:
+        enabled: true
+      external_call.vy:
+        enabled: true
+      external_call_dynamic_returndata.vy:
+        enabled: true
+      external_call_to_nonexisting.vy:
+        enabled: true
+      external_function.vy:
+        enabled: true
+      member_accessors.vy:
+        enabled: true
+      multiple_functions.vy:
+        enabled: true
+      multiple_return_values.vy:
+        enabled: true
+      precompile_extcodesize_check.vy:
+        enabled: true
+      transaction_status.vy:
+        enabled: true
+  getters:
+    enabled: true
+    entries:
+      array_mapping_struct.vy:
+        enabled: true
+      arrays.vy:
+        enabled: true
+      bytes.vy:
+        enabled: true
+      mapping.vy:
+        enabled: true
+      mapping_array_struct.vy:
+        enabled: true
+      mapping_of_string.vy:
+        enabled: true
+      mapping_to_struct.vy:
+        enabled: true
+      string_and_bytes.vy:
+        enabled: true
+      struct_with_bytes.vy:
+        enabled: true
+      struct_with_bytes_simple.vy:
+        enabled: true
+      value_types.vy:
+        enabled: true
+  immutable:
+    enabled: true
+    entries:
+      assign_at_declaration.vy:
+        enabled: true
+      assign_from_immutables.vy:
+        enabled: true
+      fun_read_in_ctor.vy:
+        enabled: true
+      getter.vy:
+        enabled: true
+      immutable_signed.vy:
+        enabled: true
+      read_in_ctor.vy:
+        enabled: true
+      small_types_in_reverse.vy:
+        enabled: true
+      stub.vy:
+        enabled: true
+      use_scratch.vy:
+        enabled: true
+  integer:
+    enabled: true
+    entries:
+      basic.vy:
+        enabled: true
+      int.vy:
+        enabled: true
+      many_local_variables.vy:
+        enabled: true
+      small_signed_types.vy:
+        enabled: true
+      uint.vy:
+        enabled: true
+  interfaceID:
+    enabled: true
+    entries:
+      homer.vy:
+        enabled: true
+      lisa.vy:
+        enabled: true
+  isoltestTesting:
+    enabled: true
+    entries:
+      account.vy:
+        enabled: true
+      balance_without_balance.vy:
+        enabled: true
+      builtins.vy:
+        enabled: true
+      effects.vy:
+        enabled: true
+      format_raw_string_with_control_chars.vy:
+        enabled: true
+      storage:
+        enabled: true
+        entries:
+          storage_empty.vy:
+            enabled: true
+          storage_nonempty.vy:
+            enabled: true
+  literals:
+    enabled: true
+    entries:
+      denominations.vy:
+        enabled: true
+      escape.vy:
+        enabled: true
+      ether.vy:
+        enabled: true
+      gwei.vy:
+        enabled: true
+      hex_string_with_non_printable_characters.vy:
+        enabled: true
+      hex_string_with_underscore.vy:
+        enabled: true
+      scientific_notation.vy:
+        enabled: true
+      wei.vy:
+        enabled: true
+  memoryManagement:
+    enabled: true
+    entries:
+      memory_types_initialisation.vy:
+        enabled: true
+  operators:
+    enabled: true
+    entries:
+      compound_assign.vy:
+        enabled: true
+  optimizer:
+    enabled: true
+    entries:
+      shift_bytes.vy:
+        enabled: true
+  reverts:
+    enabled: true
+    entries:
+      assert_require.vy:
+        enabled: true
+      revert.vy:
+        enabled: true
+      simple_throw.vy:
+        enabled: true
+  smoke:
+    enabled: true
+    entries:
+      alignment.vy:
+        enabled: true
+      arrays.vy:
+        enabled: true
+      bytes_and_strings.vy:
+        enabled: true
+      failure.vy:
+        enabled: true
+      multiline.vy:
+        enabled: true
+      multiline_comments.vy:
+        enabled: true
+      structs.vy:
+        enabled: true
+  specialFunctions:
+    enabled: true
+    entries:
+      keccak256_optimized.vy:
+        enabled: true
+  state:
+    enabled: true
+    entries:
+      msg_data.vy:
+        enabled: true
+      msg_sender.vy:
+        enabled: true
+  storage:
+    enabled: true
+    entries:
+      accessors_mapping_for_array.vy:
+        enabled: true
+      array_accessor.vy:
+        enabled: true
+      chop_sign_bits.vy:
+        enabled: true
+      complex_accessors.vy:
+        enabled: true
+      empty_nonempty_empty.vy:
+        enabled: true
+      mapping_state.vy:
+        enabled: true
+      mapping_string_key.vy:
+        enabled: true
+      packed_storage_signed.vy:
+        enabled: true
+      packed_storage_structs_bytes.vy:
+        enabled: true
+
