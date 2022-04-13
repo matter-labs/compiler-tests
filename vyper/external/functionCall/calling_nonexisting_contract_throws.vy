@@ -19,7 +19,7 @@ def g() -> uint256:
 
 @external
 def h() -> uint256:
-    raw_call(self.d, b"") # this does not throw (low-level)
+    raw_call(self.d.address, b"")
     return 7
 
 # ====
