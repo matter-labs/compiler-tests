@@ -1,0 +1,8 @@
+x: constant(uint256) = 56
+st: constant(bytes32) = b"abc\x00\xff__\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00"
+
+# ====
+# compileToEwasm: also
+# compileViaYul: also
+# ----
+# constructor() ->
