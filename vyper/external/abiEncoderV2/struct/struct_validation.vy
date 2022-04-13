@@ -5,14 +5,14 @@ struct S:
     
 @external
 @pure
-def f(s: S) -> (uint256, uint256, uint256):
-    return (convert(s.a, uint256), convert(s.b, uint256), convert(s.c, uint256))
+def f(s: S) -> (int256, uint256, uint256):
+    return (convert(s.a, int256), convert(s.b, uint256), convert(s.c, uint256))
 
 # ====
 # compileViaYul: also
 # compileToEwasm: also
 # ----
-# f((int16,uint8,bytes2)): 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff01, 0xff, "ab" -> 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff01, 0xff, "ab"
+# f((int16,uint8,bytes2)): 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff01, 0xff, "ab" -> 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff01, 0xff, right("ab")
 # f((int16,uint8,bytes2)): 0xff010, 0xff, "ab" -> FAILURE
 # f((int16,uint8,bytes2)): 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff01, 0xff0002, "ab" -> FAILURE
 # f((int16,uint8,bytes2)): 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff01, 0xff, "abcd" -> FAILURE
