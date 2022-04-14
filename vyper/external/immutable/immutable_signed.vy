@@ -4,7 +4,7 @@ b: immutable(bytes2)
 @external
 def __init__():
     a = -2
-    b = b"ab"
+    b = convert(b"ab", bytes2)
     
 @external
 @view
