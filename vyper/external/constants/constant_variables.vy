@@ -1,5 +1,5 @@
 x: constant(uint256) = 56
-st: constant(bytes32) = b"abc\x00\xff__\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00"
+st: constant(bytes32) = 0x61626300ff5f5f00000000000000000000000000000000000000000000000000
 
 # ====
 # compileToEwasm: also
