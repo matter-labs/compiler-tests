@@ -338,6 +338,7 @@ entries:
         enabled: true
       blockhash.vy:
         enabled: false
+        comment: "Uses unsupported blockhash"
       blockhash_shadow_resolution.vy:
         enabled: true
       iterated_keccak256_with_bytes.vy:
@@ -455,7 +456,7 @@ entries:
         enabled: true
       event_indexed_string.vy:
         enabled: false
-        comment: "Disabled because vent indexes may only be value types"
+        comment: "Disabled because event indexes may only be value types"
       event_no_arguments.vy:
         enabled: true
       event_really_lots_of_data.vy:
@@ -527,7 +528,8 @@ entries:
     enabled: true
     entries:
       array_mapping_struct.vy:
-        enabled: true
+        enabled: false
+        comment: "Unsupported, but can be supported in the future"
       arrays.vy:
         enabled: true
       bytes.vy:

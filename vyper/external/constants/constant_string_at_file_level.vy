@@ -1,7 +1,7 @@
 a: constant(Bytes[100]) = b"\x03\x01\x02"
 c: constant(String[100]) = "hello"
 x: constant(uint256) = 56
-st: constant(bytes32) = b"abc\x00\xff__\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00"
+st: constant(bytes32) = 0x61626300ff5f5f00000000000000000000000000000000000000000000000000
 
 @external
 def f() -> Bytes[100]:

@@ -28,4 +28,4 @@ def h() -> uint256:
 # ----
 # f() -> FAILURE
 # g() -> FAILURE
-# h() -> 7
+# h() -> FAILURE

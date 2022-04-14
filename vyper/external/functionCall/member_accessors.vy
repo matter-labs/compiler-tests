@@ -6,7 +6,7 @@ an_address: public(address)
 @external
 def __init__():
     self.data = 8
-    self.name = b"Celina"
+    self.name = convert(b"Celina", bytes6)
     self.a_hash = keccak256("\x7b")
     self.an_address = convert(0x1337, address)
     self.super_secret_data = 42
