@@ -497,8 +497,6 @@ entries:
     entries:
       array_multiple_local_vars.vy:
         enabled: true
-      bare_call_no_returndatacopy.vy:
-        enabled: true
       call_internal_function_via_expression.vy:
         enabled: true
       calling_nonexisting_contract_throws.vy:
@@ -522,8 +520,6 @@ entries:
       multiple_functions.vy:
         enabled: true
       multiple_return_values.vy:
-        enabled: true
-      precompile_extcodesize_check.vy:
         enabled: true
       transaction_status.vy:
         enabled: true
@@ -562,7 +558,8 @@ entries:
       fun_read_in_ctor.vy:
         enabled: true
       getter.vy:
-        enabled: true
+        enabled: false
+        comment: "Unsupported, but can be supported in the future"
       immutable_signed.vy:
         enabled: true
       read_in_ctor.vy:
@@ -642,6 +639,33 @@ entries:
     entries:
       compound_assign.vy:
         enabled: true
+      shifts:
+        enabled: true
+        entries:
+          bitwise_shifting_constantinople.vy:
+            enabled: true
+          bitwise_shifting_constantinople_combined.vy:
+            enabled: true
+          bitwise_shifting_constants_constantinople.vy:
+            enabled: true
+          shift_cleanup.vy:
+            enabled: true
+          shift_cleanup_garbled.vy:
+            enabled: true
+          shift_constant_left.vy:
+            enabled: true
+          shift_constant_right.vy:
+            enabled: true
+          shift_left.vy:
+            enabled: true
+          shift_overflow.vy:
+            enabled: true
+          shift_right.vy:
+            enabled: true
+          shift_underflow_negative_rvalue.vy:
+            enabled: true
+          shifts.vy:
+            enabled: true
   optimizer:
     enabled: true
     entries:
