@@ -625,8 +625,6 @@ entries:
         enabled: true
       hex_string_with_non_printable_characters.vy:
         enabled: true
-      hex_string_with_underscore.vy:
-        enabled: true
       scientific_notation.vy:
         enabled: true
       wei.vy:
