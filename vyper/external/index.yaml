@@ -732,4 +732,168 @@ entries:
         enabled: true
       packed_storage_structs_bytes.vy:
         enabled: true
-
+      packed_storage_structs_uint.vy:
+        enabled: true
+      simple_accessor.vy:
+        enabled: true
+      state_smoke_test.vy:
+        enabled: true
+      struct_accessor.vy:
+        enabled: true
+  strings:
+    enabled: true
+    entries:
+      constant_string_literal.vy:
+        enabled: true
+      empty_string.vy:
+        enabled: true
+      empty_string_input.vy:
+        enabled: true
+      return_string.vy:
+        enabled: true
+      string_escapes.vy:
+        enabled: true
+      unicode_escapes.vy:
+        enabled: true
+      unicode_string.vy:
+        enabled: false
+        comment: "Unsupported, but can be supported in the future"
+  structs:
+    enabled: true
+    entries:
+      calldata:
+        enabled: true
+        entries:
+          calldata_nested_structs.vy:
+            enabled: true
+          calldata_struct.vy:
+            enabled: true
+          calldata_struct_and_ints.vy:
+            enabled: true
+          calldata_struct_array_member.vy:
+            enabled: true
+          calldata_struct_as_memory_argument.vy:
+            enabled: true
+          calldata_struct_struct_member.vy:
+            enabled: true
+          calldata_struct_struct_member_dynamic.vy:
+            enabled: true
+          calldata_struct_to_memory.vy:
+            enabled: true
+          calldata_struct_to_storage.vy:
+            enabled: true
+          calldata_struct_with_array_to_memory.vy:
+            enabled: true
+          calldata_struct_with_bytes_to_memory.vy:
+            enabled: true
+          calldata_struct_with_nested_array_to_memory.vy:
+            enabled: true
+          calldata_struct_with_nested_array_to_storage.vy:
+            enabled: true
+          calldata_structs.vy:
+            enabled: true
+          dynamically_encoded.vy:
+            enabled: true
+      delete_struct.vy:
+        enabled: true
+      event.vy:
+        enabled: true
+      global.vy:
+        enabled: true
+      lone_struct_array_type.vy:
+        enabled: true
+      memory_struct_named_constructor.vy:
+        enabled: true
+      memory_structs_as_function_args.vy:
+        enabled: true
+      memory_structs_nested.vy:
+        enabled: true
+      memory_structs_nested_load.vy:
+        enabled: true
+      memory_structs_read_write.vy:
+        enabled: true
+      multislot_struct_allocation.vy:
+        enabled: true
+      nested_struct_allocation.vy:
+        enabled: true
+      packed_storage_structs_delete.vy:
+        enabled: true
+      simple_struct_allocation.vy:
+        enabled: true
+      struct_constructor_nested.vy:
+        enabled: true
+      struct_containing_bytes_copy_and_delete.vy:
+        enabled: true
+      struct_copy.vy:
+        enabled: true
+      struct_copy_via_local.vy:
+        enabled: true
+      struct_delete_member.vy:
+        enabled: true
+      struct_delete_storage.vy:
+        enabled: true
+      struct_delete_storage_small.vy:
+        enabled: true
+      struct_delete_storage_with_array.vy:
+        enabled: true
+      struct_delete_storage_with_arrays_small.vy:
+        enabled: true
+      struct_delete_struct_in_mapping.vy:
+        enabled: true
+      struct_memory_to_storage.vy:
+        enabled: true
+      struct_named_constructor.vy:
+        enabled: true
+      struct_storage_to_mapping.vy:
+        enabled: true
+      struct_storage_to_memory.vy:
+        enabled: true
+  types:
+    enabled: true
+    entries:
+      assign_calldata_value_type.vy:
+        enabled: true
+      convert_fixed_bytes_to_fixed_bytes_greater_size.vy:
+        enabled: true
+      convert_fixed_bytes_to_fixed_bytes_smaller_size.vy:
+        enabled: true
+      convert_fixed_bytes_to_uint_greater_size.vy:
+        enabled: true
+      convert_fixed_bytes_to_uint_same_min_size.vy:
+        enabled: true
+      convert_fixed_bytes_to_uint_same_type.vy:
+        enabled: true
+      convert_fixed_bytes_to_uint_smaller_size.vy:
+        enabled: true
+      convert_uint_to_fixed_bytes_greater_size.vy:
+        enabled: true
+      convert_uint_to_fixed_bytes_same_min_size.vy:
+        enabled: true
+      convert_uint_to_fixed_bytes_same_size.vy:
+        enabled: true
+      convert_uint_to_fixed_bytes_smaller_size.vy:
+        enabled: true
+      mapping_contract_key.vy:
+        enabled: true
+      mapping_contract_key_getter.vy:
+        enabled: true
+      mapping_simple.vy:
+        enabled: true
+      packing_signed_types.vy:
+        enabled: true
+      packing_unpacking_types.vy:
+        enabled: true
+      strings.vy:
+        enabled: true
+  underscore:
+    enabled: true
+    entries:
+      as_function.vy:
+        enabled: true
+  variables:
+    enabled: true
+    entries:
+      delete_local.vy:
+        enabled: true
+      delete_locals.vy:
+        enabled: true
