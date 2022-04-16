@@ -436,6 +436,8 @@ entries:
     entries:
       string_to_bytes.vy:
         enabled: true
+  dirty_calldata_bytes.vy:
+    enabled: true
   ecrecover:
     enabled: true
     entries:
@@ -447,6 +449,8 @@ entries:
         enabled: true
       failing_ecrecover_invalid_input_proper.vy:
         enabled: true
+  empty_contract.vy:
+    enabled: true
   events:
     enabled: true
     entries:
@@ -592,6 +596,8 @@ entries:
         enabled: true
       lisa.vy:
         enabled: true
+  isoltestFormatting.vy:
+    enabled: true
   isoltestTesting:
     enabled: true
     entries:
@@ -709,6 +715,8 @@ entries:
         enabled: true
       msg_sender.vy:
         enabled: true
+  state_var_initialization.vy:
+    enabled: true
   storage:
     enabled: true
     entries:
@@ -721,7 +729,8 @@ entries:
       complex_accessors.vy:
         enabled: true
       empty_nonempty_empty.vy:
-        enabled: true
+        enabled: false
+        comment: "Disabled because bytes do not free storage completely"
       mapping_state.vy:
         enabled: true
       mapping_string_key.vy:
@@ -821,7 +830,8 @@ entries:
       struct_constructor_nested.vy:
         enabled: true
       struct_containing_bytes_copy_and_delete.vy:
-        enabled: true
+        enabled: false
+        comment: "Disabled because bytes do not free storage completely"
       struct_copy.vy:
         enabled: true
       struct_copy_via_local.vy:
@@ -894,4 +904,193 @@ entries:
       delete_local.vy:
         enabled: true
       delete_locals.vy:
+        enabled: true
+  various:
+    enabled: true
+    entries:
+      assignment_to_const_var_involving_expression.vy:
+        enabled: true
+      byte_optimization_bug.vy:
+        enabled: true
+      decayed_tuple.vy:
+        enabled: true
+      empty_name_return_parameter.vy:
+        enabled: true
+      erc20.vy:
+        enabled: true
+      inline_member_init.vy:
+        enabled: true
+      inline_tuple_with_rational_numbers.vy:
+        enabled: true
+      iszero_bnot_correct.vy:
+        enabled: true
+      literal_empty_string.vy:
+        enabled: true
+      memory_overwrite.vy:
+        enabled: true
+      negative_stack_height.vy:
+        enabled: true
+      nested_calldata_struct.vy:
+        enabled: true
+      nested_calldata_struct_to_memory.vy:
+        enabled: true
+      positive_integers_to_signed.vy:
+        enabled: true
+      state_variable_local_variable_mixture.vy:
+        enabled: true
+      storage_string_as_mapping_key_without_variable.vy:
+        enabled: true
+      store_bytes.vy:
+        enabled: true
+      string_tuples.vy:
+        enabled: true
+      swap_in_storage_overwrite.vy:
+        enabled: true
+  viaYul:
+    enabled: true
+    entries:
+      array_2d_assignment.vy:
+        enabled: true
+      array_2d_new.vy:
+        enabled: true
+      array_3d_assignment.vy:
+        enabled: true
+      array_3d_new.vy:
+        enabled: true
+      array_memory_allocation:
+        enabled: true
+        entries:
+          array_2d_zeroed_memory_index_access.vy:
+            enabled: true
+          array_array_static.vy:
+            enabled: true
+          array_static_return_param_zeroed_memory_index_access.vy:
+            enabled: true
+          array_static_zeroed_memory_index_access.vy:
+            enabled: true
+          array_zeroed_memory_index_access.vy:
+            enabled: true
+      array_memory_as_parameter.vy:
+        enabled: true
+      array_memory_create.vy:
+        enabled: true
+      array_memory_index_access.vy:
+        enabled: true
+      array_storage_index_access.vy:
+        enabled: true
+      array_storage_index_boundary_test.vy:
+        enabled: true
+      assert.vy:
+        enabled: true
+      assert_and_require.vy:
+        enabled: true
+      assign_tuple_from_function_call.vy:
+        enabled: true
+      calldata_array_access.vy:
+        enabled: true
+      calldata_array_three_dimensional.vy:
+        enabled: true
+      comparison.vy:
+        enabled: true
+      conversion:
+        enabled: true
+        entries:
+          explicit_cast_assignment.vy:
+            enabled: true
+          explicit_cast_function_call.vy:
+            enabled: true
+          explicit_cast_local_assignment.vy:
+            enabled: true
+          explicit_string_bytes_calldata_cast.vy:
+            enabled: true
+      define_tuple_from_function_call.vy:
+        enabled: true
+      detect_add_overflow.vy:
+        enabled: true
+      detect_add_overflow_signed.vy:
+        enabled: false
+        comment: "Unsupported, but can be supported in the future"
+      detect_div_overflow.vy:
+        enabled: false
+        comment: "Unsupported, but can be supported in the future"
+      detect_mod_zero.vy:
+        enabled: true
+      detect_mod_zero_signed.vy:
+        enabled: true
+      detect_mul_overflow.vy:
+        enabled: true
+      detect_mul_overflow_signed.vy:
+        enabled: false
+        comment: "Unsupported, but can be supported in the future"
+      detect_sub_overflow.vy:
+        enabled: true
+      detect_sub_overflow_signed.vy:
+        enabled: false
+        comment: "Unsupported, but can be supported in the future"
+      exp_literals.vy:
+        enabled: true
+      exp_literals_success.vy:
+        enabled: true
+      if.vy:
+        enabled: true
+      keccak.vy:
+        enabled: true
+      local_address_assignment.vy:
+        enabled: true
+      local_assignment.vy:
+        enabled: true
+      local_bool_assignment.vy:
+        enabled: true
+      local_variable_without_init.vy:
+        enabled: true
+      loops:
+        enabled: true
+        entries:
+          break.vy:
+            enabled: true
+          continue.vy:
+            enabled: true
+          return.vy:
+            enabled: true
+          simple.vy:
+            enabled: true
+      mapping_getters.vy:
+        enabled: true
+      mapping_string_key.vy:
+        enabled: true
+      msg_sender.vy:
+        enabled: true
+      negation_bug.vy:
+        enabled: true
+      require.vy:
+        enabled: true
+      return.vy:
+        enabled: true
+      return_and_convert.vy:
+        enabled: true
+      short_circuit.vy:
+        enabled: true
+      smoke_test.vy:
+        enabled: true
+      storage:
+        enabled: true
+        entries:
+          dirty_storage_bytes_long.vy:
+            enabled: true
+          mappings.vy:
+            enabled: true
+          packed_storage.vy:
+            enabled: false
+            comment: "Unsupported, but can be supported in the future"
+          simple_storage.vy:
+            enabled: true
+      string_format.vy:
+        enabled: true
+      string_literals.vy:
+        enabled: true
+      struct_member_access.vy:
+        enabled: true
+      tuple_evaluation_order.vy:
+        enabled: true
+      unary_operations.vy:
         enabled: true
