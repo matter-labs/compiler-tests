@@ -9,8 +9,7 @@
         }
     ],
     "expected": {
-	"return_data": [
-        ],
+	    "return_data": [],
         "exception": true
     }
 } ],
