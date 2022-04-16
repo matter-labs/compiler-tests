@@ -3,6 +3,7 @@
 @external
 @pure
 def f() -> (Bytes[100], Bytes[100]):
+    a: int136 = 11
     return (_abi_encode(""), convert("", Bytes[100]))
 # ====
 # ABIEncoderV1Only: true

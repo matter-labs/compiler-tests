@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: MIT
-pragma solidity >=0.8.1;
+
+pragma solidity >=0.6.9;
 
 contract Base {
     // Private function can only be called

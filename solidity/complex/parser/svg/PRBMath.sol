@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: Unlicense
+// SPDX-License-Identifier: MIT
+
 pragma solidity >=0.8.4;
 
 /// @notice Emitted when the result overflows uint256.
