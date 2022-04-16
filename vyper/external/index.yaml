@@ -43,7 +43,8 @@ entries:
         enabled: true
         entries:
           struct_storage_ptr.vy:
-            enabled: true
+            enabled: false
+            comment: "https://github.com/vyperlang/vyper/issues/2145"
   abiEncoderV2:
     enabled: true
     entries:
@@ -428,7 +429,8 @@ entries:
       constructor_static_array_argument.vy:
         enabled: true
       functions_called_by_constructor.vy:
-        enabled: true
+        enabled: false
+        comment: "https://github.com/vyperlang/vyper/issues/1631"
   constructor_with_params.vy:
     enabled: true
   conversions:
@@ -450,7 +452,8 @@ entries:
       failing_ecrecover_invalid_input_proper.vy:
         enabled: true
   empty_contract.vy:
-    enabled: true
+    enabled: false
+    comment: "https://github.com/vyperlang/vyper/issues/2803"
   events:
     enabled: true
     entries:
@@ -562,10 +565,8 @@ entries:
       assign_from_immutables.vy:
         enabled: true
       fun_read_in_ctor.vy:
-        enabled: true
-      getter.vy:
         enabled: false
-        comment: "Unsupported, but can be supported in the future"
+        comment: "https://github.com/vyperlang/vyper/issues/1631"
       immutable_signed.vy:
         enabled: true
       read_in_ctor.vy:
@@ -761,7 +762,8 @@ entries:
       string_escapes.vy:
         enabled: true
       unicode_escapes.vy:
-        enabled: true
+        enabled: false
+        comment: "https://github.com/vyperlang/vyper/issues/2799"
       unicode_string.vy:
         enabled: false
         comment: "Unsupported, but can be supported in the future"
@@ -780,7 +782,8 @@ entries:
           calldata_struct_array_member.vy:
             enabled: true
           calldata_struct_as_memory_argument.vy:
-            enabled: true
+            enabled: false
+            comment: "https://github.com/vyperlang/vyper/issues/2800"
           calldata_struct_struct_member.vy:
             enabled: true
           calldata_struct_struct_member_dynamic.vy:
@@ -794,7 +797,8 @@ entries:
           calldata_struct_with_bytes_to_memory.vy:
             enabled: true
           calldata_struct_with_nested_array_to_memory.vy:
-            enabled: true
+            enabled: false
+            comment: "https://github.com/vyperlang/vyper/issues/2800"
           calldata_struct_with_nested_array_to_storage.vy:
             enabled: true
           calldata_structs.vy:
@@ -810,7 +814,8 @@ entries:
       lone_struct_array_type.vy:
         enabled: true
       memory_struct_named_constructor.vy:
-        enabled: true
+        enabled: false
+        comment: "Disabled because different order of fields is not allowed"
       memory_structs_as_function_args.vy:
         enabled: true
       memory_structs_nested.vy:
@@ -843,7 +848,8 @@ entries:
       struct_delete_storage_small.vy:
         enabled: true
       struct_delete_storage_with_array.vy:
-        enabled: true
+        enabled: false
+        comment: "https://github.com/vyperlang/vyper/issues/2801"
       struct_delete_storage_with_arrays_small.vy:
         enabled: true
       struct_delete_struct_in_mapping.vy:
@@ -851,7 +857,8 @@ entries:
       struct_memory_to_storage.vy:
         enabled: true
       struct_named_constructor.vy:
-        enabled: true
+        enabled: false
+        comment: "Disabled because different order of fields is not allowed"
       struct_storage_to_mapping.vy:
         enabled: true
       struct_storage_to_memory.vy:
@@ -860,7 +867,8 @@ entries:
     enabled: true
     entries:
       assign_calldata_value_type.vy:
-        enabled: true
+        enabled: false
+        comment: "https://github.com/vyperlang/vyper/issues/2145"
       convert_fixed_bytes_to_fixed_bytes_greater_size.vy:
         enabled: true
       convert_fixed_bytes_to_fixed_bytes_smaller_size.vy:
@@ -917,7 +925,8 @@ entries:
       empty_name_return_parameter.vy:
         enabled: true
       erc20.vy:
-        enabled: true
+        enabled: false
+        comment: "https://github.com/vyperlang/vyper/issues/1631"
       inline_member_init.vy:
         enabled: true
       inline_tuple_with_rational_numbers.vy:
@@ -971,7 +980,8 @@ entries:
           array_zeroed_memory_index_access.vy:
             enabled: true
       array_memory_as_parameter.vy:
-        enabled: true
+        enabled: false
+        comment: "https://github.com/vyperlang/vyper/issues/2145"
       array_memory_create.vy:
         enabled: true
       array_memory_index_access.vy:
@@ -1069,9 +1079,11 @@ entries:
       return_and_convert.vy:
         enabled: true
       short_circuit.vy:
-        enabled: true
+        enabled: false
+        comment: "https://github.com/vyperlang/vyper/issues/2145"
       smoke_test.vy:
-        enabled: true
+        enabled: false
+        comment: "https://github.com/vyperlang/vyper/issues/2803"
       storage:
         enabled: true
         entries:
@@ -1091,6 +1103,7 @@ entries:
       struct_member_access.vy:
         enabled: true
       tuple_evaluation_order.vy:
-        enabled: true
+        enabled: false
+        comment: "Disabled because different order of fields is not allowed"
       unary_operations.vy:
         enabled: true
