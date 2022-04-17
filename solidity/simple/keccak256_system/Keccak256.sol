@@ -64,11 +64,11 @@ contract Test {
             if (padLen == 1) {
                 // write 0x81 at the end
                 assembly {
-                    mstore(add(bytesSize, 1), 0x8100000000000000000000000000000000000000000000000000000000000000) // we do not care about what is after
+                    mstore(bytesSize, 0x8100000000000000000000000000000000000000000000000000000000000000) // we do not care about what is after
                 }
             } else {
                 assembly {
-                    mstore(add(bytesSize, 1), 0x0100000000000000000000000000000000000000000000000000000000000000)
+                    mstore(bytesSize, 0x0100000000000000000000000000000000000000000000000000000000000000)
                     mstore(sub(paddedByteSize, 1), 0x8000000000000000000000000000000000000000000000000000000000000000)
                 }
             }
