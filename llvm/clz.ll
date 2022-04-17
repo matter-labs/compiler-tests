@@ -71,26 +71,15 @@ target datalayout = "e-p:256:256-i8:256:256:256-i256:256:256-S32-a:256:256"
 target triple = "syncvm"
 
 ; Function Attrs: nounwind
-define i256 @__selector() local_unnamed_addr #0 {
+define void @__selector() local_unnamed_addr #0 {
 entry:
-  ; we know that the arguments are in calldata field, with offset = 0, length = 32
-  %arg = load i256, i256 addrspace(2)* inttoptr(i256 0 to i256 addrspace(2)*), align 32
+  %arg = load i256, i256 addrspace(2)* inttoptr(i256 32 to i256 addrspace(2)*), align 32
   %res = call i256 @__clz(i256 %arg)
 
-  ; offset 
-  store i256 32, i256 addrspace(1)* inttoptr (i256 0 to i256 addrspace(1)*), align 32
-  %data_offset = load i256, i256 addrspace(1)* inttoptr (i256 0 to i256 addrspace(1)*), align 1
+  store i256 32, i256 addrspace(2)* inttoptr (i256 0 to i256 addrspace(2)*), align 32
+  store i256 %res, i256 addrspace(2)* inttoptr (i256 32 to i256 addrspace(2)*), align 32
 
-  ; length
-  store i256 32, i256 addrspace(1)* inttoptr (i256 32 to i256 addrspace(1)*), align 32
-  %data_length = load i256, i256 addrspace(1)* inttoptr (i256 32 to i256 addrspace(1)*), align 1
-  %data_length_shifted = shl i256 %data_length, 32
-  %data_merged = add i256 %data_offset, %data_length_shifted
-
-  ; value
-  store i256 %res, i256 addrspace(1)* inttoptr (i256 32 to i256 addrspace(1)*), align 32
-
-  ret i256 %data_merged
+  ret void
 }
 
 attributes #0 = { nounwind }
