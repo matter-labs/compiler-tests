@@ -25,7 +25,7 @@ contract Test {
     uint256 constant INTERNAL_KECCAK_ROUND_ERGS_COST = 100;
     uint256 constant MAX_PREIMAGE_BYTES_LENGTH = 1024;
     uint256 constant BLOCK_SIZE = 136;
-    uint32 constant INPUT_OFFSET_IN_WORDS = 0;
+    uint32 constant INPUT_OFFSET_IN_WORDS = 4;
     uint32 constant OUTPUT_OFFSET_IN_WORDS = 0;
     uint32 constant OUTPUT_LENGTH_IN_WORDS = 1;
 
@@ -38,12 +38,18 @@ contract Test {
 		require(codeAddress == address(this));
 
         uint256 bytesSize;
+        uint256 offset;
 
         assembly {
             bytesSize := calldatasize()
+            offset := mload(0x40)
         }
 
+        require(offset == 128);
+
         require(bytesSize <= MAX_PREIMAGE_BYTES_LENGTH);
+
+        // now we do manual memory management
 
         unchecked {
             uint256 padLen = BLOCK_SIZE - bytesSize % BLOCK_SIZE;
@@ -58,18 +64,18 @@ contract Test {
             }
 
             assembly {
-                calldatacopy(0x00, 0x00, bytesSize)
+                calldatacopy(offset, 0x00, bytesSize)
             }
 
             if (padLen == 1) {
                 // write 0x81 at the end
                 assembly {
-                    mstore(bytesSize, 0x8100000000000000000000000000000000000000000000000000000000000000) // we do not care about what is after
+                    mstore(add(offset, bytesSize), 0x8100000000000000000000000000000000000000000000000000000000000000) // we do not care about what is after
                 }
             } else {
                 assembly {
-                    mstore(bytesSize, 0x0100000000000000000000000000000000000000000000000000000000000000)
-                    mstore(sub(paddedByteSize, 1), 0x8000000000000000000000000000000000000000000000000000000000000000)
+                    mstore(add(offset,bytesSize), 0x0100000000000000000000000000000000000000000000000000000000000000)
+                    mstore(sub(add(offset, paddedByteSize), 1), 0x8000000000000000000000000000000000000000000000000000000000000000)
                 }
             }
 
