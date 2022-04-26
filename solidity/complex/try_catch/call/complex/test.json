@@ -3,7 +3,7 @@
     "name": "error1",
     "input": [
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "main",
             "calldata": [
                 "1"
@@ -20,7 +20,7 @@
     "name": "error2",
     "input": [
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "main",
             "calldata": [
                 "2"
@@ -36,7 +36,7 @@
     "name": "error3",
     "input": [
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "main",
             "calldata": [
                 "3"
@@ -52,7 +52,7 @@
     "name": "error",
     "input": [
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "main",
             "calldata": [
                 "0"
@@ -65,7 +65,7 @@
     ]
 } ],
     "contracts": {
-        "0xdeADbeEf00000000000000000000000000000001": "main.sol:Main",
-        "0xdeADbeEf00000000000000000000000000000002": "callable.sol:Callable"
+        "0xdeadbeef00000000000000000000000000000001": "main.sol:Main",
+        "0xdeadbeef00000000000000000000000000000002": "callable.sol:Callable"
     }
 }

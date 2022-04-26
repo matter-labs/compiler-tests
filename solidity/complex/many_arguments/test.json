@@ -2,7 +2,7 @@
     "name": "first",
     "input": [
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "main",
             "calldata": [
                 "12", "24", "123", "54", "76", "78", "122", "100"
@@ -16,7 +16,7 @@
     "name": "second",
     "input": [
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "main",
             "calldata": [
                 "89459845", "8433", "0", "12200", "76", "1", "255", "1000000"
@@ -28,7 +28,7 @@
     ]
 } ],
     "contracts": {
-        "0xdeADbeEf00000000000000000000000000000001": "main.sol:Main",
-        "0xdeADbeEf00000000000000000000000000000002": "callable.sol:Callable"
+        "0xdeadbeef00000000000000000000000000000001": "main.sol:Main",
+        "0xdeadbeef00000000000000000000000000000002": "callable.sol:Callable"
     }
 }

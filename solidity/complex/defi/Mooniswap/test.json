@@ -2,7 +2,7 @@
     "name": "default",
     "input": [
         {
-            "address": "0xdeADbeEf0000000000000000000000000000aaaa",
+            "address": "0xdeadbeef0000000000000000000000000000aaaa",
             "constructor": true,
             "calldata": [
                 "0x40",
@@ -14,7 +14,7 @@
             ]
         },
         {
-            "address": "0xdeADbeEf0000000000000000000000000000bbbb",
+            "address": "0xdeadbeef0000000000000000000000000000bbbb",
             "constructor": true,
             "calldata": [
                 "0x40",
@@ -26,7 +26,7 @@
             ]
         },
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "caller": "0x0000000000000000000000000000000000000042",
             "constructor": true,
             "calldata": [],
@@ -45,12 +45,12 @@
             }
         },
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "caller": "0x0000000000000000000000000000000000000042",
             "entry": "deploy",
             "calldata": [
-                "0xdeADbeEf0000000000000000000000000000aaaa",
-                "0xdeADbeEf0000000000000000000000000000bbbb"
+                "0xdeadbeef0000000000000000000000000000aaaa",
+                "0xdeadbeef0000000000000000000000000000bbbb"
             ],
             "expected": {
                 "return_data": [
@@ -86,7 +86,7 @@
             }
         },
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "caller": "0x0000000000000000000000000000000000000042",
             "entry": "getAllPools",
             "calldata": [
@@ -100,12 +100,12 @@
     ]
 } ],
     "contracts": {
-        "0xdeADbeEf00000000000000000000000000000001": "MooniFactory.sol:MooniFactory",
-        "0xdeADbeEf0000000000000000000000000000aaaa": "MooniswapPool/ERC20/ERC20.sol:ERC20",
-        "0xdeADbeEf0000000000000000000000000000bbbb": "MooniswapPool/ERC20/ERC20.sol:ERC20"
+        "0xdeadbeef00000000000000000000000000000001": "MooniFactory.sol:MooniFactory",
+        "0xdeadbeef0000000000000000000000000000aaaa": "MooniswapPool/ERC20/ERC20.sol:ERC20",
+        "0xdeadbeef0000000000000000000000000000bbbb": "MooniswapPool/ERC20/ERC20.sol:ERC20"
     },
     "libraries": {
-        "MooniswapPool/Mooniswap.sol": { "VirtualBalance": "0xdeADbeEf00000000000000000000000000000101" },
-        "MooniswapPool/math/Math.sol": { "Math": "0xdeADbeEf00000000000000000000000000000102" }
+        "MooniswapPool/Mooniswap.sol": { "VirtualBalance": "0xdeadbeef00000000000000000000000000000101" },
+        "MooniswapPool/math/Math.sol": { "Math": "0xdeadbeef00000000000000000000000000000102" }
     }
 }

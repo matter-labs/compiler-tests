@@ -2,51 +2,51 @@
     "name": "simple",
     "input": [
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "getCount",
             "calldata": [
-                "0xdeADbeEf00000000000000000000000000000002"
+                "0xdeadbeef00000000000000000000000000000002"
             ],
             "expected": [
                 "0"
             ]
         },
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "incrementCounter",
             "calldata": [
-                "0xdeADbeEf00000000000000000000000000000002"
+                "0xdeadbeef00000000000000000000000000000002"
             ]
         },
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "getCount",
             "calldata": [
-                "0xdeADbeEf00000000000000000000000000000002"
+                "0xdeadbeef00000000000000000000000000000002"
             ],
             "expected": [
                 "1"
             ]
         },
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "incrementCounter",
             "calldata": [
-                "0xdeADbeEf00000000000000000000000000000002"
+                "0xdeadbeef00000000000000000000000000000002"
             ]
         },
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "incrementCounter",
             "calldata": [
-                "0xdeADbeEf00000000000000000000000000000002"
+                "0xdeadbeef00000000000000000000000000000002"
             ]
         },
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "getCount",
             "calldata": [
-                "0xdeADbeEf00000000000000000000000000000002"
+                "0xdeadbeef00000000000000000000000000000002"
             ],
             "expected": [
                 "3"
@@ -60,61 +60,61 @@
     "name": "two_counters",
     "input": [
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "getCount",
             "calldata": [
-                "0xdeADbeEf00000000000000000000000000000002"
+                "0xdeadbeef00000000000000000000000000000002"
             ],
             "expected": [
                 "0"
             ]
         },
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "getCount",
             "calldata": [
-                "0xdeADbeEf00000000000000000000000000000003"
+                "0xdeadbeef00000000000000000000000000000003"
             ],
             "expected": [
                 "0"
             ]
         },
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "incrementCounter",
             "calldata": [
-                "0xdeADbeEf00000000000000000000000000000002"
+                "0xdeadbeef00000000000000000000000000000002"
             ]
         },
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "incrementCounter",
             "calldata": [
-                "0xdeADbeEf00000000000000000000000000000003"
+                "0xdeadbeef00000000000000000000000000000003"
             ]
         },
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "incrementCounter",
             "calldata": [
-                "0xdeADbeEf00000000000000000000000000000002"
+                "0xdeadbeef00000000000000000000000000000002"
             ]
         },
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "getCount",
             "calldata": [
-                "0xdeADbeEf00000000000000000000000000000002"
+                "0xdeadbeef00000000000000000000000000000002"
             ],
             "expected": [
                 "2"
             ]
         },
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "getCount",
             "calldata": [
-                "0xdeADbeEf00000000000000000000000000000003"
+                "0xdeadbeef00000000000000000000000000000003"
             ]
         }
     ],
@@ -123,9 +123,9 @@
     ]
 } ],
     "contracts": {
-        "0xdeADbeEf00000000000000000000000000000001": "my_contract.vy",
-        "0xdeADbeEf00000000000000000000000000000002": "counter.vy",
-        "0xdeADbeEf00000000000000000000000000000003": "counter.vy",
-        "0xdeADbeEf00000000000000000000000000000004": "main.vy"
+        "0xdeadbeef00000000000000000000000000000001": "my_contract.vy",
+        "0xdeadbeef00000000000000000000000000000002": "counter.vy",
+        "0xdeadbeef00000000000000000000000000000003": "counter.vy",
+        "0xdeadbeef00000000000000000000000000000004": "main.vy"
     }
 }

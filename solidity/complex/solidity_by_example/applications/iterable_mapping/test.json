@@ -2,7 +2,7 @@
     "name": "testIterableMap",
     "input": [
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "testIterableMap",
             "calldata": [
             ]
@@ -12,12 +12,12 @@
     ]
 } ],
     "contracts": {
-        "0xdeADbeEf00000000000000000000000000000001": "main.sol:TestIterableMap",
-        "0xdeADbeEf00000000000000000000000000000002": "main.sol:IterableMapping"
+        "0xdeadbeef00000000000000000000000000000001": "main.sol:TestIterableMap",
+        "0xdeadbeef00000000000000000000000000000002": "main.sol:IterableMapping"
     },
     "libraries": {
         "main.sol": {
-            "IterableMapping": "0xdeADbeEf00000000000000000000000000000002"
+            "IterableMapping": "0xdeadbeef00000000000000000000000000000002"
         }
     }
 }

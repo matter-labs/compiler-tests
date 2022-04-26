@@ -2,7 +2,7 @@
     "name": "one",
     "input": [
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "main",
             "calldata": [
                 "1"
@@ -16,7 +16,7 @@
     "name": "fifteen",
     "input": [
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "main",
             "calldata": [
                 "15"
@@ -30,7 +30,7 @@
     "name": "hundred",
     "input": [
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "main",
             "calldata": [
                 "100"
@@ -42,7 +42,7 @@
     ]
 } ],
     "contracts": {
-        "0xdeADbeEf00000000000000000000000000000001": "main.sol:Main",
-        "0xdeADbeEf00000000000000000000000000000002": "square.sol:Square"
+        "0xdeadbeef00000000000000000000000000000001": "main.sol:Main",
+        "0xdeadbeef00000000000000000000000000000002": "square.sol:Square"
     }
 }

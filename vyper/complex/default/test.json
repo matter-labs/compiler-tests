@@ -2,7 +2,7 @@
     "name": "entry",
     "input": [
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "main",
             "calldata": [
             ]
@@ -13,7 +13,7 @@
     ]
 } ],
     "contracts": {
-        "0xdeADbeEf00000000000000000000000000000001": "main.vy",
-        "0xdeADbeEf00000000000000000000000000000002": "callable.vy"
+        "0xdeadbeef00000000000000000000000000000001": "main.vy",
+        "0xdeadbeef00000000000000000000000000000002": "callable.vy"
     }
 }

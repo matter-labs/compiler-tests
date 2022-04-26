@@ -2,7 +2,7 @@
     "name": "withoutMessage0x01",
     "input": [
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "withoutMessage",
             "calldata": [
                 "0x01"
@@ -16,7 +16,7 @@
     "name": "withoutMessage0x11",
     "input": [
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "withoutMessage",
             "calldata": [
                 "0x11"
@@ -40,7 +40,7 @@
     "name": "withoutMessage0x12",
     "input": [
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "withoutMessage",
             "calldata": [
                 "0x12"
@@ -54,7 +54,7 @@
     "name": "withoutMessage0x21",
     "input": [
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "withoutMessage",
             "calldata": [
                 "0x21"
@@ -68,7 +68,7 @@
     "name": "withoutMessage0x22",
     "input": [
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "withoutMessage",
             "calldata": [
                 "0x22"
@@ -92,7 +92,7 @@
     "name": "withoutMessage0x31",
     "input": [
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "withoutMessage",
             "calldata": [
                 "0x31"
@@ -106,7 +106,7 @@
     "name": "withoutMessage0x32",
     "input": [
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "withoutMessage",
             "calldata": [
                 "0x32"
@@ -120,7 +120,7 @@
     "name": "withoutMessage0x41",
     "input": [
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "withoutMessage",
             "calldata": [
                 "0x41"
@@ -134,7 +134,7 @@
     "name": "withoutMessage0x51",
     "input": [
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "withoutMessage",
             "calldata": [
                 "0x51"
@@ -148,7 +148,7 @@
     "name": "withoutMessage",
     "input": [
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "withoutMessage",
             "calldata": [
                 "0x0"
@@ -162,7 +162,7 @@
     "name": "withMessage0x01",
     "input": [
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "withMessage",
             "calldata": [
                 "0x01"
@@ -190,7 +190,7 @@
     "name": "withMessage0x11",
     "input": [
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "withMessage",
             "calldata": [
                 "0x11"
@@ -218,7 +218,7 @@
     "name": "withMessage0x12",
     "input": [
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "withMessage",
             "calldata": [
                 "0x12"
@@ -246,7 +246,7 @@
     "name": "withMessage0x21",
     "input": [
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "withMessage",
             "calldata": [
                 "0x21"
@@ -274,7 +274,7 @@
     "name": "withMessage0x22",
     "input": [
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "withMessage",
             "calldata": [
                 "0x22"
@@ -302,7 +302,7 @@
     "name": "withMessage0x31",
     "input": [
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "withMessage",
             "calldata": [
                 "0x31"
@@ -330,7 +330,7 @@
     "name": "withMessage0x32",
     "input": [
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "withMessage",
             "calldata": [
                 "0x32"
@@ -358,7 +358,7 @@
     "name": "withMessage0x41",
     "input": [
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "withMessage",
             "calldata": [
                 "0x41"
@@ -386,7 +386,7 @@
     "name": "withMessage0x51",
     "input": [
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "withMessage",
             "calldata": [
                 "0x51"
@@ -414,7 +414,7 @@
     "name": "withMessage",
     "input": [
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "withMessage",
             "calldata": [
                 "0x0"
@@ -427,6 +427,6 @@
     ]
 } ],
     "contracts": {
-        "0xdeADbeEf00000000000000000000000000000001": "main.sol:Main"
+        "0xdeadbeef00000000000000000000000000000001": "main.sol:Main"
     }
 }

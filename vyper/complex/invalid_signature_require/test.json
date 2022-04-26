@@ -2,14 +2,14 @@
     "name": "entry",
     "input": [
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "setContract",
             "calldata": [
-                "0xdeADbeEf00000000000000000000000000000002"
+                "0xdeadbeef00000000000000000000000000000002"
             ]
         },
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "require_short",
             "calldata": [
             ],
@@ -24,7 +24,7 @@
             }
         },
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "wrong_number_of_params",
             "calldata": [
             ],
@@ -40,7 +40,7 @@
     }
 } ],
     "contracts": {
-        "0xdeADbeEf00000000000000000000000000000001": "wrapper.vy",
-        "0xdeADbeEf00000000000000000000000000000002": "simpleRequire.vy"
+        "0xdeadbeef00000000000000000000000000000001": "wrapper.vy",
+        "0xdeadbeef00000000000000000000000000000002": "simpleRequire.vy"
     }
 }

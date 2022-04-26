@@ -2,7 +2,7 @@
     "name": "five",
     "input": [
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "main",
             "calldata": [
                 "5"
@@ -16,7 +16,7 @@
     "name": "twelve",
     "input": [
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "main",
             "calldata": [
                 "12"
@@ -30,7 +30,7 @@
     "name": "fifteen",
     "input": [
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "main",
             "calldata": [
                 "15"
@@ -44,7 +44,7 @@
     "name": "twenty",
     "input": [
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "main",
             "calldata": [
                 "20"
@@ -56,7 +56,7 @@
     ]
 } ],
     "contracts": {
-        "0xdeADbeEf00000000000000000000000000000001": "main.vy"
+        "0xdeadbeef00000000000000000000000000000001": "main.vy"
     },
     "has_forwarder": true
 }

@@ -2,7 +2,7 @@
     "name": "testInternalFunc",
     "input": [
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "testInternalFunc",
             "calldata": [
             ]
@@ -17,7 +17,7 @@
     "name": "externalFunc",
     "input": [
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "externalFunc",
             "calldata": [
             ]
@@ -32,7 +32,7 @@
     "name": "publicVar",
     "input": [
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "publicVar",
             "calldata": [
             ]
@@ -45,6 +45,6 @@
     ]
 } ],
     "contracts": {
-        "0xdeADbeEf00000000000000000000000000000001": "main.vy"
+        "0xdeadbeef00000000000000000000000000000001": "main.vy"
     }
 }

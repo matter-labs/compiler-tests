@@ -2,7 +2,7 @@
     "name": "decimals",
     "input": [
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "constructor": true,
             "calldata": [
                 "0x80",
@@ -31,7 +31,7 @@
             }
         },
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "decimals",
             "calldata": [
             ]
@@ -44,7 +44,7 @@
     "name": "double_mint_&_burn",
     "input": [
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "constructor": true,
             "calldata": [
                 "0x80",
@@ -73,7 +73,7 @@
             }
         },
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "mint",
             "calldata": [
                 "0x42", "1000000"
@@ -96,7 +96,7 @@
             }
         },
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "mint",
             "calldata": [
                 "0x42", "1000000"
@@ -119,7 +119,7 @@
             }
         },
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "burn",
             "caller": "0x0000000000000000000000000000000000000042",
             "calldata": [
@@ -143,7 +143,7 @@
             }
         },
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "balanceOf",
             "calldata": [
                 "0x42"
@@ -157,7 +157,7 @@
     "name": "approve",
     "input": [
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "constructor": true,
             "calldata": [
                 "0x80",
@@ -186,7 +186,7 @@
             }
         },
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "approve",
             "caller": "0x0000000000000000000000000000000000000025",
             "calldata": [
@@ -212,7 +212,7 @@
             }
         },
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "allowance",
             "calldata": [
                 "0x25", "0x42"
@@ -224,6 +224,6 @@
     ]
 } ],
     "contracts": {
-        "0xdeADbeEf00000000000000000000000000000001": "ERC20.vy"
+        "0xdeadbeef00000000000000000000000000000001": "ERC20.vy"
     }
 }

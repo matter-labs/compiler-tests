@@ -2,49 +2,49 @@
     "name": "default",
     "input": [
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "constructor": true,
-            "caller": "0xdeADbeEf00000000000000000000000000000011",
+            "caller": "0xdeadbeef00000000000000000000000000000011",
             "calldata": [
             ]
         },
         {
-            "address": "0xdeADbeEf00000000000000000000000000000002",
+            "address": "0xdeadbeef00000000000000000000000000000002",
             "constructor": true,
-            "caller": "0xdeADbeEf00000000000000000000000000000011",
+            "caller": "0xdeadbeef00000000000000000000000000000011",
             "calldata": [
-                "0xdeADbeEf00000000000000000000000000000001"
+                "0xdeadbeef00000000000000000000000000000001"
             ]
         },
         {
-            "address": "0xdeADbeEf00000000000000000000000000000003",
+            "address": "0xdeadbeef00000000000000000000000000000003",
             "constructor": true,
-            "caller": "0xdeADbeEf00000000000000000000000000000012",
+            "caller": "0xdeadbeef00000000000000000000000000000012",
             "calldata": [
-                "0xdeADbeEf00000000000000000000000000000002"
+                "0xdeadbeef00000000000000000000000000000002"
             ]
         },
         {
-            "address": "0xdeADbeEf00000000000000000000000000000003",
-            "caller": "0xdeADbeEf00000000000000000000000000000012",
+            "address": "0xdeadbeef00000000000000000000000000000003",
+            "caller": "0xdeadbeef00000000000000000000000000000012",
             "entry": "attack",
             "calldata": [
             ]
         },
         {
-            "address": "0xdeADbeEf00000000000000000000000000000002",
+            "address": "0xdeadbeef00000000000000000000000000000002",
             "entry": "owner",
             "calldata": [
             ]
         }
     ],
     "expected": [
-        "0xdeADbeEf00000000000000000000000000000003"
+        "0xdeadbeef00000000000000000000000000000003"
     ]
 } ],
     "contracts": {
-        "0xdeADbeEf00000000000000000000000000000001": "default.sol:Lib",
-        "0xdeADbeEf00000000000000000000000000000002": "default.sol:HackMe",
-        "0xdeADbeEf00000000000000000000000000000003": "default.sol:Attack"
+        "0xdeadbeef00000000000000000000000000000001": "default.sol:Lib",
+        "0xdeadbeef00000000000000000000000000000002": "default.sol:HackMe",
+        "0xdeadbeef00000000000000000000000000000003": "default.sol:Attack"
     }
 }

@@ -2,7 +2,7 @@
     "name": "default",
     "input": [
         {
-            "address": "0xdeADbeEf0000000000000000000000000000aaaa",
+            "address": "0xdeadbeef0000000000000000000000000000aaaa",
             "constructor": true,
             "calldata": [
                 "0x40",
@@ -14,7 +14,7 @@
             ]
         },
         {
-            "address": "0xdeADbeEf0000000000000000000000000000bbbb",
+            "address": "0xdeadbeef0000000000000000000000000000bbbb",
             "constructor": true,
             "calldata": [
                 "0x40",
@@ -26,22 +26,22 @@
             ]
         },
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "caller": "0x0000000000000000000000000000000000000069",
             "constructor": true,
             "calldata": [
-                "0xdeADbeEf0000000000000000000000000000aaaa",
-                "0xdeADbeEf0000000000000000000000000000bbbb"
+                "0xdeadbeef0000000000000000000000000000aaaa",
+                "0xdeadbeef0000000000000000000000000000bbbb"
             ]
         },
         {
-            "address": "0xdeADbeEf00000000000000000000000000000005",
+            "address": "0xdeadbeef00000000000000000000000000000005",
             "caller": "0x0000000000000000000000000000000000000042",
             "constructor": true,
             "calldata": []
         },
         {
-            "address": "0xdeADbeEf00000000000000000000000000000005",
+            "address": "0xdeadbeef00000000000000000000000000000005",
             "entry": "owner",
             "calldata": []
         }
@@ -53,7 +53,7 @@
     "name": "complex",
     "input": [
         {
-            "address": "0xdeADbeEf0000000000000000000000000000aaaa",
+            "address": "0xdeadbeef0000000000000000000000000000aaaa",
             "constructor": true,
             "calldata": [
                 "0x40",
@@ -65,7 +65,7 @@
             ]
         },
         {
-            "address": "0xdeADbeEf0000000000000000000000000000bbbb",
+            "address": "0xdeadbeef0000000000000000000000000000bbbb",
             "constructor": true,
             "calldata": [
                 "0x40",
@@ -78,7 +78,7 @@
         },
 
         {
-            "address": "0xdeADbeEf0000000000000000000000000000aaaa",
+            "address": "0xdeadbeef0000000000000000000000000000aaaa",
             "entry": "_mint",
             "calldata": [
                 "0x0000000000000000000000000000000000000042", "100000000000000000000000"
@@ -101,7 +101,7 @@
             }
         },
         {
-            "address": "0xdeADbeEf0000000000000000000000000000bbbb",
+            "address": "0xdeadbeef0000000000000000000000000000bbbb",
             "entry": "_mint",
             "calldata": [
                 "0x0000000000000000000000000000000000000042", "100000000000000000000000"
@@ -124,7 +124,7 @@
             }
         },
         {
-            "address": "0xdeADbeEf0000000000000000000000000000bbbb",
+            "address": "0xdeadbeef0000000000000000000000000000bbbb",
             "entry": "_mint",
             "calldata": [
                 "0x0000000000000000000000000000000000000069", "100000000000000000000000"
@@ -148,21 +148,21 @@
         },
 
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "caller": "0x0000000000000000000000000000000000000069",
             "constructor": true,
             "calldata": [
-                "0xdeADbeEf0000000000000000000000000000aaaa",
-                "0xdeADbeEf0000000000000000000000000000bbbb"
+                "0xdeadbeef0000000000000000000000000000aaaa",
+                "0xdeadbeef0000000000000000000000000000bbbb"
             ]
         },
 
         {
-            "address": "0xdeADbeEf0000000000000000000000000000aaaa",
+            "address": "0xdeadbeef0000000000000000000000000000aaaa",
             "caller": "0x0000000000000000000000000000000000000042",
             "entry": "transfer",
             "calldata": [
-                "0xdeADbeEf00000000000000000000000000000001", "10000000000000000000000"
+                "0xdeadbeef00000000000000000000000000000001", "10000000000000000000000"
             ],
             "expected": {
                 "return_data": [
@@ -184,11 +184,11 @@
             }
         },
         {
-            "address": "0xdeADbeEf0000000000000000000000000000bbbb",
+            "address": "0xdeadbeef0000000000000000000000000000bbbb",
             "caller": "0x0000000000000000000000000000000000000042",
             "entry": "transfer",
             "calldata": [
-                "0xdeADbeEf00000000000000000000000000000001", "100000000"
+                "0xdeadbeef00000000000000000000000000000001", "100000000"
             ],
             "expected": {
                 "return_data": [
@@ -210,7 +210,7 @@
             }
         },
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "mint",
             "caller": "0x0000000000000000000000000000000000000042",
             "calldata": [
@@ -265,7 +265,7 @@
             }
         },
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "balanceOf",
             "caller": "0x0000000000000000000000000000000000000042",
             "calldata": [
@@ -277,11 +277,11 @@
         },
 
         {
-            "address": "0xdeADbeEf0000000000000000000000000000aaaa",
+            "address": "0xdeadbeef0000000000000000000000000000aaaa",
             "caller": "0x0000000000000000000000000000000000000042",
             "entry": "transfer",
             "calldata": [
-                "0xdeADbeEf00000000000000000000000000000001", "10000000000000000000"
+                "0xdeadbeef00000000000000000000000000000001", "10000000000000000000"
             ],
             "expected": {
                 "return_data": [
@@ -303,7 +303,7 @@
             }
         },
         {
-            "address": "0xdeADbeEf0000000000000000000000000000bbbb",
+            "address": "0xdeadbeef0000000000000000000000000000bbbb",
             "entry": "balanceOf",
             "calldata": [
                 "0x0000000000000000000000000000000000000042"
@@ -313,7 +313,7 @@
             ]
         },
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "swap",
             "caller": "0x0000000000000000000000000000000000000042",
             "calldata": [
@@ -362,7 +362,7 @@
             }
         },
         {
-            "address": "0xdeADbeEf0000000000000000000000000000bbbb",
+            "address": "0xdeadbeef0000000000000000000000000000bbbb",
             "entry": "balanceOf",
             "calldata": [
                 "0x0000000000000000000000000000000000000042"
@@ -373,7 +373,7 @@
         },
 
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "balanceOf",
             "caller": "0x0000000000000000000000000000000000000042",
             "calldata": [
@@ -384,11 +384,11 @@
             ]
         },
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "caller": "0x0000000000000000000000000000000000000042",
             "entry": "transfer",
             "calldata": [
-                "0xdeADbeEf00000000000000000000000000000001", "999999999999000"
+                "0xdeadbeef00000000000000000000000000000001", "999999999999000"
             ],
             "expected": {
                 "return_data": [
@@ -410,7 +410,7 @@
             }
         },
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "burn",
             "caller": "0x0000000000000000000000000000000000000042",
             "calldata": [
@@ -477,7 +477,7 @@
             }
         },
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "balanceOf",
             "caller": "0x0000000000000000000000000000000000000042",
             "calldata": [
@@ -490,13 +490,13 @@
 
 
         {
-            "address": "0xdeADbeEf00000000000000000000000000000005",
+            "address": "0xdeadbeef00000000000000000000000000000005",
             "caller": "0x0000000000000000000000000000000000000069",
             "constructor": true,
             "calldata": []
         },
         {
-            "address": "0xdeADbeEf00000000000000000000000000000005",
+            "address": "0xdeadbeef00000000000000000000000000000005",
             "caller": "0x0000000000000000000000000000000000000069",
             "entry": "owner",
             "calldata": [],
@@ -505,36 +505,36 @@
             ]
         },
         {
-            "address": "0xdeADbeEf00000000000000000000000000000005",
+            "address": "0xdeadbeef00000000000000000000000000000005",
             "caller": "0x0000000000000000000000000000000000000069",
             "entry": "addPair",
             "calldata": [
-                "0xdeADbeEf0000000000000000000000000000aaaa",
-                "0xdeADbeEf0000000000000000000000000000bbbb",
-                "0xdeADbeEf00000000000000000000000000000001"
+                "0xdeadbeef0000000000000000000000000000aaaa",
+                "0xdeadbeef0000000000000000000000000000bbbb",
+                "0xdeadbeef00000000000000000000000000000001"
             ],
             "expected": [
             ]
         },
         {
-            "address": "0xdeADbeEf00000000000000000000000000000005",
+            "address": "0xdeadbeef00000000000000000000000000000005",
             "caller": "0x0000000000000000000000000000000000000069",
             "entry": "pairs",
             "calldata": [
-                "0xdeADbeEf0000000000000000000000000000bbbb",
-                "0xdeADbeEf0000000000000000000000000000aaaa"
+                "0xdeadbeef0000000000000000000000000000bbbb",
+                "0xdeadbeef0000000000000000000000000000aaaa"
             ],
             "expected": [
-                "0xdeADbeEf00000000000000000000000000000001"
+                "0xdeadbeef00000000000000000000000000000001"
             ]
         },
 
         {
-            "address": "0xdeADbeEf0000000000000000000000000000aaaa",
+            "address": "0xdeadbeef0000000000000000000000000000aaaa",
             "caller": "0x0000000000000000000000000000000000000042",
             "entry": "approve",
             "calldata": [
-                "0xdeADbeEf00000000000000000000000000000005",
+                "0xdeadbeef00000000000000000000000000000005",
                 "2000000000000000000000"
             ],
             "expected": {
@@ -557,11 +557,11 @@
             }
         },
         {
-            "address": "0xdeADbeEf0000000000000000000000000000bbbb",
+            "address": "0xdeadbeef0000000000000000000000000000bbbb",
             "caller": "0x0000000000000000000000000000000000000042",
             "entry": "approve",
             "calldata": [
-                "0xdeADbeEf00000000000000000000000000000005",
+                "0xdeadbeef00000000000000000000000000000005",
                 "20000000"
             ],
             "expected": {
@@ -584,12 +584,12 @@
             }
         },
         {
-            "address": "0xdeADbeEf00000000000000000000000000000005",
+            "address": "0xdeadbeef00000000000000000000000000000005",
             "caller": "0x0000000000000000000000000000000000000042",
             "entry": "addLiquidity",
             "calldata": [
-                "0xdeADbeEf0000000000000000000000000000aaaa",
-                "0xdeADbeEf0000000000000000000000000000bbbb",
+                "0xdeadbeef0000000000000000000000000000aaaa",
+                "0xdeadbeef0000000000000000000000000000bbbb",
                 "2000000000000000000000",
                 "20000000",
                 "0",
@@ -678,7 +678,7 @@
             }
         },
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "balanceOf",
             "caller": "0x0000000000000000000000000000000000000042",
             "calldata": [
@@ -690,11 +690,11 @@
         },
 
         {
-            "address": "0xdeADbeEf0000000000000000000000000000aaaa",
+            "address": "0xdeadbeef0000000000000000000000000000aaaa",
             "caller": "0x0000000000000000000000000000000000000042",
             "entry": "approve",
             "calldata": [
-                "0xdeADbeEf00000000000000000000000000000005",
+                "0xdeadbeef00000000000000000000000000000005",
                 "50000000000000000000"
             ],
             "expected": {
@@ -717,11 +717,11 @@
             }
         },
         {
-            "address": "0xdeADbeEf0000000000000000000000000000bbbb",
+            "address": "0xdeadbeef0000000000000000000000000000bbbb",
             "caller": "0x0000000000000000000000000000000000000042",
             "entry": "approve",
             "calldata": [
-                "0xdeADbeEf00000000000000000000000000000005",
+                "0xdeadbeef00000000000000000000000000000005",
                 "450000"
             ],
             "expected": {
@@ -744,7 +744,7 @@
             }
         },
         {
-            "address": "0xdeADbeEf0000000000000000000000000000aaaa",
+            "address": "0xdeadbeef0000000000000000000000000000aaaa",
             "entry": "balanceOf",
             "calldata": [
                 "0x0000000000000000000000000000000000000042"
@@ -754,7 +754,7 @@
             ]
         },
         {
-            "address": "0xdeADbeEf0000000000000000000000000000bbbb",
+            "address": "0xdeadbeef0000000000000000000000000000bbbb",
             "entry": "balanceOf",
             "calldata": [
                 "0x0000000000000000000000000000000000000042"
@@ -764,7 +764,7 @@
             ]
         },
         {
-            "address": "0xdeADbeEf00000000000000000000000000000005",
+            "address": "0xdeadbeef00000000000000000000000000000005",
             "entry": "swapExactTokensForTokens",
             "caller": "0x0000000000000000000000000000000000000042",
             "calldata": [
@@ -774,8 +774,8 @@
                 "0x0000000000000000000000000000000000000042",
                 "17179869183",
                 "2",
-                "0xdeADbeEf0000000000000000000000000000aaaa",
-                "0xdeADbeEf0000000000000000000000000000bbbb"
+                "0xdeadbeef0000000000000000000000000000aaaa",
+                "0xdeadbeef0000000000000000000000000000bbbb"
             ],
             "expected": {
                 "return_data": [
@@ -842,7 +842,7 @@
             }
         },
         {
-            "address": "0xdeADbeEf0000000000000000000000000000aaaa",
+            "address": "0xdeadbeef0000000000000000000000000000aaaa",
             "entry": "balanceOf",
             "calldata": [
                 "0x0000000000000000000000000000000000000042"
@@ -852,7 +852,7 @@
             ]
         },
         {
-            "address": "0xdeADbeEf0000000000000000000000000000bbbb",
+            "address": "0xdeadbeef0000000000000000000000000000bbbb",
             "entry": "balanceOf",
             "calldata": [
                 "0x0000000000000000000000000000000000000042"
@@ -863,7 +863,7 @@
         },
 
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "balanceOf",
             "caller": "0x0000000000000000000000000000000000000042",
             "calldata": [
@@ -874,11 +874,11 @@
             ]
         },
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "approve",
             "caller": "0x0000000000000000000000000000000000000042",
             "calldata": [
-                "0xdeADbeEf00000000000000000000000000000005",
+                "0xdeadbeef00000000000000000000000000000005",
                 "20000000000"
             ],
             "expected": {
@@ -901,12 +901,12 @@
             }
         },
         {
-            "address": "0xdeADbeEf00000000000000000000000000000005",
+            "address": "0xdeadbeef00000000000000000000000000000005",
             "entry": "removeLiquidity",
             "caller": "0x0000000000000000000000000000000000000042",
             "calldata": [
-                "0xdeADbeEf0000000000000000000000000000aaaa",
-                "0xdeADbeEf0000000000000000000000000000bbbb",
+                "0xdeadbeef0000000000000000000000000000aaaa",
+                "0xdeadbeef0000000000000000000000000000bbbb",
                 "20000000000",
                 "0",
                 "0",
@@ -984,7 +984,7 @@
             }
         },
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "balanceOf",
             "caller": "0x0000000000000000000000000000000000000042",
             "calldata": [
@@ -1000,16 +1000,16 @@
     ]
 } ],
     "contracts": {
-        "0xdeADbeEf00000000000000000000000000000001": "UniswapV2Pair/UniswapV2Pair.sol:UniswapV2Pair",
-        "0xdeADbeEf00000000000000000000000000000002": "UniswapV2Pair/libraries/UQ112x112.sol:UQ112x112",
-        "0xdeADbeEf00000000000000000000000000000003": "UniswapV2Pair/libraries/Math.sol:Math",
-        "0xdeADbeEf0000000000000000000000000000aaaa": "UniswapV2Pair/ERC20/ERC20.sol:ERC20",
-        "0xdeADbeEf0000000000000000000000000000bbbb": "UniswapV2Pair/ERC20/ERC20.sol:ERC20",
-        "0xdeADbeEf00000000000000000000000000000005": "UniswapV2Router01.sol:UniswapV2Router01"
+        "0xdeadbeef00000000000000000000000000000001": "UniswapV2Pair/UniswapV2Pair.sol:UniswapV2Pair",
+        "0xdeadbeef00000000000000000000000000000002": "UniswapV2Pair/libraries/UQ112x112.sol:UQ112x112",
+        "0xdeadbeef00000000000000000000000000000003": "UniswapV2Pair/libraries/Math.sol:Math",
+        "0xdeadbeef0000000000000000000000000000aaaa": "UniswapV2Pair/ERC20/ERC20.sol:ERC20",
+        "0xdeadbeef0000000000000000000000000000bbbb": "UniswapV2Pair/ERC20/ERC20.sol:ERC20",
+        "0xdeadbeef00000000000000000000000000000005": "UniswapV2Router01.sol:UniswapV2Router01"
     },
     "libraries": {
-        "UniswapV2Pair/libraries/UQ112x112.sol": { "UQ112x112": "0xdeADbeEf00000000000000000000000000000001" },
-        "UniswapV2Pair/libraries/Math.sol": { "Math": "0xdeADbeEf00000000000000000000000000000002" },
-        "libraries/TransferHelper.sol": { "TransferHelper": "0xdeADbeEf00000000000000000000000000000003" }
+        "UniswapV2Pair/libraries/UQ112x112.sol": { "UQ112x112": "0xdeadbeef00000000000000000000000000000001" },
+        "UniswapV2Pair/libraries/Math.sol": { "Math": "0xdeadbeef00000000000000000000000000000002" },
+        "libraries/TransferHelper.sol": { "TransferHelper": "0xdeadbeef00000000000000000000000000000003" }
     }
 }

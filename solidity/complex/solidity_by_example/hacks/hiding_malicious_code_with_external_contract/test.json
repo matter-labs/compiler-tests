@@ -2,14 +2,14 @@
     "name": "test",
     "input": [
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "constructor": true,
             "calldata": [
-                "0xdeADbeEf00000000000000000000000000000002"
+                "0xdeadbeef00000000000000000000000000000002"
             ]
         },
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "callBar",
             "calldata": [
             ]
@@ -33,7 +33,7 @@
     }
 } ],
     "contracts": {
-        "0xdeADbeEf00000000000000000000000000000001": "main.sol:Foo",
-        "0xdeADbeEf00000000000000000000000000000002": "main.sol:Mal"
+        "0xdeadbeef00000000000000000000000000000001": "main.sol:Foo",
+        "0xdeadbeef00000000000000000000000000000002": "main.sol:Mal"
     }
 }

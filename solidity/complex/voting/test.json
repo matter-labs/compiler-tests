@@ -3,7 +3,7 @@
     "name": "first",
     "input": [
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "constructor": true,
             "calldata": [
                 "32",
@@ -14,35 +14,35 @@
             ]
         },
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "giveRightToVote",
             "calldata": [
                 "0x0000000000000000000000000000000000000002"
             ]
         },
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "giveRightToVote",
             "calldata": [
                 "0x0000000000000000000000000000000000000003"
             ]
         },
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "giveRightToVote",
             "calldata": [
                 "0x0000000000000000000000000000000000000004"
             ]
         },
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "giveRightToVote",
             "calldata": [
                 "0x0000000000000000000000000000000000000005"
             ]
         },
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "vote",
             "caller": "0x0000000000000000000000000000000000000002",
             "calldata": [
@@ -50,7 +50,7 @@
             ]
         },
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "vote",
             "caller": "0x0000000000000000000000000000000000000003",
             "calldata": [
@@ -58,7 +58,7 @@
             ]
         },
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "vote",
             "caller": "0x0000000000000000000000000000000000000004",
             "calldata": [
@@ -66,7 +66,7 @@
             ]
         },
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "vote",
             "caller": "0x0000000000000000000000000000000000000005",
             "calldata": [
@@ -74,7 +74,7 @@
             ]
         },
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "winnerName",
             "calldata": [
             ],
@@ -88,6 +88,6 @@
     ]
 } ],
     "contracts": {
-        "0xdeADbeEf00000000000000000000000000000001": "ballot.sol:Ballot"
+        "0xdeadbeef00000000000000000000000000000001": "ballot.sol:Ballot"
     }
 }

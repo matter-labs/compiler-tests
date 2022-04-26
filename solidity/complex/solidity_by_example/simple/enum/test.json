@@ -2,7 +2,7 @@
     "name": "default",
     "input": [
         {
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "entry": "status",
             "calldata": [
             ]
@@ -13,6 +13,6 @@
     ]
 } ],
     "contracts": {
-        "0xdeADbeEf00000000000000000000000000000001": "main.sol:Enum"
+        "0xdeadbeef00000000000000000000000000000001": "main.sol:Enum"
     }
 }

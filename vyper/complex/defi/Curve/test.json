@@ -4,7 +4,7 @@
     "input": [
         {
             "comment": "The DAI token constructor",
-            "address": "0xdeADbeEf0000000000000000000000000000aaaa",
+            "address": "0xdeadbeef0000000000000000000000000000aaaa",
             "constructor": true,
             "calldata": [
                 "0x80",
@@ -34,7 +34,7 @@
         },
         {
             "comment": "The USDC token constructor",
-            "address": "0xdeADbeEf0000000000000000000000000000bbbb",
+            "address": "0xdeadbeef0000000000000000000000000000bbbb",
             "constructor": true,
             "calldata": [
                 "0x80",
@@ -64,7 +64,7 @@
         },
         {
             "comment": "The USDT token constructor",
-            "address": "0xdeADbeEf0000000000000000000000000000cccc",
+            "address": "0xdeadbeef0000000000000000000000000000cccc",
             "constructor": true,
             "calldata": [
                 "0x80",
@@ -95,7 +95,7 @@
 
         {
             "comment": "Minting the DAI token for test on address 0x0..042",
-            "address": "0xdeADbeEf0000000000000000000000000000aaaa",
+            "address": "0xdeadbeef0000000000000000000000000000aaaa",
             "entry": "mint",
             "calldata": [
                 "0x0000000000000000000000000000000000000042", "100000000000000000000000000000000000"
@@ -119,7 +119,7 @@
         },
         {
             "comment": "Minting the USDC token for test on address 0x0..042",
-            "address": "0xdeADbeEf0000000000000000000000000000bbbb",
+            "address": "0xdeadbeef0000000000000000000000000000bbbb",
             "entry": "mint",
             "calldata": [
                 "0x0000000000000000000000000000000000000042", "100000000000000000000000"
@@ -143,7 +143,7 @@
         },
         {
             "comment": "Minting the USDT token for test on address 0x0..042",
-            "address": "0xdeADbeEf0000000000000000000000000000cccc",
+            "address": "0xdeadbeef0000000000000000000000000000cccc",
             "entry": "mint",
             "calldata": [
                 "0x0000000000000000000000000000000000000042", "100000000000000000000000"
@@ -167,7 +167,7 @@
         },
         {
             "comment": "Minting the USDT token for test on address 0x0..069",
-            "address": "0xdeADbeEf0000000000000000000000000000cccc",
+            "address": "0xdeadbeef0000000000000000000000000000cccc",
             "entry": "mint",
             "calldata": [
                 "0x0000000000000000000000000000000000000069", "100000000000000000000000"
@@ -192,12 +192,12 @@
 
         {
             "comment": "The Curve LP Token constructor",
-            "address": "0xdeADbeEf00000000000000000000000000000002",
+            "address": "0xdeadbeef00000000000000000000000000000002",
             "constructor": true,
             "calldata": [
                 "0", "0"
             ],
-            "caller": "0xdeADbeEf00000000000000000000000000000001",
+            "caller": "0xdeadbeef00000000000000000000000000000001",
             "expected": {
                 "return_data": [],
                 "events": [
@@ -216,15 +216,15 @@
         },
         {
             "comment": "The StableSwap3Pool constructor",
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "constructor": true,
             "caller": "0x0000000000000000000000000000000000000069",
             "calldata": [
                 "0x0000000000000000000000000000000000000100",
-                "0xdeADbeEf0000000000000000000000000000aaaa",
-                "0xdeADbeEf0000000000000000000000000000bbbb",
-                "0xdeADbeEf0000000000000000000000000000cccc",
-                "0xdeADbeEf00000000000000000000000000000002",
+                "0xdeadbeef0000000000000000000000000000aaaa",
+                "0xdeadbeef0000000000000000000000000000bbbb",
+                "0xdeadbeef0000000000000000000000000000cccc",
+                "0xdeadbeef00000000000000000000000000000002",
                 "100",
                 "4000000",
                 "0"
@@ -233,7 +233,7 @@
 
         {
             "comment": "The Curve Registry Address Provider constructor",
-            "address": "0xdeADbeEf00000000000000000000000000000010",
+            "address": "0xdeadbeef00000000000000000000000000000010",
             "constructor": true,
             "calldata": [
                 "0x0000000000000000000000000000000000000069"
@@ -242,22 +242,22 @@
         },
         {
             "comment": "The Curve Registry constructor",
-            "address": "0xdeADbeEf00000000000000000000000000000011",
+            "address": "0xdeadbeef00000000000000000000000000000011",
             "constructor": true,
             "calldata": [
-                "0xdeADbeEf00000000000000000000000000000010",
+                "0xdeadbeef00000000000000000000000000000010",
                 "0x0000000000000000000000000000000000000000"
             ],
             "expected": []
         },
         {
             "comment": "Adding address of Curve Registry to address provider",
-            "address": "0xdeADbeEf00000000000000000000000000000010",
+            "address": "0xdeadbeef00000000000000000000000000000010",
             "caller": "0x0000000000000000000000000000000000000069",
             "entry": "set_address",
             "calldata": [
                 "0",
-                "0xdeADbeEf00000000000000000000000000000011"
+                "0xdeadbeef00000000000000000000000000000011"
             ],
             "expected": {
                 "return_data": [
@@ -270,7 +270,7 @@
                             "0"
                         ],
                         "values": [
-                            "0xdeADbeEf00000000000000000000000000000011",
+                            "0xdeadbeef00000000000000000000000000000011",
                             "1"
                         ]
                     }
@@ -280,20 +280,20 @@
         },
         {
             "comment": "The Curve Registry PoolInfo constructor",
-            "address": "0xdeADbeEf00000000000000000000000000000012",
+            "address": "0xdeadbeef00000000000000000000000000000012",
             "constructor": true,
             "calldata": [
-                "0xdeADbeEf00000000000000000000000000000010"
+                "0xdeadbeef00000000000000000000000000000010"
             ],
             "expected": []
         },
         {
             "comment": "Adding address of Curve Registry PoolInfo to address provider",
-            "address": "0xdeADbeEf00000000000000000000000000000010",
+            "address": "0xdeadbeef00000000000000000000000000000010",
             "caller": "0x0000000000000000000000000000000000000069",
             "entry": "add_new_id",
             "calldata": [
-                "0xdeADbeEf00000000000000000000000000000012",
+                "0xdeadbeef00000000000000000000000000000012",
                 "0x40",
                 "16",
                 "0x506f6f6c496e666f204765747465727300000000000000000000000000000000"
@@ -309,7 +309,7 @@
                             "1"
                         ],
                         "values": [
-                            "0xdeADbeEf00000000000000000000000000000012",
+                            "0xdeadbeef00000000000000000000000000000012",
                             "0x40",
                             "16",
                             "0x506f6f6c496e666f204765747465727300000000000000000000000000000000"
@@ -321,7 +321,7 @@
         },
         {
             "comment": "The Curve Registry Calculator constructor",
-            "address": "0xdeADbeEf00000000000000000000000000000020",
+            "address": "0xdeadbeef00000000000000000000000000000020",
             "constructor": true,
             "calldata": [
             ],
@@ -329,21 +329,21 @@
         },
         {
             "comment": "The Curve Registry Exchange constructor",
-            "address": "0xdeADbeEf00000000000000000000000000000013",
+            "address": "0xdeadbeef00000000000000000000000000000013",
             "constructor": true,
             "calldata": [
-                "0xdeADbeEf00000000000000000000000000000010",
-                "0xdeADbeEf00000000000000000000000000000020"
+                "0xdeadbeef00000000000000000000000000000010",
+                "0xdeadbeef00000000000000000000000000000020"
             ],
             "expected": []
         },
         {
             "comment": "Adding address of Curve Registry Exchange to address provider",
-            "address": "0xdeADbeEf00000000000000000000000000000010",
+            "address": "0xdeadbeef00000000000000000000000000000010",
             "caller": "0x0000000000000000000000000000000000000069",
             "entry": "add_new_id",
             "calldata": [
-                "0xdeADbeEf00000000000000000000000000000013",
+                "0xdeadbeef00000000000000000000000000000013",
                 "0x40",
                 "9",
                 "0x45786368616e6765730000000000000000000000000000000000000000000000"
@@ -359,7 +359,7 @@
                             "2"
                         ],
                         "values": [
-                            "0xdeADbeEf00000000000000000000000000000013",
+                            "0xdeadbeef00000000000000000000000000000013",
                             "0x40",
                             "9",
                             "0x45786368616e6765730000000000000000000000000000000000000000000000"
@@ -371,13 +371,13 @@
         },
         {
             "comment": "Adding StableSwap3Pool to Curve Registry",
-            "address": "0xdeADbeEf00000000000000000000000000000011",
+            "address": "0xdeadbeef00000000000000000000000000000011",
             "caller": "0x0000000000000000000000000000000000000069",
             "entry": "add_pool_without_underlying",
             "calldata": [
-                "0xdeADbeEf00000000000000000000000000000001",
+                "0xdeadbeef00000000000000000000000000000001",
                 "3",
-                "0xdeADbeEf00000000000000000000000000000002",
+                "0xdeadbeef00000000000000000000000000000002",
                 "0",
                 "0x60612",
                 "0",
@@ -394,7 +394,7 @@
                     {
                         "topics": [
                             "0xe485c16479ab7092c0b3fc4649843c06be7f072194675261590c84473ab0aea9",
-                            "0xdeADbeEf00000000000000000000000000000001"
+                            "0xdeadbeef00000000000000000000000000000001"
                         ],
                         "values": [
                             "0x20",
@@ -409,11 +409,11 @@
 
         {
             "comment": "Approving transfer DAI token for add liquidity to pool",
-            "address": "0xdeADbeEf0000000000000000000000000000aaaa",
+            "address": "0xdeadbeef0000000000000000000000000000aaaa",
             "caller": "0x0000000000000000000000000000000000000042",
             "entry": "approve",
             "calldata": [
-                "0xdeADbeEf00000000000000000000000000000001", "10000000000000000000000"
+                "0xdeadbeef00000000000000000000000000000001", "10000000000000000000000"
             ],
             "expected": {
                 "return_data": [
@@ -436,11 +436,11 @@
         },
         {
             "comment": "Approving transfer USDC token for add liquidity to pool",
-            "address": "0xdeADbeEf0000000000000000000000000000bbbb",
+            "address": "0xdeadbeef0000000000000000000000000000bbbb",
             "caller": "0x0000000000000000000000000000000000000042",
             "entry": "approve",
             "calldata": [
-                "0xdeADbeEf00000000000000000000000000000001", "100000000"
+                "0xdeadbeef00000000000000000000000000000001", "100000000"
             ],
             "expected": {
                 "return_data": [
@@ -463,11 +463,11 @@
         },
         {
             "comment": "Approving transfer USDT token for add liquidity to pool",
-            "address": "0xdeADbeEf0000000000000000000000000000cccc",
+            "address": "0xdeadbeef0000000000000000000000000000cccc",
             "caller": "0x0000000000000000000000000000000000000042",
             "entry": "approve",
             "calldata": [
-                "0xdeADbeEf00000000000000000000000000000001", "1000000000"
+                "0xdeadbeef00000000000000000000000000000001", "1000000000"
             ],
             "expected": {
                 "return_data": [
@@ -490,7 +490,7 @@
         },
         {
             "comment": "Adding liquidity with proportion 100:1:10",
-            "address": "0xdeADbeEf00000000000000000000000000000001",
+            "address": "0xdeadbeef00000000000000000000000000000001",
             "caller": "0x0000000000000000000000000000000000000042",
             "entry": "add_liquidity",
             "calldata": [
@@ -504,7 +504,7 @@
                         "topics": [
                             "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
                             "0x0000000000000000000000000000000000000000000000000000000000000042",
-                            "0x000000000000000000000000deADbeEf00000000000000000000000000000001"
+                            "0x000000000000000000000000deadbeef00000000000000000000000000000001"
                         ],
                         "values": [
                             "10000000000000000000000"
@@ -514,7 +514,7 @@
                         "topics": [
                             "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
                             "0x0000000000000000000000000000000000000000000000000000000000000042",
-                            "0x000000000000000000000000deADbeEf00000000000000000000000000000001"
+                            "0x000000000000000000000000deadbeef00000000000000000000000000000001"
                         ],
                         "values": [
                             "100000000"
@@ -524,7 +524,7 @@
                         "topics": [
                             "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
                             "0x0000000000000000000000000000000000000000000000000000000000000042",
-                            "0x000000000000000000000000deADbeEf00000000000000000000000000000001"
+                            "0x000000000000000000000000deadbeef00000000000000000000000000000001"
                         ],
                         "values": [
                             "1000000000"
@@ -558,7 +558,7 @@
         },
         {
             "comment": "Checking the balance of LP token after adding liquidity",
-            "address": "0xdeADbeEf00000000000000000000000000000002",
+            "address": "0xdeadbeef00000000000000000000000000000002",
             "entry": "balanceOf",
             "caller": "0x0000000000000000000000000000000000000042",
             "calldata": [
@@ -571,11 +571,11 @@
 
         {
             "comment": "Approving transfer DAI token for exchange",
-            "address": "0xdeADbeEf0000000000000000000000000000aaaa",
+            "address": "0xdeadbeef0000000000000000000000000000aaaa",
             "caller": "0x0000000000000000000000000000000000000042",
             "entry": "approve",
             "calldata": [
-                "0xdeADbeEf00000000000000000000000000000013", "10000000000000000000"
+                "0xdeadbeef00000000000000000000000000000013", "10000000000000000000"
             ],
             "expected": {
                 "return_data": [
@@ -598,7 +598,7 @@
         },
         {
             "comment": "Checking the balance of USDC token before exchange",
-            "address": "0xdeADbeEf0000000000000000000000000000bbbb",
+            "address": "0xdeadbeef0000000000000000000000000000bbbb",
             "entry": "balanceOf",
             "calldata": [
                 "0x0000000000000000000000000000000000000042"
@@ -609,12 +609,12 @@
         },
         {
             "comment": "Exchanging DAI token for USDC token with the best rate",
-            "address": "0xdeADbeEf00000000000000000000000000000013",
+            "address": "0xdeadbeef00000000000000000000000000000013",
             "entry": "exchange_with_best_rate(address,address,uint256,uint256)",
             "caller": "0x0000000000000000000000000000000000000042",
             "calldata": [
-                "0xdeADbeEf0000000000000000000000000000aaaa",
-                "0xdeADbeEf0000000000000000000000000000bbbb",
+                "0xdeadbeef0000000000000000000000000000aaaa",
+                "0xdeadbeef0000000000000000000000000000bbbb",
                 "10000000000000000000",
                 "854362"
             ],
@@ -693,8 +693,8 @@
                             "0x000000000000000000000000deadbeef00000000000000000000000000000001"
                         ],
                         "values": [
-                            "0xdeADbeEf0000000000000000000000000000aaaa",
-                            "0xdeADbeEf0000000000000000000000000000bbbb",
+                            "0xdeadbeef0000000000000000000000000000aaaa",
+                            "0xdeadbeef0000000000000000000000000000bbbb",
                             "10000000000000000000",
                             "854362"
                         ]
@@ -705,7 +705,7 @@
         },
         {
             "comment": "Checking the balance of USDC token after adding liquidity and exchange",
-            "address": "0xdeADbeEf0000000000000000000000000000bbbb",
+            "address": "0xdeadbeef0000000000000000000000000000bbbb",
             "entry": "balanceOf",
             "calldata": [
                 "0x0000000000000000000000000000000000000042"
@@ -717,19 +717,19 @@
 
         {
             "comment": "Checking the StableSwap3Pool coins",
-            "address": "0xdeADbeEf00000000000000000000000000000012",
+            "address": "0xdeadbeef00000000000000000000000000000012",
             "entry": "get_pool_coins",
             "calldata": [
-                "0xdeADbeEf00000000000000000000000000000001"
+                "0xdeadbeef00000000000000000000000000000001"
             ],
             "expected": [
-                "0xdeADbeEf0000000000000000000000000000aaaa",
-                "0xdeADbeEf0000000000000000000000000000bbbb",
-                "0xdeADbeEf0000000000000000000000000000cccc",
+                "0xdeadbeef0000000000000000000000000000aaaa",
+                "0xdeadbeef0000000000000000000000000000bbbb",
+                "0xdeadbeef0000000000000000000000000000cccc",
                 "0", "0", "0", "0", "0",
-                "0xdeADbeEf0000000000000000000000000000aaaa",
-                "0xdeADbeEf0000000000000000000000000000bbbb",
-                "0xdeADbeEf0000000000000000000000000000cccc",
+                "0xdeadbeef0000000000000000000000000000aaaa",
+                "0xdeadbeef0000000000000000000000000000bbbb",
+                "0xdeadbeef0000000000000000000000000000cccc",
                 "0", "0", "0", "0", "0",
                 "18", "6", "6", "0", "0", "0", "0", "0",
                 "18", "6", "6", "0", "0", "0", "0", "0"
@@ -737,10 +737,10 @@
         },
         {
             "comment": "Checking the StableSwap3Pool information",
-            "address": "0xdeADbeEf00000000000000000000000000000012",
+            "address": "0xdeadbeef00000000000000000000000000000012",
             "entry": "get_pool_info",
             "calldata": [
-                "0xdeADbeEf00000000000000000000000000000001"
+                "0xdeadbeef00000000000000000000000000000001"
             ],
             "expected": [
                 "0x20",
@@ -755,7 +755,7 @@
                 "18", "6", "6", "0", "0", "0", "0", "0",
                 "18", "6", "6", "0", "0", "0", "0", "0",
                 "1000000000000000000", "1000000000000000000", "1000000000000000000", "0", "0", "0", "0", "0",
-                "0xdeADbeEf00000000000000000000000000000002",
+                "0xdeadbeef00000000000000000000000000000002",
 
                 "100",
                 "100",
@@ -776,29 +776,29 @@
         },
         {
             "comment": "Checking the address provider address from PoolInfo contract",
-            "address": "0xdeADbeEf00000000000000000000000000000012",
+            "address": "0xdeadbeef00000000000000000000000000000012",
             "entry": "address_provider",
             "calldata": [
             ],
             "expected": [
-                "0xdeADbeEf00000000000000000000000000000010"
+                "0xdeadbeef00000000000000000000000000000010"
             ]
         }
     ],
     "expected": [
-        "0xdeADbeEf00000000000000000000000000000010"
+        "0xdeadbeef00000000000000000000000000000010"
     ]
 } ],
     "contracts": {
-        "0xdeADbeEf00000000000000000000000000000001": "Curve3pool/StableSwap3Pool.vy",
-        "0xdeADbeEf00000000000000000000000000000002": "Curve3pool/CurveTokenV3.vy",
-        "0xdeADbeEf0000000000000000000000000000aaaa": "Curve3pool/ERC20/ERC20.vy",
-        "0xdeADbeEf0000000000000000000000000000bbbb": "Curve3pool/ERC20/ERC20.vy",
-        "0xdeADbeEf0000000000000000000000000000cccc": "Curve3pool/ERC20/ERC20.vy",
-        "0xdeADbeEf00000000000000000000000000000010": "AddressProvider.vy",
-        "0xdeADbeEf00000000000000000000000000000011": "Registry.vy",
-        "0xdeADbeEf00000000000000000000000000000012": "PoolInfo.vy",
-        "0xdeADbeEf00000000000000000000000000000013": "Swaps.vy",
-        "0xdeADbeEf00000000000000000000000000000020": "CurveCalc.vy"
+        "0xdeadbeef00000000000000000000000000000001": "Curve3pool/StableSwap3Pool.vy",
+        "0xdeadbeef00000000000000000000000000000002": "Curve3pool/CurveTokenV3.vy",
+        "0xdeadbeef0000000000000000000000000000aaaa": "Curve3pool/ERC20/ERC20.vy",
+        "0xdeadbeef0000000000000000000000000000bbbb": "Curve3pool/ERC20/ERC20.vy",
+        "0xdeadbeef0000000000000000000000000000cccc": "Curve3pool/ERC20/ERC20.vy",
+        "0xdeadbeef00000000000000000000000000000010": "AddressProvider.vy",
+        "0xdeadbeef00000000000000000000000000000011": "Registry.vy",
+        "0xdeadbeef00000000000000000000000000000012": "PoolInfo.vy",
+        "0xdeadbeef00000000000000000000000000000013": "Swaps.vy",
+        "0xdeadbeef00000000000000000000000000000020": "CurveCalc.vy"
     }
 }
