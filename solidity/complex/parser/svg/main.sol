@@ -13,13 +13,13 @@ import "./PRBMathUD60x18.sol";
  *      auxiliary functions to construct token metadata JSON, and encode it into base64 format.
  *
  * @dev The metadata format, returned by `constructTokenURI` function conforms with the official
- *	ERC721 metadata standard.
+ *    ERC721 metadata standard.
  *
  * @dev There are basically 3 components of the metadata schema, the name, description and the image itself.
- *	each of them have it's generating functions, `generateLandName`, `generateLandDescription` and `_generateSVGImage`.
+ *    each of them have it's generating functions, `generateLandName`, `generateLandDescription` and `_generateSVGImage`.
  *
  * @dev The output of `_generateSVGImage` will be encoded as Base64 so that the browser can interpret it, as well as the
- *	entire output of `constructTokenURI`.
+ *    entire output of `constructTokenURI`.
  *
  * @dev LandDescriptor should call `constructTokenURI` in order to get the encoded ERC721 metadata.
  *
@@ -32,18 +32,18 @@ contract LandSvgLib {
     struct Site {
         /**
          * @dev Site type:
-		 *        1) Carbon (element),
-		 *        2) Silicon (element),
-		 *        3) Hydrogen (element),
-		 *        4) Crypton (fuel),
-		 *        5) Hyperion (fuel),
-		 *        6) Solon (fuel)
-		 */
+         *        1) Carbon (element),
+         *        2) Silicon (element),
+         *        3) Hydrogen (element),
+         *        4) Crypton (fuel),
+         *        5) Hyperion (fuel),
+         *        6) Solon (fuel)
+         */
         uint8 typeId;
 
         /**
          * @dev x-coordinate within a plot
-		 */
+    	 */
         uint16 x;
 
         /**

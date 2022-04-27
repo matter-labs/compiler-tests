@@ -1,5 +1,5 @@
 struct S:
-	a: Bytes[100]
+    a: Bytes[100]
 
 @external
 @pure

@@ -4,7 +4,12 @@
 //!         {
 //!             "address": "0x0000000000000000000000000000000000000012",
 //!             "fallback": true,
-//!             "calldata": ["0x1da44b586eb0729ff70a73c326926f6ed5a25f5b056e7f47fbc6e58d86871655", "0x1c", "0xb91467e570a6466aa9e9876cbcd013baba02900b8979d43fe208a4a4f339f5fd", "0x6007e74cd82e037b800186422fc2da167c747ef045e5d18a5f5d4300f8e1a029"]
+//!             "calldata": [
+//!                 "0x1da44b586eb0729ff70a73c326926f6ed5a25f5b056e7f47fbc6e58d86871655",
+//!                 "0x1c",
+//!                 "0xb91467e570a6466aa9e9876cbcd013baba02900b8979d43fe208a4a4f339f5fd",
+//!                 "0x6007e74cd82e037b800186422fc2da167c747ef045e5d18a5f5d4300f8e1a029"
+//!             ]
 //!         }
 //!     ],
 //!     "expected": [
@@ -33,9 +38,9 @@ contract Test {
     address constant PRECOMPILE_CALL_ADDRESS = address((1<<16) - 3);
 
     fallback() external {
-		address codeAddress = getCodeAddress();
-		// Check that we are NOT in delegatecall
-		require(codeAddress == address(this));
+        address codeAddress = getCodeAddress();
+        // Check that we are NOT in delegatecall
+        require(codeAddress == address(this));
 
         uint256 bytesSize;
         uint256 offset;
@@ -113,12 +118,12 @@ contract Test {
     }
 
     function packPrecompileParams(
-		uint32 inputMemoryOffset,
-		uint32 inputMemoryLength,
-		uint32 outputMemoryOffset,
-		uint32 outputMemoryLength,
+        uint32 inputMemoryOffset,
+        uint32 inputMemoryLength,
+        uint32 outputMemoryOffset,
+        uint32 outputMemoryLength,
         uint64 perPrecompileInterpreted
-	) internal pure returns (uint256 rawParams) {
+    ) internal pure returns (uint256 rawParams) {
         unchecked {
             rawParams = inputMemoryOffset;
             rawParams |= uint256(inputMemoryLength) << 32;
@@ -126,18 +131,18 @@ contract Test {
             rawParams |= uint256(outputMemoryLength) << 96;
             rawParams |= uint256(perPrecompileInterpreted) << 192;
         }
-	}
+    }
 
     function precompileCall(uint256 _rawParams, uint32 _ergsToBurn) internal view returns (bool success) {
-		address callAddr = PRECOMPILE_CALL_ADDRESS;
+        address callAddr = PRECOMPILE_CALL_ADDRESS;
 
-		// After `precompileCall` ergs will be burned down to 0 if there are not enough of them,
-		// thats why it should be checked before the call.
-		require(gasleft() >= _ergsToBurn);
-		assembly {
-			success := staticcall(_rawParams, callAddr, _ergsToBurn, 0, 0, 0)
-		}
-	}
+        // After `precompileCall` ergs will be burned down to 0 if there are not enough of them,
+        // thats why it should be checked before the call.
+        require(gasleft() >= _ergsToBurn);
+        assembly {
+            success := staticcall(_rawParams, callAddr, _ergsToBurn, 0, 0, 0)
+        }
+    }
 
     function getCodeAddress() internal view returns (address addr) {
         address callAddr = CODE_ADDRESS_CALL_ADDRESS;
