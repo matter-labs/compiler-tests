@@ -674,36 +674,36 @@
 
 ; ModuleID = 'main'
 source_filename = "main"
-target datalayout = "e-p:256:256-i8:256:256:256-i256:256:256-S32-a:256:256"
+target datalayout = "E-p:256:256-i8:256:256:256-i256:256:256-S32-a:256:256"
 target triple = "syncvm"
 
-; Function Attrs: nounwind
-define void @__selector() local_unnamed_addr #0 {
+declare i32 @__personality()
+
+; Function Attrs: noreturn nounwind
+define i256 @__entry(i256 %0, i256 %1, i1 %2) local_unnamed_addr #0 personality i32 ()* @__personality {
 entry:
-  %cell_1 = load i256, i256 addrspace(2)* inttoptr(i256 32 to i256 addrspace(2)*), align 32
-  %cell_2 = load i256, i256 addrspace(2)* inttoptr(i256 64 to i256 addrspace(2)*), align 32
-  %cell_3 = load i256, i256 addrspace(2)* inttoptr(i256 96 to i256 addrspace(2)*), align 32
-  %offset = load i256, i256 addrspace(2)* inttoptr(i256 192 to i256 addrspace(2)*), align 32
-  %size = load i256, i256 addrspace(2)* inttoptr(i256 224 to i256 addrspace(2)*), align 32
+  %cell_1 = load i256, i256 addrspace(2)* inttoptr(i256 0 to i256 addrspace(2)*), align 32
+  %cell_2 = load i256, i256 addrspace(2)* inttoptr(i256 32 to i256 addrspace(2)*), align 32
+  %cell_3 = load i256, i256 addrspace(2)* inttoptr(i256 64 to i256 addrspace(2)*), align 32
+  %offset = load i256, i256 addrspace(2)* inttoptr(i256 160 to i256 addrspace(2)*), align 32
+  %size = load i256, i256 addrspace(2)* inttoptr(i256 192 to i256 addrspace(2)*), align 32
 
-  store i256 %cell_1, i256 addrspace(1)* inttoptr (i256 32 to i256 addrspace(1)*), align 32
-  store i256 %cell_2, i256 addrspace(1)* inttoptr (i256 64 to i256 addrspace(1)*), align 32
-  store i256 %cell_3, i256 addrspace(1)* inttoptr (i256 96 to i256 addrspace(1)*), align 32
+  store i256 %cell_1, i256 addrspace(1)* inttoptr (i256 0 to i256 addrspace(1)*), align 32
+  store i256 %cell_2, i256 addrspace(1)* inttoptr (i256 32 to i256 addrspace(1)*), align 32
+  store i256 %cell_3, i256 addrspace(1)* inttoptr (i256 64 to i256 addrspace(1)*), align 32
 
-  %addr = add i256 %offset, 32
-  %addr.1 = inttoptr i256 %addr to i256 addrspace(1)*
-  call void @llvm.memcpy.p1i256.p2i256.i256(i256 addrspace(1)* align 1 %addr.1, i256 addrspace(2)* align 32 inttoptr (i256 128 to i256 addrspace(2)*), i256 %size, i1 false)
-  %cell_1r = load i256, i256 addrspace(1)* inttoptr(i256 32 to i256 addrspace(1)*), align 32
-  %cell_2r = load i256, i256 addrspace(1)* inttoptr(i256 64 to i256 addrspace(1)*), align 32
-  %cell_3r = load i256, i256 addrspace(1)* inttoptr(i256 96 to i256 addrspace(1)*), align 32
+  %offset_ptr = inttoptr i256 %offset to i256 addrspace(1)*
+  call void @llvm.memcpy.p1i256.p2i256.i256(i256 addrspace(1)* align 1 %offset_ptr, i256 addrspace(2)* align 1 inttoptr (i256 96 to i256 addrspace(2)*), i256 %size, i1 false)
 
-  store i256 96, i256 addrspace(2)* inttoptr (i256 0 to i256 addrspace(2)*), align 32
-  store i256 %cell_1r, i256 addrspace(2)* inttoptr (i256 32 to i256 addrspace(2)*), align 32
-  store i256 %cell_2r, i256 addrspace(2)* inttoptr (i256 64 to i256 addrspace(2)*), align 32
-  store i256 %cell_3r, i256 addrspace(2)* inttoptr (i256 96 to i256 addrspace(2)*), align 32
-
-  ret void
+  %abi_data = shl i256 96, 64
+  tail call void @llvm.syncvm.return(i256 %abi_data) #1
+  unreachable
 }
 
-attributes #0 = { nounwind }
+; Function Attrs: noreturn nounwind
+declare void @llvm.syncvm.return(i256) #0
+
 declare void @llvm.memcpy.p1i256.p2i256.i256(i256 addrspace(1)*, i256 addrspace(2)*, i256, i1)
+
+attributes #0 = { noreturn nounwind }
+attributes #1 = { nounwind }

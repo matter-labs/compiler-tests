@@ -9,7 +9,7 @@
 ;!         }
 ;!     ],
 ;!     "expected": [
-;!                "0"
+;!         "0"
 ;!     ]
 ;! }, {
 ;!     "name": "1",
@@ -22,7 +22,7 @@
 ;!         }
 ;!     ],
 ;!     "expected": [
-;!                "1"
+;!         "1"
 ;!     ]
 ;! }, {
 ;!     "name": "2",
@@ -35,7 +35,7 @@
 ;!         }
 ;!     ],
 ;!     "expected": [
-;!                "2"
+;!         "2"
 ;!     ]
 ;! }, {
 ;!     "name": "3",
@@ -48,7 +48,7 @@
 ;!         }
 ;!     ],
 ;!     "expected": [
-;!                "55"
+;!         "55"
 ;!     ]
 ;! }, {
 ;!     "name": "4",
@@ -61,37 +61,34 @@
 ;!         }
 ;!     ],
 ;!     "expected": [
-;!                "256"
+;!         "256"
 ;!     ]
 ;! } ] }
 
 ; ModuleID = 'main'
 source_filename = "main"
-target datalayout = "e-p:256:256-i8:256:256:256-i256:256:256-S32-a:256:256"
+target datalayout = "E-p:256:256-i8:256:256:256-i256:256:256-S32-a:256:256"
 target triple = "syncvm"
 
-; Function Attrs: nounwind
-define i256 @__selector() local_unnamed_addr #0 {
+declare i32 @__personality()
+
+; Function Attrs: noreturn nounwind
+define i256 @__entry(i256 %0, i256 %1, i1 %2) local_unnamed_addr #0 personality i32 ()* @__personality {
 entry:
-  ; we know that the arguments are in calldata field, with offset = 0, length = 32
-  %arg = load i256, i256 addrspace(2)* inttoptr(i256 0 to i256 addrspace(2)*), align 32
-  %res = call i256 @__clz(i256 %arg)
+  %value = load i256, i256 addrspace(2)* inttoptr(i256 0 to i256 addrspace(2)*), align 32
+  %result = call i256 @__clz(i256 %value)
 
-  ; offset 
-  store i256 32, i256 addrspace(1)* inttoptr (i256 0 to i256 addrspace(1)*), align 32
-  %data_offset = load i256, i256 addrspace(1)* inttoptr (i256 0 to i256 addrspace(1)*), align 1
+  store i256 %result, i256 addrspace(1)* inttoptr (i256 0 to i256 addrspace(1)*), align 32
 
-  ; length
-  store i256 32, i256 addrspace(1)* inttoptr (i256 32 to i256 addrspace(1)*), align 32
-  %data_length = load i256, i256 addrspace(1)* inttoptr (i256 32 to i256 addrspace(1)*), align 1
-  %data_length_shifted = shl i256 %data_length, 32
-  %data_merged = add i256 %data_offset, %data_length_shifted
-
-  ; value
-  store i256 %res, i256 addrspace(1)* inttoptr (i256 32 to i256 addrspace(1)*), align 32
-
-  ret i256 %data_merged
+  %abi_data = shl i256 32, 64
+  tail call void @llvm.syncvm.return(i256 %abi_data) #1
+  unreachable
 }
 
-attributes #0 = { nounwind }
+attributes #0 = { noreturn nounwind }
+attributes #1 = { nounwind }
+
 declare i256 @__clz(i256)
+
+; Function Attrs: noreturn nounwind
+declare void @llvm.syncvm.return(i256) #0

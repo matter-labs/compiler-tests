@@ -6,7 +6,7 @@
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
-;!                "32",
+;!                "0",
 ;!                "0xDEADBEEF"
 ;!             ]
 ;!         }
@@ -23,7 +23,7 @@
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
-;!                "33",
+;!                "1",
 ;!                "0xDEADBEEF"
 ;!             ]
 ;!         }
@@ -40,7 +40,7 @@
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
-;!                "34",
+;!                "2",
 ;!                "0xDEADBEEF"
 ;!             ]
 ;!         }
@@ -57,7 +57,7 @@
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
-;!                "35",
+;!                "3",
 ;!                "0xDEADBEEF"
 ;!             ]
 ;!         }
@@ -74,7 +74,7 @@
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
-;!                "36",
+;!                "4",
 ;!                "0xDEADBEEF"
 ;!             ]
 ;!         }
@@ -91,7 +91,7 @@
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
-;!                "37",
+;!                "5",
 ;!                "0xDEADBEEF"
 ;!             ]
 ;!         }
@@ -108,7 +108,7 @@
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
-;!                "38",
+;!                "6",
 ;!                "0xDEADBEEF"
 ;!             ]
 ;!         }
@@ -125,7 +125,7 @@
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
-;!                "39",
+;!                "7",
 ;!                "0xDEADBEEF"
 ;!             ]
 ;!         }
@@ -142,7 +142,7 @@
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
-;!                "40",
+;!                "8",
 ;!                "0xDEADBEEF"
 ;!             ]
 ;!         }
@@ -159,7 +159,7 @@
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
-;!                "41",
+;!                "9",
 ;!                "0xDEADBEEF"
 ;!             ]
 ;!         }
@@ -176,7 +176,7 @@
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
-;!                "42",
+;!                "10",
 ;!                "0xDEADBEEF"
 ;!             ]
 ;!         }
@@ -193,7 +193,7 @@
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
-;!                "43",
+;!                "11",
 ;!                "0xDEADBEEF"
 ;!             ]
 ;!         }
@@ -210,7 +210,7 @@
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
-;!                "44",
+;!                "12",
 ;!                "0xDEADBEEF"
 ;!             ]
 ;!         }
@@ -227,7 +227,7 @@
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
-;!                "45",
+;!                "13",
 ;!                "0xDEADBEEF"
 ;!             ]
 ;!         }
@@ -244,7 +244,7 @@
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
-;!                "46",
+;!                "14",
 ;!                "0xDEADBEEF"
 ;!             ]
 ;!         }
@@ -261,7 +261,7 @@
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
-;!                "47",
+;!                "15",
 ;!                "0xDEADBEEF"
 ;!             ]
 ;!         }
@@ -278,7 +278,7 @@
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
-;!                "48",
+;!                "16",
 ;!                "0xDEADBEEF"
 ;!             ]
 ;!         }
@@ -295,7 +295,7 @@
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
-;!                "49",
+;!                "17",
 ;!                "0xDEADBEEF"
 ;!             ]
 ;!         }
@@ -312,7 +312,7 @@
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
-;!                "50",
+;!                "18",
 ;!                "0xDEADBEEF"
 ;!             ]
 ;!         }
@@ -329,7 +329,7 @@
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
-;!                "51",
+;!                "19",
 ;!                "0xDEADBEEF"
 ;!             ]
 ;!         }
@@ -346,7 +346,7 @@
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
-;!                "52",
+;!                "20",
 ;!                "0xDEADBEEF"
 ;!             ]
 ;!         }
@@ -363,7 +363,7 @@
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
-;!                "53",
+;!                "21",
 ;!                "0xDEADBEEF"
 ;!             ]
 ;!         }
@@ -380,7 +380,7 @@
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
-;!                "54",
+;!                "22",
 ;!                "0xDEADBEEF"
 ;!             ]
 ;!         }
@@ -397,7 +397,7 @@
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
-;!                "55",
+;!                "23",
 ;!                "0xDEADBEEF"
 ;!             ]
 ;!         }
@@ -414,7 +414,7 @@
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
-;!                "56",
+;!                "24",
 ;!                "0xDEADBEEF"
 ;!             ]
 ;!         }
@@ -431,7 +431,7 @@
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
-;!                "57",
+;!                "25",
 ;!                "0xDEADBEEF"
 ;!             ]
 ;!         }
@@ -448,7 +448,7 @@
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
-;!                "58",
+;!                "26",
 ;!                "0xDEADBEEF"
 ;!             ]
 ;!         }
@@ -465,7 +465,7 @@
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
-;!                "59",
+;!                "27",
 ;!                "0xDEADBEEF"
 ;!             ]
 ;!         }
@@ -482,7 +482,7 @@
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
-;!                "60",
+;!                "28",
 ;!                "0xDEADBEEF"
 ;!             ]
 ;!         }
@@ -499,7 +499,7 @@
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
-;!                "61",
+;!                "29",
 ;!                "0xDEADBEEF"
 ;!             ]
 ;!         }
@@ -516,7 +516,7 @@
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
-;!                "62",
+;!                "30",
 ;!                "0xDEADBEEF"
 ;!             ]
 ;!         }
@@ -533,7 +533,7 @@
 ;!             "calldata": [
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
-;!                "63",
+;!                "31",
 ;!                "0xDEADBEEF"
 ;!             ]
 ;!         }
@@ -546,20 +546,33 @@
 
 ; ModuleID = 'main'
 source_filename = "main"
-target datalayout = "e-p:256:256-i8:256:256:256-i256:256:256-S32-a:256:256"
+target datalayout = "E-p:256:256-i8:256:256:256-i256:256:256-S32-a:256:256"
 target triple = "syncvm"
 
-; Function Attrs: nounwind
-define void @__selector() local_unnamed_addr #0 {
+declare i32 @__personality()
+
+; Function Attrs: noreturn nounwind
+define i256 @__entry(i256 %0, i256 %1, i1 %2) local_unnamed_addr #0 personality i32 ()* @__personality {
 entry:
-  %offset = load i32 addrspace(2)*, i32 addrspace(2)* addrspace(2)* inttoptr(i256 96 to i32 addrspace(2)* addrspace(2)*), align 32
-  %loaded = load i256, i256 addrspace(2)* inttoptr(i256 128 to i256 addrspace(2)*), align 32
-  %val = trunc i256 %loaded to i32
+  %cell_1 = load i256, i256 addrspace(2)* inttoptr(i256 0 to i256 addrspace(2)*), align 32
+  %cell_2 = load i256, i256 addrspace(2)* inttoptr(i256 32 to i256 addrspace(2)*), align 32
+  %offset = load i256, i256 addrspace(2)* inttoptr(i256 64 to i256 addrspace(2)*), align 32
+  %loaded = load i256, i256 addrspace(2)* inttoptr(i256 96 to i256 addrspace(2)*), align 32
+  %data = trunc i256 %loaded to i32
 
-  store i32 %val, i32 addrspace(2)* %offset, align 1
+  store i256 %cell_1, i256 addrspace(1)* inttoptr (i256 0 to i256 addrspace(1)*), align 32
+  store i256 %cell_2, i256 addrspace(1)* inttoptr (i256 32 to i256 addrspace(1)*), align 32
 
-  store i256 64, i256 addrspace(2)* inttoptr (i256 0 to i256 addrspace(2)*), align 32
-  ret void
+  %offset_ptr = inttoptr i256 %offset to i32 addrspace(1)*
+  store i32 %data, i32 addrspace(1)* %offset_ptr, align 1
+
+  %abi_data = shl i256 64, 64
+  tail call void @llvm.syncvm.return(i256 %abi_data) #1
+  unreachable
 }
 
-attributes #0 = { nounwind }
+; Function Attrs: noreturn nounwind
+declare void @llvm.syncvm.return(i256) #0
+
+attributes #0 = { noreturn nounwind }
+attributes #1 = { nounwind }

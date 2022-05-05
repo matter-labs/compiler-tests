@@ -546,40 +546,32 @@
 
 ; ModuleID = 'main'
 source_filename = "main"
-target datalayout = "e-p:256:256-i8:256:256:256-i256:256:256-S32-a:256:256"
+target datalayout = "E-p:256:256-i8:256:256:256-i256:256:256-S32-a:256:256"
 target triple = "syncvm"
 
-; Function Attrs: nounwind
-define i256 @__selector() local_unnamed_addr #0 {
+declare i32 @__personality()
+
+; Function Attrs: noreturn nounwind
+define i256 @__entry(i256 %0, i256 %1, i1 %2) local_unnamed_addr #0 personality i32 ()* @__personality {
 entry:
   %cell_1 = load i256, i256 addrspace(2)* inttoptr(i256 0 to i256 addrspace(2)*), align 32
   %cell_2 = load i256, i256 addrspace(2)* inttoptr(i256 32 to i256 addrspace(2)*), align 32
   %offset = load i256, i256 addrspace(2)* inttoptr(i256 64 to i256 addrspace(2)*), align 32
   %loaded = load i256, i256 addrspace(2)* inttoptr(i256 96 to i256 addrspace(2)*), align 32
 
-  store i256 %cell_1, i256 addrspace(1)* inttoptr (i256 32 to i256 addrspace(1)*), align 32
-  store i256 %cell_2, i256 addrspace(1)* inttoptr (i256 64 to i256 addrspace(1)*), align 32
+  store i256 %cell_1, i256 addrspace(1)* inttoptr (i256 0 to i256 addrspace(1)*), align 32
+  store i256 %cell_2, i256 addrspace(1)* inttoptr (i256 32 to i256 addrspace(1)*), align 32
 
-  %addr = add i256 %offset, 32
-  %addr.1 = inttoptr i256 %addr to i256 addrspace(1)*
-  store i256 %loaded, i256 addrspace(1)* %addr.1, align 1
-  %result_1 = load i256, i256 addrspace(1)* inttoptr (i256 32 to i256 addrspace(1)*), align 32
-  %result_2 = load i256, i256 addrspace(1)* inttoptr (i256 64 to i256 addrspace(1)*), align 32
+  %offset_ptr = inttoptr i256 %offset to i256 addrspace(1)*
+  store i256 %loaded, i256 addrspace(1)* %offset_ptr, align 1
 
-  ; offset 
-  store i256 256, i256 addrspace(1)* inttoptr (i256 128 to i256 addrspace(1)*), align 32
-  %data_offset = load i256, i256 addrspace(1)* inttoptr (i256 128 to i256 addrspace(1)*), align 1
-
-  ; length
-  store i256 64, i256 addrspace(1)* inttoptr (i256 160 to i256 addrspace(1)*), align 32
-  %data_length = load i256, i256 addrspace(1)* inttoptr (i256 160 to i256 addrspace(1)*), align 1
-  %data_length_shifted = shl i256 %data_length, 32
-  %data_merged = add i256 %data_offset, %data_length_shifted
-
-  store i256 %result_1, i256 addrspace(1)* inttoptr (i256 256 to i256 addrspace(1)*), align 32
-  store i256 %result_2, i256 addrspace(1)* inttoptr (i256 288 to i256 addrspace(1)*), align 32
-
-  ret i256 %data_merged
+  %abi_data = shl i256 64, 64
+  tail call void @llvm.syncvm.return(i256 %abi_data) #1
+  unreachable
 }
 
-attributes #0 = { nounwind }
+; Function Attrs: noreturn nounwind
+declare void @llvm.syncvm.return(i256) #0
+
+attributes #0 = { noreturn nounwind }
+attributes #1 = { nounwind }

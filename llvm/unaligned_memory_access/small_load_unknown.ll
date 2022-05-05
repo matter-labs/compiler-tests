@@ -482,21 +482,27 @@
 
 ; ModuleID = 'main'
 source_filename = "main"
-target datalayout = "e-p:256:256-i8:256:256:256-i256:256:256-S32-a:256:256"
+target datalayout = "E-p:256:256-i8:256:256:256-i256:256:256-S32-a:256:256"
 target triple = "syncvm"
 
-; Function Attrs: nounwind
-define void @__selector() local_unnamed_addr #0 {
+declare i32 @__personality()
+
+; Function Attrs: noreturn nounwind
+define i256 @__entry(i256 %0, i256 %1, i1 %2) local_unnamed_addr #0 personality i32 ()* @__personality {
 entry:
-  %ptr = load i32 addrspace(2)*, i32 addrspace(2)* addrspace(2)* inttoptr(i256 96 to i32 addrspace(2)* addrspace(2)*), align 32
+  %ptr = load i32 addrspace(2)*, i32 addrspace(2)* addrspace(2)* inttoptr(i256 64 to i32 addrspace(2)* addrspace(2)*), align 32
   %data = load i32, i32 addrspace(2)* %ptr, align 1
 
-  %datae = zext i32 %data to i256
+  %data_extended = zext i32 %data to i256
+  store i256 %data_extended, i256 addrspace(1)* inttoptr (i256 0 to i256 addrspace(1)*), align 32
 
-  store i256 32, i256 addrspace(2)* inttoptr (i256 0 to i256 addrspace(2)*), align 32
-  store i256 %datae, i256 addrspace(2)* inttoptr (i256 32 to i256 addrspace(2)*), align 32
-
-  ret void
+  %abi_data = shl i256 32, 64
+  tail call void @llvm.syncvm.return(i256 %abi_data) #1
+  unreachable
 }
 
-attributes #0 = { nounwind }
+; Function Attrs: noreturn nounwind
+declare void @llvm.syncvm.return(i256) #0
+
+attributes #0 = { noreturn nounwind }
+attributes #1 = { nounwind }
