@@ -25,36 +25,102 @@
 ;! } ] }
 
         .text
-        .file   "main"
-        .globl  __selector
-        .type   __selector,@function
-__selector:
-        mov.p   1, r1
-        sfll    #32, r2, r2
-        sflh    #0, r2, r2
-        mov.p   r2, 0
-        jlt     .LBB0_1, .LBB0_2
-.LBB0_2:
-        sfll    #32, r2, r2
-        sflh    #0, r2, r2
-        div     r1, r2, r1, r0
-        mul     r1, r2, r2, r0
-        sfll    #0, r3, r3
-        sflh    #120350954375031449036696433500388065280, r3, r3
-        sfll    #99, r1, r1
-        sflh    #0, r1, r1
-        sub     r2, r3, r0
-        je      .LBB0_4, .LBB0_3
-.LBB0_3:
-        sfll    #42, r1, r1
-        sflh    #0, r1, r1
-.LBB0_4:
-        mov.p   r1, 1
-        ret
-.LBB0_1:
-        throw
-        ret
-.Lfunc_end0:
-        .size   __selector, .Lfunc_end0-__selector
+        .file   "Test_26"
+        .globl  __entry
+__entry:
+.func_begin0:
+        add     @CPI0_0[0], r0, r4
+        and     r1, r4, r1
+        add     @CPI0_1[0], r0, r4
+        uma.heap_write  r4, r1, r0
+        add     @CPI0_2[0], r0, r1
+        uma.heap_write  r1, r2, r0
+        and     1, r3, r1
+        add     1, r0, r2
+        sub!    r1, r2, r1
+        jump.ne @.BB0_2
+        add     128, r0, r1
+        add     64, r0, r2
+        uma.heap_write  r2, r1, r0
+        ret.ok.to_label r1, @DEFAULT_FAR_RETURN
+.BB0_2:
+        near_call       r0, @__selector, @DEFAULT_UNWIND
+.func_end0:
 
-        .section        ".note.GNU-stack","",@progbits
+__selector:
+.func_begin1:
+        add     128, r0, r1
+        add     64, r0, r2
+        uma.heap_write  r2, r1, r0
+        add     @CPI1_0[0], r0, r2
+        uma.heap_read   r2, r0, r2
+        add     3, r0, r3
+        sub!    r2, r3, r3
+        jump.le @.BB1_2
+        add     @CPI1_1[0], r0, r3
+        uma.heap_read   r3, r0, r3
+        uma.calldata_read       r3, r0, r3
+        add     @CPI1_2[0], r0, r4
+        and     r3, r4, r3
+        add     @CPI1_3[0], r0, r4
+        sub!    r3, r4, r4
+        jump.eq @.BB1_3
+        jump    @.BB1_6
+.BB1_2:
+        add     0, r0, r1
+        ret.revert.to_label     r1, @DEFAULT_FAR_REVERT
+.BB1_3:
+        add     @CPI1_5[0], r0, r3
+        add     r2, r3, r2
+        add     @CPI1_6[0], r0, r3
+        sub!    r2, r3, r2
+        jump.le @.BB1_5
+        add     0, r0, r1
+        ret.revert.to_label     r1, @DEFAULT_FAR_REVERT
+.BB1_5:
+        add     42, r0, r2
+        uma.heap_write  r1, r2, r0
+        add     @CPI1_7[0], r0, r1
+        ret.ok.to_label r1, @DEFAULT_FAR_RETURN
+.BB1_6:
+        add     @CPI1_4[0], r0, r4
+        sub!    r3, r4, r3
+        jump.ne @.BB1_2
+        add     @CPI1_5[0], r0, r3
+        add     r2, r3, r2
+        add     @CPI1_6[0], r0, r3
+        sub!    r2, r3, r2
+        jump.le @.BB1_9
+        add     0, r0, r1
+        ret.revert.to_label     r1, @DEFAULT_FAR_REVERT
+.BB1_9:
+        add     99, r0, r2
+        uma.heap_write  r1, r2, r0
+        add     @CPI1_7[0], r0, r1
+        ret.ok.to_label r1, @DEFAULT_FAR_RETURN
+.func_end1:
+
+        .note.GNU-stack
+        .rodata
+CPI0_0:
+        .cell 16777215
+CPI0_1:
+        .cell 16777184
+CPI0_2:
+        .cell 16777152
+CPI1_0:
+        .cell 16777152
+CPI1_1:
+        .cell 16777184
+CPI1_2:
+        .cell -26959946667150639794667015087019630673637144422540572481103610249216
+CPI1_3:
+        .cell 28023726311554802966544231341579932116438770666993405431137050659635310100480
+CPI1_4:
+        .cell 40953307615929575801107647705360601464619672688377251939886941387873771847680
+CPI1_5:
+        .cell -4
+CPI1_6:
+        .cell 57896044618658097711785492504343953926634992332820282019728792003956564819967
+CPI1_7:
+        .cell 590295810358705651840
