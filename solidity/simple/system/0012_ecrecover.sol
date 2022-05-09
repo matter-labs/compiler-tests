@@ -51,7 +51,10 @@ contract Test {
         }
 
         require(offset == 128);
-        require(bytesSize == 128); // ABI
+        bool is_valid = true;
+        if (bytesSize < 128) {
+            is_valid = false;
+        }
 
         // now we do manual memory management
 
@@ -69,14 +72,25 @@ contract Test {
                 s := calldataload(96)
             }
 
-            if (v > 1) {
-                v = v - 27;
+            if (v != 27 && v != 28) {
+                is_valid = false;
             }
-            require(v < 2);
-            require(s > 0);
-            require(r > 0);
-            require(s <= SECP256K1_GROUP_SIZE_HALFED);
-            require(r < SECP256K1_GROUP_SIZE);
+            v -= 27;
+
+            if (s == 0 || s > SECP256K1_GROUP_SIZE_HALFED) {
+            // if (s == 0 || s >= SECP256K1_GROUP_SIZE) { // if we want legacy
+                is_valid = false;
+            }
+
+            if (r == 0 || s >= SECP256K1_GROUP_SIZE) {
+                is_valid = false;
+            }
+
+            if (!is_valid) {
+                assembly {
+                    return(0, 0)
+                }
+            }
 
             // re-layout
             assembly {
@@ -107,7 +121,7 @@ contract Test {
             if (success_inner != 1) {
                 // overwrite whatever we have got
                 assembly {
-                    mstore(32, 0)
+                    return(0, 0)
                 }
             }
 
