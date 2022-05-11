@@ -2,13 +2,13 @@
 //!     "name": "main",
 //!     "input": [
 //!         {
-//!             "address": "0x0000000000000000000000000000000000000011",
+//!             "address": "0x0000000000000000000000000000000000008010",
 //!             "fallback": true,
-//!             "calldata": "0x00"
+//!             "calldata": []
 //!         }
 //!     ],
 //!     "expected": [
-//!         "0x6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+//!         "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
 //!     ]
 //! } ] }
 
@@ -21,9 +21,9 @@ pragma solidity ^0.8.0;
  */
 contract Test {
     uint256 constant PERMANENT_ERGS_COST = 100;
-    uint256 constant INTERNAL_SHA256_ROUND_ERGS_COST = 50;
+    uint256 constant INTERNAL_KECCAK_ROUND_ERGS_COST = 100;
     uint256 constant MAX_PREIMAGE_BYTES_LENGTH = 1024;
-    uint256 constant BLOCK_SIZE = 64;
+    uint256 constant BLOCK_SIZE = 136;
     uint32 constant INPUT_OFFSET_IN_WORDS = 4;
     uint32 constant OUTPUT_OFFSET_IN_WORDS = 0;
     uint32 constant OUTPUT_LENGTH_IN_WORDS = 1;
@@ -51,34 +51,31 @@ contract Test {
         // now we do manual memory management
 
         unchecked {
-            uint256 msgBitlenWord = (bytesSize * 8) << (256-64); // for padding
-            uint256 lastBlockSize = bytesSize % BLOCK_SIZE;
-            uint256 roughPadLen = BLOCK_SIZE - lastBlockSize;
-            uint256 roughPaddedByteSize = bytesSize + roughPadLen;
-
-            assert(roughPaddedByteSize % BLOCK_SIZE == 0); // can deleted later one
-            uint64 numRounds = uint64(roughPaddedByteSize / BLOCK_SIZE);
-            if (lastBlockSize > (64 - 8 - 1)) {
-                // we need another round all together
-                numRounds += 1;
-                roughPaddedByteSize += 64;
-            }
-            uint256 offsetForBitlenWord = roughPaddedByteSize - 8;
+            uint256 padLen = BLOCK_SIZE - bytesSize % BLOCK_SIZE;
+            uint256 paddedByteSize = bytesSize + padLen;
+            assert(paddedByteSize % BLOCK_SIZE == 0); // can deleted later one
+            uint64 numRounds = uint64(paddedByteSize / BLOCK_SIZE);
 
             // manual memory copy and management, as we do not care about Solidity allocations
-            uint32 inputLengthInWords = uint32(roughPaddedByteSize / 32);
+            uint32 inputLengthInWords = uint32(paddedByteSize / 32);
+            if (paddedByteSize % 32 != 0) {
+                    inputLengthInWords += 1;
+            }
 
             assembly {
                 calldatacopy(offset, 0x00, bytesSize)
             }
 
-            // write 0x80000... as padding
-            assembly {
-                mstore(add(offset, bytesSize), 0x8000000000000000000000000000000000000000000000000000000000000000) // we do not care about what is after
-            }
-            // then will be some zeroes, and BE encoded bit length
-            assembly {
-                mstore(add(offset, offsetForBitlenWord), msgBitlenWord) // we do not care about what is after
+            if (padLen == 1) {
+                // write 0x81 at the end
+                assembly {
+                    mstore(add(offset, bytesSize), 0x8100000000000000000000000000000000000000000000000000000000000000) // we do not care about what is after
+                }
+            } else {
+                assembly {
+                    mstore(add(offset,bytesSize), 0x0100000000000000000000000000000000000000000000000000000000000000)
+                    mstore(sub(add(offset, paddedByteSize), 1), 0x8000000000000000000000000000000000000000000000000000000000000000)
+                }
             }
 
             uint256 precompileParams = packPrecompileParams(
@@ -89,7 +86,7 @@ contract Test {
                 numRounds
             );
 
-            uint256 ergsToPay = PERMANENT_ERGS_COST + INTERNAL_SHA256_ROUND_ERGS_COST * uint256(numRounds);
+            uint256 ergsToPay = PERMANENT_ERGS_COST + INTERNAL_KECCAK_ROUND_ERGS_COST * uint256(numRounds);
             bool success = precompileCall(precompileParams, uint32(ergsToPay));
             require(success);
 
