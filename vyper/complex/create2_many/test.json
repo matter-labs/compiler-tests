@@ -44,6 +44,5 @@
     "contracts": {
         "0xdeadbeef00000000000000000000000000000001": "main.vy",
         "0xdeadbeef00000000000000000000000000000002": "callable.vy"
-    },
-    "has_forwarder": true
+    }
 }

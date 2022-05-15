@@ -45,6 +45,5 @@
         "0xdeadbeef00000000000000000000000000000001": "first.vy",
         "0xdeadbeef00000000000000000000000000000002": "second.vy",
         "0xdeadbeef00000000000000000000000000000003": "third.vy"
-    },
-    "has_forwarder": true
+    }
 }

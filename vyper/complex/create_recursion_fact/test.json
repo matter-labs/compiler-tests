@@ -57,6 +57,5 @@
 } ],
     "contracts": {
         "0xdeadbeef00000000000000000000000000000001": "main.vy"
-    },
-    "has_forwarder": true
+    }
 }
