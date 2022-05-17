@@ -444,13 +444,17 @@ entries:
     enabled: true
     entries:
       ecrecover.vy:
-        enabled: true
+        enabled: false
+        comment: "Uses an 's' value that is not valid anymore"
       failing_ecrecover_invalid_input.vy:
-        enabled: true
+        enabled: false
+        comment: "The input is considered invalid"
       failing_ecrecover_invalid_input_asm.vy:
-        enabled: true
+        enabled: false
+        comment: "The input is considered invalid"
       failing_ecrecover_invalid_input_proper.vy:
-        enabled: true
+        enabled: false
+        comment: "The input is considered invalid"
   empty_contract.vy:
     enabled: false
     comment: "https://github.com/vyperlang/vyper/issues/2803"
