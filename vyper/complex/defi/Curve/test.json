@@ -1,4 +1,4 @@
-{ "ignore": true, "cases": [ {
+{ "cases": [ {
     "name": "default",
     "comment": "The complex Curve Registry test with adding liquidity, token exchange, and checking pool information",
     "input": [
