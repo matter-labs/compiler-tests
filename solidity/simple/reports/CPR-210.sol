@@ -5,7 +5,7 @@
 //!             "entry": "complex",
 //!             "calldata": [
 //!             ],
-//!             "storage": { "deadbeef00000000000000000000000000000000": [
+//!             "storage": { ".address": [
 //!                 "1"
 //!             ] }
 //!         }

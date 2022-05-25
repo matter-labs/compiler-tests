@@ -5,6 +5,9 @@
 //!             "constructor": true,
 //!             "calldata": [
 //!                 "9823"
+//!             ],
+//!             "expected": [
+//!                 "*"
 //!             ]
 //!         }, {
 //!             "entry": "MY_ADDRESS",
@@ -22,6 +25,9 @@
 //!             "constructor": true,
 //!             "calldata": [
 //!                 "555555"
+//!             ],
+//!             "expected": [
+//!                 "*"
 //!             ]
 //!         }, {
 //!             "entry": "MY_UINT",

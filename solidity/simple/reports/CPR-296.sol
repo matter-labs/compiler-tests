@@ -5,6 +5,9 @@
 //!             "constructor": true,
 //!             "calldata": [
 //!                 "32"
+//!             ],
+//!             "expected": [
+//!                 "*"
 //!             ]
 //!         },
 //!         {
