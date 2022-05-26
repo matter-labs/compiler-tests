@@ -2,51 +2,51 @@
     "name": "simple",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "my_contract",
             "entry": "getCount",
             "calldata": [
-                "0xdeadbeef00000000000000000000000000000002"
+                "counter1.address"
             ],
             "expected": [
                 "0"
             ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "my_contract",
             "entry": "incrementCounter",
             "calldata": [
-                "0xdeadbeef00000000000000000000000000000002"
+                "counter1.address"
             ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "my_contract",
             "entry": "getCount",
             "calldata": [
-                "0xdeadbeef00000000000000000000000000000002"
+                "counter1.address"
             ],
             "expected": [
                 "1"
             ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "my_contract",
             "entry": "incrementCounter",
             "calldata": [
-                "0xdeadbeef00000000000000000000000000000002"
+                "counter1.address"
             ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "my_contract",
             "entry": "incrementCounter",
             "calldata": [
-                "0xdeadbeef00000000000000000000000000000002"
+                "counter1.address"
             ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "my_contract",
             "entry": "getCount",
             "calldata": [
-                "0xdeadbeef00000000000000000000000000000002"
+                "counter1.address"
             ],
             "expected": [
                 "3"
@@ -60,61 +60,61 @@
     "name": "two_counters",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "my_contract",
             "entry": "getCount",
             "calldata": [
-                "0xdeadbeef00000000000000000000000000000002"
+                "counter1.address"
             ],
             "expected": [
                 "0"
             ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "my_contract",
             "entry": "getCount",
             "calldata": [
-                "0xdeadbeef00000000000000000000000000000003"
+                "counter2.address"
             ],
             "expected": [
                 "0"
             ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "my_contract",
             "entry": "incrementCounter",
             "calldata": [
-                "0xdeadbeef00000000000000000000000000000002"
+                "counter1.address"
             ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "my_contract",
             "entry": "incrementCounter",
             "calldata": [
-                "0xdeadbeef00000000000000000000000000000003"
+                "counter2.address"
             ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "my_contract",
             "entry": "incrementCounter",
             "calldata": [
-                "0xdeadbeef00000000000000000000000000000002"
+                "counter1.address"
             ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "my_contract",
             "entry": "getCount",
             "calldata": [
-                "0xdeadbeef00000000000000000000000000000002"
+                "counter1.address"
             ],
             "expected": [
                 "2"
             ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "my_contract",
             "entry": "getCount",
             "calldata": [
-                "0xdeadbeef00000000000000000000000000000003"
+                "counter2.address"
             ]
         }
     ],
@@ -123,8 +123,8 @@
     ]
 } ],
     "contracts": {
-        "0xdeadbeef00000000000000000000000000000001": "main.sol:MyContract",
-        "0xdeadbeef00000000000000000000000000000002": "main.sol:Counter",
-        "0xdeadbeef00000000000000000000000000000003": "main.sol:Counter"
+        "my_contract": "main.sol:MyContract",
+        "counter1": "main.sol:Counter",
+        "counter2": "main.sol:Counter"
     }
 }

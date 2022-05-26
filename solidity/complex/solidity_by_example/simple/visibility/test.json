@@ -2,7 +2,7 @@
     "name": "testPrivateFunc",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "base",
             "entry": "testPrivateFunc",
             "calldata": [
             ]
@@ -17,7 +17,7 @@
     "name": "testInternalFunc",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "base",
             "entry": "testInternalFunc",
             "calldata": [
             ]
@@ -32,7 +32,7 @@
     "name": "publicFunc",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "base",
             "entry": "publicFunc",
             "calldata": [
             ]
@@ -47,7 +47,7 @@
     "name": "externalFunc",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "base",
             "entry": "externalFunc",
             "calldata": [
             ]
@@ -62,7 +62,7 @@
     "name": "publicVar",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "base",
             "entry": "publicVar",
             "calldata": [
             ]
@@ -77,7 +77,7 @@
     "name": "testInternalFuncChild",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000002",
+            "instance": "child",
             "entry": "testInternalFunc",
             "calldata": [
             ]
@@ -90,7 +90,7 @@
     ]
 } ],
     "contracts": {
-        "0xdeadbeef00000000000000000000000000000001": "main.sol:Base",
-        "0xdeadbeef00000000000000000000000000000002": "main.sol:Child"
+        "base": "main.sol:Base",
+        "child": "main.sol:Child"
     }
 }

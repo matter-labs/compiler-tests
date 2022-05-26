@@ -2,7 +2,7 @@
     "name": "A",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "a",
             "entry": "foo",
             "calldata": [
             ]
@@ -17,7 +17,7 @@
     "name": "B",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000002",
+            "instance": "b",
             "entry": "foo",
             "calldata": [
             ]
@@ -32,7 +32,7 @@
     "name": "C",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000003",
+            "instance": "c",
             "entry": "foo",
             "calldata": [
             ]
@@ -47,7 +47,7 @@
     "name": "D",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000004",
+            "instance": "d",
             "entry": "foo",
             "calldata": [
             ]
@@ -62,7 +62,7 @@
     "name": "E",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000005",
+            "instance": "e",
             "entry": "foo",
             "calldata": [
             ]
@@ -77,7 +77,7 @@
     "name": "F",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000006",
+            "instance": "f",
             "entry": "foo",
             "calldata": [
             ]
@@ -90,11 +90,11 @@
     ]
 } ],
     "contracts": {
-        "0xdeadbeef00000000000000000000000000000001": "main.sol:A",
-        "0xdeadbeef00000000000000000000000000000002": "main.sol:B",
-        "0xdeadbeef00000000000000000000000000000003": "main.sol:C",
-        "0xdeadbeef00000000000000000000000000000004": "main.sol:D",
-        "0xdeadbeef00000000000000000000000000000005": "main.sol:E",
-        "0xdeadbeef00000000000000000000000000000006": "main.sol:F"
+        "a": "main.sol:A",
+        "b": "main.sol:B",
+        "c": "main.sol:C",
+        "d": "main.sol:D",
+        "e": "main.sol:E",
+        "f": "main.sol:F"
     }
 }

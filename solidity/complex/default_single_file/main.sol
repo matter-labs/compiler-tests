@@ -9,8 +9,7 @@ contract Callable {
 }
 
 contract Main {
-    function main() public returns(uint) {
-        Callable callable = Callable(address(0xdeADbeEf00000000000000000000000000000002));
+    function main(Callable callable) public returns(uint) {
         return callable.f(5);
     }
 }

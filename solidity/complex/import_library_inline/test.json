@@ -2,7 +2,7 @@
     "name": "entry",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "import",
             "entry": "getFooName",
             "calldata": [
             ]
@@ -15,10 +15,10 @@
     ]
 } ],
     "contracts": {
-        "0xdeadbeef00000000000000000000000000000001": "Import.sol:Import",
-        "0xdeadbeef00000000000000000000000000000002": "Foo.sol:Foo"
+        "import": "Import.sol:Import",
+        "foo": "Foo.sol:Foo"
     },
     "libraries": {
-        "Foo.sol": { "Foo": "0xdeadbeef00000000000000000000000000000002" }
+        "Foo.sol": { "Foo": "foo" }
     }
 }

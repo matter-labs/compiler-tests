@@ -2,49 +2,58 @@
     "name": "default",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "lib",
             "constructor": true,
             "caller": "0xdeadbeef00000000000000000000000000000011",
             "calldata": [
+            ],
+            "expected": [
+                "*"
             ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000002",
+            "instance": "hack_me",
             "constructor": true,
             "caller": "0xdeadbeef00000000000000000000000000000011",
             "calldata": [
-                "0xdeadbeef00000000000000000000000000000001"
+                "lib.address"
+            ],
+            "expected": [
+                "*"
             ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000003",
+            "instance": "attack",
             "constructor": true,
             "caller": "0xdeadbeef00000000000000000000000000000012",
             "calldata": [
-                "0xdeadbeef00000000000000000000000000000002"
+                "hack_me.address"
+            ],
+            "expected": [
+                "*"
             ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000003",
+            "instance": "attack",
             "caller": "0xdeadbeef00000000000000000000000000000012",
             "entry": "attack",
             "calldata": [
             ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000002",
+            "instance": "hack_me",
             "entry": "owner",
             "calldata": [
             ]
         }
     ],
     "expected": [
-        "0xdeadbeef00000000000000000000000000000003"
+        "attack.address"
     ]
 } ],
     "contracts": {
-        "0xdeadbeef00000000000000000000000000000001": "default.sol:Lib",
-        "0xdeadbeef00000000000000000000000000000002": "default.sol:HackMe",
-        "0xdeadbeef00000000000000000000000000000003": "default.sol:Attack"
+        "lib": "default.sol:Lib",
+        "hack_me": "default.sol:HackMe",
+        "attack": "default.sol:Attack"
     }
 }

@@ -2,14 +2,17 @@
     "name": "test",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "foo",
             "constructor": true,
             "calldata": [
-                "0xdeadbeef00000000000000000000000000000002"
+                "mal.address"
+            ],
+            "expected": [
+                "*"
             ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "foo",
             "entry": "callBar",
             "calldata": [
             ]
@@ -33,7 +36,7 @@
     }
 } ],
     "contracts": {
-        "0xdeadbeef00000000000000000000000000000001": "foo.vy",
-        "0xdeadbeef00000000000000000000000000000002": "mal.vy"
+        "foo": "foo.vy",
+        "mal": "mal.vy"
     }
 }

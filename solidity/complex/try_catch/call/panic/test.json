@@ -2,10 +2,11 @@
     "name": "withoutMessage0x01",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "main",
             "entry": "withoutMessage",
             "calldata": [
-                "0x01"
+                "0x01",
+                "callable.address"
             ]
         }
     ],
@@ -16,10 +17,11 @@
     "name": "withoutMessage0x11",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "main",
             "entry": "withoutMessage",
             "calldata": [
-                "0x11"
+                "0x11",
+                "callable.address"
             ]
         }
     ],
@@ -40,10 +42,11 @@
     "name": "withoutMessage0x12",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "main",
             "entry": "withoutMessage",
             "calldata": [
-                "0x12"
+                "0x12",
+                "callable.address"
             ]
         }
     ],
@@ -54,10 +57,11 @@
     "name": "withoutMessage0x21",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "main",
             "entry": "withoutMessage",
             "calldata": [
-                "0x21"
+                "0x21",
+                "callable.address"
             ]
         }
     ],
@@ -68,10 +72,11 @@
     "name": "withoutMessage0x22",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "main",
             "entry": "withoutMessage",
             "calldata": [
-                "0x22"
+                "0x22",
+                "callable.address"
             ]
         }
     ],
@@ -92,10 +97,11 @@
     "name": "withoutMessage0x31",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "main",
             "entry": "withoutMessage",
             "calldata": [
-                "0x31"
+                "0x31",
+                "callable.address"
             ]
         }
     ],
@@ -106,10 +112,11 @@
     "name": "withoutMessage0x32",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "main",
             "entry": "withoutMessage",
             "calldata": [
-                "0x32"
+                "0x32",
+                "callable.address"
             ]
         }
     ],
@@ -120,10 +127,11 @@
     "name": "withoutMessage0x41",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "main",
             "entry": "withoutMessage",
             "calldata": [
-                "0x41"
+                "0x41",
+                "callable.address"
             ]
         }
     ],
@@ -134,10 +142,11 @@
     "name": "withoutMessage0x51",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "main",
             "entry": "withoutMessage",
             "calldata": [
-                "0x51"
+                "0x51",
+                "callable.address"
             ]
         }
     ],
@@ -148,10 +157,11 @@
     "name": "withoutMessage",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "main",
             "entry": "withoutMessage",
             "calldata": [
-                "0x0"
+                "0x0",
+                "callable.address"
             ]
         }
     ],
@@ -162,10 +172,11 @@
     "name": "withMessage0x01",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "main",
             "entry": "withMessage",
             "calldata": [
-                "0x01"
+                "0x01",
+                "callable.address"
             ]
         }
     ],
@@ -190,10 +201,11 @@
     "name": "withMessage0x11",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "main",
             "entry": "withMessage",
             "calldata": [
-                "0x11"
+                "0x11",
+                "callable.address"
             ]
         }
     ],
@@ -218,10 +230,11 @@
     "name": "withMessage0x12",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "main",
             "entry": "withMessage",
             "calldata": [
-                "0x12"
+                "0x12",
+                "callable.address"
             ]
         }
     ],
@@ -246,10 +259,11 @@
     "name": "withMessage0x21",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "main",
             "entry": "withMessage",
             "calldata": [
-                "0x21"
+                "0x21",
+                "callable.address"
             ]
         }
     ],
@@ -274,10 +288,11 @@
     "name": "withMessage0x22",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "main",
             "entry": "withMessage",
             "calldata": [
-                "0x22"
+                "0x22",
+                "callable.address"
             ]
         }
     ],
@@ -302,10 +317,11 @@
     "name": "withMessage0x31",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "main",
             "entry": "withMessage",
             "calldata": [
-                "0x31"
+                "0x31",
+                "callable.address"
             ]
         }
     ],
@@ -330,10 +346,11 @@
     "name": "withMessage0x32",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "main",
             "entry": "withMessage",
             "calldata": [
-                "0x32"
+                "0x32",
+                "callable.address"
             ]
         }
     ],
@@ -358,10 +375,11 @@
     "name": "withMessage0x41",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "main",
             "entry": "withMessage",
             "calldata": [
-                "0x41"
+                "0x41",
+                "callable.address"
             ]
         }
     ],
@@ -386,10 +404,11 @@
     "name": "withMessage0x51",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "main",
             "entry": "withMessage",
             "calldata": [
-                "0x51"
+                "0x51",
+                "callable.address"
             ]
         }
     ],
@@ -414,10 +433,11 @@
     "name": "withMessage",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "main",
             "entry": "withMessage",
             "calldata": [
-                "0x0"
+                "0x0",
+                "callable.address"
             ]
         }
     ],
@@ -427,7 +447,7 @@
     ]
 } ],
     "contracts": {
-        "0xdeadbeef00000000000000000000000000000001": "main.sol:Main",
-        "0xdeadbeef00000000000000000000000000000002": "callable.sol:Callable"
+        "main": "main.sol:Main",
+        "callable": "callable.sol:Callable"
     }
 }

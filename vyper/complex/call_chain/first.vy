@@ -2,6 +2,5 @@ import second as Second
 
 @external
 @pure
-def f(p: uint256) -> uint256:
-    second: address = 0xdeADbeEf00000000000000000000000000000002
-    return Second(second).f(p)
+def f(p: uint256, second: address, third: address) -> uint256:
+    return Second(second).f(p, third)

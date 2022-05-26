@@ -2,7 +2,7 @@
     "name": "first",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "main",
             "entry": "entry",
             "calldata": [
                 "0"
@@ -16,7 +16,7 @@
     "name": "second",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "main",
             "entry": "entry",
             "calldata": [
                 "1"
@@ -28,6 +28,6 @@
     ]
 } ],
     "contracts": {
-        "0xdeadbeef00000000000000000000000000000001": "main.sol:Main"
+        "main": "main.sol:Main"
     }
 }

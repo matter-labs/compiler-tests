@@ -2,7 +2,7 @@
     "name": "testSafeMath",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "test_safe_math",
             "entry": "MAX_UINT",
             "calldata": [
             ],
@@ -11,7 +11,7 @@
             ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "test_safe_math",
             "entry": "testAdd",
             "calldata": [
                 "115792089237316195423570985008687907853269984665640564039457584007913129639934",
@@ -22,7 +22,7 @@
             ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "test_safe_math",
             "entry": "testAdd",
             "calldata": [
                 "115792089237316195423570985008687907853269984665640564039457584007913129639934",
@@ -47,7 +47,7 @@
             } ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "test_safe_math",
             "entry": "testSquareRoot",
             "calldata": [
                 "0"
@@ -57,7 +57,7 @@
             ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "test_safe_math",
             "entry": "testSquareRoot",
             "calldata": [
                 "3"
@@ -67,7 +67,7 @@
             ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "test_safe_math",
             "entry": "testSquareRoot",
             "calldata": [
                 "345346456546345234123498123498239402934230203"
@@ -81,7 +81,7 @@
     "name": "testArray",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000002",
+            "instance": "test_array",
             "entry": "testArrayRemove",
             "calldata": [
             ]
@@ -91,14 +91,15 @@
     ]
 } ],
     "contracts": {
-        "0xdeadbeef00000000000000000000000000000001": "main.sol:TestSafeMath",
-        "0xdeadbeef00000000000000000000000000000002": "main.sol:TestArray",
-        "0xdeadbeef00000000000000000000000000000003": "main.sol:Array"
+        "test_safe_math": "main.sol:TestSafeMath",
+        "test_array": "main.sol:TestArray",
+        "array": "main.sol:Array",
+        "math": "main.sol:Math"
     },
     "libraries": {
         "main.sol": {
-            "Array": "0xdeadbeef00000000000000000000000000000003",
-            "Math": "0xdeadbeef00000000000000000000000000000004"
+            "Array": "array",
+            "Math": "math"
         }
     }
 }

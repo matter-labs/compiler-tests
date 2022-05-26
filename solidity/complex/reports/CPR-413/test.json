@@ -2,7 +2,7 @@
     "name": "main",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "d",
             "entry": "fview",
             "calldata": [
             ]
@@ -14,6 +14,6 @@
     }
 } ],
     "contracts": {
-        "0xdeadbeef00000000000000000000000000000001": "main.sol:D"
+        "d": "main.sol:D"
     }
 }

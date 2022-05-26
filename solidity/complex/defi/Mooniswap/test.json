@@ -2,7 +2,7 @@
     "name": "default",
     "input": [
         {
-            "address": "0xdeadbeef0000000000000000000000000000aaaa",
+            "instance": "token1",
             "constructor": true,
             "calldata": [
                 "0x40",
@@ -11,10 +11,13 @@
                 "0x6e616d6500000000000000000000000000000000000000000000000000000000",
                 "4",
                 "0x7465787400000000000000000000000000000000000000000000000000000000"
+            ],
+            "expected": [
+                "*"
             ]
         },
         {
-            "address": "0xdeadbeef0000000000000000000000000000bbbb",
+            "instance": "token2",
             "constructor": true,
             "calldata": [
                 "0x40",
@@ -23,15 +26,20 @@
                 "0x6e616d6500000000000000000000000000000000000000000000000000000000",
                 "4",
                 "0x7465787400000000000000000000000000000000000000000000000000000000"
+            ],
+            "expected": [
+                "*"
             ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "factory",
             "caller": "0xdeadbeef00000000000000000000000000000042",
             "constructor": true,
             "calldata": [],
             "expected": {
-                "return_data": [],
+                "return_data": [
+                    "*"
+                ],
                 "events": [
                     {
                         "topics": [
@@ -45,12 +53,12 @@
             }
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "factory",
             "caller": "0xdeadbeef00000000000000000000000000000042",
             "entry": "deploy",
             "calldata": [
-                "0xdeadbeef0000000000000000000000000000aaaa",
-                "0xdeadbeef0000000000000000000000000000bbbb"
+                "token1.address",
+                "token2.address"
             ],
             "expected": {
                 "return_data": [
@@ -61,14 +69,14 @@
                         "topics": [
                             "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0",
                             "0x0000000000000000000000000000000000000000000000000000000000000000",
-                            "0xdeadbeef00000000000000000000000000000001"
+                            "factory.address"
                         ],
                         "values": []
                     },
                     {
                         "topics": [
                             "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0",
-                            "0xdeadbeef00000000000000000000000000000001",
+                            "factory.address",
                             "0xdeadbeef00000000000000000000000000000042"
                         ],
                         "values": []
@@ -77,8 +85,8 @@
                         "topics": [
                             "0xc95935a66d15e0da5e412aca0ad27ae891d20b2fb91cf3994b6a3bf2b8178082",
                             "*",
-                            "0xdeadbeef0000000000000000000000000000aaaa",
-                            "0xdeadbeef0000000000000000000000000000bbbb"
+                            "*",
+                            "*"
                         ],
                         "values": []
                     }
@@ -86,7 +94,7 @@
             }
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "factory",
             "caller": "0xdeadbeef00000000000000000000000000000042",
             "entry": "getAllPools",
             "calldata": [
@@ -100,12 +108,14 @@
     ]
 } ],
     "contracts": {
-        "0xdeadbeef00000000000000000000000000000001": "MooniFactory.sol:MooniFactory",
-        "0xdeadbeef0000000000000000000000000000aaaa": "MooniswapPool/ERC20/ERC20.sol:ERC20",
-        "0xdeadbeef0000000000000000000000000000bbbb": "MooniswapPool/ERC20/ERC20.sol:ERC20"
+        "factory": "MooniFactory.sol:MooniFactory",
+        "token1": "MooniswapPool/ERC20/ERC20.sol:ERC20",
+        "token2": "MooniswapPool/ERC20/ERC20.sol:ERC20",
+        "virtual_balance": "MooniswapPool/Mooniswap.sol:VirtualBalance",
+        "math": "MooniswapPool/math/Math.sol:Math"
     },
     "libraries": {
-        "MooniswapPool/Mooniswap.sol": { "VirtualBalance": "0xdeadbeef00000000000000000000000000000101" },
-        "MooniswapPool/math/Math.sol": { "Math": "0xdeadbeef00000000000000000000000000000102" }
+        "MooniswapPool/Mooniswap.sol": { "VirtualBalance": "virtual_balance" },
+        "MooniswapPool/math/Math.sol": { "Math": "math" }
     }
 }

@@ -2,10 +2,11 @@
     "name": "first",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "main",
             "entry": "main",
             "calldata": [
-                "5"
+                "5",
+                "storage.address"
             ]
         }
     ],
@@ -16,10 +17,11 @@
     "name": "second",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "main",
             "entry": "main",
             "calldata": [
-                "3224423423"
+                "3224423423",
+                "storage.address"
             ]
         }
     ],
@@ -28,7 +30,7 @@
     ]
 } ],
     "contracts": {
-        "0xdeadbeef00000000000000000000000000000001": "main.vy",
-        "0xdeadbeef00000000000000000000000000000002": "storage.vy"
+        "main": "main.vy",
+        "storage": "storage.vy"
     }
 }

@@ -2,7 +2,7 @@
     "name": "first",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "c",
             "entry": "f",
             "calldata": [
             ]
@@ -13,12 +13,12 @@
     ]
 } ],
     "contracts": {
-        "0xdeadbeef00000000000000000000000000000001": "main.sol:C",
-        "0xdeadbeef00000000000000000000000000000002": "main.sol:L"
+        "c": "main.sol:C",
+        "l": "main.sol:L"
     },
     "libraries": {
         "main.sol": {
-            "L": "0xdeadbeef00000000000000000000000000000002"
+            "L": "l"
         }
     }
 }

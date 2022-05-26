@@ -5,8 +5,8 @@ pragma solidity >=0.5.0;
 import "./C.sol";
 
 contract B {
-    function main() external {
-        (bool success, bytes memory result) = address(0xdEaDBeef00000000000000000000000000000003).staticcall(msg.data);
+    function main(address c) external {
+        (bool success, bytes memory result) = c.staticcall(abi.encodePacked(C.main.selector));
         if (!success) {
             assembly { revert(0, 0) }
         }

@@ -1,8 +1,7 @@
 import square as Square
 
 @external
-def main(n: uint256) -> uint256:
-    square: address = 0xdeADbeEf00000000000000000000000000000002
+def main(n: uint256, square: address) -> uint256:
     result: uint256 = 0
     for i in range(1, 1000000):
         if not i <= n:

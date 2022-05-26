@@ -2,17 +2,21 @@
     "name": "first",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000002",
+            "instance": "callable",
             "constructor": true,
             "calldata": [
                 "0x0"
+            ],
+            "expected": [
+                "*"
             ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "main",
             "entry": "main",
             "calldata": [
-                "3"
+                "3",
+                "callable.address"
             ]
         }
     ],
@@ -23,17 +27,21 @@
     "name": "second",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000002",
+            "instance": "callable",
             "constructor": true,
             "calldata": [
                 "0x0"
+            ],
+            "expected": [
+                "*"
             ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "main",
             "entry": "main",
             "calldata": [
-                "200"
+                "200",
+                "callable.address"
             ]
         }
     ],
@@ -42,7 +50,7 @@
     ]
 } ],
     "contracts": {
-        "0xdeadbeef00000000000000000000000000000001": "main.vy",
-        "0xdeadbeef00000000000000000000000000000002": "callable.vy"
+        "main": "main.vy",
+        "callable": "callable.vy"
     }
 }

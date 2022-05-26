@@ -2,9 +2,10 @@
     "name": "entry",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "main",
             "entry": "main",
             "calldata": [
+                "callable.address"
             ]
         }
     ],
@@ -13,7 +14,7 @@
     ]
 } ],
     "contracts": {
-        "0xdeadbeef00000000000000000000000000000001": "main.sol:Main",
-        "0xdeadbeef00000000000000000000000000000002": "main.sol:Callable"
+        "main": "main.sol:Main",
+        "callable": "main.sol:Callable"
     }
 }

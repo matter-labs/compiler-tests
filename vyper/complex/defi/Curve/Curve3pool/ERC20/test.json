@@ -2,7 +2,7 @@
     "name": "decimals",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "erc20",
             "constructor": true,
             "calldata": [
                 "0x80",
@@ -15,7 +15,9 @@
                 "0x7465787400000000000000000000000000000000000000000000000000000000"
             ],
             "expected": {
-                "return_data": [],
+                "return_data": [
+                    "*"
+                ],
                 "events": [
                     {
                         "topics": [
@@ -31,7 +33,7 @@
             }
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "erc20",
             "entry": "decimals",
             "calldata": [
             ]
@@ -44,7 +46,7 @@
     "name": "double_mint_&_burn",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "erc20",
             "constructor": true,
             "calldata": [
                 "0x80",
@@ -57,7 +59,9 @@
                 "0x7465787400000000000000000000000000000000000000000000000000000000"
             ],
             "expected": {
-                "return_data": [],
+                "return_data": [
+                    "*"
+                ],
                 "events": [
                     {
                         "topics": [
@@ -73,7 +77,7 @@
             }
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "erc20",
             "entry": "mint",
             "calldata": [
                 "0xdeadbeef00000000000000000000000000000042",
@@ -97,7 +101,7 @@
             }
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "erc20",
             "entry": "mint",
             "calldata": [
                 "0xdeadbeef00000000000000000000000000000042",
@@ -121,7 +125,7 @@
             }
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "erc20",
             "entry": "burn(uint256)",
             "caller": "0xdeadbeef00000000000000000000000000000042",
             "calldata": [
@@ -145,7 +149,7 @@
             }
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "erc20",
             "entry": "balanceOf",
             "calldata": [
                 "0xdeadbeef00000000000000000000000000000042"
@@ -159,7 +163,7 @@
     "name": "approve",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "erc20",
             "constructor": true,
             "calldata": [
                 "0x80",
@@ -172,7 +176,9 @@
                 "0x7465787400000000000000000000000000000000000000000000000000000000"
             ],
             "expected": {
-                "return_data": [],
+                "return_data": [
+                    "*"
+                ],
                 "events": [
                     {
                         "topics": [
@@ -188,7 +194,7 @@
             }
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "erc20",
             "entry": "approve",
             "caller": "0xdeadbeef00000000000000000000000000000025",
             "calldata": [
@@ -215,7 +221,7 @@
             }
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "erc20",
             "entry": "allowance",
             "calldata": [
                 "0xdeadbeef00000000000000000000000000000025",
@@ -228,6 +234,6 @@
     ]
 } ],
     "contracts": {
-        "0xdeadbeef00000000000000000000000000000001": "ERC20.vy"
+        "erc20": "ERC20.vy"
     }
 }

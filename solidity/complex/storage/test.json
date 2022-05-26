@@ -2,20 +2,27 @@
     "name": "first",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "storage",
             "constructor": true,
             "calldata": [
-                "37"
+            ],
+            "expected": [
+                "*"
             ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000002",
+            "instance": "main",
             "constructor": true,
             "calldata": [
+                "37",
+                "storage.address"
+            ],
+            "expected": [
+                "*"
             ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "main",
             "entry": "main",
             "calldata": [
                 "10", "5"
@@ -29,20 +36,27 @@
     "name": "second",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "storage",
             "constructor": true,
             "calldata": [
-                "4"
+            ],
+            "expected": [
+                "*"
             ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000002",
+            "instance": "main",
             "constructor": true,
             "calldata": [
+                "4",
+                "storage.address"
+            ],
+            "expected": [
+                "*"
             ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "main",
             "entry": "main",
             "calldata": [
                 "1233", "38"
@@ -54,7 +68,7 @@
     ]
 } ],
     "contracts": {
-        "0xdeadbeef00000000000000000000000000000001": "main.sol:Main",
-        "0xdeadbeef00000000000000000000000000000002": "storage.sol:Storage"
+        "main": "main.sol:Main",
+        "storage": "storage.sol:Storage"
     }
 }

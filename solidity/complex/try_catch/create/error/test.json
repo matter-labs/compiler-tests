@@ -2,7 +2,7 @@
     "name": "withoutMessage1",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "main",
             "entry": "withoutMessage",
             "calldata": [
                 "1"
@@ -16,7 +16,7 @@
     "name": "withoutMessage2",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "main",
             "entry": "withoutMessage",
             "calldata": [
                 "2"
@@ -30,7 +30,7 @@
     "name": "withoutMessage3",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "main",
             "entry": "withoutMessage",
             "calldata": [
                 "3"
@@ -44,7 +44,7 @@
     "name": "withoutMessage4",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "main",
             "entry": "withoutMessage",
             "calldata": [
                 "4"
@@ -58,7 +58,7 @@
     "name": "withoutMessage5",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "main",
             "entry": "withoutMessage",
             "calldata": [
                 "5"
@@ -72,7 +72,7 @@
     "name": "withoutMessage",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "main",
             "entry": "withoutMessage",
             "calldata": [
                 "0"
@@ -86,7 +86,7 @@
     "name": "withMessage1",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "main",
             "entry": "withMessage",
             "calldata": [
                 "1"
@@ -101,7 +101,7 @@
     "name": "withMessage2",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "main",
             "entry": "withMessage",
             "calldata": [
                 "2"
@@ -120,7 +120,7 @@
     "name": "withMessage3",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "main",
             "entry": "withMessage",
             "calldata": [
                 "3"
@@ -135,7 +135,7 @@
     "name": "withMessage4",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "main",
             "entry": "withMessage",
             "calldata": [
                 "4"
@@ -154,7 +154,7 @@
     "name": "withMessage5",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "main",
             "entry": "withMessage",
             "calldata": [
                 "5"
@@ -169,7 +169,7 @@
     "name": "withMessage",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "main",
             "entry": "withMessage",
             "calldata": [
                 "0"
@@ -184,7 +184,7 @@
     "name": "withStringMessage1",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "main",
             "entry": "withStringMessage",
             "calldata": [
                 "1"
@@ -199,7 +199,7 @@
     "name": "withStringMessage2",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "main",
             "entry": "withStringMessage",
             "calldata": [
                 "2"
@@ -215,7 +215,7 @@
     "name": "withStringMessage3",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "main",
             "entry": "withStringMessage",
             "calldata": [
                 "3"
@@ -230,7 +230,7 @@
     "name": "withStringMessage4",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "main",
             "entry": "withStringMessage",
             "calldata": [
                 "4"
@@ -246,7 +246,7 @@
     "name": "withStringMessage5",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "main",
             "entry": "withStringMessage",
             "calldata": [
                 "5"
@@ -261,7 +261,7 @@
     "name": "withStringMessage",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "main",
             "entry": "withStringMessage",
             "calldata": [
                 "0"
@@ -274,6 +274,6 @@
     ]
 } ],
     "contracts": {
-        "0xdeadbeef00000000000000000000000000000001": "main.sol:Main"
+        "main": "main.sol:Main"
     }
 }

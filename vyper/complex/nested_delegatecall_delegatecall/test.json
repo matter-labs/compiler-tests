@@ -2,10 +2,12 @@
     "name": "default",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "a",
             "caller": "0xdeadbeef00000000000000000000000000000042",
             "entry": "main",
             "calldata": [
+                "b.address",
+                "c.address"
             ]
         }
     ],
@@ -14,8 +16,8 @@
     ]
 } ],
     "contracts": {
-        "0xdeadbeef00000000000000000000000000000001": "A.vy",
-        "0xdeadbeef00000000000000000000000000000002": "B.vy",
-        "0xdeadbeef00000000000000000000000000000003": "C.vy"
+        "a": "A.vy",
+        "b": "B.vy",
+        "c": "C.vy"
     }
 }

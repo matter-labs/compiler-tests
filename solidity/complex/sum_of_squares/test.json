@@ -2,10 +2,11 @@
     "name": "one",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "main",
             "entry": "main",
             "calldata": [
-                "1"
+                "1",
+                "square.address"
             ]
         }
     ],
@@ -16,10 +17,11 @@
     "name": "fifteen",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "main",
             "entry": "main",
             "calldata": [
-                "15"
+                "15",
+                "square.address"
             ]
         }
     ],
@@ -30,10 +32,11 @@
     "name": "hundred",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "main",
             "entry": "main",
             "calldata": [
-                "100"
+                "100",
+                "square.address"
             ]
         }
     ],
@@ -42,7 +45,7 @@
     ]
 } ],
     "contracts": {
-        "0xdeadbeef00000000000000000000000000000001": "main.sol:Main",
-        "0xdeadbeef00000000000000000000000000000002": "square.sol:Square"
+        "main": "main.sol:Main",
+        "square": "square.sol:Square"
     }
 }

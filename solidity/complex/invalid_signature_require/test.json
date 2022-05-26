@@ -2,14 +2,14 @@
     "name": "entry",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "wrapper",
             "entry": "setContract",
             "calldata": [
-                "0xdeadbeef00000000000000000000000000000002"
+                "simple_require.address"
             ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "wrapper",
             "entry": "require_short",
             "calldata": [
             ],
@@ -24,7 +24,7 @@
             }
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "wrapper",
             "entry": "wrong_number_of_params",
             "calldata": [
             ],
@@ -40,7 +40,7 @@
     }
 } ],
     "contracts": {
-        "0xdeadbeef00000000000000000000000000000001": "wrapper.sol:Wrapper",
-        "0xdeadbeef00000000000000000000000000000002": "simpleRequire.sol:SimpleRequire"
+        "wrapper": "wrapper.sol:Wrapper",
+        "simple_require": "simpleRequire.sol:SimpleRequire"
     }
 }

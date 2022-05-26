@@ -4,12 +4,14 @@
     "input": [
         {
             "constructor": true,
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "shit",
             "caller": "0x0000000000000000000000000000000000000002",
             "calldata": [
             ],
             "expected": {
-                "return_data": [],
+                "return_data": [
+                    "*"
+                ],
                 "events": [
                     {
                         "topics": [
@@ -26,7 +28,7 @@
             }
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "shit",
             "caller": "0x0000000000000000000000000000000000000002",
             "entry": "transfer",
             "calldata": [
@@ -63,7 +65,7 @@
             }
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "shit",
             "entry": "balanceof",
             "calldata": [
                 "0x0000000000000000000000000000000000000003"
@@ -75,6 +77,6 @@
     ]
 } ],
     "contracts": {
-        "0xdeadbeef00000000000000000000000000000001": "SHITv1.sol:SHITv1"
+        "shit": "SHITv1.sol:SHITv1"
     }
 }

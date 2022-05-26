@@ -2,7 +2,7 @@
     "name": "first",
     "input": [
         {
-            "address": "0xdeadbeef0000000000000000000000000000aaaa",
+            "instance": "wbtc1",
             "constructor": true,
             "calldata": [
                 "0x40",
@@ -11,10 +11,13 @@
                 "0x5742544300000000000000000000000000000000000000000000000000000000",
                 "14",
                 "0x5772617070656420425443000000000000000000000000000000000000000000"
+            ],
+            "expected": [
+                "*"
             ]
         },
         {
-            "address": "0xdeadbeef0000000000000000000000000000bbbb",
+            "instance": "wbtc2",
             "constructor": true,
             "calldata": [
                 "0x40",
@@ -23,10 +26,13 @@
                 "0x5742544300000000000000000000000000000000000000000000000000000000",
                 "14",
                 "0x5772617070656420425443000000000000000000000000000000000000000000"
+            ],
+            "expected": [
+                "*"
             ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "mooniswap",
             "constructor": true,
             "calldata": [
                 "0x0000000000000000000000000000000000000000000000000000000000000060",
@@ -34,8 +40,8 @@
                 "0x0000000000000000000000000000000000000000000000000000000000000100",
 
                 "0x0000000000000000000000000000000000000000000000000000000000000002",
-                "0xdeadbeef0000000000000000000000000000aaaa",
-                "0xdeadbeef0000000000000000000000000000bbbb",
+                "wbtc1.address",
+                "wbtc2.address",
 
                 "4",
                 "0x5742544300000000000000000000000000000000000000000000000000000000",
@@ -44,7 +50,9 @@
                 "0x5772617070656420425443000000000000000000000000000000000000000000"
             ],
             "expected": {
-                "return_data": [],
+                "return_data": [
+                    "*"
+                ],
                 "events": [
                     {
                         "topics": [
@@ -60,7 +68,7 @@
         },
 
         {
-            "address": "0xdeadbeef0000000000000000000000000000aaaa",
+            "instance": "wbtc1",
             "entry": "_mint",
             "calldata": [
                 "0xdeadbeef00000000000000000000000000000042",
@@ -84,7 +92,7 @@
             }
         },
         {
-            "address": "0xdeadbeef0000000000000000000000000000bbbb",
+            "instance": "wbtc2",
             "entry": "_mint",
             "calldata": [
                 "0xdeadbeef00000000000000000000000000000042",
@@ -108,11 +116,11 @@
             }
         },
         {
-            "address": "0xdeadbeef0000000000000000000000000000aaaa",
+            "instance": "wbtc1",
             "caller": "0xdeadbeef00000000000000000000000000000042",
             "entry": "approve",
             "calldata": [
-                "0xdeadbeef00000000000000000000000000000001", "500000000"
+                "mooniswap.address", "500000000"
             ],
             "expected": {
                 "return_data": [
@@ -123,7 +131,7 @@
                         "topics": [
                             "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925",
                             "0xdeadbeef00000000000000000000000000000042",
-                            "0xdeadbeef00000000000000000000000000000001"
+                            "mooniswap.address"
                         ],
                         "values": [
                             "500000000"
@@ -134,11 +142,11 @@
             }
         },
         {
-            "address": "0xdeadbeef0000000000000000000000000000bbbb",
+            "instance": "wbtc2",
             "caller": "0xdeadbeef00000000000000000000000000000042",
             "entry": "approve",
             "calldata": [
-                "0xdeadbeef00000000000000000000000000000001", "500000000"
+                "mooniswap.address", "500000000"
             ],
             "expected": {
                 "return_data": [
@@ -149,7 +157,7 @@
                         "topics": [
                             "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925",
                             "0xdeadbeef00000000000000000000000000000042",
-                            "0xdeadbeef00000000000000000000000000000001"
+                            "mooniswap.address"
                         ],
                         "values": [
                             "500000000"
@@ -160,7 +168,7 @@
             }
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "mooniswap",
             "caller": "0xdeadbeef00000000000000000000000000000042",
             "entry": "deposit",
             "calldata": [
@@ -182,7 +190,7 @@
                         "topics": [
                             "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
                             "0x0000000000000000000000000000000000000000000000000000000000000000",
-                            "0xdeadbeef00000000000000000000000000000001"
+                            "mooniswap.address"
                         ],
                         "values": [
                             "1000"
@@ -192,7 +200,7 @@
                         "topics": [
                             "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
                             "0xdeadbeef00000000000000000000000000000042",
-                            "0xdeadbeef00000000000000000000000000000001"
+                            "mooniswap.address"
                         ],
                         "values": [
                             "10000000"
@@ -202,7 +210,7 @@
                         "topics": [
                             "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925",
                             "0xdeadbeef00000000000000000000000000000042",
-                            "0xdeadbeef00000000000000000000000000000001"
+                            "mooniswap.address"
                         ],
                         "values": [
                             "490000000"
@@ -212,7 +220,7 @@
                         "topics": [
                             "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
                             "0xdeadbeef00000000000000000000000000000042",
-                            "0xdeadbeef00000000000000000000000000000001"
+                            "mooniswap.address"
                         ],
                         "values": [
                             "10000000"
@@ -222,7 +230,7 @@
                         "topics": [
                             "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925",
                             "0xdeadbeef00000000000000000000000000000042",
-                            "0xdeadbeef00000000000000000000000000000001"
+                            "mooniswap.address"
                         ],
                         "values": [
                             "490000000"
@@ -252,12 +260,12 @@
             }
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "mooniswap",
             "caller": "0xdeadbeef00000000000000000000000000000042",
             "entry": "swap",
             "calldata": [
-                "0xdeadbeef0000000000000000000000000000aaaa",
-                "0xdeadbeef0000000000000000000000000000bbbb",
+                "wbtc1.address",
+                "wbtc2.address",
                 "5000",
                 "5000",
                 "0"
@@ -273,7 +281,7 @@
                 "topics": [
                     "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
                     "0xdeadbeef00000000000000000000000000000042",
-                    "0xdeadbeef00000000000000000000000000000001"
+                    "mooniswap.address"
                 ],
                 "values": [
                     "5000"
@@ -283,7 +291,7 @@
                 "topics": [
                     "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925",
                     "0xdeadbeef00000000000000000000000000000042",
-                    "0xdeadbeef00000000000000000000000000000001"
+                    "mooniswap.address"
                 ],
                 "values": [
                     "489995000"
@@ -294,12 +302,14 @@
     }
 } ],
     "contracts": {
-        "0xdeadbeef00000000000000000000000000000001": "Mooniswap.sol:Mooniswap",
-        "0xdeadbeef0000000000000000000000000000aaaa": "ERC20/ERC20.sol:ERC20",
-        "0xdeadbeef0000000000000000000000000000bbbb": "ERC20/ERC20.sol:ERC20"
+        "mooniswap": "Mooniswap.sol:Mooniswap",
+        "wbtc1": "ERC20/ERC20.sol:ERC20",
+        "wbtc2": "ERC20/ERC20.sol:ERC20",
+        "virtual_balance": "Mooniswap.sol:VirtualBalance",
+        "math": "math/Math.sol:Math"
     },
     "libraries": {
-        "Mooniswap.sol": { "VirtualBalance": "0xdeadbeef00000000000000000000000000000101" },
-        "math/Math.sol": { "Math": "0xdeadbeef00000000000000000000000000000102" }
+        "Mooniswap.sol": { "VirtualBalance": "virtual_balance" },
+        "math/Math.sol": { "Math": "math" }
     }
 }
