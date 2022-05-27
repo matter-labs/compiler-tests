@@ -1,0 +1,66 @@
+{ "cases": [ {
+    "name": "one",
+    "input": [
+        {
+            "comment": "Created the forwarder to the main",
+            "instance": "main",
+            "entry": "f",
+            "calldata": [
+                "1"
+            ]
+        }
+    ],
+    "expected": [
+        "1"
+    ]
+}, {
+    "name": "two",
+    "input": [
+        {
+            "instance": "main",
+            "comment": "Called the forwarder to main and created forwarder to forwarder",
+            "entry": "f",
+            "calldata": [
+                "2"
+            ]
+        }
+    ],
+    "expected": [
+        "2"
+    ]
+},{
+    "name": "three",
+    "input": [
+        {
+            "instance": "main",
+            "comment": "Called the forwarder to forwarder and the second forwarder tried to make a call on address 0",
+            "entry": "f",
+            "calldata": [
+                "3"
+            ]
+        }
+    ],
+    "expected": {
+        "exception": true,
+        "return_data": []
+    }
+}, {
+    "name": "five",
+    "input": [
+        {
+            "instance": "main",
+            "entry": "f",
+            "calldata": [
+                "5"
+            ]
+        }
+    ],
+    "expected": {
+        "exception": true,
+        "return_data": []
+    }
+} ],
+    "contracts": {
+        "main": "main.vy"
+    }
+}

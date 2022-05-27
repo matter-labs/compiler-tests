@@ -6,7 +6,7 @@
             "entry": "main",
             "calldata": [
                 "5",
-                "implementation.address"
+                "main.address"
             ]
         }
     ],
@@ -21,7 +21,7 @@
             "entry": "main",
             "calldata": [
                 "12",
-                "implementation.address"
+                "main.address"
             ]
         }
     ],
@@ -36,7 +36,7 @@
             "entry": "main",
             "calldata": [
                 "15",
-                "implementation.address"
+                "main.address"
             ]
         }
     ],
@@ -51,7 +51,7 @@
             "entry": "main",
             "calldata": [
                 "20",
-                "implementation.address"
+                "main.address"
             ]
         }
     ],
@@ -60,7 +60,6 @@
     ]
 } ],
     "contracts": {
-        "main": "main.vy",
-        "implementation": "main.vy"
+        "main": "main.vy"
     }
 }
