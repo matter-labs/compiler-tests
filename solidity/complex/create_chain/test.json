@@ -1,0 +1,47 @@
+{ "cases": [ {
+    "name": "first",
+    "input": [
+        {
+            "instance": "first",
+            "entry": "f",
+            "calldata": [
+                "5"
+            ]
+        }
+    ],
+    "expected": [
+        "30"
+    ]
+}, {
+    "name": "second",
+    "input": [
+        {
+            "instance": "first",
+            "entry": "f",
+            "calldata": [
+                "22"
+            ]
+        }
+    ],
+    "expected": [
+        "132"
+    ]
+}, {
+    "name": "third",
+    "input": [
+        {
+            "instance": "first",
+            "entry": "f",
+            "calldata": [
+                "763142234623232323"
+            ]
+        }
+    ],
+    "expected": [
+        "4578853407739393938"
+    ]
+} ],
+    "contracts": {
+        "first": "first.sol:First"
+    }
+}
