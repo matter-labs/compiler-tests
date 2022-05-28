@@ -6,7 +6,7 @@
 //!             "calldata": [
 //!                 "42"
 //!             ],
-//!             "storage": { ".address": [
+//!             "storage": { "test.address": [
 //!                 "5", "11"
 //!             ] }
 //!         }

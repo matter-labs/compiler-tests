@@ -8,7 +8,7 @@
 #!                 "0",
 #!                 "25"
 #!             ],
-#!             "storage": { ".address": [
+#!             "storage": { "test.address": [
 #!                 "42"
 #!             ] }
 #!         }
@@ -26,7 +26,7 @@
 #!                 "1",
 #!                 "25"
 #!             ],
-#!             "storage": { ".address": [
+#!             "storage": { "test.address": [
 #!                 "42"
 #!             ] }
 #!         }
@@ -44,7 +44,7 @@
 #!                 "0",
 #!                 "25"
 #!             ],
-#!             "storage": { ".address": [
+#!             "storage": { "test.address": [
 #!                 "42"
 #!             ] }
 #!         }
@@ -62,7 +62,7 @@
 #!                 "1",
 #!                 "25"
 #!             ],
-#!             "storage": { ".address": [
+#!             "storage": { "test.address": [
 #!                 "42"
 #!             ] }
 #!         }
