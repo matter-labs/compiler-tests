@@ -2,7 +2,7 @@
     "name": "first",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "entry",
             "calldata": [
                 "0"
@@ -16,7 +16,7 @@
     "name": "second",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "entry",
             "calldata": [
                 "1"
@@ -28,6 +28,6 @@
     ]
 } ],
     "contracts": {
-        "main": "main.sol:Main"
+        "Main": "main.sol:Main"
     }
 }

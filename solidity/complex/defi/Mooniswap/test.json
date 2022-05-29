@@ -2,7 +2,7 @@
     "name": "default",
     "input": [
         {
-            "instance": "token1",
+            "instance": "Token1",
             "constructor": true,
             "calldata": [
                 "0x40",
@@ -17,7 +17,7 @@
             ]
         },
         {
-            "instance": "token2",
+            "instance": "Token2",
             "constructor": true,
             "calldata": [
                 "0x40",
@@ -32,7 +32,7 @@
             ]
         },
         {
-            "instance": "factory",
+            "instance": "MooniswapFactory",
             "caller": "0xdeadbeef00000000000000000000000000000042",
             "constructor": true,
             "calldata": [],
@@ -53,12 +53,12 @@
             }
         },
         {
-            "instance": "factory",
+            "instance": "MooniswapFactory",
             "caller": "0xdeadbeef00000000000000000000000000000042",
             "entry": "deploy",
             "calldata": [
-                "token1.address",
-                "token2.address"
+                "Token1.address",
+                "Token2.address"
             ],
             "expected": {
                 "return_data": [
@@ -69,14 +69,14 @@
                         "topics": [
                             "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0",
                             "0x0000000000000000000000000000000000000000000000000000000000000000",
-                            "factory.address"
+                            "MooniswapFactory.address"
                         ],
                         "values": []
                     },
                     {
                         "topics": [
                             "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0",
-                            "factory.address",
+                            "MooniswapFactory.address",
                             "0xdeadbeef00000000000000000000000000000042"
                         ],
                         "values": []
@@ -94,7 +94,7 @@
             }
         },
         {
-            "instance": "factory",
+            "instance": "MooniswapFactory",
             "caller": "0xdeadbeef00000000000000000000000000000042",
             "entry": "getAllPools",
             "calldata": [
@@ -108,14 +108,14 @@
     ]
 } ],
     "contracts": {
-        "factory": "MooniFactory.sol:MooniFactory",
-        "token1": "MooniswapPool/ERC20/ERC20.sol:ERC20",
-        "token2": "MooniswapPool/ERC20/ERC20.sol:ERC20",
-        "virtual_balance": "MooniswapPool/Mooniswap.sol:VirtualBalance",
-        "math": "MooniswapPool/math/Math.sol:Math"
+        "MooniswapFactory": "MooniFactory.sol:MooniFactory",
+        "Token1": "MooniswapPool/ERC20/ERC20.sol:ERC20",
+        "Token2": "MooniswapPool/ERC20/ERC20.sol:ERC20",
+        "VirtualBalance": "MooniswapPool/Mooniswap.sol:VirtualBalance",
+        "Math": "MooniswapPool/math/Math.sol:Math"
     },
     "libraries": {
-        "MooniswapPool/Mooniswap.sol": { "VirtualBalance": "virtual_balance" },
-        "MooniswapPool/math/Math.sol": { "Math": "math" }
+        "MooniswapPool/Mooniswap.sol": { "VirtualBalance": "VirtualBalance" },
+        "MooniswapPool/math/Math.sol": { "Math": "Math" }
     }
 }

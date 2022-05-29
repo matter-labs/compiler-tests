@@ -2,22 +2,22 @@
     "name": "default",
     "input": [
         {
-            "instance": "a",
+            "instance": "A",
             "caller": "0xdeadbeef00000000000000000000000000000042",
             "entry": "main",
             "calldata": [
-                "b.address",
-                "c.address"
+                "B.address",
+                "C.address"
             ]
         }
     ],
     "expected": [
-        "a.address"
+        "A.address"
     ]
 } ],
     "contracts": {
-        "a": "A.vy",
-        "b": "B.vy",
-        "c": "C.vy"
+        "A": "A.vy",
+        "B": "B.vy",
+        "C": "C.vy"
     }
 }

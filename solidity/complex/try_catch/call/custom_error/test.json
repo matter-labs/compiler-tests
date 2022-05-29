@@ -3,11 +3,11 @@
     "name": "withoutMessage1",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withoutMessage",
             "calldata": [
                 "1",
-                "callable.address"
+                "Callable.address"
             ]
         }
     ],
@@ -18,11 +18,11 @@
     "name": "withoutMessage2",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withoutMessage",
             "calldata": [
                 "2",
-                "callable.address"
+                "Callable.address"
             ]
         }
     ],
@@ -33,11 +33,11 @@
     "name": "withoutMessage",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withoutMessage",
             "calldata": [
                 "0",
-                "callable.address"
+                "Callable.address"
             ]
         }
     ],
@@ -48,11 +48,11 @@
     "name": "withMessage1",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withMessage",
             "calldata": [
                 "1",
-                "callable.address"
+                "Callable.address"
             ]
         }
     ],
@@ -65,11 +65,11 @@
     "name": "withMessage2",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withMessage",
             "calldata": [
                 "2",
-                "callable.address"
+                "Callable.address"
             ]
         }
     ],
@@ -86,11 +86,11 @@
     "name": "withMessage",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withMessage",
             "calldata": [
                 "0",
-                "callable.address"
+                "Callable.address"
             ]
         }
     ],
@@ -100,7 +100,7 @@
     ]
 } ],
     "contracts": {
-        "main": "main.sol:Main",
-        "callable": "callable.sol:Callable"
+        "Main": "main.sol:Main",
+        "Callable": "callable.sol:Callable"
     }
 }

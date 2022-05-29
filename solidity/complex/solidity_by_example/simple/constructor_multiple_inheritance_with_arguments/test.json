@@ -2,7 +2,7 @@
     "name": "C",
     "input": [
         {
-            "instance": "c",
+            "instance": "C",
             "constructor": true,
             "calldata": [
                 "0x40",
@@ -16,7 +16,7 @@
                 "*"
             ]
         }, {
-            "instance": "c",
+            "instance": "C",
             "entry": "name",
             "calldata": [
             ],
@@ -26,7 +26,7 @@
                 "0x6e616d6500000000000000000000000000000000000000000000000000000000"
             ]
         }, {
-            "instance": "c",
+            "instance": "C",
             "entry": "text",
             "calldata": [
             ]
@@ -39,6 +39,6 @@
     ]
 } ],
     "contracts": {
-        "c": "main.sol:C"
+        "C": "main.sol:C"
     }
 }

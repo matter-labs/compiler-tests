@@ -2,7 +2,7 @@
     "name": "default",
     "input": [
         {
-            "instance": "lib",
+            "instance": "Lib",
             "constructor": true,
             "caller": "0xdeadbeef00000000000000000000000000000011",
             "calldata": [
@@ -12,48 +12,48 @@
             ]
         },
         {
-            "instance": "hack_me",
+            "instance": "HackMe",
             "constructor": true,
             "caller": "0xdeadbeef00000000000000000000000000000011",
             "calldata": [
-                "lib.address"
+                "Lib.address"
             ],
             "expected": [
                 "*"
             ]
         },
         {
-            "instance": "attack",
+            "instance": "Attack",
             "constructor": true,
             "caller": "0xdeadbeef00000000000000000000000000000012",
             "calldata": [
-                "hack_me.address"
+                "HackMe.address"
             ],
             "expected": [
                 "*"
             ]
         },
         {
-            "instance": "attack",
+            "instance": "Attack",
             "caller": "0xdeadbeef00000000000000000000000000000012",
             "entry": "attack",
             "calldata": [
             ]
         },
         {
-            "instance": "hack_me",
+            "instance": "HackMe",
             "entry": "owner",
             "calldata": [
             ]
         }
     ],
     "expected": [
-        "attack.address"
+        "Attack.address"
     ]
 } ],
     "contracts": {
-        "lib": "lib.vy",
-        "hack_me": "hack_me.vy",
-        "attack": "attack.vy"
+        "Lib": "lib.vy",
+        "HackMe": "hack_me.vy",
+        "Attack": "attack.vy"
     }
 }

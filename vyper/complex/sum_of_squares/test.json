@@ -2,11 +2,11 @@
     "name": "one",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "main",
             "calldata": [
                 "1",
-                "square.address"
+                "Square.address"
             ]
         }
     ],
@@ -17,11 +17,11 @@
     "name": "fifteen",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "main",
             "calldata": [
                 "15",
-                "square.address"
+                "Square.address"
             ]
         }
     ],
@@ -32,11 +32,11 @@
     "name": "hundred",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "main",
             "calldata": [
                 "100",
-                "square.address"
+                "Square.address"
             ]
         }
     ],
@@ -45,7 +45,7 @@
     ]
 } ],
     "contracts": {
-        "main": "main.vy",
-        "square": "square.vy"
+        "Main": "main.vy",
+        "Square": "square.vy"
     }
 }

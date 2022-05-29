@@ -2,7 +2,7 @@
     "name": "testInternalFunc",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "testInternalFunc",
             "calldata": [
             ]
@@ -17,7 +17,7 @@
     "name": "externalFunc",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "externalFunc",
             "calldata": [
             ]
@@ -32,7 +32,7 @@
     "name": "publicVar",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "publicVar",
             "calldata": [
             ]
@@ -45,6 +45,6 @@
     ]
 } ],
     "contracts": {
-        "main": "main.vy"
+        "Main": "main.vy"
     }
 }

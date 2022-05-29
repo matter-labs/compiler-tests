@@ -2,7 +2,7 @@
     "name": "decimals",
     "input": [
         {
-            "instance": "erc20",
+            "instance": "ERC20",
             "constructor": true,
             "calldata": [
                 "0x40",
@@ -17,7 +17,7 @@
             ]
         },
         {
-            "instance": "erc20",
+            "instance": "ERC20",
             "entry": "decimals",
             "calldata": [
             ]
@@ -30,7 +30,7 @@
     "name": "double_mint_&_burn",
     "input": [
         {
-            "instance": "erc20",
+            "instance": "ERC20",
             "constructor": true,
             "calldata": [
                 "0x40",
@@ -45,7 +45,7 @@
             ]
         },
         {
-            "instance": "erc20",
+            "instance": "ERC20",
             "entry": "_mint",
             "calldata": [
                 "0xdeadbeef00000000000000000000000000000042",
@@ -69,7 +69,7 @@
             }
         },
         {
-            "instance": "erc20",
+            "instance": "ERC20",
             "entry": "_mint",
             "calldata": [
                 "0xdeadbeef00000000000000000000000000000042",
@@ -93,7 +93,7 @@
             }
         },
         {
-            "instance": "erc20",
+            "instance": "ERC20",
             "entry": "_burn",
             "calldata": [
                 "0xdeadbeef00000000000000000000000000000042",
@@ -117,7 +117,7 @@
             }
         },
         {
-            "instance": "erc20",
+            "instance": "ERC20",
             "entry": "balanceOf",
             "calldata": [
                 "0xdeadbeef00000000000000000000000000000042"
@@ -131,7 +131,7 @@
     "name": "approve",
     "input": [
         {
-            "instance": "erc20",
+            "instance": "ERC20",
             "constructor": true,
             "calldata": [
                 "0x40",
@@ -146,7 +146,7 @@
             ]
         },
         {
-            "instance": "erc20",
+            "instance": "ERC20",
             "entry": "approve",
             "caller": "0xdeadbeef00000000000000000000000000000025",
             "calldata": [
@@ -173,7 +173,7 @@
             }
         },
         {
-            "instance": "erc20",
+            "instance": "ERC20",
             "entry": "increaseAllowance",
             "caller": "0xdeadbeef00000000000000000000000000000025",
             "calldata": [
@@ -200,7 +200,7 @@
             }
         },
         {
-            "instance": "erc20",
+            "instance": "ERC20",
             "entry": "decreaseAllowance",
             "caller": "0xdeadbeef00000000000000000000000000000025",
             "calldata": [
@@ -227,7 +227,7 @@
             }
         },
         {
-            "instance": "erc20",
+            "instance": "ERC20",
             "entry": "allowance",
             "calldata": [
                 "0xdeadbeef00000000000000000000000000000025",
@@ -240,6 +240,6 @@
     ]
 } ],
     "contracts": {
-        "erc20": "ERC20.sol:ERC20"
+        "ERC20": "ERC20.sol:ERC20"
     }
 }

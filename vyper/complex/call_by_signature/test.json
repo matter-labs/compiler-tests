@@ -2,11 +2,11 @@
     "name": "first",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "main",
             "calldata": [
                 "5",
-                "storage.address"
+                "Storage.address"
             ]
         }
     ],
@@ -17,11 +17,11 @@
     "name": "second",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "main",
             "calldata": [
                 "3224423423",
-                "storage.address"
+                "Storage.address"
             ]
         }
     ],
@@ -30,7 +30,7 @@
     ]
 } ],
     "contracts": {
-        "main": "main.vy",
-        "storage": "storage.vy"
+        "Main": "main.vy",
+        "Storage": "storage.vy"
     }
 }

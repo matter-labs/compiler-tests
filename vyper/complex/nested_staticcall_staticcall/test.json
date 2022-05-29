@@ -2,11 +2,11 @@
     "name": "default",
     "input": [
         {
-            "instance": "a",
+            "instance": "A",
             "entry": "main",
             "calldata": [
-                "b.address",
-                "c.address"
+                "B.address",
+                "C.address"
             ]
         }
     ],
@@ -16,8 +16,8 @@
     }
 } ],
     "contracts": {
-        "a": "A.vy",
-        "b": "B.vy",
-        "c": "C.vy"
+        "A": "A.vy",
+        "B": "B.vy",
+        "C": "C.vy"
     }
 }

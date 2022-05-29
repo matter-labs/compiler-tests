@@ -2,11 +2,11 @@
     "name": "five",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "main",
             "calldata": [
                 "5",
-                "implementation.address"
+                "Main.address"
             ]
         }
     ],
@@ -17,11 +17,11 @@
     "name": "twelve",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "main",
             "calldata": [
                 "12",
-                "implementation.address"
+                "Main.address"
             ]
         }
     ],
@@ -32,11 +32,11 @@
     "name": "fifteen",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "main",
             "calldata": [
                 "15",
-                "implementation.address"
+                "Main.address"
             ]
         }
     ],
@@ -47,11 +47,11 @@
     "name": "twenty",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "main",
             "calldata": [
                 "20",
-                "implementation.address"
+                "Main.address"
             ]
         }
     ],
@@ -60,7 +60,6 @@
     ]
 } ],
     "contracts": {
-        "main": "main.vy",
-        "implementation": "main.vy"
+        "Main": "main.vy"
     }
 }

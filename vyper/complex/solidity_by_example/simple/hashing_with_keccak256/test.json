@@ -2,7 +2,7 @@
     "name": "hashFunction",
     "input": [
         {
-            "instance": "hash_function",
+            "instance": "HashFunction",
             "entry": "hash",
             "calldata": [
                 "0x60",
@@ -16,7 +16,7 @@
             ]
         },
         {
-            "instance": "hash_function",
+            "instance": "HashFunction",
             "entry": "collision",
             "calldata": [
                 "0x40",
@@ -31,7 +31,7 @@
             ]
         },
         {
-            "instance": "hash_function",
+            "instance": "HashFunction",
             "entry": "collision",
             "calldata": [
                 "0x40",
@@ -50,7 +50,7 @@
     "name": "guessTheMagicWord",
     "input": [
         {
-            "instance": "guess_the_magic_word",
+            "instance": "GuessTheMagicWord",
             "entry": "guess",
             "calldata": [
                 "0x20",
@@ -62,7 +62,7 @@
             ]
         },
         {
-            "instance": "guess_the_magic_word",
+            "instance": "GuessTheMagicWord",
             "entry": "guess",
             "calldata": [
                 "0x20",
@@ -76,7 +76,7 @@
     ]
 } ],
     "contracts": {
-        "hash_function": "hash_function.vy",
-        "guess_the_magic_word": "guess_the_magic_word.vy"
+        "HashFunction": "hash_function.vy",
+        "GuessTheMagicWord": "guess_the_magic_word.vy"
     }
 }

@@ -2,12 +2,12 @@
     "name": "five",
     "input": [
         {
-            "instance": "first",
+            "instance": "First",
             "entry": "fact",
             "calldata": [
                 "5",
-                "first.address",
-                "second.address"
+                "First.address",
+                "Second.address"
             ]
         }
     ],
@@ -18,12 +18,12 @@
     "name": "twelve",
     "input": [
         {
-            "instance": "second",
+            "instance": "Second",
             "entry": "fact",
             "calldata": [
                 "12",
-                "first.address",
-                "second.address"
+                "First.address",
+                "Second.address"
             ]
         }
     ],
@@ -34,12 +34,12 @@
     "name": "fifteen",
     "input": [
         {
-            "instance": "first",
+            "instance": "First",
             "entry": "fact",
             "calldata": [
                 "15",
-                "first.address",
-                "second.address"
+                "First.address",
+                "Second.address"
             ]
         }
     ],
@@ -50,12 +50,12 @@
     "name": "twenty",
     "input": [
         {
-            "instance": "first",
+            "instance": "First",
             "entry": "fact",
             "calldata": [
                 "20",
-                "first.address",
-                "second.address"
+                "First.address",
+                "Second.address"
             ]
         }
     ],
@@ -64,7 +64,7 @@
     ]
 } ],
     "contracts": {
-        "first": "first.sol:First",
-        "second": "second.sol:Second"
+        "First": "first.sol:First",
+        "Second": "second.sol:Second"
     }
 }

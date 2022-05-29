@@ -2,14 +2,14 @@
     "name": "entry",
     "input": [
         {
-            "instance": "wrapper",
+            "instance": "Wrapper",
             "entry": "setContract",
             "calldata": [
-                "simple_require.address"
+                "SimpleRequire.address"
             ]
         },
         {
-            "instance": "wrapper",
+            "instance": "Wrapper",
             "entry": "require_short",
             "calldata": [
             ],
@@ -24,7 +24,7 @@
             }
         },
         {
-            "instance": "wrapper",
+            "instance": "Wrapper",
             "entry": "wrong_number_of_params",
             "calldata": [
             ],
@@ -40,7 +40,7 @@
     }
 } ],
     "contracts": {
-        "wrapper": "wrapper.vy",
-        "simple_require": "simpleRequire.vy"
+        "Wrapper": "wrapper.vy",
+        "SimpleRequire": "simpleRequire.vy"
     }
 }

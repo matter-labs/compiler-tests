@@ -2,7 +2,7 @@
     "name": "entry",
     "input": [
         {
-            "instance": "import",
+            "instance": "Import",
             "entry": "getFooName",
             "calldata": [
             ]
@@ -15,10 +15,10 @@
     ]
 } ],
     "contracts": {
-        "import": "Import.sol:Import",
-        "foo": "Foo.sol:Foo"
+        "Import": "Import.sol:Import",
+        "Foo": "Foo.sol:Foo"
     },
     "libraries": {
-        "Foo.sol": { "Foo": "foo" }
+        "Foo.sol": { "Foo": "Foo" }
     }
 }

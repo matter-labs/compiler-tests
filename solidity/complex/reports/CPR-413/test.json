@@ -2,7 +2,7 @@
     "name": "main",
     "input": [
         {
-            "instance": "d",
+            "instance": "D",
             "entry": "fview",
             "calldata": [
             ]
@@ -14,6 +14,6 @@
     }
 } ],
     "contracts": {
-        "d": "main.sol:D"
+        "D": "main.sol:D"
     }
 }

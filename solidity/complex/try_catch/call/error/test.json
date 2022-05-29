@@ -2,11 +2,11 @@
     "name": "withoutMessage1",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withoutMessage",
             "calldata": [
                 "1",
-                "callable.address"
+                "Callable.address"
             ]
         }
     ],
@@ -17,11 +17,11 @@
     "name": "withoutMessage2",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withoutMessage",
             "calldata": [
                 "2",
-                "callable.address"
+                "Callable.address"
             ]
         }
     ],
@@ -32,11 +32,11 @@
     "name": "withoutMessage3",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withoutMessage",
             "calldata": [
                 "3",
-                "callable.address"
+                "Callable.address"
             ]
         }
     ],
@@ -47,11 +47,11 @@
     "name": "withoutMessage4",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withoutMessage",
             "calldata": [
                 "4",
-                "callable.address"
+                "Callable.address"
             ]
         }
     ],
@@ -62,11 +62,11 @@
     "name": "withoutMessage5",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withoutMessage",
             "calldata": [
                 "5",
-                "callable.address"
+                "Callable.address"
             ]
         }
     ],
@@ -77,11 +77,11 @@
     "name": "withoutMessage",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withoutMessage",
             "calldata": [
                 "0",
-                "callable.address"
+                "Callable.address"
             ]
         }
     ],
@@ -92,11 +92,11 @@
     "name": "withMessage1",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withMessage",
             "calldata": [
                 "1",
-                "callable.address"
+                "Callable.address"
             ]
         }
     ],
@@ -108,11 +108,11 @@
     "name": "withMessage2",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withMessage",
             "calldata": [
                 "2",
-                "callable.address"
+                "Callable.address"
             ]
         }
     ],
@@ -128,11 +128,11 @@
     "name": "withMessage3",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withMessage",
             "calldata": [
                 "3",
-                "callable.address"
+                "Callable.address"
             ]
         }
     ],
@@ -144,11 +144,11 @@
     "name": "withMessage4",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withMessage",
             "calldata": [
                 "4",
-                "callable.address"
+                "Callable.address"
             ]
         }
     ],
@@ -164,11 +164,11 @@
     "name": "withMessage5",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withMessage",
             "calldata": [
                 "5",
-                "callable.address"
+                "Callable.address"
             ]
         }
     ],
@@ -180,11 +180,11 @@
     "name": "withMessage",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withMessage",
             "calldata": [
                 "0",
-                "callable.address"
+                "Callable.address"
             ]
         }
     ],
@@ -196,11 +196,11 @@
     "name": "withStringMessage1",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withStringMessage",
             "calldata": [
                 "1",
-                "callable.address"
+                "Callable.address"
             ]
         }
     ],
@@ -212,11 +212,11 @@
     "name": "withStringMessage2",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withStringMessage",
             "calldata": [
                 "2",
-                "callable.address"
+                "Callable.address"
             ]
         }
     ],
@@ -229,11 +229,11 @@
     "name": "withStringMessage3",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withStringMessage",
             "calldata": [
                 "3",
-                "callable.address"
+                "Callable.address"
             ]
         }
     ],
@@ -245,11 +245,11 @@
     "name": "withStringMessage4",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withStringMessage",
             "calldata": [
                 "4",
-                "callable.address"
+                "Callable.address"
             ]
         }
     ],
@@ -262,11 +262,11 @@
     "name": "withStringMessage5",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withStringMessage",
             "calldata": [
                 "5",
-                "callable.address"
+                "Callable.address"
             ]
         }
     ],
@@ -278,11 +278,11 @@
     "name": "withStringMessage",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withStringMessage",
             "calldata": [
                 "0",
-                "callable.address"
+                "Callable.address"
             ]
         }
     ],
@@ -292,7 +292,7 @@
     ]
 } ],
     "contracts": {
-        "main": "main.sol:Main",
-        "callable": "callable.sol:Callable"
+        "Main": "main.sol:Main",
+        "Callable": "callable.sol:Callable"
     }
 }

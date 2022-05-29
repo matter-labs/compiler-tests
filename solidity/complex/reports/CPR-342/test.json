@@ -2,7 +2,7 @@
     "name": "first",
     "input": [
         {
-            "instance": "c",
+            "instance": "C",
             "entry": "f",
             "calldata": [
             ]
@@ -13,12 +13,12 @@
     ]
 } ],
     "contracts": {
-        "c": "main.sol:C",
-        "l": "main.sol:L"
+        "C": "main.sol:C",
+        "Library": "main.sol:L"
     },
     "libraries": {
         "main.sol": {
-            "L": "l"
+            "L": "Library"
         }
     }
 }

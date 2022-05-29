@@ -2,7 +2,7 @@
     "name": "withoutMessage1",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withoutMessage",
             "calldata": [
                 "1"
@@ -16,7 +16,7 @@
     "name": "withoutMessage2",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withoutMessage",
             "calldata": [
                 "2"
@@ -30,7 +30,7 @@
     "name": "withoutMessage3",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withoutMessage",
             "calldata": [
                 "3"
@@ -44,7 +44,7 @@
     "name": "withoutMessage4",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withoutMessage",
             "calldata": [
                 "4"
@@ -58,7 +58,7 @@
     "name": "withoutMessage5",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withoutMessage",
             "calldata": [
                 "5"
@@ -72,7 +72,7 @@
     "name": "withoutMessage",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withoutMessage",
             "calldata": [
                 "0"
@@ -86,7 +86,7 @@
     "name": "withMessage1",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withMessage",
             "calldata": [
                 "1"
@@ -101,7 +101,7 @@
     "name": "withMessage2",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withMessage",
             "calldata": [
                 "2"
@@ -120,7 +120,7 @@
     "name": "withMessage3",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withMessage",
             "calldata": [
                 "3"
@@ -135,7 +135,7 @@
     "name": "withMessage4",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withMessage",
             "calldata": [
                 "4"
@@ -154,7 +154,7 @@
     "name": "withMessage5",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withMessage",
             "calldata": [
                 "5"
@@ -169,7 +169,7 @@
     "name": "withMessage",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withMessage",
             "calldata": [
                 "0"
@@ -184,7 +184,7 @@
     "name": "withStringMessage1",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withStringMessage",
             "calldata": [
                 "1"
@@ -199,7 +199,7 @@
     "name": "withStringMessage2",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withStringMessage",
             "calldata": [
                 "2"
@@ -215,7 +215,7 @@
     "name": "withStringMessage3",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withStringMessage",
             "calldata": [
                 "3"
@@ -230,7 +230,7 @@
     "name": "withStringMessage4",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withStringMessage",
             "calldata": [
                 "4"
@@ -246,7 +246,7 @@
     "name": "withStringMessage5",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withStringMessage",
             "calldata": [
                 "5"
@@ -261,7 +261,7 @@
     "name": "withStringMessage",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withStringMessage",
             "calldata": [
                 "0"
@@ -274,6 +274,6 @@
     ]
 } ],
     "contracts": {
-        "main": "main.sol:Main"
+        "Main": "main.sol:Main"
     }
 }

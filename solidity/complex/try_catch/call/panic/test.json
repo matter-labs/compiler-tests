@@ -2,11 +2,11 @@
     "name": "withoutMessage0x01",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withoutMessage",
             "calldata": [
                 "0x01",
-                "callable.address"
+                "Callable.address"
             ]
         }
     ],
@@ -17,11 +17,11 @@
     "name": "withoutMessage0x11",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withoutMessage",
             "calldata": [
                 "0x11",
-                "callable.address"
+                "Callable.address"
             ]
         }
     ],
@@ -42,11 +42,11 @@
     "name": "withoutMessage0x12",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withoutMessage",
             "calldata": [
                 "0x12",
-                "callable.address"
+                "Callable.address"
             ]
         }
     ],
@@ -57,11 +57,11 @@
     "name": "withoutMessage0x21",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withoutMessage",
             "calldata": [
                 "0x21",
-                "callable.address"
+                "Callable.address"
             ]
         }
     ],
@@ -72,11 +72,11 @@
     "name": "withoutMessage0x22",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withoutMessage",
             "calldata": [
                 "0x22",
-                "callable.address"
+                "Callable.address"
             ]
         }
     ],
@@ -97,11 +97,11 @@
     "name": "withoutMessage0x31",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withoutMessage",
             "calldata": [
                 "0x31",
-                "callable.address"
+                "Callable.address"
             ]
         }
     ],
@@ -112,11 +112,11 @@
     "name": "withoutMessage0x32",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withoutMessage",
             "calldata": [
                 "0x32",
-                "callable.address"
+                "Callable.address"
             ]
         }
     ],
@@ -127,11 +127,11 @@
     "name": "withoutMessage0x41",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withoutMessage",
             "calldata": [
                 "0x41",
-                "callable.address"
+                "Callable.address"
             ]
         }
     ],
@@ -142,11 +142,11 @@
     "name": "withoutMessage0x51",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withoutMessage",
             "calldata": [
                 "0x51",
-                "callable.address"
+                "Callable.address"
             ]
         }
     ],
@@ -157,11 +157,11 @@
     "name": "withoutMessage",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withoutMessage",
             "calldata": [
                 "0x0",
-                "callable.address"
+                "Callable.address"
             ]
         }
     ],
@@ -172,11 +172,11 @@
     "name": "withMessage0x01",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withMessage",
             "calldata": [
                 "0x01",
-                "callable.address"
+                "Callable.address"
             ]
         }
     ],
@@ -201,11 +201,11 @@
     "name": "withMessage0x11",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withMessage",
             "calldata": [
                 "0x11",
-                "callable.address"
+                "Callable.address"
             ]
         }
     ],
@@ -230,11 +230,11 @@
     "name": "withMessage0x12",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withMessage",
             "calldata": [
                 "0x12",
-                "callable.address"
+                "Callable.address"
             ]
         }
     ],
@@ -259,11 +259,11 @@
     "name": "withMessage0x21",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withMessage",
             "calldata": [
                 "0x21",
-                "callable.address"
+                "Callable.address"
             ]
         }
     ],
@@ -288,11 +288,11 @@
     "name": "withMessage0x22",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withMessage",
             "calldata": [
                 "0x22",
-                "callable.address"
+                "Callable.address"
             ]
         }
     ],
@@ -317,11 +317,11 @@
     "name": "withMessage0x31",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withMessage",
             "calldata": [
                 "0x31",
-                "callable.address"
+                "Callable.address"
             ]
         }
     ],
@@ -346,11 +346,11 @@
     "name": "withMessage0x32",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withMessage",
             "calldata": [
                 "0x32",
-                "callable.address"
+                "Callable.address"
             ]
         }
     ],
@@ -375,11 +375,11 @@
     "name": "withMessage0x41",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withMessage",
             "calldata": [
                 "0x41",
-                "callable.address"
+                "Callable.address"
             ]
         }
     ],
@@ -404,11 +404,11 @@
     "name": "withMessage0x51",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withMessage",
             "calldata": [
                 "0x51",
-                "callable.address"
+                "Callable.address"
             ]
         }
     ],
@@ -433,11 +433,11 @@
     "name": "withMessage",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "withMessage",
             "calldata": [
                 "0x0",
-                "callable.address"
+                "Callable.address"
             ]
         }
     ],
@@ -447,7 +447,7 @@
     ]
 } ],
     "contracts": {
-        "main": "main.sol:Main",
-        "callable": "callable.sol:Callable"
+        "Main": "main.sol:Main",
+        "Callable": "callable.sol:Callable"
     }
 }

@@ -2,7 +2,7 @@
     "name": "D",
     "input": [
         {
-            "instance": "d",
+            "instance": "D",
             "entry": "name",
             "calldata": [
             ],
@@ -12,7 +12,7 @@
                 "0x58207761732063616c6c65640000000000000000000000000000000000000000"
             ]
         }, {
-            "instance": "d",
+            "instance": "D",
             "entry": "text",
             "calldata": [
             ]
@@ -27,7 +27,7 @@
     "name": "E",
     "input": [
         {
-            "instance": "e",
+            "instance": "E",
             "entry": "name",
             "calldata": [
             ],
@@ -37,7 +37,7 @@
                 "0x58207761732063616c6c65640000000000000000000000000000000000000000"
             ]
         }, {
-            "instance": "e",
+            "instance": "E",
             "entry": "text",
             "calldata": [
             ]
@@ -50,7 +50,7 @@
     ]
 } ],
     "contracts": {
-        "d": "main.sol:D",
-        "e": "main.sol:E"
+        "D": "main.sol:D",
+        "E": "main.sol:E"
     }
 }

@@ -2,7 +2,7 @@
     "name": "first",
     "input": [
         {
-            "instance": "storage",
+            "instance": "Storage",
             "constructor": true,
             "calldata": [
             ],
@@ -11,18 +11,18 @@
             ]
         },
         {
-            "instance": "main",
+            "instance": "Main",
             "constructor": true,
             "calldata": [
                 "37",
-                "storage.address"
+                "Storage.address"
             ],
             "expected": [
                 "*"
             ]
         },
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "main",
             "calldata": [
                 "10", "5"
@@ -36,7 +36,7 @@
     "name": "second",
     "input": [
         {
-            "instance": "storage",
+            "instance": "Storage",
             "constructor": true,
             "calldata": [
             ],
@@ -45,18 +45,18 @@
             ]
         },
         {
-            "instance": "main",
+            "instance": "Main",
             "constructor": true,
             "calldata": [
                 "4",
-                "storage.address"
+                "Storage.address"
             ],
             "expected": [
                 "*"
             ]
         },
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "main",
             "calldata": [
                 "1233", "38"
@@ -68,7 +68,7 @@
     ]
 } ],
     "contracts": {
-        "main": "main.sol:Main",
-        "storage": "storage.sol:Storage"
+        "Main": "main.sol:Main",
+        "Storage": "storage.sol:Storage"
     }
 }

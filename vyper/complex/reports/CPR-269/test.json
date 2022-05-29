@@ -2,11 +2,11 @@
     "name": "first",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "main",
             "calldata": [
                 "1",
-                "callable.address"
+                "Callable.address"
             ]
         }
     ],
@@ -15,7 +15,7 @@
     ]
 } ],
     "contracts": {
-        "main": "main.vy",
-        "callable": "callable.vy"
+        "Main": "main.vy",
+        "Callable": "callable.vy"
     }
 }

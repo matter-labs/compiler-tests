@@ -6,6 +6,6 @@
     ]
 } ],
     "contracts": {
-        "todos": "main.sol:Todos"
+        "Todos": "main.sol:Todos"
     }
 }

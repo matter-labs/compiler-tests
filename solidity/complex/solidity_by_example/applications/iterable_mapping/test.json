@@ -2,7 +2,7 @@
     "name": "testIterableMap",
     "input": [
         {
-            "instance": "test",
+            "instance": "TestIterableMap",
             "entry": "testIterableMap",
             "calldata": [
             ]
@@ -12,12 +12,12 @@
     ]
 } ],
     "contracts": {
-        "test": "main.sol:TestIterableMap",
-        "iterable_mapping": "main.sol:IterableMapping"
+        "TestIterableMap": "main.sol:TestIterableMap",
+        "IterableMapping": "main.sol:IterableMapping"
     },
     "libraries": {
         "main.sol": {
-            "IterableMapping": "iterable_mapping"
+            "IterableMapping": "IterableMapping"
         }
     }
 }

@@ -2,7 +2,7 @@
     "name": "first",
     "input": [
         {
-            "instance": "callable",
+            "instance": "Callable",
             "constructor": true,
             "calldata": [
                 "0x0"
@@ -12,11 +12,11 @@
             ]
         },
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "main",
             "calldata": [
                 "3",
-                "callable.address"
+                "Callable.address"
             ]
         }
     ],
@@ -27,7 +27,7 @@
     "name": "second",
     "input": [
         {
-            "instance": "callable",
+            "instance": "Callable",
             "constructor": true,
             "calldata": [
                 "0x0"
@@ -37,11 +37,11 @@
             ]
         },
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "main",
             "calldata": [
                 "200",
-                "callable.address"
+                "Callable.address"
             ]
         }
     ],
@@ -50,7 +50,7 @@
     ]
 } ],
     "contracts": {
-        "main": "main.vy",
-        "callable": "callable.vy"
+        "Main": "main.vy",
+        "Callable": "callable.vy"
     }
 }

@@ -3,7 +3,7 @@
     "input": [
         {
             "comment": "Created the forwarder to the main",
-            "instance": "main",
+            "instance": "Main",
             "entry": "f",
             "calldata": [
                 "1"
@@ -17,7 +17,7 @@
     "name": "two",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "comment": "Called the forwarder to main and created forwarder to forwarder",
             "entry": "f",
             "calldata": [
@@ -32,7 +32,7 @@
     "name": "three",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "comment": "Called the forwarder to forwarder and the second forwarder tried to make a call on address 0",
             "entry": "f",
             "calldata": [
@@ -48,7 +48,7 @@
     "name": "five",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "f",
             "calldata": [
                 "5"
@@ -61,6 +61,6 @@
     }
 } ],
     "contracts": {
-        "main": "main.vy"
+        "Main": "main.vy"
     }
 }

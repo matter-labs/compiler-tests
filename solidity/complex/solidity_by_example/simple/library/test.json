@@ -2,7 +2,7 @@
     "name": "testSafeMath",
     "input": [
         {
-            "instance": "test_safe_math",
+            "instance": "TestSafeMath",
             "entry": "MAX_UINT",
             "calldata": [
             ],
@@ -11,7 +11,7 @@
             ]
         },
         {
-            "instance": "test_safe_math",
+            "instance": "TestSafeMath",
             "entry": "testAdd",
             "calldata": [
                 "115792089237316195423570985008687907853269984665640564039457584007913129639934",
@@ -22,7 +22,7 @@
             ]
         },
         {
-            "instance": "test_safe_math",
+            "instance": "TestSafeMath",
             "entry": "testAdd",
             "calldata": [
                 "115792089237316195423570985008687907853269984665640564039457584007913129639934",
@@ -47,7 +47,7 @@
             } ]
         },
         {
-            "instance": "test_safe_math",
+            "instance": "TestSafeMath",
             "entry": "testSquareRoot",
             "calldata": [
                 "0"
@@ -57,7 +57,7 @@
             ]
         },
         {
-            "instance": "test_safe_math",
+            "instance": "TestSafeMath",
             "entry": "testSquareRoot",
             "calldata": [
                 "3"
@@ -67,7 +67,7 @@
             ]
         },
         {
-            "instance": "test_safe_math",
+            "instance": "TestSafeMath",
             "entry": "testSquareRoot",
             "calldata": [
                 "345346456546345234123498123498239402934230203"
@@ -81,7 +81,7 @@
     "name": "testArray",
     "input": [
         {
-            "instance": "test_array",
+            "instance": "TestArray",
             "entry": "testArrayRemove",
             "calldata": [
             ]
@@ -91,15 +91,15 @@
     ]
 } ],
     "contracts": {
-        "test_safe_math": "main.sol:TestSafeMath",
-        "test_array": "main.sol:TestArray",
-        "array": "main.sol:Array",
-        "math": "main.sol:Math"
+        "TestSafeMath": "main.sol:TestSafeMath",
+        "TestArray": "main.sol:TestArray",
+        "Array": "main.sol:Array",
+        "Math": "main.sol:Math"
     },
     "libraries": {
         "main.sol": {
-            "Array": "array",
-            "Math": "math"
+            "Array": "Array",
+            "Math": "Math"
         }
     }
 }

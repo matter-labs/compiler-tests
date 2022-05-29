@@ -2,51 +2,51 @@
     "name": "simple",
     "input": [
         {
-            "instance": "my_contract",
+            "instance": "MyContract",
             "entry": "getCount",
             "calldata": [
-                "counter1.address"
+                "Counter1.address"
             ],
             "expected": [
                 "0"
             ]
         },
         {
-            "instance": "my_contract",
+            "instance": "MyContract",
             "entry": "incrementCounter",
             "calldata": [
-                "counter1.address"
+                "Counter1.address"
             ]
         },
         {
-            "instance": "my_contract",
+            "instance": "MyContract",
             "entry": "getCount",
             "calldata": [
-                "counter1.address"
+                "Counter1.address"
             ],
             "expected": [
                 "1"
             ]
         },
         {
-            "instance": "my_contract",
+            "instance": "MyContract",
             "entry": "incrementCounter",
             "calldata": [
-                "counter1.address"
+                "Counter1.address"
             ]
         },
         {
-            "instance": "my_contract",
+            "instance": "MyContract",
             "entry": "incrementCounter",
             "calldata": [
-                "counter1.address"
+                "Counter1.address"
             ]
         },
         {
-            "instance": "my_contract",
+            "instance": "MyContract",
             "entry": "getCount",
             "calldata": [
-                "counter1.address"
+                "Counter1.address"
             ],
             "expected": [
                 "3"
@@ -60,61 +60,61 @@
     "name": "two_counters",
     "input": [
         {
-            "instance": "my_contract",
+            "instance": "MyContract",
             "entry": "getCount",
             "calldata": [
-                "counter1.address"
+                "Counter1.address"
             ],
             "expected": [
                 "0"
             ]
         },
         {
-            "instance": "my_contract",
+            "instance": "MyContract",
             "entry": "getCount",
             "calldata": [
-                "counter2.address"
+                "Counter2.address"
             ],
             "expected": [
                 "0"
             ]
         },
         {
-            "instance": "my_contract",
+            "instance": "MyContract",
             "entry": "incrementCounter",
             "calldata": [
-                "counter1.address"
+                "Counter1.address"
             ]
         },
         {
-            "instance": "my_contract",
+            "instance": "MyContract",
             "entry": "incrementCounter",
             "calldata": [
-                "counter2.address"
+                "Counter2.address"
             ]
         },
         {
-            "instance": "my_contract",
+            "instance": "MyContract",
             "entry": "incrementCounter",
             "calldata": [
-                "counter1.address"
+                "Counter1.address"
             ]
         },
         {
-            "instance": "my_contract",
+            "instance": "MyContract",
             "entry": "getCount",
             "calldata": [
-                "counter1.address"
+                "Counter1.address"
             ],
             "expected": [
                 "2"
             ]
         },
         {
-            "instance": "my_contract",
+            "instance": "MyContract",
             "entry": "getCount",
             "calldata": [
-                "counter2.address"
+                "Counter2.address"
             ]
         }
     ],
@@ -123,9 +123,9 @@
     ]
 } ],
     "contracts": {
-        "my_contract": "my_contract.vy",
-        "counter1": "counter.vy",
-        "counter2": "counter.vy",
-        "main": "main.vy"
+        "MyContract": "my_contract.vy",
+        "Counter1": "counter.vy",
+        "Counter2": "counter.vy",
+        "Main": "main.vy"
     }
 }

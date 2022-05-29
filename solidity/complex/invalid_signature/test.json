@@ -2,10 +2,10 @@
     "name": "entry",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "main",
             "calldata": [
-                "callable.address"
+                "Callable.address"
             ]
         }
     ],
@@ -15,7 +15,7 @@
     }
 } ],
     "contracts": {
-        "main": "main.sol:Main",
-        "callable": "callable.sol:Callable"
+        "Main": "main.sol:Main",
+        "Callable": "callable.sol:Callable"
     }
 }

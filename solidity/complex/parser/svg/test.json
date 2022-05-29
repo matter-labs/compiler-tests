@@ -4,12 +4,12 @@
     "expected": []
 } ],
     "contracts": {
-        "main": "main.sol:LandSvgLib",
-        "base64": "base64.sol:Base64",
-        "prbmath": "PRBMath.sol:PRBMath"
+        "LandSvgLib": "main.sol:LandSvgLib",
+        "Base64": "base64.sol:Base64",
+        "PRBMath": "PRBMath.sol:PRBMath"
     },
     "libraries": {
-        "base64.sol": { "Base64": "base64" },
-        "PRBMath.sol": { "PRBMath": "prbmath" }
+        "base64.sol": { "Base64": "Base64" },
+        "PRBMath.sol": { "PRBMath": "PRBMath" }
     }
 }

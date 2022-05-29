@@ -2,7 +2,7 @@
     "name": "first",
     "input": [
         {
-            "instance": "first",
+            "instance": "First",
             "entry": "f",
             "calldata": [
                 "5"
@@ -16,7 +16,7 @@
     "name": "second",
     "input": [
         {
-            "instance": "first",
+            "instance": "First",
             "entry": "f",
             "calldata": [
                 "22"
@@ -30,7 +30,7 @@
     "name": "third",
     "input": [
         {
-            "instance": "first",
+            "instance": "First",
             "entry": "f",
             "calldata": [
                 "763142234623232323"
@@ -42,6 +42,6 @@
     ]
 } ],
     "contracts": {
-        "first": "first.sol:First"
+        "First": "first.sol:First"
     }
 }

@@ -5,7 +5,7 @@
 //!             "entry": "complex",
 //!             "calldata": [
 //!             ],
-//!             "storage": { "test.address": [
+//!             "storage": { "Test.address": [
 //!                 "1"
 //!             ] }
 //!         }

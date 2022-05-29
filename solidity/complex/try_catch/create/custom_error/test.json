@@ -3,7 +3,7 @@
         "name": "withoutMessage1",
         "input": [
             {
-                "instance": "main",
+                "instance": "Main",
                 "entry": "withoutMessage",
                 "calldata": [
                     "1"
@@ -17,7 +17,7 @@
         "name": "withoutMessage2",
         "input": [
             {
-                "instance": "main",
+                "instance": "Main",
                 "entry": "withoutMessage",
                 "calldata": [
                     "2"
@@ -31,7 +31,7 @@
         "name": "withoutMessage",
         "input": [
             {
-                "instance": "main",
+                "instance": "Main",
                 "entry": "withoutMessage",
                 "calldata": [
                     "0"
@@ -45,7 +45,7 @@
         "name": "withMessage1",
         "input": [
             {
-                "instance": "main",
+                "instance": "Main",
                 "entry": "withMessage",
                 "calldata": [
                     "1"
@@ -61,7 +61,7 @@
         "name": "withMessage2",
         "input": [
             {
-                "instance": "main",
+                "instance": "Main",
                 "entry": "withMessage",
                 "calldata": [
                     "2"
@@ -81,7 +81,7 @@
         "name": "withMessage",
         "input": [
             {
-                "instance": "main",
+                "instance": "Main",
                 "entry": "withMessage",
                 "calldata": [
                     "0"
@@ -94,6 +94,6 @@
         ]
     } ],
     "contracts": {
-        "main": "main.sol:Main"
+        "Main": "main.sol:Main"
     }
 }

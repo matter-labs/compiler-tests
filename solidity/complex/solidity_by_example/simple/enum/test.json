@@ -2,7 +2,7 @@
     "name": "default",
     "input": [
         {
-            "instance": "enum",
+            "instance": "Enum",
             "entry": "status",
             "calldata": [
             ]
@@ -13,6 +13,6 @@
     ]
 } ],
     "contracts": {
-        "enum": "main.sol:Enum"
+        "Enum": "main.sol:Enum"
     }
 }

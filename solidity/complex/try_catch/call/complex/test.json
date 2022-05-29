@@ -3,11 +3,11 @@
     "name": "error1",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "main",
             "calldata": [
                 "1",
-                "callable.address"
+                "Callable.address"
             ]
         }
     ],
@@ -21,11 +21,11 @@
     "name": "error2",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "main",
             "calldata": [
                 "2",
-                "callable.address"
+                "Callable.address"
             ]
         }
     ],
@@ -38,11 +38,11 @@
     "name": "error3",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "main",
             "calldata": [
                 "3",
-                "callable.address"
+                "Callable.address"
             ]
         }
     ],
@@ -55,11 +55,11 @@
     "name": "error",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "main",
             "calldata": [
                 "0",
-                "callable.address"
+                "Callable.address"
             ]
         }
     ],
@@ -69,7 +69,7 @@
     ]
 } ],
     "contracts": {
-        "main": "main.sol:Main",
-        "callable": "callable.sol:Callable"
+        "Main": "main.sol:Main",
+        "Callable": "callable.sol:Callable"
     }
 }

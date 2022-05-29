@@ -2,11 +2,11 @@
     "name": "first",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "main",
             "calldata": [
                 "12", "24", "123", "54", "76", "78", "122", "100",
-                "callable.address"
+                "Callable.address"
             ]
         }
     ],
@@ -17,11 +17,11 @@
     "name": "second",
     "input": [
         {
-            "instance": "main",
+            "instance": "Main",
             "entry": "main",
             "calldata": [
                 "89459845", "8433", "0", "12200", "76", "1", "255", "1000000",
-                "callable.address"
+                "Callable.address"
             ]
         }
     ],
@@ -30,7 +30,7 @@
     ]
 } ],
     "contracts": {
-        "main": "main.vy",
-        "callable": "callable.vy"
+        "Main": "main.vy",
+        "Callable": "callable.vy"
     }
 }

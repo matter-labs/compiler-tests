@@ -4,7 +4,7 @@
     "input": [
         {
             "comment": "The DAI token constructor",
-            "instance": "dai_token",
+            "instance": "DAI",
             "constructor": true,
             "calldata": [
                 "0", "0", "18", "0"
@@ -29,7 +29,7 @@
         },
         {
             "comment": "The USDC token constructor",
-            "instance": "usdc_token",
+            "instance": "USDC",
             "constructor": true,
             "calldata": [
                 "0", "0", "6", "0"
@@ -54,7 +54,7 @@
         },
         {
             "comment": "The USDT token constructor",
-            "instance": "usdt_token",
+            "instance": "USDT",
             "constructor": true,
             "calldata": [
                 "0", "0", "6", "0"
@@ -79,7 +79,7 @@
         },
         {
             "comment": "The Curve LP Token constructor",
-            "instance": "curve_token",
+            "instance": "CurveToken",
             "constructor": true,
             "calldata": [
                 "0", "0"
@@ -105,14 +105,14 @@
         },
         {
             "comment": "The StableSwap3Pool constructor",
-            "instance": "stable_swap_3pool",
+            "instance": "StableSwap3Pool",
             "constructor": true,
             "calldata": [
                 "0x0000000000000000000000000000000000000100",
-                "dai_token.address",
-                "usdc_token.address",
-                "usdt_token.address",
-                "curve_token.address",
+                "DAI.address",
+                "USDC.address",
+                "USDT.address",
+                "CurveToken.address",
                 "100",
                 "4000000",
                 "0"
@@ -123,17 +123,17 @@
         },
         {
             "comment": "Setting pool as minter for Curve LP Token",
-            "instance": "curve_token",
+            "instance": "CurveToken",
             "entry": "set_minter",
             "calldata": [
-                "stable_swap_3pool.address"
+                "StableSwap3Pool.address"
             ],
             "caller": "0xdeadbeef00000000000000000000000000000001"
         },
 
         {
             "comment": "Minting the DAI token for test on address 0x0..042",
-            "instance": "dai_token",
+            "instance": "DAI",
             "entry": "mint",
             "calldata": [
                 "0xdeadbeef00000000000000000000000000000042",
@@ -158,7 +158,7 @@
         },
         {
             "comment": "Minting the USDC token for test on address 0x0..042",
-            "instance": "usdc_token",
+            "instance": "USDC",
             "entry": "mint",
             "calldata": [
                 "0xdeadbeef00000000000000000000000000000042",
@@ -183,7 +183,7 @@
         },
         {
             "comment": "Minting the USDT token for test on address 0x0..042",
-            "instance": "usdt_token",
+            "instance": "USDT",
             "entry": "mint",
             "calldata": [
                 "0xdeadbeef00000000000000000000000000000042",
@@ -208,7 +208,7 @@
         },
         {
             "comment": "Minting the DAI token for test on address 0x0..069",
-            "instance": "dai_token",
+            "instance": "DAI",
             "entry": "mint",
             "calldata": [
                 "0xdeadbeef00000000000000000000000000000069",
@@ -235,11 +235,11 @@
 
         {
             "comment": "Approving transfer DAI token for add liquidity to pool",
-            "instance": "dai_token",
+            "instance": "DAI",
             "entry": "approve",
             "caller": "0xdeadbeef00000000000000000000000000000042",
             "calldata": [
-                "stable_swap_3pool.address",
+                "StableSwap3Pool.address",
                 "1000000000000000000"
             ],
             "expected": {
@@ -251,7 +251,7 @@
                         "topics": [
                             "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925",
                             "0xdeadbeef00000000000000000000000000000042",
-                            "stable_swap_3pool.address"
+                            "StableSwap3Pool.address"
                         ],
                         "values": [
                             "1000000000000000000"
@@ -263,11 +263,11 @@
         },
         {
             "comment": "Approving transfer USDC token for add liquidity to pool",
-            "instance": "usdc_token",
+            "instance": "USDC",
             "entry": "approve",
             "caller": "0xdeadbeef00000000000000000000000000000042",
             "calldata": [
-                "stable_swap_3pool.address", "1000000"
+                "StableSwap3Pool.address", "1000000"
             ],
             "expected": {
                 "return_data": [
@@ -278,7 +278,7 @@
                         "topics": [
                             "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925",
                             "0xdeadbeef00000000000000000000000000000042",
-                            "stable_swap_3pool.address"
+                            "StableSwap3Pool.address"
                         ],
                         "values": [
                             "1000000"
@@ -290,11 +290,11 @@
         },
         {
             "comment": "Approving transfer USDT token for add liquidity to pool",
-            "instance": "usdt_token",
+            "instance": "USDT",
             "entry": "approve",
             "caller": "0xdeadbeef00000000000000000000000000000042",
             "calldata": [
-                "stable_swap_3pool.address", "1000000"
+                "StableSwap3Pool.address", "1000000"
             ],
             "expected": {
                 "return_data": [
@@ -305,7 +305,7 @@
                         "topics": [
                             "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925",
                             "0xdeadbeef00000000000000000000000000000042",
-                            "stable_swap_3pool.address"
+                            "StableSwap3Pool.address"
                         ],
                         "values": [
                             "1000000"
@@ -317,7 +317,7 @@
         },
         {
             "comment": "Adding liquidity with proportion 1:1:1",
-            "instance": "stable_swap_3pool",
+            "instance": "StableSwap3Pool",
             "caller": "0xdeadbeef00000000000000000000000000000042",
             "entry": "add_liquidity",
             "calldata": [
@@ -331,7 +331,7 @@
                         "topics": [
                             "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
                             "0xdeadbeef00000000000000000000000000000042",
-                            "stable_swap_3pool.address"
+                            "StableSwap3Pool.address"
                         ],
                         "values": [
                             "1000000000000000000"
@@ -341,7 +341,7 @@
                         "topics": [
                             "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
                             "0xdeadbeef00000000000000000000000000000042",
-                            "stable_swap_3pool.address"
+                            "StableSwap3Pool.address"
                         ],
                         "values": [
                             "1000000"
@@ -351,7 +351,7 @@
                         "topics": [
                             "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
                             "0xdeadbeef00000000000000000000000000000042",
-                            "stable_swap_3pool.address"
+                            "StableSwap3Pool.address"
                         ],
                         "values": [
                             "1000000"
@@ -385,7 +385,7 @@
         },
         {
             "comment": "Checking the balance of LP token after adding liquidity",
-            "instance": "curve_token",
+            "instance": "CurveToken",
             "entry": "balanceOf",
             "calldata": [
                 "0xdeadbeef00000000000000000000000000000042"
@@ -397,11 +397,11 @@
 
         {
             "comment": "Approving transfer DAI token for exchange",
-            "instance": "dai_token",
+            "instance": "DAI",
             "caller": "0xdeadbeef00000000000000000000000000000042",
             "entry": "approve",
             "calldata": [
-                "stable_swap_3pool.address", "10000000000000000"
+                "StableSwap3Pool.address", "10000000000000000"
             ],
             "expected": {
                 "return_data": [
@@ -412,7 +412,7 @@
                         "topics": [
                             "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925",
                             "0xdeadbeef00000000000000000000000000000042",
-                            "stable_swap_3pool.address"
+                            "StableSwap3Pool.address"
                         ],
                         "values": [
                             "10000000000000000"
@@ -424,7 +424,7 @@
         },
         {
             "comment": "Exchanging DAI token for USDT token",
-            "instance": "stable_swap_3pool",
+            "instance": "StableSwap3Pool",
             "entry": "exchange",
             "caller": "0xdeadbeef00000000000000000000000000000042",
             "calldata": [
@@ -441,7 +441,7 @@
                         "topics": [
                             "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
                             "0xdeadbeef00000000000000000000000000000042",
-                            "stable_swap_3pool.address"
+                            "StableSwap3Pool.address"
                         ],
                         "values": [
                             "10000000000000000"
@@ -450,7 +450,7 @@
                     {
                         "topics": [
                             "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
-                            "stable_swap_3pool.address",
+                            "StableSwap3Pool.address",
                             "0xdeadbeef00000000000000000000000000000042"
                         ],
                         "values": [
@@ -475,7 +475,7 @@
         },
         {
             "comment": "Checking the balance of USDT token after adding liquidity and exchange",
-            "instance": "usdt_token",
+            "instance": "USDT",
             "entry": "balanceOf",
             "calldata": [
                 "0xdeadbeef00000000000000000000000000000042"
@@ -494,7 +494,7 @@
     "input": [
         {
             "comment": "The DAI token constructor",
-            "instance": "dai_token",
+            "instance": "DAI",
             "constructor": true,
             "calldata": [
                 "0x80",
@@ -526,7 +526,7 @@
         },
         {
             "comment": "The USDC token constructor",
-            "instance": "usdc_token",
+            "instance": "USDC",
             "constructor": true,
             "calldata": [
                 "0x80",
@@ -558,7 +558,7 @@
         },
         {
             "comment": "The USDT token constructor",
-            "instance": "usdt_token",
+            "instance": "USDT",
             "constructor": true,
             "calldata": [
                 "0x80",
@@ -591,7 +591,7 @@
 
         {
             "comment": "Minting the DAI token for test on address 0x0..042",
-            "instance": "dai_token",
+            "instance": "DAI",
             "entry": "mint",
             "calldata": [
                 "0xdeadbeef00000000000000000000000000000042",
@@ -616,7 +616,7 @@
         },
         {
             "comment": "Minting the USDC token for test on address 0x0..042",
-            "instance": "usdc_token",
+            "instance": "USDC",
             "entry": "mint",
             "calldata": [
                 "0xdeadbeef00000000000000000000000000000042",
@@ -641,7 +641,7 @@
         },
         {
             "comment": "Minting the USDT token for test on address 0x0..042",
-            "instance": "usdt_token",
+            "instance": "USDT",
             "entry": "mint",
             "calldata": [
                 "0xdeadbeef00000000000000000000000000000042",
@@ -666,7 +666,7 @@
         },
         {
             "comment": "Minting the USDT token for test on address 0x0..069",
-            "instance": "usdt_token",
+            "instance": "USDT",
             "entry": "mint",
             "calldata": [
                 "0xdeadbeef00000000000000000000000000000069",
@@ -692,7 +692,7 @@
 
         {
             "comment": "The Curve LP Token constructor",
-            "instance": "curve_token",
+            "instance": "CurveToken",
             "constructor": true,
             "calldata": [
                 "0", "0"
@@ -718,15 +718,15 @@
         },
         {
             "comment": "The StableSwap3Pool constructor",
-            "instance": "stable_swap_3pool",
+            "instance": "StableSwap3Pool",
             "constructor": true,
             "caller": "0xdeadbeef00000000000000000000000000000069",
             "calldata": [
                 "0x0000000000000000000000000000000000000100",
-                "dai_token.address",
-                "usdc_token.address",
-                "usdt_token.address",
-                "curve_token.address",
+                "DAI.address",
+                "USDC.address",
+                "USDT.address",
+                "CurveToken.address",
                 "100",
                 "4000000",
                 "0"
@@ -737,21 +737,21 @@
         },
         {
             "comment": "Setting pool as minter for Curve LP Token",
-            "instance": "curve_token",
+            "instance": "CurveToken",
             "entry": "set_minter",
             "calldata": [
-                "stable_swap_3pool.address"
+                "StableSwap3Pool.address"
             ],
             "caller": "0xdeadbeef00000000000000000000000000000001"
         },
 
         {
             "comment": "Approving transfer DAI token for add liquidity to pool",
-            "instance": "dai_token",
+            "instance": "DAI",
             "caller": "0xdeadbeef00000000000000000000000000000042",
             "entry": "approve",
             "calldata": [
-                "stable_swap_3pool.address", "10000000000000000000000"
+                "StableSwap3Pool.address", "10000000000000000000000"
             ],
             "expected": {
                 "return_data": [
@@ -762,7 +762,7 @@
                         "topics": [
                             "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925",
                             "0xdeadbeef00000000000000000000000000000042",
-                            "stable_swap_3pool.address"
+                            "StableSwap3Pool.address"
                         ],
                         "values": [
                             "10000000000000000000000"
@@ -774,11 +774,11 @@
         },
         {
             "comment": "Approving transfer USDC token for add liquidity to pool",
-            "instance": "usdc_token",
+            "instance": "USDC",
             "caller": "0xdeadbeef00000000000000000000000000000042",
             "entry": "approve",
             "calldata": [
-                "stable_swap_3pool.address", "100000000"
+                "StableSwap3Pool.address", "100000000"
             ],
             "expected": {
                 "return_data": [
@@ -789,7 +789,7 @@
                         "topics": [
                             "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925",
                             "0xdeadbeef00000000000000000000000000000042",
-                            "stable_swap_3pool.address"
+                            "StableSwap3Pool.address"
                         ],
                         "values": [
                             "100000000"
@@ -801,11 +801,11 @@
         },
         {
             "comment": "Approving transfer USDT token for add liquidity to pool",
-            "instance": "usdt_token",
+            "instance": "USDT",
             "caller": "0xdeadbeef00000000000000000000000000000042",
             "entry": "approve",
             "calldata": [
-                "stable_swap_3pool.address", "1000000000"
+                "StableSwap3Pool.address", "1000000000"
             ],
             "expected": {
                 "return_data": [
@@ -816,7 +816,7 @@
                         "topics": [
                             "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925",
                             "0xdeadbeef00000000000000000000000000000042",
-                            "stable_swap_3pool.address"
+                            "StableSwap3Pool.address"
                         ],
                         "values": [
                             "1000000000"
@@ -828,7 +828,7 @@
         },
         {
             "comment": "Adding liquidity with proportion 100:1:10",
-            "instance": "stable_swap_3pool",
+            "instance": "StableSwap3Pool",
             "caller": "0xdeadbeef00000000000000000000000000000042",
             "entry": "add_liquidity",
             "calldata": [
@@ -842,7 +842,7 @@
                         "topics": [
                             "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
                             "0xdeadbeef00000000000000000000000000000042",
-                            "stable_swap_3pool.address"
+                            "StableSwap3Pool.address"
                         ],
                         "values": [
                             "10000000000000000000000"
@@ -852,7 +852,7 @@
                         "topics": [
                             "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
                             "0xdeadbeef00000000000000000000000000000042",
-                            "stable_swap_3pool.address"
+                            "StableSwap3Pool.address"
                         ],
                         "values": [
                             "100000000"
@@ -862,7 +862,7 @@
                         "topics": [
                             "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
                             "0xdeadbeef00000000000000000000000000000042",
-                            "stable_swap_3pool.address"
+                            "StableSwap3Pool.address"
                         ],
                         "values": [
                             "1000000000"
@@ -896,7 +896,7 @@
         },
         {
             "comment": "Checking the balance of LP token after adding liquidity",
-            "instance": "curve_token",
+            "instance": "CurveToken",
             "entry": "balanceOf",
             "caller": "0xdeadbeef00000000000000000000000000000042",
             "calldata": [
@@ -909,11 +909,11 @@
 
         {
             "comment": "Approving transfer DAI token for exchange",
-            "instance": "dai_token",
+            "instance": "DAI",
             "caller": "0xdeadbeef00000000000000000000000000000042",
             "entry": "approve",
             "calldata": [
-                "stable_swap_3pool.address", "10000000000000000000"
+                "StableSwap3Pool.address", "10000000000000000000"
             ],
             "expected": {
                 "return_data": [
@@ -924,7 +924,7 @@
                         "topics": [
                             "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925",
                             "0xdeadbeef00000000000000000000000000000042",
-                            "stable_swap_3pool.address"
+                            "StableSwap3Pool.address"
                         ],
                         "values": [
                             "10000000000000000000"
@@ -936,7 +936,7 @@
         },
         {
             "comment": "Checking the balance of USDC token before exchange",
-            "instance": "usdc_token",
+            "instance": "USDC",
             "entry": "balanceOf",
             "calldata": [
                 "0xdeadbeef00000000000000000000000000000042"
@@ -947,7 +947,7 @@
         },
         {
             "comment": "Exchanging DAI token for USDC token",
-            "instance": "stable_swap_3pool",
+            "instance": "StableSwap3Pool",
             "entry": "exchange",
             "caller": "0xdeadbeef00000000000000000000000000000042",
             "calldata": [
@@ -964,7 +964,7 @@
                         "topics": [
                             "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
                             "0xdeadbeef00000000000000000000000000000042",
-                            "stable_swap_3pool.address"
+                            "StableSwap3Pool.address"
                         ],
                         "values": [
                             "10000000000000000000"
@@ -973,7 +973,7 @@
                     {
                         "topics": [
                             "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
-                            "stable_swap_3pool.address",
+                            "StableSwap3Pool.address",
                             "0xdeadbeef00000000000000000000000000000042"
                         ],
                         "values": [
@@ -998,7 +998,7 @@
         },
         {
             "comment": "Checking the balance of USDC token after adding liquidity and exchange",
-            "instance": "usdc_token",
+            "instance": "USDC",
             "entry": "balanceOf",
             "calldata": [
                 "0xdeadbeef00000000000000000000000000000042"
@@ -1010,7 +1010,7 @@
 
         {
             "comment": "Checking the balance of LP token before removing liquidity",
-            "instance": "curve_token",
+            "instance": "CurveToken",
             "entry": "balanceOf",
             "caller": "0xdeadbeef00000000000000000000000000000042",
             "calldata": [
@@ -1022,7 +1022,7 @@
         },
         {
             "comment": "Removing all the liquidity from the pool",
-            "instance": "stable_swap_3pool",
+            "instance": "StableSwap3Pool",
             "entry": "remove_liquidity(uint256,uint256[3])",
             "caller": "0xdeadbeef00000000000000000000000000000042",
             "calldata": [
@@ -1036,7 +1036,7 @@
                     {
                         "topics": [
                             "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
-                            "stable_swap_3pool.address",
+                            "StableSwap3Pool.address",
                             "0xdeadbeef00000000000000000000000000000042"
                         ],
                         "values": [
@@ -1046,7 +1046,7 @@
                     {
                         "topics": [
                             "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
-                            "stable_swap_3pool.address",
+                            "StableSwap3Pool.address",
                             "0xdeadbeef00000000000000000000000000000042"
                         ],
                         "values": [
@@ -1056,7 +1056,7 @@
                     {
                         "topics": [
                             "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
-                            "stable_swap_3pool.address",
+                            "StableSwap3Pool.address",
                             "0xdeadbeef00000000000000000000000000000042"
                         ],
                         "values": [
@@ -1090,7 +1090,7 @@
         },
         {
             "comment": "Check the balance of LP token after removing liquidity",
-            "instance": "curve_token",
+            "instance": "CurveToken",
             "entry": "balanceOf",
             "caller": "0xdeadbeef00000000000000000000000000000042",
             "calldata": [
@@ -1106,10 +1106,10 @@
     ]
 } ],
     "contracts": {
-        "stable_swap_3pool": "StableSwap3Pool.vy",
-        "curve_token": "CurveTokenV3.vy",
-        "dai_token": "ERC20/ERC20.vy",
-        "usdc_token": "ERC20/ERC20.vy",
-        "usdt_token": "ERC20/ERC20.vy"
+        "StableSwap3Pool": "StableSwap3Pool.vy",
+        "CurveToken": "CurveTokenV3.vy",
+        "DAI": "ERC20/ERC20.vy",
+        "USDC": "ERC20/ERC20.vy",
+        "USDT": "ERC20/ERC20.vy"
     }
 }

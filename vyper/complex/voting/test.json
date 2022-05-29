@@ -3,7 +3,7 @@
     "name": "first",
     "input": [
         {
-            "instance": "ballot",
+            "instance": "Ballot",
             "constructor": true,
             "calldata": [
                 "3",
@@ -16,35 +16,35 @@
             ]
         },
         {
-            "instance": "ballot",
+            "instance": "Ballot",
             "entry": "giveRightToVote",
             "calldata": [
                 "0xdeadbeef00000000000000000000000000000002"
             ]
         },
         {
-            "instance": "ballot",
+            "instance": "Ballot",
             "entry": "giveRightToVote",
             "calldata": [
                 "0xdeadbeef00000000000000000000000000000003"
             ]
         },
         {
-            "instance": "ballot",
+            "instance": "Ballot",
             "entry": "giveRightToVote",
             "calldata": [
                 "0xdeadbeef00000000000000000000000000000004"
             ]
         },
         {
-            "instance": "ballot",
+            "instance": "Ballot",
             "entry": "giveRightToVote",
             "calldata": [
                 "0xdeadbeef00000000000000000000000000000005"
             ]
         },
         {
-            "instance": "ballot",
+            "instance": "Ballot",
             "entry": "vote(uint256)",
             "caller": "0xdeadbeef00000000000000000000000000000002",
             "calldata": [
@@ -52,7 +52,7 @@
             ]
         },
         {
-            "instance": "ballot",
+            "instance": "Ballot",
             "entry": "vote(uint256)",
             "caller": "0xdeadbeef00000000000000000000000000000003",
             "calldata": [
@@ -60,7 +60,7 @@
             ]
         },
         {
-            "instance": "ballot",
+            "instance": "Ballot",
             "entry": "vote(uint256)",
             "caller": "0xdeadbeef00000000000000000000000000000004",
             "calldata": [
@@ -68,7 +68,7 @@
             ]
         },
         {
-            "instance": "ballot",
+            "instance": "Ballot",
             "entry": "vote(uint256)",
             "caller": "0xdeadbeef00000000000000000000000000000005",
             "calldata": [
@@ -76,7 +76,7 @@
             ]
         },
         {
-            "instance": "ballot",
+            "instance": "Ballot",
             "entry": "winnerName",
             "calldata": [
             ],
@@ -90,6 +90,6 @@
     ]
 } ],
     "contracts": {
-        "ballot": "ballot.vy"
+        "Ballot": "ballot.vy"
     }
 }
