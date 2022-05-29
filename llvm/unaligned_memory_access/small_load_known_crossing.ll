@@ -24,6 +24,12 @@ declare i32 @__personality()
 ; Function Attrs: noreturn nounwind
 define i256 @__entry(i256 %0, i256 %1, i1 %2) local_unnamed_addr #0 personality i32 ()* @__personality {
 entry:
+  br i1 %2, label %deploy, label %runtime
+deploy:
+  tail call void @__constructor()
+  unreachable
+
+runtime:
   %ptr = inttoptr i256 30 to i32 addrspace(2)*
   %data = load i32, i32 addrspace(2)* %ptr, align 1
 
@@ -31,6 +37,16 @@ entry:
   store i256 %data_extended, i256 addrspace(1)* inttoptr (i256 0 to i256 addrspace(1)*), align 32
 
   %abi_data = shl i256 32, 64
+  tail call void @llvm.syncvm.return(i256 %abi_data) #1
+  unreachable
+}
+
+; Function Attrs: noreturn nounwind
+define private void @__constructor() local_unnamed_addr #0 personality i32 ()* @__personality {
+  store i256 32, i256 addrspace(1)* inttoptr (i256 0 to i256 addrspace(1)*), align 32
+  store i256 0, i256 addrspace(1)* inttoptr (i256 32 to i256 addrspace(1)*), align 32
+
+  %abi_data = shl i256 64, 64
   tail call void @llvm.syncvm.return(i256 %abi_data) #1
   unreachable
 }
