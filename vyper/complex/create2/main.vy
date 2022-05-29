@@ -1,8 +1,7 @@
 import callable as Callable
 
 @external
-def main(salt: bytes32) -> uint256:
-    implementation: address = 0xdeADbeEf00000000000000000000000000000002
+def main(salt: bytes32, implementation: address) -> uint256:
     forwarder: address = create_forwarder_to(implementation, salt=salt)
 
     Callable(forwarder).set(10)

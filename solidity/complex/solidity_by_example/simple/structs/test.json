@@ -6,6 +6,6 @@
     ]
 } ],
     "contracts": {
-        "0xdeadbeef00000000000000000000000000000001": "main.sol:Todos"
+        "Todos": "main.sol:Todos"
     }
 }

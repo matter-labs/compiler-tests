@@ -3,7 +3,7 @@
         "name": "error1",
         "input": [
             {
-                "address": "0xdeadbeef00000000000000000000000000000001",
+                "instance": "Main",
                 "entry": "main",
                 "calldata": [
                     "1"
@@ -20,7 +20,7 @@
         "name": "error2",
         "input": [
             {
-                "address": "0xdeadbeef00000000000000000000000000000001",
+                "instance": "Main",
                 "entry": "main",
                 "calldata": [
                     "2"
@@ -36,7 +36,7 @@
         "name": "error3",
         "input": [
             {
-                "address": "0xdeadbeef00000000000000000000000000000001",
+                "instance": "Main",
                 "entry": "main",
                 "calldata": [
                     "3"
@@ -52,7 +52,7 @@
         "name": "error",
         "input": [
             {
-                "address": "0xdeadbeef00000000000000000000000000000001",
+                "instance": "Main",
                 "entry": "main",
                 "calldata": [
                     "0"
@@ -65,6 +65,6 @@
         ]
     } ],
     "contracts": {
-        "0xdeadbeef00000000000000000000000000000001": "main.sol:Main"
+        "Main": "main.sol:Main"
     }
 }

@@ -5,6 +5,9 @@
 #!             "constructor": true,
 #!             "calldata": [
 #!                 "7", "6", "0"
+#!             ],
+#!             "expected": [
+#!                 "*"
 #!             ]
 #!         },
 #!         {
@@ -23,21 +26,13 @@
 #!             "constructor": true,
 #!             "calldata": [
 #!                 "7", "6", "1"
-#!             ],
-#!             "expected": {
-#!                 "return_data": [],
-#!                 "exception": true
-#!             }
-#!         },
-#!         {
-#!             "entry": "get",
-#!             "calldata": [
 #!             ]
 #!         }
 #!     ],
-#!     "expected": [
-#!         "0"
-#!     ]
+#!     "expected": {
+#!         "return_data": [],
+#!         "exception": true
+#!     }
 #! } ] }
 
 c: uint256

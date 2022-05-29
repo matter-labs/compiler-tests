@@ -4,6 +4,9 @@
 //!         {
 //!             "constructor": true,
 //!             "calldata": [
+//!             ],
+//!             "expected": [
+//!                 "*"
 //!             ]
 //!         },
 //!         {

@@ -2,13 +2,16 @@
     "name": "tryCatchExternalCallFailed",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "Test",
             "caller": "0xdeadbeef00000000000000000000000000000042",
             "constructor": true,
-            "calldata": []
+            "calldata": [],
+            "expected": [
+                "*"
+            ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "Test",
             "caller": "0xdeadbeef00000000000000000000000000000042",
             "entry": "tryCatchExternalCall",
             "calldata": [
@@ -36,13 +39,16 @@
     "name": "tryCatchExternalCallOk",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "Test",
             "caller": "0xdeadbeef00000000000000000000000000000042",
             "constructor": true,
-            "calldata": []
+            "calldata": [],
+            "expected": [
+                "*"
+            ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "Test",
             "caller": "0xdeadbeef00000000000000000000000000000042",
             "entry": "tryCatchExternalCall",
             "calldata": [
@@ -70,13 +76,16 @@
     "name": "tryCatchNewContractError",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "Test",
             "caller": "0xdeadbeef00000000000000000000000000000042",
             "constructor": true,
-            "calldata": []
+            "calldata": [],
+            "expected": [
+                "*"
+            ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "Test",
             "caller": "0xdeadbeef00000000000000000000000000000042",
             "entry": "tryCatchNewContract",
             "calldata": [
@@ -104,13 +113,16 @@
     "name": "tryCatchNewContractErrorBytes",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "Test",
             "caller": "0xdeadbeef00000000000000000000000000000042",
             "constructor": true,
-            "calldata": []
+            "calldata": [],
+            "expected": [
+                "*"
+            ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "Test",
             "caller": "0xdeadbeef00000000000000000000000000000042",
             "entry": "tryCatchNewContract",
             "calldata": [
@@ -155,13 +167,16 @@
     "name": "tryCatchNewContractOk",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "Test",
             "caller": "0xdeadbeef00000000000000000000000000000042",
             "constructor": true,
-            "calldata": []
+            "calldata": [],
+            "expected": [
+                "*"
+            ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "Test",
             "caller": "0xdeadbeef00000000000000000000000000000042",
             "entry": "tryCatchNewContract",
             "calldata": [
@@ -187,6 +202,6 @@
     }
 } ],
     "contracts": {
-        "0xdeadbeef00000000000000000000000000000001": "try_catch.sol:Test"
+        "Test": "try_catch.sol:Test"
     }
 }

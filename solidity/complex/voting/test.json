@@ -3,7 +3,7 @@
     "name": "first",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "Ballot",
             "constructor": true,
             "calldata": [
                 "32",
@@ -11,38 +11,41 @@
                 "70",
                 "5",
                 "10"
+            ],
+            "expected": [
+                "*"
             ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "Ballot",
             "entry": "giveRightToVote",
             "calldata": [
                 "0x0000000000000000000000000000000000000002"
             ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "Ballot",
             "entry": "giveRightToVote",
             "calldata": [
                 "0x0000000000000000000000000000000000000003"
             ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "Ballot",
             "entry": "giveRightToVote",
             "calldata": [
                 "0x0000000000000000000000000000000000000004"
             ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "Ballot",
             "entry": "giveRightToVote",
             "calldata": [
                 "0x0000000000000000000000000000000000000005"
             ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "Ballot",
             "entry": "vote",
             "caller": "0x0000000000000000000000000000000000000002",
             "calldata": [
@@ -50,7 +53,7 @@
             ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "Ballot",
             "entry": "vote",
             "caller": "0x0000000000000000000000000000000000000003",
             "calldata": [
@@ -58,7 +61,7 @@
             ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "Ballot",
             "entry": "vote",
             "caller": "0x0000000000000000000000000000000000000004",
             "calldata": [
@@ -66,7 +69,7 @@
             ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "Ballot",
             "entry": "vote",
             "caller": "0x0000000000000000000000000000000000000005",
             "calldata": [
@@ -74,7 +77,7 @@
             ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "Ballot",
             "entry": "winnerName",
             "calldata": [
             ],
@@ -88,6 +91,6 @@
     ]
 } ],
     "contracts": {
-        "0xdeadbeef00000000000000000000000000000001": "ballot.sol:Ballot"
+        "Ballot": "ballot.sol:Ballot"
     }
 }

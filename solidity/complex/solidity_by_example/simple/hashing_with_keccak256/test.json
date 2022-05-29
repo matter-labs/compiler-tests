@@ -2,7 +2,7 @@
     "name": "hashFunction",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "HashFunction",
             "entry": "hash",
             "calldata": [
                 "0x60",
@@ -16,7 +16,7 @@
             ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "HashFunction",
             "entry": "collision",
             "calldata": [
                 "0x40",
@@ -31,7 +31,7 @@
             ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "HashFunction",
             "entry": "collision",
             "calldata": [
                 "0x40",
@@ -50,7 +50,7 @@
     "name": "guessTheMagicWord",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000002",
+            "instance": "GuessTheMagicWord",
             "entry": "guess",
             "calldata": [
                 "0x20",
@@ -62,7 +62,7 @@
             ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000002",
+            "instance": "GuessTheMagicWord",
             "entry": "guess",
             "calldata": [
                 "0x20",
@@ -76,7 +76,7 @@
     ]
 } ],
     "contracts": {
-        "0xdeadbeef00000000000000000000000000000001": "main.sol:HashFunction",
-        "0xdeadbeef00000000000000000000000000000002": "main.sol:GuessTheMagicWord"
+        "HashFunction": "main.sol:HashFunction",
+        "GuessTheMagicWord": "main.sol:GuessTheMagicWord"
     }
 }

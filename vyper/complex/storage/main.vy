@@ -1,13 +1,14 @@
 import storage as Storage
 
 initial: uint256
+_storage: Storage
 
 @external
-def __init__(_initial: uint256):
+def __init__(_initial: uint256, __storage: address):
     self.initial = _initial
+    self._storage = Storage(__storage)
 
 @external
 def main(key: uint256, _value: uint256) -> uint256:
-    _storage: address = 0xdeADbeEf00000000000000000000000000000002
-    Storage(_storage).set(key, _value)
-    return Storage(_storage).get(key) + self.initial
+    self._storage.set(key, _value)
+    return self._storage.get(key) + self.initial

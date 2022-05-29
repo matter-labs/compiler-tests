@@ -2,10 +2,11 @@
     "name": "withoutMessage1",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "Main",
             "entry": "withoutMessage",
             "calldata": [
-                "1"
+                "1",
+                "Callable.address"
             ]
         }
     ],
@@ -16,10 +17,11 @@
     "name": "withoutMessage2",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "Main",
             "entry": "withoutMessage",
             "calldata": [
-                "2"
+                "2",
+                "Callable.address"
             ]
         }
     ],
@@ -30,10 +32,11 @@
     "name": "withoutMessage3",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "Main",
             "entry": "withoutMessage",
             "calldata": [
-                "3"
+                "3",
+                "Callable.address"
             ]
         }
     ],
@@ -44,10 +47,11 @@
     "name": "withoutMessage4",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "Main",
             "entry": "withoutMessage",
             "calldata": [
-                "4"
+                "4",
+                "Callable.address"
             ]
         }
     ],
@@ -58,10 +62,11 @@
     "name": "withoutMessage5",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "Main",
             "entry": "withoutMessage",
             "calldata": [
-                "5"
+                "5",
+                "Callable.address"
             ]
         }
     ],
@@ -72,10 +77,11 @@
     "name": "withoutMessage",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "Main",
             "entry": "withoutMessage",
             "calldata": [
-                "0"
+                "0",
+                "Callable.address"
             ]
         }
     ],
@@ -86,10 +92,11 @@
     "name": "withMessage1",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "Main",
             "entry": "withMessage",
             "calldata": [
-                "1"
+                "1",
+                "Callable.address"
             ]
         }
     ],
@@ -101,10 +108,11 @@
     "name": "withMessage2",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "Main",
             "entry": "withMessage",
             "calldata": [
-                "2"
+                "2",
+                "Callable.address"
             ]
         }
     ],
@@ -120,10 +128,11 @@
     "name": "withMessage3",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "Main",
             "entry": "withMessage",
             "calldata": [
-                "3"
+                "3",
+                "Callable.address"
             ]
         }
     ],
@@ -135,10 +144,11 @@
     "name": "withMessage4",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "Main",
             "entry": "withMessage",
             "calldata": [
-                "4"
+                "4",
+                "Callable.address"
             ]
         }
     ],
@@ -154,10 +164,11 @@
     "name": "withMessage5",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "Main",
             "entry": "withMessage",
             "calldata": [
-                "5"
+                "5",
+                "Callable.address"
             ]
         }
     ],
@@ -169,10 +180,11 @@
     "name": "withMessage",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "Main",
             "entry": "withMessage",
             "calldata": [
-                "0"
+                "0",
+                "Callable.address"
             ]
         }
     ],
@@ -184,10 +196,11 @@
     "name": "withStringMessage1",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "Main",
             "entry": "withStringMessage",
             "calldata": [
-                "1"
+                "1",
+                "Callable.address"
             ]
         }
     ],
@@ -199,10 +212,11 @@
     "name": "withStringMessage2",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "Main",
             "entry": "withStringMessage",
             "calldata": [
-                "2"
+                "2",
+                "Callable.address"
             ]
         }
     ],
@@ -215,10 +229,11 @@
     "name": "withStringMessage3",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "Main",
             "entry": "withStringMessage",
             "calldata": [
-                "3"
+                "3",
+                "Callable.address"
             ]
         }
     ],
@@ -230,10 +245,11 @@
     "name": "withStringMessage4",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "Main",
             "entry": "withStringMessage",
             "calldata": [
-                "4"
+                "4",
+                "Callable.address"
             ]
         }
     ],
@@ -246,10 +262,11 @@
     "name": "withStringMessage5",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "Main",
             "entry": "withStringMessage",
             "calldata": [
-                "5"
+                "5",
+                "Callable.address"
             ]
         }
     ],
@@ -261,10 +278,11 @@
     "name": "withStringMessage",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "Main",
             "entry": "withStringMessage",
             "calldata": [
-                "0"
+                "0",
+                "Callable.address"
             ]
         }
     ],
@@ -274,7 +292,7 @@
     ]
 } ],
     "contracts": {
-        "0xdeadbeef00000000000000000000000000000001": "main.sol:Main",
-        "0xdeadbeef00000000000000000000000000000002": "callable.sol:Callable"
+        "Main": "main.sol:Main",
+        "Callable": "callable.sol:Callable"
     }
 }

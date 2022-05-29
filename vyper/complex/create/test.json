@@ -2,16 +2,20 @@
     "name": "entry",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000002",
+            "instance": "Callable",
             "constructor": true,
             "calldata": [
                 "0x0"
+            ],
+            "expected": [
+                "*"
             ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "Main",
             "entry": "main",
             "calldata": [
+                "Callable.address"
             ]
         }
     ],
@@ -20,7 +24,7 @@
     ]
 } ],
     "contracts": {
-        "0xdeadbeef00000000000000000000000000000001": "main.vy",
-        "0xdeadbeef00000000000000000000000000000002": "callable.vy"
+        "Main": "main.vy",
+        "Callable": "callable.vy"
     }
 }

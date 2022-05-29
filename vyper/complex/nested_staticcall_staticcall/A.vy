@@ -1,5 +1,5 @@
 import B as B
 
 @external
-def main():
-    raw_call(0xdeADbeEf00000000000000000000000000000002, slice(msg.data, 0, 4), is_static_call=True)
+def main(b: address, c: address):
+    raw_call(b, _abi_encode(c, method_id=method_id("main(address)")), is_static_call=True)

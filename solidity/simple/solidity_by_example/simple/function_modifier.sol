@@ -5,6 +5,9 @@
 //!             "caller": "0xDEADBEEF00000000000000000000000000000001",
 //!             "constructor": true,
 //!             "calldata": [
+//!             ],
+//!             "expected": [
+//!                 "*"
 //!             ]
 //!         },
 //!         {
@@ -30,6 +33,9 @@
 //!             "caller": "0xDEADBEEF00000000000000000000000000000001",
 //!             "constructor": true,
 //!             "calldata": [
+//!             ],
+//!             "expected": [
+//!                 "*"
 //!             ]
 //!         },
 //!         {
@@ -56,6 +62,9 @@
 //!             "caller": "0xDEADBEEF00000000000000000000000000000001",
 //!             "constructor": true,
 //!             "calldata": [
+//!             ],
+//!             "expected": [
+//!                 "*"
 //!             ]
 //!         },
 //!         {

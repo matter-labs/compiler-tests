@@ -2,10 +2,11 @@
     "name": "first",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "Main",
             "entry": "main",
             "calldata": [
-                "5"
+                "5",
+                "Storage.address"
             ]
         }
     ],
@@ -16,10 +17,11 @@
     "name": "second",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "Main",
             "entry": "main",
             "calldata": [
-                "3224423423"
+                "3224423423",
+                "Storage.address"
             ]
         }
     ],
@@ -28,7 +30,7 @@
     ]
 } ],
     "contracts": {
-        "0xdeadbeef00000000000000000000000000000001": "main.sol:Main",
-        "0xdeadbeef00000000000000000000000000000002": "storage.sol:Storage"
+        "Main": "main.sol:Main",
+        "Storage": "storage.sol:Storage"
     }
 }

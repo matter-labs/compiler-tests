@@ -2,49 +2,58 @@
     "name": "default",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "Lib",
             "constructor": true,
             "caller": "0xdeadbeef00000000000000000000000000000011",
             "calldata": [
+            ],
+            "expected": [
+                "*"
             ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000002",
+            "instance": "HackMe",
             "constructor": true,
             "caller": "0xdeadbeef00000000000000000000000000000011",
             "calldata": [
-                "0xdeadbeef00000000000000000000000000000001"
+                "Lib.address"
+            ],
+            "expected": [
+                "*"
             ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000003",
+            "instance": "Attack",
             "constructor": true,
             "caller": "0xdeadbeef00000000000000000000000000000012",
             "calldata": [
-                "0xdeadbeef00000000000000000000000000000002"
+                "HackMe.address"
+            ],
+            "expected": [
+                "*"
             ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000003",
+            "instance": "Attack",
             "caller": "0xdeadbeef00000000000000000000000000000012",
             "entry": "attack",
             "calldata": [
             ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000002",
+            "instance": "HackMe",
             "entry": "owner",
             "calldata": [
             ]
         }
     ],
     "expected": [
-        "0xdeadbeef00000000000000000000000000000003"
+        "Attack.address"
     ]
 } ],
     "contracts": {
-        "0xdeadbeef00000000000000000000000000000001": "lib.vy",
-        "0xdeadbeef00000000000000000000000000000002": "hack_me.vy",
-        "0xdeadbeef00000000000000000000000000000003": "attack.vy"
+        "Lib": "lib.vy",
+        "HackMe": "hack_me.vy",
+        "Attack": "attack.vy"
     }
 }

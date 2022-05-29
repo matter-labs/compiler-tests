@@ -2,30 +2,39 @@
     "name": "first",
     "input": [
         {
-            "address": "0xdeadbeef0000000000000000000000000000aaaa",
+            "instance": "Token1",
             "constructor": true,
             "calldata": [
                 "0", "0"
+            ],
+            "expected": [
+                "*"
             ]
         },
         {
-            "address": "0xdeadbeef0000000000000000000000000000bbbb",
+            "instance": "Token2",
             "constructor": true,
             "calldata": [
                 "0", "0"
+            ],
+            "expected": [
+                "*"
             ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "UniswapPair",
             "constructor": true,
             "calldata": [
-                "0xdeadbeef0000000000000000000000000000aaaa",
-                "0xdeadbeef0000000000000000000000000000bbbb"
+                "Token1.address",
+                "Token2.address"
+            ],
+            "expected": [
+                "*"
             ]
         },
 
         {
-            "address": "0xdeadbeef0000000000000000000000000000aaaa",
+            "instance": "Token1",
             "entry": "_mint",
             "calldata": [
                 "0xdeadbeef00000000000000000000000000000042",
@@ -49,7 +58,7 @@
             }
         },
         {
-            "address": "0xdeadbeef0000000000000000000000000000bbbb",
+            "instance": "Token2",
             "entry": "_mint",
             "calldata": [
                 "0xdeadbeef00000000000000000000000000000042",
@@ -73,7 +82,7 @@
             }
         },
         {
-            "address": "0xdeadbeef0000000000000000000000000000aaaa",
+            "instance": "Token1",
             "entry": "_mint",
             "calldata": [
                 "0xdeadbeef00000000000000000000000000000069",
@@ -98,11 +107,11 @@
         },
 
         {
-            "address": "0xdeadbeef0000000000000000000000000000aaaa",
+            "instance": "Token1",
             "caller": "0xdeadbeef00000000000000000000000000000042",
             "entry": "transfer",
             "calldata": [
-                "0xdeadbeef00000000000000000000000000000001", "1000000"
+                "UniswapPair.address", "1000000"
             ],
             "expected": {
                 "return_data": [
@@ -113,7 +122,7 @@
                         "topics": [
                             "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
                             "0xdeadbeef00000000000000000000000000000042",
-                            "0xdeadbeef00000000000000000000000000000001"
+                            "UniswapPair.address"
                         ],
                         "values": [
                             "1000000"
@@ -124,11 +133,11 @@
             }
         },
         {
-            "address": "0xdeadbeef0000000000000000000000000000bbbb",
+            "instance": "Token2",
             "caller": "0xdeadbeef00000000000000000000000000000042",
             "entry": "transfer",
             "calldata": [
-                "0xdeadbeef00000000000000000000000000000001", "1000000"
+                "UniswapPair.address", "1000000"
             ],
             "expected": {
                 "return_data": [
@@ -139,7 +148,7 @@
                         "topics": [
                             "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
                             "0xdeadbeef00000000000000000000000000000042",
-                            "0xdeadbeef00000000000000000000000000000001"
+                            "UniswapPair.address"
                         ],
                         "values": [
                             "1000000"
@@ -151,8 +160,8 @@
         },
 
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
-            "caller": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "UniswapPair",
+            "caller": "UniswapPair.address",
             "entry": "mint",
             "calldata": [
                 "0xdeadbeef00000000000000000000000000000042"
@@ -194,7 +203,7 @@
                     {
                         "topics": [
                             "0x4c209b5fc8ad50758f13e2e1088ba56a560dff690a1c6fef26394f4c03821c4f",
-                            "0xdeadbeef00000000000000000000000000000001"
+                            "UniswapPair.address"
                         ],
                         "values": [
                             "1000000",
@@ -206,7 +215,7 @@
             }
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "UniswapPair",
             "entry": "balanceOf",
             "calldata": [
                 "0xdeadbeef00000000000000000000000000000042"
@@ -217,11 +226,11 @@
         },
 
         {
-            "address": "0xdeadbeef0000000000000000000000000000aaaa",
+            "instance": "Token1",
             "caller": "0xdeadbeef00000000000000000000000000000042",
             "entry": "transfer",
             "calldata": [
-                "0xdeadbeef00000000000000000000000000000001", "10000"
+                "UniswapPair.address", "10000"
             ],
             "expected": {
                 "return_data": [
@@ -232,7 +241,7 @@
                         "topics": [
                             "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
                             "0xdeadbeef00000000000000000000000000000042",
-                            "0xdeadbeef00000000000000000000000000000001"
+                            "UniswapPair.address"
                         ],
                         "values": [
                             "10000"
@@ -243,7 +252,7 @@
             }
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "UniswapPair",
             "entry": "swap",
             "caller": "0xdeadbeef00000000000000000000000000000042",
             "calldata": [
@@ -258,7 +267,7 @@
                     {
                         "topics": [
                             "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
-                            "0xdeadbeef00000000000000000000000000000001",
+                            "UniswapPair.address",
                             "0xdeadbeef00000000000000000000000000000042"
                         ],
                         "values": [
@@ -292,7 +301,7 @@
             }
         },
         {
-            "address": "0xdeadbeef0000000000000000000000000000bbbb",
+            "instance": "Token2",
             "entry": "balanceOf",
             "calldata": [
                 "0xdeadbeef00000000000000000000000000000042"
@@ -309,7 +318,7 @@
     "name": "second",
     "input": [
         {
-            "address": "0xdeadbeef0000000000000000000000000000aaaa",
+            "instance": "Token1",
             "constructor": true,
             "calldata": [
                 "0x40",
@@ -318,10 +327,13 @@
                 "0x4441490000000000000000000000000000000000000000000000000000000000",
                 "14",
                 "0x44616920537461626c65636f696e000000000000000000000000000000000000"
+            ],
+            "expected": [
+                "*"
             ]
         },
         {
-            "address": "0xdeadbeef0000000000000000000000000000bbbb",
+            "instance": "Token2",
             "constructor": true,
             "calldata": [
                 "0x40",
@@ -330,11 +342,14 @@
                 "0x5742544300000000000000000000000000000000000000000000000000000000",
                 "14",
                 "0x5772617070656420425443000000000000000000000000000000000000000000"
+            ],
+            "expected": [
+                "*"
             ]
         },
 
         {
-            "address": "0xdeadbeef0000000000000000000000000000aaaa",
+            "instance": "Token1",
             "entry": "_mint",
             "calldata": [
                 "0xdeadbeef00000000000000000000000000000042",
@@ -358,7 +373,7 @@
             }
         },
         {
-            "address": "0xdeadbeef0000000000000000000000000000bbbb",
+            "instance": "Token2",
             "entry": "_mint",
             "calldata": [
                 "0xdeadbeef00000000000000000000000000000042",
@@ -382,7 +397,7 @@
             }
         },
         {
-            "address": "0xdeadbeef0000000000000000000000000000bbbb",
+            "instance": "Token2",
             "entry": "_mint",
             "calldata": [
                 "0xdeadbeef00000000000000000000000000000069",
@@ -407,21 +422,24 @@
         },
 
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "UniswapPair",
             "caller": "0xdeadbeef00000000000000000000000000000069",
             "constructor": true,
             "calldata": [
-                "0xdeadbeef0000000000000000000000000000aaaa",
-                "0xdeadbeef0000000000000000000000000000bbbb"
+                "Token1.address",
+                "Token2.address"
+            ],
+            "expected": [
+                "*"
             ]
         },
 
         {
-            "address": "0xdeadbeef0000000000000000000000000000aaaa",
+            "instance": "Token1",
             "caller": "0xdeadbeef00000000000000000000000000000042",
             "entry": "transfer",
             "calldata": [
-                "0xdeadbeef00000000000000000000000000000001", "10000000000000000000000"
+                "UniswapPair.address", "10000000000000000000000"
             ],
             "expected": {
                 "return_data": [
@@ -432,7 +450,7 @@
                         "topics": [
                             "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
                             "0xdeadbeef00000000000000000000000000000042",
-                            "0xdeadbeef00000000000000000000000000000001"
+                            "UniswapPair.address"
                         ],
                         "values": [
                             "10000000000000000000000"
@@ -443,11 +461,11 @@
             }
         },
         {
-            "address": "0xdeadbeef0000000000000000000000000000bbbb",
+            "instance": "Token2",
             "caller": "0xdeadbeef00000000000000000000000000000042",
             "entry": "transfer",
             "calldata": [
-                "0xdeadbeef00000000000000000000000000000001", "100000000"
+                "UniswapPair.address", "100000000"
             ],
             "expected": {
                 "return_data": [
@@ -458,7 +476,7 @@
                         "topics": [
                             "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
                             "0xdeadbeef00000000000000000000000000000042",
-                            "0xdeadbeef00000000000000000000000000000001"
+                            "UniswapPair.address"
                         ],
                         "values": [
                             "100000000"
@@ -469,7 +487,7 @@
             }
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "UniswapPair",
             "entry": "mint",
             "caller": "0xdeadbeef00000000000000000000000000000042",
             "calldata": [
@@ -524,7 +542,7 @@
             }
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "UniswapPair",
             "entry": "balanceOf",
             "caller": "0xdeadbeef00000000000000000000000000000042",
             "calldata": [
@@ -536,11 +554,11 @@
         },
 
         {
-            "address": "0xdeadbeef0000000000000000000000000000aaaa",
+            "instance": "Token1",
             "caller": "0xdeadbeef00000000000000000000000000000042",
             "entry": "transfer",
             "calldata": [
-                "0xdeadbeef00000000000000000000000000000001", "10000000000000000000"
+                "UniswapPair.address", "10000000000000000000"
             ],
             "expected": {
                 "return_data": [
@@ -551,7 +569,7 @@
                         "topics": [
                             "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
                             "0xdeadbeef00000000000000000000000000000042",
-                            "0xdeadbeef00000000000000000000000000000001"
+                            "UniswapPair.address"
                         ],
                         "values": [
                             "10000000000000000000"
@@ -562,7 +580,7 @@
             }
         },
         {
-            "address": "0xdeadbeef0000000000000000000000000000bbbb",
+            "instance": "Token2",
             "entry": "balanceOf",
             "calldata": [
                 "0xdeadbeef00000000000000000000000000000042"
@@ -572,7 +590,7 @@
             ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "UniswapPair",
             "entry": "swap",
             "caller": "0xdeadbeef00000000000000000000000000000042",
             "calldata": [
@@ -587,7 +605,7 @@
                     {
                         "topics": [
                             "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
-                            "0xdeadbeef00000000000000000000000000000001",
+                            "UniswapPair.address",
                             "0xdeadbeef00000000000000000000000000000042"
                         ],
                         "values": [
@@ -621,7 +639,7 @@
             }
         },
         {
-            "address": "0xdeadbeef0000000000000000000000000000bbbb",
+            "instance": "Token2",
             "entry": "balanceOf",
             "calldata": [
                 "0xdeadbeef00000000000000000000000000000042"
@@ -632,7 +650,7 @@
         },
 
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "UniswapPair",
             "entry": "balanceOf",
             "caller": "0xdeadbeef00000000000000000000000000000042",
             "calldata": [
@@ -643,11 +661,11 @@
             ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "UniswapPair",
             "caller": "0xdeadbeef00000000000000000000000000000042",
             "entry": "transfer",
             "calldata": [
-                "0xdeadbeef00000000000000000000000000000001", "999999999999000"
+                "UniswapPair.address", "999999999999000"
             ],
             "expected": {
                 "return_data": [
@@ -658,7 +676,7 @@
                         "topics": [
                             "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
                             "0xdeadbeef00000000000000000000000000000042",
-                            "0xdeadbeef00000000000000000000000000000001"
+                            "UniswapPair.address"
                         ],
                         "values": [
                             "999999999999000"
@@ -669,7 +687,7 @@
             }
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "UniswapPair",
             "entry": "burn",
             "caller": "0xdeadbeef00000000000000000000000000000042",
             "calldata": [
@@ -684,7 +702,7 @@
                     {
                         "topics": [
                             "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
-                            "0xdeadbeef00000000000000000000000000000001",
+                            "UniswapPair.address",
                             "0x0000000000000000000000000000000000000000000000000000000000000000"
                         ],
                         "values": [
@@ -694,7 +712,7 @@
                     {
                         "topics": [
                             "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
-                            "0xdeadbeef00000000000000000000000000000001",
+                            "UniswapPair.address",
                             "0xdeadbeef00000000000000000000000000000042"
                         ],
                         "values": [
@@ -704,7 +722,7 @@
                     {
                         "topics": [
                             "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
-                            "0xdeadbeef00000000000000000000000000000001",
+                            "UniswapPair.address",
                             "0xdeadbeef00000000000000000000000000000042"
                         ],
                         "values": [
@@ -736,7 +754,7 @@
             }
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "UniswapPair",
             "entry": "balanceOf",
             "caller": "0xdeadbeef00000000000000000000000000000042",
             "calldata": [
@@ -752,14 +770,14 @@
     ]
 } ],
     "contracts": {
-        "0xdeadbeef00000000000000000000000000000001": "UniswapV2Pair.sol:UniswapV2Pair",
-        "0xdeadbeef00000000000000000000000000000002": "libraries/UQ112x112.sol:UQ112x112",
-        "0xdeadbeef00000000000000000000000000000003": "libraries/Math.sol:Math",
-        "0xdeadbeef0000000000000000000000000000aaaa": "ERC20/ERC20.sol:ERC20",
-        "0xdeadbeef0000000000000000000000000000bbbb": "ERC20/ERC20.sol:ERC20"
+        "UniswapPair": "UniswapV2Pair.sol:UniswapV2Pair",
+        "UQ112x112": "libraries/UQ112x112.sol:UQ112x112",
+        "Math": "libraries/Math.sol:Math",
+        "Token1": "ERC20/ERC20.sol:ERC20",
+        "Token2": "ERC20/ERC20.sol:ERC20"
     },
     "libraries": {
-        "libraries/UQ112x112.sol": { "UQ112x112": "0xdeadbeef00000000000000000000000000000001" },
-        "libraries/Math.sol": { "Math": "0xdeadbeef00000000000000000000000000000002" }
+        "libraries/UQ112x112.sol": { "UQ112x112": "UQ112x112" },
+        "libraries/Math.sol": { "Math": "Math" }
     }
 }

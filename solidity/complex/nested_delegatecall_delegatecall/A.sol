@@ -5,8 +5,8 @@ pragma solidity >=0.5.0;
 import "./B.sol";
 
 contract A {
-    function main() external returns (address) {
-        (bool success, bytes memory return_data) = address(0xdeADbeEf00000000000000000000000000000002).delegatecall(msg.data);
+    function main(address b, address c) external returns (address) {
+        (bool success, bytes memory return_data) = b.delegatecall(abi.encodeWithSignature("main(address)", c));
         address result = abi.decode(return_data, (address));
         return result;
     }

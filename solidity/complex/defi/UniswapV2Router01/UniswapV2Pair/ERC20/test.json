@@ -2,7 +2,7 @@
     "name": "decimals",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "ERC20",
             "constructor": true,
             "calldata": [
                 "0x40",
@@ -11,10 +11,13 @@
                 "0x6e616d6500000000000000000000000000000000000000000000000000000000",
                 "4",
                 "0x7465787400000000000000000000000000000000000000000000000000000000"
+            ],
+            "expected": [
+                "*"
             ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "ERC20",
             "entry": "decimals",
             "calldata": [
             ]
@@ -27,7 +30,7 @@
     "name": "double_mint_&_burn",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "ERC20",
             "constructor": true,
             "calldata": [
                 "0x40",
@@ -36,10 +39,13 @@
                 "0x6e616d6500000000000000000000000000000000000000000000000000000000",
                 "4",
                 "0x7465787400000000000000000000000000000000000000000000000000000000"
+            ],
+            "expected": [
+                "*"
             ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "ERC20",
             "entry": "_mint",
             "calldata": [
                 "0xdeadbeef00000000000000000000000000000042",
@@ -63,7 +69,7 @@
             }
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "ERC20",
             "entry": "_mint",
             "calldata": [
                 "0xdeadbeef00000000000000000000000000000042",
@@ -87,7 +93,7 @@
             }
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "ERC20",
             "entry": "_burn",
             "calldata": [
                 "0xdeadbeef00000000000000000000000000000042",
@@ -111,7 +117,7 @@
             }
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "ERC20",
             "entry": "balanceOf",
             "calldata": [
                 "0xdeadbeef00000000000000000000000000000042"
@@ -125,7 +131,7 @@
     "name": "approve",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "ERC20",
             "constructor": true,
             "calldata": [
                 "0x40",
@@ -134,10 +140,13 @@
                 "0x6e616d6500000000000000000000000000000000000000000000000000000000",
                 "4",
                 "0x7465787400000000000000000000000000000000000000000000000000000000"
+            ],
+            "expected": [
+                "*"
             ]
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "ERC20",
             "entry": "approve",
             "caller": "0xdeadbeef00000000000000000000000000000025",
             "calldata": [
@@ -164,7 +173,7 @@
             }
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "ERC20",
             "entry": "increaseAllowance",
             "caller": "0xdeadbeef00000000000000000000000000000025",
             "calldata": [
@@ -191,7 +200,7 @@
             }
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "ERC20",
             "entry": "decreaseAllowance",
             "caller": "0xdeadbeef00000000000000000000000000000025",
             "calldata": [
@@ -218,7 +227,7 @@
             }
         },
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "ERC20",
             "entry": "allowance",
             "calldata": [
                 "0xdeadbeef00000000000000000000000000000025",
@@ -231,6 +240,6 @@
     ]
 } ],
     "contracts": {
-        "0xdeadbeef00000000000000000000000000000001": "ERC20.sol:ERC20"
+        "ERC20": "ERC20.sol:ERC20"
     }
 }

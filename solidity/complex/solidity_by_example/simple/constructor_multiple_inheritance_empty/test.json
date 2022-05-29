@@ -2,7 +2,7 @@
     "name": "B",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000003",
+            "instance": "B",
             "entry": "name",
             "calldata": [
             ],
@@ -12,7 +12,7 @@
                 "0x496e70757420746f205800000000000000000000000000000000000000000000"
             ]
         }, {
-            "address": "0xdeadbeef00000000000000000000000000000003",
+            "instance": "B",
             "entry": "text",
             "calldata": [
             ]
@@ -25,6 +25,6 @@
     ]
 } ],
     "contracts": {
-        "0xdeadbeef00000000000000000000000000000003": "main.sol:B"
+        "B": "main.sol:B"
     }
 }

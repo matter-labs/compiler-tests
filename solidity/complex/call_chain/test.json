@@ -2,10 +2,12 @@
     "name": "first",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "First",
             "entry": "f",
             "calldata": [
-                "5"
+                "5",
+                "Second.address",
+                "Third.address"
             ]
         }
     ],
@@ -16,10 +18,12 @@
     "name": "second",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "First",
             "entry": "f",
             "calldata": [
-                "22"
+                "22",
+                "Second.address",
+                "Third.address"
             ]
         }
     ],
@@ -30,10 +34,12 @@
     "name": "third",
     "input": [
         {
-            "address": "0xdeadbeef00000000000000000000000000000001",
+            "instance": "First",
             "entry": "f",
             "calldata": [
-                "763142234623232323"
+                "763142234623232323",
+                "Second.address",
+                "Third.address"
             ]
         }
     ],
@@ -42,8 +48,8 @@
     ]
 } ],
     "contracts": {
-        "0xdeadbeef00000000000000000000000000000001": "first.sol:First",
-        "0xdeadbeef00000000000000000000000000000002": "second.sol:Second",
-        "0xdeadbeef00000000000000000000000000000003": "third.sol:Third"
+        "First": "first.sol:First",
+        "Second": "second.sol:Second",
+        "Third": "third.sol:Third"
     }
 }

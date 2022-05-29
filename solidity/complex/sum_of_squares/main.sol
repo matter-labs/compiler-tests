@@ -5,8 +5,7 @@ pragma solidity >=0.4.16;
 import "./square.sol";
 
 contract Main {
-    function main(uint n) public returns(uint) {
-        Square square = Square(address(0xdeADbeEf00000000000000000000000000000002));
+    function main(uint n, Square square) public returns(uint) {
         uint result = 0;
         for (uint i = 1; i <= n; i++) {
             result += square.square(i);

@@ -5,8 +5,7 @@ pragma solidity >=0.7.0;
 import "./callable.sol";
 
 contract Main {
-    function withoutMessage(uint reason) public returns(bool) {
-        Callable callable = Callable(0xdeADbeEf00000000000000000000000000000002);
+    function withoutMessage(uint reason, Callable callable) public returns(bool) {
         try callable.f(reason) {
             return true;
         } catch {
@@ -14,8 +13,7 @@ contract Main {
         }
     }
 
-    function withMessage(uint _reason) public returns(bytes memory) {
-        Callable callable = Callable(0xdeADbeEf00000000000000000000000000000002);
+    function withMessage(uint _reason, Callable callable) public returns(bytes memory) {
         try callable.f(_reason) {
             return "";
         } catch(bytes memory reason) {
@@ -23,8 +21,7 @@ contract Main {
         }
     }
 
-    function withStringMessage(uint _reason) public returns(string memory) {
-        Callable callable = Callable(0xdeADbeEf00000000000000000000000000000002);
+    function withStringMessage(uint _reason, Callable callable) public returns(string memory) {
         try callable.f(_reason) {
             return "";
         } catch Error(string memory reason) {
