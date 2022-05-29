@@ -1,0 +1,23 @@
+{ "cases": [ {
+    "name": "main",
+    "input": [
+        {
+            "instance": "main",
+            "entry": "main",
+            "calldata": [
+                "5"
+            ]
+        }
+    ],
+    "expected": [
+        "10"
+    ]
+} ],
+    "contracts": {
+        "main": "main.sol:Main",
+        "l": "library.sol:L"
+    },
+    "libraries": {
+        "library.sol": { "L": "l" }
+    }
+}
