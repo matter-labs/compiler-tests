@@ -1,4 +1,4 @@
-//! { "cases": [ {
+//! { "ignore": true, "cases": [ {
 //!     "name": "5_args_void_failure",
 //!     "input": [
 //!         {
