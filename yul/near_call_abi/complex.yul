@@ -71,7 +71,7 @@ object "Test" {
 
                 switch type
                 case 0 {
-                    result := ZKSYNC_NEAR_CALL_5_args_void(2343300, 13, 2, 1, 255, 11)
+                    ZKSYNC_NEAR_CALL_5_args_void(2343300, 13, 2, 1, 255, 11)
                     return(0, 0)
                 }
                 case 1 {
@@ -104,7 +104,7 @@ object "Test" {
                     return(0, 32)
                 }
 
-                mstore(0, result)
+                mstore(0, 66)
                 return(0, 32)
             }
 
