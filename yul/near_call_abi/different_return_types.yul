@@ -1,4 +1,4 @@
-//! { "ignore": true, "cases": [ {
+//! { "cases": [ {
 //!     "name": "void_failure",
 //!     "input": [
 //!         {
@@ -227,7 +227,7 @@ object "Test" {
             function ZKSYNC_NEAR_CALL_tuple2(abi_data) -> result1, result2 {
                 sstore(0, 0)
                 result1 := 1
-                result1 := 2
+                result2 := 2
             }
 
             function ZKSYNC_NEAR_CALL_tuple16(b) ->
