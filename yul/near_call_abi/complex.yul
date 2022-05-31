@@ -116,6 +116,7 @@ object "Test" {
                 result1, result2, result3, result4, result5, result6, result7, result8, result9, result10,
                 result11, result12, result13, result14, result15, result16, result17, result18, result19, result20
             {
+                sstore(0, 0)
                 result1 := arg1
                 result2 := arg2
                 result3 := arg3
