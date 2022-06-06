@@ -8,10 +8,17 @@
             ]
         }
     ],
-    "expected": {
+    "expected": [ {
+        "compiler_version": "<0.5",
+        "return_data": [
+            "1"
+        ],
+        "exception": false
+    }, {
+        "compiler_version": ">=0.5",
         "return_data": [],
         "exception": true
-    }
+    } ]
 } ],
     "contracts": {
         "D": "main.sol:D"
