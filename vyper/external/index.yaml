@@ -607,7 +607,8 @@ entries:
     enabled: true
     entries:
       account.vy:
-        enabled: true
+        enabled: false
+        comment: "Uses unsupported isoltest"
       balance_without_balance.vy:
         enabled: true
       builtins.vy:
