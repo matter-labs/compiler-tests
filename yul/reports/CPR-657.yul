@@ -8,9 +8,10 @@
 //!             ]
 //!         }
 //!     ],
-//!     "expected": [
-//!         "0"
-//!     ]
+//!     "expected": {
+//!         "return_data": [ "0" ],
+//!         "exception": true
+//!     }
 //! } ] }
 
 object "Test" {
@@ -24,7 +25,10 @@ object "Test" {
             {
                 let result := staticcall(0, address(), 0, 0, 0, 0)
                 mstore(0, result)
-                return(0, 32)
+                if result {
+                    return(0, 32)
+                }
+                revert(0, 32)
             }
         }
     }
