@@ -118,6 +118,8 @@ entries:
         enabled: true
       addmod_mulmod_zero.vy:
         enabled: true
+      check_var_init.vy:
+        enabled: true
       checked_add_v2.vy:
         enabled: true
       divisiod_by_zero.vy:
@@ -463,11 +465,15 @@ entries:
     entries:
       event_constructor.vy:
         enabled: true
+      event_emit.vy:
+        enabled: true
       event_indexed_mixed.vy:
         enabled: true
       event_indexed_string.vy:
         enabled: false
         comment: "Disabled because event indexes may only be value types"
+      event_lots_of_data.vy:
+        enabled: true
       event_no_arguments.vy:
         enabled: true
       event_really_lots_of_data.vy:
@@ -525,6 +531,8 @@ entries:
         enabled: true
       external_call_to_nonexisting.vy:
         enabled: true
+      external_call_value.vy:
+        enabled: true
       external_function.vy:
         enabled: true
       member_accessors.vy:
@@ -534,6 +542,8 @@ entries:
       multiple_return_values.vy:
         enabled: true
       transaction_status.vy:
+        enabled: true
+      value_test.vy:
         enabled: true
   getters:
     enabled: true
@@ -609,6 +619,10 @@ entries:
       account.vy:
         enabled: false
         comment: "Uses unsupported isoltest"
+      balance_with_balance.vy:
+        enabled: true
+      balance_with_balance2.vy:
+        enabled: true
       balance_without_balance.vy:
         enabled: true
       builtins.vy:
@@ -699,6 +713,8 @@ entries:
         enabled: true
       arrays.vy:
         enabled: true
+      basic.vy:
+        enabled: true
       bytes_and_strings.vy:
         enabled: true
       failure.vy:
@@ -717,9 +733,13 @@ entries:
   state:
     enabled: true
     entries:
+      gasleft.vy:
+        enabled: true
       msg_data.vy:
         enabled: true
       msg_sender.vy:
+        enabled: true
+      msg_value.vy:
         enabled: true
   state_var_initialization.vy:
     enabled: true
@@ -923,6 +943,8 @@ entries:
     entries:
       assignment_to_const_var_involving_expression.vy:
         enabled: true
+      balance.vy:
+        enabled: true
       byte_optimization_bug.vy:
         enabled: true
       decayed_tuple.vy:
@@ -932,6 +954,8 @@ entries:
       erc20.vy:
         enabled: false
         comment: "https://github.com/vyperlang/vyper/issues/1631"
+      gasleft_decrease.vy:
+        enabled: true
       inline_member_init.vy:
         enabled: true
       inline_tuple_with_rational_numbers.vy:
@@ -1045,6 +1069,8 @@ entries:
       exp_literals.vy:
         enabled: true
       exp_literals_success.vy:
+        enabled: true
+      function_entry_checks.vy:
         enabled: true
       if.vy:
         enabled: true
