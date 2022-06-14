@@ -92,7 +92,8 @@
 
 // SPDX-License-Identifier: MIT
 
-pragma solidity >=0.4.21;
+pragma solidity >=0.7.0;
+pragma abicoder v2;
 
 contract Test {
     uint256 constant CONST = 0xdeadbeef;
