@@ -8,14 +8,16 @@
 #!         }
 #!     ],
 #!     "expected": [
-#!         "10"
+#!         "55"
 #!     ]
 #! } ] }
+
+LIMIT: constant(uint64) = 10
 
 @external
 @pure
 def main() -> uint64:
     sum: uint64 = 0
-    for i in range(245, 255):
-        sum += 1
+    for i in range(0, LIMIT + 1):
+        sum += i
     return sum

@@ -1,0 +1,17 @@
+{ "cases": [ {
+    "name": "testIterableMap",
+    "input": [
+        {
+            "instance": "TestIterableMap",
+            "entry": "testIterableMap",
+            "calldata": [
+            ]
+        }
+    ],
+    "expected": [
+    ]
+} ],
+    "contracts": {
+        "TestIterableMap": "main.vy"
+    }
+}

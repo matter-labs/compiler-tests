@@ -8,14 +8,14 @@
 #!         }
 #!     ],
 #!     "expected": [
-#!         "10"
+#!         "2545"
 #!     ]
 #! } ] }
 
 @external
 @pure
-def main() -> uint64:
-    sum: uint64 = 0
-    for i in range(245, 255):
-        sum += 1
+def main() -> uint16:
+    sum: uint16 = 0
+    for i in range(250, 260):
+        sum += i
     return sum

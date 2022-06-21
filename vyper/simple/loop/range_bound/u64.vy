@@ -14,9 +14,8 @@
 
 @external
 @pure
-def main() -> uint256:
-    sum: uint256 = 0
-    for i in range(65525, 65535):
+def main() -> uint64:
+    sum: uint64 = 0
+    for i in range(18446744073709551605, 18446744073709551615):
         sum += 1
     return sum
-
