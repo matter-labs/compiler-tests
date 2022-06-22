@@ -296,7 +296,7 @@
         },
         {
             "instance": "ERC20",
-            "entry": "transfer",
+            "entry": "transfer(address,uint256)",
             "caller": "0xdeadbeef00000000000000000000000000000025",
             "calldata": [
                 "0xdeadbeef00000000000000000000000000000042",
