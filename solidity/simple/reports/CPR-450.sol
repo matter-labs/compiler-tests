@@ -17,10 +17,10 @@
 
 // SPDX-License-Identifier: MIT
 
-pragma solidity >=0.4.16;
+pragma solidity >=0.8.0;
 
 contract Test {
     function verify(bytes calldata sig) external returns(bytes32) {
-        return bytes32(sig[0:32]);
+        return bytes32(sig);
     }
 }
