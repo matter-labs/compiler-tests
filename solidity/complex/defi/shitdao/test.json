@@ -30,7 +30,7 @@
         {
             "instance": "Shit",
             "caller": "0x0000000000000000000000000000000000000002",
-            "entry": "transfer",
+            "entry": "transfer(address,uint256)",
             "calldata": [
                 "0x0000000000000000000000000000000000000003",
                 "200"

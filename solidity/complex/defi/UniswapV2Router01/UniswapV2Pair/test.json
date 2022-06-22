@@ -109,7 +109,7 @@
         {
             "instance": "Token1",
             "caller": "0xdeadbeef00000000000000000000000000000042",
-            "entry": "transfer",
+            "entry": "transfer(address,uint256)",
             "calldata": [
                 "UniswapPair.address", "1000000"
             ],
@@ -135,7 +135,7 @@
         {
             "instance": "Token2",
             "caller": "0xdeadbeef00000000000000000000000000000042",
-            "entry": "transfer",
+            "entry": "transfer(address,uint256)",
             "calldata": [
                 "UniswapPair.address", "1000000"
             ],
@@ -228,7 +228,7 @@
         {
             "instance": "Token1",
             "caller": "0xdeadbeef00000000000000000000000000000042",
-            "entry": "transfer",
+            "entry": "transfer(address,uint256)",
             "calldata": [
                 "UniswapPair.address", "10000"
             ],
@@ -437,7 +437,7 @@
         {
             "instance": "Token1",
             "caller": "0xdeadbeef00000000000000000000000000000042",
-            "entry": "transfer",
+            "entry": "transfer(address,uint256)",
             "calldata": [
                 "UniswapPair.address", "10000000000000000000000"
             ],
@@ -463,7 +463,7 @@
         {
             "instance": "Token2",
             "caller": "0xdeadbeef00000000000000000000000000000042",
-            "entry": "transfer",
+            "entry": "transfer(address,uint256)",
             "calldata": [
                 "UniswapPair.address", "100000000"
             ],
@@ -556,7 +556,7 @@
         {
             "instance": "Token1",
             "caller": "0xdeadbeef00000000000000000000000000000042",
-            "entry": "transfer",
+            "entry": "transfer(address,uint256)",
             "calldata": [
                 "UniswapPair.address", "10000000000000000000"
             ],
@@ -663,7 +663,7 @@
         {
             "instance": "UniswapPair",
             "caller": "0xdeadbeef00000000000000000000000000000042",
-            "entry": "transfer",
+            "entry": "transfer(address,uint256)",
             "calldata": [
                 "UniswapPair.address", "999999999999000"
             ],

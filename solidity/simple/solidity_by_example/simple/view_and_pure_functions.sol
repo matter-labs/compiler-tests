@@ -28,7 +28,7 @@
 //!     "name": "addFirst",
 //!     "input": [
 //!         {
-//!             "entry": "add",
+//!             "entry": "add(uint256,uint256)",
 //!             "calldata": [
 //!                 "2", "2"
 //!             ]
@@ -41,7 +41,7 @@
 //!     "name": "addSecond",
 //!     "input": [
 //!         {
-//!             "entry": "add",
+//!             "entry": "add(uint256,uint256)",
 //!             "calldata": [
 //!                 "782438347287334342", "512356125631255135132125661271278"
 //!             ]
