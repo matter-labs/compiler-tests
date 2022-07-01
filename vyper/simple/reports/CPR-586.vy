@@ -28,7 +28,7 @@ struct Node:
     l: uint256
     r: uint256
 
-@internal
+@external
 @view
 def split(p: uint256, nodes: Node[3]) -> (uint256, uint256):
     if p == 0:
@@ -53,6 +53,6 @@ def f() -> Node[3]:
     nodes[1] = Node({key: 3, l: 0, r: 0})
     nodes[2] = Node({key: 2, l: 0, r: 1})
 
-    self.split(2, nodes)
+    Self(self).split(2, nodes)
 
     return nodes

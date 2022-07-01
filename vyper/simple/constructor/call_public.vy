@@ -24,14 +24,14 @@
 x: uint256
 y: uint256
 
+@internal
+def set(b: uint256):
+    self.y = b
+
 @external
 def __init__(a: uint256, b: uint256):
     self.x = a
     self.set(b)
-
-@internal
-def set(b: uint256):
-    self.y = b
 
 @external
 @view
