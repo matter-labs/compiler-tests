@@ -65,6 +65,21 @@
 #!         "return_data": [],
 #!         "exception": true
 #!     }
+#! }, {
+#!     "name": "max_pow_overflow",
+#!     "input": [
+#!         {
+#!             "entry": "main",
+#!             "calldata": [
+#!                 "255", "255"
+#!             ]
+#!         }
+#!     ],
+#!     "expected": {
+#!         "return_data": [
+#!         ],
+#!         "exception": true
+#!     }
 #! } ] }
 
 @external

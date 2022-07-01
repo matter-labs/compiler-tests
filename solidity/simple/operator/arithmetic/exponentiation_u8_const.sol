@@ -12,17 +12,17 @@
 //!         "1"
 //!     ]
 //! }, {
-//!     "name": "ordinar_positive",
+//!     "name": "ordinar",
 //!     "input": [
 //!         {
 //!             "entry": "main",
 //!             "calldata": [
-//!                 "4"
+//!                 "3"
 //!             ]
 //!         }
 //!     ],
 //!     "expected": [
-//!         "81"
+//!         "8"
 //!     ]
 //! }, {
 //!     "name": "to_max",
@@ -30,12 +30,12 @@
 //!         {
 //!             "entry": "main",
 //!             "calldata": [
-//!                 "80"
+//!                 "7"
 //!             ]
 //!         }
 //!     ],
 //!     "expected": [
-//!         "147808829414345923316083210206383297601"
+//!         "128"
 //!     ]
 //! }, {
 //!     "name": "overflow",
@@ -50,7 +50,7 @@
 //!     "expected": [ {
 //!         "compiler_version": "<0.8",
 //!         "return_data": [
-//!             "137198176105529391099388226870764377041"
+//!             "0"
 //!         ],
 //!         "exception": false
 //!     }, {
@@ -67,14 +67,14 @@
 //!         {
 //!             "entry": "main",
 //!             "calldata": [
-//!                 "81"
+//!                 "8"
 //!             ]
 //!         }
 //!     ],
 //!     "expected": [ {
 //!         "compiler_version": "<0.8",
 //!         "return_data": [
-//!             "-103144121322099306484875023187381681347"
+//!             "0"
 //!         ],
 //!         "exception": false
 //!     }, {
@@ -91,14 +91,14 @@
 //!         {
 //!             "entry": "main",
 //!             "calldata": [
-//!                 "340282366920938463463374607431768211455"
+//!                 "255"
 //!             ]
 //!         }
 //!     ],
 //!     "expected": [ {
 //!         "compiler_version": "<0.8",
 //!         "return_data": [
-//!             "113427455640312821154458202477256070485"
+//!             "0"
 //!         ],
 //!         "exception": false
 //!     }, {
@@ -116,7 +116,7 @@
 pragma solidity >=0.6.0;
 
 contract Test {
-    function main(uint128 a) public pure returns(int128) {
-        return int128(-3) ** a;
+    function main(uint8 a) public pure returns(uint8) {
+        return uint8(2) ** a;
     }
 }
