@@ -307,6 +307,8 @@ entries:
             enabled: true
           calldata_nested_array_copy_to_memory.vy:
             enabled: true
+          cleanup_during_multi_element_per_slot_copy.vy:
+            enabled: true
           copy_byte_array_in_struct_to_storage.vy:
             enabled: false
             comment: "Disabled because bytes do not free storage completely"
@@ -485,6 +487,9 @@ entries:
         enabled: true
       sha256_empty.vy:
         enabled: true
+  byte_array_to_storage_cleanup.vy:
+    enabled: true
+    comment: "Without function g(with memory access from assembly)"
   calldata:
     enabled: true
     entries:
@@ -570,6 +575,8 @@ entries:
       functions_called_by_constructor.vy:
         enabled: false
         comment: "https://github.com/vyperlang/vyper/issues/1631"
+      payable_constructor.vy:
+        enabled: true
   constructor_with_params.vy:
     enabled: true
   conversions:
@@ -602,6 +609,8 @@ entries:
   events:
     enabled: true
     entries:
+      event.vy:
+        enabled: true
       event_constructor.vy:
         enabled: true
       event_dynamic_array_memory.vy:
