@@ -1,10 +1,10 @@
 //! { "cases": [ {
-//!     "name": "zero_zero",
+//!     "name": "zero",
 //!     "input": [
 //!         {
 //!             "entry": "main",
 //!             "calldata": [
-//!                 "0", "0"
+//!                 "0"
 //!             ]
 //!         }
 //!     ],
@@ -12,12 +12,12 @@
 //!         "1"
 //!     ]
 //! }, {
-//!     "name": "ordinar",
+//!     "name": "ordinar_positive",
 //!     "input": [
 //!         {
 //!             "entry": "main",
 //!             "calldata": [
-//!                 "3", "4"
+//!                 "4"
 //!             ]
 //!         }
 //!     ],
@@ -30,12 +30,12 @@
 //!         {
 //!             "entry": "main",
 //!             "calldata": [
-//!                 "15", "2"
+//!                 "80"
 //!             ]
 //!         }
 //!     ],
 //!     "expected": [
-//!         "225"
+//!         "147808829414345923316083210206383297601"
 //!     ]
 //! }, {
 //!     "name": "overflow",
@@ -43,14 +43,14 @@
 //!         {
 //!             "entry": "main",
 //!             "calldata": [
-//!                 "100", "2"
+//!                 "100"
 //!             ]
 //!         }
 //!     ],
 //!     "expected": [ {
 //!         "compiler_version": "<0.8",
 //!         "return_data": [
-//!             "16"
+//!             "137198176105529391099388226870764377041"
 //!         ],
 //!         "exception": false
 //!     }, {
@@ -67,14 +67,14 @@
 //!         {
 //!             "entry": "main",
 //!             "calldata": [
-//!                 "16", "2"
+//!                 "81"
 //!             ]
 //!         }
 //!     ],
 //!     "expected": [ {
 //!         "compiler_version": "<0.8",
 //!         "return_data": [
-//!             "0"
+//!             "-103144121322099306484875023187381681347"
 //!         ],
 //!         "exception": false
 //!     }, {
@@ -91,14 +91,14 @@
 //!         {
 //!             "entry": "main",
 //!             "calldata": [
-//!                 "255", "255"
+//!                 "340282366920938463463374607431768211455"
 //!             ]
 //!         }
 //!     ],
 //!     "expected": [ {
 //!         "compiler_version": "<0.8",
 //!         "return_data": [
-//!             "255"
+//!             "113427455640312821154458202477256070485"
 //!         ],
 //!         "exception": false
 //!     }, {
@@ -109,40 +109,14 @@
 //!         ],
 //!         "exception": true
 //!     } ]
-//! }, {
-//!     "name": "0_max_pow",
-//!     "input": [
-//!         {
-//!             "entry": "main",
-//!             "calldata": [
-//!                 "0", "255"
-//!             ]
-//!         }
-//!     ],
-//!     "expected": [
-//!         "0"
-//!     ]
-//! }, {
-//!     "name": "1_max_pow",
-//!     "input": [
-//!         {
-//!             "entry": "main",
-//!             "calldata": [
-//!                 "1", "255"
-//!             ]
-//!         }
-//!     ],
-//!     "expected": [
-//!         "1"
-//!     ]
 //! } ] }
 
 // SPDX-License-Identifier: MIT
 
-pragma solidity >=0.4.16;
+pragma solidity >=0.6.0;
 
 contract Test {
-    function main(uint8 a, uint8 b) public pure returns(uint8) {
-        return a ** b;
+    function main(uint128 a) public pure returns(int128) {
+        return int128(-3) ** a;
     }
 }

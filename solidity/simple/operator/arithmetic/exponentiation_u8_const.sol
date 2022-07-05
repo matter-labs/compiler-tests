@@ -1,10 +1,10 @@
 //! { "cases": [ {
-//!     "name": "zero_zero",
+//!     "name": "zero",
 //!     "input": [
 //!         {
 //!             "entry": "main",
 //!             "calldata": [
-//!                 "0", "0"
+//!                 "0"
 //!             ]
 //!         }
 //!     ],
@@ -17,12 +17,12 @@
 //!         {
 //!             "entry": "main",
 //!             "calldata": [
-//!                 "3", "4"
+//!                 "3"
 //!             ]
 //!         }
 //!     ],
 //!     "expected": [
-//!         "81"
+//!         "8"
 //!     ]
 //! }, {
 //!     "name": "to_max",
@@ -30,12 +30,12 @@
 //!         {
 //!             "entry": "main",
 //!             "calldata": [
-//!                 "15", "2"
+//!                 "7"
 //!             ]
 //!         }
 //!     ],
 //!     "expected": [
-//!         "225"
+//!         "128"
 //!     ]
 //! }, {
 //!     "name": "overflow",
@@ -43,14 +43,14 @@
 //!         {
 //!             "entry": "main",
 //!             "calldata": [
-//!                 "100", "2"
+//!                 "100"
 //!             ]
 //!         }
 //!     ],
 //!     "expected": [ {
 //!         "compiler_version": "<0.8",
 //!         "return_data": [
-//!             "16"
+//!             "0"
 //!         ],
 //!         "exception": false
 //!     }, {
@@ -67,7 +67,7 @@
 //!         {
 //!             "entry": "main",
 //!             "calldata": [
-//!                 "16", "2"
+//!                 "8"
 //!             ]
 //!         }
 //!     ],
@@ -91,14 +91,14 @@
 //!         {
 //!             "entry": "main",
 //!             "calldata": [
-//!                 "255", "255"
+//!                 "255"
 //!             ]
 //!         }
 //!     ],
 //!     "expected": [ {
 //!         "compiler_version": "<0.8",
 //!         "return_data": [
-//!             "255"
+//!             "0"
 //!         ],
 //!         "exception": false
 //!     }, {
@@ -109,40 +109,14 @@
 //!         ],
 //!         "exception": true
 //!     } ]
-//! }, {
-//!     "name": "0_max_pow",
-//!     "input": [
-//!         {
-//!             "entry": "main",
-//!             "calldata": [
-//!                 "0", "255"
-//!             ]
-//!         }
-//!     ],
-//!     "expected": [
-//!         "0"
-//!     ]
-//! }, {
-//!     "name": "1_max_pow",
-//!     "input": [
-//!         {
-//!             "entry": "main",
-//!             "calldata": [
-//!                 "1", "255"
-//!             ]
-//!         }
-//!     ],
-//!     "expected": [
-//!         "1"
-//!     ]
 //! } ] }
 
 // SPDX-License-Identifier: MIT
 
-pragma solidity >=0.4.16;
+pragma solidity >=0.6.0;
 
 contract Test {
-    function main(uint8 a, uint8 b) public pure returns(uint8) {
-        return a ** b;
+    function main(uint8 a) public pure returns(uint8) {
+        return uint8(2) ** a;
     }
 }

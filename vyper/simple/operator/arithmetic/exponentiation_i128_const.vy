@@ -79,6 +79,21 @@
 #!         "return_data": [],
 #!         "exception": true
 #!     }
+#! }, {
+#!     "name": "max_pow_overflow",
+#!     "input": [
+#!         {
+#!             "entry": "main",
+#!             "calldata": [
+#!                 "340282366920938463463374607431768211455"
+#!             ]
+#!         }
+#!     ],
+#!     "expected": {
+#!         "return_data": [
+#!         ],
+#!         "exception": true
+#!     }
 #! } ] }
 
 @external
