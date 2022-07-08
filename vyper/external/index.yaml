@@ -38,13 +38,15 @@ entries:
       byte_arrays.vy:
         enabled: false
       calldata_arrays_too_large.vy:
-        enabled: true
+        enabled: false
+        comment: "Other behavior on zkEVM"
       dynamic_arrays.vy:
         enabled: true
       memory_params_in_external_function.vy:
         enabled: true
       return_dynamic_types_cross_call_advanced.vy:
-        enabled: true
+        enabled: false
+        comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
       return_dynamic_types_cross_call_simple.vy:
         enabled: true
       struct:
@@ -69,25 +71,33 @@ entries:
       byte_arrays.vy:
         enabled: true
       calldata_array.vy:
-        enabled: true
+        enabled: false
+        comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
       calldata_array_dynamic.vy:
         enabled: true
       calldata_array_dynamic_index_access.vy:
-        enabled: true
+        enabled: false
+        comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
       calldata_array_dynamic_static_dynamic.vy:
-        enabled: true
+        enabled: false
+        comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
       calldata_array_dynamic_static_short_decode.vy:
-        enabled: true
+        enabled: false
+        comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
       calldata_array_dynamic_static_short_reencode.vy:
-        enabled: true
+        enabled: false
+        comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
       calldata_array_multi_dynamic.vy:
-        enabled: true
+        enabled: false
+        comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
       calldata_array_short_no_revert_string.vy:
-        enabled: true
+        enabled: false
+        comment: "Other behavior on zkEVM"
       calldata_array_static.vy:
         enabled: true
       calldata_array_static_dynamic_static.vy:
-        enabled: true
+        enabled: false
+        comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
       calldata_array_static_index_access.vy:
         enabled: true
       calldata_array_struct_dynamic.vy:
@@ -97,9 +107,11 @@ entries:
       calldata_array_two_static.vy:
         enabled: true
       calldata_nested_array_reencode.vy:
-        enabled: true
+        enabled: false
+        comment: "Other behavior on zkEVM"
       calldata_nested_array_static_reencode.vy:
-        enabled: true
+        enabled: false
+        comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
       calldata_struct_dynamic.vy:
         enabled: true
       calldata_struct_member_offset.vy:
@@ -130,7 +142,8 @@ entries:
       dynamic_arrays.vy:
         enabled: true
       dynamic_nested_arrays.vy:
-        enabled: true
+        enabled: false
+        comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
       memory_params_in_external_function.vy:
         enabled: true
       storage_array_encoding.vy:
@@ -188,9 +201,11 @@ entries:
       calldata_array_as_argument_internal_function.vy:
         enabled: true
       calldata_array_dynamic_invalid.vy:
-        enabled: true
+        enabled: false
+        comment: "Other behavior on zkEVM"
       calldata_array_dynamic_invalid_static_middle.vy:
-        enabled: true
+        enabled: false
+        comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
       calldata_array_of_struct.vy:
         enabled: true
       calldata_array_two_dimensional.vy:
@@ -238,11 +253,13 @@ entries:
           array_copy_storage_abi_signed.vy:
             enabled: true
           array_copy_storage_storage_dyn_dyn.vy:
-            enabled: true
+            enabled: false
+            comment: "Disabled because dynamic arrays do not free storage completely"
           array_copy_storage_storage_dynamic_dynamic.vy:
             enabled: true
           array_copy_storage_storage_static_dynamic.vy:
-            enabled: true
+            enabled: false
+            comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
           array_copy_storage_storage_static_simple.vy:
             enabled: true
           array_copy_storage_storage_static_static.vy:
@@ -306,7 +323,8 @@ entries:
           calldata_dynamic_array_to_memory.vy:
             enabled: true
           calldata_nested_array_copy_to_memory.vy:
-            enabled: true
+            enabled: false
+            comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
           cleanup_during_multi_element_per_slot_copy.vy:
             enabled: true
           copy_byte_array_in_struct_to_storage.vy:
@@ -339,17 +357,20 @@ entries:
       create_memory_array.vy:
         enabled: true
       create_memory_array_too_large.vy:
-        enabled: true
+        enabled: false
+        comment: "Other behavior on zkEVM"
       create_memory_byte_array.vy:
         enabled: true
       create_multiple_dynamic_arrays.vy:
         enabled: true
       dynamic_array_cleanup.vy:
-        enabled: true
+        enabled: false
+        comment: "Disabled because dynamic arrays do not free storage completely"
       dynamic_arrays_in_storage.vy:
         enabled: true
       dynamic_multi_array_cleanup.vy:
-        enabled: true
+        enabled: false
+        comment: "Disabled because dynamic arrays do not free storage completely"
       dynamic_out_of_bounds_array_access.vy:
         enabled: true
       delete:
@@ -392,7 +413,8 @@ entries:
           inline_array_index_access_strings.vy:
             enabled: true
           memory_arrays_dynamic_index_access_write.vy:
-            enabled: true
+            enabled: false
+            comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
           memory_arrays_index_access_write.vy:
             enabled: false
       inline_array_return.vy:
@@ -422,11 +444,14 @@ entries:
             enabled: false
             comment: "Expressions without assignment are disallowed"
           array_pop_storage_empty.vy:
-            enabled: true
+            enabled: false
+            comment: "Disabled because dynamic arrays do not free storage completely"
           array_pop_uint16_transition.vy:
-            enabled: true
+            enabled: false
+            comment: "Disabled because dynamic arrays do not free storage completely"
           array_pop_uint24_transition.vy:
-            enabled: true
+            enabled: false
+            comment: "Disabled because dynamic arrays do not free storage completely"
           parenthesized.vy:
             enabled: true
       push:
@@ -516,7 +541,8 @@ entries:
       calldata_bytes_to_memory_encode.vy:
         enabled: true
       calldata_internal_multi_array.vy:
-        enabled: true
+        enabled: false
+        comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
       calldata_internal_multi_fixed_array.vy:
         enabled: true
       calldata_memory_mixed.vy:
@@ -618,7 +644,8 @@ entries:
       event_dynamic_array_storage.vy:
         enabled: true
       event_dynamic_nested_array_memory_v2.vy:
-        enabled: true
+        enabled: false
+        comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
       event_dynamic_nested_array_storage_v2.vy:
         enabled: true
       event_emit.vy:
@@ -866,17 +893,23 @@ entries:
     enabled: true
     entries:
       calldata_array_dynamic_invalid.vy:
-        enabled: true
+        enabled: false
+        comment: "Other behavior on zkEVM"
       calldata_array_dynamic_static_short_decode.vy:
-        enabled: true
+        enabled: false
+        comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
       calldata_array_dynamic_static_short_reencode.vy:
-        enabled: true
+        enabled: false
+        comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
       calldata_array_invalid_length.vy:
-        enabled: true
+        enabled: false
+        comment: "Other behavior on zkEVM"
       calldata_arrays_too_large.vy:
-        enabled: true
+        enabled: false
+        comment: "Other behavior on zkEVM"
       calldata_tail_short.vy:
-        enabled: true
+        enabled: false
+        comment: "Other behavior on zkEVM"
       called_contract_has_code.vy:
         enabled: true
       empty_v1.vy:
@@ -885,11 +918,14 @@ entries:
       ether_non_payable_function.vy:
         enabled: true
       function_entry_checks_v1.vy:
-        enabled: true
+        enabled: false
+        comment: "Other behavior on zkEVM"
       short_input_array.vy:
-        enabled: true
+        enabled: false
+        comment: "Other behavior on zkEVM"
       short_input_bytes.vy:
-        enabled: true
+        enabled: false
+        comment: "Other behavior on zkEVM"
       unknown_sig_no_fallback.vy:
         enabled: true
   smoke:
@@ -952,9 +988,11 @@ entries:
       mapping_string_key.vy:
         enabled: true
       mappings_array2d_pop_delete.vy:
-        enabled: true
+        enabled: false
+        comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
       mappings_array_pop_delete.vy:
-        enabled: true
+        enabled: false
+        comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
       packed_storage_signed.vy:
         enabled: true
       packed_storage_structs_bytes.vy:
@@ -1005,7 +1043,8 @@ entries:
     enabled: true
     entries:
       array_of_recursive_struct.vy:
-        enabled: true
+        enabled: false
+        comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
       calldata:
         enabled: true
         entries:
@@ -1049,13 +1088,16 @@ entries:
         enabled: true
         entries:
           recursive_storage_memory.vy:
-            enabled: true
+            enabled: false
+            comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
           recursive_storage_memory_complex.vy:
-            enabled: true
+            enabled: false
+            comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
       copy_from_storage.vy:
         enabled: true
       copy_struct_array_from_storage.vy:
-        enabled: true
+        enabled: false
+        comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
       delete_struct.vy:
         enabled: true
       event.vy:
@@ -1084,7 +1126,8 @@ entries:
       packed_storage_structs_delete.vy:
         enabled: true
       recursive_structs.vy:
-        enabled: true
+        enabled: false
+        comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
       simple_struct_allocation.vy:
         enabled: true
       struct_constructor_nested.vy:
@@ -1101,7 +1144,8 @@ entries:
       struct_delete_storage.vy:
         enabled: true
       struct_delete_storage_nested_small.vy:
-        enabled: true
+        enabled: false
+        comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
       struct_delete_storage_small.vy:
         enabled: true
       struct_delete_storage_with_array.vy:
@@ -1123,7 +1167,8 @@ entries:
       struct_storage_to_memory.vy:
         enabled: true
       structs.vy:
-        enabled: true
+        enabled: false
+        comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
   types:
     enabled: true
     entries:
@@ -1215,9 +1260,11 @@ entries:
       skip_dynamic_types.vy:
         enabled: true
       skip_dynamic_types_for_static_arrays_with_dynamic_elements.vy:
-        enabled: true
+        enabled: false
+        comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
       skip_dynamic_types_for_structs.vy:
-        enabled: true
+        enabled: false
+        comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
       state_variable_local_variable_mixture.vy:
         enabled: true
       storage_string_as_mapping_key_without_variable.vy:
@@ -1269,11 +1316,13 @@ entries:
       array_storage_index_boundary_test.vy:
         enabled: true
       array_storage_length_access.vy:
-        enabled: true
+        enabled: false
+        comment: "Out-of-gas currently unchecked"
       array_storage_pop_zero_length.vy:
         enabled: true
       array_storage_push_pop.vy:
-        enabled: true
+        enabled: false
+        comment: "Out-of-gas currently unchecked"
       assert.vy:
         enabled: true
       assert_and_require.vy:
@@ -1329,7 +1378,8 @@ entries:
       exp_literals_success.vy:
         enabled: true
       function_entry_checks.vy:
-        enabled: true
+        enabled: false
+        comment: "Other behavior on zkEVM"
       if.vy:
         enabled: true
       keccak.vy:

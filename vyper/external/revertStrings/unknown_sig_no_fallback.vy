@@ -1,8 +1,4 @@
-@external
-@payable
-def __default__():
-    pass
-    
+
 # ====
 # EVMVersion: >=byzantium
 # revertStrings: debug
