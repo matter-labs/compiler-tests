@@ -437,7 +437,7 @@ entries:
           array_pop.vy:
             enabled: true
           array_pop_array_transition.vy:
-            enabled: true
+            enabled: false
           array_pop_empty_exception.vy:
             enabled: true
           array_pop_isolated.vy:
@@ -927,7 +927,7 @@ entries:
         enabled: false
         comment: "Other behavior on zkEVM"
       unknown_sig_no_fallback.vy:
-        enabled: true
+        enabled: false
   smoke:
     enabled: true
     entries:
