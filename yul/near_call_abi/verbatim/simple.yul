@@ -46,7 +46,7 @@ object "Test" {
 
             function ZKSYNC_NEAR_CALL_test(abi_data, arg) -> result {
                 if calldataload(32) {
-                    verbatim_i0_o0("00000000")
+                    verbatim_0i_0o("throw")
                 }
                 result := 777
             }
