@@ -1,87 +1,71 @@
-// SPDX-License-Identifier: MIT
+# Iterable mapping from address to uint;
+map_keys: DynArray[address, 10]
+map_values: HashMap[address, uint256]
+map_indexOf: HashMap[address, uint256]
+map_inserted: HashMap[address, bool]
 
-pragma solidity >=0.5.0;
+@internal
+@view
+def get(key: address) -> uint256:
+    return self.map_values[key]
 
-library IterableMapping {
-    // Iterable mapping from address to uint;
-    struct Map {
-        address[] keys;
-        mapping(address => uint) values;
-        mapping(address => uint) indexOf;
-        mapping(address => bool) inserted;
-    }
+@internal
+@view
+def getKeyAtIndex(index: uint256) -> address:
+    return self.map_keys[index]
 
-    function get(Map storage map, address key) public view returns (uint) {
-        return map.values[key];
-    }
+@internal
+@view
+def size() -> uint256:
+    return len(self.map_keys)
 
-    function getKeyAtIndex(Map storage map, uint index) public view returns (address) {
-        return map.keys[index];
-    }
+@internal
+def set(key: address, val: uint256):
+    if self.map_inserted[key]:
+        self.map_values[key] = val
+    else:
+        self.map_inserted[key] = True
+        self.map_values[key] = val
+        self.map_indexOf[key] = len(self.map_keys)
+        self.map_keys.append(key)
 
-    function size(Map storage map) public view returns (uint) {
-        return map.keys.length;
-    }
+@internal
+def remove(key: address):
+    if not self.map_inserted[key]:
+        return
 
-    function set(
-        Map storage map,
-        address key,
-        uint val
-    ) public {
-        if (map.inserted[key]) {
-            map.values[key] = val;
-        } else {
-            map.inserted[key] = true;
-            map.values[key] = val;
-            map.indexOf[key] = map.keys.length;
-            map.keys.push(key);
-        }
-    }
+    self.map_inserted[key] = empty(bool)
+    self.map_values[key] = empty(uint256)
 
-    function remove(Map storage map, address key) public {
-        if (!map.inserted[key]) {
-            return;
-        }
+    index: uint256 = self.map_indexOf[key]
+    lastIndex: uint256 = len(self.map_keys) - 1
+    lastKey: address = self.map_keys[lastIndex]
 
-        delete map.inserted[key];
-        delete map.values[key];
+    self.map_indexOf[lastKey] = index
+    self.map_indexOf[key] = empty(uint256)
 
-        uint index = map.indexOf[key];
-        uint lastIndex = map.keys.length - 1;
-        address lastKey = map.keys[lastIndex];
+    self.map_keys[index] = lastKey
+    self.map_keys.pop()
 
-        map.indexOf[lastKey] = index;
-        delete map.indexOf[key];
+@external
+def testIterableMap():
+    self.set(convert(0, address), 0)
+    self.set(convert(1, address), 100)
+    self.set(convert(2, address), 200) # insert
+    self.set(convert(2, address), 200) # update
+    self.set(convert(3, address), 300)
 
-        map.keys[index] = lastKey;
-        map.keys.pop();
-    }
-}
+    for i in range(10):
+        if not i < self.size():
+            break
+        key: address = self.getKeyAtIndex(i)
 
-contract TestIterableMap {
-    using IterableMapping for IterableMapping.Map;
+        assert self.get(key) == i * 100
 
-    IterableMapping.Map private map;
+    self.remove(convert(1, address))
 
-    function testIterableMap() public {
-        map.set(address(0), 0);
-        map.set(address(1), 100);
-        map.set(address(2), 200); // insert
-        map.set(address(2), 200); // update
-        map.set(address(3), 300);
-
-        for (uint i = 0; i < map.size(); i++) {
-            address key = map.getKeyAtIndex(i);
-
-            assert(map.get(key) == i * 100);
-        }
-
-        map.remove(address(1));
-
-        // keys = [address(0), address(3), address(2)]
-        assert(map.size() == 3);
-        assert(map.getKeyAtIndex(0) == address(0));
-        assert(map.getKeyAtIndex(1) == address(3));
-        assert(map.getKeyAtIndex(2) == address(2));
-    }
-}
+    # keys = [address(0), address(3), address(2)]
+    assert self.size() == 3
+    assert self.getKeyAtIndex(0) == convert(0, address)
+    assert self.getKeyAtIndex(1) == convert(3, address)
+    assert self.getKeyAtIndex(2) == convert(2, address)

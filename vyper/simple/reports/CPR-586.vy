@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "ignore": true, "cases": [ {
 #!     "name": "default",
 #!     "input": [
 #!         {
@@ -19,6 +19,7 @@
 #!       "1"
 #!     ]
 #! } ] }
+# Ignored, https://linear.app/matterlabs/issue/CPR-722/vyper-problems
 
 interface Self:
     def split(p: uint256, nodes: Node[3]) -> (uint256, uint256): pure

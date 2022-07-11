@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "ignore": true, "cases": [ {
 #!     "name": "zero_zero",
 #!     "input": [
 #!         {
@@ -119,6 +119,7 @@
 #!         "exception": true
 #!     }
 #! } ] }
+# Ignored, https://linear.app/matterlabs/issue/CPR-722/vyper-problems
 
 @external
 @pure
