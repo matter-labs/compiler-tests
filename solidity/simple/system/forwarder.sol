@@ -7,16 +7,16 @@ pragma solidity >=0.8.0;
 contract Test {
     address immutable _target;
 
-    constructor(address target) {
+    constructor(address target) payable {
         _target = target;
     }
 
-    fallback() external {
+    fallback() external payable {
         address target = _target;
 
         assembly {
             calldatacopy(0, 0, calldatasize())
-            let result := delegatecall(0, target, 0, calldatasize(), 0, 0)
+            let result := delegatecall(gas(), target, 0, calldatasize(), 0, 0)
             returndatacopy(0, 0, returndatasize())
 
             switch result
