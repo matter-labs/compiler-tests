@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "ignore": true, "cases": [ {
 #!     "name": "main",
 #!     "input": [
 #!         {
@@ -11,11 +11,12 @@
 #!         "10"
 #!     ]
 #! } ] }
+# Ignored, https://linear.app/matterlabs/issue/CPR-722/vyper-problems
 
 @external
 @pure
-def main() -> uint256:
-    sum: uint256 = 0
+def main() -> uint64:
+    sum: uint64 = 0
     for i in range(245, 255):
         sum += 1
     return sum
