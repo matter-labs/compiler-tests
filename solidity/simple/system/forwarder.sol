@@ -16,7 +16,7 @@ contract Test {
 
         assembly {
             calldatacopy(0, 0, calldatasize())
-            let result := delegatecall(0, target, 0, calldatasize(), 0, 0)
+            let result := delegatecall(gas(), target, 0, calldatasize(), 0, 0)
             returndatacopy(0, 0, returndatasize())
 
             switch result
