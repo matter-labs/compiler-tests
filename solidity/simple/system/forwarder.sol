@@ -7,11 +7,11 @@ pragma solidity >=0.8.0;
 contract Test {
     address immutable _target;
 
-    constructor(address target) {
+    constructor(address target) payable {
         _target = target;
     }
 
-    fallback() external {
+    fallback() external payable {
         address target = _target;
 
         assembly {
