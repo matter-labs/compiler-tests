@@ -927,7 +927,7 @@ entries:
         enabled: false
         comment: "Other behavior on zkEVM"
       unknown_sig_no_fallback.vy:
-        enabled: false
+        enabled: true
   smoke:
     enabled: true
     entries:
