@@ -7,4 +7,4 @@ def test():
     
 # ----
 # test() ->
-# storageEmpty -> 1
+# storageEmpty -> 0
