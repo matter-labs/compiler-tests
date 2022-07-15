@@ -5,7 +5,7 @@ inner: DynArray[uint16, 16]
 data: DynArray[DynArray[uint16, 20], 48]
 
 @external
-def _init__():
+def __init__():
     self.inner = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
 
 @external
@@ -31,4 +31,4 @@ def test() -> (uint256, uint256, uint256):
 # gas irOptimized: 2280132
 # gas legacy: 2273434
 # gas legacyOptimized: 2261820
-# storageEmpty -> 1
+# storageEmpty -> 0

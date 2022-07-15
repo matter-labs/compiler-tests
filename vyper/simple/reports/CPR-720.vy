@@ -1,4 +1,4 @@
-#! { "ignore": true, "cases": [ {
+#! { "cases": [ {
 #!     "name": "default",
 #!     "input": [
 #!         {
@@ -8,14 +8,14 @@
 #!         }
 #!     ],
 #!     "expected": [
-#!       "1"
+#!         "1"
 #!     ]
 #! } ] }
 
 inner: DynArray[uint256, 1]
 
 @external
-def _init__():
+def __init__():
     self.inner = [0]
 
 @external
