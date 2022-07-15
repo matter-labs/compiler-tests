@@ -22,4 +22,4 @@ def test() -> (uint24, uint24):
 # gas irOptimized: 158009
 # gas legacy: 159279
 # gas legacyOptimized: 152921
-# storageEmpty -> 1
+# storageEmpty -> 0

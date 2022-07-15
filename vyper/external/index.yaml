@@ -437,21 +437,18 @@ entries:
           array_pop.vy:
             enabled: true
           array_pop_array_transition.vy:
-            enabled: false
+            enabled: true
           array_pop_empty_exception.vy:
             enabled: true
           array_pop_isolated.vy:
             enabled: false
             comment: "Expressions without assignment are disallowed"
           array_pop_storage_empty.vy:
-            enabled: false
-            comment: "Disabled because dynamic arrays do not free storage completely"
+            enabled: true
           array_pop_uint16_transition.vy:
-            enabled: false
-            comment: "Disabled because dynamic arrays do not free storage completely"
+            enabled: true
           array_pop_uint24_transition.vy:
-            enabled: false
-            comment: "Disabled because dynamic arrays do not free storage completely"
+            enabled: true
           parenthesized.vy:
             enabled: true
       push:
@@ -927,7 +924,7 @@ entries:
         enabled: false
         comment: "Other behavior on zkEVM"
       unknown_sig_no_fallback.vy:
-        enabled: false
+        enabled: true
   smoke:
     enabled: true
     entries:
