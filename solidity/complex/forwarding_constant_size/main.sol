@@ -7,9 +7,11 @@ import "./callable.sol";
 contract Main {
     fallback() external {
         Callable callable = abi.decode(msg.data, (Callable));
-        (bool success, bytes memory data) = address(callable).call(msg.data);
         assembly {
-            return(add(data, 0x20), sub(returndatasize(), 0x20))
+            calldatacopy(0, 0, mul(32, 33))
+            let success := call(gas(), callable, 0, 0, mul(32, 33), 0, 0)
+            returndatacopy(0, 0, returndatasize())
+            return(0, sub(returndatasize(), 0x20))
         }
     }
 }

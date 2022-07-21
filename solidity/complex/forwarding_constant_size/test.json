@@ -1,22 +1,5 @@
 { "cases": [ {
-    "name": "short",
-    "input": [
-        {
-            "instance": "Main",
-            "fallback": true,
-            "calldata": [
-                "Callable.address",
-                "5",
-                "2"
-            ]
-        }
-    ],
-    "expected": [
-        "5",
-        "2"
-    ]
-}, {
-    "name": "long",
+    "name": "default",
     "input": [
         {
             "instance": "Main",
